@@ -42,21 +42,28 @@ enum : Type
 enum class ConnectionState
 {
     NotConnected,   ///< Соединение не установлено
-    Connecting,     ///< Выполняется подключение
+    Connecting,     ///< Устанавливается соединение
     Connected,      ///< Соединение установлено
     Disconnecting   ///< Выполняется отключение
 }; // enum class ConnectionState
 
 
-/// @brief Флаги очистки
-enum class PurgeFlags
+namespace PurgeFlags
 {
-    Rx,
-    Tx
-}; // enum class PurgeFlags
 
-} // namespace logika
+using Type = uint8_t;
+
+/// @brief Флаги очистки буфера
+enum : Type
+{
+    Rx = 1,     ///< Очистка буфера на чтение
+    Tx = 2      ///< Очистка буфера на запись
+}; // anonymous enum
+
+} // namespace PurgeFlags
 
 } // namespace connections
+
+} // namespace logika
 
 #endif // LOGIKA_CONNECTIONS_TYPES_H
