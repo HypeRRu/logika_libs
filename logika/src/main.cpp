@@ -4,6 +4,7 @@
 int main()
 {
     logika::connections::Connection con{ "localhost", 0 };
-    std::cout << con.GetConnectionType() << '\n';
+    con.Open();
+    con.Write( { 'b', 'u', 'f', 'f', 'e', 'r', '\n' } );
     return 0;
 }

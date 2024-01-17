@@ -8,14 +8,6 @@
 
 #include <logika/connections/iconnection.h>
 
-#include <iostream>
-
-#define LOG_ERROR 0
-#define LOG_WARNING 1
-#define LOG_INFO 2
-#define LOG_DEBUG 3
-#define LOG( level, message ) do { std::cerr << '[' << ( level ) << ']' << message << std::endl; } while ( false )
-
 namespace logika
 {
 
@@ -30,172 +22,102 @@ public:
     /// @brief Конструктор соединения
     /// @param[in] address Адрес соединения
     /// @param[in] readTimeout Время ожидания данных для чтения, мс. По умолчанию 0 - не ограничено.
-    Connection( const std::string& address, uint32_t readTimeout = 0 )
-        : address_{ address }
-        , readTimeout_{ readTimeout }
-        , type_{ ConnectionType::Offline }
-        , state_{ ConnectionState::NotConnected }
-        , txBytesCount_{ 0 }
-        , rxBytesCount_{ 0 }
-        , lastRxTime_{ 0 }
-        , onAfterConnect_{}
-        , onBeforeDisonnect_{}
-    {
-        Connect();
-    } // Connection
+    Connection( const std::string& address, uint32_t readTimeout = 0 );
 
     /// @brief Деструктор соединения
-    ~Connection()
-    {
-        Close(); 
-    } // ~Connection
+    ~Connection();
 
     /// @brief Установка соединения
     /// @return Удалось ли установить соединение
     /// @note Сбрасывает текущее соединение, если было установлено
-    virtual bool Connect() override
-    {
-        if ( ConnectionState::Connected == state_ )
-        {
-            LOG( LOG_WARNING, "Found active connection to " << address_ << ". Closing" );
-            Close();
-        }
-        LOG( LOG_INFO, "Connecting to " << address_ );
-        state_ = ConnectionState::Connecting;
-        if ( ConnectImpl() )
-        {
-            LOG( LOG_INFO, "Successfully connected to " << address_ );
-            state_ = ConnectionState::Connected;
-            onAfterConnect_();
-            return true;
-        }
-        else
-        {
-            LOG( LOG_ERROR, "Failed to connect to " << address_ );
-            state_ = ConnectionState::NotConnected;
-            return false;
-        }
-    }
+    virtual bool Open() override;
 
     /// @brief Закрытие соединения
-    virtual void Close() override
-    {
-        if (   ConnectionState::Connected  == state_ 
-            || ConnectionState::Connecting == state_ )
-        {
-            LOG( LOG_INFO, "Disconnecting from " << address_ );
-            state_ = ConnectionState::Disconnecting;
-            onBeforeDisonnect_();
-            CloseImpl();
-            state_ = ConnectionState::NotConnected;
-        }
-    } // Close
+    virtual void Close() override;
 
     /// @brief Получение адреса соединения
     /// @return Адрес соединения
-    virtual const std::string& GetAddress() const override
-    {
-        return address_;
-    } // GetAddress
+    virtual const std::string& GetAddress() const override;
 
     /// @brief Получение времени ожидания данных для чтения
     /// @return Время ожидания данных для чтения, мс
-    virtual uint32_t GetReadTimeout() const override
-    {
-        return readTimeout_;
-    } // GetReadTimeout
+    virtual uint32_t GetReadTimeout() const override;
 
     /// @brief Получение типа соединения
     /// @return Тип соединения
-    virtual ConnectionType::Type GetConnectionType() const override
-    {
-        return type_;
-    } // GetConnectionType
+    virtual ConnectionType::Type GetConnectionType() const override;
 
     /// @brief Получение состояния соединения
     /// @return Состояние соединения
-    virtual ConnectionState GetConnectionState() const override
-    {
-        return state_;
-    } // GetConnectionState
+    virtual ConnectionState GetConnectionState() const override;
 
     /// @brief Установлено ли соединение
     /// @return Было ли установлено соединение
-    virtual bool IsConnected() const override
-    {
-        return state_ == ConnectionState::Connected;
-    } // IsConnected
+    virtual bool IsConnected() const override;
 
     /// @brief Получение количества переданных байтов
     /// @return Количество переданных байтов
-    virtual uint32_t GetTxBytesCount() const override
-    {
-        return txBytesCount_;
-    } // GetTxBytesCount
+    virtual uint32_t GetTxBytesCount() const override;
 
     /// @brief Получение количества полученных байтов
     /// @return Количество полученных байтов
-    virtual uint32_t GetRxBytesCount() const override
-    {
-        return rxBytesCount_;
-    } // GetRxBytesCount
+    virtual uint32_t GetRxBytesCount() const override;
 
     /// @brief Получение времени последнего чтения
     /// @return Время последнего чтения
-    virtual TimeType GetLastRxTime() const override
-    {
-        return lastRxTime_;
-    } // GetLastRxTime
+    virtual TimeType GetLastRxTime() const override;
 
     /// @brief Очистка заданных буферов
     /// @param[in] flags Типы буферов для очистки
-    virtual void Purge( PurgeFlags::Type flags ) override
-    {
-        /// @todo PurgeFlags to string converter
-        if ( IsConnected() )
-        {
-            LOG( LOG_INFO, "Purge" << ( ( flags & PurgeFlags::Rx ) ? " RX" : "" )
-                << ( ( flags & PurgeFlags::Rx & PurgeFlags::Tx ) ? " and" : "" )
-                << ( ( flags & PurgeFlags::Tx ) ? " TX" : "" ) );
-            PurgeImpl( flags );
-        }
-    } // Purge
+    virtual void Purge( PurgeFlags::Type flags ) override;
 
     /// @brief Установка обработчика события "Подключение установлено"
     /// @param[in] hook Обработчик события
-    virtual void SetOnAfterConnect( const std::function< void() >& hook ) override
-    {
-        LOG( LOG_INFO, "Set OnAfterConnect hook" );
-        onAfterConnect_ = hook;
-    } // SetOnAfterConnect
+    virtual void SetOnAfterConnect( const std::function< void() >& hook ) override;
 
     /// @brief Установка обработчика события "Соединение будет разорвано"
     /// @param[in] hook Обработчик события
-    virtual void SetOnBeforeDisonnect( const std::function< void() >& hook ) override
-    {
-        LOG( LOG_INFO, "Set OnBeforeDisconnect hook" );
-        onBeforeDisonnect_ = hook;
-    } // SetOnBeforeDisonnect
+    virtual void SetOnBeforeDisonnect( const std::function< void() >& hook ) override;
+
+    /// @brief Сброс статистики по полученным/переданным байтам
+    virtual void ResetStatistics() override;
+
+    /// @brief Чтение данных
+    /// @param[out] buffer Буфер для записи данных
+    /// @param[in] needed Желаемое количество байтов
+    /// @return Количество прочитанных байтов
+    /// @note Количество прочитанных байтов может быть меньше желаемого количества, если соединение было закрыто
+    virtual uint32_t Read( ByteVector& buffer, uint32_t needed ) override;
+
+    /// @brief Запись данных
+    /// @param[in] buffer Буфер, содержащий данные для записи
+    /// @return Количество записанных байтов
+    /// @note Количество записанных байтов может быть меньше размера буфера, если соединение было закрыто
+    virtual uint32_t Write( const ByteVector& buffer ) override;
 
 protected:
-    virtual bool ConnectImpl()
-    {
-        /// @todo debug
-        return false;
-    } // ConnectImpl
+    /// @brief Реализация установки соединения
+    /// @return Удалось ли открыть соединение
+    virtual bool OpenImpl();
 
     /// @brief Реализация закрытия соединения
-    virtual void CloseImpl()
-    {
-        /// @todo debug
-    } // CloseImpl
+    virtual void CloseImpl();
 
     /// @brief Реализация очистки буферов
     /// @param[in] Типы буферов для очистки
-    virtual void PurgeImpl( PurgeFlags::Type flags )
-    {
-        /// @todo debug
-    } // PurgeImpl
+    virtual void PurgeImpl( PurgeFlags::Type flags );
+
+    /// @brief Реализация чтения данных
+    /// @param[out] buffer Буфер для записи данных
+    /// @param[in] needed Желаемое количество байтов
+    /// @return Количество прочитанных байтов
+    virtual uint32_t ReadImpl( ByteVector& buffer, uint32_t needed );
+
+    /// @brief Реализация записи данных
+    /// @param[in] buffer Буфер, содержащий данные для записи
+    /// @param[in] start Начиная с какого байта считывать буфер
+    /// @return Количество записанных байтов
+    virtual uint32_t WriteImpl( const ByteVector& buffer, uint32_t start );
 
 protected:
     const std::string address_;                 ///< Адрес соединения

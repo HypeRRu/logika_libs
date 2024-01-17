@@ -27,7 +27,7 @@ public:
     /// @brief Установка соединения
     /// @return Удалось ли установить соединение
     /// @note Сбрасывает текущее соединение, если было установлено
-    virtual bool Connect() = 0;
+    virtual bool Open() = 0;
 
     /// @brief Закрытие соединения
     virtual void Close() = 0;
@@ -75,7 +75,24 @@ public:
     /// @brief Установка обработчика события "Соединение будет разорвано"
     /// @param[in] hook Обработчик события
     virtual void SetOnBeforeDisonnect( const std::function< void() >& hook ) = 0;
+
     /// @todo OnConnectionRequired?
+
+    /// @brief Сброс статистики по полученным/переданным байтам
+    virtual void ResetStatistics() = 0;
+
+    /// @brief Чтение данных
+    /// @param[out] buffer Буфер для записи данных
+    /// @param[in] needed Желаемое количество байтов
+    /// @return Количество прочитанных байтов
+    /// @note Количество прочитанных байтов может быть меньше желаемого количества, если соединение было закрыто
+    virtual uint32_t Read( ByteVector& buffer, uint32_t needed ) = 0;
+
+    /// @brief Запись данных
+    /// @param[in] buffer Буфер, содержащий данные для записи
+    /// @return Количество записанных байтов
+    /// @note Количество записанных байтов может быть меньше размера буфера, если соединение было закрыто
+    virtual uint32_t Write( const ByteVector& buffer ) = 0;
 }; // class IConnection
 
 } // namespace logika
