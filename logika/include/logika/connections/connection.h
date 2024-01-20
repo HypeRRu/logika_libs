@@ -27,6 +27,9 @@ public:
     /// @brief Деструктор соединения
     ~Connection();
 
+    Connection( const Connection& ) = delete;
+    Connection& operator =( const Connection& ) = delete;
+
     /// @brief Установка соединения
     /// @return Удалось ли установить соединение
     /// @note Сбрасывает текущее соединение, если было установлено

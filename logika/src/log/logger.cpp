@@ -6,6 +6,8 @@
 #include <array>
 #include <chrono>
 #include <iostream>
+#include <iomanip>
+#include <sstream>
 
 #include <ctime>
 
@@ -14,10 +16,10 @@ namespace // anonymous
 
 const std::array< std::string, logika::log::LogLevel::Count > logLevelStrings{
       "DISABLED"
-    , "ERROR"
-    , "WARNING"
-    , "INFO"
-    , "DEBUG"
+    , " ERROR "
+    , "  WARN "
+    , "  INFO "
+    , " DEBUG "
 };
 
 std::string GetCurrentTime()
@@ -97,8 +99,16 @@ void Logger::SetLogLevel( LogLevel::Type level )
 
 void Logger::Write( LogLevel::Type level, const std::string& message, const std::string& funcName )
 {
-    const std::string msgToWrite = GetCurrentTime() + " [" + logLevelStrings[ level ] + "] "
-        + ( !funcName.empty() ? ( funcName + "\t| " ) : "" ) + message + "\n";
+    std::stringstream msgToWrite;
+    msgToWrite << GetCurrentTime() << " ";
+    msgToWrite << "[" << logLevelStrings[ level ] << "] ";
+    if ( !funcName.empty() )
+    {
+        msgToWrite << funcName + " | ";
+    }
+    msgToWrite << message << '\n';
+    // const std::string msgToWrite = GetCurrentTime() + " [" + logLevelStrings[ level ] + "] "
+    //     + ( !funcName.empty() ? ( funcName + "\t| " ) : "" ) + message + "\n";
 
     std::unique_lock< std::mutex > lockGuard{ mtx_ };
     if ( level == LogLevel::LogDisable || level > maxLevel_ )
@@ -108,11 +118,11 @@ void Logger::Write( LogLevel::Type level, const std::string& message, const std:
 
     if ( logType_ & LogType::LogConsole )
     {
-        std::cout << msgToWrite;
+        std::cout << msgToWrite.str();
     }
     if ( ( logType_ & LogType::LogFile ) && fileStream_.is_open() )
     {
-        fileStream_ << msgToWrite;
+        fileStream_ << msgToWrite.str();
     }
 } // Write
 

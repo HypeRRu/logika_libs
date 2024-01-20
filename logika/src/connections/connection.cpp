@@ -2,6 +2,8 @@
 /// @copyright HypeRRu 2024
 
 #include <logika/connections/connection.h>
+#include <logika/connections/utils/types_converter.h>
+
 #include <logika/log/defines.h>
 
 #include <iostream>
@@ -38,7 +40,7 @@ bool Connection::Open()
         LOG_WRITE( LOG_WARNING, "Found active connection to " << address_ << ". Closing" );
         Close();
     }
-    LOG_WRITE( LOG_INFO, "Connecting to " << address_ );
+    LOG_WRITE( LOG_INFO, "Connecting to " << address_ << " (" << ConnectionTypeToString( type_ ) << ")" );
     state_ = ConnectionState::Connecting;
     if ( OpenImpl() )
     {
@@ -122,12 +124,10 @@ void Connection::Purge( PurgeFlags::Type flags )
 {
     if ( !IsConnected() )
     {
+        LOG_WRITE( LOG_ERROR, "Purge " << PurgeFlagsToString( flags ) << " failed: Not connected" );
         return;
     }
-    /// @todo PurgeFlags to string converter
-    LOG_WRITE( LOG_INFO, "Purge" << ( ( flags & PurgeFlags::Rx ) ? " RX" : "" )
-        << ( ( flags & PurgeFlags::Rx & PurgeFlags::Tx ) ? " and" : "" )
-        << ( ( flags & PurgeFlags::Tx ) ? " TX" : "" ) );
+    LOG_WRITE( LOG_INFO, "Purge " << PurgeFlagsToString( flags ) );
     PurgeImpl( flags );
 } // Purge
 

@@ -15,7 +15,9 @@ NetConnection::NetConnection( const std::string& serverHostName, uint16_t server
     : Connection( serverHostName + ":" + std::to_string( serverPort ) )
     , serverHostName_{ serverHostName }
     , serverPort_{ serverPort }
-{} // NetConnection
+{
+    type_ = ConnectionType::Network;
+} // NetConnection
 
 } // namespace connections
 
