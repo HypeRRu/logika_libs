@@ -1,16 +1,10 @@
+/// @file Реализация базового класса для работы с соединением
+/// @copyright HypeRRu 2024
+
 #include <logika/connections/connection.h>
+#include <logika/log/defines.h>
 
 #include <iostream>
-
-#define LOG_ERROR 0
-#define LOG_WARNING 1
-#define LOG_INFO 2
-#define LOG_DEBUG 3
-#define LOG( level, message ) do { \
-    std::cerr << '[' << ( level ) << ']' \
-        << ' ' << __FUNCTION__ << ": " \
-        << message << std::endl; \
-    } while ( false )
 
 namespace logika
 {
@@ -41,21 +35,21 @@ bool Connection::Open()
 {
     if ( ConnectionState::Connected == state_ )
     {
-        LOG( LOG_WARNING, "Found active connection to " << address_ << ". Closing" );
+        LOG_WRITE( LOG_WARNING, "Found active connection to " << address_ << ". Closing" );
         Close();
     }
-    LOG( LOG_INFO, "Connecting to " << address_ );
+    LOG_WRITE( LOG_INFO, "Connecting to " << address_ );
     state_ = ConnectionState::Connecting;
     if ( OpenImpl() )
     {
-        LOG( LOG_INFO, "Successfully connected to " << address_ );
+        LOG_WRITE( LOG_INFO, "Successfully connected to " << address_ );
         state_ = ConnectionState::Connected;
         onAfterConnect_();
         return true;
     }
     else
     {
-        LOG( LOG_ERROR, "Failed to connect to " << address_ );
+        LOG_WRITE( LOG_ERROR, "Failed to connect to " << address_ );
         state_ = ConnectionState::NotConnected;
         return false;
     }
@@ -67,7 +61,7 @@ void Connection::Close()
     if (   ConnectionState::Connected  == state_
         || ConnectionState::Connecting == state_ )
     {
-        LOG( LOG_INFO, "Disconnecting from " << address_ );
+        LOG_WRITE( LOG_INFO, "Disconnecting from " << address_ );
         state_ = ConnectionState::Disconnecting;
         onBeforeDisonnect_();
         CloseImpl();
@@ -131,7 +125,7 @@ void Connection::Purge( PurgeFlags::Type flags )
         return;
     }
     /// @todo PurgeFlags to string converter
-    LOG( LOG_INFO, "Purge" << ( ( flags & PurgeFlags::Rx ) ? " RX" : "" )
+    LOG_WRITE( LOG_INFO, "Purge" << ( ( flags & PurgeFlags::Rx ) ? " RX" : "" )
         << ( ( flags & PurgeFlags::Rx & PurgeFlags::Tx ) ? " and" : "" )
         << ( ( flags & PurgeFlags::Tx ) ? " TX" : "" ) );
     PurgeImpl( flags );
@@ -140,21 +134,21 @@ void Connection::Purge( PurgeFlags::Type flags )
 
 void Connection::SetOnAfterConnect( const std::function< void() >& hook )
 {
-    LOG( LOG_INFO, "Set OnAfterConnect hook" );
+    LOG_WRITE( LOG_INFO, "Set OnAfterConnect hook" );
     onAfterConnect_ = hook;
 } // SetOnAfterConnect
 
 
 void Connection::SetOnBeforeDisonnect( const std::function< void() >& hook )
 {
-    LOG( LOG_INFO, "Set OnBeforeDisconnect hook" );
+    LOG_WRITE( LOG_INFO, "Set OnBeforeDisconnect hook" );
     onBeforeDisonnect_ = hook;
 } // SetOnBeforeDisonnect
 
 
 void Connection::ResetStatistics()
 {
-    LOG( LOG_INFO, "Reset statistics" );
+    LOG_WRITE( LOG_INFO, "Reset statistics" );
     txBytesCount_ = 0;
     rxBytesCount_ = 0;
 } // ResetStatistics
@@ -167,7 +161,7 @@ uint32_t Connection::Read( ByteVector& buffer, uint32_t needed )
     if ( buffer.size() < buffer.capacity() - needed )
     {
         const size_t newSize = buffer.size() + needed;
-        LOG( LOG_DEBUG, "Reserving new buffer size: " << newSize );
+        LOG_WRITE( LOG_DEBUG, "Reserving new buffer size: " << newSize );
         buffer.reserve( newSize );
     }
 
@@ -175,13 +169,13 @@ uint32_t Connection::Read( ByteVector& buffer, uint32_t needed )
     {
         if ( !IsConnected() )
         {
-            LOG( LOG_INFO, "Connection not established. Readed " << readed << " bytes" );
+            LOG_WRITE( LOG_INFO, "Connection not established. Readed " << readed << " bytes" );
             break;
         }
         const uint32_t readCurrent = ReadImpl( buffer, needed - readed );
         if ( 0 == readCurrent )
         {
-            LOG( LOG_ERROR, "Read error. Readed " << readed << " bytes" );
+            LOG_WRITE( LOG_ERROR, "Read error. Readed " << readed << " bytes" );
             break;
         }
         readed += readCurrent;
@@ -200,13 +194,13 @@ uint32_t Connection::Write( const ByteVector& buffer )
     {
         if ( !IsConnected() )
         {
-            LOG( LOG_INFO, "Connection not established. Written " << written << " bytes" );
+            LOG_WRITE( LOG_INFO, "Connection not established. Written " << written << " bytes" );
             break;
         }
         const uint32_t writeCurrent = WriteImpl( buffer, written );
         if ( 0 == writeCurrent )
         {
-            LOG( LOG_ERROR, "Write error. Written " << written << " bytes" );
+            LOG_WRITE( LOG_ERROR, "Write error. Written " << written << " bytes" );
             break;
         }
         written += writeCurrent;

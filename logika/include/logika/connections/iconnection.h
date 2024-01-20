@@ -95,8 +95,8 @@ public:
     virtual uint32_t Write( const ByteVector& buffer ) = 0;
 }; // class IConnection
 
-} // namespace logika
-
 } // namespace connections
+
+} // namespace logika
 
 #endif // LOGIKA_CONNECTIONS_ICONNECTION_H

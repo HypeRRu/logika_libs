@@ -136,8 +136,8 @@ protected:
 
 }; // class Connection
 
-} // namespace logika
-
 } // namespace connections
+
+} // namespace logika
 
 #endif // LOGIKA_CONNECTIONS_CONNECTION_H
