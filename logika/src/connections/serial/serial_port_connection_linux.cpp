@@ -5,6 +5,7 @@
 #include <logika/connections/serial/serial_port_connection.h>
 
 #include <logika/log/defines.h>
+#include <logika/common/misc.h>
 
 #include <cstring>
 
@@ -15,11 +16,8 @@
 #include <sys/ioctl.h>
 #include <sys/types.h>
 
-/// @todo use MT-safe strerror
-#define SafeStrError( errno ) std::strerror( errno )
-
 /// @todo Сделать обновление опций без переподключения
-
+/// @todo Убрать лишние проверки в Read/Write
 namespace logika
 {
 
@@ -92,7 +90,14 @@ void SerialPortConnection::CloseImpl()
 
 void SerialPortConnection::PurgeImpl( PurgeFlags::Type flags )
 {
-
+    if ( flags & PurgeFlags::Rx )
+    {
+        tcflush( handle_, TCIFLUSH );
+    }
+    if ( flags & PurgeFlags::Tx )
+    {
+        /// Действие не определено
+    }
 } // PurgeImpl
 
 
@@ -103,9 +108,9 @@ uint32_t SerialPortConnection::ReadImpl( ByteVector& buffer, uint32_t start, uin
         return 0;
     }
     
-    if ( buffer.size() <= start + needed )
+    if ( buffer.size() < start + needed )
     {
-        LOG_WRITE( LOG_ERROR, "Buffer size (" << buffer.size() << ") less or equal "
+        LOG_WRITE( LOG_ERROR, "Buffer size (" << buffer.size() << ") is less"
                               << "than end position (" << start + needed << ")" );
         return 0;
     }
@@ -163,7 +168,7 @@ uint32_t SerialPortConnection::WriteImpl( const ByteVector& buffer, uint32_t sta
     }
     if ( buffer.size() <= start )
     {
-        LOG_WRITE( LOG_ERROR, "Buffer size (" << buffer.size() << ") less or equal "
+        LOG_WRITE( LOG_ERROR, "Buffer size (" << buffer.size() << ") is less or equal "
                               << "than start position (" << start << ")" );
         return 0;
     }

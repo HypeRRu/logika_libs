@@ -16,6 +16,7 @@ namespace connections
 
 /// @brief Базовый класс для работы с соединением
 /// @todo Добавить блокировки?
+/// @todo move ctor?
 class Connection: public IConnection
 {
 public:

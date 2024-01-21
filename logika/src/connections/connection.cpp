@@ -177,7 +177,6 @@ uint32_t Connection::Read( ByteVector& buffer, uint32_t needed )
             LOG_WRITE( LOG_INFO, "Connection not established. Readed " << readed << " bytes" );
             break;
         }
-        /// @todo readTimeout суммарный для всех чтений?
         const uint32_t readCurrent = ReadImpl( buffer, readed, needed - readed );
         if ( 0 == readCurrent )
         {

@@ -30,6 +30,11 @@ public:
         , StopBits::Type stopBits, DataBits::Type dataBits
         , Parity::Type parity, uint32_t readTimeout = 0 );
 
+    /// @brief Деструктор соединения
+    ~SerialPortConnection();
+
+    /// @todo available bytes
+
 protected:
     /// @brief Реализация установки соединения
     /// @return Удалось ли открыть соединение

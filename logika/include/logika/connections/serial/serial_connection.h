@@ -24,6 +24,9 @@ public:
     /// @param[in] readTimeout Время ожидания данных для чтения, мс. По умолчанию 0 - не ограничено.
     SerialConnection( const std::string& portName, uint32_t readTimeout = 0 );
 
+    /// @brief Деструктор соединения
+    ~SerialConnection() = default;
+
     /// @brief Получение скорости работы, бит/c
     /// @return Скорость работы
     BaudRate::Type GetBaudRate() const;

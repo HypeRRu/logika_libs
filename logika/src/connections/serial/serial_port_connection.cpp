@@ -37,6 +37,12 @@ SerialPortConnection::SerialPortConnection(
     SetParity( parity );
 } // SerialPortConnection( const std::string& portName, BaudRate::Type baudRate, ... )
 
+
+SerialPortConnection::~SerialPortConnection()
+{
+    Close();
+} // ~SerialPortConnection
+
 } // namespace connections
 
 } // namespace logika

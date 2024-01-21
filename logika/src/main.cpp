@@ -11,7 +11,7 @@ int main()
     logger.SetLogLevel( logika::log::LogLevel::LogAll );
 
     logika::connections::SerialPortConnection con{ "/dev/pts/2", 1000 };
-    con.SetBaudRate( logika::connections::BaudRate::Rate9600 );
+    con.SetBaudRate( logika::connections::BaudRate::Rate110 );
     con.SetStopBits( logika::connections::StopBits::StopBitsTwo );
     con.SetDataBits( logika::connections::DataBits::DataBits5 );
     con.SetParity( logika::connections::Parity::ParityEven );

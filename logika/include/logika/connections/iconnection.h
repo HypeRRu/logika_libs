@@ -78,6 +78,8 @@ public:
 
     /// @todo OnConnectionRequired?
 
+    /// @todo IsConflictsWith?
+
     /// @brief Сброс статистики по полученным/переданным байтам
     virtual void ResetStatistics() = 0;
 
