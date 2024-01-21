@@ -123,6 +123,7 @@ protected:
     /// @param[in] buffer Буфер, содержащий данные для записи
     /// @param[in] start Начиная с какого байта считывать буфер
     /// @return Количество записанных байтов
+    /// @note После первой записи возвращает количество записанных байтов
     virtual uint32_t WriteImpl( const ByteVector& buffer, uint32_t start );
 
 protected:
