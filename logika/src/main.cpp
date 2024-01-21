@@ -1,5 +1,6 @@
-#include <logika/connections/serial/serial_connection.h>
+#include <logika/connections/serial/serial_port_connection.h>
 #include <logika/log/logger.h>
+#include <logika/log/defines.h>
 
 #include <iostream>
 
@@ -9,8 +10,8 @@ int main()
     logger.SetLogType( logika::log::LogType::LogConsole );
     logger.SetLogLevel( logika::log::LogLevel::LogAll );
 
-    logika::connections::SerialConnection con{ "/dev/ttys0", 0 };
-    con.SetBaudRate( logika::connections::BaudRate::Rate115200 );
+    logika::connections::SerialPortConnection con{ "/dev/pts/2", 1000 };
+    con.SetBaudRate( logika::connections::BaudRate::Rate9600 );
     con.SetStopBits( logika::connections::StopBits::StopBitsTwo );
     con.SetDataBits( logika::connections::DataBits::DataBits5 );
     con.SetParity( logika::connections::Parity::ParityEven );
@@ -19,6 +20,6 @@ int main()
     con.Purge( logika::connections::PurgeFlags::TxRx );
 
     logika::ByteVector rdbuf;
-    con.Read( rdbuf, 12 );
+    con.Read( rdbuf, 5 );
     return 0;
 }

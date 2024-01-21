@@ -6,13 +6,12 @@ BIN_DIR		= bin
 BUILD_DIR   = build
 CXXERRORS	= -std=c++11 -pedantic \
 	-Wall -Wextra -Wcast-align -Wcast-qual -Weffc++ \
-	-Wdisabled-optimization -Wformat=2 -Winit-self -Wlogical-op \
+	-Wdisabled-optimization -Wformat=2 -Winit-self -Wswitch-enum \
 	-Wmissing-declarations -Wmissing-include-dirs -Wnoexcept \
 	-Wold-style-cast -Woverloaded-virtual -Wredundant-decls \
 	-Wshadow -Wsign-conversion -Wsign-promo \
 	-Wstrict-null-sentinel -Wstrict-overflow=5 \
-	-Wswitch-default -Wundef -Werror -Wno-unused \
-	-Wswitch-enum
+	-Wswitch-default -Wundef -Werror -Wno-unused
 CXXFLAGS	= -I$(INCLUDE_DIR) $(CXXERRORS)
 CCFLAGS		=
 CC			= g++
@@ -31,7 +30,7 @@ directories:
 clean:
 	rm -rf $(OBJECTS)
 
-cleaner: clean
+distclean: clean
 	rm -rf $(BIN_DIR)
 	rm -rf $(BUILD_DIR)
 
@@ -39,4 +38,4 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@mkdir -p $(@D)
 	$(CXX) -c $^ -o $@
 
-.PHONY: all directories clean cleaner
+.PHONY: all directories clean distclean

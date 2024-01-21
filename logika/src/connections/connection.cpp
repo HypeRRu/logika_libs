@@ -46,7 +46,10 @@ bool Connection::Open()
     {
         LOG_WRITE( LOG_INFO, "Successfully connected to " << address_ );
         state_ = ConnectionState::Connected;
-        onAfterConnect_();
+        if ( onAfterConnect_ )
+        {
+            onAfterConnect_();
+        }
         return true;
     }
     else
@@ -65,7 +68,10 @@ void Connection::Close()
     {
         LOG_WRITE( LOG_INFO, "Disconnecting from " << address_ );
         state_ = ConnectionState::Disconnecting;
-        onBeforeDisonnect_();
+        if ( onBeforeDisonnect_ )
+        {
+            onBeforeDisonnect_();
+        }
         CloseImpl();
         state_ = ConnectionState::NotConnected;
     }
@@ -158,11 +164,10 @@ uint32_t Connection::Read( ByteVector& buffer, uint32_t needed )
 {
     uint32_t readed = 0;
 
-    if ( buffer.size() < buffer.capacity() - needed )
+    if ( buffer.size() < needed )
     {
-        const size_t newSize = buffer.size() + needed;
-        LOG_WRITE( LOG_DEBUG, "Reserving new buffer size: " << newSize );
-        buffer.reserve( newSize );
+        LOG_WRITE( LOG_DEBUG, "Resizing buffer. New size: " << needed );
+        buffer.resize( needed );
     }
 
     while ( readed < needed )
@@ -172,7 +177,8 @@ uint32_t Connection::Read( ByteVector& buffer, uint32_t needed )
             LOG_WRITE( LOG_INFO, "Connection not established. Readed " << readed << " bytes" );
             break;
         }
-        const uint32_t readCurrent = ReadImpl( buffer, needed - readed );
+        /// @todo readTimeout суммарный для всех чтений?
+        const uint32_t readCurrent = ReadImpl( buffer, readed, needed - readed );
         if ( 0 == readCurrent )
         {
             LOG_WRITE( LOG_ERROR, "Read error. Readed " << readed << " bytes" );
@@ -228,9 +234,10 @@ void Connection::PurgeImpl( PurgeFlags::Type flags )
 } // PurgeImpl
 
 
-uint32_t Connection::ReadImpl( ByteVector& buffer, uint32_t needed )
+uint32_t Connection::ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed )
 {
     ( void ) buffer;
+    ( void ) start;
     ( void ) needed;
     return 0;
 } // ReadImpl

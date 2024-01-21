@@ -48,7 +48,7 @@ std::string StopBitsToString( StopBits::Type bits );
 std::string DataBitsToString( DataBits::Type bits );
 
 /// @brief Конвертация схемы четности в строку
-/// @param[in] bits Схема четности
+/// @param[in] parity Схема четности
 /// @return Строковое представление схемы четности
 std::string ParityToString( Parity::Type parity );
 

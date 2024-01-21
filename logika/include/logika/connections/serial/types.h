@@ -45,6 +45,7 @@ using Type = DWORD;
 /// @var Rate38400 Скорость 38400 бит/c
 /// @var Rate57600 Скорость 57600 бит/c
 /// @var Rate115200 Скорость 115200 бит/c
+/// @var RateDefault Скорость по умолчанию. Равна 2400 бит/c
 /// @todo Добавить специфические для Windows и Linux скорости
 enum : Type
 {
@@ -75,6 +76,7 @@ enum : Type
     Rate57600       = CBR_57600,
     Rate115200      = CBR_115200,
 #endif // defined( _WIN32 ) || defined( _WIN64 )
+    RateDefault     = Rate2400
 }; // anonymous enum
 
 } // namespace BaudRate
@@ -83,7 +85,7 @@ namespace StopBits
 {
 
 #if defined( __linux__ ) || defined( __APPLE__ )
-using Type = int;
+using Type = tcflag_t;
 #endif // defined( __linux__ ) || defined( __APPLE__ )
 #if defined( _WIN32 ) || defined( _WIN64 )
 using Type = BYTE;
@@ -115,7 +117,7 @@ namespace DataBits
 {
 
 #if defined( __linux__ ) || defined( __APPLE__ )
-using Type = int;
+using Type = tcflag_t;
 #endif // defined( __linux__ ) || defined( __APPLE__ )
 #if defined( _WIN32 ) || defined( _WIN64 )
 using Type = BYTE;
@@ -150,7 +152,7 @@ namespace Parity
 {
 
 #if defined( __linux__ ) || defined( __APPLE__ )
-using Type = int;
+using Type = tcflag_t;
 #endif // defined( __linux__ ) || defined( __APPLE__ )
 #if defined( _WIN32 ) || defined( _WIN64 )
 using Type = BYTE;

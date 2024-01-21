@@ -110,11 +110,13 @@ protected:
     /// @param[in] Типы буферов для очистки
     virtual void PurgeImpl( PurgeFlags::Type flags );
 
-    /// @brief Реализация чтения данных
+    /// @brief Реализация чтения части данных
     /// @param[out] buffer Буфер для записи данных
+    /// @param[in] start Начиная с какого байта записывать в буфер
     /// @param[in] needed Желаемое количество байтов
     /// @return Количество прочитанных байтов
-    virtual uint32_t ReadImpl( ByteVector& buffer, uint32_t needed );
+    /// @note После первого чтения возвращает количество прочитанных байтов
+    virtual uint32_t ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed );
 
     /// @brief Реализация записи данных
     /// @param[in] buffer Буфер, содержащий данные для записи
