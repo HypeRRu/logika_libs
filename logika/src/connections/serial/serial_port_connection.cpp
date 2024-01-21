@@ -43,6 +43,16 @@ SerialPortConnection::~SerialPortConnection()
     Close();
 } // ~SerialPortConnection
 
+
+bool SerialPortConnection::IsSettingsValid() const
+{
+    return ( !address_.empty()
+        && baudRate_ != BaudRate::NotSupported
+        && stopBits_ != StopBits::NotSupported
+        && dataBits_ != DataBits::NotSupported
+        && parity_   != Parity::NotSupported );
+} // IsSettingsValid
+
 } // namespace connections
 
 } // namespace logika

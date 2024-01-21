@@ -33,7 +33,13 @@ public:
     /// @brief Деструктор соединения
     ~SerialPortConnection();
 
-    /// @todo available bytes
+    /// @brief Получение количества доступных для чтения байтов
+    /// @return Количество доступных для чтения байтов или -1 в случае ошибки
+    int32_t BytesAvailable();
+
+    /// @brief Проверка валидности настроек соединения
+    /// @return Валидны ли параметры соединения
+    bool IsSettingsValid() const;
 
 protected:
     /// @brief Реализация установки соединения

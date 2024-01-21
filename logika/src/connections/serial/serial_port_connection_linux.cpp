@@ -27,11 +27,7 @@ namespace connections
 bool SerialPortConnection::OpenImpl()
 {
     /// Проверка настроек соединения
-    if ( address_.empty()
-        || baudRate_ == BaudRate::NotSupported
-        || stopBits_ == StopBits::NotSupported
-        || dataBits_ == DataBits::NotSupported
-        || parity_   == Parity::NotSupported )
+    if ( !IsSettingsValid() )
     {
         LOG_WRITE( LOG_ERROR, "Connection options invalid" );
         return false;
@@ -96,7 +92,7 @@ void SerialPortConnection::PurgeImpl( PurgeFlags::Type flags )
     }
     if ( flags & PurgeFlags::Tx )
     {
-        /// Действие не определено
+        tcflush( handle_, TCOFLUSH );
     }
 } // PurgeImpl
 
@@ -107,7 +103,6 @@ uint32_t SerialPortConnection::ReadImpl( ByteVector& buffer, uint32_t start, uin
     {
         return 0;
     }
-    
     if ( buffer.size() < start + needed )
     {
         LOG_WRITE( LOG_ERROR, "Buffer size (" << buffer.size() << ") is less"
@@ -195,6 +190,24 @@ uint32_t SerialPortConnection::WriteImpl( const ByteVector& buffer, uint32_t sta
     LOG_WRITE( LOG_INFO, "Written " << written << " bytes to " << address_ );
     return static_cast< uint32_t >( written );
 } // WriteImpl
+
+
+int32_t SerialPortConnection::BytesAvailable()
+{
+    if ( IsConnected() )
+    {
+        LOG_WRITE( LOG_ERROR, "Connection not established" );
+        return 0;
+    }
+
+    int32_t available;
+    if ( -1 == ioctl( handle_, FIONREAD, &available ) )
+    {
+        LOG_WRITE( LOG_ERROR, "Unable to get bytes available: " << SafeStrError( errno ) );
+        return -1;
+    }
+    return available;
+} // BytesAvailable
 
 } // namespace connections
 
