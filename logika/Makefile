@@ -7,6 +7,8 @@ OBJS		= \
 	connections/network/net_connection.o \
 	connections/network/udp_connection.o \
 	connections/network/udp_connection_linux.o \
+	connections/network/tcp_connection.o \
+	connections/network/tcp_connection_linux.o \
 	connections/utils/types_converter.o \
 	connections/common/linux_io.o \
 	log/logger.o \

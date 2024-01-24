@@ -42,6 +42,12 @@ uint32_t ReadBuffer( SocketType sock, ByteVector& buffer
 /// @note После первой записи возвращает количество записанных байтов
 uint32_t WriteBuffer( SocketType sock, const ByteVector& buffer, uint32_t start );
 
+/// @brief Получение количества доступных для чтения байтов
+/// @param[in] sock Сокет
+/// @return Количество доступных для чтения байтов или -1 в случае ошибки
+/// @note Не применимо к UDP-сокетам
+int32_t BytesAvailable( Socket sock );
+
 } // namespace windows
 
 } // namespace connections

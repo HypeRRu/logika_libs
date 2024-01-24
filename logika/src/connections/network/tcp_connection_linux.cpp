@@ -1,7 +1,7 @@
-/// @file Реализация класса для работы с соединением по UDP для Linux
+/// @file Реализация класса для работы с соединением по TCP для Linux
 /// @copyright HypeRRu 2024
 
-#include <logika/connections/network/udp_connection.h>
+#include <logika/connections/network/tcp_connection.h>
 #include <logika/connections/common/linux_io.h>
 
 #include <logika/log/defines.h>
@@ -12,6 +12,8 @@
 #include <sys/types.h>
 #include <arpa/inet.h>
 #include <unistd.h>
+#include <fcntl.h>
+
 
 namespace logika
 {
@@ -19,7 +21,7 @@ namespace logika
 namespace connections
 {
 
-bool UdpConnection::OpenImpl()
+bool TcpConnection::OpenImpl()
 {
     std::string portStr = std::to_string( serverPort_ );
     NetworkAddressInfo hints;
@@ -28,8 +30,8 @@ bool UdpConnection::OpenImpl()
 
     std::memset( reinterpret_cast< void* >( &hints ), 0, sizeof( hints ) );
     hints.ai_family     = AF_UNSPEC;
-    hints.ai_socktype   = SOCK_DGRAM;
-    hints.ai_protocol   = IPPROTO_UDP;
+    hints.ai_socktype   = SOCK_STREAM;
+    hints.ai_protocol   = IPPROTO_TCP;
     /// Получение списка структур адресов
     int result = getaddrinfo( serverHostName_.c_str(), portStr.c_str(), &hints, &addrinfo );
     if ( 0 != result )
@@ -40,14 +42,19 @@ bool UdpConnection::OpenImpl()
     /// Открываем соединение
     for ( info = addrinfo; info != nullptr; info = info->ai_next )
     {
-        socket_ = socket( info->ai_family, info->ai_socktype | SOCK_NONBLOCK, info->ai_protocol );
+        socket_ = socket( info->ai_family, info->ai_socktype, info->ai_protocol );
         if ( logika::handleInvalid == socket_ )
         {
             continue; /// Не удалось открыть сокет с данными параметрами
         }
         if ( -1 != connect( socket_, info->ai_addr, info->ai_addrlen ) )
         {
-            struct sockaddr_in* ai = reinterpret_cast< struct sockaddr_in* >( info->ai_addr );
+            /// Делаем сокет неблокирующим
+            int flags = fcntl( socket_, F_GETFL, 0 );
+            if ( -1 == fcntl( socket_, F_SETFL, flags | O_NONBLOCK ) )
+            {
+                LOG_WRITE( LOG_WARNING, "Unable to set non-blocking mode: " << SafeStrError( errno ) );
+            }
             LOG_WRITE( LOG_INFO, "Connected to " << address_ );
             freeaddrinfo( info ); /// Больше не используется
             return true;
@@ -61,7 +68,7 @@ bool UdpConnection::OpenImpl()
 } // OpenImpl
 
 
-void UdpConnection::CloseImpl()
+void TcpConnection::CloseImpl()
 {
     LOG_WRITE( LOG_INFO, "Closing connection with " << address_ );  
     if ( logika::handleInvalid != socket_ )
@@ -73,17 +80,24 @@ void UdpConnection::CloseImpl()
 } // CloseImpl
 
 
-void UdpConnection::PurgeImpl( PurgeFlags::Type flags )
+void TcpConnection::PurgeImpl( PurgeFlags::Type flags )
 {
-    using namespace std::placeholders;
     if ( flags & PurgeFlags::Rx )
     {
-        constexpr size_t flushBufferSize = 16;
+        constexpr size_t flushBufferSize = 1024;
         char buffer[ flushBufferSize ];
-        while ( recv( socket_, buffer, flushBufferSize, MSG_PEEK ) > 0 )
+        const int32_t available = linux::BytesAvailable( socket_ );
+        uint32_t readed = 0;
+        while ( static_cast< int32_t >( readed ) < available )
         {
-            LOG_WRITE( LOG_INFO, "Have unreceived datagram, flushing" );
-            recv( socket_, buffer, flushBufferSize, MSG_TRUNC );
+            LOG_WRITE( LOG_INFO, "Have unreceived packets, flushing" );
+            ssize_t rd = recv( socket_, buffer, flushBufferSize, 0 );
+            if ( rd <= 0 )
+            {
+                LOG_WRITE( LOG_ERROR, "Error while reading. Purged " << rd << " bytes" );
+                break;
+            }
+            readed += static_cast< uint32_t >( rd );
         }
     }
     if ( flags & PurgeFlags::Tx )
@@ -93,7 +107,7 @@ void UdpConnection::PurgeImpl( PurgeFlags::Type flags )
 } // PurgeImpl
 
 
-uint32_t UdpConnection::ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed )
+uint32_t TcpConnection::ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed )
 {
     using namespace std::placeholders;
     linux::ReadFunction readFunction = std::bind( recv, _1, _2, _3, 0 );
@@ -101,7 +115,7 @@ uint32_t UdpConnection::ReadImpl( ByteVector& buffer, uint32_t start, uint32_t n
 } // ReadImpl
 
 
-uint32_t UdpConnection::WriteImpl( const ByteVector& buffer, uint32_t start )
+uint32_t TcpConnection::WriteImpl( const ByteVector& buffer, uint32_t start )
 {
     using namespace std::placeholders;
     linux::WriteFunction writeFunction = std::bind( send, _1, _2, _3, MSG_NOSIGNAL );

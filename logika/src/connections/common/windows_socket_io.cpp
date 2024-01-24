@@ -115,6 +115,24 @@ uint32_t WriteBuffer( SocketType sock, const ByteVector& buffer, uint32_t start 
     return static_cast< uint32_t >( written );
 } // WriteBuffer
 
+
+int32_t BytesAvailable( Socket sock )
+{
+    if ( logika::socketInvalid == sock )
+    {
+        LOG_WRITE( LOG_ERROR, "Invalid connection socket" );
+        return 0;
+    }
+
+    int32_t available;
+    if ( -1 == ioctlsocket( sock, FIONREAD, &available ) )
+    {
+        LOG_WRITE( LOG_ERROR, "Unable to get bytes available: " << WSAGetLastError() );
+        return -1;
+    }
+    return available;
+} // BytesAvailable
+
 } // namespace windows
 
 } // namespace connections

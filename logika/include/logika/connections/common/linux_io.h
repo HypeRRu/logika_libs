@@ -50,6 +50,7 @@ uint32_t WriteBuffer( WriteFunction writefn, FileHandleType handle, const ByteVe
 /// @brief Получение количества доступных для чтения байтов
 /// @param[in] handle Дескриптор файла
 /// @return Количество доступных для чтения байтов или -1 в случае ошибки
+/// @note Не применимо к UDP-сокетам
 int32_t BytesAvailable( FileHandleType handle );
 
 } // namespace linux
