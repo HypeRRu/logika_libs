@@ -10,9 +10,14 @@
 
 #include <cstdint>
 
+#if defined( __linux__ ) || defined( __APPLE__ )
+#include <netdb.h>      /// Для struct addrinfo
+#endif // defined( __linux__ ) || defined( __APPLE__ )
+
 #if defined( _WIN32 ) || defined( _WIN64 )
-#include <windows.h>
-#endif
+#include <winnt.h>      /// Для HANDLE
+#include <ws2tcpip.h>   /// Для struct addrinfo
+#endif // defined( _WIN32 ) || defined( _WIN64 )
 
 namespace logika
 {
@@ -29,6 +34,17 @@ constexpr FileHandleType handleInvalid = -1;
 using FileHandleType = HANDLE;
 constexpr FileHandleType handleInvalid = INVALID_HANDLE_VALUE;
 #endif // defined( _WIN32 ) || defined( _WIN64 )
+
+#if defined( __linux__ ) || defined( __APPLE__ )
+using SocketType = int;
+constexpr SocketType socketInvalid = -1;
+#endif // defined( __linux__ ) || defined( __APPLE__ )
+#if defined( _WIN32 ) || defined( _WIN64 )
+using SocketType = SOCKET;
+constexpr SocketType socketInvalid = INVALID_SOCKET;
+#endif // defined( _WIN32 ) || defined( _WIN64 )
+
+using NetworkAddressInfo = struct addrinfo;
 
 } // namespace logika
 

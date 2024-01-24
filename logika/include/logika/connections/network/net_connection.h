@@ -23,9 +23,6 @@ public:
     /// @param[in] serverPort Порт сервера
     /// @param[in] readTimeout Время ожидания данных для чтения, мс. По умолчанию 0 - не ограничено.
     NetConnection( const std::string& serverHostName, uint16_t serverPort, uint32_t readTimeout = 0 );
-
-    /// @brief Деструктор соединения
-    ~NetConnection() = default;
     
 protected:
     std::string serverHostName_;    ///< Адрес сервера

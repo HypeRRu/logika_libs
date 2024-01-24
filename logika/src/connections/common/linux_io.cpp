@@ -20,12 +20,17 @@ namespace connections
 namespace linux
 {
 
-uint32_t ReadBuffer( logika::FileHandleType handle, ByteVector& buffer
+uint32_t ReadBuffer( ReadFunction readfn, FileHandleType handle, ByteVector& buffer
     , uint32_t start, uint32_t needed, uint32_t timeout )
 {
     if ( logika::handleInvalid == handle )
     {
         LOG_WRITE( LOG_ERROR, "Invalid connection handle" );
+        return 0;
+    }
+    if ( !readfn )
+    {
+        LOG_WRITE( LOG_ERROR, "Invalid read function" );
         return 0;
     }
     if ( buffer.size() < start + needed )
@@ -59,7 +64,7 @@ uint32_t ReadBuffer( logika::FileHandleType handle, ByteVector& buffer
             return 0;
         }
 
-        readed = read( handle, &buffer[ start ], needed );
+        readed = readfn( handle, &buffer[ start ], needed );
         if ( -1 == readed )
         {
             if ( ( errno & EAGAIN ) || ( errno & EWOULDBLOCK ) )
@@ -80,11 +85,16 @@ uint32_t ReadBuffer( logika::FileHandleType handle, ByteVector& buffer
 } // ReadBuffer
 
 
-uint32_t WriteBuffer( logika::FileHandleType handle, const ByteVector& buffer, uint32_t start )
+uint32_t WriteBuffer( WriteFunction writefn, FileHandleType handle, const ByteVector& buffer, uint32_t start )
 {
     if ( logika::handleInvalid == handle )
     {
         LOG_WRITE( LOG_ERROR, "Invalid connection handle" );
+        return 0;
+    }
+    if ( !writefn )
+    {
+        LOG_WRITE( LOG_ERROR, "Invalid write function" );
         return 0;
     }
     if ( buffer.size() <= start )
@@ -97,7 +107,7 @@ uint32_t WriteBuffer( logika::FileHandleType handle, const ByteVector& buffer, u
     ssize_t written;
     do
     {
-        written = write( handle, &buffer[ start ], buffer.size() - start );
+        written = writefn( handle, &buffer[ start ], buffer.size() - start );
         if ( -1 == written )
         {
             if ( ( errno & EAGAIN ) || ( errno & EWOULDBLOCK ) )
@@ -118,7 +128,7 @@ uint32_t WriteBuffer( logika::FileHandleType handle, const ByteVector& buffer, u
 } // WriteBuffer
 
 
-int32_t BytesAvailable( logika::FileHandleType handle )
+int32_t BytesAvailable( FileHandleType handle )
 {
     if ( logika::handleInvalid == handle )
     {

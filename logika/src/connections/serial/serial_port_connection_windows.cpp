@@ -88,8 +88,12 @@ bool SerialPortConnection::OpenImpl()
 
 void SerialPortConnection::CloseImpl()
 {
-    CloseHandle( handle_ );
-    handle_ = logika::handleInvalid;
+    LOG_WRITE( LOG_INFO, "Closing connection to device " << address_ );  
+    if ( logika::handleInvalid == handle_ )
+    {
+        CloseHandle( handle_ );
+        handle_ = logika::handleInvalid;
+    }
 } // CloseImpl
 
 

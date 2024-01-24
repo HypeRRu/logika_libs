@@ -9,7 +9,7 @@ CXXERRORS	= -std=c++11 -pedantic \
 	-Wdisabled-optimization -Wformat=2 -Winit-self -Wswitch-enum \
 	-Wmissing-declarations -Wmissing-include-dirs -Wnoexcept \
 	-Wold-style-cast -Woverloaded-virtual -Wredundant-decls \
-	-Wshadow -Wsign-conversion -Wsign-promo \
+	-Wshadow -Wsign-conversion \
 	-Wstrict-null-sentinel -Wstrict-overflow=5 \
 	-Wswitch-default -Wundef -Werror -Wno-unused
 CXXFLAGS	= -I$(INCLUDE_DIR) $(CXXERRORS)

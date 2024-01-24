@@ -12,7 +12,7 @@ namespace connections
 {
 
 NetConnection::NetConnection( const std::string& serverHostName, uint16_t serverPort, uint32_t readTimeout )
-    : Connection( serverHostName + ":" + std::to_string( serverPort ) )
+    : Connection( serverHostName + ":" + std::to_string( serverPort ), readTimeout )
     , serverHostName_{ serverHostName }
     , serverPort_{ serverPort }
 {

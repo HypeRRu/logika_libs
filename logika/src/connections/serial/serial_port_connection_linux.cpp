@@ -80,8 +80,11 @@ bool SerialPortConnection::OpenImpl()
 void SerialPortConnection::CloseImpl()
 {
     LOG_WRITE( LOG_INFO, "Closing connection to device " << address_ );
-    close( handle_ );
-    handle_ = logika::handleInvalid;
+    if ( logika::handleInvalid != handle_ )
+    {
+        close( handle_ );
+        handle_ = logika::handleInvalid;
+    }
 } // CloseImpl
 
 
@@ -100,13 +103,13 @@ void SerialPortConnection::PurgeImpl( PurgeFlags::Type flags )
 
 uint32_t SerialPortConnection::ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed )
 {
-    return linux::ReadBuffer( handle_, buffer, start, needed, readTimeout_ );
+    return linux::ReadBuffer( read, handle_, buffer, start, needed, readTimeout_ );
 } // ReadImpl
 
 
 uint32_t SerialPortConnection::WriteImpl( const ByteVector& buffer, uint32_t start )
 {
-    return linux::WriteBuffer( handle_, buffer, start );
+    return linux::WriteBuffer( write, handle_, buffer, start );
 } // WriteImpl
 
 
