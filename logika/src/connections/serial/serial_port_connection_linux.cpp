@@ -54,7 +54,7 @@ bool SerialPortConnection::OpenImpl()
 
     /// Открытие соединения с устройством
     handle_ = open( address_.c_str(), O_RDWR | O_NOCTTY | O_NONBLOCK );
-    if ( logika::handleInvalid == handle_ )
+    if ( LOGIKA_FILE_HANDLE_INVALID == handle_ )
     {
         LOG_WRITE( LOG_ERROR, "Can't open device: " << SafeStrError( errno ) );
         return false;
@@ -81,10 +81,10 @@ bool SerialPortConnection::OpenImpl()
 void SerialPortConnection::CloseImpl()
 {
     LOG_WRITE( LOG_INFO, "Closing connection to device " << address_ );
-    if ( logika::handleInvalid != handle_ )
+    if ( LOGIKA_FILE_HANDLE_INVALID != handle_ )
     {
         close( handle_ );
-        handle_ = logika::handleInvalid;
+        handle_ = LOGIKA_FILE_HANDLE_INVALID;
     }
 } // CloseImpl
 

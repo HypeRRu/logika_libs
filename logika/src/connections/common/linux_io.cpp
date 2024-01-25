@@ -23,7 +23,7 @@ namespace linux
 uint32_t ReadBuffer( ReadFunction readfn, FileHandleType handle, ByteVector& buffer
     , uint32_t start, uint32_t needed, uint32_t timeout )
 {
-    if ( logika::handleInvalid == handle )
+    if ( LOGIKA_FILE_HANDLE_INVALID == handle )
     {
         LOG_WRITE( LOG_ERROR, "Invalid connection handle" );
         return 0;
@@ -64,7 +64,9 @@ uint32_t ReadBuffer( ReadFunction readfn, FileHandleType handle, ByteVector& buf
             return 0;
         }
 
+        LOG_WRITE( LOG_DEBUG, "Read started" );
         readed = readfn( handle, &buffer[ start ], needed );
+        LOG_WRITE( LOG_DEBUG, "Read finished" );
         if ( -1 == readed )
         {
             if ( ( errno & EAGAIN ) || ( errno & EWOULDBLOCK ) )
@@ -87,7 +89,7 @@ uint32_t ReadBuffer( ReadFunction readfn, FileHandleType handle, ByteVector& buf
 
 uint32_t WriteBuffer( WriteFunction writefn, FileHandleType handle, const ByteVector& buffer, uint32_t start )
 {
-    if ( logika::handleInvalid == handle )
+    if ( LOGIKA_FILE_HANDLE_INVALID == handle )
     {
         LOG_WRITE( LOG_ERROR, "Invalid connection handle" );
         return 0;
@@ -107,7 +109,9 @@ uint32_t WriteBuffer( WriteFunction writefn, FileHandleType handle, const ByteVe
     ssize_t written;
     do
     {
+        LOG_WRITE( LOG_DEBUG, "Write started" );
         written = writefn( handle, &buffer[ start ], buffer.size() - start );
+        LOG_WRITE( LOG_DEBUG, "Write finished" );
         if ( -1 == written )
         {
             if ( ( errno & EAGAIN ) || ( errno & EWOULDBLOCK ) )
@@ -130,7 +134,7 @@ uint32_t WriteBuffer( WriteFunction writefn, FileHandleType handle, const ByteVe
 
 int32_t BytesAvailable( FileHandleType handle )
 {
-    if ( logika::handleInvalid == handle )
+    if ( LOGIKA_FILE_HANDLE_INVALID == handle )
     {
         LOG_WRITE( LOG_ERROR, "Invalid connection handle" );
         return 0;

@@ -6,6 +6,7 @@
 #include <logika/log/defines.h>
 #include <logika/common/misc.h>
 
+#define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #include <winsock2.h>
 #include <ws2tcpip.h>
@@ -22,7 +23,7 @@ namespace windows
 uint32_t ReadBuffer( SocketType sock, ByteVector& buffer
     , uint32_t start, uint32_t needed, uint32_t timeout )
 {
-    if ( logika::socketInvalid == sock )
+    if ( LOGIKA_SOCKET_INVALID == sock )
     {
         LOG_WRITE( LOG_ERROR, "Invalid connection socket" );
         return 0;
@@ -38,10 +39,10 @@ uint32_t ReadBuffer( SocketType sock, ByteVector& buffer
     pfd.fd = sock;
     pfd.events = POLLRDNORM;
     
-    ssize_t readed;
+    int readed;
     do
     {
-        int ready = WSApoll( &pfd, 1, 0 != timeout ? static_cast< int >( timeout ) : -1 );
+        int ready = WSAPoll( &pfd, 1, 0 != timeout ? static_cast< int >( timeout ) : -1 );
         if ( -1 == ready )
         {
             if ( WSAGetLastError() & WSAEINTR )
@@ -57,7 +58,9 @@ uint32_t ReadBuffer( SocketType sock, ByteVector& buffer
             return 0;
         }
 
+        LOG_WRITE( LOG_DEBUG, "Read started" );
         readed = recv( sock, &buffer[ start ], needed, 0 );
+        LOG_WRITE( LOG_DEBUG, "Read finished" );
         if ( -1 == readed )
         {
             if ( WSAGetLastError() & WSAEWOULDBLOCK )
@@ -80,7 +83,7 @@ uint32_t ReadBuffer( SocketType sock, ByteVector& buffer
 
 uint32_t WriteBuffer( SocketType sock, const ByteVector& buffer, uint32_t start )
 {
-    if ( logika::socketInvalid == sock )
+    if ( LOGIKA_SOCKET_INVALID == sock )
     {
         LOG_WRITE( LOG_ERROR, "Invalid connection socket" );
         return 0;
@@ -92,10 +95,12 @@ uint32_t WriteBuffer( SocketType sock, const ByteVector& buffer, uint32_t start 
         return 0;
     }
 
-    ssize_t written;
+    int written;
     do
     {
-        written = send( handle, &buffer[ start ], buffer.size() - start, 0 );
+        LOG_WRITE( LOG_DEBUG, "Write started" );
+        written = send( sock, &buffer[ start ], static_cast< int >( buffer.size() - start ), 0 );
+        LOG_WRITE( LOG_DEBUG, "Write finished" );
         if ( -1 == written )
         {
             if ( WSAGetLastError() & WSAEWOULDBLOCK )
@@ -116,15 +121,15 @@ uint32_t WriteBuffer( SocketType sock, const ByteVector& buffer, uint32_t start 
 } // WriteBuffer
 
 
-int32_t BytesAvailable( Socket sock )
+int32_t BytesAvailable( SocketType sock )
 {
-    if ( logika::socketInvalid == sock )
+    if ( LOGIKA_SOCKET_INVALID == sock )
     {
         LOG_WRITE( LOG_ERROR, "Invalid connection socket" );
         return 0;
     }
 
-    int32_t available;
+    u_long available;
     if ( -1 == ioctlsocket( sock, FIONREAD, &available ) )
     {
         LOG_WRITE( LOG_ERROR, "Unable to get bytes available: " << WSAGetLastError() );

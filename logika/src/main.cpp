@@ -6,8 +6,21 @@
 
 #include <iostream>
 
+#if defined( _WIN32 ) || defined( _WIN64 )
+#include <windows.h>
+#endif
+
 int main()
 {
+#if defined( _WIN32 ) || defined( _WIN64 )
+    WSADATA wsaData;
+    int wsaInitResult = WSAStartup( MAKEWORD( 2, 2 ), &wsaData );
+    if ( 0 != wsaInitResult) {
+        printf( "WSAStartup failed: %d\n", wsaInitResult );
+        return 1;
+    }
+#endif
+
     logika::log::Logger& logger = logika::log::Logger::Instance();
     logger.SetLogType( logika::log::LogType::LogConsole );
     logger.SetLogLevel( logika::log::LogLevel::LogAll );
@@ -32,12 +45,16 @@ int main()
     udpCon.Purge( logika::connections::PurgeFlags::TxRx );
     udpCon.Read( udpRdbuf, 5 );
 
-    logika::connections::TcpConnection tcp{ "127.0.0.1", 8084, 60000 };
+    logika::connections::TcpConnection tcp{ "127.0.0.1", 8084, 1000 };
     tcp.Open();
     tcp.Write( buffer );
     logika::ByteVector tcpRdbuf;
     tcp.Read( tcpRdbuf, 6 );
     tcp.Purge( logika::connections::PurgeFlags::TxRx );
     tcp.Read( tcpRdbuf, 5 );
+
+#if defined( _WIN32 ) || defined( _WIN64 )
+    WSACleanup();
+#endif
     return 0;
 }

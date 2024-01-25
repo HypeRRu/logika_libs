@@ -2,12 +2,14 @@
 /// @copyright HypeRRu 2024
 
 #include <logika/connections/network/tcp_connection.h>
+#include <logika/connections/common/windows_socket_io.h>
 
 #include <logika/log/defines.h>
 #include <logika/common/misc.h>
 
 #include <cstring>
 
+#define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #include <winsock2.h>
 #include <ws2tcpip.h>
@@ -40,16 +42,16 @@ bool TcpConnection::OpenImpl()
     /// Открываем соединение
     for ( info = addrinfo; info != nullptr; info = info->ai_next )
     {
-        socket_ = socket( info->ai_family, info->ai_socktype | SOCK_NONBLOCK, info->ai_protocol );
-        if ( logika::handleInvalid == socket_ )
+        socket_ = socket( info->ai_family, info->ai_socktype, info->ai_protocol );
+        if ( LOGIKA_SOCKET_INVALID == socket_ )
         {
             continue; /// Не удалось открыть сокет с данными параметрами
         }
-        if ( -1 != connect( socket_, info->ai_addr, info->ai_addrlen ) )
+        if ( -1 != connect( socket_, info->ai_addr, static_cast< int >( info->ai_addrlen ) ) )
         {
             /// Задание неблокирующего режима
             u_long mode = 1;
-            ioctlsocket(sock, FIONBIO, &mode);
+            ioctlsocket(socket_, FIONBIO, &mode);
 
             LOG_WRITE( LOG_INFO, "Connected to " << address_ );
             freeaddrinfo( info ); /// Больше не используется
@@ -57,7 +59,7 @@ bool TcpConnection::OpenImpl()
         }
         /// Не удалось подключится к серверу
         closesocket( socket_ );
-        socket_ = logika::handleInvalid;
+        socket_ = LOGIKA_SOCKET_INVALID;
     }
     LOG_WRITE( LOG_ERROR, "Can't open connection with " << address_ );
     return false;
@@ -67,10 +69,10 @@ bool TcpConnection::OpenImpl()
 void TcpConnection::CloseImpl()
 {
     LOG_WRITE( LOG_INFO, "Closing connection with " << address_ );  
-    if ( logika::handleInvalid != socket_ )
+    if ( LOGIKA_SOCKET_INVALID != socket_ )
     {
         closesocket( socket_ );
-        socket_ = logika::handleInvalid;
+        socket_ = LOGIKA_SOCKET_INVALID;
     }
 } // CloseImpl
 
@@ -86,7 +88,7 @@ void TcpConnection::PurgeImpl( PurgeFlags::Type flags )
         while ( static_cast< int32_t >( readed ) < available )
         {
             LOG_WRITE( LOG_INFO, "Have unreceived packets, flushing" );
-            ssize_t rd = recv( socket_, buffer, flushBufferSize, 0 );
+            int rd = recv( socket_, buffer, flushBufferSize, 0 );
             if ( rd <= 0 )
             {
                 LOG_WRITE( LOG_ERROR, "Error while reading. Purged " << rd << " bytes" );

@@ -13,7 +13,7 @@ namespace connections
 
 TcpConnection::TcpConnection( const std::string& serverHostName, uint16_t serverPort, uint32_t readTimeout )
     : NetConnection( serverHostName, serverPort, readTimeout )
-    , socket_{ logika::socketInvalid }
+    , socket_{ LOGIKA_SOCKET_INVALID }
 {
     type_ = ConnectionType::Tcp;
 } // TcpConnection

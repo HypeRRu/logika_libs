@@ -16,7 +16,7 @@ namespace connections
 
 SerialPortConnection::SerialPortConnection( const std::string& portName, uint32_t readTimeout )
     : SerialConnection( portName, readTimeout )
-    , handle_{ logika::handleInvalid }
+    , handle_{ LOGIKA_FILE_HANDLE_INVALID }
 {
     type_ = ConnectionType::ComPort;
 } // SerialPortConnection( const std::string& portName, uint32_t readTimeout )
@@ -27,7 +27,7 @@ SerialPortConnection::SerialPortConnection(
     , StopBits::Type stopBits, DataBits::Type dataBits
     , Parity::Type parity, uint32_t readTimeout )
     : SerialConnection( portName, readTimeout )
-    , handle_{ logika::handleInvalid }
+    , handle_{ LOGIKA_FILE_HANDLE_INVALID }
 {
     type_ = ConnectionType::ComPort;
 

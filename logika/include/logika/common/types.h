@@ -15,36 +15,43 @@
 #endif // defined( __linux__ ) || defined( __APPLE__ )
 
 #if defined( _WIN32 ) || defined( _WIN64 )
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
 #include <winnt.h>      /// Для HANDLE
-#include <ws2tcpip.h>   /// Для struct addrinfo
+#include <winsock2.h>	/// Для SOCKET и ADDRINFOA
 #endif // defined( _WIN32 ) || defined( _WIN64 )
 
 namespace logika
 {
 
 using TimeType = uint64_t;
-using ByteType = uint8_t;
+using ByteType = char;
 using ByteVector = std::vector< ByteType >;
 
 #if defined( __linux__ ) || defined( __APPLE__ )
 using FileHandleType = int;
-constexpr FileHandleType handleInvalid = -1;
+#define LOGIKA_FILE_HANDLE_INVALID -1
 #endif // defined( __linux__ ) || defined( __APPLE__ )
 #if defined( _WIN32 ) || defined( _WIN64 )
 using FileHandleType = HANDLE;
-constexpr FileHandleType handleInvalid = INVALID_HANDLE_VALUE;
+#define LOGIKA_FILE_HANDLE_INVALID INVALID_HANDLE_VALUE
 #endif // defined( _WIN32 ) || defined( _WIN64 )
 
 #if defined( __linux__ ) || defined( __APPLE__ )
 using SocketType = int;
-constexpr SocketType socketInvalid = -1;
+#define LOGIKA_SOCKET_INVALID -1
 #endif // defined( __linux__ ) || defined( __APPLE__ )
 #if defined( _WIN32 ) || defined( _WIN64 )
 using SocketType = SOCKET;
-constexpr SocketType socketInvalid = INVALID_SOCKET;
+#define LOGIKA_SOCKET_INVALID INVALID_SOCKET
 #endif // defined( _WIN32 ) || defined( _WIN64 )
 
+#if defined( __linux__ ) || defined( __APPLE__ )
 using NetworkAddressInfo = struct addrinfo;
+#endif // defined( __linux__ ) || defined( __APPLE__ )
+#if defined( _WIN32 ) || defined( _WIN64 )
+using NetworkAddressInfo = ADDRINFOA;
+#endif // defined( _WIN32 ) || defined( _WIN64 )
 
 } // namespace logika
 

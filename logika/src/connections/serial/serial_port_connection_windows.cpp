@@ -8,6 +8,7 @@
 
 #include <system_error>
 
+#define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 
 /// @todo Проверить данный код
@@ -30,7 +31,7 @@ bool SerialPortConnection::OpenImpl()
         , GENERIC_READ | GENERIC_WRITE
         , 0, 0, OPEN_EXISTING
         , FILE_ATTRIBUTE_NORMAL, 0 );
-    if ( logika::handleInvalid == handle_ )
+    if ( LOGIKA_FILE_HANDLE_INVALID == handle_ )
     {
         LOG_WRITE( LOG_ERROR, "Can't open device " << address_
                               << ": " << std::system_category().message( GetLastError() ) );
@@ -54,7 +55,7 @@ bool SerialPortConnection::OpenImpl()
     options.StopBits        = stopBits_;
 
     options.fOutxCtsFlow    = false;
-    options.fOutxDtrFlow    = false;
+    options.fOutxDsrFlow    = false;
     options.fOutX           = false;
     options.fDtrControl     = DTR_CONTROL_DISABLE;
     options.fRtsControl     = RTS_CONTROL_DISABLE;
@@ -74,7 +75,7 @@ bool SerialPortConnection::OpenImpl()
     timeouts.WriteTotalTimeoutConstant      = 0;            ///< Время ожидания записи символов, мс
     timeouts.WriteTotalTimeoutMultiplier    = 0;            ///< Множитель для вычисления полного времени простоя записи
 
-    if ( !SetCommTimeouts( handle_, timeouts ) )
+    if ( !SetCommTimeouts( handle_, &timeouts ) )
     {
         LOG_WRITE( LOG_ERROR, "Unable to set RW timeouts for " << address_ );
         CloseImpl();
@@ -89,10 +90,10 @@ bool SerialPortConnection::OpenImpl()
 void SerialPortConnection::CloseImpl()
 {
     LOG_WRITE( LOG_INFO, "Closing connection to device " << address_ );  
-    if ( logika::handleInvalid == handle_ )
+    if ( LOGIKA_FILE_HANDLE_INVALID == handle_ )
     {
         CloseHandle( handle_ );
-        handle_ = logika::handleInvalid;
+        handle_ = LOGIKA_FILE_HANDLE_INVALID;
     }
 } // CloseImpl
 
@@ -123,10 +124,10 @@ uint32_t SerialPortConnection::ReadImpl( ByteVector& buffer, uint32_t start, uin
         return 0;
     }
 
-    uint32_t readed = 0;
+    DWORD readed = 0;
     if ( !ReadFile( handle_, &buffer[ start ], needed, &readed, nullptr ) )
     {
-        LOG_WRITE( "Read failed: " << std::system_category().message( GetLastError() ) );
+        LOG_WRITE( LOG_ERROR, "Read failed: " << std::system_category().message( GetLastError() ) );
         return 0;
     }
     return readed;
@@ -146,10 +147,10 @@ uint32_t SerialPortConnection::WriteImpl( const ByteVector& buffer, uint32_t sta
         return 0;
     }
 
-    uint32_t written = 0;
+    DWORD written = 0;
     if ( !WriteFile( handle_, &buffer[ start ], buffer.size() - start, &written, nullptr ) )
     {
-        LOG_WRITE( "Write failed: " << std::system_category().message( GetLastError() ) );
+        LOG_WRITE( LOG_ERROR, "Write failed: " << std::system_category().message( GetLastError() ) );
         return 0;
     }
     return written;

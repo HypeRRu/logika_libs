@@ -46,7 +46,7 @@ uint32_t WriteBuffer( SocketType sock, const ByteVector& buffer, uint32_t start 
 /// @param[in] sock Сокет
 /// @return Количество доступных для чтения байтов или -1 в случае ошибки
 /// @note Не применимо к UDP-сокетам
-int32_t BytesAvailable( Socket sock );
+int32_t BytesAvailable(SocketType sock );
 
 } // namespace windows
 

@@ -43,7 +43,7 @@ bool TcpConnection::OpenImpl()
     for ( info = addrinfo; info != nullptr; info = info->ai_next )
     {
         socket_ = socket( info->ai_family, info->ai_socktype, info->ai_protocol );
-        if ( logika::handleInvalid == socket_ )
+        if ( LOGIKA_SOCKET_INVALID == socket_ )
         {
             continue; /// Не удалось открыть сокет с данными параметрами
         }
@@ -61,7 +61,7 @@ bool TcpConnection::OpenImpl()
         }
         /// Не удалось подключится к серверу
         close( socket_ );
-        socket_ = logika::handleInvalid;
+        socket_ = LOGIKA_SOCKET_INVALID;
     }
     LOG_WRITE( LOG_ERROR, "Can't open connection with " << address_ );
     return false;
@@ -71,11 +71,11 @@ bool TcpConnection::OpenImpl()
 void TcpConnection::CloseImpl()
 {
     LOG_WRITE( LOG_INFO, "Closing connection with " << address_ );  
-    if ( logika::handleInvalid != socket_ )
+    if ( LOGIKA_SOCKET_INVALID != socket_ )
     {
         shutdown( socket_, SHUT_RDWR );
         close( socket_ );
-        socket_ = logika::handleInvalid;
+        socket_ = LOGIKA_SOCKET_INVALID;
     }
 } // CloseImpl
 

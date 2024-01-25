@@ -23,7 +23,7 @@ std::string SafeStrError( int error )
 #elif _GNU_SOURCE
     ss << strerror_r( error, buffer, errorStrSize );
 #elif defined( _WIN32 ) || defined( _WIN64 )
-    strerror_s( error, buffer, errorStrSize );
+    strerror_s( buffer, errorStrSize, error );
     ss << buffer;
 #endif
     ss << " (" << error << ")";
