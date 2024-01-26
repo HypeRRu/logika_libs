@@ -17,7 +17,7 @@ namespace logika
 namespace connections
 {
 
-namespace linux
+namespace linux_io
 {
 
 uint32_t ReadBuffer( ReadFunction readfn, FileHandleType handle, ByteVector& buffer
@@ -149,7 +149,7 @@ int32_t BytesAvailable( FileHandleType handle )
     return available;
 } // BytesAvailable
 
-} // namespace linux
+} // namespace linux_io
 
 } // namespace connections
 

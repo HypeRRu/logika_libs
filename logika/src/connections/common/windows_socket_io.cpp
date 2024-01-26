@@ -17,7 +17,7 @@ namespace logika
 namespace connections
 {
 
-namespace windows
+namespace windows_io
 {
 
 uint32_t ReadBuffer( SocketType sock, ByteVector& buffer
@@ -138,7 +138,7 @@ int32_t BytesAvailable( SocketType sock )
     return available;
 } // BytesAvailable
 
-} // namespace windows
+} // namespace windows_io
 
 } // namespace connections
 

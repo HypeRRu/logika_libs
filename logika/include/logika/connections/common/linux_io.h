@@ -20,7 +20,7 @@ namespace logika
 namespace connections
 {
 
-namespace linux
+namespace linux_io
 {
 
 using ReadFunction = std::function< ssize_t( FileHandleType, void*, size_t ) >;
@@ -53,7 +53,7 @@ uint32_t WriteBuffer( WriteFunction writefn, FileHandleType handle, const ByteVe
 /// @note Не применимо к UDP-сокетам
 int32_t BytesAvailable( FileHandleType handle );
 
-} // namespace linux
+} // namespace linux_io
 
 } // namespace connections
 

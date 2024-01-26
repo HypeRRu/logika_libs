@@ -99,13 +99,13 @@ void UdpConnection::PurgeImpl( PurgeFlags::Type flags )
 
 uint32_t UdpConnection::ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed )
 {
-    return windows::ReadBuffer( socket_, buffer, start, needed, readTimeout_ );
+    return windows_io::ReadBuffer( socket_, buffer, start, needed, readTimeout_ );
 } // ReadImpl
 
 
 uint32_t UdpConnection::WriteImpl( const ByteVector& buffer, uint32_t start )
 {
-    return windows::WriteBuffer( socket_, buffer, start );
+    return windows_io::WriteBuffer( socket_, buffer, start );
 } // WriteImpl
 
 } // namespace connections

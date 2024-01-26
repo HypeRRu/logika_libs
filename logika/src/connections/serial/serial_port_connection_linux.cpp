@@ -104,19 +104,19 @@ void SerialPortConnection::PurgeImpl( PurgeFlags::Type flags )
 
 uint32_t SerialPortConnection::ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed )
 {
-    return linux::ReadBuffer( read, handle_, buffer, start, needed, readTimeout_ );
+    return linux_io::ReadBuffer( read, handle_, buffer, start, needed, readTimeout_ );
 } // ReadImpl
 
 
 uint32_t SerialPortConnection::WriteImpl( const ByteVector& buffer, uint32_t start )
 {
-    return linux::WriteBuffer( write, handle_, buffer, start );
+    return linux_io::WriteBuffer( write, handle_, buffer, start );
 } // WriteImpl
 
 
 int32_t SerialPortConnection::BytesAvailable()
 {
-    return linux::BytesAvailable( handle_ );
+    return linux_io::BytesAvailable( handle_ );
 } // BytesAvailable
 
 } // namespace connections

@@ -3,4 +3,7 @@ build/
 docs/
 .vs/
 out/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
 *.o

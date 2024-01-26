@@ -43,4 +43,7 @@ add_executable(
 )
 
 target_include_directories(test_main PRIVATE ${INCLUDE_DIR})
+
+if (WIN32)
 target_link_libraries(test_main PRIVATE ws2_32)
+endif()

@@ -20,7 +20,7 @@ namespace logika
 namespace connections
 {
 
-namespace windows
+namespace windows_io
 {
 
 /// @brief Чтение из дескриптора в буфер
@@ -48,7 +48,7 @@ uint32_t WriteBuffer( SocketType sock, const ByteVector& buffer, uint32_t start 
 /// @note Не применимо к UDP-сокетам
 int32_t BytesAvailable(SocketType sock );
 
-} // namespace windows
+} // namespace windows_io
 
 } // namespace connections
 

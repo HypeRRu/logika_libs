@@ -86,7 +86,7 @@ void TcpConnection::PurgeImpl( PurgeFlags::Type flags )
     {
         constexpr size_t flushBufferSize = 1024;
         char buffer[ flushBufferSize ];
-        const int32_t available = linux::BytesAvailable( socket_ );
+        const int32_t available = linux_io::BytesAvailable( socket_ );
         uint32_t readed = 0;
         while ( static_cast< int32_t >( readed ) < available )
         {
@@ -110,16 +110,16 @@ void TcpConnection::PurgeImpl( PurgeFlags::Type flags )
 uint32_t TcpConnection::ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed )
 {
     using namespace std::placeholders;
-    linux::ReadFunction readFunction = std::bind( recv, _1, _2, _3, 0 );
-    return linux::ReadBuffer( readFunction, socket_, buffer, start, needed, readTimeout_ );
+    linux_io::ReadFunction readFunction = std::bind( recv, _1, _2, _3, 0 );
+    return linux_io::ReadBuffer( readFunction, socket_, buffer, start, needed, readTimeout_ );
 } // ReadImpl
 
 
 uint32_t TcpConnection::WriteImpl( const ByteVector& buffer, uint32_t start )
 {
     using namespace std::placeholders;
-    linux::WriteFunction writeFunction = std::bind( send, _1, _2, _3, MSG_NOSIGNAL );
-    return linux::WriteBuffer( writeFunction, socket_, buffer, start );
+    linux_io::WriteFunction writeFunction = std::bind( send, _1, _2, _3, MSG_NOSIGNAL );
+    return linux_io::WriteBuffer( writeFunction, socket_, buffer, start );
 } // WriteImpl
 
 } // namespace connections
