@@ -26,7 +26,12 @@ int main()
     logger.SetLogLevel( logika::log::LogLevel::LogAll );
 
     logika::ByteVector buffer{ 'b', 'u', 'f', 'f', 'e', 'r', '\n', '\0' };
+#if defined( __linux__ ) || defined( __APPLE__ )
     logika::connections::SerialPortConnection con{ "/dev/pts/3", 1000 };
+#endif
+#if defined( _WIN32 ) || defined( _WIN64 )
+    logika::connections::SerialPortConnection con{ "\\\\.\\COM10", 1000 };
+#endif
     con.SetBaudRate( logika::connections::BaudRate::Rate110 );
     con.SetStopBits( logika::connections::StopBits::StopBitsTwo );
     con.SetDataBits( logika::connections::DataBits::DataBits5 );

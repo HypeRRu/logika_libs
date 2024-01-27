@@ -11,7 +11,7 @@
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 
-/// @todo Проверить данный код
+
 namespace logika
 {
 
@@ -34,7 +34,7 @@ bool SerialPortConnection::OpenImpl()
     if ( LOGIKA_FILE_HANDLE_INVALID == handle_ )
     {
         LOG_WRITE( LOG_ERROR, "Can't open device " << address_
-                              << ": " << std::system_category().message( GetLastError() ) );
+                              << ": " << GetLastError() );
         return false;
     }
 
@@ -127,7 +127,7 @@ uint32_t SerialPortConnection::ReadImpl( ByteVector& buffer, uint32_t start, uin
     DWORD readed = 0;
     if ( !ReadFile( handle_, &buffer[ start ], needed, &readed, nullptr ) )
     {
-        LOG_WRITE( LOG_ERROR, "Read failed: " << std::system_category().message( GetLastError() ) );
+        LOG_WRITE( LOG_ERROR, "Read failed: " << GetLastError() );
         return 0;
     }
     return readed;
@@ -148,9 +148,9 @@ uint32_t SerialPortConnection::WriteImpl( const ByteVector& buffer, uint32_t sta
     }
 
     DWORD written = 0;
-    if ( !WriteFile( handle_, &buffer[ start ], buffer.size() - start, &written, nullptr ) )
+    if ( !WriteFile( handle_, &buffer[ start ], static_cast< DWORD >( buffer.size() - start ), &written, nullptr ) )
     {
-        LOG_WRITE( LOG_ERROR, "Write failed: " << std::system_category().message( GetLastError() ) );
+        LOG_WRITE( LOG_ERROR, "Write failed: " << GetLastError() );
         return 0;
     }
     return written;

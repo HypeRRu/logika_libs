@@ -47,7 +47,7 @@ bool UdpConnection::OpenImpl()
         {
             continue; /// Не удалось открыть сокет с данными параметрами
         }
-        if ( -1 != connect( socket_, info->ai_addr, info->ai_addrlen ) )
+        if ( -1 != connect( socket_, info->ai_addr, static_cast< int >( info->ai_addrlen ) ) )
         {
             /// Задание неблокирующего режима
             u_long mode = 1;
