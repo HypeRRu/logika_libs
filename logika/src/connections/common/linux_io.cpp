@@ -21,22 +21,34 @@ namespace linux_io
 {
 
 uint32_t ReadBuffer( ReadFunction readfn, FileHandleType handle, ByteVector& buffer
-    , uint32_t start, uint32_t needed, uint32_t timeout )
+    , uint32_t start, uint32_t needed, uint32_t timeout, Rc::Type* rc )
 {
     if ( LOGIKA_FILE_HANDLE_INVALID == handle )
     {
         LOG_WRITE( LOG_ERROR, "Invalid connection handle" );
+        if ( rc )
+        {
+            *rc = Rc::ConnectionNotSetError;
+        }
         return 0;
     }
     if ( !readfn )
     {
         LOG_WRITE( LOG_ERROR, "Invalid read function" );
+        if ( rc )
+        {
+            *rc = Rc::InvalidArgError;
+        }
         return 0;
     }
     if ( buffer.size() < start + needed )
     {
         LOG_WRITE( LOG_ERROR, "Buffer size (" << buffer.size() << ") is less"
                               << "than end position (" << start + needed << ")" );
+        if ( rc )
+        {
+            *rc = Rc::InvalidArgError;
+        }
         return 0;
     }
 
@@ -55,12 +67,19 @@ uint32_t ReadBuffer( ReadFunction readfn, FileHandleType handle, ByteVector& buf
                 continue;
             }
             LOG_WRITE( LOG_ERROR, "Poll failed: " << SafeStrError( errno ) );
+            if ( rc )
+            {
+                *rc = Rc::PollError;
+            }
             return 0;
         }
-        /// @todo Другой RC для таймаута?
         if ( 0 == ready ) /// Истекло время ожидания данных
         {
             LOG_WRITE( LOG_WARNING, "Read timeout expired" );
+            if ( rc )
+            {
+                *rc = Rc::TimeOutError;
+            }
             return 0;
         }
 
@@ -74,6 +93,10 @@ uint32_t ReadBuffer( ReadFunction readfn, FileHandleType handle, ByteVector& buf
                 continue;
             }
             LOG_WRITE( LOG_ERROR, "Read failed: " << SafeStrError( errno ) );
+            if ( rc )
+            {
+                *rc = Rc::ReadError;
+            }
             return 0;
         }
         else /// 0 или более байтов считано
@@ -83,26 +106,42 @@ uint32_t ReadBuffer( ReadFunction readfn, FileHandleType handle, ByteVector& buf
     } while ( true );
     
     LOG_WRITE( LOG_INFO, "Readed " << readed << " bytes" );
-    return readed;
+    if ( rc )
+    {
+        *rc = Rc::Success;
+    }
+    return static_cast< uint32_t >( readed );
 } // ReadBuffer
 
 
-uint32_t WriteBuffer( WriteFunction writefn, FileHandleType handle, const ByteVector& buffer, uint32_t start )
+uint32_t WriteBuffer( WriteFunction writefn, FileHandleType handle, const ByteVector& buffer, uint32_t start, Rc::Type* rc )
 {
     if ( LOGIKA_FILE_HANDLE_INVALID == handle )
     {
         LOG_WRITE( LOG_ERROR, "Invalid connection handle" );
+        if ( rc )
+        {
+            *rc = Rc::ConnectionNotSetError;
+        }
         return 0;
     }
     if ( !writefn )
     {
         LOG_WRITE( LOG_ERROR, "Invalid write function" );
+        if ( rc )
+        {
+            *rc = Rc::InvalidArgError;
+        }
         return 0;
     }
     if ( buffer.size() <= start )
     {
         LOG_WRITE( LOG_ERROR, "Buffer size (" << buffer.size() << ") is less or equal "
                               << "than start position (" << start << ")" );
+        if ( rc )
+        {
+            *rc = Rc::InvalidArgError;
+        }
         return 0;
     }
 
@@ -119,6 +158,10 @@ uint32_t WriteBuffer( WriteFunction writefn, FileHandleType handle, const ByteVe
                 continue;
             }
             LOG_WRITE( LOG_ERROR, "Write failed: " << SafeStrError( errno ) );
+            if ( rc )
+            {
+                *rc = Rc::WriteError;
+            }
             return 0;
         }
         else /// 0 или более байтов записано
@@ -128,6 +171,10 @@ uint32_t WriteBuffer( WriteFunction writefn, FileHandleType handle, const ByteVe
     } while ( true );
     
     LOG_WRITE( LOG_INFO, "Written " << written << " bytes" );
+    if ( rc )
+    {
+        *rc = Rc::Success;
+    }
     return static_cast< uint32_t >( written );
 } // WriteBuffer
 

@@ -163,6 +163,7 @@ void Connection::ResetStatistics()
 uint32_t Connection::Read( ByteVector& buffer, uint32_t needed )
 {
     uint32_t readed = 0;
+    Rc::Type rc = Rc::Success;
 
     if ( buffer.size() < needed )
     {
@@ -177,10 +178,10 @@ uint32_t Connection::Read( ByteVector& buffer, uint32_t needed )
             LOG_WRITE( LOG_INFO, "Connection not established. Readed " << readed << " bytes" );
             break;
         }
-        const uint32_t readCurrent = ReadImpl( buffer, readed, needed - readed );
+        const uint32_t readCurrent = ReadImpl( buffer, readed, needed - readed, &rc );
         if ( 0 == readCurrent )
         {
-            LOG_WRITE( LOG_ERROR, "Read error. Readed " << readed << " bytes" );
+            LOG_WRITE( LOG_ERROR, "Read error. Readed " << readed << " bytes. Rc " << rc );
             break;
         }
         readed += readCurrent;
@@ -194,6 +195,7 @@ uint32_t Connection::Read( ByteVector& buffer, uint32_t needed )
 uint32_t Connection::Write( const ByteVector& buffer )
 {
     uint32_t written = 0;
+    Rc::Type rc = Rc::Success;
 
     while ( written < buffer.size() )
     {
@@ -202,10 +204,10 @@ uint32_t Connection::Write( const ByteVector& buffer )
             LOG_WRITE( LOG_INFO, "Connection not established. Written " << written << " bytes" );
             break;
         }
-        const uint32_t writeCurrent = WriteImpl( buffer, written );
+        const uint32_t writeCurrent = WriteImpl( buffer, written, &rc );
         if ( 0 == writeCurrent )
         {
-            LOG_WRITE( LOG_ERROR, "Write error. Written " << written << " bytes" );
+            LOG_WRITE( LOG_ERROR, "Write error. Written " << written << " bytes. Rc " << rc );
             break;
         }
         written += writeCurrent;
@@ -233,19 +235,27 @@ void Connection::PurgeImpl( PurgeFlags::Type flags )
 } // PurgeImpl
 
 
-uint32_t Connection::ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed )
+uint32_t Connection::ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed, Rc::Type* rc )
 {
     ( void ) buffer;
     ( void ) start;
     ( void ) needed;
+    if ( rc )
+    {
+        *rc = Rc::Success;
+    }
     return 0;
 } // ReadImpl
 
 
-uint32_t Connection::WriteImpl( const ByteVector& buffer, uint32_t start )
+uint32_t Connection::WriteImpl( const ByteVector& buffer, uint32_t start, Rc::Type* rc )
 {
     ( void ) buffer;
     ( void ) start;
+    if ( rc )
+    {
+        *rc = Rc::Success;
+    }
     return 0;
 } // WriteImpl
 

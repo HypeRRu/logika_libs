@@ -111,16 +111,24 @@ void SerialPortConnection::PurgeImpl( PurgeFlags::Type flags )
 } // PurgeImpl
 
 
-uint32_t SerialPortConnection::ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed )
+uint32_t SerialPortConnection::ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed, Rc::Type* rc )
 {
     if ( !IsConnected() )
     {
+        if ( rc )
+        {
+            *rc = Rc::ConnectionNotSetError;
+        }
         return 0;
     }
     if ( buffer.size() < start + needed )
     {
         LOG_WRITE( LOG_ERROR, "Buffer size (" << buffer.size() << ") is less"
                               << "than end position (" << start + needed << ")" );
+        if ( rc )
+        {
+            *rc = Rc::InvalidArgError;
+        }
         return 0;
     }
 
@@ -128,22 +136,46 @@ uint32_t SerialPortConnection::ReadImpl( ByteVector& buffer, uint32_t start, uin
     if ( !ReadFile( handle_, &buffer[ start ], needed, &readed, nullptr ) )
     {
         LOG_WRITE( LOG_ERROR, "Read failed: " << GetLastError() );
+        if ( rc )
+        {
+            if ( GetLastError() == WAIT_TIMEOUT )
+            {
+                *rc = Rc::TimeOutError;
+            }
+            else
+            {
+                *rc = Rc::ReadError;
+            }
+        }
         return 0;
     }
-    return readed;
+
+    if ( rc )
+    {
+        *rc = Rc::Success;
+    }
+    return static_cast< uint32_t >( readed );
 } // ReadImpl
 
 
-uint32_t SerialPortConnection::WriteImpl( const ByteVector& buffer, uint32_t start )
+uint32_t SerialPortConnection::WriteImpl( const ByteVector& buffer, uint32_t start, Rc::Type* rc )
 {
     if ( !IsConnected() )
     {
+        if ( rc )
+        {
+            *rc = Rc::ConnectionNotSetError;
+        }
         return 0;
     }
     if ( buffer.size() <= start )
     {
         LOG_WRITE( LOG_ERROR, "Buffer size (" << buffer.size() << ") is less or equal "
                               << "than start position (" << start << ")" );
+        if ( rc )
+        {
+            *rc = Rc::InvalidArgError;
+        }
         return 0;
     }
 
@@ -151,9 +183,18 @@ uint32_t SerialPortConnection::WriteImpl( const ByteVector& buffer, uint32_t sta
     if ( !WriteFile( handle_, &buffer[ start ], static_cast< DWORD >( buffer.size() - start ), &written, nullptr ) )
     {
         LOG_WRITE( LOG_ERROR, "Write failed: " << GetLastError() );
+        if ( rc )
+        {
+            *rc = Rc::WriteError;
+        }
         return 0;
     }
-    return written;
+
+    if ( rc )
+    {
+        *rc = Rc::Success;
+    }
+    return static_cast< uint32_t >( written );
 } // WriteImpl
 
 

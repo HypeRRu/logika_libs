@@ -31,7 +31,7 @@ enum : Type
     ComPort         = ( 0x01 << BaseTypeShift ) | Serial,   ///< ( 0x11; 17 ) Соединение с использованием COM-порта
     Tcp             = ( 0x02 << BaseTypeShift ) | Network,  ///< ( 0x22; 34 ) Соединение по TCP
     Udp             = ( 0x03 << BaseTypeShift ) | Network,  ///< ( 0x32; 50 ) Соединение по UDP
-    Modem           = ( 0x04 << BaseTypeShift ) | Network,  ///< ( 0x42; 66 ) Соединение с использованием модема
+    Modem           = ( 0x04 << BaseTypeShift ) | Serial,   ///< ( 0x41; 65 ) Соединение с использованием модема
     Radius          = ( 0x05 << BaseTypeShift ) | Network,  ///< ( 0x52; 82 ) Соединение с использованием RADIUS-сервера
 }; // anonymous enum
 

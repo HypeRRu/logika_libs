@@ -8,6 +8,8 @@
 
 #include <logika/connections/iconnection.h>
 
+#include <logika/connections/rc.h>
+
 namespace logika
 {
 
@@ -31,72 +33,52 @@ public:
     Connection( const Connection& ) = delete;
     Connection& operator =( const Connection& ) = delete;
 
-    /// @brief Установка соединения
-    /// @return Удалось ли установить соединение
-    /// @note Сбрасывает текущее соединение, если было установлено
+    /// @copydoc IConnection::Open()
     virtual bool Open() override;
 
-    /// @brief Закрытие соединения
+    /// @copydoc IConnection::Close()
     virtual void Close() override;
 
-    /// @brief Получение адреса соединения
-    /// @return Адрес соединения
+    /// @copydoc IConnection::GetAddress()
     virtual const std::string& GetAddress() const override;
 
-    /// @brief Получение времени ожидания данных для чтения
-    /// @return Время ожидания данных для чтения, мс
+    /// @copydoc IConnection::GetReadTimeout()
     virtual uint32_t GetReadTimeout() const override;
 
-    /// @brief Получение типа соединения
-    /// @return Тип соединения
+    /// @copydoc IConnection::GetConnectionType()
     virtual ConnectionType::Type GetConnectionType() const override;
 
-    /// @brief Получение состояния соединения
-    /// @return Состояние соединения
+    /// @copydoc IConnection::GetConnectionState()
     virtual ConnectionState GetConnectionState() const override;
 
-    /// @brief Установлено ли соединение
-    /// @return Было ли установлено соединение
+    /// @copydoc IConnection::IsConnected()
     virtual bool IsConnected() const override;
 
-    /// @brief Получение количества переданных байтов
-    /// @return Количество переданных байтов
+    /// @copydoc IConnection::GetTxBytesCount()
     virtual uint32_t GetTxBytesCount() const override;
 
-    /// @brief Получение количества полученных байтов
-    /// @return Количество полученных байтов
+    /// @copydoc IConnection::GetRxBytesCount()
     virtual uint32_t GetRxBytesCount() const override;
 
-    /// @brief Получение времени последнего чтения
-    /// @return Время последнего чтения
+    /// @copydoc IConnection::GetLastRxTime()
     virtual TimeType GetLastRxTime() const override;
 
-    /// @brief Очистка заданных буферов
-    /// @param[in] flags Типы буферов для очистки
+    /// @copydoc IConnection::Purge()
     virtual void Purge( PurgeFlags::Type flags ) override;
 
-    /// @brief Установка обработчика события "Подключение установлено"
-    /// @param[in] hook Обработчик события
+    /// @copydoc IConnection::SetOnAfterConnect()
     virtual void SetOnAfterConnect( const std::function< void() >& hook ) override;
 
-    /// @brief Установка обработчика события "Соединение будет разорвано"
-    /// @param[in] hook Обработчик события
+    /// @copydoc IConnection::SetOnBeforeDisonnect()
     virtual void SetOnBeforeDisonnect( const std::function< void() >& hook ) override;
 
-    /// @brief Сброс статистики по полученным/переданным байтам
+    /// @copydoc IConnection::ResetStatistics()
     virtual void ResetStatistics() override;
 
-    /// @brief Чтение данных
-    /// @param[out] buffer Буфер для записи данных
-    /// @param[in] needed Желаемое количество байтов
-    /// @return Количество прочитанных байтов
-    /// @note Количество прочитанных байтов может быть меньше желаемого количества, если соединение было закрыто
+    /// @copydoc IConnection::Read()
     virtual uint32_t Read( ByteVector& buffer, uint32_t needed ) override;
 
-    /// @brief Запись данных
-    /// @param[in] buffer Буфер, содержащий данные для записи
-    /// @return Количество записанных байтов
-    /// @note Количество записанных байтов может быть меньше размера буфера, если соединение было закрыто
+    /// @copydoc IConnection::Write()
     virtual uint32_t Write( const ByteVector& buffer ) override;
 
 protected:
@@ -115,16 +97,18 @@ protected:
     /// @param[out] buffer Буфер для записи данных
     /// @param[in] start Начиная с какого байта записывать в буфер
     /// @param[in] needed Желаемое количество байтов
+    /// @param[out] rc Статус операции. Rc::Success в случае успеха.
     /// @return Количество прочитанных байтов
     /// @note После первого чтения возвращает количество прочитанных байтов
-    virtual uint32_t ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed );
+    virtual uint32_t ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed, Rc::Type* rc = nullptr );
 
     /// @brief Реализация записи данных
     /// @param[in] buffer Буфер, содержащий данные для записи
     /// @param[in] start Начиная с какого байта считывать буфер
+    /// @param[out] rc Статус операции. Rc::Success в случае успеха.
     /// @return Количество записанных байтов
     /// @note После первой записи возвращает количество записанных байтов
-    virtual uint32_t WriteImpl( const ByteVector& buffer, uint32_t start );
+    virtual uint32_t WriteImpl( const ByteVector& buffer, uint32_t start, Rc::Type* rc = nullptr );
 
 protected:
     const std::string address_;                 ///< Адрес соединения

@@ -93,19 +93,19 @@ void UdpConnection::PurgeImpl( PurgeFlags::Type flags )
 } // PurgeImpl
 
 
-uint32_t UdpConnection::ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed )
+uint32_t UdpConnection::ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed, Rc::Type* rc )
 {
     using namespace std::placeholders;
     linux_io::ReadFunction readFunction = std::bind( recv, _1, _2, _3, 0 );
-    return linux_io::ReadBuffer( readFunction, socket_, buffer, start, needed, readTimeout_ );
+    return linux_io::ReadBuffer( readFunction, socket_, buffer, start, needed, readTimeout_, rc );
 } // ReadImpl
 
 
-uint32_t UdpConnection::WriteImpl( const ByteVector& buffer, uint32_t start )
+uint32_t UdpConnection::WriteImpl( const ByteVector& buffer, uint32_t start, Rc::Type* rc )
 {
     using namespace std::placeholders;
     linux_io::WriteFunction writeFunction = std::bind( send, _1, _2, _3, MSG_NOSIGNAL );
-    return linux_io::WriteBuffer( writeFunction, socket_, buffer, start );
+    return linux_io::WriteBuffer( writeFunction, socket_, buffer, start, rc );
 } // WriteImpl
 
 } // namespace connections

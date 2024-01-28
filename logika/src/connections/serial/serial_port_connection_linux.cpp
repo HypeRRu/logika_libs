@@ -19,7 +19,6 @@
 
 /// @todo Сделать обновление опций без переподключения
 /// @todo Убрать лишние проверки в Read/Write
-/// @todo Добавить проверку на то, что это линукс
 namespace logika
 {
 
@@ -102,15 +101,15 @@ void SerialPortConnection::PurgeImpl( PurgeFlags::Type flags )
 } // PurgeImpl
 
 
-uint32_t SerialPortConnection::ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed )
+uint32_t SerialPortConnection::ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed, Rc::Type* rc )
 {
-    return linux_io::ReadBuffer( read, handle_, buffer, start, needed, readTimeout_ );
+    return linux_io::ReadBuffer( read, handle_, buffer, start, needed, readTimeout_, rc );
 } // ReadImpl
 
 
-uint32_t SerialPortConnection::WriteImpl( const ByteVector& buffer, uint32_t start )
+uint32_t SerialPortConnection::WriteImpl( const ByteVector& buffer, uint32_t start, Rc::Type* rc )
 {
-    return linux_io::WriteBuffer( write, handle_, buffer, start );
+    return linux_io::WriteBuffer( write, handle_, buffer, start, rc );
 } // WriteImpl
 
 

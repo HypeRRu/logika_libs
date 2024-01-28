@@ -42,33 +42,23 @@ public:
     bool IsSettingsValid() const;
 
 protected:
-    /// @brief Реализация установки соединения
-    /// @return Удалось ли открыть соединение
+    /// @copydoc Connection::OpenImpl()
     bool OpenImpl() override;
 
-    /// @brief Реализация закрытия соединения
+    /// @copydoc Connection::CloseImpl()
     void CloseImpl() override;
 
-    /// @brief Реализация очистки буферов
-    /// @param[in] Типы буферов для очистки
+    /// @copydoc Connection::PurgeImpl()
     void PurgeImpl( PurgeFlags::Type flags ) override;
 
-    /// @brief Реализация чтения части данных
-    /// @param[out] buffer Буфер для записи данных
-    /// @param[in] start Начиная с какого байта записывать в буфер
-    /// @param[in] needed Желаемое количество байтов
-    /// @return Количество прочитанных байтов
-    /// @note После первого чтения возвращает количество прочитанных байтов
-    uint32_t ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed ) override;
+    /// @copydoc Connection::ReadImpl()
+    uint32_t ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed, Rc::Type* rc = nullptr ) override;
 
-    /// @brief Реализация записи данных
-    /// @param[in] buffer Буфер, содержащий данные для записи
-    /// @param[in] start Начиная с какого байта считывать буфер
-    /// @return Количество записанных байтов
-    uint32_t WriteImpl( const ByteVector& buffer, uint32_t start ) override;
+    /// @copydoc Connection::WriteImpl()
+    uint32_t WriteImpl( const ByteVector& buffer, uint32_t start, Rc::Type* rc = nullptr ) override;
 
 private:
-    FileHandleType handle_;
+    FileHandleType handle_; ///< Дескриптор соединения
 
 }; // class SerialPortConnection
 

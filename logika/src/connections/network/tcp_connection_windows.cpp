@@ -20,7 +20,6 @@ namespace logika
 namespace connections
 {
 
-/// @todo WSAStartup
 bool TcpConnection::OpenImpl()
 {
     std::string portStr = std::to_string( serverPort_ );
@@ -104,15 +103,15 @@ void TcpConnection::PurgeImpl( PurgeFlags::Type flags )
 } // PurgeImpl
 
 
-uint32_t TcpConnection::ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed )
+uint32_t TcpConnection::ReadImpl( ByteVector& buffer, uint32_t start, uint32_t needed, Rc::Type* rc )
 {
-    return windows_io::ReadBuffer( socket_, buffer, start, needed, readTimeout_ );
+    return windows_io::ReadBuffer( socket_, buffer, start, needed, readTimeout_, rc );
 } // ReadImpl
 
 
-uint32_t TcpConnection::WriteImpl( const ByteVector& buffer, uint32_t start )
+uint32_t TcpConnection::WriteImpl( const ByteVector& buffer, uint32_t start, Rc::Type* rc )
 {
-    return windows_io::WriteBuffer( socket_, buffer, start );
+    return windows_io::WriteBuffer( socket_, buffer, start, rc );
 } // WriteImpl
 
 } // namespace connections
