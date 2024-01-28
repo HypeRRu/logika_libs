@@ -24,27 +24,6 @@ const std::array< std::string, logika::log::LogLevel::Count > logLevelStrings{
     , " DEBUG "
 };
 
-std::string GetCurrentTime()
-{
-    auto currentTime = std::chrono::system_clock::to_time_t( std::chrono::system_clock::now() );
-#if defined( __linux__ ) || defined( __APPLE__ )
-    std::string timeNow = std::ctime( &currentTime );
-    timeNow.pop_back(); ///< Удаление переноса строки
-    return timeNow;
-#endif // defined( __linux__ ) || defined( __APPLE__ )
-#if defined( _WIN32 ) || defined( _WIN64 )
-    constexpr size_t timeStrSize = 26;
-    char timeStr[ timeStrSize ];
-    errno_t error;
-    if ( 0 != ( error = ctime_s( timeStr, timeStrSize, &currentTime ) ) )
-    {
-        std::cerr << logika::SafeStrError( error ) << '\n';
-        return "";
-    }
-    return timeStr;
-#endif // defined( _WIN32 ) || defined( _WIN64 )
-} // GetCurrentTime
-
 } // anonymous namespace
 
 
@@ -115,16 +94,14 @@ void Logger::SetLogLevel( LogLevel::Type level )
 void Logger::Write( LogLevel::Type level, const std::string& message, const std::string& funcName )
 {
     std::stringstream msgToWrite;
-    msgToWrite << GetCurrentTime() << " ";
+    msgToWrite << GetTimeString() << " ";
     msgToWrite << "[" << logLevelStrings[ level ] << "] ";
     if ( !funcName.empty() )
     {
         msgToWrite << funcName + " | ";
     }
     msgToWrite << message << '\n';
-    // const std::string msgToWrite = GetCurrentTime() + " [" + logLevelStrings[ level ] + "] "
-    //     + ( !funcName.empty() ? ( funcName + "\t| " ) : "" ) + message + "\n";
-
+    
     std::unique_lock< std::mutex > lockGuard{ mtx_ };
     if ( level == LogLevel::LogDisable || level > maxLevel_ )
     {

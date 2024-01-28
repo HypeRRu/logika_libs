@@ -6,8 +6,6 @@
 
 #include <logika/log/defines.h>
 
-#include <iostream>
-
 namespace logika
 {
 

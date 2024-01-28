@@ -4,6 +4,7 @@ project(logika LANGUAGES CXX VERSION 1.0)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(BUILD_SHARED_LIBS ON)
+list(APPEND CMAKE_CXX_FLAGS -g3)
 
 set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
@@ -16,6 +17,10 @@ set(SOURCES_LIST
 	${SRC_DIR}/connections/network/udp_connection.cpp
 	${SRC_DIR}/connections/network/tcp_connection.cpp
 	${SRC_DIR}/connections/utils/types_converter.cpp
+	${SRC_DIR}/protocols/protocol.cpp
+	${SRC_DIR}/protocols/m4/archive_record.cpp
+	${SRC_DIR}/protocols/m4/packet.cpp
+	${SRC_DIR}/protocols/m4/m4protocol.cpp
 	${SRC_DIR}/log/logger.cpp
 	${SRC_DIR}/common/misc.cpp
 	${SRC_DIR}/main.cpp

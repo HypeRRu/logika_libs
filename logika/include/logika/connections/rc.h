@@ -22,8 +22,8 @@ using Type = logika::Rc::Type;
 /// @brief Коды возврата при работе с соединениями
 enum : Type
 {
-    Success                 = logika::Rc::Success,                  ///< ( 0x0;        0 ) Успешное завершение операции
-    Fail                    = logika::Rc::Fail,                     ///< ( 0xFFFF; 65535 ) Провал операции
+    Success                 = logika::Rc::Success,                  ///< ( 0x0;          0 ) Успешное завершение операции
+    Fail                    = logika::Rc::Fail,                     ///< ( 0xFFFF;   65535 ) Провал операции
     RcShift                 = logika::Rc::RcShift,                  ///< Сдвиг кода возврата
     ConnectionRc            = 0x1,                                  ///< Индикатор кода возврата для соединений
 
