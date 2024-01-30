@@ -4,6 +4,9 @@
 #include <logika/log/logger.h>
 #include <logika/log/defines.h>
 
+#include <logika/meters/types.h>
+#include <logika/protocols/m4/packet.h>
+
 #include <iostream>
 
 #if defined( _WIN32 ) || defined( _WIN64 )
@@ -57,6 +60,12 @@ int main()
     tcp.Read( tcpRdbuf, 6 );
     tcp.Purge( logika::connections::PurgeFlags::TxRx );
     tcp.Read( tcpRdbuf, 5 );
+
+    logika::meters::VitalInfo vi{ "0x11", "rev", "serial", { "eth0", "eth1" }
+        , static_cast< logika::ByteType >( 0xFF ), static_cast< logika::ByteType >( 0xFF )
+        , static_cast< logika::ByteType >( 0xFF ), "crc16" };
+    logika::meters::HistoricalSeries hs{ 0x11, { { nullptr, 0, 0 } } };
+    logika::meters::VQT vqt{};
 
 #if defined( _WIN32 ) || defined( _WIN64 )
     WSACleanup();

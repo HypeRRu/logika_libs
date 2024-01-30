@@ -21,6 +21,7 @@ set(SOURCES_LIST
 	${SRC_DIR}/protocols/m4/archive_record.cpp
 	${SRC_DIR}/protocols/m4/packet.cpp
 	${SRC_DIR}/protocols/m4/m4protocol.cpp
+	${SRC_DIR}/meters/types.cpp
 	${SRC_DIR}/log/logger.cpp
 	${SRC_DIR}/common/misc.cpp
 	${SRC_DIR}/main.cpp

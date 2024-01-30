@@ -24,6 +24,12 @@ std::string SafeStrError( int error );
 /// @return Строка со временем
 std::string GetTimeString( TimeType timestamp = 0 );
 
+/// @brief Сравнение строк на равенство без учета регистра
+/// @param[in] lhs Первая строка
+/// @param[in] rhs Вторая строка
+/// @return Равны ли строки
+bool StrCaseEq( const std::string& lhs, const std::string& rhs );
+
 } // namespace logika
 
 #endif // LOGIKA_COMMON_MISC_H
