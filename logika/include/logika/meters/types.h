@@ -38,7 +38,7 @@ enum class BusProtocolType
 }; // enum class BusProtocolType
 
 
-namespace TagKing
+namespace TagKind
 {
 
 using Type = uint8_t;
@@ -54,6 +54,37 @@ enum : Type
 }; // anonymous enum
 
 }; // namespace TagKind
+
+
+/// @brief Стандартные величины
+enum class StdVar
+{
+    Undefined,  ///< Не задана
+    SP,         ///< Схема потребления
+    NS,         ///< Битовые сборки НС/ДС
+    AVG,        ///< Среднее значение
+    G,          ///< Поток
+    M,          ///< Масса
+    P,          ///< Давление
+    dP,         ///< Изменение давления
+    T,          ///< Температура
+    ti,         ///< Временной интервал
+    V,          ///< Объем
+    W           ///< Энергия
+}; // enum class StdVar
+
+
+/// @brief Тип данных элемента в БД
+enum class DbType
+{
+    Undefined,  ///< Не задан
+    Byte,       ///< Байт
+    Int32,      ///< 32-битное целое число
+    Int64,      ///< 64-битное целое число
+    Single,     ///< 32-битное число с плавающей точкой; float(24)
+    Double,     ///< 64-битное число с плавающей точкой; float(53)
+    String      ///< Строка (макс. длина - 128 байтов)
+}; // enum class DbType
 
 
 /// @brief Тип архива по времени измерений

@@ -4,7 +4,6 @@ project(logika LANGUAGES CXX VERSION 1.0)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(BUILD_SHARED_LIBS ON)
-list(APPEND CMAKE_CXX_FLAGS -g3)
 
 set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
@@ -22,6 +21,10 @@ set(SOURCES_LIST
 	${SRC_DIR}/protocols/m4/packet.cpp
 	${SRC_DIR}/protocols/m4/m4protocol.cpp
 	${SRC_DIR}/meters/types.cpp
+	${SRC_DIR}/meters/channel.cpp
+	${SRC_DIR}/meters/item_def_base.cpp
+	${SRC_DIR}/meters/tag_def.cpp
+	${SRC_DIR}/meters/utils/types_converter.cpp
 	${SRC_DIR}/log/logger.cpp
 	${SRC_DIR}/common/misc.cpp
 	${SRC_DIR}/main.cpp
@@ -41,6 +44,7 @@ elseif(UNIX)
 		${SRC_DIR}/connections/network/tcp_connection_linux.cpp
 		${SRC_DIR}/connections/common/linux_io.cpp
 	)
+	list(APPEND CMAKE_CXX_FLAGS -g3)
 endif()
 
 add_executable(
