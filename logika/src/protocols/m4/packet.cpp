@@ -15,7 +15,7 @@ namespace M4
 {
 
 Packet::Packet()
-    : Packet( 0xFF, false, 0x0, 0x0, Opcode::NoOp, {}, 0x0 )
+    : Packet( static_cast< ByteType >( 0xFF ), false, 0x0, 0x0, Opcode::NoOp, {}, 0x0 )
 {} // Packet
 
 

@@ -12,9 +12,9 @@ namespace protocols
 namespace M4
 {
 
-const ByteType M4Protocol::FRAME_START  = 0x10;
-const ByteType M4Protocol::FRAME_END    = 0x16;
-const ByteType M4Protocol::EXT_PROTO    = 0x90;
+const ByteType M4Protocol::FRAME_START  = static_cast< ByteType >( 0x10 );
+const ByteType M4Protocol::FRAME_END    = static_cast< ByteType >( 0x16 );
+const ByteType M4Protocol::EXT_PROTO    = static_cast< ByteType >( 0x90 );
 
 } // namespace M4
 
