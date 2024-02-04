@@ -38,6 +38,17 @@ enum class BusProtocolType
 }; // enum class BusProtocolType
 
 
+/// @brief Тип канала
+enum class ChannelKind
+{
+    Undefined,  ///< Тип не определен
+    Common,     ///< Заголовок записи
+    Channel,    ///< Канал измерения / труба (СПТ(Г): "т", СПЕ: "к")
+    Group,      ///< Группа каналов / потребитель (СПТ(Г): "п", СПЕ: "г")
+    TV          ///< ТВ
+}; // enum class ChannelKind
+
+
 namespace TagKind
 {
 

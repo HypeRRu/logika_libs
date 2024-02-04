@@ -30,6 +30,23 @@ std::string DbTypeToString( DbType type )
     throw std::runtime_error{ "Unknown data type" };
 } // DbTypeToString
 
+
+std::string TagKindToString( TagKind::Type type )
+{
+    static const std::unordered_map< TagKind::Type, std::string > mapToString{
+          { TagKind::Parameter, "tuning" }
+        , { TagKind::Info,      "informational" }
+        , { TagKind::Realtime,  "current" }
+        , { TagKind::TotalCtr,  "total" }
+    };
+    auto converted = mapToString.find( type );
+    if ( converted != mapToString.cend() )
+    {
+        return converted->second;
+    }
+    return "?";
+} // TagKindToString
+
 } // namespace meters
 
 } // namespace logika

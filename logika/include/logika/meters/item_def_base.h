@@ -38,7 +38,7 @@ public:
 
     /// @brief Получение прибора
     /// @return Прибор
-    const std::shared_ptr< Meter > GetMeter() const;
+    const std::shared_ptr< IMeter > GetMeter() const;
 
     /// @brief Получение порядкового номера
     /// @return Порядковый номер
@@ -46,12 +46,11 @@ public:
 
     /// @brief Получение имени
     /// @return Имя
-    /// @todo Нужна ли ссылка?
-    const std::string& GetName() const;
+    std::string GetName() const;
 
     /// @brief Получение описания
     /// @return Описание
-    const std::string& GetDescription() const;
+    std::string GetDescription() const;
 
     /// @brief Получение типа элемента в базе данных
     /// @return Тип элемента в базе данных

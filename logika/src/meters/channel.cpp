@@ -11,10 +11,10 @@ namespace meters
 
 /// Структура описание канала
 
-ChannelDef::ChannelDef( std::shared_ptr< Meter > m, const std::string& p, int32_t s
+ChannelDef::ChannelDef( std::shared_ptr< IMeter > m, const std::string& p, int32_t s
     , uint32_t c, const std::string& d )
     : meter{ m }
-    , kind{ m->GetChannelKind() }
+    , kind{ m ? m->GetChannelKind() : ChannelKind::Undefined }
     , prefix{ p }
     , start{ s }
     , count{ c }

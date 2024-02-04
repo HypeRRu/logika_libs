@@ -25,7 +25,7 @@ const ChannelDef& ItemDefBase::GetChannelDef() const
 } // GetChannelDef
 
 
-const std::shared_ptr< Meter > ItemDefBase::GetMeter() const
+const std::shared_ptr< IMeter > ItemDefBase::GetMeter() const
 {
     return channelDef_.meter;
 } // GetMeter
@@ -37,13 +37,13 @@ int ItemDefBase::GetOrdinal() const
 } // GetOrdinal
 
 
-const std::string& ItemDefBase::GetName() const
+std::string ItemDefBase::GetName() const
 {
     return name_;
 } // GetName
 
 
-const std::string& ItemDefBase::GetDescription() const
+std::string ItemDefBase::GetDescription() const
 {
     return description_;
 } // GetDescription

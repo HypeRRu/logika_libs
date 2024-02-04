@@ -7,6 +7,7 @@
 #define LOGIKA_METERS_TAG_DEF_H
 
 #include <logika/meters/item_def_base.h>
+
 #include <logika/common/iserializable.h>
 
 #include <string>
@@ -17,22 +18,29 @@ namespace logika
 namespace meters
 {
 
+/// @brief Параметры для создания базового тэга
+struct TagDefSettings
+{
+public:
+    int ordinal = 0;                    ///< Порядковый номер
+    std::string name = "";              ///< Название тэга
+    StdVar stdVar = StdVar::Undefined;  ///< Тип тэга (величина)
+    std::string description = "";       ///< Описание тэга
+    DbType type = DbType::Undefined;    ///< Тип элемента в базе данных (стандартный)
+    std::string dbType = "";            ///< Тип элемента в базе данных (не стандартный). Если не задан, используется стандартный
+    std::string displayFormat = "";     ///< Формат отображения
+
+}; // struct TagDefSettings
+
+
 /// @brief Базовое описание тэга
 class TagDef: public ItemDefBase
 {
 public:
     /// @brief Конструктор тэга
     /// @param[in] cdef Описание канала
-    /// @param[in] ordinal Порядковый номер
-    /// @param[in] name Название
-    /// @param[in] stdVar Описываемая величина
-    /// @param[in] description Описание
-    /// @param[in] type Тип элемента в базе данных (стандартный)
-    /// @param[in] dbType Тип элемента в базе данных (не стандартный). Если не задан, используется стандартный
-    /// @param[in] displayFormat Формат отображения
-    TagDef( const ChannelDef& cdef, int ordinal, const std::string& name
-        , StdVar stdVar, const std::string& description, DbType type
-        , const std::string& dbType = "", const std::string& displayFormat = "" );
+    /// @param[in] settings Параметры базового тэга
+    TagDef( const ChannelDef& cdef, const TagDefSettings& settings );
 
     /// @brief Получение описываемой величины
     /// @return Тип описываемой величина
@@ -59,29 +67,27 @@ protected:
 }; // class TagDef
 
 
+/// @brief Параметры для создания тэга с данными
+struct DataTagDefSettings: public TagDefSettings
+{
+public:
+    TagKind::Type kind = TagKind::Undefined;    ///< Тип тэга
+    const std::string descriptionEx = "";       ///< Расширенное описание (для настроечных параметров)
+    const std::string range = "";               ///< Диапазон (для настроечных параметров)
+    bool isBasicParam = true;                   ///< Является ли параметр базовым
+    uint32_t updateRate = 0;                    ///< Частота обновления параметра
+
+}; // struct DataTagDefSettings
+
+
 /// @brief Описание тэга с данными
 class DataTagDef: public TagDef, public ISerializable
 {
 public:
     /// @brief Конструктор тэга с данными
     /// @param[in] cdef Описание канала
-    /// @param[in] ordinal Порядковый номер
-    /// @param[in] name Название
-    /// @param[in] stdVar Описываемая величина
-    /// @param[in] description Описание
-    /// @param[in] type Тип элемента в базе данных (стандартный)
-    /// @param[in] dbType Тип элемента в базе данных (не стандартный). Если не задан, используется стандартный
-    /// @param[in] displayFormat Формат отображения
-    /// @param[in] kind Тип тэга
-    /// @param[in] isBasic Является ли параметр базовым
-    /// @param[in] updRate Частота обновления
-    /// @param[in] descEx Расширенное описание параметра. По умолчанию не задано
-    /// @param[in] range Диапазон. По умолчанию не задан
-    DataTagDef( const ChannelDef& cdef, int ordinal, const std::string& name
-        , StdVar stdVar, const std::string& description, DbType type
-        , const std::string& dbType, const std::string& displayFormat
-        , TagKind::Type kind, bool isBasic, const uint32_t updRate
-        , const std::string& descEx = "", const std::string& range = "" );
+    /// @param[in] settings Параметры тэга с данными
+    DataTagDef( const ChannelDef& cdef, const DataTagDefSettings& settings );
     
     /// @brief Получение типа тэга
     /// @return Тип тэга

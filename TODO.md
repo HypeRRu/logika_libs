@@ -17,6 +17,8 @@
 - [ ] Features (autodetect, ...)
 
 ### Meters
+- [-] Types
+- [ ] Meters
 - [ ] Archives
 - [ ] Devices
 

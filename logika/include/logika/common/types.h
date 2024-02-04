@@ -27,6 +27,7 @@ namespace logika
 using TimeType = uint64_t;
 using ByteType = char;
 using ByteVector = std::vector< ByteType >;
+using MeterAddressType = uint32_t;
 
 #if defined( __linux__ ) || defined( __APPLE__ )
 using FileHandleType = int;

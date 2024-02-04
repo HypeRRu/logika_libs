@@ -13,13 +13,20 @@ namespace meters
 
 /// Базовое описание тэга
 
-TagDef::TagDef( const ChannelDef& cdef, int ordinal, const std::string& name
-    , StdVar stdVar, const std::string& description, DbType type
-    , const std::string& dbType, const std::string& displayFormat )
-    : ItemDefBase( cdef, ordinal, name, description, type )
-    , stdVar_{ stdVar }
-    , dbTypeStr_{ !dbType.empty() ? dbType : DbTypeToString( baseType_ ) }
-    , displayFormat_{ displayFormat }
+TagDef::TagDef( const ChannelDef& cdef, const TagDefSettings& settings)
+    : ItemDefBase(
+          cdef
+        , settings.ordinal
+        , settings.name
+        , settings.description
+        , settings.type
+    )
+    , stdVar_{ settings.stdVar }
+    , dbTypeStr_{
+        !settings.dbType.empty() ? settings.dbType
+        : DbTypeToString( settings.type ) 
+    }
+    , displayFormat_{ settings.displayFormat }
     , key_{ "" }
 {} // TagDef
 
@@ -50,17 +57,13 @@ std::string TagDef::GetKey() const
 
 /// Описание тэга с данными
 
-DataTagDef::DataTagDef( const ChannelDef& cdef, int ordinal, const std::string& name
-    , StdVar stdVar, const std::string& description, DbType type
-    , const std::string& dbType, const std::string& displayFormat
-    , TagKind::Type kind, bool isBasic, const uint32_t updRate
-    , const std::string& descEx, const std::string& range )
-    : TagDef( cdef, ordinal, name, stdVar, description, type, dbType, displayFormat )
-    , kind_{ kind }
-    , descriptionEx_{ descEx }
-    , range_{ range }
-    , isBasicParam_{ isBasic }
-    , updateRate_{ updRate }
+DataTagDef::DataTagDef( const ChannelDef& cdef, const DataTagDefSettings& settings )
+    : TagDef( cdef , settings )
+    , kind_{ settings.kind }
+    , descriptionEx_{ settings.descriptionEx }
+    , range_{ settings.range }
+    , isBasicParam_{ settings.isBasicParam }
+    , updateRate_{ settings.updateRate }
 {} // DataTagDef
 
 

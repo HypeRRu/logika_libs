@@ -23,7 +23,12 @@ set(SOURCES_LIST
 	${SRC_DIR}/meters/types.cpp
 	${SRC_DIR}/meters/channel.cpp
 	${SRC_DIR}/meters/item_def_base.cpp
+	${SRC_DIR}/meters/meter.cpp
 	${SRC_DIR}/meters/tag_def.cpp
+	${SRC_DIR}/meters/logika4/tag_def4.cpp
+	${SRC_DIR}/meters/logika4/4l/tag_def4l.cpp
+	${SRC_DIR}/meters/logika4/4m/tag_def4m.cpp
+	${SRC_DIR}/meters/logika6/tag_def6.cpp
 	${SRC_DIR}/meters/utils/types_converter.cpp
 	${SRC_DIR}/log/logger.cpp
 	${SRC_DIR}/common/misc.cpp

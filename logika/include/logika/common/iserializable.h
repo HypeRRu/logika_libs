@@ -1,4 +1,4 @@
-/// @file Интерфейс сериализуемого класса
+/// @file Описание интерфейса сериализуемого класса
 /// @copyright HypeRRu 2024
 
 #pragma once
@@ -11,6 +11,7 @@
 namespace logika
 {
 
+/// @brief Интерфейс сериализуемого типа
 class ISerializable
 {
 public:

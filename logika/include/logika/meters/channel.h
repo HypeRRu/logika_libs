@@ -6,6 +6,9 @@
 #ifndef LOGIKA_METERS_CHANNEL_H
 #define LOGIKA_METERS_CHANNEL_H
 
+#include <logika/meters/imeter.h>
+#include <logika/meters/types.h>
+
 #include <logika/common/iserializable.h>
 
 #include <string>
@@ -19,30 +22,7 @@ namespace logika
 namespace meters
 {
 
-/// @brief Тип канала
-enum class ChannelKind
-{
-    Undefined,  ///< Тип не определен
-    Common,     ///< Заголовок записи
-    Channel,    ///< Канал измерения / труба (СПТ(Г): "т", СПЕ: "к")
-    Group,      ///< Группа каналов / потребитель (СПТ(Г): "п", СПЕ: "г")
-    TV          ///< ТВ
-}; // enum class ChannelKind
-
-
-/// @todo replace with real Meter
-struct Meter
-{
-public:
-    ChannelKind GetChannelKind() const
-    {
-        return ChannelKind::Undefined;
-    }
-
-};
-
-
-/// @brief Структура описание канала 
+/// @brief Структура описание канала
 /// @todo Уточнить описание параметров
 struct ChannelDef: public ISerializable
 {
@@ -53,14 +33,14 @@ public:
     /// @param[in] s Начало
     /// @param[in] c Количество
     /// @param[in] d Описание канала
-    ChannelDef( std::shared_ptr< Meter > m, const std::string& p
+    ChannelDef( std::shared_ptr< IMeter > m, const std::string& p
         , int32_t s , uint32_t c, const std::string& d );
 
     /// @copydoc ISerializable::ToString()
     virtual std::string ToString() const override;
 
 public:
-    const std::shared_ptr< Meter > meter;   ///< Прибор
+    const std::shared_ptr< IMeter > meter;  ///< Прибор
     const ChannelKind kind;                 ///< Тип канала
     const std::string prefix;               ///< Префикс канала
     const int32_t start;                    ///< Начало
