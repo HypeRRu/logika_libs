@@ -8,6 +8,8 @@ set(BUILD_SHARED_LIBS ON)
 set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
+# @todo Разбить на модули
+
 set(SOURCES_LIST
 	${SRC_DIR}/connections/connection.cpp
 	${SRC_DIR}/connections/serial/serial_connection.cpp
@@ -21,14 +23,19 @@ set(SOURCES_LIST
 	${SRC_DIR}/protocols/m4/packet.cpp
 	${SRC_DIR}/protocols/m4/m4protocol.cpp
 	${SRC_DIR}/meters/types.cpp
+	${SRC_DIR}/meters/archive_types.cpp
+	${SRC_DIR}/meters/archive_def.cpp
 	${SRC_DIR}/meters/channel.cpp
 	${SRC_DIR}/meters/item_def_base.cpp
 	${SRC_DIR}/meters/meter.cpp
 	${SRC_DIR}/meters/tag_def.cpp
 	${SRC_DIR}/meters/logika4/tag_def4.cpp
 	${SRC_DIR}/meters/logika4/4l/tag_def4l.cpp
+	${SRC_DIR}/meters/logika4/4l/archive_def4l.cpp
 	${SRC_DIR}/meters/logika4/4m/tag_def4m.cpp
+	${SRC_DIR}/meters/logika4/4m/archive_def4m.cpp
 	${SRC_DIR}/meters/logika6/tag_def6.cpp
+	${SRC_DIR}/meters/logika6/archive_def6.cpp
 	${SRC_DIR}/meters/utils/types_converter.cpp
 	${SRC_DIR}/log/logger.cpp
 	${SRC_DIR}/common/misc.cpp

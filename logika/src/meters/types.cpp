@@ -13,21 +13,22 @@ namespace meters
 
 /// Тип архива
 
-std::unordered_map< std::string, ArchiveType* > ArchiveType::types_{};
+std::unordered_map< std::string, const ArchiveType* > ArchiveType::types_{};
 
 ArchiveType::ArchiveType( const std::string& name, const std::string& description
-    , ArchiveTimingType timing, const std::string& acronym, TimeType interval )
+    , ArchiveTimingType timing, const std::string& acronym, TimeType interval, bool variableInterval )
     : timing_{ timing }
     , name_{ name }
     , acronym_{ acronym }
     , description_{ description }
     , interval_{ interval }
+    , variableInterval_{ variableInterval }
 {
     types_[ name ] = this;
 } // ArchiveType
 
 
-const std::unordered_map< std::string, ArchiveType* >& ArchiveType::All()
+const std::unordered_map< std::string, const ArchiveType* >& ArchiveType::All()
 {
     return types_;
 } // All
@@ -61,6 +62,24 @@ TimeType ArchiveType::GetInterval() const
 {
     return interval_;
 } // GetInterval
+
+
+bool ArchiveType::IsIntervalArchive() const
+{
+    return timing_ == ArchiveTimingType::Synchronous;
+} // IsIntervalArchive
+
+
+bool ArchiveType::IsServiceArchive() const
+{
+    return timing_ == ArchiveTimingType::Asynchronous;
+} // IsServiceArchive
+
+
+std::string ArchiveType::ToString() const
+{
+    return name_;
+} // ToString
 
 
 /// Тип, состояший из метрики, ее значения и метки времени

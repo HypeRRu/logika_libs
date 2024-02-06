@@ -127,12 +127,12 @@ enum class ImportantTag
 
 
 /// @brief Тип архива
-class ArchiveType
+class ArchiveType: public ISerializable
 {
 public:
     /// @brief Получение списка с типом архивов
     /// @return Список предопределенных типов архивов
-    static const std::unordered_map< std::string, ArchiveType* >& All();
+    static const std::unordered_map< std::string, const ArchiveType* >& All();
 
     /// @brief Получение типа архива по времени измерений
     /// @return Тип архива по времени измерений
@@ -154,10 +154,46 @@ public:
     /// @return Интервал архивирования
     TimeType GetInterval() const;
 
+    /// @brief Получение флага переменного интервала
+    /// @return Является ли интервал переменным
+    bool IsVariableInterval() const;
+
+    /// @brief Получение флага интервального архива
+    /// @return Является ли архив интервальным
+    bool IsIntervalArchive() const;
+
+    /// @brief Получение флага сервисного архива
+    /// @return Является ли архив сервисным (асинхронным)
+    bool IsServiceArchive() const;
+
+    /// @copydoc ISerializable::ToString()
+    virtual std::string ToString() const override;
+
+public:
+    /// Предопределенные типы архивов
+    static const ArchiveType Hour;      ///< Часовой архив
+    static const ArchiveType Day;       ///< Суточный архив
+    static const ArchiveType Decade;    ///< Декадный архив
+    static const ArchiveType Month;     ///< Месячный архив
+
+    static const ArchiveType ParamsLog; ///< Архив изменений БД
+    static const ArchiveType PowerLog;  ///< Архив перерывов питания
+    static const ArchiveType ErrorsLog; ///< Архив нештатных ситуаций
+
+    static const ArchiveType Control;   ///< Контрольный архив (только тепловые приборы M4)
+
+    /// Специфичные для СПЕ542, 543
+    static const ArchiveType Minute;    ///< Минутный архив
+    static const ArchiveType HalfHour;  ///< Получасовой архив
+
+    static const ArchiveType Turn;      ///< Сменный архив
+    static const ArchiveType Diags;     ///< Диагностический архив
+
 private:
     /// @brief Конструктор типа архива
     ArchiveType( const std::string& name, const std::string& description
-        , ArchiveTimingType timing, const std::string& acronym , TimeType interval );
+        , ArchiveTimingType timing, const std::string& acronym
+        , TimeType interval, bool variableInterval = false );
 
 private:
     ArchiveTimingType timing_;  ///< Тип архива по времени измерений
@@ -165,9 +201,10 @@ private:
     std::string acronym_;       ///< Акроним названия типа
     std::string description_;   ///< Описание типа
     TimeType interval_;         ///< Интервал архивирования для интервальных архивов, мс
+    bool variableInterval_;     ///< Переменный интервал
 
 private:
-    static std::unordered_map< std::string, ArchiveType* > types_;   ///< Предопределенные типы архивов
+    static std::unordered_map< std::string, const ArchiveType* > types_;    ///< Предопределенные типы архивов
 
 }; // class ArchiveType
 

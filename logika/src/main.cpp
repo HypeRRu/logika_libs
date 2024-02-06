@@ -67,6 +67,9 @@ int main()
     logika::meters::HistoricalSeries hs{ 0x11, { { nullptr, 0, 0 } } };
     logika::meters::VQT vqt{};
 
+    const logika::meters::ArchiveType& hr = logika::meters::ArchiveType::Hour;
+    LOG_WRITE( LOG_INFO, hr.GetDescription() << " " << hr.GetInterval() );
+
 #if defined( _WIN32 ) || defined( _WIN64 )
     WSACleanup();
 #endif

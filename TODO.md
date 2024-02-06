@@ -24,3 +24,6 @@
 
 ### WinComms
 ### WinUtils
+
+### Features
+- [ ] Localization

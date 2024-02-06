@@ -42,7 +42,7 @@ public:
 
     /// @brief Получение порядкового номера
     /// @return Порядковый номер
-    int GetOrdinal() const;
+    virtual int GetOrdinal() const;
 
     /// @brief Получение имени
     /// @return Имя
@@ -63,7 +63,7 @@ protected:
 
 protected:
     const ChannelDef channelDef_;   ///< Описание канала
-    const int ordinal_;             ///< Порядковый номер
+    int ordinal_;                   ///< Порядковый номер
     std::string name_;              ///< Имя (берется из внутренней базы тэгов)
     const std::string description_; ///< Описание
     const DbType baseType_;         ///< Тип элемента в базе данных
