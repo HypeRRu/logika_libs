@@ -7,6 +7,7 @@
 #define LOGIKA_COMMON_TYPES_H
 
 #include <vector>
+#include <string>
 
 #include <cstdint>
 
@@ -28,6 +29,8 @@ using TimeType = uint64_t;
 using ByteType = char;
 using ByteVector = std::vector< ByteType >;
 using MeterAddressType = uint32_t;
+/// @todo use it
+using LocString = std::wstring;
 
 #if defined( __linux__ ) || defined( __APPLE__ )
 using FileHandleType = int;

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "enums.proto";
+
+package logika;
+
+message X6ArchiveList
+{
+    repeated X6Archive list = 1;
+}
+
+message X6Archive
+{
+    string device = 1;
+    ArchiveTypeEnum archiveType = 2;
+    repeated int32 ordinals = 3;
+    DataTypeEnum recordType = 4;
+    string name = 5;
+    string description = 6;
+    int32 capacity = 7;
+}

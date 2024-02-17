@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "enums.proto";
+
+package logika;
+
+message M4ArchiveList
+{
+    repeated M4Archive list = 1;
+}
+
+message M4Archive
+{
+    string device = 1;
+    ArchiveTypeEnum archiveType = 2;
+    string channel = 3;
+    DataTypeEnum recordType = 4;
+    string name = 5;
+    string description = 6;
+    int32 capacity = 7;
+}

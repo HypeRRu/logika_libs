@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package logika;
+
+message ChannelList
+{
+    repeated Channel list = 1;
+}
+
+message Channel
+{
+    string device = 1;  /// @todo enum
+    string key = 2;     /// @todo enum
+    string description = 3;
+    int32 start = 4;
+    int32 count = 5;
+}

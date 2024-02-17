@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+import "enums.proto";
+
+package logika;
+
+message L4TagList
+{
+    repeated L4Tag list = 1;
+}
+
+message L4Tag
+{
+    string device = 1;
+    string channel = 2;
+    int32 ordinal = 3;
+    TagKindEnum kind = 4;
+    bool basic = 5;
+    DataTypeEnum dataType = 6;
+    optional string dbType = 7;
+    int32 updateRate = 8;
+    string name = 9;
+    optional string displayFormat = 10;
+    string description = 11;
+    optional VarTypeEnum varType = 12;
+    optional string units = 13;
+    InternalTypeEnum internalType = 14;
+    bool inRam = 15;
+    optional int32 address = 16;
+    optional int32 channelOffset = 17;
+    optional int32 addon = 18;
+    optional int32 addonOffset = 19;
+    optional string range = 20;
+    optional string descriptionEx = 21;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "enums.proto";
+
+package logika;
+
+message TagKindList
+{
+    repeated TagKind list = 1;
+}
+
+message TagKind
+{
+    TagKindEnum kind = 1;
+    string description = 2;
+}

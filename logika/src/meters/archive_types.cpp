@@ -20,6 +20,7 @@ constexpr logika::TimeType tsMonth  = 30 * tsDay;
 } // anonymous namespace
 
 
+/// @todo Локализация
 namespace logika
 {
 
@@ -95,7 +96,7 @@ const ArchiveType ArchiveType::Minute{
 };
 const ArchiveType ArchiveType::HalfHour{
     "HalfHour",
-    "half hour archive",
+    "[half]hour archive",
     ArchiveTimingType::Synchronous,
     "halhr",
     30 * tsMinute,

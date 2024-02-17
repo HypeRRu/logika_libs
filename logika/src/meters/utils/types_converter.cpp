@@ -21,6 +21,7 @@ std::string DbTypeToString( DbType type )
         , { DbType::Single, "real" }
         , { DbType::Double, "float" }
         , { DbType::String, "varchar(128)" }
+        /// @todo Массивы
     };
     auto converted = mapToString.find( type );
     if ( converted != mapToString.cend() )

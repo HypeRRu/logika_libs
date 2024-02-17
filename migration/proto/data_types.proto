@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "enums.proto";
+
+package logika;
+
+message DataTypes
+{
+    repeated DataType types = 1;
+}
+
+message DataType
+{
+    DataTypeEnum name = 1;
+    string description = 2;
+}

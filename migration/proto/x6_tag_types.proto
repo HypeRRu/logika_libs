@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "enums.proto";
+
+package logika;
+
+message X6TagTypeList
+{
+    repeated X6TagTypeEnum list = 1;
+}
