@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "logika/resources/enums.proto";
+
+package logika;
+
+message M4TagList
+{
+    repeated M4Tag list = 1;
+}
+
+message M4Tag
+{
+    string device = 1;
+    string channel = 2;
+    int32 ordinal = 3;
+    TagKindEnum kind = 4;
+    bool basic = 5;
+    DataTypeEnum dataType = 6;
+    optional string dbType = 7;
+    int32 updateRate = 8;
+    string name = 9;
+    optional string displayFormat = 10;
+    string description = 11;
+    optional VarTypeEnum varType = 12;
+    optional string units = 13;
+    optional string range = 14;
+    optional string descriptionEx = 15;
+}

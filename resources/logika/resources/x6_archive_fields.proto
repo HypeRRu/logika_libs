@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+import "logika/resources/enums.proto";
+
+package logika;
+
+message X6ArchiveFieldList
+{
+    repeated X6ArchiveField list = 1;
+}
+
+message X6ArchiveField
+{
+    string device = 1;
+    ArchiveTypeEnum archiveType = 2;
+    string channel = 3;
+    int32 ordinal = 4;
+    DataTypeEnum dataType = 5;
+    optional string dbType = 6;
+    string name = 7;
+    string description = 8;
+    optional VarTypeEnum varType = 9;
+    optional int32 startIndex = 10;
+    optional int32 count = 11;
+    optional int32 depth = 12;
+    optional string comment = 13;
+}

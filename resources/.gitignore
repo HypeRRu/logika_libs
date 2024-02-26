@@ -1,0 +1,4 @@
+*.pb.cc
+*.pb.h
+install_manifest.txt
+liblogika_resources.*

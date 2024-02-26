@@ -1,1 +1,0 @@
-protoc -I=proto --cpp_out='generated' proto/*.proto

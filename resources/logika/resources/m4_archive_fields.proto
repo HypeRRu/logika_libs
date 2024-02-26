@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+import "logika/resources/enums.proto";
+
+package logika;
+
+message M4ArchiveFieldList
+{
+    repeated M4ArchiveField list = 1;
+}
+
+message M4ArchiveField
+{
+    string device = 1;
+    ArchiveTypeEnum archiveType = 2;
+    int32 index = 3;
+    string name = 4;
+    DataTypeEnum dataType = 5;
+    string description = 6;
+    optional VarTypeEnum varType = 7;
+    optional string units = 8;
+    optional string dbType = 9;
+    optional string displayFormat = 10;
+}

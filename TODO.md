@@ -27,3 +27,6 @@
 
 ### Features
 - [ ] Localization
+
+## Global
+- [ ] Fix C++ standard version (use c++14)

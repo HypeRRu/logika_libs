@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "logika/resources/enums.proto";
+
+package logika;
+
+message L4Types
+{
+    repeated L4Type types = 1;
+}
+
+message L4Type
+{
+    InternalTypeEnum type = 1;
+    string description = 2;
+    optional string comment = 3;
+}
