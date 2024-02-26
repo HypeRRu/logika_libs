@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
 
 project(logika LANGUAGES CXX VERSION 1.0)
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(BUILD_SHARED_LIBS ON)
 
@@ -25,10 +25,12 @@ set(SOURCES_LIST
 	${SRC_DIR}/meters/types.cpp
 	${SRC_DIR}/meters/archive_types.cpp
 	${SRC_DIR}/meters/archive_def.cpp
+	${SRC_DIR}/meters/archive_field_def.cpp
 	${SRC_DIR}/meters/channel.cpp
 	${SRC_DIR}/meters/item_def_base.cpp
 	${SRC_DIR}/meters/meter.cpp
 	${SRC_DIR}/meters/tag_def.cpp
+	${SRC_DIR}/meters/tag.cpp
 	${SRC_DIR}/meters/logika4/tag_def4.cpp
 	${SRC_DIR}/meters/logika4/4l/tag_def4l.cpp
 	${SRC_DIR}/meters/logika4/4l/archive_def4l.cpp

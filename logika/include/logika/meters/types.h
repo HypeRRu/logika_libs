@@ -132,6 +132,7 @@ enum class ImportantTag
 
 
 /// @brief Тип архива
+/// @todo Добавить генерацию из ресурсов
 class ArchiveType: public ISerializable
 {
 public:

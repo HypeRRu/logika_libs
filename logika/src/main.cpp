@@ -7,6 +7,9 @@
 #include <logika/meters/types.h>
 #include <logika/protocols/m4/packet.h>
 
+#include <logika/common/any.hpp>
+#include <logika/meters/archive_field_def.h>
+
 #include <iostream>
 
 #if defined( _WIN32 ) || defined( _WIN64 )
@@ -83,6 +86,8 @@ int main()
     logika::meters::VQT vqt{};
 
     const logika::meters::ArchiveType& hr = logika::meters::ArchiveType::Hour;
+
+    logika::meters::ArchiveFieldDef afd{ { nullptr, "", 0, 0, "", "Hour" } };
 
 #if defined( _WIN32 ) || defined( _WIN64 )
     WSACleanup();

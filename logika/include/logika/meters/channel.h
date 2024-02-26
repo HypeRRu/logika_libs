@@ -23,7 +23,6 @@ namespace meters
 {
 
 /// @brief Структура описание канала
-/// @todo Уточнить описание параметров
 struct ChannelDef: public ISerializable
 {
 public:
