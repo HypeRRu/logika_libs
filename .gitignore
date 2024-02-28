@@ -9,3 +9,5 @@ cmake_install.cmake
 *.o
 Makefile
 test*
+resources-prefix
+logika_resources-prefix

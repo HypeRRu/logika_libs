@@ -4,10 +4,9 @@ project(logika_migration LANGUAGES CXX VERSION 1.0)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(SRC_DIR ${CMAKE_SOURCE_DIR}/src)
 
-find_package(Protobuf CONFIG)
-find_package(Protobuf REQUIRED)
+set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
+set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 add_executable(
     logika_migration
@@ -32,8 +31,7 @@ add_executable(
     ${SRC_DIR}/converters/x6_tag_types.cpp
     ${SRC_DIR}/converters/x6_tags.cpp
 )
-target_include_directories(logika_migration PRIVATE ../resources/include)
-target_include_directories(logika_migration PRIVATE ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(logika_migration PRIVATE ${INCLUDE_DIR})
 
-find_library(RESOURCES_LIB logika_resources PATHS ${CMAKE_SOURCE_DIR}/../resources/lib)
-target_link_libraries(logika_migration ${RESOURCES_LIB} protobuf::libprotobuf)
+target_link_libraries(logika_migration logika_resources)
+target_include_directories(logika_migration PRIVATE ${logika_resources_INCLUDE_DIR})

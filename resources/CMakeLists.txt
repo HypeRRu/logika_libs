@@ -7,9 +7,11 @@ set(BUILD_SHARED_LIBS ON)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
-if (UNIX)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -g0")
-endif()
+set(INCLUDE_INSTALL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include/logika/resources)
+
+#if (UNIX)
+#    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -g0")
+#endif()
 
 set(Protobuf_USE_STATIC_LIBS OFF)
 find_package(Protobuf CONFIG)
@@ -46,12 +48,18 @@ protobuf_generate(
     PROTOC_OUT_DIR src
     OUT_VAR PROTO_SRCS
 )
+
 set(PROTO_INCS ${PROTO_SRCS})
 list(
     FILTER PROTO_INCS
     INCLUDE REGEX ".\.pb\.h$"
 )
-install(
-    FILES ${PROTO_INCS}
-    DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/include/logika/resources
+
+# copy includes
+add_custom_command(
+    TARGET logika_resources
+    POST_BUILD
+    COMMAND_EXPAND_LISTS
+    COMMAND ${CMAKE_COMMAND} -E copy "$<JOIN:${PROTO_INCS},;>" ${INCLUDE_INSTALL_DIR}/
+    COMMENT "Copy include files to ${INCLUDE_INSTALL_DIR}"
 )
