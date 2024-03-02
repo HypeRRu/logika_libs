@@ -32,8 +32,10 @@ class ArchiveFieldDef: public TagDef
 public:
     ArchiveFieldDef( const ChannelDef& cdef, const ArchiveFieldDefSettings& settings );
 
+    std::shared_ptr< ArchiveType > GetArchiveType() const;
+
 protected:
-    const ArchiveType& archiveType_;
+    std::shared_ptr< ArchiveType > archiveType_;
 
 }; // class ArchiveDef
 

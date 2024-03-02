@@ -5,6 +5,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(BUILD_SHARED_LIBS ON)
 
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/bin)
+
 set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
@@ -23,7 +26,6 @@ set(SOURCES_LIST
 	${SRC_DIR}/protocols/m4/packet.cpp
 	${SRC_DIR}/protocols/m4/m4protocol.cpp
 	${SRC_DIR}/meters/types.cpp
-	${SRC_DIR}/meters/archive_types.cpp
 	${SRC_DIR}/meters/archive_def.cpp
 	${SRC_DIR}/meters/archive_field_def.cpp
 	${SRC_DIR}/meters/channel.cpp
@@ -72,5 +74,13 @@ if (WIN32)
 target_link_libraries(test_main PRIVATE ws2_32)
 endif()
 
-target_link_libraries(test_main logika_resources)
-target_include_directories(test_main PRIVATE ${logika_resources_INCLUDE_DIR})
+add_library(
+	logika_converters
+	${SRC_DIR}/meters/converters/meter_converters.cpp
+)
+target_link_libraries(logika_converters PUBLIC logika_resources)
+target_include_directories(logika_converters PUBLIC ${INCLUDE_DIR})
+target_include_directories(logika_converters PUBLIC ${logika_resources_INCLUDE_DIR})
+
+target_link_libraries(test_main logika_converters)
+target_include_directories(test_main PRIVATE logika_converters)

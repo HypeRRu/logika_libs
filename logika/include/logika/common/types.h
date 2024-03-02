@@ -8,6 +8,8 @@
 
 #include <vector>
 #include <string>
+#include <locale>
+#include <codecvt>
 
 #include <cstdint>
 
@@ -25,12 +27,14 @@
 namespace logika
 {
 
-using TimeType = uint64_t;
-using ByteType = char;
-using ByteVector = std::vector< ByteType >;
-using MeterAddressType = uint32_t;
+using TimeType          = uint64_t;
+using ByteType          = char;
+using ByteVector        = std::vector< ByteType >;
+using MeterAddressType  = uint32_t;
 /// @todo use it
-using LocString = std::wstring;
+using LocChar           = wchar_t;
+using LocString         = std::basic_string< LocChar >;
+using LocConverter      = std::wstring_convert< std::codecvt_utf8< LocChar >, LocChar >;
 
 #if defined( __linux__ ) || defined( __APPLE__ )
 using FileHandleType = int;

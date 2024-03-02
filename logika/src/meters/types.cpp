@@ -13,10 +13,10 @@ namespace meters
 
 /// Тип архива
 
-std::unordered_map< std::string, const ArchiveType* > ArchiveType::types_{};
+// std::unordered_map< std::string, const ArchiveType* > ArchiveType::types_{};
 
-ArchiveType::ArchiveType( const std::string& name, const std::string& description
-    , ArchiveTimingType timing, const std::string& acronym, TimeType interval, bool variableInterval )
+ArchiveType::ArchiveType( const std::string& name, const LocString& description
+    , ArchiveTimingType timing, const LocString& acronym, TimeType interval, bool variableInterval )
     : timing_{ timing }
     , name_{ name }
     , acronym_{ acronym }
@@ -24,14 +24,29 @@ ArchiveType::ArchiveType( const std::string& name, const std::string& descriptio
     , interval_{ interval }
     , variableInterval_{ variableInterval }
 {
-    types_[ name ] = this;
+    // types_[ name ] = this;
 } // ArchiveType
 
+// std::shared_ptr< ArchiveType > ArchiveType::Create(
+//     const std::string& name, const LocString& description
+//     , ArchiveTimingType timing, const LocString& acronym
+//     , TimeType interval, bool variableInterval )
+// {
+//     struct MakeSharedEnabler: public ArchiveType {
+//         template < typename... Args >
+//         MakeSharedEnabler( Args&&... args )
+//             : ArchiveType( std::forward< Args >( args )... )
+//         {}
+//     };
+//     return std::make_shared< MakeSharedEnabler >( name, description
+//         , timing, acronym, interval, variableInterval );
+// } // Create
 
-const std::unordered_map< std::string, const ArchiveType* >& ArchiveType::All()
-{
-    return types_;
-} // All
+
+// const std::unordered_map< std::string, const ArchiveType* >& ArchiveType::All()
+// {
+//     return types_;
+// } // All
 
 
 ArchiveTimingType ArchiveType::GetTimingType() const
@@ -46,13 +61,13 @@ const std::string& ArchiveType::GetName() const
 } // GetName
 
 
-const std::string& ArchiveType::GetAcronym() const
+const LocString& ArchiveType::GetAcronym() const
 {
     return acronym_;
 } // GetAcronym
 
 
-const std::string& ArchiveType::GetDescription() const
+const LocString& ArchiveType::GetDescription() const
 {
     return description_;
 } // GetDescription

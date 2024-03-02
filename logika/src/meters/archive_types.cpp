@@ -29,92 +29,92 @@ namespace meters
 
 const ArchiveType ArchiveType::Hour{
     "Hour",
-    "hourly archive",
+    L"hourly archive",
     ArchiveTimingType::Synchronous,
-    "ho",
+    L"ho",
     tsHour
 };
 const ArchiveType ArchiveType::Day{
     "Day",
-    "daily archive",
+    L"daily archive",
     ArchiveTimingType::Synchronous,
-    "day",
+    L"day",
     tsDay
 };
 const ArchiveType ArchiveType::Decade{
     "Decade",
-    "ten-day archive",
+    L"ten-day archive",
     ArchiveTimingType::Synchronous,
-    "dec",
+    L"dec",
     tsDecade
 };
 const ArchiveType ArchiveType::Month{
     "Month",
-    "monthly archive",
+    L"monthly archive",
     ArchiveTimingType::Synchronous,
-    "mon",
+    L"mon",
     tsMonth
 };
 
 const ArchiveType ArchiveType::ParamsLog{
     "ParamsLog",
-    "DB changes",
+    L"DB changes",
     ArchiveTimingType::Asynchronous,
-    "chg",
+    L"chg",
     tsZero
 };
 const ArchiveType ArchiveType::PowerLog{
     "PowerLog",
-    "power breaks",
+    L"power breaks",
     ArchiveTimingType::Asynchronous,
-    "pwr",
+    L"pwr",
     tsZero
 };
 const ArchiveType ArchiveType::ErrorsLog{
     "ErrorsLog",
-    "abnormal",
+    L"abnormal",
     ArchiveTimingType::Asynchronous,
-    "err",
+    L"err",
     tsZero
 };
 
 const ArchiveType ArchiveType::Control{
     "Control",
-    "control archive",
+    L"control archive",
     ArchiveTimingType::Synchronous,
-    "ctl",
+    L"ctl",
     tsDay
 };
 
 const ArchiveType ArchiveType::Minute{
     "Minute",
-    "minute archive",
+    L"minute archive",
     ArchiveTimingType::Synchronous,
-    "min",
+    L"min",
     tsMinute,
     true
 };
 const ArchiveType ArchiveType::HalfHour{
     "HalfHour",
-    "[half]hour archive",
+    L"[half]hour archive",
     ArchiveTimingType::Synchronous,
-    "halhr",
+    L"halhr",
     30 * tsMinute,
     true
 };
 
 const ArchiveType ArchiveType::Turn{
     "Turn",
-    "turn archive",
+    L"turn archive",
     ArchiveTimingType::Asynchronous,
-    "trn",
+    L"trn",
     tsZero
 };
 const ArchiveType ArchiveType::Diags{
     "Diags",
-    "diagnostical archive",
+    L"diagnostical archive",
     ArchiveTimingType::Asynchronous,
-    "diag",
+    L"diag",
     tsZero
 };
 

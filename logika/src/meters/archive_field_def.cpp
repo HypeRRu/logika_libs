@@ -3,19 +3,28 @@
 
 #include <logika/meters/archive_field_def.h>
 
+#include <logika/storage/storage.hpp>
+
 namespace logika
 {
 
 namespace meters
 {
 
-/// @todo Аккуратно с ArchiveType::All().at( settings.archiveTypeName )
-/// Надо ловить исключения
 ArchiveFieldDef::ArchiveFieldDef( const ChannelDef& cdef
     , const ArchiveFieldDefSettings& settings )
     : TagDef( cdef, settings )
-    , archiveType_{ *( ArchiveType::All().at( settings.archiveTypeName ) ) }
-{} // ArchiveFieldDef
+    , archiveType_{}
+{
+    auto storage = storage::StorageKeeper::Instance().GetStorage< std::string, ArchiveType >();
+    storage && storage->GetItem( settings.archiveTypeName, archiveType_ );
+} // ArchiveFieldDef
+
+
+std::shared_ptr< ArchiveType > ArchiveFieldDef::GetArchiveType() const
+{
+    return archiveType_;
+} // ArchiveFieldDef
 
 } // namespace meters
 

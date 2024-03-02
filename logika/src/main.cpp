@@ -13,6 +13,11 @@
 #include <logika/resources/loader.hpp>
 #include <logika/resources/l4_archive_fields.pb.h>
 
+#include <logika/storage/storage.hpp>
+#include <logika/meters/converters/meter_converters.h>
+
+#include <clocale>
+
 #include <iostream>
 
 #if defined( _WIN32 ) || defined( _WIN64 )
@@ -88,7 +93,7 @@ int main()
     logika::meters::HistoricalSeries hs{ 0x11, { { nullptr, 0, 0 } } };
     logika::meters::VQT vqt{};
 
-    const logika::meters::ArchiveType& hr = logika::meters::ArchiveType::Hour;
+    // const logika::meters::ArchiveType& hr = logika::meters::ArchiveType::Hour;
 
     logika::meters::ArchiveFieldDefSettings afdSettings;
     afdSettings.ordinal = 10;
@@ -97,10 +102,34 @@ int main()
     logika::meters::ChannelDef cdef{ nullptr, "chn", 0, 10, "some channel" };
     logika::meters::ArchiveFieldDef afd{ cdef, afdSettings };
 
-    logika::resources::Loader< logika::resources::L4ArchiveFieldList > loader;
-    // logika::resources::Loader< std::string > loader;
-    auto l4ArchiveFields = loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/L4ArchiveFields.dat" );
-    LOG_WRITE( LOG_INFO, l4ArchiveFields->list_size() );
+    logika::storage::StorageKeeper sKeeper = logika::storage::StorageKeeper::Instance();
+    {
+        logika::resources::Loader< logika::resources::ArchiveTypes > loader;
+        auto resource = loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/ArchiveTypes.dat" );
+        if ( resource )
+        {
+            sKeeper.CreateStorage< std::string, logika::meters::ArchiveType >();
+            auto storage = sKeeper.GetStorage< std::string, logika::meters::ArchiveType >();
+            auto types = logika::meters::converters::ArchiveTypeConverter::Convert( *resource );
+            LOG_WRITE( LOG_INFO, "Converted " << types.size() << " ArchiveType instances" );
+            for ( auto type: types )
+            {
+                if ( type )
+                {
+                    LOG_WRITE( LOG_INFO, "Add ArchiveType '" << type->GetName() << "' to storage: "
+                        << ( storage->AddItem( type->GetName(), type ) ? "Success" : "Failed" ) );
+                    std::shared_ptr< logika::meters::ArchiveType > item;
+                    storage->GetItem( type->GetName(), item );
+                    std::wcout << item->GetDescription() << std::endl;
+                    std::wcout << item->GetAcronym() << std::endl;
+                }
+            }
+        }
+        else
+        {
+            LOG_WRITE( LOG_ERROR, "Unable to load ArchiveTypes" );
+        }
+    }
 
 #if defined( _WIN32 ) || defined( _WIN64 )
     WSACleanup();
