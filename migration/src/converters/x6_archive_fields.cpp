@@ -16,11 +16,11 @@ namespace X6ArchiveFields
 bool Migrate( const std::string& inFileName, const std::string& outFileName )
 {
     csv::CSVReader reader( inFileName );
-    logika::X6ArchiveFieldList fieldList;
+    logika::resources::X6ArchiveFieldList fieldList;
 
     for ( auto& row: reader )
     {
-        logika::X6ArchiveField* field = fieldList.add_list();
+        logika::resources::X6ArchiveField* field = fieldList.add_list();
         if ( !field )
         {
             return false;

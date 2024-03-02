@@ -16,11 +16,11 @@ namespace X6Tags
 bool Migrate( const std::string& inFileName, const std::string& outFileName )
 {
     csv::CSVReader reader( inFileName );
-    logika::X6TagList tags;
+    logika::resources::X6TagList tags;
 
     for ( auto& row: reader )
     {
-        logika::X6Tag* tag = tags.add_list();
+        logika::resources::X6Tag* tag = tags.add_list();
         if ( !tag )
         {
             return false;

@@ -16,7 +16,7 @@ namespace X6TagTypes
 bool Migrate( const std::string& inFileName, const std::string& outFileName )
 {
     csv::CSVReader reader( inFileName );
-    logika::X6TagTypeList typesList;
+    logika::resources::X6TagTypeList typesList;
 
     for ( auto& row: reader )
     {

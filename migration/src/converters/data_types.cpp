@@ -16,11 +16,11 @@ namespace DataTypes
 bool Migrate( const std::string& inFileName, const std::string& outFileName )
 {
     csv::CSVReader reader( inFileName );
-    logika::DataTypes types;
+    logika::resources::DataTypes types;
 
     for ( auto& row: reader )
     {
-        logika::DataType* type = types.add_list();
+        logika::resources::DataType* type = types.add_list();
         if ( !type )
         {
             return false;

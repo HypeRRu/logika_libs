@@ -16,11 +16,11 @@ namespace Vars
 bool Migrate( const std::string& inFileName, const std::string& outFileName )
 {
     csv::CSVReader reader( inFileName );
-    logika::VarList vars;
+    logika::resources::VarList vars;
 
     for ( auto& row: reader )
     {
-        logika::Var* var = vars.add_list();
+        logika::resources::Var* var = vars.add_list();
         if ( !var )
         {
             return false;

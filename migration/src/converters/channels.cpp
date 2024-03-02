@@ -16,11 +16,11 @@ namespace Channels
 bool Migrate( const std::string& inFileName, const std::string& outFileName )
 {
     csv::CSVReader reader( inFileName );
-    logika::ChannelList channelList;
+    logika::resources::ChannelList channelList;
 
     for ( auto& row: reader )
     {
-        logika::Channel* channel = channelList.add_list();
+        logika::resources::Channel* channel = channelList.add_list();
         if ( !channel )
         {
             return false;

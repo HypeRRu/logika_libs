@@ -16,11 +16,11 @@ namespace L4Types
 bool Migrate( const std::string& inFileName, const std::string& outFileName )
 {
     csv::CSVReader reader( inFileName );
-    logika::L4Types types;
+    logika::resources::L4Types types;
 
     for ( auto& row: reader )
     {
-        logika::L4Type* type = types.add_list();
+        logika::resources::L4Type* type = types.add_list();
         if ( !type )
         {
             return false;

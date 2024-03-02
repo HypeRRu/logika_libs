@@ -16,11 +16,11 @@ namespace M4ArchiveFields
 bool Migrate( const std::string& inFileName, const std::string& outFileName )
 {
     csv::CSVReader reader( inFileName );
-    logika::M4ArchiveFieldList fieldList;
+    logika::resources::M4ArchiveFieldList fieldList;
 
     for ( auto& row: reader )
     {
-        logika::M4ArchiveField* field = fieldList.add_list();
+        logika::resources::M4ArchiveField* field = fieldList.add_list();
         if ( !field )
         {
             return false;

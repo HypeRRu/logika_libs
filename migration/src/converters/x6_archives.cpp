@@ -17,11 +17,11 @@ namespace X6Archives
 bool Migrate( const std::string& inFileName, const std::string& outFileName )
 {
     csv::CSVReader reader( inFileName );
-    logika::X6ArchiveList archiveList;
+    logika::resources::X6ArchiveList archiveList;
 
     for ( auto& row: reader )
     {
-        logika::X6Archive* archive = archiveList.add_list();
+        logika::resources::X6Archive* archive = archiveList.add_list();
         if ( !archive )
         {
             return false;

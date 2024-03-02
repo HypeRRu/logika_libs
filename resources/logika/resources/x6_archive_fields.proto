@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "logika/resources/enums.proto";
 
-package logika;
+package logika.resources;
 
 message X6ArchiveFieldList
 {

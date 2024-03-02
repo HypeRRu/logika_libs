@@ -13,19 +13,19 @@ namespace logika_migration
 namespace EnumsStringToPb
 {
 
-logika::ArchiveTypeEnum ArchiveTypeFromString( const std::string& str );
+logika::resources::ArchiveTypeEnum ArchiveTypeFromString( const std::string& str );
 
-logika::BusTypeEnum BusTypeFromString( const std::string& str );
+logika::resources::BusTypeEnum BusTypeFromString( const std::string& str );
 
-logika::TagKindEnum TagKindFromString( const std::string& str );
+logika::resources::TagKindEnum TagKindFromString( const std::string& str );
 
-logika::DataTypeEnum DataTypeFromString( const std::string& str );
+logika::resources::DataTypeEnum DataTypeFromString( const std::string& str );
 
-logika::VarTypeEnum VarTypeFromString( const std::string& str );
+logika::resources::VarTypeEnum VarTypeFromString( const std::string& str );
 
-logika::InternalTypeEnum InternalTypeFromString( const std::string& str );
+logika::resources::InternalTypeEnum InternalTypeFromString( const std::string& str );
 
-logika::X6TagTypeEnum X6TagTypeFromString( const std::string& str );
+logika::resources::X6TagTypeEnum X6TagTypeFromString( const std::string& str );
 
 } // namespace EnumsStringToPb
 

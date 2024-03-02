@@ -15,11 +15,11 @@ namespace Devices
 bool Migrate( const std::string& inFileName, const std::string& outFileName )
 {
     csv::CSVReader reader( inFileName );
-    logika::DeviceList deviceList;
+    logika::resources::DeviceList deviceList;
 
     for ( auto& row: reader )
     {
-        logika::Device* device = deviceList.add_list();
+        logika::resources::Device* device = deviceList.add_list();
         if ( !device )
         {
             return false;

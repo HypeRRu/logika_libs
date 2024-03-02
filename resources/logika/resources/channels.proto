@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package logika;
+package logika.resources;
 
 message ChannelList
 {

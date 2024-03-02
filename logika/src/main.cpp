@@ -21,18 +21,18 @@
 
 int main()
 {
+    logika::log::Logger& logger = logika::log::Logger::Instance();
+    logger.SetLogType( logika::log::LogType::LogConsole );
+    logger.SetLogLevel( logika::log::LogLevel::LogAll );
+
 #if defined( _WIN32 ) || defined( _WIN64 )
     WSADATA wsaData;
     int wsaInitResult = WSAStartup( MAKEWORD( 2, 2 ), &wsaData );
     if ( 0 != wsaInitResult) {
-        printf( "WSAStartup failed: %d\n", wsaInitResult );
+        LOG_WRITE( LOG_ERROR,  "WSAStartup failed: " << wsaInitResult );
         return 1;
     }
 #endif
-
-    logika::log::Logger& logger = logika::log::Logger::Instance();
-    logger.SetLogType( logika::log::LogType::LogConsole );
-    logger.SetLogLevel( logika::log::LogLevel::LogAll );
 
 //     logika::ByteVector buffer{ 'b', 'u', 'f', 'f', 'e', 'r', '\n', '\0' };
 // #if defined( __linux__ ) || defined( __APPLE__ )
@@ -97,9 +97,10 @@ int main()
     logika::meters::ChannelDef cdef{ nullptr, "chn", 0, 10, "some channel" };
     logika::meters::ArchiveFieldDef afd{ cdef, afdSettings };
 
-    logika::resources::Loader< logika::L4ArchiveFieldList > loader;
+    logika::resources::Loader< logika::resources::L4ArchiveFieldList > loader;
     // logika::resources::Loader< std::string > loader;
-    loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/L4ArchiveFields.dat" );
+    auto l4ArchiveFields = loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/L4ArchiveFields.dat" );
+    LOG_WRITE( LOG_INFO, l4ArchiveFields->list_size() );
 
 #if defined( _WIN32 ) || defined( _WIN64 )
     WSACleanup();

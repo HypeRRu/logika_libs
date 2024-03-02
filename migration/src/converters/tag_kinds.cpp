@@ -16,11 +16,11 @@ namespace TagKinds
 bool Migrate( const std::string& inFileName, const std::string& outFileName )
 {
     csv::CSVReader reader( inFileName );
-    logika::TagKindList tags;
+    logika::resources::TagKindList tags;
 
     for ( auto& row: reader )
     {
-        logika::TagKind* tag = tags.add_list();
+        logika::resources::TagKind* tag = tags.add_list();
         if ( !tag )
         {
             return false;

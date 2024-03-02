@@ -16,11 +16,11 @@ namespace L4Archives
 bool Migrate( const std::string& inFileName, const std::string& outFileName )
 {
     csv::CSVReader reader( inFileName );
-    logika::L4ArchiveList archiveList;
+    logika::resources::L4ArchiveList archiveList;
 
     for ( auto& row: reader )
     {
-        logika::L4Archive* archive = archiveList.add_list();
+        logika::resources::L4Archive* archive = archiveList.add_list();
         if ( !archive )
         {
             return false;

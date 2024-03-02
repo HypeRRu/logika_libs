@@ -16,11 +16,11 @@ namespace M4Tags
 bool Migrate( const std::string& inFileName, const std::string& outFileName )
 {
     csv::CSVReader reader( inFileName );
-    logika::M4TagList tags;
+    logika::resources::M4TagList tags;
 
     for ( auto& row: reader )
     {
-        logika::M4Tag* tag = tags.add_list();
+        logika::resources::M4Tag* tag = tags.add_list();
         if ( !tag )
         {
             return false;

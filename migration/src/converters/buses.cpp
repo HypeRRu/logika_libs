@@ -16,11 +16,11 @@ namespace Buses
 bool Migrate( const std::string& inFileName, const std::string& outFileName )
 {
     csv::CSVReader reader( inFileName );
-    logika::BusList busList;
+    logika::resources::BusList busList;
 
     for ( auto& row: reader )
     {
-        logika::Bus* bus = busList.add_list();
+        logika::resources::Bus* bus = busList.add_list();
         if ( !bus )
         {
             return false;
