@@ -6,7 +6,7 @@ package logika;
 
 message L4Types
 {
-    repeated L4Type types = 1;
+    repeated L4Type list = 1;
 }
 
 message L4Type

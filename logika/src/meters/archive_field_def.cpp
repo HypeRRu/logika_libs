@@ -10,7 +10,7 @@ namespace meters
 {
 
 /// @todo Аккуратно с ArchiveType::All().at( settings.archiveTypeName )
-/// Возможно разыменование указателя на освобожденную память
+/// Надо ловить исключения
 ArchiveFieldDef::ArchiveFieldDef( const ChannelDef& cdef
     , const ArchiveFieldDefSettings& settings )
     : TagDef( cdef, settings )

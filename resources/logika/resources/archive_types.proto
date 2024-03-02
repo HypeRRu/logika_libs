@@ -6,7 +6,7 @@ package logika;
 
 message ArchiveTypes
 {
-    repeated ArchiveType types = 1;
+    repeated ArchiveType list = 1;
 }
 
 message ArchiveType

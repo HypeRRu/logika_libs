@@ -20,7 +20,7 @@ bool Migrate( const std::string& inFileName, const std::string& outFileName )
 
     for ( auto& row: reader )
     {
-        logika::L4Type* type = types.add_types();
+        logika::L4Type* type = types.add_list();
         if ( !type )
         {
             return false;

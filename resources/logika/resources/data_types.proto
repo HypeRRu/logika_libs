@@ -6,7 +6,7 @@ package logika;
 
 message DataTypes
 {
-    repeated DataType types = 1;
+    repeated DataType list = 1;
 }
 
 message DataType

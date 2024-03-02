@@ -28,7 +28,9 @@ std::string DbTypeToString( DbType type )
     {
         return converted->second;
     }
-    throw std::runtime_error{ "Unknown data type" };
+    /// @todo Стоит ли использовать exception?
+    return "";
+    // throw std::runtime_error{ "Unknown data type" };
 } // DbTypeToString
 
 

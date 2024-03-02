@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(BUILD_SHARED_LIBS ON)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
+set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 set(INCLUDE_INSTALL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include/logika/resources)
 
@@ -40,6 +41,7 @@ add_library(
     logika/resources/x6_tags.proto
 )
 target_include_directories(logika_resources PRIVATE ${SRC_DIR})
+target_include_directories(logika_resources PRIVATE ${INCLUDE_DIR})
 
 protobuf_generate(
     TARGET logika_resources

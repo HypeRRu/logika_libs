@@ -10,6 +10,9 @@
 #include <logika/common/any.hpp>
 #include <logika/meters/archive_field_def.h>
 
+#include <logika/resources/loader.hpp>
+#include <logika/resources/l4_archive_fields.pb.h>
+
 #include <iostream>
 
 #if defined( _WIN32 ) || defined( _WIN64 )
@@ -93,6 +96,10 @@ int main()
 
     logika::meters::ChannelDef cdef{ nullptr, "chn", 0, 10, "some channel" };
     logika::meters::ArchiveFieldDef afd{ cdef, afdSettings };
+
+    logika::resources::Loader< logika::L4ArchiveFieldList > loader;
+    // logika::resources::Loader< std::string > loader;
+    loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/L4ArchiveFields.dat" );
 
 #if defined( _WIN32 ) || defined( _WIN64 )
     WSACleanup();
