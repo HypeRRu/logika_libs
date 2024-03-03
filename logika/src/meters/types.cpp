@@ -13,8 +13,6 @@ namespace meters
 
 /// Тип архива
 
-// std::unordered_map< std::string, const ArchiveType* > ArchiveType::types_{};
-
 ArchiveType::ArchiveType( const std::string& name, const LocString& description
     , ArchiveTimingType timing, const LocString& acronym, TimeType interval, bool variableInterval )
     : timing_{ timing }
@@ -23,30 +21,7 @@ ArchiveType::ArchiveType( const std::string& name, const LocString& description
     , description_{ description }
     , interval_{ interval }
     , variableInterval_{ variableInterval }
-{
-    // types_[ name ] = this;
-} // ArchiveType
-
-// std::shared_ptr< ArchiveType > ArchiveType::Create(
-//     const std::string& name, const LocString& description
-//     , ArchiveTimingType timing, const LocString& acronym
-//     , TimeType interval, bool variableInterval )
-// {
-//     struct MakeSharedEnabler: public ArchiveType {
-//         template < typename... Args >
-//         MakeSharedEnabler( Args&&... args )
-//             : ArchiveType( std::forward< Args >( args )... )
-//         {}
-//     };
-//     return std::make_shared< MakeSharedEnabler >( name, description
-//         , timing, acronym, interval, variableInterval );
-// } // Create
-
-
-// const std::unordered_map< std::string, const ArchiveType* >& ArchiveType::All()
-// {
-//     return types_;
-// } // All
+{} // ArchiveType
 
 
 ArchiveTimingType ArchiveType::GetTimingType() const

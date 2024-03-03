@@ -23,12 +23,12 @@ namespace meters
 struct ArchiveDefSettings
 {
 public:
-    int ordinal = 0;                        ///< Порядковый номер
-    const ArchiveType* archType = nullptr;  ///< Тип архива
-    DbType type = DbType::Undefined;        ///< Тип элемента в базе данных (стандартный)
-    uint32_t capacity = 0;                  ///< Емкость архива
-    std::string name = "";                  ///< Описание тэга
-    std::string description = "";           ///< Описание тэга
+    int ordinal = 0;                                    ///< Порядковый номер
+    std::shared_ptr< ArchiveType > archType = nullptr;  ///< Тип архива
+    DbType type = DbType::Undefined;                    ///< Тип элемента в базе данных (стандартный)
+    uint32_t capacity = 0;                              ///< Емкость архива
+    std::string name = "";                              ///< Имя тэга
+    std::string description = "";                       ///< Описание тэга
 
 }; // struct ArchiveDefSettings
 
@@ -44,7 +44,7 @@ public:
 
     /// @brief Получение типа архива
     /// @return Тип архива
-    const ArchiveType* GetArchiveType() const;
+    std::shared_ptr< ArchiveType > GetArchiveType() const;
 
     /// @brief Получение емкости архива
     /// @return Емкость архива
@@ -54,8 +54,8 @@ public:
     virtual std::string ToString() const override;
 
 protected:
-    const ArchiveType* archiveType_;    ///< Тип архива (один из предопределенных)
-    uint32_t capacity_;                 ///< Емкость архива (количество записей)
+    std::shared_ptr< ArchiveType > archiveType_;    ///< Тип архива (один из предопределенных)
+    uint32_t capacity_;                             ///< Емкость архива (количество записей)
 
 }; // class ArchiveDef
 

@@ -14,17 +14,20 @@ namespace meters
 ArchiveFieldDef::ArchiveFieldDef( const ChannelDef& cdef
     , const ArchiveFieldDefSettings& settings )
     : TagDef( cdef, settings )
-    , archiveType_{}
-{
-    auto storage = storage::StorageKeeper::Instance().GetStorage< std::string, ArchiveType >();
-    storage && storage->GetItem( settings.archiveTypeName, archiveType_ );
-} // ArchiveFieldDef
+    , archiveType_{ settings.archiveType }
+{} // ArchiveFieldDef
 
 
 std::shared_ptr< ArchiveType > ArchiveFieldDef::GetArchiveType() const
 {
     return archiveType_;
 } // ArchiveFieldDef
+
+
+std::string ArchiveFieldDef::ToString() const
+{
+    return channelDef_.prefix + " " + name_;
+} // ToString
 
 } // namespace meters
 

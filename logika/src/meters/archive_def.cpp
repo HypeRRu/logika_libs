@@ -21,7 +21,7 @@ ArchiveDef::ArchiveDef( const ChannelDef& cdef, const ArchiveDefSettings& settin
 {} // ArchiveDef
 
 
-const ArchiveType* ArchiveDef::GetArchiveType() const
+std::shared_ptr< ArchiveType > ArchiveDef::GetArchiveType() const
 {
     return archiveType_;
 } // GetArchiveType

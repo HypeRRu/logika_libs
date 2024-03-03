@@ -40,6 +40,7 @@ set(SOURCES_LIST
 	${SRC_DIR}/meters/logika4/4m/archive_def4m.cpp
 	${SRC_DIR}/meters/logika6/tag_def6.cpp
 	${SRC_DIR}/meters/logika6/archive_def6.cpp
+	${SRC_DIR}/meters/logika6/archive_field_def6.cpp
 	${SRC_DIR}/meters/utils/types_converter.cpp
 	${SRC_DIR}/log/logger.cpp
 	${SRC_DIR}/common/misc.cpp

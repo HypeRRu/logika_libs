@@ -19,25 +19,34 @@ namespace logika
 namespace meters
 {
 
+/// @brief Параметры описания поля архива
 struct ArchiveFieldDefSettings: public TagDefSettings
 {
 public:
-    std::string archiveTypeName;    ///< Название типа архива
+    std::shared_ptr< ArchiveType > archiveType; ///< Название типа архива
 
 }; // struct ArchiveFieldDefSettings
 
 
-class ArchiveFieldDef: public TagDef
+class ArchiveFieldDef: public TagDef, public ISerializable
 {
 public:
+    /// @brief Конструктор описания поля архива
+    /// @param[in] cdef Описание канала
+    /// @param[in] settings Параметры описания поля архива
     ArchiveFieldDef( const ChannelDef& cdef, const ArchiveFieldDefSettings& settings );
 
+    /// @brief Получение типа архива
+    /// @return Тип архива
     std::shared_ptr< ArchiveType > GetArchiveType() const;
 
-protected:
-    std::shared_ptr< ArchiveType > archiveType_;
+    /// @copydoc ISerializable::ToString()
+    virtual std::string ToString() const override;
 
-}; // class ArchiveDef
+protected:
+    std::shared_ptr< ArchiveType > archiveType_;    ///< Тип архива
+
+}; // class ArchiveFieldDef
 
 } // namespace meters
 
