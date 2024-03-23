@@ -16,7 +16,10 @@ namespace meters
 
 /// @brief Класс прибора Logika4
 class Logika4: public Meter
-{}; // class Logika4
+{
+public:
+
+}; // class Logika4
 
 } // namespace meters
 

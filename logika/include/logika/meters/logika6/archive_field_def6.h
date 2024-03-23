@@ -22,6 +22,7 @@ public:
 }; // struct ArchiveFieldDef6Settings
 
 
+/// @brief Описание поля архива Logika6
 class ArchiveFieldDef6: public ArchiveFieldDef
 {
 public:

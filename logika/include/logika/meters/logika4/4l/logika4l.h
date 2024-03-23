@@ -14,6 +14,7 @@ namespace logika
 namespace meters
 {
 
+/// @brief Класс прибора Logika4L
 class Logika4L: public Logika4
 {
 public:

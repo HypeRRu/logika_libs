@@ -7,6 +7,7 @@
 #define LOGIKA_METERS_LOGIKA4_ARCHIVE_FIELD_DEF4_H
 
 #include <logika/meters/archive_field_def.h>
+#include <logika/meters/archive_def.h>
 
 namespace logika
 {
@@ -18,10 +19,13 @@ namespace meters
 struct ArchiveFieldDef4Settings: public ArchiveFieldDefSettings
 {
 public:
-    
+    std::shared_ptr< ArchiveDef > archive = nullptr;    ///< Описание архива
+    std::string units = "";                             ///< Единицы измерения
+
 }; // struct ArchiveFieldDef4Settings
 
 
+/// @brief Описание поля архива Logika4
 class ArchiveFieldDef4: public ArchiveFieldDef
 {
 public:
@@ -30,17 +34,17 @@ public:
     /// @param[in] settings Параметры описания поля архива Logika4
     ArchiveFieldDef4( const ChannelDef& cdef, const ArchiveFieldDef4Settings& settings );
 
-    /// @brief Получение имени поля архива
-    /// @return Имя поля архива
-    std::string GetNameSuffixed() const;
+    /// @brief Получение описания архива
+    /// @return Описание архива
+    std::shared_ptr< ArchiveDef > GetArchive() const;
 
-    /// @brief Получение адреса поля
-    /// @return Адрес поля архива
-    std::string GetAddress() const;
+    /// @brief Получение единиц измерения
+    /// @return Единицы измерения
+    std::string GetUnits() const;
 
 protected:
-    std::string address_;       ///< Адрес поля архива
-    std::string nameSuffixed_;  ///< Имя поля архива
+    std::shared_ptr< ArchiveDef > archive_; ///< Описание архива
+    std::string units_;                     ///< Единицы измерения
 
 }; // class ArchiveFieldDef4
 
@@ -48,4 +52,4 @@ protected:
 
 } // namespace logika
 
-#endif // LOGIKA_METERS_LOGIKA6_ARCHIVE_FIELD_DEF4_H
+#endif // LOGIKA_METERS_LOGIKA4_ARCHIVE_FIELD_DEF4_H

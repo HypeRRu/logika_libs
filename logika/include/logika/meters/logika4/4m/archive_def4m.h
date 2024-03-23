@@ -14,11 +14,11 @@ namespace logika
 namespace meters
 {
 
-/// @brief Параметры для создания описания архива Logika6
+/// @brief Параметры для создания описания архива Logika4M
 struct ArchiveDef4MSettings: public ArchiveDefSettings
 {
 public:
-}; // struct ArchiveDef6Settings
+}; // struct ArchiveDef4MSettings
 
 
 /// @brief Описание архива Logika4M

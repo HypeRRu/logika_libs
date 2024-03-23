@@ -18,6 +18,7 @@ namespace meters
 struct ArchiveDef6Settings: public ArchiveDefSettings
 {
 public:
+
 }; // struct ArchiveDef6Settings
 
 

@@ -12,6 +12,7 @@ set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 # @todo Разбить на модули
+# @todo Опции для выбора модулей для сборки
 
 set(SOURCES_LIST
 	${SRC_DIR}/connections/connection.cpp
@@ -33,11 +34,14 @@ set(SOURCES_LIST
 	${SRC_DIR}/meters/meter.cpp
 	${SRC_DIR}/meters/tag_def.cpp
 	${SRC_DIR}/meters/tag.cpp
+	${SRC_DIR}/meters/logika4/archive_field_def4.cpp
 	${SRC_DIR}/meters/logika4/tag_def4.cpp
 	${SRC_DIR}/meters/logika4/4l/tag_def4l.cpp
 	${SRC_DIR}/meters/logika4/4l/archive_def4l.cpp
+	${SRC_DIR}/meters/logika4/4l/archive_field_def4l.cpp
 	${SRC_DIR}/meters/logika4/4m/tag_def4m.cpp
 	${SRC_DIR}/meters/logika4/4m/archive_def4m.cpp
+	${SRC_DIR}/meters/logika4/4m/archive_field_def4m.cpp
 	${SRC_DIR}/meters/logika6/tag_def6.cpp
 	${SRC_DIR}/meters/logika6/archive_def6.cpp
 	${SRC_DIR}/meters/logika6/archive_field_def6.cpp

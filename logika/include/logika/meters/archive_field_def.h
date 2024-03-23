@@ -23,11 +23,12 @@ namespace meters
 struct ArchiveFieldDefSettings: public TagDefSettings
 {
 public:
-    std::shared_ptr< ArchiveType > archiveType; ///< Название типа архива
+    std::shared_ptr< ArchiveType > archiveType = nullptr;   ///< Название типа архива
 
 }; // struct ArchiveFieldDefSettings
 
 
+/// @brief Описание поля архива
 class ArchiveFieldDef: public TagDef, public ISerializable
 {
 public:
