@@ -7,6 +7,7 @@
 #define LOGIKA_METERS_ARCHIVE_H
 
 #include <logika/meters/types.h>
+#include <logika/meters/meter.h>
 
 #include <logika/common/iserializable.h>
 
@@ -19,6 +20,7 @@ namespace meters
 {
 
 /// @brief Базовый класс архива
+/// @todo Может Meter передавать по shared_ptr?
 class Archive
 {
 public:
@@ -36,11 +38,12 @@ public:
     const ArchiveType& GetArchiveType() const;
 
 public:
-    static constexpr char FLD_EXTPROP_KEY = "AfInfo";   ///< @todo Имя поля для ресурсов
+    static constexpr char FLD_EXTPROP_KEY[] = "AfInfo"; ///< @todo Имя поля для ресурсов
 
 protected:
     const Meter& meter_;                ///< Прибор
     const ArchiveType& archiveType_;    ///< Тип архива
+
 }; // class Archive
 
 

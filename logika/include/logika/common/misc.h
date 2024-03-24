@@ -30,6 +30,12 @@ std::string GetTimeString( TimeType timestamp = 0 );
 /// @return Равны ли строки
 bool StrCaseEq( const std::string& lhs, const std::string& rhs );
 
+/// @brief Обрезание пробельных символов из строки
+/// @param[in] str Обрабатываемая строка
+/// @param[in] trimChars Обрезаемые символы
+/// @return Обработанная строка
+std::string Trim( const std::string& str, const std::string& trimChars = " \t\r\n" );
+
 } // namespace logika
 
 #endif // LOGIKA_COMMON_MISC_H

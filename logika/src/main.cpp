@@ -16,6 +16,8 @@
 #include <logika/storage/storage.hpp>
 #include <logika/meters/converters/meter_converters.h>
 
+#include <logika/meters/data_table.h>
+
 #include <clocale>
 
 #include <iostream>
@@ -124,12 +126,28 @@ int main()
         }
     }
 
-    logika::meters::ArchiveFieldDefSettings afdSettings;
-    afdSettings.ordinal = 10;
-    storage->GetItem( "Hour", afdSettings.archiveType );
+    logika::meters::ArchiveFieldDefSettings afdSettings1;
+    afdSettings1.ordinal = 10;
+    storage->GetItem( "Hour", afdSettings1.archiveType );
 
-    logika::meters::ChannelDef cdef{ nullptr, "chn", 0, 10, "some channel" };
-    logika::meters::ArchiveFieldDef afd{ cdef, afdSettings };
+    logika::meters::ChannelDef cdef1{ nullptr, "chn", 0, 10, "some channel" };
+    logika::meters::ArchiveFieldDef afd1{ cdef1, afdSettings1 };
+
+    logika::meters::ArchiveFieldDefSettings afdSettings2;
+    afdSettings2.ordinal = 1;
+    storage->GetItem( "Hour", afdSettings2.archiveType );
+
+    logika::meters::ChannelDef cdef2{ nullptr, "chn1", 0, 10, "some channel 2" };
+    logika::meters::ArchiveFieldDef afd2{ cdef2, afdSettings2 };
+
+    std::vector< logika::meters::DataTable::FieldType > fields;
+    fields.push_back(
+        std::make_shared< logika::meters::ArchiveField >( afd1, 8 )
+    );
+    fields.push_back(
+        std::make_shared< logika::meters::ArchiveField >( afd2, 5 )
+    );
+    logika::meters::DataTable table( fields );
 
 #if defined( _WIN32 ) || defined( _WIN64 )
     WSACleanup();

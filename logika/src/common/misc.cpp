@@ -81,4 +81,16 @@ bool StrCaseEq( const std::string& lhs, const std::string& rhs )
         && std::equal( lhs.cbegin(), lhs.cend(), rhs.cbegin(), CharCaseEq );
 } // StrCaseEq
 
+
+std::string Trim( const std::string& str, const std::string& trimChars )
+{
+    size_t leftPos = str.find_first_not_of( trimChars );
+    if ( std::string::npos == leftPos )
+    {
+        return "";
+    }
+    size_t rightPos = str.find_last_not_of( trimChars );
+    return str.substr( leftPos, rightPos - leftPos );
+} // Trim
+
 } // namespace logika

@@ -1,3 +1,11 @@
+/// @file Реализация объекта переменного типа
+/// @copyright HypeRRu 2024
+
+#pragma once
+
+#ifndef LOGIKA_ANY_IPP
+#define LOGIKA_ANY_IPP
+
 #include <logika/common/any.hpp>
 
 namespace logika
@@ -72,3 +80,5 @@ const std::type_info& Any::Holder< T >::TypeInfo() const
 } // TypeInfo
 
 } // namespace logika
+
+#endif // LOGIKA_ANY_IPP

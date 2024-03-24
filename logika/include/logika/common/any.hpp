@@ -14,6 +14,7 @@ namespace logika
 
 /// @brief Объект переменного типа
 /// @note Тип сохраняемого объекта должен быть copy-constructible
+/// @todo Возможно стоит добавить поддержку shared_ptr
 class Any
 {
 public:

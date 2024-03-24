@@ -24,7 +24,7 @@ class Tag: public ISerializable
 public:
     /// @brief Конструктор тэга
     /// @param[in] def Описание тэга
-    /// @param[in] 
+    /// @param[in] channelNo Номер используемого канала
     Tag( const TagDef& def, int32_t channelNo );
 
     /// @brief Получение описание тэга
@@ -61,12 +61,12 @@ public:
 
     /// @copydoc ISerializable::ToString()
     virtual std::string ToString() const override;
-
-private:
+protected:
+    std::string address_;   ///< Адрес тэга
     TagDef def_;            ///< Описание тэга
     Channel channel_;       ///< Канал
-    std::string eu_;        ///< @todo ???
-    std::string address_;   ///< Адрес тэга
+    std::string eu_;        ///< Единицы измерения
+
 }; // class Tag
 
 } // namespace meters

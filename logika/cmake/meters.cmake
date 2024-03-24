@@ -5,6 +5,9 @@ set(
     ${SRC_DIR}/meters/types.cpp
 	${SRC_DIR}/meters/archive_def.cpp
 	${SRC_DIR}/meters/archive_field_def.cpp
+	${SRC_DIR}/meters/archive_field.cpp
+	${SRC_DIR}/meters/archive.cpp
+	${SRC_DIR}/meters/data_table.cpp
 	${SRC_DIR}/meters/channel.cpp
 	${SRC_DIR}/meters/item_def_base.cpp
 	${SRC_DIR}/meters/meter.cpp
