@@ -11,7 +11,7 @@ namespace meters
 
 /// Базовый тип архива
 
-Archive::Archive( const Meter& meter, const ArchiveType& archiveType )
+Archive::Archive( const Meter& meter, std::shared_ptr< ArchiveType > archiveType )
     : meter_{ meter }
     , archiveType_{ archiveType }
 {} // Archive
@@ -23,7 +23,7 @@ const Meter& Archive::GetMeter() const
 } // GetMeter
 
 
-const ArchiveType& Archive::GetArchiveType() const
+std::shared_ptr< ArchiveType > Archive::GetArchiveType() const
 {
     return archiveType_;
 } // GetArchiveType

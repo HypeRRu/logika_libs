@@ -27,15 +27,8 @@ public:
     Any()  = default;
     ~Any() = default;
 
-    /// @brief Конструктор копирования
-    Any( const Any& other );
-
     /// @brief Конструктор перемещения
     Any( Any&& other );
-
-    /// @brief Оператор копирования
-    /// @param[in] other Копируемый объект переменного типа
-    Any& operator= ( const Any& other );
 
     /// @brief Оператор перемещения
     /// @param[in] other Перемещаемый объект переменного типа

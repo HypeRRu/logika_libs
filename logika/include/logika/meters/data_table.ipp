@@ -40,10 +40,46 @@ std::vector< T > DataTable::GetColumn( size_t fieldIndex ) const
 
     for ( RecordType record: data_ )
     {
-        column.push_back( record.at( fieldIndex ).Cast< T > );
+        column.push_back( record->at( fieldIndex ).Cast< T > );
     }
     return column;
 } // GetColumn( size_t fieldIndex )
+
+
+template < typename T >
+bool DataTable::AddColumn( DataTable::FieldType field, const T& value )
+{
+    if ( !AddColumn( field ) )
+    {
+        return false;
+    }
+    for ( DataTable::RecordType record: data_ )
+    {
+        if ( record )
+        {
+            record->back() = logika::Any( value );
+        }
+    }
+    return true;
+} // AddColumn( DataTable::FieldType field, const T& value )
+
+
+template < typename T >
+bool DataTable::InsertColumn( DataTable::FieldType field, size_t index, const T& value )
+{
+    if ( !InsertColumn( field, index ) )
+    {
+        return false;
+    }
+    for ( DataTable::RecordType record: data_ )
+    {
+        if ( record )
+        {
+            record[ index ] = logika::Any( value );
+        }
+    }
+    return true;
+} // InsertColumn( DataTable::FieldType field, size_t index, const T& value )
 
 } // namespace meters
 

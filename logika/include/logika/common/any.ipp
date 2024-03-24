@@ -8,6 +8,8 @@
 
 #include <logika/common/any.hpp>
 
+#include <stdexcept>
+
 namespace logika
 {
 
@@ -15,19 +17,6 @@ template < typename T >
 Any::Any( const T& t )
     : holder_{ new Holder< T >( t ) }
 {} // Any( const T& t )
-
-
-Any::Any( Any&& other )
-{
-    std::swap( holder_, other.holder_ );
-} // Any( Any&& other )
-
-
-Any& Any::operator= ( Any&& other )
-{
-    std::swap( holder_, other.holder_ );
-    return *this;
-} // operator= ( Any&& other )
 
 
 template < typename T >
@@ -44,12 +33,6 @@ Any& Any::operator= ( T&& value )
     holder_ = new Holder< T >( value );
     return *this;
 } // operator= ( T&& value )
-
-
-bool Any::Empty() const
-{
-    return holder_.get() == nullptr;
-} // Empty
 
 
 template < typename T >

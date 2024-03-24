@@ -16,7 +16,7 @@
 #include <logika/storage/storage.hpp>
 #include <logika/meters/converters/meter_converters.h>
 
-#include <logika/meters/data_table.h>
+#include <logika/meters/data_table.hpp>
 
 #include <clocale>
 

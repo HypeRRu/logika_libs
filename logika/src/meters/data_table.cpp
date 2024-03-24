@@ -1,7 +1,7 @@
 /// @file Реализация таблицы данных
 /// @copyright HypeRRu 2024
 
-#include <logika/meters/data_table.h>
+#include <logika/meters/data_table.hpp>
 
 #include <stdexcept>
 #include <algorithm>
@@ -102,6 +102,82 @@ bool DataTable::ValidateRecord( DataTable::RecordType record )
     /// @todo реализовать
     return true;
 } // ValidateRecord
+
+
+
+bool DataTable::ValidateField( DataTable::FieldType field )
+{
+    /// @todo реализовать
+    return true;
+} // ValidateField
+
+
+bool DataTable::AddColumn( DataTable::FieldType field )
+{
+    if ( !ValidateField( field ) )
+    {
+        return false;
+    }
+
+    fieldList_.push_back( field );
+    for ( RecordType record: data_ )
+    {
+        if ( record )
+        {
+            record->push_back( logika::Any{} );
+        }
+    }
+    return true;
+} // AddColumn
+
+
+bool DataTable::InsertColumn( DataTable::FieldType field, size_t index )
+{
+    if ( !ValidateField( field ) )
+    {
+        return false;
+    }
+
+    fieldList_.insert( fieldList_.begin() + index, field );
+    for ( RecordType record: data_ )
+    {
+        if ( record )
+        {
+            record->insert( record->begin() + index, logika::Any{} );
+        }
+    }
+
+    return true;
+} // InsertColumn
+
+
+bool DataTable::RemoveColumn( DataTable::FieldType field )
+{
+    auto iter = std::find( fieldList_.cbegin(), fieldList_.cend(), field );
+    if ( fieldList_.cend() == iter )
+    {
+        return false;
+    }
+    return RemoveColumn( iter - fieldList_.cbegin() );
+} // RemoveColumn
+
+
+bool DataTable::RemoveColumn( size_t fieldIndex )
+{
+    if ( fieldIndex >= fieldList_.size() )
+    {
+        return false;
+    }
+    fieldList_.erase( fieldList_.begin() + fieldIndex );
+    for ( DataTable::RecordType record: data_ )
+    {
+        if ( record )
+        {
+            record->erase( record->begin() + fieldIndex );
+        }
+    }
+    return true;
+} // RemoveColumn
 
 } // namespace meters
 

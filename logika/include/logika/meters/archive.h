@@ -8,6 +8,7 @@
 
 #include <logika/meters/types.h>
 #include <logika/meters/meter.h>
+#include <logika/meters/data_table.hpp>
 
 #include <logika/common/iserializable.h>
 
@@ -21,13 +22,14 @@ namespace meters
 
 /// @brief Базовый класс архива
 /// @todo Может Meter передавать по shared_ptr?
+/// @todo Разнести по файлам
 class Archive
 {
 public:
     /// @brief Конструктор архива
     /// @param[in] meter Прибор
     /// @param[in] archiveType Тип архива
-    Archive( const Meter& meter, const ArchiveType& archiveType );
+    Archive( const Meter& meter, std::shared_ptr< ArchiveType > archiveType );
 
     /// @brief Получение прибора
     /// @return Прибор
@@ -35,14 +37,11 @@ public:
 
     /// @brief Получение типа архива
     /// @return Тип архива
-    const ArchiveType& GetArchiveType() const;
-
-public:
-    static constexpr char FLD_EXTPROP_KEY[] = "AfInfo"; ///< @todo Имя поля для ресурсов
+    std::shared_ptr< ArchiveType > GetArchiveType() const;
 
 protected:
-    const Meter& meter_;                ///< Прибор
-    const ArchiveType& archiveType_;    ///< Тип архива
+    const Meter& meter_;                            ///< Прибор
+    std::shared_ptr< ArchiveType > archiveType_;    ///< Тип архива
 
 }; // class Archive
 
@@ -50,7 +49,14 @@ protected:
 class IntervalArchive: public Archive
 {
 public:
-/// @todo ArchiveFieldCollection
+    IntervalArchive( const Meter& meter, std::shared_ptr< ArchiveType > archiveType );
+
+    DataTable& GetDataTable();
+    const DataTable& GetDataTable() const;
+
+private:
+    DataTable dataTable_;
+
 }; // class IntervalArchive
 
 } // namespace meters
