@@ -21,6 +21,7 @@ namespace meters
 {
 
 /// @brief Таблица данных
+/// @todo Поиск по имени/caption столбца
 class DataTable
 {
 public:
@@ -29,7 +30,7 @@ public:
 
     /// @brief Конструктор таблицы данных
     /// @param[in] fieldList Список полей таблицы
-    DataTable( const std::vector< FieldType >& fieldList );
+    DataTable( const std::vector< FieldType >& fieldList = std::vector< FieldType >{} );
 
     DataTable( const DataTable& ) = delete;
     DataTable& operator= ( const DataTable& ) = delete;
@@ -42,6 +43,14 @@ public:
     /// @brief Получение количества столбцов в таблице
     /// @return Количество столбцов в таблице
     size_t FieldCount() const;
+
+    /// @brief Получение списка столбцов таблицы
+    /// @return Список столбцов таблицы
+    const std::vector< FieldType >& GetFieldsList() const;
+
+    /// @brief Получение списка записей в таблице
+    /// @return Список записей в таблице
+    const std::vector< RecordType >& GetRecordsList() const;
 
     /// @brief Получение записи
     /// @param[in] index Номер записи

@@ -6,6 +6,7 @@
 #include <stdexcept>
 #include <iomanip>
 #include <sstream>
+#include <iostream>
 
 namespace logika
 {
@@ -45,7 +46,7 @@ std::string Tag::GetFieldName() const
         formatter << channel_.prefix;
         formatter << std::setw( 2 ) << std::setfill( '0' ) << channel_.no;
     }
-    
+
     return ( !channel_.name.empty() ? ( channel_.name + "_" ) : "" )
         + def_.GetName() + formatter.str();
 } // GetFieldName

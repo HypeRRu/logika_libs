@@ -11,7 +11,6 @@ namespace logika
 namespace resources
 {
 
-/// @todo Линковка с библиотекой логгера
 template < typename Resource >
 std::shared_ptr< Resource > Loader< Resource >::Load( const std::string& path )
 {

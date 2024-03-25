@@ -30,6 +30,18 @@ size_t DataTable::FieldCount() const
 } // FieldCount
 
 
+const std::vector< DataTable::FieldType >& DataTable::GetFieldsList() const
+{
+    return fieldList_;
+} // GetFieldsList
+
+
+const std::vector< DataTable::RecordType >& DataTable::GetRecordsList() const
+{
+    return data_;
+} // GetRecordsList
+
+
 const DataTable::RecordType DataTable::GetRecord( size_t index ) const
 {
     if ( index >= data_.size() )

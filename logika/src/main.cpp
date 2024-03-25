@@ -17,6 +17,7 @@
 #include <logika/meters/converters/meter_converters.h>
 
 #include <logika/meters/data_table.hpp>
+#include <logika/meters/interval_archive.h>
 
 #include <clocale>
 
@@ -128,6 +129,7 @@ int main()
 
     logika::meters::ArchiveFieldDefSettings afdSettings1;
     afdSettings1.ordinal = 10;
+    afdSettings1.name = "tag1";
     storage->GetItem( "Hour", afdSettings1.archiveType );
 
     logika::meters::ChannelDef cdef1{ nullptr, "chn", 0, 10, "some channel" };
@@ -135,19 +137,49 @@ int main()
 
     logika::meters::ArchiveFieldDefSettings afdSettings2;
     afdSettings2.ordinal = 1;
+    afdSettings2.name = "tag2";
     storage->GetItem( "Hour", afdSettings2.archiveType );
 
     logika::meters::ChannelDef cdef2{ nullptr, "chn1", 0, 10, "some channel 2" };
     logika::meters::ArchiveFieldDef afd2{ cdef2, afdSettings2 };
+
+    logika::meters::ArchiveFieldDefSettings afdSettings3;
+    afdSettings3.ordinal = 2;
+    afdSettings3.name = "TM";
+    storage->GetItem( "Hour", afdSettings3.archiveType );
+
+    logika::meters::ChannelDef cdef3{ nullptr, "tmChn", 0, 10, "timestamp channel" };
+    logika::meters::ArchiveFieldDef afd3{ cdef3, afdSettings3 };
 
     std::vector< logika::meters::DataTable::FieldType > fields;
     fields.push_back(
         std::make_shared< logika::meters::ArchiveField >( afd1, 8 )
     );
     fields.push_back(
+        std::make_shared< logika::meters::ArchiveField >( afd3, 7 )
+    );
+    fields.push_back(
         std::make_shared< logika::meters::ArchiveField >( afd2, 5 )
     );
-    logika::meters::DataTable table( fields );
+    std::shared_ptr< logika::meters::DataTable > table = std::make_shared< logika::meters::DataTable >( fields );
+
+    std::shared_ptr< logika::meters::ArchiveType > monthArchive;
+    storage->GetItem( std::string{ "Month" }, monthArchive );
+    logika::meters::IntervalArchive intervalArchive{
+        nullptr,
+        monthArchive,
+        table
+    };
+
+    auto dt = intervalArchive.GetDataTable();
+    for ( auto field: dt->GetFieldsList() )
+    {
+        if ( field )
+        {
+            std::cout << field->GetName() << " ";
+        }
+    }
+    std::cout << '\n';
 
 #if defined( _WIN32 ) || defined( _WIN64 )
     WSACleanup();
