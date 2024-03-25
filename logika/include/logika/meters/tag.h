@@ -19,6 +19,7 @@ namespace logika
 namespace meters
 {
 
+/// @brief Тэг
 class Tag: public ISerializable
 {
 public:

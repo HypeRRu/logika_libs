@@ -8,6 +8,7 @@ set(
 	${SRC_DIR}/meters/archive_field.cpp
 	${SRC_DIR}/meters/archive.cpp
 	${SRC_DIR}/meters/interval_archive.cpp
+	${SRC_DIR}/meters/service_archive.cpp
 	${SRC_DIR}/meters/data_table.cpp
 	${SRC_DIR}/meters/channel.cpp
 	${SRC_DIR}/meters/item_def_base.cpp
