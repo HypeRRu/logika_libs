@@ -2,6 +2,7 @@
 
 #include <fstream>
 
+#include "utils/enums_string_to_pb.h"
 #include "third_party/csv.hpp"
 
 #include <logika/resources/devices.pb.h>
@@ -26,10 +27,14 @@ bool Migrate( const std::string& inFileName, const std::string& outFileName )
         }
 
         device->set_key( row[ "Key" ].get<>() );
-        device->set_bus( row[ "Bus" ].get<>() );
+        device->set_bus(
+            EnumsStringToPb::BusTypeFromString( row[ "Bus" ].get<>() )
+        );
         device->set_m4( !row[ "M4" ].is_null() && row[ "M4" ].get< bool >() );
         device->set_description( row[ "Description" ].get<>() );
-        device->set_media( row[ "Media" ].get<>() );
+        device->set_media(
+            EnumsStringToPb::MeasureKindFromString( row[ "Media" ].get<>() )
+        );
 
         if ( !row[ "Pipes" ].is_null() )
         {

@@ -1,10 +1,10 @@
-/// @file Определение конвертеров типов для работы с приборами
+/// @file Определение конвертеров типов для работы с типами архивов
 /// @copyright HypeRRu 2024
 
 #pragma once
 
-#ifndef LOGIKA_METERS_CONVERTERS_METER_CONVERTERS_H
-#define LOGIKA_METERS_CONVERTERS_METER_CONVERTERS_H
+#ifndef LOGIKA_METERS_CONVERTERS_ARCHIVE_TYPE_CONVERTER_H
+#define LOGIKA_METERS_CONVERTERS_ARCHIVE_TYPE_CONVERTER_H
 
 #include <logika/meters/types.h>
 
@@ -34,7 +34,7 @@ public:
     static ConvertedType        Convert( const FromType& from );
     static ConvertedTypeList    Convert( const FromTypeList& fromList );
 
-private:
+public:
     static std::string          ConvertName( const resources::ArchiveTypeEnum type );
     static LocString            ConvertAcronym( const resources::ArchiveTypeEnum type );
     static ArchiveTimingType    ConvertTimingType( const resources::ArchiveTypeEnum type );
@@ -49,4 +49,4 @@ private:
 
 } // namespace logika
 
-#endif // LOGIKA_METERS_CONVERTERS_METER_CONVERTERS_H
+#endif // LOGIKA_METERS_CONVERTERS_ARCHIVE_TYPE_CONVERTER_H

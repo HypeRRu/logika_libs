@@ -8,6 +8,7 @@
 
 #include <logika/common/types.h>
 #include <logika/common/iserializable.h>
+#include <logika/common/shared_constructible.hpp>
 
 #include <string>
 #include <unordered_map>
@@ -25,17 +26,19 @@ namespace meters
 /// @brief Тип измерения
 enum class MeasureKind
 {
-    T,  ///< Тепло/вода
-    G,  ///< Газ
-    E   ///< Электроэнергия
+    Undefined,  ///< Неопределенный тип
+    T,          ///< Тепло/вода
+    G,          ///< Газ
+    E           ///< Электроэнергия
 }; // enum class MeasureKind
 
 
 /// @brief Тип протокола
 enum class BusProtocolType
 {
-    RSBus,  ///< протокол M4
-    SPBus   ///< протокол СПСеть
+    Undefined,  ///< Неопределенный тип
+    RSBus,      ///< протокол M4
+    SPBus       ///< протокол СПСеть
 }; // enum class BusProtocolType
 
 
@@ -142,13 +145,9 @@ class ArchiveTypeConverter;
 
 /// @brief Тип архива
 /// @todo Добавить генерацию из ресурсов
-class ArchiveType: public ISerializable
+class ArchiveType: public ISerializable, public SharedConstructible< ArchiveType >
 {
 public:
-    // /// @brief Получение списка с типом архивов
-    // /// @return Список предопределенных типов архивов
-    // static const std::unordered_map< std::string, const ArchiveType* >& All();
-
     /// @brief Получение типа архива по времени измерений
     /// @return Тип архива по времени измерений
     ArchiveTimingType GetTimingType() const;
@@ -183,24 +182,6 @@ public:
 
     /// @copydoc ISerializable::ToString()
     virtual std::string ToString() const override;
-
-    /// @brief Создание типа архива
-    /// @tparam Args Типы аргументов для создания типа
-    /// @param[in] args Аргументы для создания типа
-    /// @return Указатель на созданный тип архива
-    template < typename... Args >
-    static std::shared_ptr< ArchiveType > Create( Args&&... args )
-    {
-        struct MakeSharedEnabler: public ArchiveType
-        {
-        public:
-            MakeSharedEnabler( Args&&... args )
-                : ArchiveType( std::forward< Args >( args )... )
-            {}
-
-        };
-        return std::make_shared< MakeSharedEnabler >( std::forward< Args >( args )... );
-    } // Create
 
     /// @brief Конструктор типа архива
     ArchiveType( const std::string& name, const LocString& description

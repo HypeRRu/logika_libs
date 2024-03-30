@@ -99,3 +99,11 @@ enum X6TagTypeEnum
     X6_TAG_TYPE_STRUCTURE   = 2;
     X6_TAG_TYPE_TAG         = 3;
 }
+
+enum MeasureKindEnum
+{
+    MEASURE_KIND_UNDEFINED  = 0;
+    MEASURE_KIND_T          = 1;
+    MEASURE_KIND_G          = 2;
+    MEASURE_KIND_E          = 3;
+}

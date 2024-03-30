@@ -1,9 +1,10 @@
 /// @file Реализация конвертеров типов для работы с приборами
 /// @copyright HypeRRu 2024
 
-#include <logika/meters/converters/meter_converters.h>
+#include <logika/meters/converters/archive_type_converter.h>
 
 #include <logika/common/types.h>
+#include <logika/common/misc.h>
 
 #include <chrono>
 #include <unordered_map>
@@ -32,24 +33,20 @@ namespace meters
 namespace converters
 {
 
-/// ArchiveTypeConverter
-
-ArchiveTypeConverter::ConvertedType ArchiveTypeConverter::Convert( const FromType& from )
+ArchiveTypeConverter::ConvertedType ArchiveTypeConverter::Convert( const ArchiveTypeConverter::FromType& from )
 {
-    LocConverter locStrConverter{};
-
-    return ArchiveType::Create(
+    return ArchiveType::Create< ArchiveType >(
           ArchiveTypeConverter::ConvertName( from.type() )
-        , locStrConverter.from_bytes( from.description() )
+        , ToLocString( from.description() )
         , ArchiveTypeConverter::ConvertTimingType( from.type() )
         , ArchiveTypeConverter::ConvertAcronym( from.type() )
         , ArchiveTypeConverter::ConvertInterval( from.type() )
         , ArchiveTypeConverter::ConvertVariable( from.type() )
     );
-} // Convert( const FromType& from )
+} // Convert( const ArchiveTypeConverter::FromType& from )
 
 
-ArchiveTypeConverter::ConvertedTypeList ArchiveTypeConverter::Convert( const FromTypeList& fromList )
+ArchiveTypeConverter::ConvertedTypeList ArchiveTypeConverter::Convert( const ArchiveTypeConverter::FromTypeList& fromList )
 {
     ConvertedTypeList converted;
     if ( !fromList.list_size() )
@@ -61,7 +58,7 @@ ArchiveTypeConverter::ConvertedTypeList ArchiveTypeConverter::Convert( const Fro
         converted.push_back( ArchiveTypeConverter::Convert( from ) );
     }
     return converted;
-} // Convert( const FromTypeList& fromList )
+} // Convert( const ArchiveTypeConverter::FromTypeList& fromList )
 
 
 std::string ArchiveTypeConverter::ConvertName( const resources::ArchiveTypeEnum type )

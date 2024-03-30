@@ -14,12 +14,15 @@
 #include <logika/resources/l4_archive_fields.pb.h>
 
 #include <logika/storage/storage.hpp>
-#include <logika/meters/converters/meter_converters.h>
+#include <logika/meters/converters/archive_type_converter.h>
+#include <logika/meters/converters/device_converter.h>
 
 #include <logika/meters/data_table.hpp>
 #include <logika/meters/interval_archive.h>
 
-#include <clocale>
+#include <logika/meters/meter.h>
+
+#include <logika/common/misc.h>
 
 #include <iostream>
 
@@ -37,7 +40,7 @@ int main()
     WSADATA wsaData;
     int wsaInitResult = WSAStartup( MAKEWORD( 2, 2 ), &wsaData );
     if ( 0 != wsaInitResult) {
-        LOG_WRITE( LOG_ERROR,  "WSAStartup failed: " << wsaInitResult );
+        LOG_WRITE( LOG_ERROR, L"WSAStartup failed: " << wsaInitResult );
         return 1;
     }
 #endif
@@ -61,9 +64,9 @@ int main()
     con.Read( rdbuf, 5 );
 
     std::string comRd{ rdbuf.data(), rdbuf.size() };
-    LOG_WRITE( LOG_INFO, "" );
-    LOG_WRITE( LOG_INFO, "Read from " << con.GetAddress() << ": " << comRd );
-    LOG_WRITE( LOG_INFO, "" );
+    LOG_WRITE_MSG( LOG_INFO, L"" );
+    LOG_WRITE( LOG_INFO, L"Read from " << logika::ToLocString( con.GetAddress() ) << L": " << comRd );
+    LOG_WRITE_MSG( LOG_INFO, L"" );
 
     logika::connections::UdpConnection udpCon{ "127.0.0.1", 8083, 30000 };
     udpCon.Open();
@@ -74,9 +77,9 @@ int main()
     udpCon.Read( udpRdbuf, 5 );
 
     std::string udpRd{ udpRdbuf.data(), udpRdbuf.size() };
-    LOG_WRITE( LOG_INFO, "" );
-    LOG_WRITE( LOG_INFO, "Read from " << udpCon.GetAddress() << ": " << udpRd );
-    LOG_WRITE( LOG_INFO, "" );
+    LOG_WRITE( LOG_INFO, L"" );
+    LOG_WRITE( LOG_INFO, L"Read from " << logika::ToLocString( udpCon.GetAddress() ) << L": " << udpRd );
+    LOG_WRITE( LOG_INFO, L"" );
 
     logika::connections::TcpConnection tcpCon{ "127.0.0.1", 8084, 30000 };
     tcpCon.Open();
@@ -87,9 +90,9 @@ int main()
     tcpCon.Read( tcpRdbuf, 5 );
 
     std::string tcpRd{ tcpRdbuf.data(), tcpRdbuf.size() };
-    LOG_WRITE( LOG_INFO, "" );
-    LOG_WRITE( LOG_INFO, "Read from " << tcpCon.GetAddress() << ": " << tcpRd );
-    LOG_WRITE( LOG_INFO, "" );
+    LOG_WRITE( LOG_INFO, L"" );
+    LOG_WRITE( LOG_INFO, L"Read from " << logika::ToLocString( tcpCon.GetAddress() ) << L": " << tcpRd );
+    LOG_WRITE( LOG_INFO, L"" );
 #endif // if 0
 
     logika::meters::VitalInfo vi{ "0x11", "rev", "serial", { "eth0", "eth1" }
@@ -100,22 +103,22 @@ int main()
 
     logika::storage::StorageKeeper sKeeper = logika::storage::StorageKeeper::Instance();
     sKeeper.CreateStorage< std::string, logika::meters::ArchiveType >();
-    auto storage = sKeeper.GetStorage< std::string, logika::meters::ArchiveType >();
+    auto atStorage = sKeeper.GetStorage< std::string, logika::meters::ArchiveType >();
     {
         logika::resources::Loader< logika::resources::ArchiveTypes > loader;
         auto resource = loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/ArchiveTypes.dat" );
         if ( resource )
         {
             auto types = logika::meters::converters::ArchiveTypeConverter::Convert( *resource );
-            LOG_WRITE( LOG_INFO, "Converted " << types.size() << " ArchiveType instances" );
+            LOG_WRITE( LOG_INFO, L"Converted " << types.size() << L" ArchiveType instances" );
             for ( auto type: types )
             {
                 if ( type )
                 {
-                    LOG_WRITE( LOG_INFO, "Add ArchiveType '" << type->GetName() << "' to storage: "
-                        << ( storage->AddItem( type->GetName(), type ) ? "Success" : "Failed" ) );
+                    LOG_WRITE( LOG_INFO, L"Add ArchiveType '" << logika::ToLocString( type->GetName() ) << L"' to storage: "
+                        << ( atStorage->AddItem( type->GetName(), type ) ? L"Success" : L"Failed" ) );
                     std::shared_ptr< logika::meters::ArchiveType > item;
-                    storage->GetItem( type->GetName(), item );
+                    atStorage->GetItem( type->GetName(), item );
                     std::wcout << item->GetDescription() << std::endl;
                     std::wcout << item->GetAcronym() << std::endl;
                 }
@@ -123,14 +126,42 @@ int main()
         }
         else
         {
-            LOG_WRITE( LOG_ERROR, "Unable to load ArchiveTypes" );
+            LOG_WRITE( LOG_ERROR, L"Unable to load ArchiveTypes" );
         }
     }
+
+    sKeeper.CreateStorage< std::string, logika::meters::Meter >();
+    auto mStorage = sKeeper.GetStorage< std::string, logika::meters::Meter >();
+    {
+        logika::resources::Loader< logika::resources::DeviceList > loader;
+        auto resource = loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/Devices.dat" );
+        if ( resource )
+        {
+            auto devices = logika::meters::converters::DeviceConverter::Convert( *resource );
+            LOG_WRITE( LOG_INFO, L"Converted " << devices.size() << L" Device instances" );
+            for ( auto device: devices )
+            {
+                if ( device )
+                {
+                    LOG_WRITE( LOG_INFO, L"Add Device '" << logika::ToLocString( device->GetCaption() ) << L"' to storage: "
+                        << ( mStorage->AddItem( device->GetCaption(), device ) ? L"Success" : L"Failed" ) );
+                    std::shared_ptr< logika::meters::Meter > item;
+                    mStorage->GetItem( device->GetCaption(), item );
+                    std::wcout << item->GetDescription() << std::endl;
+                }
+            }
+        }
+        else
+        {
+            LOG_WRITE( LOG_ERROR, L"Unable to load DeviceList" );
+        }
+    }
+
 
     logika::meters::ArchiveFieldDefSettings afdSettings1;
     afdSettings1.ordinal = 10;
     afdSettings1.name = "tag1";
-    storage->GetItem( "Hour", afdSettings1.archiveType );
+    atStorage->GetItem( "Hour", afdSettings1.archiveType );
 
     logika::meters::ChannelDef cdef1{ nullptr, "chn", 0, 10, "some channel" };
     logika::meters::ArchiveFieldDef afd1{ cdef1, afdSettings1 };
@@ -138,7 +169,7 @@ int main()
     logika::meters::ArchiveFieldDefSettings afdSettings2;
     afdSettings2.ordinal = 1;
     afdSettings2.name = "tag2";
-    storage->GetItem( "Hour", afdSettings2.archiveType );
+    atStorage->GetItem( "Hour", afdSettings2.archiveType );
 
     logika::meters::ChannelDef cdef2{ nullptr, "chn1", 0, 10, "some channel 2" };
     logika::meters::ArchiveFieldDef afd2{ cdef2, afdSettings2 };
@@ -146,7 +177,7 @@ int main()
     logika::meters::ArchiveFieldDefSettings afdSettings3;
     afdSettings3.ordinal = 2;
     afdSettings3.name = "TM";
-    storage->GetItem( "Hour", afdSettings3.archiveType );
+    atStorage->GetItem( "Hour", afdSettings3.archiveType );
 
     logika::meters::ChannelDef cdef3{ nullptr, "tmChn", 0, 10, "timestamp channel" };
     logika::meters::ArchiveFieldDef afd3{ cdef3, afdSettings3 };
@@ -164,9 +195,11 @@ int main()
     std::shared_ptr< logika::meters::DataTable > table = std::make_shared< logika::meters::DataTable >( fields );
 
     std::shared_ptr< logika::meters::ArchiveType > monthArchive;
-    storage->GetItem( std::string{ "Month" }, monthArchive );
+    std::shared_ptr< logika::meters::Meter > lgk410meter;
+    atStorage->GetItem( std::string{ "Month" }, monthArchive );
+    mStorage->GetItem( std::string{ "LGK410" }, lgk410meter );
     logika::meters::IntervalArchive intervalArchive{
-        nullptr,
+        lgk410meter,
         monthArchive,
         table
     };
@@ -176,10 +209,11 @@ int main()
     {
         if ( field )
         {
-            std::cout << field->GetName() << " ";
+            LOG_WRITE( LOG_INFO, L"DataTable column '" << logika::ToLocString( field->GetName() ) << L"'" );
         }
     }
-    std::cout << '\n';
+
+    auto meter = logika::meters::Meter::Create< logika::meters::Meter >();
 
 #if defined( _WIN32 ) || defined( _WIN64 )
     WSACleanup();

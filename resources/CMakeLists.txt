@@ -10,10 +10,6 @@ set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 set(INCLUDE_INSTALL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include/logika/resources)
 
-#if (UNIX)
-#    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -g0")
-#endif()
-
 set(Protobuf_USE_STATIC_LIBS OFF)
 find_package(Protobuf CONFIG)
 find_package(Protobuf REQUIRED)

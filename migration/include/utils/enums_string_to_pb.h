@@ -27,6 +27,8 @@ logika::resources::InternalTypeEnum InternalTypeFromString( const std::string& s
 
 logika::resources::X6TagTypeEnum X6TagTypeFromString( const std::string& str );
 
+logika::resources::MeasureKindEnum MeasureKindFromString( const std::string& str );
+
 } // namespace EnumsStringToPb
 
 } // namespace logika_migration

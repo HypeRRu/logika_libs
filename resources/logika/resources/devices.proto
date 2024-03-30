@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package logika.resources;
 
+import "logika/resources/enums.proto";
+
 message DeviceList
 {
     repeated Device list = 1;
@@ -10,10 +12,10 @@ message DeviceList
 message Device
 {
     string key = 1;
-    string bus = 2;
+    BusTypeEnum bus = 2;
     bool m4 = 3;
     string description = 4;
-    string media = 5;
+    MeasureKindEnum media = 5;
     optional int32 pipes = 6;
     optional int32 consumers = 7;
     optional int32 auxNo = 8;

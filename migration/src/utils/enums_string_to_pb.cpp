@@ -198,6 +198,28 @@ logika::resources::X6TagTypeEnum X6TagTypeFromString( const std::string& str )
     return iter->second;
 } // X6TagTypeFromString
 
+
+logika::resources::MeasureKindEnum MeasureKindFromString( const std::string& str )
+{
+    static const std::unordered_map< std::string, logika::resources::MeasureKindEnum > fromTo{
+          { "F",    logika::resources::MEASURE_KIND_T }
+        , { "T",    logika::resources::MEASURE_KIND_T }
+        , { "G",    logika::resources::MEASURE_KIND_G }
+        , { "E",    logika::resources::MEASURE_KIND_E }
+    };
+
+    std::string lowerStr( str.size(), ' ' );
+    std::transform( str.begin(), str.end(), lowerStr.begin(), ::tolower );
+
+    auto iter = fromTo.find( lowerStr );
+    if ( fromTo.cend() == iter )
+    {
+        std::cerr << "'" << str << "'(" << lowerStr << ") not found\n";
+        return logika::resources::MEASURE_KIND_UNDEFINED;
+    }
+    return iter->second;
+} // MeasureKindFromString
+
 } // namespace EnumsStringToPb
 
 } // namespace logika_migration

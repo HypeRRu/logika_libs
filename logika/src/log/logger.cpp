@@ -10,22 +10,25 @@
 #include <iostream>
 #include <iomanip>
 #include <sstream>
+#include <locale>
 
 #include <ctime>
 
 namespace // anonymous
 {
 
-const std::array< std::string, logika::log::LogLevel::Count > logLevelStrings{
-      "DISABLED"
-    , " ERROR "
-    , "  WARN "
-    , "  INFO "
-    , " DEBUG "
+const std::array< logika::LocString, logika::log::LogLevel::Count > logLevelStrings{
+      L"DISABLED"
+    , L" ERROR "
+    , L"  WARN "
+    , L"  INFO "
+    , L" DEBUG "
 };
 
 } // anonymous namespace
 
+
+/// @todo wide-character
 
 namespace logika
 {
@@ -38,7 +41,9 @@ Logger::Logger()
     , maxLevel_{ LogLevel::LogDisable }
     , fileStream_{}
     , mtx_{}
-{} // Logger
+{
+    InitLocale();
+} // Logger
 
 
 Logger& Logger::Instance()
@@ -74,6 +79,7 @@ void Logger::SetLogFile( const std::string& filePath, bool append )
         }
 
         fileStream_.open( filePath, append ? std::ios::app : std::ios::trunc );
+        fileStream_.imbue( std::locale() );
     }
 
     CheckLogLevel();
@@ -91,14 +97,14 @@ void Logger::SetLogLevel( LogLevel::Type level )
 } // SetLogLevel
 
 
-void Logger::Write( LogLevel::Type level, const std::string& message, const std::string& funcName )
+void Logger::Write( LogLevel::Type level, const LocString& message, const std::string& funcName )
 {
-    std::stringstream msgToWrite;
-    msgToWrite << GetTimeString() << " ";
-    msgToWrite << "[" << logLevelStrings[ level ] << "] ";
+    std::wstringstream msgToWrite;
+    msgToWrite << ToLocString( GetTimeString() ) << ' ';
+    msgToWrite << '[' << logLevelStrings[ level ] << ']' << ' ';
     if ( !funcName.empty() )
     {
-        msgToWrite << funcName + " | ";
+        msgToWrite << ToLocString( funcName ) << L" | ";
     }
     msgToWrite << message << '\n';
     
@@ -110,22 +116,31 @@ void Logger::Write( LogLevel::Type level, const std::string& message, const std:
 
     if ( logType_ & LogType::LogConsole )
     {
-        std::cout << msgToWrite.str();
+        std::wcout << msgToWrite.str();
     }
     if ( ( logType_ & LogType::LogFile ) && fileStream_.is_open() )
     {
         fileStream_ << msgToWrite.str();
     }
-} // Write
+} // Write( LogLevel::Type, LocString, LocString )
 
 
 void Logger::CheckLogLevel()
 {
-    Write( LogLevel::LogError, "Logging error messages" );
-    Write( LogLevel::LogWarning, "Logging warning messages" );
-    Write( LogLevel::LogInfo, "Logging info messages" );
-    Write( LogLevel::LogDebug, "Logging debug messages" );
+    Write( LogLevel::LogError, L"Logging error messages" );
+    Write( LogLevel::LogWarning, L"Logging warning messages" );
+    Write( LogLevel::LogInfo, L"Logging info messages" );
+    Write( LogLevel::LogDebug, L"Logging debug messages" );
 } // CheckLogLevel
+
+
+void Logger::InitLocale()
+{
+    std::locale::global( std::locale( "" ) );
+    std::wcout.imbue( std::locale() );
+    std::wcout << L"Init locale\n";
+    /// @todo А надо ли выводить?
+} // InitLocale
 
 } // namespace log
 
