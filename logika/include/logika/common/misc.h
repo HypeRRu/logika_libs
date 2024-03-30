@@ -13,6 +13,17 @@
 namespace logika
 {
 
+/// @brief Конвертация из std::string в LocString
+/// @param[in] str Конвертируемая строка
+/// @return Многобайтовая строка
+/// @note Не используйте в многопоточной среде!
+LocString ToLocString( const std::string& str );
+
+/// @brief Заглушка ToLocString для LocString
+/// @param[in] str Конвертируемая строка
+/// @return Переданная строка
+const LocString& ToLocString( const LocString& str );
+
 /// @brief Получение строки с описанием ошибки по ее коду (errno)
 /// @details Потокобезопасная версия функции strerror
 /// @param[in] error Код ошибки (errno)

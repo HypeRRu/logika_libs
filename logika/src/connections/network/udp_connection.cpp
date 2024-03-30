@@ -18,8 +18,8 @@ UdpConnection::UdpConnection( const std::string& serverHostName, uint16_t server
     if ( 0 == readTimeout_ )
     {
         readTimeout_ = 1000;
-        LOG_WRITE( LOG_WARNING, "UDP connection did not work properly without read timeout. "
-                                "Setting read timeout to " << readTimeout_ << " ms" );
+        LOG_WRITE( LOG_WARNING, L"UDP connection did not work properly without read timeout. "
+                                L"Setting read timeout to " << readTimeout_ << L" ms" );
     }
     type_ = ConnectionType::Udp;
 } // UdpConnection

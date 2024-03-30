@@ -27,6 +27,19 @@ bool CharCaseEq( char lhs, char rhs )
 namespace logika
 {
 
+LocString ToLocString( const std::string& str )
+{
+    static LocConverter locStrConverter{};
+    return locStrConverter.from_bytes( str );
+} // ToLocString( const std::string& str )
+
+
+const LocString& ToLocString( const LocString& str )
+{
+    return str;
+} // ToLocString( const LocString& str )
+
+
 std::string SafeStrError( int error )
 {
     constexpr size_t errorStrSize = 1024;

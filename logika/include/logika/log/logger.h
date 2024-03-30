@@ -6,6 +6,7 @@
 #ifndef LOGIKA_LOG_LOGGER_H
 #define LOGIKA_LOG_LOGGER_H
 
+#include <logika/common/types.h>
 #include <logika/log/types.h>
 
 #include <fstream>
@@ -44,11 +45,16 @@ public:
     /// @param[in] level Уровень логирования для записи
     /// @param[in] message Сообщение лога
     /// @param[in] funcName Имя функции для вывода в лог
-    void Write( LogLevel::Type level, const std::string& message, const std::string& funcName = "" );
+    void Write( LogLevel::Type level, const LocString& message, const std::string& funcName = "" );
 
 private:
     /// @brief Конструктор логгера
     Logger();
+
+    /// @brief Инициализация локали
+    /// @details Устанавливает системную локаль в качестве локали приложения
+    /// @note Должно вызываться до первого вызова cout
+    void InitLocale();
 
     /// @brief Проверка уровня логирования
     /// @details Печатает сообщение со всеми уровнями логирования
@@ -62,7 +68,7 @@ private:
 protected:
     LogType::Type logType_;     ///< Тип логирования
     LogLevel::Type maxLevel_;   ///< Максимальный уровень логирования
-    std::ofstream fileStream_;  ///< Файл логов
+    std::wofstream fileStream_; ///< Файл логов
     std::mutex mtx_;            ///< Блокировка для синхронизации записи
 
 }; // class Logger

@@ -30,7 +30,7 @@ bool SerialPortConnection::OpenImpl()
     /// Проверка настроек соединения
     if ( !IsSettingsValid() )
     {
-        LOG_WRITE( LOG_ERROR, "Connection options invalid" );
+        LOG_WRITE_MSG( LOG_ERROR, L"Connection options invalid" );
         return false;
     }
 
@@ -40,7 +40,7 @@ bool SerialPortConnection::OpenImpl()
     /// Установка скорости работы
     if ( -1 == cfsetispeed( &options, baudRate_ ) )
     {
-        LOG_WRITE( LOG_ERROR, "Unable to set device speed: " << SafeStrError( errno ) );
+        LOG_WRITE( LOG_ERROR, L"Unable to set device speed: " << ToLocString( SafeStrError( errno ) ) );
         return false;
     }
     /// Конфигурация устройства
@@ -55,31 +55,31 @@ bool SerialPortConnection::OpenImpl()
     handle_ = open( address_.c_str(), O_RDWR | O_NOCTTY | O_NONBLOCK );
     if ( LOGIKA_FILE_HANDLE_INVALID == handle_ )
     {
-        LOG_WRITE( LOG_ERROR, "Can't open device: " << SafeStrError( errno ) );
+        LOG_WRITE( LOG_ERROR, L"Can't open device: " << ToLocString( SafeStrError( errno ) ) );
         return false;
     }
     /// Установка неблокирующего режима
     int flags = fcntl( handle_, F_GETFL, 0 );
 	if ( -1 == fcntl( handle_, F_SETFL, flags | O_NONBLOCK ) )
     {
-        LOG_WRITE( LOG_WARNING, "Unable to set device mode to non-blocking" )
+        LOG_WRITE_MSG( LOG_WARNING, L"Unable to set device mode to non-blocking" )
     }
     /// Применение конфигурации
     if ( -1 == tcsetattr( handle_, TCSANOW, &options ) )
     {
-        LOG_WRITE( LOG_ERROR, "Unable to set device settings: " << SafeStrError( errno ) );
+        LOG_WRITE( LOG_ERROR, L"Unable to set device settings: " << ToLocString( SafeStrError( errno ) ) );
         CloseImpl();
         return false;
     }
 
-    LOG_WRITE( LOG_INFO, "Connected successfully to " << address_ );
+    LOG_WRITE( LOG_INFO, L"Connected successfully to " << ToLocString( address_ ) );
     return true;
 } // OpenImpl
 
 
 void SerialPortConnection::CloseImpl()
 {
-    LOG_WRITE( LOG_INFO, "Closing connection to device " << address_ );
+    LOG_WRITE( LOG_INFO, L"Closing connection to device " << ToLocString( address_ ) );
     if ( LOGIKA_FILE_HANDLE_INVALID != handle_ )
     {
         close( handle_ );

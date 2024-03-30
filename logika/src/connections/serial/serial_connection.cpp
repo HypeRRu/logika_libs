@@ -6,6 +6,7 @@
 #include <logika/connections/utils/types_checker.hpp>
 
 #include <logika/log/defines.h>
+#include <logika/common/misc.h>
 
 namespace logika
 {
@@ -32,10 +33,11 @@ BaudRate::Type SerialConnection::GetBaudRate() const
 
 bool SerialConnection::SetBaudRate( BaudRate::Type rate )
 {
-    LOG_WRITE( LOG_INFO, "Set port " << address_ << " baud rate to " << BaudRateToString( rate ) );
+    LOG_WRITE( LOG_INFO, L"Set port " << ToLocString( address_ )
+        << L" baud rate to " << ToLocString( BaudRateToString( rate ) ) );
     if ( !IsValidBaudRate( rate ) )
     {
-        LOG_WRITE( LOG_ERROR, "Invalid baud rate" );
+        LOG_WRITE_MSG( LOG_ERROR, L"Invalid baud rate" );
         baudRate_ = BaudRate::NotSupported;
         Close();
         return false;
@@ -44,7 +46,8 @@ bool SerialConnection::SetBaudRate( BaudRate::Type rate )
     baudRate_ = rate;
     if ( IsConnected() )
     {
-        LOG_WRITE( LOG_INFO, "Port " << address_ << " settings changed when connection is opened. Reopenning connection" )
+        LOG_WRITE( LOG_INFO, L"Port " << ToLocString( address_ )
+            << L" settings changed when connection is opened. Reopenning connection" )
         Open(); /// Переподключение после изменения настроек
     }
     return true;
@@ -59,10 +62,11 @@ StopBits::Type SerialConnection::GetStopBits() const
 
 bool SerialConnection::SetStopBits( StopBits::Type bits )
 {
-    LOG_WRITE( LOG_INFO, "Set port " << address_ << " stop bits to " << StopBitsToString( bits ) );
+    LOG_WRITE( LOG_INFO, L"Set port " << ToLocString( address_ )
+        << L" stop bits to " << ToLocString( StopBitsToString( bits ) ) );
     if ( !IsValidStopBits( bits ) )
     {
-        LOG_WRITE( LOG_ERROR, "Invalid stop bits" );
+        LOG_WRITE_MSG( LOG_ERROR, L"Invalid stop bits" );
         stopBits_ = StopBits::NotSupported;
         Close();
         return false;
@@ -71,7 +75,8 @@ bool SerialConnection::SetStopBits( StopBits::Type bits )
     stopBits_ = bits;
     if ( IsConnected() )
     {
-        LOG_WRITE( LOG_INFO, "Port " << address_ << " settings changed when connection is opened. Reopenning connection" )
+        LOG_WRITE( LOG_INFO, L"Port " << ToLocString( address_ )
+            << L" settings changed when connection is opened. Reopenning connection" )
         Open(); /// Переподключение после изменения настроек
     }
 
@@ -87,10 +92,11 @@ DataBits::Type SerialConnection::GetDataBits() const
 
 bool SerialConnection::SetDataBits( DataBits::Type bits )
 {
-    LOG_WRITE( LOG_INFO, "Set port " << address_ << " data bits to " << DataBitsToString( bits ) );
+    LOG_WRITE( LOG_INFO, L"Set port " << ToLocString( address_ )
+        << L" data bits to "<< ToLocString( DataBitsToString( bits ) ) );
     if ( !IsValidDataBits( bits ) )
     {
-        LOG_WRITE( LOG_ERROR, "Invalid data bits" );
+        LOG_WRITE_MSG( LOG_ERROR, L"Invalid data bits" );
         dataBits_ = DataBits::NotSupported;
         Close();
         return false;
@@ -99,7 +105,8 @@ bool SerialConnection::SetDataBits( DataBits::Type bits )
     dataBits_ = bits;
     if ( IsConnected() )
     {
-        LOG_WRITE( LOG_INFO, "Port " << address_ << " settings changed when connection is opened. Reopenning connection" )
+        LOG_WRITE( LOG_INFO, L"Port " << ToLocString( address_ )
+            << L" settings changed when connection is opened. Reopenning connection" )
         Open(); /// Переподключение после изменения настроек
     }
     return true;
@@ -114,10 +121,11 @@ Parity::Type SerialConnection::GetParity() const
 
 bool SerialConnection::SetParity( Parity::Type parity )
 {
-    LOG_WRITE( LOG_INFO, "Set port " << address_ << " parity to " << ParityToString( parity ) );
+    LOG_WRITE( LOG_INFO, L"Set port " << ToLocString( address_ )
+        << L" parity to " << ToLocString( ParityToString( parity ) ) );
     if ( !IsValidParity( parity ) )
     {
-        LOG_WRITE( LOG_ERROR, "Invalid parity" );
+        LOG_WRITE_MSG( LOG_ERROR, L"Invalid parity" );
         parity_ = Parity::NotSupported;
         Close();
         return false;
@@ -126,7 +134,8 @@ bool SerialConnection::SetParity( Parity::Type parity )
     parity_ = parity;
     if ( IsConnected() )
     {
-        LOG_WRITE( LOG_INFO, "Port " << address_ << " settings changed when connection is opened. Reopenning connection" )
+        LOG_WRITE( LOG_INFO, L"Port " << ToLocString( address_ )
+            << L" settings changed when connection is opened. Reopenning connection" )
         Open(); /// Переподключение после изменения настроек
     }
     return true;
