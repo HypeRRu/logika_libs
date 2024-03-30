@@ -3,7 +3,9 @@
 #ifndef DEVICES_H
 #define DEVICES_H
 
+/// @cond
 #include <string>
+/// @endcond
 
 namespace logika_migration
 {

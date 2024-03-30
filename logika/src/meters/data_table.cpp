@@ -3,8 +3,10 @@
 
 #include <logika/meters/data_table.hpp>
 
+/// @cond
 #include <stdexcept>
 #include <algorithm>
+/// @endcond
 
 namespace logika
 {

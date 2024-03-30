@@ -8,7 +8,9 @@
 
 #include <logika/meters/data_table.h>
 
+/// @cond
 #include <stdexcept>
+/// @endcond
 
 namespace logika
 {

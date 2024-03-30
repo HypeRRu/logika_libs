@@ -9,9 +9,11 @@
 #include <logika/common/types.h>
 #include <logika/log/types.h>
 
+/// @cond
 #include <fstream>
 #include <mutex>
 #include <string>
+/// @endcond
 
 namespace logika
 {

@@ -11,8 +11,10 @@
 
 #include <logika/common/any.hpp>
 
+/// @cond
 #include <unordered_map>
 #include <vector>
+/// @endcond
 
 namespace logika
 {

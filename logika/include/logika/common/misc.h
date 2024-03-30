@@ -8,7 +8,9 @@
 
 #include <logika/common/types.h>
 
+/// @cond
 #include <string>
+/// @endcond
 
 namespace logika
 {

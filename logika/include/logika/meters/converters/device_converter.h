@@ -11,8 +11,10 @@
 
 #include <logika/resources/devices.pb.h>
 
+/// @cond
 #include <memory>
 #include <vector>
+/// @endcond
 
 namespace logika
 {

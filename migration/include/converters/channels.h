@@ -3,7 +3,9 @@
 #ifndef CHANNELS_H
 #define CHANNELS_H
 
+/// @cond
 #include <string>
+/// @endcond
 
 namespace logika_migration
 {

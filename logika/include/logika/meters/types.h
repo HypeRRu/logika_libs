@@ -10,12 +10,14 @@
 #include <logika/common/iserializable.h>
 #include <logika/common/shared_constructible.hpp>
 
+/// @cond
 #include <string>
 #include <unordered_map>
 #include <vector>
 #include <memory>
 
 #include <cstdint>
+/// @endcond
 
 namespace logika
 {

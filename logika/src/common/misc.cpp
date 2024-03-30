@@ -3,6 +3,7 @@
 
 #include <logika/common/misc.h>
 
+/// @cond
 #include <sstream>
 #include <cstring>
 #include <chrono>
@@ -10,6 +11,7 @@
 
 #include <ctime>
 #include <cctype>
+/// @endcond
 
 
 namespace // anonymous

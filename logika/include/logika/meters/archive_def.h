@@ -11,7 +11,9 @@
 
 #include <logika/common/iserializable.h>
 
+/// @cond
 #include <string>
+/// @endcond
 
 namespace logika
 {

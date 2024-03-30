@@ -6,7 +6,9 @@
 #ifndef LOGIKA_ISERIALIZABLE_H
 #define LOGIKA_ISERIALIZABLE_H
 
+/// @cond
 #include <string>
+/// @endcond
 
 namespace logika
 {

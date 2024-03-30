@@ -6,7 +6,9 @@
 #ifndef LOGIKA_CONNECTIONS_TYPES_H
 #define LOGIKA_CONNECTIONS_TYPES_H
 
+/// @cond
 #include <cstdint>
+/// @endcond
 
 namespace logika
 {

@@ -6,7 +6,9 @@
 #include <logika/common/types.h>
 #include <logika/common/misc.h>
 
+/// @cond
 #include <unordered_map>
+/// @endcond
 
 namespace logika
 {

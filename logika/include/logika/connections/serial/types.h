@@ -6,6 +6,7 @@
 #ifndef LOGIKA_CONNECTIONS_SERIAL_TYPES_H
 #define LOGIKA_CONNECTIONS_SERIAL_TYPES_H
 
+/// @cond
 #include <cstdint>
 
 #if defined( __linux__ ) || defined( __APPLE__ )
@@ -15,6 +16,7 @@
 #else
 #error Platform not supported
 #endif
+/// @endcond
 
 namespace logika
 {

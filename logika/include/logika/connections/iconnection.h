@@ -9,8 +9,10 @@
 #include <logika/connections/types.h>
 #include <logika/common/types.h>
 
+/// @cond
 #include <string>
 #include <functional>
+/// @endcond
 
 namespace logika
 {

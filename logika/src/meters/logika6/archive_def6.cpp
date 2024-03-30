@@ -3,9 +3,11 @@
 
 #include <logika/meters/logika6/archive_def6.h>
 
+/// @cond
 #include <stdexcept>
 #include <sstream>
 #include <iomanip>
+/// @endcond
 
 namespace logika
 {

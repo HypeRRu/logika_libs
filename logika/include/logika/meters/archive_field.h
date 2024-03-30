@@ -9,7 +9,9 @@
 #include <logika/meters/tag.h>
 #include <logika/meters/archive_field_def.h>
 
+/// @cond
 #include <string>
+/// @endcond
 
 namespace logika
 {

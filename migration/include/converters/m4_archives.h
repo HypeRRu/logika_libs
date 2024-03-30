@@ -3,7 +3,9 @@
 #ifndef M4_ARCHIVES_H
 #define M4_ARCHIVES_H
 
+/// @cond
 #include <string>
+/// @endcond
 
 namespace logika_migration
 {

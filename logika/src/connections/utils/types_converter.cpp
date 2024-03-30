@@ -3,7 +3,9 @@
 
 #include <logika/connections/utils/types_converter.h>
 
+/// @cond
 #include <unordered_map>
+/// @endcond
 
 namespace logika
 {

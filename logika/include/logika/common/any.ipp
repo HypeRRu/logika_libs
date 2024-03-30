@@ -8,7 +8,9 @@
 
 #include <logika/common/any.hpp>
 
+/// @cond
 #include <stdexcept>
+/// @endcond
 
 namespace logika
 {

@@ -1,9 +1,12 @@
 #include "converters/x6_tag_types.h"
 
+/// @cond
 #include <fstream>
 
-#include "utils/enums_string_to_pb.h"
 #include "third_party/csv.hpp"
+/// @endcond
+
+#include "utils/enums_string_to_pb.h"
 
 #include <logika/resources/x6_tag_types.pb.h>
 

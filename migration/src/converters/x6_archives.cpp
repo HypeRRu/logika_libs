@@ -1,10 +1,13 @@
 #include "converters/x6_archives.h"
 
+/// @cond
 #include <fstream>
 #include <sstream>
 
-#include "utils/enums_string_to_pb.h"
 #include "third_party/csv.hpp"
+/// @endcond
+
+#include "utils/enums_string_to_pb.h"
 
 #include <logika/resources/x6_archives.pb.h>
 

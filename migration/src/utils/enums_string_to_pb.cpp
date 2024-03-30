@@ -1,8 +1,10 @@
 #include "utils/enums_string_to_pb.h"
 
+/// @cond
 #include <unordered_map>
 #include <algorithm>
 #include <iostream>
+/// @endcond
 
 namespace logika_migration
 {

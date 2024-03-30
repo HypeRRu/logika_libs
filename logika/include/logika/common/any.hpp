@@ -6,8 +6,10 @@
 #ifndef LOGIKA_ANY_HPP
 #define LOGIKA_ANY_HPP
 
+/// @cond
 #include <typeinfo>
 #include <memory>
+/// @endcond
 
 namespace logika
 {

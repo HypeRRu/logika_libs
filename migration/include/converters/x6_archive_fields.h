@@ -3,7 +3,9 @@
 #ifndef X6_ARCHIVE_FIELDS_H
 #define X6_ARCHIVE_FIELDS_H
 
+/// @cond
 #include <string>
+/// @endcond
 
 namespace logika_migration
 {

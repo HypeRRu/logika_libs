@@ -3,7 +3,9 @@
 
 #include <logika/connections/network/net_connection.h>
 
+/// @cond
 #include <iostream>
+/// @endcond
 
 namespace logika
 {

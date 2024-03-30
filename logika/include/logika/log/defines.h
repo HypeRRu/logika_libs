@@ -8,7 +8,9 @@
 
 #include <logika/log/logger.h>
 
+/// @cond
 #include <sstream>
+/// @endcond
 
 namespace logika
 {

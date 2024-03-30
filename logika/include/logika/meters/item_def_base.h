@@ -9,7 +9,9 @@
 #include <logika/meters/channel.h>
 #include <logika/meters/types.h>
 
+/// @cond
 #include <string>
+/// @endcond
 
 namespace logika
 {

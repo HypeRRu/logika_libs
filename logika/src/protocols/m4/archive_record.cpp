@@ -5,7 +5,9 @@
 
 #include <logika/common/misc.h>
 
+/// @cond
 #include <sstream>
+/// @endcond
 
 namespace logika
 {

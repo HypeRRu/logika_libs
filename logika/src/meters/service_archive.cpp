@@ -5,8 +5,10 @@
 
 #include <logika/common/misc.h>
 
+/// @cond
 #include <stdexcept>
 #include <algorithm>
+/// @endcond
 
 namespace logika
 {

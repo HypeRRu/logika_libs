@@ -3,7 +3,9 @@
 #ifndef L4_TAGS_H
 #define L4_TAGS_H
 
+/// @cond
 #include <string>
+/// @endcond
 
 namespace logika_migration
 {

@@ -6,11 +6,13 @@
 #ifndef LOGIKA_RESOURCES_LOADER_HPP
 #define LOGIKA_RESOURCES_LOADER_HPP
 
+/// @cond
 #include "google/protobuf/message.h"
 
 #include <string>
 #include <memory>
 #include <type_traits>
+/// @endcond
 
 namespace logika
 {

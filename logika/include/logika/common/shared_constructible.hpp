@@ -6,8 +6,10 @@
 #ifndef LOGIKA_SHARED_CONSTRUCTIBLE_HPP
 #define LOGIKA_SHARED_CONSTRUCTIBLE_HPP
 
+/// @cond
 #include <memory>
 #include <type_traits>
+/// @endcond
 
 namespace logika
 {

@@ -5,6 +5,7 @@
 
 #include <logika/common/misc.h>
 
+/// @cond
 #include <array>
 #include <chrono>
 #include <iostream>
@@ -13,6 +14,7 @@
 #include <locale>
 
 #include <ctime>
+/// @endcond
 
 namespace // anonymous
 {

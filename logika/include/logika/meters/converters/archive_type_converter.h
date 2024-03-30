@@ -10,8 +10,10 @@
 
 #include <logika/resources/archive_types.pb.h>
 
+/// @cond
 #include <memory>
 #include <vector>
+/// @endcond
 
 namespace logika
 {

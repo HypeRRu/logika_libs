@@ -6,6 +6,7 @@
 #ifndef LOGIKA_COMMON_TYPES_H
 #define LOGIKA_COMMON_TYPES_H
 
+/// @cond
 #include <vector>
 #include <string>
 #include <locale>
@@ -23,6 +24,7 @@
 #include <winnt.h>      /// Для HANDLE
 #include <winsock2.h>	/// Для SOCKET и ADDRINFOA
 #endif // defined( _WIN32 ) || defined( _WIN64 )
+/// @endcond
 
 namespace logika
 {

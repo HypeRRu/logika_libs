@@ -13,7 +13,9 @@
 #include <logika/common/types.h>
 #include <logika/connections/rc.h>
 
+/// @cond
 #include <functional>
+/// @endcond
 
 namespace logika
 {

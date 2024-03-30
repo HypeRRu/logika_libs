@@ -8,14 +8,15 @@
 #include <logika/log/defines.h>
 #include <logika/common/misc.h>
 
+/// @cond
 #include <cstring>
 
-// #include <poll.h>
 #include <termios.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/ioctl.h>
 #include <sys/types.h>
+/// @endcond
 
 /// @todo Сделать обновление опций без переподключения
 /// @todo Убрать лишние проверки в Read/Write

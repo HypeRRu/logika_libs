@@ -3,7 +3,9 @@
 
 #include <logika/meters/types.h>
 
+/// @cond
 #include <chrono>
+/// @endcond
 
 namespace // anonymous
 {

@@ -6,9 +6,11 @@
 #ifndef LOGIKA_STORAGE_STORAGE_HPP
 #define LOGIKA_STORAGE_STORAGE_HPP
 
+/// @cond
 #include <unordered_map>
 #include <typeindex>
 #include <memory>
+/// @endcond
 
 namespace logika
 {

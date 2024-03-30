@@ -11,10 +11,12 @@
 
 #include <logika/common/iserializable.h>
 
+/// @cond
 #include <string>
 #include <memory>
 
 #include <cstdint>
+/// @endcond
 
 namespace logika
 {

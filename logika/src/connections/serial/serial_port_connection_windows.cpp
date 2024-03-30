@@ -7,10 +7,12 @@
 #include <logika/log/defines.h>
 #include <logika/common/misc.h>
 
+/// @cond
 #include <system_error>
 
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
+/// @endcond
 
 
 namespace logika

@@ -6,7 +6,9 @@
 #ifndef LOGIKA_COMMON_RC_H
 #define LOGIKA_COMMON_RC_H
 
+/// @cond
 #include <cstdint>
+/// @endcond
 
 namespace logika
 {

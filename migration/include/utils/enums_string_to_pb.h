@@ -3,9 +3,11 @@
 #ifndef ENUMS_STRING_TO_PB_H
 #define ENUMS_STRING_TO_PB_H
 
-#include <string>
-
 #include <logika/resources/enums.pb.h>
+
+/// @cond
+#include <string>
+/// @endcond
 
 namespace logika_migration
 {

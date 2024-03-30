@@ -3,10 +3,12 @@
 
 #include <logika/meters/tag.h>
 
+/// @cond
 #include <stdexcept>
 #include <iomanip>
 #include <sstream>
 #include <iostream>
+/// @endcond
 
 namespace logika
 {

@@ -6,7 +6,9 @@
 #ifndef LOGIKA_LOG_TYPES_H
 #define LOGIKA_LOG_TYPES_H
 
+/// @cond
 #include <cstdint>
+/// @endcond
 
 namespace logika
 {

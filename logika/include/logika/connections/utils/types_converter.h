@@ -9,7 +9,9 @@
 #include <logika/connections/types.h>
 #include <logika/connections/serial/types.h>
 
+/// @cond
 #include <string>
+/// @endcond
 
 namespace logika
 {

@@ -1,10 +1,12 @@
 /// @file Реализация загрузчика ресурсов
 /// @copyright HypeRRu 2024
 
-#include <fstream>
-
 #include <logika/log/defines.h>
 #include <logika/common/misc.h>
+
+/// @cond
+#include <fstream>
+/// @endcond
 
 namespace logika
 {

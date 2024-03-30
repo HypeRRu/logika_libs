@@ -3,8 +3,10 @@
 
 #include <logika/meters/logika6/archive_field_def6.h>
 
+/// @cond
 #include <sstream>
 #include <iomanip>
+/// @endcond
 
 namespace logika
 {

@@ -3,8 +3,10 @@
 
 #include <logika/meters/utils/types_converter.h>
 
+/// @cond
 #include <unordered_map>
 #include <stdexcept>
+/// @endcond
 
 namespace logika
 {

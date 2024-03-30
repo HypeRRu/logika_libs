@@ -6,10 +6,12 @@
 #include <logika/log/defines.h>
 #include <logika/common/misc.h>
 
+/// @cond
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #include <winsock2.h>
 #include <ws2tcpip.h>
+/// @endcond
 
 namespace logika
 {

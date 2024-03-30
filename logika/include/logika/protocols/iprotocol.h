@@ -9,7 +9,9 @@
 #include <logika/connections/iconnection.h>
 #include <logika/protocols/rc.h>
 
+/// @cond
 #include <memory>
+/// @endcond
 
 namespace logika
 {

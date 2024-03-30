@@ -3,7 +3,9 @@
 #ifndef TAG_KINDS_H
 #define TAG_KINDS_H
 
+/// @cond
 #include <string>
+/// @endcond
 
 namespace logika_migration
 {

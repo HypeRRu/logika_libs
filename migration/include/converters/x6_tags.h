@@ -3,7 +3,9 @@
 #ifndef X6_TAGS_H
 #define X6_TAGS_H
 
+/// @cond
 #include <string>
+/// @endcond
 
 namespace logika_migration
 {

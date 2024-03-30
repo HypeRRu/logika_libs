@@ -3,7 +3,9 @@
 #ifndef VARS_H
 #define VARS_H
 
+/// @cond
 #include <string>
+/// @endcond
 
 namespace logika_migration
 {

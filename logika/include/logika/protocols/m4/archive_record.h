@@ -10,7 +10,9 @@
 
 #include <logika/common/types.h>
 
+/// @cond
 #include <vector>
+/// @endcond
 
 namespace logika
 {

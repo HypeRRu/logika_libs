@@ -6,10 +6,12 @@
 #include <logika/log/defines.h>
 #include <logika/common/misc.h>
 
+/// @cond
 #include <poll.h>
 #include <unistd.h>
 #include <sys/ioctl.h>
 #include <sys/types.h>
+/// @endcond
 
 namespace logika
 {

@@ -6,9 +6,12 @@
 #include <logika/common/types.h>
 #include <logika/common/misc.h>
 
+/// @cond
 #include <chrono>
 #include <unordered_map>
+/// @endcond
 
+/// @todo Вынести в файл
 namespace // anonymous
 {
 

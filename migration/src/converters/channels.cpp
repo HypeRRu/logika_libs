@@ -1,9 +1,11 @@
 #include "converters/channels.h"
 
+/// @cond
 #include <string>
 #include <fstream>
 
 #include "third_party/csv.hpp"
+/// @endcond
 
 #include <logika/resources/channels.pb.h>
 

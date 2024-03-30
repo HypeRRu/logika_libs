@@ -7,11 +7,13 @@
 #include <logika/log/defines.h>
 #include <logika/common/misc.h>
 
+/// @cond
 #include <cstring>
 
 #include <sys/types.h>
 #include <arpa/inet.h>
 #include <unistd.h>
+/// @endcond
 
 namespace logika
 {
