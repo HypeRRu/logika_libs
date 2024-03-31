@@ -19,15 +19,15 @@ namespace meters
 
 ArchiveDef6::ArchiveDef6( const ChannelDef& cdef, const ArchiveDef6Settings& settings )
     : ArchiveDef( cdef, settings )
-    , address_{ "" }
+    , address_{ L"" }
 {
-    std::stringstream ss;
-    ss << std::setw( 3 ) << std::setfill( '0' ) << ordinal_;
+    LocStringStream ss;
+    ss << std::setw( 3 ) << std::setfill( L'0' ) << ordinal_;
     address_ = ss.str();
 } // ArchiveDef6
 
 
-std::string ArchiveDef6::GetAddress() const
+LocString ArchiveDef6::GetAddress() const
 {
     return address_;
 } // GetAddress

@@ -24,7 +24,7 @@ namespace logika
 /// @brief Запись в лог с использованием потока
 #define LOG_WRITE( level, message ) \
 do { \
-    std::wstringstream logstr; \
+    logika::LocStringStream logstr; \
     logstr << message; \
     logika::log::Logger::Instance().Write( level, logstr.str(), __FUNCTION__ ); \
 } while ( false );

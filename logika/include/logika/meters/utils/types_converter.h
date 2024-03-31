@@ -21,12 +21,12 @@ namespace meters
 /// @brief Конвертация типа данных элемента в БД в строку
 /// @param[in] type Тип данных
 /// @return Строковое представление типа данных
-std::string DbTypeToString( DbType type );
+LocString DbTypeToString( DbType type );
 
 /// @brief Конвертация группы тэга в строку
 /// @param[in] Группа тэга
 /// @return Строковое представление группы тэга
-std::string TagKindToString( TagKind::Type type );
+LocString TagKindToString( TagKind::Type type );
 
 } // namespace meters
 

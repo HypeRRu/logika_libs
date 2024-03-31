@@ -33,7 +33,7 @@ public:
 
     /// @brief Получение названия прибора
     /// @return Название прибора
-    virtual std::string GetCaption() const = 0;
+    virtual LocString GetCaption() const = 0;
 
     /// @brief Получение описания прибора
     /// @return Описание прибора
@@ -66,7 +66,7 @@ public:
     /// @brief Получение префикса события
     /// @param[in] tv @todo ???
     /// @return Префикс события
-    virtual std::string GetEventPrefix( uint32_t tv ) const = 0;
+    virtual LocString GetEventPrefix( uint32_t tv ) const = 0;
 
 }; // class Meter
 

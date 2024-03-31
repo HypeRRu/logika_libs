@@ -25,7 +25,7 @@ TagDef::TagDef( const ChannelDef& cdef, const TagDefSettings& settings)
         : DbTypeToString( settings.type ) 
     }
     , displayFormat_{ settings.displayFormat }
-    , key_{ "" }
+    , key_{ L"" }
 {} // TagDef
 
 
@@ -35,21 +35,21 @@ StdVar TagDef::GetStdVar() const
 } // GetStdVar
 
 
-std::string TagDef::GetDbTypeStr() const
+LocString TagDef::GetDbTypeStr() const
 {
     return dbTypeStr_;
 } // GetDbTypeStr
 
 
-std::string TagDef::GetDisplayFormat() const
+LocString TagDef::GetDisplayFormat() const
 {
     return displayFormat_;
 } // GetDisplayFormat
 
 
-std::string TagDef::GetKey() const
+LocString TagDef::GetKey() const
 {
-    return "";
+    return L"";
 } // GetKey
 
 } // namespace meters

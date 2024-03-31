@@ -29,8 +29,8 @@ public:
     std::shared_ptr< ArchiveType > archType = nullptr;  ///< Тип архива
     DbType type = DbType::Undefined;                    ///< Тип элемента в базе данных (стандартный)
     uint32_t capacity = 0;                              ///< Емкость архива
-    std::string name = "";                              ///< Имя тэга
-    std::string description = "";                       ///< Описание тэга
+    LocString name = L"";                               ///< Имя тэга
+    LocString description = L"";                        ///< Описание тэга
 
 }; // struct ArchiveDefSettings
 
@@ -53,7 +53,7 @@ public:
     uint32_t GetCapacity() const;
 
     /// @copydoc ISerializable::ToString()
-    virtual std::string ToString() const override;
+    virtual LocString ToString() const override;
 
 protected:
     std::shared_ptr< ArchiveType > archiveType_;    ///< Тип архива (один из предопределенных)

@@ -19,13 +19,13 @@ ArchiveField::ArchiveField( const ArchiveFieldDef& afdef, int32_t channelNo )
 } // ArchiveField
 
 
-std::string ArchiveField::GetCaption() const
+LocString ArchiveField::GetCaption() const
 {
     return caption_;
 } // GetCaption
 
 
-void ArchiveField::SetCaption( const std::string& caption )
+void ArchiveField::SetCaption( const LocString& caption )
 {
     caption_ = caption;
 } // SetCaption
@@ -43,21 +43,21 @@ std::shared_ptr< ArchiveType > ArchiveField::GetArchiveType() const
 } // GetArchiveType
 
 
-std::string ArchiveField::GetDisplayFormat() const
+LocString ArchiveField::GetDisplayFormat() const
 {
     return def_.GetDisplayFormat();
 } // GetDisplayFormat
 
 
-std::string ArchiveField::ToString() const
+LocString ArchiveField::ToString() const
 {
-    const std::string channelNoStr = channel_.no ? std::to_string( channel_.no ) : "";
-    std::string euStr = Trim( eu_ );
+    const LocString channelNoStr = ToLocString( channel_.no ? std::to_string( channel_.no ) : "" );
+    LocString euStr = Trim( eu_ );
     if ( !euStr.empty() )
     {
-        euStr = "[" + euStr + "]";
+        euStr = L"[" + euStr + L"]";
     }
-    return channel_.name + " " + channelNoStr + " " + euStr;
+    return channel_.name + L" " + channelNoStr + L" " + euStr;
 } // ToString
 
 } // namespace meters

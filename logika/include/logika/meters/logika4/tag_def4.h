@@ -19,7 +19,7 @@ namespace meters
 struct TagDef4Settings: public DataTagDefSettings
 {
 public:
-    std::string units = ""; ///< Единицы измерения
+    LocString units = L""; ///< Единицы измерения
 
 }; // struct TagDef4Settings
 
@@ -35,13 +35,13 @@ public:
 
     /// @brief Получение единиц измерения
     /// @return Единицы измерения
-    std::string GetUnits() const;
+    LocString GetUnits() const;
 
     /// @copydoc ISerializable::ToString()
-    virtual std::string ToString() const override;
+    virtual LocString ToString() const override;
 
 protected:
-    std::string units_; ///< Единицы измерения
+    LocString units_; ///< Единицы измерения
 
 }; // class TagDef4
 

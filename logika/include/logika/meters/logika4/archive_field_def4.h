@@ -20,7 +20,7 @@ struct ArchiveFieldDef4Settings: public ArchiveFieldDefSettings
 {
 public:
     std::shared_ptr< ArchiveDef > archive = nullptr;    ///< Описание архива
-    std::string units = "";                             ///< Единицы измерения
+    LocString units = L"";                              ///< Единицы измерения
 
 }; // struct ArchiveFieldDef4Settings
 
@@ -40,11 +40,11 @@ public:
 
     /// @brief Получение единиц измерения
     /// @return Единицы измерения
-    std::string GetUnits() const;
+    LocString GetUnits() const;
 
 protected:
     std::shared_ptr< ArchiveDef > archive_; ///< Описание архива
-    std::string units_;                     ///< Единицы измерения
+    LocString units_;                       ///< Единицы измерения
 
 }; // class ArchiveFieldDef4
 

@@ -18,9 +18,10 @@ namespace meters
 
 /// Запись сервисного архива
 
-std::string ServiceRecord::ToString() const
+LocString ServiceRecord::ToString() const
 {
-    return std::to_string( timestamp ) + " " + event + " " + description;
+    return ToLocString( std::to_string( timestamp ) ) + L" "
+        + event + L" " + description;
 } // ToString
 
 

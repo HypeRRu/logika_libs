@@ -29,8 +29,8 @@ public:
     /// @param[in] name Название
     /// @param[in] description Описание
     /// @param[in] type Тип элемента в базе данных
-    ItemDefBase( const ChannelDef& cdef, int ordinal, const std::string& name
-        , const std::string& description, DbType type );
+    ItemDefBase( const ChannelDef& cdef, int ordinal, const LocString& name
+        , const LocString& description, DbType type );
 
     virtual ~ItemDefBase() = default;
 
@@ -48,11 +48,11 @@ public:
 
     /// @brief Получение имени
     /// @return Имя
-    std::string GetName() const;
+    LocString GetName() const;
 
     /// @brief Получение описания
     /// @return Описание
-    std::string GetDescription() const;
+    LocString GetDescription() const;
 
     /// @brief Получение типа элемента в базе данных
     /// @return Тип элемента в базе данных
@@ -61,13 +61,13 @@ public:
 protected:
     /// @brief Изменение имени
     /// @param[in] name Новое имя
-    void SetName( const std::string& name );
+    void SetName( const LocString& name );
 
 protected:
     const ChannelDef channelDef_;   ///< Описание канала
     int ordinal_;                   ///< Порядковый номер
-    std::string name_;              ///< Имя (берется из внутренней базы тэгов)
-    const std::string description_; ///< Описание
+    LocString name_;                ///< Имя (берется из внутренней базы тэгов)
+    const LocString description_;   ///< Описание
     const DbType baseType_;         ///< Тип элемента в базе данных
 
 }; // class ItemDefBase

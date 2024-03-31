@@ -20,12 +20,12 @@ struct ServiceRecord: public ISerializable
 {
 public:
     /// @copydoc ISerializable::ToString()
-    virtual std::string ToString() const override;
+    virtual LocString ToString() const override;
 
 public:
     TimeType timestamp = 0;         ///< Метка времени записи
-    std::string event = "";         ///< Событие
-    std::string description = "";   ///< Описание события
+    LocString event = L"";          ///< Событие
+    LocString description = L"";    ///< Описание события
 
 }; // struct ServiceRecord
 

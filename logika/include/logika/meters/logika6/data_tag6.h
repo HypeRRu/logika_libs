@@ -40,7 +40,7 @@ public:
     std::vector< DataTag >& GetTags();
 
     /// @copydoc ISerializable::ToString()
-    virtual std::string ToString() const override;
+    virtual LocString ToString() const override;
 
 protected:
     DataTagDef6 dataTagDef_;        ///< Описание тэга

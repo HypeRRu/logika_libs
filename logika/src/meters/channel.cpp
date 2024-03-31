@@ -3,6 +3,8 @@
 
 #include <logika/meters/channel.h>
 
+#include <logika/common/misc.h>
+
 namespace logika
 {
 
@@ -11,8 +13,8 @@ namespace meters
 
 /// Структура описание канала
 
-ChannelDef::ChannelDef( std::shared_ptr< IMeter > m, const std::string& p, int32_t s
-    , uint32_t c, const std::string& d )
+ChannelDef::ChannelDef( std::shared_ptr< IMeter > m, const LocString& p, int32_t s
+    , uint32_t c, const LocString& d )
     : meter{ m }
     , kind{ m ? m->GetChannelKind() : ChannelKind::Undefined }
     , prefix{ p }
@@ -22,9 +24,9 @@ ChannelDef::ChannelDef( std::shared_ptr< IMeter > m, const std::string& p, int32
 {} // ChannelDef
 
 
-std::string ChannelDef::ToString() const
+LocString ChannelDef::ToString() const
 {
-    return prefix + "(" + description + ")";
+    return prefix + L"(" + description + L")";
 } // ToString
 
 
@@ -33,13 +35,13 @@ std::string ChannelDef::ToString() const
 Channel::Channel( const ChannelDef& cdef, int32_t channelNo )
     : ChannelDef( cdef )
     , no{ channelNo }
-    , name{ cdef.prefix + ( channelNo > 0 ? std::to_string( channelNo ) : "" ) }
+    , name{ cdef.prefix + ToLocString( channelNo > 0 ? std::to_string( channelNo ) : "" ) }
 {} // Channel
 
 
-std::string Channel::ToString() const
+LocString Channel::ToString() const
 {
-    return name + "(" + description + ")";
+    return name + L"(" + description + L")";
 } // ToString
 
 } // namespace meters

@@ -36,11 +36,11 @@ public:
 
     /// @brief Получение имени тэга
     /// @return Имя тэга
-    std::string GetName() const;
+    LocString GetName() const;
 
     /// @brief Получение имени поля
     /// @return Имя поля
-    std::string GetFieldName() const;
+    LocString GetFieldName() const;
 
     /// @brief Получение порядкового номера
     /// @return Порядковый номер
@@ -48,28 +48,28 @@ public:
 
     /// @brief Получение описания тэга
     /// @return Описание тэга
-    std::string GetDescription() const;
+    LocString GetDescription() const;
 
     /// @brief Получение адреса
     /// @return Адрес
-    const std::string& GetAddress() const;
+    LocString GetAddress() const;
 
     /// @brief Получение единиц измерения
     /// @return Единицы измерения
-    const std::string& GetEu() const;
+    LocString GetEu() const;
 
     /// @brief Установка единиц измерения
     /// @param[in] eu Единицы измерения
-    void SetEu( const std::string& eu );
+    void SetEu( const LocString& eu );
 
     /// @copydoc ISerializable::ToString()
-    virtual std::string ToString() const override;
+    virtual LocString ToString() const override;
 
 protected:
-    std::string address_;   ///< Адрес тэга
-    TagDef def_;            ///< Описание тэга
-    Channel channel_;       ///< Канал
-    std::string eu_;        ///< Единицы измерения
+    LocString address_; ///< Адрес тэга
+    TagDef def_;        ///< Описание тэга
+    Channel channel_;   ///< Канал
+    LocString eu_;      ///< Единицы измерения
 
 }; // class Tag
 

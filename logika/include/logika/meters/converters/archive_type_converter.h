@@ -37,7 +37,7 @@ public:
     static ConvertedTypeList    Convert( const FromTypeList& fromList );
 
 public:
-    static std::string          ConvertName( const resources::ArchiveTypeEnum type );
+    static LocString            ConvertName( const resources::ArchiveTypeEnum type );
     static LocString            ConvertAcronym( const resources::ArchiveTypeEnum type );
     static ArchiveTimingType    ConvertTimingType( const resources::ArchiveTypeEnum type );
     static TimeType             ConvertInterval( const resources::ArchiveTypeEnum type );

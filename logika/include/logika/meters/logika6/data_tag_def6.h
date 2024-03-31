@@ -52,7 +52,7 @@ public:
     uint32_t GetCount() const;
 
     /// @copydoc ISerializable::ToString()
-    virtual std::string ToString() const override;
+    virtual LocString ToString() const override;
 
 protected:
     Tag6NodeType nodeType_; ///< Тип элемента

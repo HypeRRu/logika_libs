@@ -10,7 +10,7 @@ namespace meters
 {
 
 ItemDefBase::ItemDefBase( const ChannelDef& cdef, int ordinal
-    , const std::string& name, const std::string& description, DbType type )
+    , const LocString& name, const LocString& description, DbType type )
     : channelDef_{ cdef }
     , ordinal_{ ordinal }
     , name_{ name }
@@ -37,13 +37,13 @@ int ItemDefBase::GetOrdinal() const
 } // GetOrdinal
 
 
-std::string ItemDefBase::GetName() const
+LocString ItemDefBase::GetName() const
 {
     return name_;
 } // GetName
 
 
-std::string ItemDefBase::GetDescription() const
+LocString ItemDefBase::GetDescription() const
 {
     return description_;
 } // GetDescription
@@ -55,7 +55,7 @@ DbType ItemDefBase::GetElementType() const
 } // GetElementType
     
 
-void ItemDefBase::SetName( const std::string& name )
+void ItemDefBase::SetName( const LocString& name )
 {
     name_ = name;
 } // SetName

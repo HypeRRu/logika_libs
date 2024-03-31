@@ -28,7 +28,7 @@ public:
     /// @param[in] busType Тип протокола
     Meter(
           MeasureKind measureKind           = MeasureKind::Undefined
-        , const std::string& caption        = ""
+        , const LocString& caption          = L""
         , const LocString& description      = L""
         , uint32_t maxChannels              = 1
         , uint32_t maxGroups                = 1
@@ -42,7 +42,7 @@ public:
     virtual MeasureKind GetMeasureKind() const override;
 
     /// @copydoc IMeter::GetCaption()
-    virtual std::string GetCaption() const override;
+    virtual LocString GetCaption() const override;
 
     /// @copydoc IMeter::GetDescription()
     virtual LocString GetDescription() const override;
@@ -66,17 +66,17 @@ public:
     virtual BusProtocolType GetBusType() const override;
 
     /// @copydoc IMeter::GetEventPrefix()
-    virtual std::string GetEventPrefix( uint32_t tv ) const override;
+    virtual LocString GetEventPrefix( uint32_t tv ) const override;
 
     /// @copydoc ISerializable::ToString()
-    virtual std::string ToString() const override;
+    virtual LocString ToString() const override;
 
     /// @todo hash code?
     /// @todo get typed meters
 
 protected:
     MeasureKind measureKind_;   ///< Тип измерения
-    std::string caption_;       ///< Название прибора
+    LocString caption_;       ///< Название прибора
     LocString description_;     ///< Описание прибора
     uint32_t maxChannels_;      ///< Максимальное количество каналов
     uint32_t maxGroups_;        ///< Максимальное количество групп

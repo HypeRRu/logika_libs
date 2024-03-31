@@ -64,24 +64,24 @@ public:
 
     /// @brief Получение описания ошибки
     /// @return Описание ошибки
-    std::string GetErrorDescription() const;
+    LocString GetErrorDescription() const;
 
     /// @brief Установка описания ошибки
     /// @param[in] description Описание ошибки
-    void SetErrorDescription( const std::string& description );
+    void SetErrorDescription( const LocString& description );
 
     /// @brief Получение формата отображения
     /// @return Формат отображения
-    std::string GetDisplayFormat() const;
+    LocString GetDisplayFormat() const;
 
     /// @copydoc ISerializable::ToString()
-    virtual std::string ToString() const override;
+    virtual LocString ToString() const override;
 
 protected:
     logika::Any value_;         ///< Данные тэга
     TimeType timestamp_;        ///< Метка времени
     bool oper_;                 ///< Флаг операции
-    std::string errDesc_;       ///< Описание ошибки
+    LocString errDesc_;         ///< Описание ошибки
     DataTagDef dataTagDef_;     ///< Описание тэга
 
 }; // class DataTag

@@ -64,21 +64,21 @@ ArchiveTypeConverter::ConvertedTypeList ArchiveTypeConverter::Convert( const Arc
 } // Convert( const ArchiveTypeConverter::FromTypeList& fromList )
 
 
-std::string ArchiveTypeConverter::ConvertName( const resources::ArchiveTypeEnum type )
+LocString ArchiveTypeConverter::ConvertName( const resources::ArchiveTypeEnum type )
 {
-    static const std::unordered_map< resources::ArchiveTypeEnum, std::string > converter{
-          { logika::resources::ARCHIVE_TYPE_CONTROL,    "Control" }
-        , { logika::resources::ARCHIVE_TYPE_DAY,        "Day" }
-        , { logika::resources::ARCHIVE_TYPE_DECADE,     "Decade" }
-        , { logika::resources::ARCHIVE_TYPE_DIAGS_LOG,  "DiagsLog" }
-        , { logika::resources::ARCHIVE_TYPE_ERRORS_LOG, "ErrorsLog" }
-        , { logika::resources::ARCHIVE_TYPE_HOUR,       "Hour" }
-        , { logika::resources::ARCHIVE_TYPE_MONTH,      "Month" }
-        , { logika::resources::ARCHIVE_TYPE_PARAMS_LOG, "ParamsLog" }
-        , { logika::resources::ARCHIVE_TYPE_POWER_LOG,  "PowerLog" }
-        , { logika::resources::ARCHIVE_TYPE_TURN,       "Turn" }
-        , { logika::resources::ARCHIVE_TYPE_MINUTE,     "Minute" }
-        , { logika::resources::ARCHIVE_TYPE_HALF_HOUR,  "HalfHour" }
+    static const std::unordered_map< resources::ArchiveTypeEnum, LocString > converter{
+          { logika::resources::ARCHIVE_TYPE_CONTROL,    L"Control" }
+        , { logika::resources::ARCHIVE_TYPE_DAY,        L"Day" }
+        , { logika::resources::ARCHIVE_TYPE_DECADE,     L"Decade" }
+        , { logika::resources::ARCHIVE_TYPE_DIAGS_LOG,  L"DiagsLog" }
+        , { logika::resources::ARCHIVE_TYPE_ERRORS_LOG, L"ErrorsLog" }
+        , { logika::resources::ARCHIVE_TYPE_HOUR,       L"Hour" }
+        , { logika::resources::ARCHIVE_TYPE_MONTH,      L"Month" }
+        , { logika::resources::ARCHIVE_TYPE_PARAMS_LOG, L"ParamsLog" }
+        , { logika::resources::ARCHIVE_TYPE_POWER_LOG,  L"PowerLog" }
+        , { logika::resources::ARCHIVE_TYPE_TURN,       L"Turn" }
+        , { logika::resources::ARCHIVE_TYPE_MINUTE,     L"Minute" }
+        , { logika::resources::ARCHIVE_TYPE_HALF_HOUR,  L"HalfHour" }
     };
 
     auto iter = converter.find( type );
@@ -86,7 +86,7 @@ std::string ArchiveTypeConverter::ConvertName( const resources::ArchiveTypeEnum 
     {
         return iter->second;
     }
-    return "?";
+    return L"?";
 } // ConvertName
 
 

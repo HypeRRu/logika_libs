@@ -33,10 +33,10 @@ public:
 
     /// @brief Получение адреса
     /// @return Адрес
-    std::string GetAddress() const;
+    LocString GetAddress() const;
 
 protected:
-    std::string address_;   ///< Адрес
+    LocString address_; ///< Адрес
 
 }; // class ArchiveDef6
 

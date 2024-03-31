@@ -13,7 +13,7 @@ namespace meters
 
 /// Тип архива
 
-ArchiveType::ArchiveType( const std::string& name, const LocString& description
+ArchiveType::ArchiveType( const LocString& name, const LocString& description
     , ArchiveTimingType timing, const LocString& acronym, TimeType interval, bool variableInterval )
     : timing_{ timing }
     , name_{ name }
@@ -30,7 +30,7 @@ ArchiveTimingType ArchiveType::GetTimingType() const
 } // GetTimingType
 
 
-const std::string& ArchiveType::GetName() const
+const LocString& ArchiveType::GetName() const
 {
     return name_;
 } // GetName
@@ -66,7 +66,7 @@ bool ArchiveType::IsServiceArchive() const
 } // IsServiceArchive
 
 
-std::string ArchiveType::ToString() const
+LocString ArchiveType::ToString() const
 {
     return name_;
 } // ToString
@@ -86,17 +86,17 @@ VQT::VQT( ISerializable* v, int32_t q, TimeType t )
 {} // VQT( ... )
 
 
-std::string VQT::ToString() const
+LocString VQT::ToString() const
 {
-    return GetTimeString( timestamp ) + " - "
-        + ( value ? value->ToString() : "[null]" )
-        + ": " + std::to_string( quality );
+    return GetTimeString( timestamp ) + L" - "
+        + ( value ? value->ToString() : L"[null]" )
+        + L": " + ToLocString( std::to_string( quality ) );
 } // ToString
 
 
 /// Информация о столбце БД
 
-std::string ColumnInfo::ToString() const
+LocString ColumnInfo::ToString() const
 {
     return name;
 } // ToString

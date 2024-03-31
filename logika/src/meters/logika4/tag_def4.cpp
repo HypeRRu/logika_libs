@@ -4,6 +4,7 @@
 #include <logika/meters/logika4/tag_def4.h>
 
 #include <logika/meters/utils/types_converter.h>
+#include <logika/common/misc.h>
 
 namespace logika
 {
@@ -19,16 +20,16 @@ TagDef4::TagDef4( const ChannelDef& cdef, const TagDef4Settings& settings )
 } // TagDef4
 
 
-std::string TagDef4::GetUnits() const
+LocString TagDef4::GetUnits() const
 {
     return units_;
 } // GetUnits
 
 
-std::string TagDef4::ToString() const
+LocString TagDef4::ToString() const
 {
-    return std::to_string( ordinal_ ) + " " + channelDef_.prefix
-        + " " + name_ + " " + TagKindToString( kind_ );
+    return ToLocString( std::to_string( ordinal_ ) ) + L" " + channelDef_.prefix
+        + L" " + name_ + L" " + TagKindToString( kind_ );
 } // ToString
 
 } // namespace meters

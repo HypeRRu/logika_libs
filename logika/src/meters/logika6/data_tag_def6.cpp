@@ -19,11 +19,11 @@ DataTagDef6::DataTagDef6( const ChannelDef& cdef, const DataTagDef6Settings& set
     , nodeType_{ settings.nodeType }
     , count_{ settings.count }
 {
-    std::stringstream ss;
-    ss << std::setw( 3 ) << std::setfill( '0' ) << ordinal_;
+    LocStringStream ss;
+    ss << std::setw( 3 ) << std::setfill( L'0' ) << ordinal_;
     if ( Tag6NodeType::Tag != nodeType_ && 0 != index_ )
     {
-        ss << "n" << std::setw( 2 ) << std::setfill( '0' ) << index_;
+        ss << L"н" << std::setw( 2 ) << std::setfill( L'0' ) << index_;
     }
     key_    = address_ = ss.str();
     index_  = settings.index;
@@ -42,15 +42,15 @@ uint32_t DataTagDef6::GetCount() const
 } // GetCount
 
 
-std::string DataTagDef6::ToString() const
+LocString DataTagDef6::ToString() const
 {
     if ( Tag6NodeType::Array == nodeType_ )
     {
-        return "array " + name_ + " " + description_;
+        return L"array " + name_ + L" " + description_;
     }
     else if ( Tag6NodeType::Structure == nodeType_ )
     {
-        return "structure " + name_ + " " + description_;
+        return L"structure " + name_ + L" " + description_;
     }
     else
     {

@@ -32,23 +32,23 @@ ArchiveRecord::ArchiveRecord( TimeType sinceStart, TimeType full, const std::vec
 {} // ArchiveRecord( TimeType sinceStart, TimeType full, const std::vector< ISerializable* >& vals )
 
 
-std::string ArchiveRecord::ToString() const
+LocString ArchiveRecord::ToString() const
 {
-    std::stringstream stream;
-    stream << GetTimeString( fullTime ) << "";
+    LocStringStream stream;
+    stream << ToLocString( GetTimeString( fullTime ) );
 
     if ( !values.empty() )
     {
-        stream << "{";
-        stream << ( values[ 0 ] ? values[ 0 ]->ToString() : "null" );
+        stream << L"{";
+        stream << ( values[ 0 ] ? values[ 0 ]->ToString() : L"null" );
     }
     for ( size_t i = 1; i < values.size(); ++i )
     {
-        stream << ", " << ( values[ i ] ? values[ i ]->ToString() : "null" );
+        stream << L", " << ( values[ i ] ? values[ i ]->ToString() : L"null" );
     }
     if ( !values.empty() )
     {
-        stream << "}";
+        stream << L"}";
     }
 
     return stream.str();

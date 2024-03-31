@@ -3,6 +3,8 @@
 
 #include <logika/meters/data_tag_def.h>
 
+#include <logika/common/misc.h>
+
 namespace logika
 {
 
@@ -26,13 +28,13 @@ TagKind::Type DataTagDef::GetKind() const
 } // GetKind
 
 
-std::string DataTagDef::GetDescriptionEx() const
+LocString DataTagDef::GetDescriptionEx() const
 {
     return descriptionEx_;
 } // GetDescriptionEx
 
 
-std::string DataTagDef::GetRange() const
+LocString DataTagDef::GetRange() const
 {
     return range_;
 } // GetRange
@@ -56,15 +58,15 @@ int32_t DataTagDef::GetIndex() const
 } // GetIndex
 
 
-std::string DataTagDef::GetAddress() const
+LocString DataTagDef::GetAddress() const
 {
     return address_;
 } // GetAddress
 
 
-std::string DataTagDef::ToString() const
+LocString DataTagDef::ToString() const
 {
-    return key_ + " " + std::to_string( ordinal_ ) + " " + name_;
+    return key_ + L" " + ToLocString( std::to_string( ordinal_ ) ) + L" " + name_;
 } // ToString
 
 } // namespace meters

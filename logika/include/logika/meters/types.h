@@ -148,7 +148,7 @@ public:
 
     /// @brief Получение название типа архива
     /// @return Название типа архива
-    const std::string& GetName() const;
+    const LocString& GetName() const;
     
     /// @brief Получение акронима названия
     /// @return Акроним названия
@@ -175,17 +175,17 @@ public:
     bool IsServiceArchive() const;
 
     /// @copydoc ISerializable::ToString()
-    virtual std::string ToString() const override;
+    virtual LocString ToString() const override;
 
 protected:
     /// @brief Конструктор типа архива
-    ArchiveType( const std::string& name, const LocString& description
+    ArchiveType( const LocString& name, const LocString& description
         , ArchiveTimingType timing, const LocString& acronym
         , TimeType interval, bool variableInterval = false );
 
 private:
     ArchiveTimingType timing_;  ///< Тип архива по времени измерений
-    std::string name_;          ///< Название типа
+    LocString name_;            ///< Название типа
     LocString acronym_;         ///< Акроним названия типа
     LocString description_;     ///< Описание типа
     TimeType interval_;         ///< Интервал архивирования для интервальных архивов, мс
@@ -208,7 +208,7 @@ public:
     VQT( ISerializable* v, int32_t q, TimeType t );
 
     /// @copydoc ISerializable::ToString()
-    virtual std::string ToString() const override;
+    virtual LocString ToString() const override;
 
 public:
     ISerializable* value;   ///< Метрика
@@ -232,17 +232,17 @@ public:
 struct VitalInfo
 {
 public:
-    std::string id;                         ///< Идентификатор прибора из настроечной БД
-    std::string hwRev;                      ///< Модель прибора (x4) / 099н00 (x6)
-    std::string hwSerial;                   ///< Серийный номер прибора
-    std::vector< std::string > intfConfig;  ///< Конфигурация интерфейсов
+    LocString id;                           ///< Идентификатор прибора из настроечной БД
+    LocString hwRev;                        ///< Модель прибора (x4) / 099н00 (x6)
+    LocString hwSerial;                     ///< Серийный номер прибора
+    std::vector< LocString > intfConfig;    ///< Конфигурация интерфейсов
     ByteType nt;                            ///< Байт NT
     ByteType rd;                            ///< Байт RD
     ByteType rh;                            ///< Байт RH
-    // std::vector< std::string > eu;          ///< Единицы измерения (у некоторых приборов отдельно по P и Q)
-    // std::string pipeConf;                   ///< Конфигурация трубопроводов (только у x6)
-    // std::vector< std::string > consConf;    ///< Конфигурация потребителей (у x4 - СП, +СП по ТВ2)
-    std::string mtrParamsHash;              ///< Контрольная сумма БД (рассчитанная прибором)
+    // std::vector< LocString > eu;            ///< Единицы измерения (у некоторых приборов отдельно по P и Q)
+    // LocString pipeConf;                     ///< Конфигурация трубопроводов (только у x6)
+    // std::vector< LocString > consConf;      ///< Конфигурация потребителей (у x4 - СП, +СП по ТВ2)
+    LocString mtrParamsHash;                ///< Контрольная сумма БД (рассчитанная прибором)
     TimeType clockDiff;                     ///< clockDiff = Tdevice - Tcomp.  Tdevice = Tcomp + clockDiff
 }; // struct VitalInfo
 
@@ -252,17 +252,17 @@ struct ColumnInfo: public ISerializable
 {
 public:
     /// @copydoc ISerializable::ToString()
-    virtual std::string ToString() const override;
+    virtual LocString ToString() const override;
 
     bool operator ==( const ColumnInfo& other );
     bool operator !=( const ColumnInfo& other );
 
 public:
-    // int index;              ///< Индекс столбца
-    std::string name;       ///< Имя столбца
-    std::string dataType;   ///< Тип данных столбца
-    // int maxCharLen;         ///< Максимальная длина строки
-    bool nullable;          ///< Разрешено ли пустое поле
+    // int index;          ///< Индекс столбца
+    LocString name;     ///< Имя столбца
+    LocString dataType; ///< Тип данных столбца
+    // int maxCharLen;     ///< Максимальная длина строки
+    bool nullable;      ///< Разрешено ли пустое поле
 
 }; // struct ColumnInfo
 

@@ -18,19 +18,19 @@ ArchiveFieldDef6::ArchiveFieldDef6( const ChannelDef& cdef, const ArchiveFieldDe
     : ArchiveFieldDef( cdef, settings )
     , nameSuffixed_{ settings.name }
 {
-    std::stringstream ss;
-    ss << std::setw( 3 ) << std::setfill( '0' ) << ordinal_;
+    LocStringStream ss;
+    ss << std::setw( 3 ) << std::setfill( L'0' ) << ordinal_;
     address_ = ss.str();
-    const size_t leftPos = name_.find_first_of( '(' );
-    if ( std::string::npos != leftPos
-        && name_.length() - 1 == name_.find_last_of( leftPos, ')' ) )
+    const size_t leftPos = name_.find_first_of( L'(' );
+    if ( LocString::npos != leftPos
+        && name_.length() - 1 == name_.find_last_of( leftPos, L')' ) )
     {
         name_ = name_.substr( 0, leftPos );
     }
 } // ArchiveFieldDef6
 
 
-std::string ArchiveFieldDef6::GetNameSuffixed() const
+LocString ArchiveFieldDef6::GetNameSuffixed() const
 {
     return nameSuffixed_;
 } // GetNameSuffixed

@@ -34,19 +34,19 @@ public:
     /// @param[in] s Начало
     /// @param[in] c Количество
     /// @param[in] d Описание канала
-    ChannelDef( std::shared_ptr< IMeter > m, const std::string& p
-        , int32_t s , uint32_t c, const std::string& d );
+    ChannelDef( std::shared_ptr< IMeter > m, const LocString& p
+        , int32_t s , uint32_t c, const LocString& d );
 
     /// @copydoc ISerializable::ToString()
-    virtual std::string ToString() const override;
+    virtual LocString ToString() const override;
 
 public:
     const std::shared_ptr< IMeter > meter;  ///< Прибор
     const ChannelKind kind;                 ///< Тип канала
-    const std::string prefix;               ///< Префикс канала
+    const LocString prefix;                 ///< Префикс канала
     const int32_t start;                    ///< Начало
     const uint32_t count;                   ///< Количество
-    const std::string description;          ///< Описание канала
+    const LocString description;            ///< Описание канала
 
 }; // struct ChannelDef
 
@@ -61,11 +61,11 @@ public:
     Channel( const ChannelDef& cdef, int32_t channelNo );
 
     /// @copydoc ISerializable::ToString()
-    virtual std::string ToString() const override;
+    virtual LocString ToString() const override;
 
 public:
     const int32_t no;       ///< Номер канала
-    const std::string name; ///< Имя канала
+    const LocString name;   ///< Имя канала
 
 }; // struct Channel
 

@@ -14,15 +14,15 @@ namespace logika
 namespace meters
 {
 
-std::string DbTypeToString( DbType type )
+LocString DbTypeToString( DbType type )
 {
-    static const std::unordered_map< DbType, std::string > mapToString{
-          { DbType::Byte,   "tinyint" }
-        , { DbType::Int32,  "int" }
-        , { DbType::Int64,  "bigint" }
-        , { DbType::Single, "real" }
-        , { DbType::Double, "float" }
-        , { DbType::String, "varchar(128)" }
+    static const std::unordered_map< DbType, LocString > mapToString{
+          { DbType::Byte,   L"tinyint" }
+        , { DbType::Int32,  L"int" }
+        , { DbType::Int64,  L"bigint" }
+        , { DbType::Single, L"real" }
+        , { DbType::Double, L"float" }
+        , { DbType::String, L"varchar(128)" }
         /// @todo Массивы
     };
     auto converted = mapToString.find( type );
@@ -31,24 +31,24 @@ std::string DbTypeToString( DbType type )
         return converted->second;
     }
     /// @todo Стоит ли использовать exception?
-    return "";
+    return L"";
 } // DbTypeToString
 
 
-std::string TagKindToString( TagKind::Type type )
+LocString TagKindToString( TagKind::Type type )
 {
-    static const std::unordered_map< TagKind::Type, std::string > mapToString{
-          { TagKind::Parameter, "tuning" }
-        , { TagKind::Info,      "informational" }
-        , { TagKind::Realtime,  "current" }
-        , { TagKind::TotalCtr,  "total" }
+    static const std::unordered_map< TagKind::Type, LocString > mapToString{
+          { TagKind::Parameter, L"tuning" }
+        , { TagKind::Info,      L"informational" }
+        , { TagKind::Realtime,  L"current" }
+        , { TagKind::TotalCtr,  L"total" }
     };
     auto converted = mapToString.find( type );
     if ( converted != mapToString.cend() )
     {
         return converted->second;
     }
-    return "?";
+    return L"?";
 } // TagKindToString
 
 } // namespace meters

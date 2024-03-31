@@ -3,6 +3,8 @@
 
 #include <logika/meters/logika4/archive_field_def4.h>
 
+#include <logika/common/misc.h>
+
 namespace logika
 {
 
@@ -18,7 +20,7 @@ ArchiveFieldDef4::ArchiveFieldDef4( const ChannelDef& cdef
     key_        = name_;
     ordinal_    = -1;
     /// @bug А в чем смысл?
-    address_    = std::to_string( ordinal_ );
+    address_    = ToLocString( std::to_string( ordinal_ ) );
 } // ArchiveFieldDef4
 
 
@@ -28,7 +30,7 @@ std::shared_ptr< ArchiveDef > ArchiveFieldDef4::GetArchive() const
 } // GetArchive
 
 
-std::string ArchiveFieldDef4::GetUnits() const
+LocString ArchiveFieldDef4::GetUnits() const
 {
     return units_;
 } // GetUnits

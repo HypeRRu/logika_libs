@@ -37,7 +37,7 @@ public:
     ArchiveRecord( TimeType sinceStart, TimeType full, const std::vector< ISerializable* >& vals );
 
     /// @copydoc ISerializable::ToString()
-    virtual std::string ToString() const override;
+    virtual LocString ToString() const override;
 
 public:
     TimeType timeSinceStart;                ///< Временная метка с момента запуска

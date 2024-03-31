@@ -99,8 +99,8 @@ void Logger::SetLogLevel( LogLevel::Type level )
 
 void Logger::Write( LogLevel::Type level, const LocString& message, const std::string& funcName )
 {
-    std::wstringstream msgToWrite;
-    msgToWrite << ToLocString( GetTimeString() ) << ' ';
+    LocStringStream msgToWrite;
+    msgToWrite << GetTimeString() << ' ';
     msgToWrite << '[' << logLevelStrings[ level ] << ']' << ' ';
     if ( !funcName.empty() )
     {

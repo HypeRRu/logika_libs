@@ -15,7 +15,7 @@ ArchiveFieldDef::ArchiveFieldDef( const ChannelDef& cdef
     , const ArchiveFieldDefSettings& settings )
     : TagDef( cdef, settings )
     , archiveType_{ settings.archiveType }
-    , address_{ "" }
+    , address_{ L"" }
 {} // ArchiveFieldDef
 
 
@@ -25,15 +25,15 @@ std::shared_ptr< ArchiveType > ArchiveFieldDef::GetArchiveType() const
 } // ArchiveFieldDef
 
 
-std::string ArchiveFieldDef::GetAddress() const
+LocString ArchiveFieldDef::GetAddress() const
 {
     return address_;
 } // GetAddress
 
 
-std::string ArchiveFieldDef::ToString() const
+LocString ArchiveFieldDef::ToString() const
 {
-    return channelDef_.prefix + " " + name_;
+    return channelDef_.prefix + L" " + name_;
 } // ToString
 
 } // namespace meters

@@ -30,11 +30,11 @@ public:
 
     /// @brief Получение имени поля
     /// @return Имя поля, полученное от устройства
-    std::string GetCaption() const;
+    LocString GetCaption() const;
 
     /// @brief Получение имени поля
     /// @param[in] Имя поля, полученное от устройства
-    void SetCaption( const std::string& caption );
+    void SetCaption( const LocString& caption );
 
     /// @brief Получение номера архива
     /// @return Номер архива
@@ -46,13 +46,13 @@ public:
 
     /// @brief Получение формата отображения
     /// @return Формат отображения
-    std::string GetDisplayFormat() const;
+    LocString GetDisplayFormat() const;
 
     /// @copydoc ISerializable::ToString()
-    virtual std::string ToString() const override;
+    virtual LocString ToString() const override;
 
 protected:
-    std::string caption_;                           ///< Имя поля, полученное от устройства
+    LocString caption_;                             ///< Имя поля, полученное от устройства
     int32_t archiveOrd_;                            ///< Номер архива (для multipart-архивов)
     std::shared_ptr< ArchiveType > archiveType_;    ///< Тип архива
 

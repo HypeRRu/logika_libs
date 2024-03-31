@@ -6,9 +6,7 @@
 #ifndef LOGIKA_ISERIALIZABLE_H
 #define LOGIKA_ISERIALIZABLE_H
 
-/// @cond
-#include <string>
-/// @endcond
+#include <logika/common/types.h>
 
 namespace logika
 {
@@ -21,7 +19,7 @@ public:
 
     /// @brief Сериализация объекта
     /// @return Строковое представление объекта
-    virtual std::string ToString() const = 0;
+    virtual LocString ToString() const = 0;
 
 }; // class ISerializable
 

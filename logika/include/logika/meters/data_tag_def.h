@@ -19,8 +19,8 @@ struct DataTagDefSettings: public TagDefSettings
 {
 public:
     TagKind::Type kind = TagKind::Undefined;    ///< Тип тэга
-    const std::string descriptionEx = "";       ///< Расширенное описание (для настроечных параметров)
-    const std::string range = "";               ///< Диапазон (для настроечных параметров)
+    const LocString descriptionEx = L"";        ///< Расширенное описание (для настроечных параметров)
+    const LocString range = L"";                ///< Диапазон (для настроечных параметров)
     bool isBasicParam = true;                   ///< Является ли параметр базовым
     uint32_t updateRate = 0;                    ///< Частота обновления параметра
 
@@ -42,11 +42,11 @@ public:
 
     /// @brief Получение расширенного описания
     /// @return Расширенное описание
-    std::string GetDescriptionEx() const;
+    LocString GetDescriptionEx() const;
 
     /// @brief Получение диапазона
     /// @return Диапазон
-    std::string GetRange() const;
+    LocString GetRange() const;
 
     /// @brief Получение флага базового параметра
     /// @return Является ли параметр базовым
@@ -62,19 +62,19 @@ public:
 
     /// @brief Получение адреса тэга
     /// @return Адрес тэга
-    std::string GetAddress() const;
+    LocString GetAddress() const;
 
     /// @copydoc ISerializable::ToString()
-    virtual std::string ToString() const override;
+    virtual LocString ToString() const override;
 
 protected:
     TagKind::Type kind_;                ///< Тип тэга
-    const std::string descriptionEx_;   ///< Расширенное описание (для настроечных параметров)
-    const std::string range_;           ///< Диапазон (для настроечных параметров)
+    const LocString descriptionEx_;     ///< Расширенное описание (для настроечных параметров)
+    const LocString range_;             ///< Диапазон (для настроечных параметров)
     bool isBasicParam_;                 ///< Является ли параметр базовым
     uint32_t updateRate_;               ///< Частота обновления параметра
     int32_t index_;                     ///< Номер элемента в массиве (для массивов). -1 - не задан
-    std::string address_;               ///< Адрес тэга
+    LocString address_;                 ///< Адрес тэга
 
 }; // class DataTagDef
 

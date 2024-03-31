@@ -33,10 +33,10 @@ uint32_t ArchiveDef::GetCapacity() const
 } // GetCapacity
 
 
-std::string ArchiveDef::ToString() const
+LocString ArchiveDef::ToString() const
 {
-    return ( archiveType_ ? archiveType_->ToString() : "[unknown]" )
-        + " " + name_ + " (" + description_ + ")";
+    return ( archiveType_ ? archiveType_->ToString() : L"[unknown]" )
+        + L" " + name_ + L" (" + description_ + L")";
 } // ToString
 
 } // namespace meters

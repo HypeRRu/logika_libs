@@ -3,6 +3,8 @@
 
 #include <logika/meters/tag.h>
 
+#include <logika/common/misc.h>
+
 /// @cond
 #include <stdexcept>
 #include <iomanip>
@@ -34,22 +36,22 @@ const TagDef& Tag::GetDef() const
 } // GetDef
 
 
-std::string Tag::GetName() const
+LocString Tag::GetName() const
 {
     return def_.GetName();
 } // GetName
 
 
-std::string Tag::GetFieldName() const
+LocString Tag::GetFieldName() const
 {
-    std::stringstream formatter;
+    LocStringStream formatter;
     if ( channel_.no > 0 && !channel_.prefix.empty() )
     {
         formatter << channel_.prefix;
-        formatter << std::setw( 2 ) << std::setfill( '0' ) << channel_.no;
+        formatter << std::setw( 2 ) << std::setfill( L'0' ) << channel_.no;
     }
 
-    return ( !channel_.name.empty() ? ( channel_.name + "_" ) : "" )
+    return ( !channel_.name.empty() ? ( channel_.name + L"_" ) : L"" )
         + def_.GetName() + formatter.str();
 } // GetFieldName
 
@@ -60,34 +62,35 @@ int32_t Tag::GetOrdinal() const
 } // GetOrdinal
 
 
-std::string Tag::GetDescription() const
+LocString Tag::GetDescription() const
 {
     return def_.GetDescription();
 } // GetDescription
 
 
-const std::string& Tag::GetAddress() const
+LocString Tag::GetAddress() const
 {
     return address_;
 } // GetAddress
 
 
-const std::string& Tag::GetEu() const
+LocString Tag::GetEu() const
 {
     return eu_;
 } // GetEu
 
 
-void Tag::SetEu( const std::string& eu )
+void Tag::SetEu( const LocString& eu )
 {
     eu_ = eu;
 } // SetEu
 
 
-std::string Tag::ToString() const
+LocString Tag::ToString() const
 {
-    return channel_.name + "." + std::to_string( def_.GetOrdinal() )
-        + "(" + def_.GetName() + ")";
+    return channel_.name + L"."
+        + ToLocString( std::to_string( def_.GetOrdinal() ) )
+        + L"(" + def_.GetName() + L")";
 } // ToString
 
 } // namespace meters

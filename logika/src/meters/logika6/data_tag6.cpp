@@ -41,27 +41,27 @@ std::vector< DataTag >& DataTag6Container::GetTags()
 } // GetTags()
 
 
-std::string DataTag6Container::ToString() const
+LocString DataTag6Container::ToString() const
 {
-    std::string containerType = "<U>";
+    LocString containerType = L"<U>";
     switch ( dataTagDef_.GetNodeType() )
     {
         case Tag6NodeType::Tag:
-            containerType = "<T>";
+            containerType = L"<T>";
             break;
         case Tag6NodeType::Array:
-            containerType = "<A>";
+            containerType = L"<A>";
             break;
         case Tag6NodeType::Structure:
-            containerType = "<S>";
+            containerType = L"<S>";
             break;
         default:
             break;
     }
-    std::stringstream ordinalStr;
-    ordinalStr << std::setw( 3 ) << std::setfill( '0' ) << dataTagDef_.GetOrdinal();
-    return containerType + channel_.name + "." + ordinalStr.str()
-        + " (" + dataTagDef_.GetDescription() + ")";
+    LocStringStream ordinalStr;
+    ordinalStr << std::setw( 3 ) << std::setfill( L'0' ) << dataTagDef_.GetOrdinal();
+    return containerType + channel_.name + L"." + ordinalStr.str()
+        + L" (" + dataTagDef_.GetDescription() + L")";
 } // ToString
 
 } // namespace meters

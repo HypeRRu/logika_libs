@@ -12,7 +12,7 @@ namespace meters
 
 Meter::Meter(
       MeasureKind measureKind
-    , const std::string& caption
+    , const LocString& caption
     , const LocString& description
     , uint32_t maxChannels
     , uint32_t maxGroups
@@ -53,7 +53,7 @@ MeasureKind Meter::GetMeasureKind() const
 } // GetMeasureKind
 
 
-std::string Meter::GetCaption() const
+LocString Meter::GetCaption() const
 {
     return caption_;
 } // GetCaption
@@ -101,14 +101,14 @@ BusProtocolType Meter::GetBusType() const
 } // GetBusType
 
 
-std::string Meter::GetEventPrefix( uint32_t tv ) const
+LocString Meter::GetEventPrefix( uint32_t tv ) const
 {
     (void) tv;
-    return ""; /// @todo
+    return L""; /// @todo Реализовать
 } // GetEventPrefix
 
 
-std::string Meter::ToString() const
+LocString Meter::ToString() const
 {
     return caption_;
 } // ToString

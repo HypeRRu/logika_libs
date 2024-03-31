@@ -21,14 +21,15 @@ DataTag::DataTag( const DataTagDef& def, int32_t channelNo )
     , value_{}
     , timestamp_{ 0 }
     , oper_{ false }
-    , errDesc_{ "" }
+    , errDesc_{ L"" }
     , dataTagDef_{ def }
 {
     /// @bug Будет ли все правильно работать?
-    address_ = "";
+    address_ = L"";
     if ( channelNo > 0 )
     {
-        address_ = dataTagDef_.GetChannelDef().prefix + std::to_string( channelNo ) + "_";
+        address_ = dataTagDef_.GetChannelDef().prefix 
+            + ToLocString( std::to_string( channelNo ) ) + L"_";
     }
     address_ += dataTagDef_.GetAddress();
 } // DataTag
@@ -64,43 +65,43 @@ void DataTag::SetOper( bool oper )
 } // SetOper
 
 
-std::string DataTag::GetErrorDescription() const
+LocString DataTag::GetErrorDescription() const
 {
     return errDesc_;
 } // GetErrorDescription
 
 
-void DataTag::SetErrorDescription( const std::string& description )
+void DataTag::SetErrorDescription( const LocString& description )
 {
     errDesc_ = description;
 } // SetErrorDescription
 
 
-std::string DataTag::GetDisplayFormat() const
+LocString DataTag::GetDisplayFormat() const
 {
     return dataTagDef_.GetDisplayFormat();
 } // GetDisplayFormat
 
 
-std::string DataTag::ToString() const
+LocString DataTag::ToString() const
 {
     int32_t idx = GetIndex();
-    std::stringstream idxStr;
+    LocStringStream idxStr;
     if ( idx != -1 )
     {
         idxStr << '#';
-        idxStr << std::setw( 2 ) << std::setfill( '0' ) << idx;
+        idxStr << std::setw( 2 ) << std::setfill( L'0' ) << idx;
     }
-    std::string euStr = Trim( eu_ );
+    LocString euStr = Trim( eu_ );
     if ( !euStr.empty() )
     {
-        euStr = "[" + euStr + "]";
+        euStr = L"[" + euStr + L"]";
     }
-    std::stringstream ordinalStr;
-    ordinalStr << std::setw( 3 ) << std::setfill( '0' ) << dataTagDef_.GetOrdinal();
-    return channel_.name + "." + ordinalStr.str()
-        + idxStr.str() + "(" + dataTagDef_.GetName() + ") "
-        + ( value_.Empty() ? "without" : "with" ) + " value " + euStr;
+    LocStringStream ordinalStr;
+    ordinalStr << std::setw( 3 ) << std::setfill( L'0' ) << dataTagDef_.GetOrdinal();
+    return channel_.name + L"." + ordinalStr.str()
+        + idxStr.str() + L"(" + dataTagDef_.GetName() + L") "
+        + ( value_.Empty() ? L"without" : L"with" ) + L" value " + euStr;
 } // ToString
 
 } // namespace meters

@@ -25,12 +25,12 @@ struct TagDefSettings
 {
 public:
     int ordinal = 0;                    ///< Порядковый номер
-    std::string name = "";              ///< Название тэга
+    LocString name = L"";               ///< Название тэга
     StdVar stdVar = StdVar::Undefined;  ///< Тип тэга (величина)
-    std::string description = "";       ///< Описание тэга
+    LocString description = L"";        ///< Описание тэга
     DbType type = DbType::Undefined;    ///< Тип элемента в базе данных (стандартный)
-    std::string dbType = "";            ///< Тип элемента в базе данных (не стандартный). Если не задан, используется стандартный
-    std::string displayFormat = "";     ///< Формат отображения
+    LocString dbType = L"";             ///< Тип элемента в базе данных (не стандартный). Если не задан, используется стандартный
+    LocString displayFormat = L"";      ///< Формат отображения
 
 }; // struct TagDefSettings
 
@@ -50,21 +50,21 @@ public:
 
     /// @brief Получение типа в базе данных
     /// @return Строковое представление типа в базе данных
-    std::string GetDbTypeStr() const;
+    LocString GetDbTypeStr() const;
 
     /// @brief Получение формата отображения
     /// @return Формат отображения
-    std::string GetDisplayFormat() const;
+    LocString GetDisplayFormat() const;
 
     /// @brief Получение ключа в базе данных
     /// @return Ключ элемента в базе данных
-    virtual std::string GetKey() const;
+    virtual LocString GetKey() const;
 
 protected:
-    StdVar stdVar_;                     ///< Тип описываемой величины
-    const std::string dbTypeStr_;       ///< Тип элемента в БД
-    const std::string displayFormat_;   ///< Формат отображения элемента
-    std::string key_;                   ///< Ключ элемента в БД
+    StdVar stdVar_;                 ///< Тип описываемой величины
+    const LocString dbTypeStr_;     ///< Тип элемента в БД
+    const LocString displayFormat_; ///< Формат отображения элемента
+    LocString key_;                 ///< Ключ элемента в БД
 
 }; // class TagDef
 

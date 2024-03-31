@@ -33,11 +33,11 @@ public:
 
     /// @brief Получение имени поля архива
     /// @return Имя поля архива
-    std::string GetNameSuffixed() const;
+    LocString GetNameSuffixed() const;
 
 protected:
-    std::string address_;       ///< Адрес поля архива
-    std::string nameSuffixed_;  ///< Имя поля архива
+    LocString address_;         ///< Адрес поля архива
+    LocString nameSuffixed_;    ///< Имя поля архива
 
 }; // class ArchiveFieldDef6
 
