@@ -43,6 +43,19 @@ bool Storage< IdType, StoredType >::AddItem( const IdType& identifier
 
 
 template < typename IdType, typename StoredType >
+std::vector< IdType > Storage< IdType, StoredType >::GetKeys() const
+{
+    std::vector< IdType > keys;
+    keys.reserve( items_.size() );
+    for ( const auto& item: items_ )
+    {
+        keys.push_back( item.first );
+    }
+    return keys;
+} // GetKeys
+
+
+template < typename IdType, typename StoredType >
 std::shared_ptr< Storage< IdType, StoredType > > Storage< IdType, StoredType >::Create()
 {
     struct MakeSharedEnabler: public Storage< IdType, StoredType > {};

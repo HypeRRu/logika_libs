@@ -11,11 +11,11 @@ namespace logika
 namespace meters
 {
 
-ArchiveField::ArchiveField( const ArchiveFieldDef& afdef, int32_t channelNo )
+ArchiveField::ArchiveField( std::shared_ptr< ArchiveFieldDef > afdef, int32_t channelNo )
     : Tag( afdef, channelNo )
 {
-    address_ = afdef.GetAddress();
-    archiveType_ = afdef.GetArchiveType();
+    address_ = afdef ? afdef->GetAddress() : L"";
+    archiveType_ = afdef ? afdef->GetArchiveType() : nullptr;
 } // ArchiveField
 
 
@@ -45,7 +45,7 @@ std::shared_ptr< ArchiveType > ArchiveField::GetArchiveType() const
 
 LocString ArchiveField::GetDisplayFormat() const
 {
-    return def_.GetDisplayFormat();
+    return def_ ? def_->GetDisplayFormat() : L"";
 } // GetDisplayFormat
 
 

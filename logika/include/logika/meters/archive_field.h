@@ -26,7 +26,7 @@ public:
     /// @brief Конструктор поля архива
     /// @param[in] afdef Описание поля архива
     /// @param[in] channelNo Номер используемого канала
-    ArchiveField( const ArchiveFieldDef& afdef, int32_t channelNo );
+    ArchiveField( std::shared_ptr< ArchiveFieldDef > afdef, int32_t channelNo );
 
     /// @brief Получение имени поля
     /// @return Имя поля, полученное от устройства

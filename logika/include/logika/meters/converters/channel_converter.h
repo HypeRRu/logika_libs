@@ -8,6 +8,9 @@
 
 #include <logika/meters/types.h>
 #include <logika/meters/channel.h>
+#include <logika/meters/meter.h>
+
+#include <logika/storage/storage.hpp>
 
 #include <logika/resources/channels.pb.h>
 
@@ -34,12 +37,13 @@ public:
     using ConvertedTypeList = std::vector< ConvertedType >;
     using FromType          = resources::Channel;
     using FromTypeList      = resources::ChannelList;
+    using StorageType       = std::shared_ptr< storage::Storage< LocString, Meter > >;
 
-    static ConvertedType        Convert( const FromType& from );
-    static ConvertedTypeList    Convert( const FromTypeList& fromList );
+    static ConvertedType        Convert( const FromType& from, StorageType meterStorage );
+    static ConvertedTypeList    Convert( const FromTypeList& fromList, StorageType meterStorage );
 
 public:
-    static std::shared_ptr< Meter > ConvertDevice( const LocString& devName );
+    static std::shared_ptr< Meter > ConvertDevice( const LocString& devName, StorageType meterStorage );
 
 }; // class ChannelConverter
 

@@ -19,8 +19,8 @@ struct DataTagDefSettings: public TagDefSettings
 {
 public:
     TagKind::Type kind = TagKind::Undefined;    ///< Тип тэга
-    const LocString descriptionEx = L"";        ///< Расширенное описание (для настроечных параметров)
-    const LocString range = L"";                ///< Диапазон (для настроечных параметров)
+    LocString descriptionEx = L"";              ///< Расширенное описание (для настроечных параметров)
+    LocString range = L"";                      ///< Диапазон (для настроечных параметров)
     bool isBasicParam = true;                   ///< Является ли параметр базовым
     uint32_t updateRate = 0;                    ///< Частота обновления параметра
 

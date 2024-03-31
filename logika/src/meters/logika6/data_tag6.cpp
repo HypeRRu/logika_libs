@@ -14,18 +14,18 @@ namespace logika
 namespace meters
 {
 
-DataTag6Container::DataTag6Container( const DataTagDef6& def, int32_t channelNo
-    , const std::vector< DataTagDef6 >& leafs )
+DataTag6Container::DataTag6Container( std::shared_ptr< DataTagDef6 > def, int32_t channelNo
+    , const std::vector< std::shared_ptr< DataTagDef6 > >& leafs )
     : Tag( def, channelNo )
     , dataTagDef_{ def }
     , tags_{}
 {
     tags_.reserve( leafs.size() );
-    for ( const DataTagDef6& leafDef: leafs )
+    for ( auto leafDef: leafs )
     {
         tags_.emplace_back( leafDef, channelNo );
     }
-    address_ = dataTagDef_.GetAddress();
+    address_ = dataTagDef_ ? dataTagDef_->GetAddress() : L"";
 } // DataTag6Container
 
 
@@ -44,7 +44,8 @@ std::vector< DataTag >& DataTag6Container::GetTags()
 LocString DataTag6Container::ToString() const
 {
     LocString containerType = L"<U>";
-    switch ( dataTagDef_.GetNodeType() )
+    auto nodeType = dataTagDef_ ? dataTagDef_->GetNodeType() : Tag6NodeType::Tag;
+    switch ( nodeType )
     {
         case Tag6NodeType::Tag:
             containerType = L"<T>";
@@ -59,9 +60,9 @@ LocString DataTag6Container::ToString() const
             break;
     }
     LocStringStream ordinalStr;
-    ordinalStr << std::setw( 3 ) << std::setfill( L'0' ) << dataTagDef_.GetOrdinal();
+    ordinalStr << std::setw( 3 ) << std::setfill( L'0' ) << ( dataTagDef_ ? dataTagDef_->GetOrdinal() : -1 );
     return containerType + channel_.name + L"." + ordinalStr.str()
-        + L" (" + dataTagDef_.GetDescription() + L")";
+        + L" (" + ( dataTagDef_ ? dataTagDef_->GetDescription() : L"" ) + L")";
 } // ToString
 
 } // namespace meters

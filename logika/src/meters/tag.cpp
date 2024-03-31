@@ -18,9 +18,12 @@ namespace logika
 namespace meters
 {
 
-Tag::Tag( const TagDef& def, int32_t channelNo )
+Tag::Tag( std::shared_ptr< TagDef > def, int32_t channelNo )
     : def_{ def }
-    , channel_{ def_.GetChannelDef(), channelNo }
+    , channel_{
+          def_ ? def_->GetChannelDef() : ChannelDef{ nullptr, L"", -1, 0, L"" }
+        , channelNo
+    }
 {
     if (   channelNo <  channel_.start
         || channelNo >= channel_.start + channel_.count )
@@ -30,7 +33,7 @@ Tag::Tag( const TagDef& def, int32_t channelNo )
 } // Tag
 
 
-const TagDef& Tag::GetDef() const
+std::shared_ptr< TagDef > Tag::GetDef() const
 {
     return def_;
 } // GetDef
@@ -38,7 +41,7 @@ const TagDef& Tag::GetDef() const
 
 LocString Tag::GetName() const
 {
-    return def_.GetName();
+    return def_ ? def_->GetName() : L"";
 } // GetName
 
 
@@ -52,19 +55,19 @@ LocString Tag::GetFieldName() const
     }
 
     return ( !channel_.name.empty() ? ( channel_.name + L"_" ) : L"" )
-        + def_.GetName() + formatter.str();
+        + GetName() + formatter.str();
 } // GetFieldName
 
 
 int32_t Tag::GetOrdinal() const
 {
-    return def_.GetOrdinal();
+    return def_ ? def_->GetOrdinal() : -1;
 } // GetOrdinal
 
 
 LocString Tag::GetDescription() const
 {
-    return def_.GetDescription();
+    return def_ ? def_->GetDescription() : L"";
 } // GetDescription
 
 
@@ -89,8 +92,8 @@ void Tag::SetEu( const LocString& eu )
 LocString Tag::ToString() const
 {
     return channel_.name + L"."
-        + ToLocString( std::to_string( def_.GetOrdinal() ) )
-        + L"(" + def_.GetName() + L")";
+        + ToLocString( std::to_string( GetOrdinal() ) )
+        + L"(" + GetName() + L")";
 } // ToString
 
 } // namespace meters

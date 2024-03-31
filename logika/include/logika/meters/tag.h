@@ -28,11 +28,11 @@ public:
     /// @brief Конструктор тэга
     /// @param[in] def Описание тэга
     /// @param[in] channelNo Номер используемого канала
-    Tag( const TagDef& def, int32_t channelNo );
+    Tag( std::shared_ptr< TagDef > def, int32_t channelNo );
 
     /// @brief Получение описание тэга
     /// @return Описание тэга
-    const TagDef& GetDef() const;
+    std::shared_ptr< TagDef > GetDef() const;
 
     /// @brief Получение имени тэга
     /// @return Имя тэга
@@ -66,10 +66,10 @@ public:
     virtual LocString ToString() const override;
 
 protected:
-    LocString address_; ///< Адрес тэга
-    TagDef def_;        ///< Описание тэга
-    Channel channel_;   ///< Канал
-    LocString eu_;      ///< Единицы измерения
+    LocString address_;             ///< Адрес тэга
+    std::shared_ptr< TagDef > def_; ///< Описание тэга
+    Channel channel_;               ///< Канал
+    LocString eu_;                  ///< Единицы измерения
 
 }; // class Tag
 

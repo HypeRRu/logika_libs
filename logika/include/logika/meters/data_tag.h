@@ -27,7 +27,7 @@ public:
     /// @brief Конструктор тэга с данными
     /// @param[in] def Описание тэга
     /// @param[in] channelNo Номер канала
-    DataTag( const DataTagDef& def, int32_t channelNo );
+    DataTag( std::shared_ptr< DataTagDef > def, int32_t channelNo );
 
     /// @brief Получение данных тэга
     /// @tparam T Тип данных тэга
@@ -78,11 +78,11 @@ public:
     virtual LocString ToString() const override;
 
 protected:
-    logika::Any value_;         ///< Данные тэга
-    TimeType timestamp_;        ///< Метка времени
-    bool oper_;                 ///< Флаг операции
-    LocString errDesc_;         ///< Описание ошибки
-    DataTagDef dataTagDef_;     ///< Описание тэга
+    logika::Any value_;                         ///< Данные тэга
+    TimeType timestamp_;                        ///< Метка времени
+    bool oper_;                                 ///< Флаг операции
+    LocString errDesc_;                         ///< Описание ошибки
+    std::shared_ptr< DataTagDef > dataTagDef_;  ///< Описание тэга
 
 }; // class DataTag
 

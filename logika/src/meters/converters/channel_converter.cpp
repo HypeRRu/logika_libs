@@ -6,8 +6,6 @@
 #include <logika/common/types.h>
 #include <logika/common/misc.h>
 
-#include <logika/storage/storage.hpp>
-
 /// @cond
 #include <unordered_map>
 /// @endcond
@@ -21,19 +19,21 @@ namespace meters
 namespace converters
 {
 
-ChannelConverter::ConvertedType ChannelConverter::Convert( const ChannelConverter::FromType& from )
+ChannelConverter::ConvertedType ChannelConverter::Convert(
+    const ChannelConverter::FromType& from, ChannelConverter::StorageType meterStorage )
 {
     return std::make_shared< BaseConvertedType >(
-          ConvertDevice( ToLocString( from.device() ) )
+          ConvertDevice( ToLocString( from.device() ), meterStorage )
         , ToLocString( from.key() )
         , from.start()
         , from.count()
         , ToLocString( from.description() )
     );
-} // Convert( const ChannelConverter::FromType& from )
+} // Convert( const FromType&, StorageType )
 
 
-ChannelConverter::ConvertedTypeList ChannelConverter::Convert( const ChannelConverter::FromTypeList& fromList )
+ChannelConverter::ConvertedTypeList ChannelConverter::Convert(
+    const ChannelConverter::FromTypeList& fromList, ChannelConverter::StorageType meterStorage )
 {
     ConvertedTypeList converted;
     if ( !fromList.list_size() )
@@ -42,21 +42,23 @@ ChannelConverter::ConvertedTypeList ChannelConverter::Convert( const ChannelConv
     }
     for ( auto from: fromList.list() )
     {
-        converted.push_back( ChannelConverter::Convert( from ) );
+        converted.push_back( ChannelConverter::Convert( from, meterStorage ) );
     }
     return converted;
-} // Convert( const ChannelConverter::FromTypeList& fromList )
+} // Convert( const FromTypeList&, StorageType )
 
 
-std::shared_ptr< Meter > ChannelConverter::ConvertDevice( const LocString& devName );
+std::shared_ptr< Meter > ChannelConverter::ConvertDevice(
+    const LocString& devName, ChannelConverter::StorageType meterStorage )
 {
-    logika::storage::StorageKeeper sKeeper = logika::storage::StorageKeeper::Instance();
-    auto mStorage = sKeeper.GetStorage< logika::LocString, logika::meters::Meter >();
-    
+    if ( !meterStorage )
+    {
+        return nullptr;
+    }
     std::shared_ptr< Meter > device;
-    mStorage.Get( devName, device );
+    meterStorage->GetItem( devName, device );
     return device;
-} // ConvertBusType
+} // ConvertDevice
 
 } // namespace converters
 

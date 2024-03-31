@@ -49,6 +49,10 @@ public:
     /// @return Удалось ли добавить элемент
     bool AddItem( const IdType& identifier, const std::shared_ptr< StoredType >& item, bool force = false );
 
+    /// @brief Получение ключей элементов в хранилище
+    /// @return Ключи элементов
+    std::vector< IdType > GetKeys() const;
+
 private:
     friend class StorageKeeper;
     Storage() = default;

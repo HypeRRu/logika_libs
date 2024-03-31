@@ -81,7 +81,7 @@ bool IntervalArchive::AddDefaultColumns()
     afDefSettings.name          = L"tm";
     afDefSettings.type          = DbType::Int64;
     afDefSettings.description   = L"Timestamp";
-    ArchiveFieldDef afDef{ cDef, afDefSettings };
+    std::shared_ptr< ArchiveFieldDef > afDef = std::make_shared< ArchiveFieldDef >( cDef, afDefSettings );
     DataTable::FieldType field = std::make_shared< ArchiveField >( afDef, 0 );
     
     dataTable_->AddColumn( field );

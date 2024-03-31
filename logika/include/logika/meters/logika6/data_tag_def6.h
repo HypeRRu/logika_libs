@@ -8,6 +8,8 @@
 
 #include <logika/meters/data_tag_def.h>
 
+#include <logika/common/shared_constructible.hpp>
+
 namespace logika
 {
 
@@ -35,7 +37,7 @@ public:
 
 
 /// @brief Тэг с данными Logika6
-class DataTagDef6: public DataTagDef
+class DataTagDef6: public DataTagDef, public SharedConstructible< DataTagDef6 >
 {
 public:
     /// @brief Конструктор тэга с данными Logika6

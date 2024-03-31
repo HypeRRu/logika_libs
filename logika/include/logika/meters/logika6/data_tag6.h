@@ -28,8 +28,8 @@ public:
     /// @param[in] def Описание контейнера тэгов
     /// @param[in] channelNo Номер канала
     /// @param[in] leafs Описания тэгов
-    DataTag6Container( const DataTagDef6& def, int32_t channelNo
-        , const std::vector< DataTagDef6 >& leafs );
+    DataTag6Container( std::shared_ptr< DataTagDef6 > def, int32_t channelNo
+        , const std::vector< std::shared_ptr< DataTagDef6 > >& leafs );
 
     /// @brief Получение тэгов из контейнера
     /// @return Тэги из контейнера
@@ -43,8 +43,8 @@ public:
     virtual LocString ToString() const override;
 
 protected:
-    DataTagDef6 dataTagDef_;        ///< Описание тэга
-    std::vector< DataTag > tags_;   ///< Массив тэгов
+    std::shared_ptr< DataTagDef6 > dataTagDef_; ///< Описание тэга
+    std::vector< DataTag > tags_;               ///< Массив тэгов
 
 }; // class DataTag
 

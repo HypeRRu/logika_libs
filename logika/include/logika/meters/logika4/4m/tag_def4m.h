@@ -8,6 +8,8 @@
 
 #include <logika/meters/logika4/tag_def4.h>
 
+#include <logika/common/shared_constructible.hpp>
+
 namespace logika
 {
 
@@ -23,7 +25,7 @@ public:
 
 
 /// @brief Тэг с данными Logika4M
-class TagDef4M: public TagDef4
+class TagDef4M: public TagDef4, public SharedConstructible< TagDef4M >
 {
 public:
     /// @brief Конструктор тэга Logika4M

@@ -16,7 +16,7 @@ namespace logika
 namespace meters
 {
 
-DataTag::DataTag( const DataTagDef& def, int32_t channelNo )
+DataTag::DataTag( std::shared_ptr< DataTagDef > def, int32_t channelNo )
     : Tag( def, channelNo )
     , value_{}
     , timestamp_{ 0 }
@@ -28,16 +28,16 @@ DataTag::DataTag( const DataTagDef& def, int32_t channelNo )
     address_ = L"";
     if ( channelNo > 0 )
     {
-        address_ = dataTagDef_.GetChannelDef().prefix 
+        address_ = ( dataTagDef_ ? dataTagDef_->GetChannelDef().prefix : L"" )
             + ToLocString( std::to_string( channelNo ) ) + L"_";
     }
-    address_ += dataTagDef_.GetAddress();
+    address_ += ( dataTagDef_ ? dataTagDef_->GetAddress() : L"" );
 } // DataTag
 
 
 int32_t DataTag::GetIndex() const
 {
-    return dataTagDef_.GetIndex();
+    return ( dataTagDef_ ? dataTagDef_->GetIndex() : -1 );
 } // GetIndex
 
 
@@ -79,7 +79,7 @@ void DataTag::SetErrorDescription( const LocString& description )
 
 LocString DataTag::GetDisplayFormat() const
 {
-    return dataTagDef_.GetDisplayFormat();
+    return ( dataTagDef_ ? dataTagDef_->GetDisplayFormat() : L"" );
 } // GetDisplayFormat
 
 
@@ -98,9 +98,9 @@ LocString DataTag::ToString() const
         euStr = L"[" + euStr + L"]";
     }
     LocStringStream ordinalStr;
-    ordinalStr << std::setw( 3 ) << std::setfill( L'0' ) << dataTagDef_.GetOrdinal();
+    ordinalStr << std::setw( 3 ) << std::setfill( L'0' ) << ( dataTagDef_ ? dataTagDef_->GetOrdinal() : -1 );
     return channel_.name + L"." + ordinalStr.str()
-        + idxStr.str() + L"(" + dataTagDef_.GetName() + L") "
+        + idxStr.str() + L"(" + ( dataTagDef_ ? dataTagDef_->GetName() : L"" ) + L") "
         + ( value_.Empty() ? L"without" : L"with" ) + L" value " + euStr;
 } // ToString
 

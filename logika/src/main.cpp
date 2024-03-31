@@ -16,6 +16,8 @@
 #include <logika/storage/storage.hpp>
 #include <logika/meters/converters/archive_type_converter.h>
 #include <logika/meters/converters/device_converter.h>
+#include <logika/meters/converters/channel_converter.h>
+#include <logika/meters/converters/m4_tag_converter.h>
 
 #include <logika/meters/data_table.hpp>
 #include <logika/meters/interval_archive.h>
@@ -160,13 +162,93 @@ int main()
     }
 
 
+    sKeeper.CreateStorage< logika::LocString, logika::meters::ChannelDef >();
+    auto cdStorage = sKeeper.GetStorage< logika::LocString, logika::meters::ChannelDef >();
+    {
+        logika::resources::Loader< logika::resources::ChannelList > loader;
+        auto resource = loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/Channels.dat" );
+        if ( resource )
+        {
+            auto channels = logika::meters::converters::ChannelConverter::Convert( *resource, mStorage );
+            LOG_WRITE( LOG_INFO, L"Converted " << channels.size() << L" Channel instances" );
+            for ( auto channel: channels )
+            {
+                if ( channel )
+                {
+                    if ( !channel->meter )
+                    {
+                        LOG_WRITE( LOG_ERROR, L"No meter instance found for "
+                            << channel->prefix << L"(" << channel->description << L")" );
+                    }
+                    else
+                    {
+                        logika::LocString label = channel->meter->GetCaption() + L"_" + channel->prefix;
+                        LOG_WRITE( LOG_INFO, L"Add Channel '" << label << L"' to storage: "
+                            << ( cdStorage->AddItem( label, channel ) ? L"Success" : L"Failed" ) );
+                        std::shared_ptr< logika::meters::ChannelDef > item;
+                        cdStorage->GetItem( label, item );
+                    }
+                }
+            }
+        }
+        else
+        {
+            LOG_WRITE( LOG_ERROR, L"Unable to load Channels" );
+        }
+    }
+    auto cdKeys = cdStorage->GetKeys();
+    for ( auto key: cdKeys )
+    {
+        LOG_WRITE( LOG_INFO, L"ChannelDef key '" << key << L"'" );
+    }
+
+
+    sKeeper.CreateStorage< logika::LocString, logika::meters::TagDef4M >();
+    auto m4tStorage = sKeeper.GetStorage< logika::LocString, logika::meters::TagDef4M >();
+    {
+        logika::resources::Loader< logika::resources::M4TagList > loader;
+        auto resource = loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/M4Tags.dat" );
+        if ( resource )
+        {
+            auto m4tags = logika::meters::converters::M4TagConverter::Convert( *resource, mStorage, cdStorage );
+            LOG_WRITE( LOG_INFO, L"Converted " << m4tags.size() << L" M4Tags instances" );
+            for ( auto tag: m4tags )
+            {
+                if ( tag )
+                {
+                    if ( !tag->GetMeter() )
+                    {
+                        LOG_WRITE( LOG_ERROR, L"No meter instance found for " << tag->GetName() );
+                    }
+                    else
+                    {
+                        logika::LocString label = tag->GetMeter()->GetCaption() + L"_" + tag->GetName();
+                        LOG_WRITE( LOG_INFO, L"Add M4Tag '" << label << L"' to storage: "
+                            << ( m4tStorage->AddItem( label, tag ) ? L"Success" : L"Failed" ) );
+                        std::shared_ptr< logika::meters::TagDef4M > item;
+                        m4tStorage->GetItem( label, item );
+                    }
+                }
+                else
+                {
+                    LOG_WRITE( LOG_ERROR, L"Unable to convert M4Tag" );
+                }
+            }
+        }
+        else
+        {
+            LOG_WRITE( LOG_ERROR, L"Unable to load M4Tags" );
+        }
+    }
+
     logika::meters::ArchiveFieldDefSettings afdSettings1;
     afdSettings1.ordinal = 10;
     afdSettings1.name = L"tag1";
     atStorage->GetItem( L"Hour", afdSettings1.archiveType );
 
     logika::meters::ChannelDef cdef1{ nullptr, L"chn", 0, 10, L"some channel" };
-    logika::meters::ArchiveFieldDef afd1{ cdef1, afdSettings1 };
+    std::shared_ptr< logika::meters::ArchiveFieldDef > afd1 =
+        std::make_shared< logika::meters::ArchiveFieldDef >( cdef1, afdSettings1 );
 
     logika::meters::ArchiveFieldDefSettings afdSettings2;
     afdSettings2.ordinal = 1;
@@ -174,7 +256,8 @@ int main()
     atStorage->GetItem( L"Hour", afdSettings2.archiveType );
 
     logika::meters::ChannelDef cdef2{ nullptr, L"chn1", 0, 10, L"some channel 2" };
-    logika::meters::ArchiveFieldDef afd2{ cdef2, afdSettings2 };
+    std::shared_ptr< logika::meters::ArchiveFieldDef > afd2 =
+        std::make_shared< logika::meters::ArchiveFieldDef >( cdef2, afdSettings2 );
 
     logika::meters::ArchiveFieldDefSettings afdSettings3;
     afdSettings3.ordinal = 2;
@@ -182,7 +265,8 @@ int main()
     atStorage->GetItem( L"Hour", afdSettings3.archiveType );
 
     logika::meters::ChannelDef cdef3{ nullptr, L"tmChn", 0, 10, L"timestamp channel" };
-    logika::meters::ArchiveFieldDef afd3{ cdef3, afdSettings3 };
+    std::shared_ptr< logika::meters::ArchiveFieldDef > afd3 =
+        std::make_shared< logika::meters::ArchiveFieldDef >( cdef3, afdSettings3 );
 
     std::vector< logika::meters::DataTable::FieldType > fields;
     fields.push_back(
