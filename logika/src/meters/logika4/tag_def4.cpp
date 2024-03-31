@@ -11,21 +11,21 @@ namespace logika
 namespace meters
 {
 
-DataTagDef4::DataTagDef4( const ChannelDef& cdef, const DataTagDef4Settings& settings )
+TagDef4::TagDef4( const ChannelDef& cdef, const TagDef4Settings& settings )
     : DataTagDef( cdef, settings )
     , units_{ settings.units }
 {
     key_ = name_;
-} // DataTagDef4
+} // TagDef4
 
 
-std::string DataTagDef4::GetUnits() const
+std::string TagDef4::GetUnits() const
 {
     return units_;
 } // GetUnits
 
 
-std::string DataTagDef4::ToString() const
+std::string TagDef4::ToString() const
 {
     return std::to_string( ordinal_ ) + " " + channelDef_.prefix
         + " " + name_ + " " + TagKindToString( kind_ );

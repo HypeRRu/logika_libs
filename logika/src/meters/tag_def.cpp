@@ -11,8 +11,6 @@ namespace logika
 namespace meters
 {
 
-/// Базовое описание тэга
-
 TagDef::TagDef( const ChannelDef& cdef, const TagDefSettings& settings)
     : ItemDefBase(
           cdef
@@ -53,54 +51,6 @@ std::string TagDef::GetKey() const
 {
     return "";
 } // GetKey
-
-
-/// Описание тэга с данными
-
-DataTagDef::DataTagDef( const ChannelDef& cdef, const DataTagDefSettings& settings )
-    : TagDef( cdef , settings )
-    , kind_{ settings.kind }
-    , descriptionEx_{ settings.descriptionEx }
-    , range_{ settings.range }
-    , isBasicParam_{ settings.isBasicParam }
-    , updateRate_{ settings.updateRate }
-{} // DataTagDef
-
-
-TagKind::Type DataTagDef::GetKind() const
-{
-    return kind_;
-} // GetKind
-
-
-std::string DataTagDef::GetDescriptionEx() const
-{
-    return descriptionEx_;
-} // GetDescriptionEx
-
-
-std::string DataTagDef::GetRange() const
-{
-    return range_;
-} // GetRange
-
-
-bool DataTagDef::IsBasicParam() const
-{
-    return isBasicParam_;
-} // IsBasicParam
-
-
-uint32_t DataTagDef::GetUpdateRate() const
-{
-    return updateRate_;
-} // GetUpdateRate
-
-
-std::string DataTagDef::ToString() const
-{
-    return key_ + " " + std::to_string( ordinal_ ) + " " + name_;
-} // ToString
 
 } // namespace meters
 

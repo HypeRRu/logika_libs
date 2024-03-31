@@ -4,8 +4,6 @@
 #include <logika/meters/archive_field.h>
 
 #include <logika/common/misc.h>
-#include <logika/meters/logika4/archive_field_def4.h>
-#include <logika/meters/logika6/archive_field_def6.h>
 
 namespace logika
 {
@@ -16,17 +14,7 @@ namespace meters
 ArchiveField::ArchiveField( const ArchiveFieldDef& afdef, int32_t channelNo )
     : Tag( afdef, channelNo )
 {
-    address_ = "";
-    const ArchiveFieldDef4* afdef4 = dynamic_cast< const ArchiveFieldDef4* >( &afdef );
-    const ArchiveFieldDef6* afdef6 = dynamic_cast< const ArchiveFieldDef6* >( &afdef );
-    if ( afdef4 )
-    {
-        address_ = std::to_string( afdef4->GetOrdinal() );
-    }
-    else if ( afdef6 )
-    {
-        address_ = afdef6->GetAddress();
-    }
+    address_ = afdef.GetAddress();
     archiveType_ = afdef.GetArchiveType();
 } // ArchiveField
 
@@ -64,7 +52,7 @@ std::string ArchiveField::GetDisplayFormat() const
 std::string ArchiveField::ToString() const
 {
     const std::string channelNoStr = channel_.no ? std::to_string( channel_.no ) : "";
-    std::string euStr = Trim(eu_);
+    std::string euStr = Trim( eu_ );
     if ( !euStr.empty() )
     {
         euStr = "[" + euStr + "]";

@@ -35,10 +35,6 @@ public:
     /// @return Имя поля архива
     std::string GetNameSuffixed() const;
 
-    /// @brief Получение адреса поля
-    /// @return Адрес поля архива
-    std::string GetAddress() const;
-
 protected:
     std::string address_;       ///< Адрес поля архива
     std::string nameSuffixed_;  ///< Имя поля архива

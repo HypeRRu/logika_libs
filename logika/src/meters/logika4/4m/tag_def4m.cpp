@@ -9,9 +9,9 @@ namespace logika
 namespace meters
 {
 
-DataTagDef4M::DataTagDef4M( const ChannelDef& cdef, const DataTagDef4MSettings& settings )
-    : DataTagDef4( cdef, settings )
-{} // DataTagDef4M
+TagDef4M::TagDef4M( const ChannelDef& cdef, const TagDef4MSettings& settings )
+    : TagDef4( cdef, settings )
+{} // TagDef4M
 
 } // namespace meters
 

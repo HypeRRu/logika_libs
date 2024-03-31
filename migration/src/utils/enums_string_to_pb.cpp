@@ -204,10 +204,10 @@ logika::resources::X6TagTypeEnum X6TagTypeFromString( const std::string& str )
 logika::resources::MeasureKindEnum MeasureKindFromString( const std::string& str )
 {
     static const std::unordered_map< std::string, logika::resources::MeasureKindEnum > fromTo{
-          { "F",    logika::resources::MEASURE_KIND_T }
-        , { "T",    logika::resources::MEASURE_KIND_T }
-        , { "G",    logika::resources::MEASURE_KIND_G }
-        , { "E",    logika::resources::MEASURE_KIND_E }
+          { "f",    logika::resources::MEASURE_KIND_T }
+        , { "t",    logika::resources::MEASURE_KIND_T }
+        , { "g",    logika::resources::MEASURE_KIND_G }
+        , { "e",    logika::resources::MEASURE_KIND_E }
     };
 
     std::string lowerStr( str.size(), ' ' );

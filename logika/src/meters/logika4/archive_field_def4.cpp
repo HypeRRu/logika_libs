@@ -17,6 +17,8 @@ ArchiveFieldDef4::ArchiveFieldDef4( const ChannelDef& cdef
 {
     key_        = name_;
     ordinal_    = -1;
+    /// @bug А в чем смысл?
+    address_    = std::to_string( ordinal_ );
 } // ArchiveFieldDef4
 
 

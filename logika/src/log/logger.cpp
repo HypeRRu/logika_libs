@@ -30,8 +30,6 @@ const std::array< logika::LocString, logika::log::LogLevel::Count > logLevelStri
 } // anonymous namespace
 
 
-/// @todo wide-character
-
 namespace logika
 {
 

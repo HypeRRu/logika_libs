@@ -137,16 +137,8 @@ enum class ImportantTag
     ParamsCSum,     ///< Контрольная сумма БД, рассчитанная прибором
 }; // enum class ImportantTag
 
-namespace converters
-{
-
-class ArchiveTypeConverter;
-
-} // namespace converters
-
 
 /// @brief Тип архива
-/// @todo Добавить генерацию из ресурсов
 class ArchiveType: public ISerializable, public SharedConstructible< ArchiveType >
 {
 public:
@@ -185,14 +177,13 @@ public:
     /// @copydoc ISerializable::ToString()
     virtual std::string ToString() const override;
 
+protected:
     /// @brief Конструктор типа архива
     ArchiveType( const std::string& name, const LocString& description
         , ArchiveTimingType timing, const LocString& acronym
         , TimeType interval, bool variableInterval = false );
 
 private:
-    friend class converters::ArchiveTypeConverter;
-
     ArchiveTimingType timing_;  ///< Тип архива по времени измерений
     std::string name_;          ///< Название типа
     LocString acronym_;         ///< Акроним названия типа

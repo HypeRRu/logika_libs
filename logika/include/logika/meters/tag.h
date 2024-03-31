@@ -64,6 +64,7 @@ public:
 
     /// @copydoc ISerializable::ToString()
     virtual std::string ToString() const override;
+
 protected:
     std::string address_;   ///< Адрес тэга
     TagDef def_;            ///< Описание тэга

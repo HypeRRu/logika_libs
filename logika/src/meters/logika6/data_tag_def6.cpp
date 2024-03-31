@@ -1,7 +1,7 @@
 /// @file Реализация типа тэга Logika6
 /// @copyright HypeRRu 2024
 
-#include <logika/meters/logika6/tag_def6.h>
+#include <logika/meters/logika6/data_tag_def6.h>
 
 /// @cond
 #include <sstream>
@@ -18,16 +18,15 @@ DataTagDef6::DataTagDef6( const ChannelDef& cdef, const DataTagDef6Settings& set
     : DataTagDef( cdef, settings )
     , nodeType_{ settings.nodeType }
     , count_{ settings.count }
-    , index_{ settings.index }
-    , address_{ "" }
 {
     std::stringstream ss;
     ss << std::setw( 3 ) << std::setfill( '0' ) << ordinal_;
     if ( Tag6NodeType::Tag != nodeType_ && 0 != index_ )
     {
-        ss << "#" << std::setw( 2 ) << std::setfill( '0' ) << index_;
+        ss << "n" << std::setw( 2 ) << std::setfill( '0' ) << index_;
     }
-    key_ = address_ = ss.str();
+    key_    = address_ = ss.str();
+    index_  = settings.index;
 } // DataTagDef6
 
 
@@ -41,18 +40,6 @@ uint32_t DataTagDef6::GetCount() const
 {
     return count_;
 } // GetCount
-
-
-uint32_t DataTagDef6::GetIndex() const
-{
-    return index_;
-} // GetIndex
-
-
-std::string DataTagDef6::GetAddress() const
-{
-    return address_;
-} // GetAddress
 
 
 std::string DataTagDef6::ToString() const

@@ -15,6 +15,7 @@ ArchiveFieldDef::ArchiveFieldDef( const ChannelDef& cdef
     , const ArchiveFieldDefSettings& settings )
     : TagDef( cdef, settings )
     , archiveType_{ settings.archiveType }
+    , address_{ "" }
 {} // ArchiveFieldDef
 
 
@@ -22,6 +23,12 @@ std::shared_ptr< ArchiveType > ArchiveFieldDef::GetArchiveType() const
 {
     return archiveType_;
 } // ArchiveFieldDef
+
+
+std::string ArchiveFieldDef::GetAddress() const
+{
+    return address_;
+} // GetAddress
 
 
 std::string ArchiveFieldDef::ToString() const

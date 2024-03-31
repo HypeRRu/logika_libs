@@ -43,11 +43,16 @@ public:
     /// @return Тип архива
     std::shared_ptr< ArchiveType > GetArchiveType() const;
 
+    /// @brief Получение адреса поля
+    /// @return Адрес поля архива
+    std::string GetAddress() const;
+
     /// @copydoc ISerializable::ToString()
     virtual std::string ToString() const override;
 
 protected:
     std::shared_ptr< ArchiveType > archiveType_;    ///< Тип архива
+    std::string address_;                           ///< Адрес тэга
 
 }; // class ArchiveFieldDef
 

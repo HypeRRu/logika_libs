@@ -17,7 +17,6 @@ namespace meters
 ArchiveFieldDef6::ArchiveFieldDef6( const ChannelDef& cdef, const ArchiveFieldDef6Settings& settings )
     : ArchiveFieldDef( cdef, settings )
     , nameSuffixed_{ settings.name }
-    , address_{ "" }
 {
     std::stringstream ss;
     ss << std::setw( 3 ) << std::setfill( '0' ) << ordinal_;
@@ -35,12 +34,6 @@ std::string ArchiveFieldDef6::GetNameSuffixed() const
 {
     return nameSuffixed_;
 } // GetNameSuffixed
-
-
-std::string ArchiveFieldDef6::GetAddress() const
-{
-    return address_;
-} // GetAddress
 
 } // namespace meters
 

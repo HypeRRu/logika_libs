@@ -17,7 +17,7 @@ namespace meters
 {
 
 /// @brief Параметры для создания тэга Logika4L
-struct DataTagDef4LSettings: public DataTagDef4Settings
+struct TagDef4LSettings: public TagDef4Settings
 {
 public:
     BinaryType4L::Type intType = BinaryType4L::Undefined;   ///< Внутренний тип тэга
@@ -27,17 +27,17 @@ public:
     MeterAddressType addonAddress = 0x0;                    ///< Адрес дополнения
     MeterAddressType cAddonOffset = 0x0;                    ///< Смещение дополнения относительно канала
 
-}; // struct DataTagDef4LSettings
+}; // struct TagDef4LSettings
 
 
 /// @brief Тэг с данными Logika4L
-class DataTagDef4L: public DataTagDef4
+class TagDef4L: public TagDef4
 {
 public:
     /// @brief Конструктор тэга Logika4L
     /// @param[in] cdef Описание канала
     /// @param[in] settings Параметры тэга Logika4L
-    DataTagDef4L( const ChannelDef& cdef, const DataTagDef4LSettings& settings );
+    TagDef4L( const ChannelDef& cdef, const TagDef4LSettings& settings );
 
     /// @brief Получение внутреннего типа тэга
     /// @return Внутренний тип тэга
@@ -71,7 +71,7 @@ protected:
     MeterAddressType addonAddress_;         ///< Адрес дополнения
     MeterAddressType addonChannelOffset_;   ///< Смещение дополнения относительно канала
 
-}; // class DataTagDef4L
+}; // class TagDef4L
 
 } // namespace meters
 

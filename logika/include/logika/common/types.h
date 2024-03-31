@@ -33,7 +33,6 @@ using TimeType          = uint64_t;
 using ByteType          = char;
 using ByteVector        = std::vector< ByteType >;
 using MeterAddressType  = uint32_t;
-/// @todo use it
 using LocChar           = wchar_t;
 using LocString         = std::basic_string< LocChar >;
 using LocConverter      = std::wstring_convert< std::codecvt_utf8< LocChar >, LocChar >;

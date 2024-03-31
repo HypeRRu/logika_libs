@@ -9,48 +9,48 @@ namespace logika
 namespace meters
 {
 
-DataTagDef4L::DataTagDef4L( const ChannelDef& cdef, const DataTagDef4LSettings& settings )
-    : DataTagDef4( cdef, settings )
+TagDef4L::TagDef4L( const ChannelDef& cdef, const TagDef4LSettings& settings )
+    : TagDef4( cdef, settings )
     , internalType_{ settings.intType }
     , inRam_{ settings.inRam }
     , address_{ settings.address }
     , channelOffset_{ settings.cOffset }
     , addonAddress_{ settings.addonAddress }
     , addonChannelOffset_{ settings.cAddonOffset }
-{} // DataTagDef4L
+{} // TagDef4L
 
 
-BinaryType4L::Type DataTagDef4L::GetInternalType() const
+BinaryType4L::Type TagDef4L::GetInternalType() const
 {
     return internalType_;
 } // GetInternalType
 
 
-bool DataTagDef4L::IsInRam() const
+bool TagDef4L::IsInRam() const
 {
     return inRam_;
 } // IsInRam
 
 
-MeterAddressType DataTagDef4L::GetAddress() const
+MeterAddressType TagDef4L::GetAddress() const
 {
     return address_;
 } // GetAddress
 
 
-MeterAddressType DataTagDef4L::GetChannelOffset() const
+MeterAddressType TagDef4L::GetChannelOffset() const
 {
     return channelOffset_;
 } // GetChannelOffset
 
 
-MeterAddressType DataTagDef4L::GetAddonAddress() const
+MeterAddressType TagDef4L::GetAddonAddress() const
 {
     return addonAddress_;
 } // GetAddonAddress
 
 
-MeterAddressType DataTagDef4L::GetAddonChannelOffset() const
+MeterAddressType TagDef4L::GetAddonChannelOffset() const
 {
     return addonChannelOffset_;
 } // GetAddonChannelOffset

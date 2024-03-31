@@ -1,4 +1,4 @@
-/// @file Определение типа тэга
+/// @file Определение описания тэга
 /// @copyright HypeRRu 2024
 
 #pragma once
@@ -67,61 +67,6 @@ protected:
     std::string key_;                   ///< Ключ элемента в БД
 
 }; // class TagDef
-
-
-/// @brief Параметры для создания тэга с данными
-struct DataTagDefSettings: public TagDefSettings
-{
-public:
-    TagKind::Type kind = TagKind::Undefined;    ///< Тип тэга
-    const std::string descriptionEx = "";       ///< Расширенное описание (для настроечных параметров)
-    const std::string range = "";               ///< Диапазон (для настроечных параметров)
-    bool isBasicParam = true;                   ///< Является ли параметр базовым
-    uint32_t updateRate = 0;                    ///< Частота обновления параметра
-
-}; // struct DataTagDefSettings
-
-
-/// @brief Описание тэга с данными
-class DataTagDef: public TagDef, public ISerializable
-{
-public:
-    /// @brief Конструктор тэга с данными
-    /// @param[in] cdef Описание канала
-    /// @param[in] settings Параметры тэга с данными
-    DataTagDef( const ChannelDef& cdef, const DataTagDefSettings& settings );
-    
-    /// @brief Получение типа тэга
-    /// @return Тип тэга
-    TagKind::Type GetKind() const;
-
-    /// @brief Получение расширенного описания
-    /// @return Расширенное описание
-    std::string GetDescriptionEx() const;
-
-    /// @brief Получение диапазона
-    /// @return Диапазон
-    std::string GetRange() const;
-
-    /// @brief Получение флага базового параметра
-    /// @return Является ли параметр базовым
-    bool IsBasicParam() const;
-
-    /// @brief Получение частоты обновления
-    /// @return Частота обновления
-    uint32_t GetUpdateRate() const;
-
-    /// @copydoc ISerializable::ToString()
-    virtual std::string ToString() const override;
-
-protected:
-    TagKind::Type kind_;                ///< Тип тэга
-    const std::string descriptionEx_;   ///< Расширенное описание (для настроечных параметров)
-    const std::string range_;           ///< Диапазон (для настроечных параметров)
-    bool isBasicParam_;                 ///< Является ли параметр базовым
-    uint32_t updateRate_;               ///< Частота обновления параметра
-
-}; // class DataTagDef
 
 } // namespace meters
 
