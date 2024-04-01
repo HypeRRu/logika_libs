@@ -22,14 +22,13 @@ namespace converters
 M4TagConverter::ConvertedType M4TagConverter::Convert( const M4TagConverter::FromType& from
     , M4TagConverter::MeterStorageType meterStorage, M4TagConverter::ChannelStorageType channelStorage )
 {
-    std::shared_ptr< Meter > meter = M4TagConverter::ConvertDevice(
-        ToLocString( from.device() ), meterStorage );
+    std::shared_ptr< Meter > meter = ConvertDevice( ToLocString( from.device() ), meterStorage );
     if ( !meter )
     {
         return nullptr;
     }
     LocString channelLabel = meter->GetCaption() + L"_" + ToLocString( from.channel() );
-    std::shared_ptr< ChannelDef > channelDef = M4TagConverter::ConvertChannel( channelLabel, channelStorage );
+    std::shared_ptr< ChannelDef > channelDef = ConvertChannel( channelLabel, channelStorage );
     if ( !channelDef )
     {
         return nullptr;
@@ -50,10 +49,7 @@ M4TagConverter::ConvertedType M4TagConverter::Convert( const M4TagConverter::Fro
     settings.units = from.has_units() ? ToLocString( from.units() ) : L"";
     settings.updateRate = from.updaterate();
 
-    return TagDef4M::Create< TagDef4M >(
-          *channelDef
-        , settings
-    );
+    return TagDef4M::Create< TagDef4M >( *channelDef, settings );
 } // Convert( const FromType&, MeterStorageType, ChannelStorageType )
 
 
@@ -67,7 +63,7 @@ M4TagConverter::ConvertedTypeList M4TagConverter::Convert( const M4TagConverter:
     }
     for ( auto from: fromList.list() )
     {
-        converted.push_back( M4TagConverter::Convert( from, meterStorage, channelStorage ) );
+        converted.push_back( Convert( from, meterStorage, channelStorage ) );
     }
     return converted;
 } // Convert( const FromTypeList&, MeterStorageType, ChannelStorageType )

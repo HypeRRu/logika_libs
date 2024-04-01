@@ -9,7 +9,7 @@ namespace logika
 namespace meters
 {
 
-ItemDefBase::ItemDefBase( const ChannelDef& cdef, int ordinal
+ItemDefBase::ItemDefBase( const ChannelDef& cdef, int32_t ordinal
     , const LocString& name, const LocString& description, DbType type )
     : channelDef_{ cdef }
     , ordinal_{ ordinal }
@@ -17,6 +17,12 @@ ItemDefBase::ItemDefBase( const ChannelDef& cdef, int ordinal
     , description_{ description }
     , baseType_{ type }
 {} // ItemDefBase
+
+
+void ItemDefBase::SetOrdinal( int32_t ordinal )
+{
+    ordinal_ = ordinal;
+} // SetOrdinal
 
 
 const ChannelDef& ItemDefBase::GetChannelDef() const

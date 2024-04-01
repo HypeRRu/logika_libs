@@ -34,6 +34,10 @@ public:
     /// @param[in] settings Параметры описания поля архива Logika4
     ArchiveFieldDef4( const ChannelDef& cdef, const ArchiveFieldDef4Settings& settings );
 
+    /// @brief Изменение описания архива
+    /// @return Описание архива
+    void SetArchive( std::shared_ptr< ArchiveDef > archive );
+
     /// @brief Получение описания архива
     /// @return Описание архива
     std::shared_ptr< ArchiveDef > GetArchive() const;

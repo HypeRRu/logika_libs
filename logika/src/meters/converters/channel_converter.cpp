@@ -42,7 +42,7 @@ ChannelConverter::ConvertedTypeList ChannelConverter::Convert(
     }
     for ( auto from: fromList.list() )
     {
-        converted.push_back( ChannelConverter::Convert( from, meterStorage ) );
+        converted.push_back( Convert( from, meterStorage ) );
     }
     return converted;
 } // Convert( const FromTypeList&, StorageType )

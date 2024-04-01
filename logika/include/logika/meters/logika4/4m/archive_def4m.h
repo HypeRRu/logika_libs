@@ -8,6 +8,8 @@
 
 #include <logika/meters/archive_def.h>
 
+#include <logika/common/shared_constructible.hpp>
+
 namespace logika
 {
 
@@ -22,7 +24,7 @@ public:
 
 
 /// @brief Описание архива Logika4M
-class ArchiveDef4M: public ArchiveDef
+class ArchiveDef4M: public ArchiveDef, public SharedConstructible< ArchiveDef4M >
 {
 public:
     /// @brief Конструктор описания архива Logika4M

@@ -18,7 +18,11 @@
 #include <logika/meters/converters/device_converter.h>
 #include <logika/meters/converters/channel_converter.h>
 #include <logika/meters/converters/m4_tag_converter.h>
+#include <logika/meters/converters/m4_archive_converter.h>
+#include <logika/meters/converters/m4_archive_field_converter.h>
 #include <logika/meters/converters/l4_tag_converter.h>
+#include <logika/meters/converters/l4_archive_converter.h>
+#include <logika/meters/converters/l4_archive_field_converter.h>
 
 #include <logika/meters/data_table.hpp>
 #include <logika/meters/interval_archive.h>
@@ -106,6 +110,7 @@ int main()
     logika::meters::HistoricalSeries hs{ 0x11, { { nullptr, 0, 0 } } };
     logika::meters::VQT vqt{};
 
+#if 0
     logika::storage::StorageKeeper sKeeper = logika::storage::StorageKeeper::Instance();
     sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveType >();
     auto atStorage = sKeeper.GetStorage< logika::LocString, logika::meters::ArchiveType >();
@@ -162,7 +167,6 @@ int main()
         }
     }
 
-
     sKeeper.CreateStorage< logika::LocString, logika::meters::ChannelDef >();
     auto cdStorage = sKeeper.GetStorage< logika::LocString, logika::meters::ChannelDef >();
     {
@@ -197,12 +201,6 @@ int main()
             LOG_WRITE( LOG_ERROR, L"Unable to load Channels" );
         }
     }
-    auto cdKeys = cdStorage->GetKeys();
-    for ( auto key: cdKeys )
-    {
-        LOG_WRITE( LOG_INFO, L"ChannelDef key '" << key << L"'" );
-    }
-
 
     sKeeper.CreateStorage< logika::LocString, logika::meters::TagDef4M >();
     auto m4tStorage = sKeeper.GetStorage< logika::LocString, logika::meters::TagDef4M >();
@@ -280,6 +278,172 @@ int main()
         }
     }
 
+    sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveDef4M >();
+    auto m4aStorage = sKeeper.GetStorage< logika::LocString, logika::meters::ArchiveDef4M >();
+    {
+        logika::resources::Loader< logika::resources::M4ArchiveList > loader;
+        auto resource = loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/M4Archives.dat" );
+        if ( resource )
+        {
+            auto m4archives = logika::meters::converters::M4ArchiveConverter::Convert( *resource, mStorage, cdStorage, atStorage );
+            LOG_WRITE( LOG_INFO, L"Converted " << m4archives.size() << L" M4Archive instances" );
+            for ( auto archive: m4archives )
+            {
+                if ( archive )
+                {
+                    if ( !archive->GetMeter() )
+                    {
+                        LOG_WRITE( LOG_ERROR, L"No meter instance found for " << archive->GetName() );
+                    }
+                    else
+                    {
+                        logika::LocString label = archive->GetMeter()->GetCaption() + L"_" + archive->GetArchiveType()->GetName();
+                        LOG_WRITE( LOG_INFO, L"Add M4Archive '" << label << L"' to storage: "
+                            << ( m4aStorage->AddItem( label, archive ) ? L"Success" : L"Failed" ) );
+                        std::shared_ptr< logika::meters::ArchiveDef4M > item;
+                        m4aStorage->GetItem( label, item );
+                    }
+                }
+                else
+                {
+                    LOG_WRITE( LOG_ERROR, L"Unable to convert M4Archive" );
+                }
+            }
+        }
+        else
+        {
+            LOG_WRITE( LOG_ERROR, L"Unable to load M4Archives" );
+        }
+    }
+
+    sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveDef4L >();
+    auto l4aStorage = sKeeper.GetStorage< logika::LocString, logika::meters::ArchiveDef4L >();
+    {
+        logika::resources::Loader< logika::resources::L4ArchiveList > loader;
+        auto resource = loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/L4Archives.dat" );
+        if ( resource )
+        {
+            auto l4archives = logika::meters::converters::L4ArchiveConverter::Convert( *resource, mStorage, cdStorage, atStorage );
+            LOG_WRITE( LOG_INFO, L"Converted " << l4archives.size() << L" L4Archive instances" );
+            for ( auto archive: l4archives )
+            {
+                if ( archive )
+                {
+                    if ( !archive->GetMeter() )
+                    {
+                        LOG_WRITE( LOG_ERROR, L"No meter instance found for " << archive->GetName() );
+                    }
+                    else
+                    {
+                        /// @todo GetName() -> GetArchiveType()->GetName()
+                        logika::LocString label = archive->GetMeter()->GetCaption() + L"_" + archive->GetArchiveType()->GetName();
+                        LOG_WRITE( LOG_INFO, L"Add L4Archive '" << label << L"' to storage: "
+                            << ( l4aStorage->AddItem( label, archive ) ? L"Success" : L"Failed" ) );
+                        std::shared_ptr< logika::meters::ArchiveDef4L > item;
+                        l4aStorage->GetItem( label, item );
+                    }
+                }
+                else
+                {
+                    LOG_WRITE( LOG_ERROR, L"Unable to convert L4Archive" );
+                }
+            }
+        }
+        else
+        {
+            LOG_WRITE( LOG_ERROR, L"Unable to load L4Archives" );
+        }
+    }
+
+    sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveFieldDef4M >();
+    auto m4afStorage = sKeeper.GetStorage< logika::LocString, logika::meters::ArchiveFieldDef4M >();
+    {
+        logika::resources::Loader< logika::resources::M4ArchiveFieldList > loader;
+        auto resource = loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/M4ArchiveFields.dat" );
+        if ( resource )
+        {
+            auto m4afs = logika::meters::converters::M4ArchiveFieldConverter::Convert(
+                *resource, mStorage, m4aStorage, atStorage );
+            LOG_WRITE( LOG_INFO, L"Converted " << m4afs.size() << L" M4ArchiveField instances" );
+            for ( auto field: m4afs )
+            {
+                if ( field )
+                {
+                    if ( !field->GetMeter() )
+                    {
+                        LOG_WRITE( LOG_ERROR, L"No meter instance found for " << field->GetName() );
+                    }
+                    else
+                    {
+                        logika::LocString label = field->GetMeter()->GetCaption()
+                            + L"_" + field->GetArchiveType()->GetName()
+                            + L"_" + field->GetName();
+                        LOG_WRITE( LOG_INFO, L"Add M4ArchiveField '" << label << L"' to storage: "
+                            << ( m4afStorage->AddItem( label, field ) ? L"Success" : L"Failed" ) );
+                        std::shared_ptr< logika::meters::ArchiveFieldDef4M > item;
+                        m4afStorage->GetItem( label, item );
+                    }
+                }
+                else
+                {
+                    LOG_WRITE( LOG_ERROR, L"Unable to convert M4ArchiveField" );
+                }
+            }
+        }
+        else
+        {
+            LOG_WRITE( LOG_ERROR, L"Unable to load M4ArchiveFields" );
+        }
+    }
+
+    sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveFieldDef4L >();
+    auto l4afStorage = sKeeper.GetStorage< logika::LocString, logika::meters::ArchiveFieldDef4L >();
+    {
+        logika::resources::Loader< logika::resources::L4ArchiveFieldList > loader;
+        auto resource = loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/L4ArchiveFields.dat" );
+        if ( resource )
+        {
+            auto l4afs = logika::meters::converters::L4ArchiveFieldConverter::Convert(
+                *resource, mStorage, l4aStorage, atStorage );
+            LOG_WRITE( LOG_INFO, L"Converted " << l4afs.size() << L" L4ArchiveField instances" );
+            for ( auto field: l4afs )
+            {
+                if ( field )
+                {
+                    if ( !field->GetMeter() )
+                    {
+                        LOG_WRITE( LOG_ERROR, L"No meter instance found for " << field->GetName() );
+                    }
+                    else
+                    {
+                        logika::LocString label = field->GetMeter()->GetCaption()
+                            + L"_" + field->GetArchiveType()->GetName()
+                            + L"_" + field->GetName();
+                        LOG_WRITE( LOG_INFO, L"Add L4ArchiveField '" << label << L"' to storage: "
+                            << ( l4afStorage->AddItem( label, field ) ? L"Success" : L"Failed" ) );
+                        std::shared_ptr< logika::meters::ArchiveFieldDef4L > item;
+                        l4afStorage->GetItem( label, item );
+                    }
+                }
+                else
+                {
+                    LOG_WRITE( LOG_ERROR, L"Unable to convert L4ArchiveField" );
+                }
+            }
+        }
+        else
+        {
+            LOG_WRITE( LOG_ERROR, L"Unable to load L4ArchiveFields" );
+        }
+    }
+
+    auto cdKeys = cdStorage->GetKeys();
+    for ( auto key: cdKeys )
+    {
+        LOG_WRITE( LOG_INFO, L"ChannelDef key '" << key << L"'" );
+    }
+
+
     logika::meters::ArchiveFieldDefSettings afdSettings1;
     afdSettings1.ordinal = 10;
     afdSettings1.name = L"tag1";
@@ -339,6 +503,7 @@ int main()
     }
 
     auto meter = logika::meters::Meter::Create< logika::meters::Meter >();
+#endif // if 0
 
 #if defined( _WIN32 ) || defined( _WIN64 )
     WSACleanup();

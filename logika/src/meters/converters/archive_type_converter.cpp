@@ -39,12 +39,12 @@ namespace converters
 ArchiveTypeConverter::ConvertedType ArchiveTypeConverter::Convert( const ArchiveTypeConverter::FromType& from )
 {
     return ArchiveType::Create< ArchiveType >(
-          ArchiveTypeConverter::ConvertName( from.type() )
+          ConvertName( from.type() )
         , ToLocString( from.description() )
-        , ArchiveTypeConverter::ConvertTimingType( from.type() )
-        , ArchiveTypeConverter::ConvertAcronym( from.type() )
-        , ArchiveTypeConverter::ConvertInterval( from.type() )
-        , ArchiveTypeConverter::ConvertVariable( from.type() )
+        , ConvertTimingType( from.type() )
+        , ConvertAcronym( from.type() )
+        , ConvertInterval( from.type() )
+        , ConvertVariable( from.type() )
     );
 } // Convert( const ArchiveTypeConverter::FromType& from )
 
@@ -58,7 +58,7 @@ ArchiveTypeConverter::ConvertedTypeList ArchiveTypeConverter::Convert( const Arc
     }
     for ( auto from: fromList.list() )
     {
-        converted.push_back( ArchiveTypeConverter::Convert( from ) );
+        converted.push_back( Convert( from ) );
     }
     return converted;
 } // Convert( const ArchiveTypeConverter::FromTypeList& fromList )

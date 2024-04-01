@@ -9,6 +9,8 @@
 #include <logika/meters/logika4/archive_field_def4.h>
 #include <logika/meters/logika4/4l/types.h>
 
+#include <logika/common/shared_constructible.hpp>
+
 namespace logika
 {
 
@@ -26,7 +28,7 @@ public:
 
 
 /// @brief Описание поля архива Logika4L
-class ArchiveFieldDef4L: public ArchiveFieldDef4
+class ArchiveFieldDef4L: public ArchiveFieldDef4, public SharedConstructible< ArchiveFieldDef4L >
 {
 public:
     /// @brief Конструктор описания поля архива Logika4L

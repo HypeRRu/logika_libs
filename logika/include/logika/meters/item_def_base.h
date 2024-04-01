@@ -29,10 +29,14 @@ public:
     /// @param[in] name Название
     /// @param[in] description Описание
     /// @param[in] type Тип элемента в базе данных
-    ItemDefBase( const ChannelDef& cdef, int ordinal, const LocString& name
+    ItemDefBase( const ChannelDef& cdef, int32_t ordinal, const LocString& name
         , const LocString& description, DbType type );
 
     virtual ~ItemDefBase() = default;
+
+    /// @brief Изменение порядкового номера элемента
+    /// @param[in] ordinal Порядковый номер элемента
+    void SetOrdinal( int32_t ordinal );
 
     /// @brief Получение описания канала
     /// @return Описание канала
@@ -65,7 +69,7 @@ protected:
 
 protected:
     const ChannelDef channelDef_;   ///< Описание канала
-    int ordinal_;                   ///< Порядковый номер
+    int32_t ordinal_;               ///< Порядковый номер
     LocString name_;                ///< Имя (берется из внутренней базы тэгов)
     const LocString description_;   ///< Описание
     const DbType baseType_;         ///< Тип элемента в базе данных

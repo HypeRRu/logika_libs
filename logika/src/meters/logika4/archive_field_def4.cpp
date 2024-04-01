@@ -24,6 +24,12 @@ ArchiveFieldDef4::ArchiveFieldDef4( const ChannelDef& cdef
 } // ArchiveFieldDef4
 
 
+void ArchiveFieldDef4::SetArchive( std::shared_ptr< ArchiveDef > archive )
+{
+    archive_ = archive;
+} // SetArchive
+
+
 std::shared_ptr< ArchiveDef > ArchiveFieldDef4::GetArchive() const
 {
     return archive_;

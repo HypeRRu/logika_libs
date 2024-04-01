@@ -25,12 +25,12 @@ DeviceConverter::ConvertedType DeviceConverter::Convert( const DeviceConverter::
     // from.m4();
     // from.has_auxno();
     // from.auxno();
-    const MeasureKind mk        = DeviceConverter::ConvertMeasureKind( from.media() );
+    const MeasureKind mk        = ConvertMeasureKind( from.media() );
     const LocString caption     = ToLocString( from.key() );
     const LocString desc        = ToLocString( from.description() );
     const uint32_t mc           = from.has_pipes() ? from.pipes() : 0; // maxChannels
     const uint32_t mg           = from.has_consumers() ? from.consumers() : 0; // maxGroups
-    const BusProtocolType bt    = DeviceConverter::ConvertBusType( from.bus() );
+    const BusProtocolType bt    = ConvertBusType( from.bus() );
 
     /// @todo Создание инстансов сразу нужных типов
     return Meter::Create< Meter >( mk, caption, desc, mc, mg, bt );
@@ -46,7 +46,7 @@ DeviceConverter::ConvertedTypeList DeviceConverter::Convert( const DeviceConvert
     }
     for ( auto from: fromList.list() )
     {
-        converted.push_back( DeviceConverter::Convert( from ) );
+        converted.push_back( Convert( from ) );
     }
     return converted;
 } // Convert( const DeviceConverter::FromTypeList& fromList )
