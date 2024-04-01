@@ -17,16 +17,16 @@
 - [ ] Features (autodetect, ...)
 
 ### Meters
-- [-] Types
+- [x] Types
 - [ ] Meters
-- [ ] Archives
+- [x] Archives
 - [ ] Devices
 
 ### WinComms
 ### WinUtils
 
 ### Features
-- [ ] Localization
+- [x] Localization
 
 ## Global
-- [ ] Fix C++ standard version (use c++14)
+- [ ] Fix C++ standard version (use c++14 or even c++11)
