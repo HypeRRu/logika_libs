@@ -6,6 +6,7 @@ set(
     ${SRC_DIR}/meters/converters/device_converter.cpp
     ${SRC_DIR}/meters/converters/channel_converter.cpp
     ${SRC_DIR}/meters/converters/m4_tag_converter.cpp
+    ${SRC_DIR}/meters/converters/l4_tag_converter.cpp
 )
 
 add_library(${LIB_NAME} ${${LIB_NAME}_SOURCES_LIST})

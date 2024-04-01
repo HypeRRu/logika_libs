@@ -1,7 +1,7 @@
-/// @file Реализация конвертеров типов для тэгов Logika4M
+/// @file Реализация конвертеров типов для тэгов Logika4L
 /// @copyright HypeRRu 2024
 
-#include <logika/meters/converters/m4_tag_converter.h>
+#include <logika/meters/converters/l4_tag_converter.h>
 
 #include <logika/common/types.h>
 #include <logika/common/misc.h>
@@ -19,27 +19,33 @@ namespace meters
 namespace converters
 {
 
-M4TagConverter::ConvertedType M4TagConverter::Convert( const M4TagConverter::FromType& from
-    , M4TagConverter::MeterStorageType meterStorage, M4TagConverter::ChannelStorageType channelStorage )
+L4TagConverter::ConvertedType L4TagConverter::Convert( const L4TagConverter::FromType& from
+    , L4TagConverter::MeterStorageType meterStorage, L4TagConverter::ChannelStorageType channelStorage )
 {
-    std::shared_ptr< Meter > meter = M4TagConverter::ConvertDevice(
+    std::shared_ptr< Meter > meter = L4TagConverter::ConvertDevice(
         ToLocString( from.device() ), meterStorage );
     if ( !meter )
     {
         return nullptr;
     }
     LocString channelLabel = meter->GetCaption() + L"_" + ToLocString( from.channel() );
-    std::shared_ptr< ChannelDef > channelDef = M4TagConverter::ConvertChannel( channelLabel, channelStorage );
+    std::shared_ptr< ChannelDef > channelDef = L4TagConverter::ConvertChannel( channelLabel, channelStorage );
     if ( !channelDef )
     {
         return nullptr;
     }
     
-    TagDef4MSettings settings;
+    TagDef4LSettings settings;
+    settings.addonAddress = from.has_addon() ? from.addon() : 0x00;
+    settings.address = from.has_address() ? from.address() : 0x00;
+    settings.cAddonOffset = from.has_addonoffset() ? from.addonoffset() : 0x00;
+    settings.cOffset = from.has_channeloffset() ? from.channeloffset() : 0x00;
     settings.dbType = ToLocString( from.dbtype() );
     settings.description = ToLocString( from.description() );
     settings.descriptionEx = from.has_descriptionex() ? ToLocString( from.descriptionex() ) : L"";
     settings.displayFormat = from.has_displayformat() ? ToLocString( from.displayformat() ) : L"";
+    settings.inRam = from.inram();
+    settings.intType = ConvertInternalType( from.internaltype() );
     settings.isBasicParam = from.basic();
     settings.kind = ConvertTagKind( from.kind() );
     settings.name = ToLocString( from.name() );
@@ -50,15 +56,15 @@ M4TagConverter::ConvertedType M4TagConverter::Convert( const M4TagConverter::Fro
     settings.units = from.has_units() ? ToLocString( from.units() ) : L"";
     settings.updateRate = from.updaterate();
 
-    return TagDef4M::Create< TagDef4M >(
+    return TagDef4L::Create< TagDef4L >(
           *channelDef
         , settings
     );
 } // Convert( const FromType&, MeterStorageType, ChannelStorageType )
 
 
-M4TagConverter::ConvertedTypeList M4TagConverter::Convert( const M4TagConverter::FromTypeList& fromList
-    , M4TagConverter::MeterStorageType meterStorage, M4TagConverter::ChannelStorageType channelStorage )
+L4TagConverter::ConvertedTypeList L4TagConverter::Convert( const L4TagConverter::FromTypeList& fromList
+    , L4TagConverter::MeterStorageType meterStorage, L4TagConverter::ChannelStorageType channelStorage )
 {
     ConvertedTypeList converted;
     if ( !fromList.list_size() )
@@ -67,14 +73,14 @@ M4TagConverter::ConvertedTypeList M4TagConverter::Convert( const M4TagConverter:
     }
     for ( auto from: fromList.list() )
     {
-        converted.push_back( M4TagConverter::Convert( from, meterStorage, channelStorage ) );
+        converted.push_back( L4TagConverter::Convert( from, meterStorage, channelStorage ) );
     }
     return converted;
 } // Convert( const FromTypeList&, MeterStorageType, ChannelStorageType )
 
 
-std::shared_ptr< Meter > M4TagConverter::ConvertDevice(
-    const LocString& devName, M4TagConverter::MeterStorageType meterStorage )
+std::shared_ptr< Meter > L4TagConverter::ConvertDevice(
+    const LocString& devName, L4TagConverter::MeterStorageType meterStorage )
 {
     if ( !meterStorage )
     {
@@ -86,8 +92,8 @@ std::shared_ptr< Meter > M4TagConverter::ConvertDevice(
 } // ConvertDevice
 
 
-std::shared_ptr< ChannelDef > M4TagConverter::ConvertChannel(
-    const LocString& channelLabel, M4TagConverter::ChannelStorageType channelStorage )
+std::shared_ptr< ChannelDef > L4TagConverter::ConvertChannel(
+    const LocString& channelLabel, L4TagConverter::ChannelStorageType channelStorage )
 {
     if ( !channelStorage )
     {
@@ -99,7 +105,7 @@ std::shared_ptr< ChannelDef > M4TagConverter::ConvertChannel(
 } // ConvertChannel
 
 
-TagKind::Type M4TagConverter::ConvertTagKind( const resources::TagKindEnum type )
+TagKind::Type L4TagConverter::ConvertTagKind( const resources::TagKindEnum type )
 {
     static const std::unordered_map< resources::TagKindEnum, TagKind::Type > converter{
           { logika::resources::TAG_KIND_PARAMETER,  TagKind::Parameter }
@@ -117,7 +123,7 @@ TagKind::Type M4TagConverter::ConvertTagKind( const resources::TagKindEnum type 
 } // ConvertTagKind
 
 
-DbType M4TagConverter::ConvertDbType( const resources::DataTypeEnum type )
+DbType L4TagConverter::ConvertDbType( const resources::DataTypeEnum type )
 {
     static const std::unordered_map< resources::DataTypeEnum, DbType > converter{
           { logika::resources::DATA_TYPE_BYTE,          DbType::Byte }
@@ -141,7 +147,7 @@ DbType M4TagConverter::ConvertDbType( const resources::DataTypeEnum type )
 } // ConvertDbType
 
 
-StdVar M4TagConverter::ConvertVarType( const resources::VarTypeEnum type )
+StdVar L4TagConverter::ConvertVarType( const resources::VarTypeEnum type )
 {
     static const std::unordered_map< resources::VarTypeEnum, StdVar > converter{
           { logika::resources::VAR_TYPE_SP,         StdVar::SP }
@@ -165,6 +171,40 @@ StdVar M4TagConverter::ConvertVarType( const resources::VarTypeEnum type )
     }
     return StdVar::Undefined;
 } // ConvertVarType
+
+
+BinaryType4L::Type L4TagConverter::ConvertInternalType( const resources::InternalTypeEnum type )
+{
+    static const std::unordered_map< resources::InternalTypeEnum, BinaryType4L::Type > converter{
+          { logika::resources::INTERNAL_TYPE_R32,               BinaryType4L::R32 }
+        , { logika::resources::INTERNAL_TYPE_TRIPLE_R32,        BinaryType4L::TripleR32 }
+        , { logika::resources::INTERNAL_TYPE_TIME,              BinaryType4L::Time }
+        , { logika::resources::INTERNAL_TYPE_DATE,              BinaryType4L::Date }
+        , { logika::resources::INTERNAL_TYPE_MM_DD_DATE,        BinaryType4L::MmDdDate }
+        , { logika::resources::INTERNAL_TYPE_BIT_ARRAY32,       BinaryType4L::BitArray32 }
+        , { logika::resources::INTERNAL_TYPE_BIT_ARRAY24,       BinaryType4L::BitArray24 }
+        , { logika::resources::INTERNAL_TYPE_BIT_ARRAY16,       BinaryType4L::BitArray16 }
+        , { logika::resources::INTERNAL_TYPE_BIT_ARRAY8,        BinaryType4L::BitArray8 }
+        , { logika::resources::INTERNAL_TYPE_DB_ENTRY,          BinaryType4L::DbEntry }
+        , { logika::resources::INTERNAL_TYPE_DB_ENTRY_BYTE,     BinaryType4L::DbEntryByte }
+        , { logika::resources::INTERNAL_TYPE_U8,                BinaryType4L::U8 }
+        , { logika::resources::INTERNAL_TYPE_I32R32,            BinaryType4L::I32R32 }
+        , { logika::resources::INTERNAL_TYPE_MM_HH_TIME,        BinaryType4L::MmHhTime }
+        , { logika::resources::INTERNAL_TYPE_NS_RECORD,         BinaryType4L::NsRecord }
+        , { logika::resources::INTERNAL_TYPE_IZM_RECORD,        BinaryType4L::IzmRecord }
+        , { logika::resources::INTERNAL_TYPE_ARCHIVE_STRUCT,    BinaryType4L::ArchiveStruct }
+        , { logika::resources::INTERNAL_TYPE_MODEL_CHAR,        BinaryType4L::ModelChar }
+        , { logika::resources::INTERNAL_TYPE_U24,               BinaryType4L::U24 }
+        , { logika::resources::INTERNAL_TYPE_SERVICE_RECORD_TS, BinaryType4L::ServiceRecordTimestamp }
+    };
+
+    auto iter = converter.find( type );
+    if ( converter.cend() != iter )
+    {
+        return iter->second;
+    }
+    return BinaryType4L::Undefined;
+} // ConvertInternalType
 
 } // namespace converters
 

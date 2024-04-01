@@ -18,6 +18,7 @@
 #include <logika/meters/converters/device_converter.h>
 #include <logika/meters/converters/channel_converter.h>
 #include <logika/meters/converters/m4_tag_converter.h>
+#include <logika/meters/converters/l4_tag_converter.h>
 
 #include <logika/meters/data_table.hpp>
 #include <logika/meters/interval_archive.h>
@@ -238,6 +239,44 @@ int main()
         else
         {
             LOG_WRITE( LOG_ERROR, L"Unable to load M4Tags" );
+        }
+    }
+
+    sKeeper.CreateStorage< logika::LocString, logika::meters::TagDef4L >();
+    auto l4tStorage = sKeeper.GetStorage< logika::LocString, logika::meters::TagDef4L >();
+    {
+        logika::resources::Loader< logika::resources::L4TagList > loader;
+        auto resource = loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/L4Tags.dat" );
+        if ( resource )
+        {
+            auto l4tags = logika::meters::converters::L4TagConverter::Convert( *resource, mStorage, cdStorage );
+            LOG_WRITE( LOG_INFO, L"Converted " << l4tags.size() << L" L4Tags instances" );
+            for ( auto tag: l4tags )
+            {
+                if ( tag )
+                {
+                    if ( !tag->GetMeter() )
+                    {
+                        LOG_WRITE( LOG_ERROR, L"No meter instance found for " << tag->GetName() );
+                    }
+                    else
+                    {
+                        logika::LocString label = tag->GetMeter()->GetCaption() + L"_" + tag->GetName();
+                        LOG_WRITE( LOG_INFO, L"Add L4Tag '" << label << L"' to storage: "
+                            << ( l4tStorage->AddItem( label, tag ) ? L"Success" : L"Failed" ) );
+                        std::shared_ptr< logika::meters::TagDef4L > item;
+                        l4tStorage->GetItem( label, item );
+                    }
+                }
+                else
+                {
+                    LOG_WRITE( LOG_ERROR, L"Unable to convert L4Tag" );
+                }
+            }
+        }
+        else
+        {
+            LOG_WRITE( LOG_ERROR, L"Unable to load L4Tags" );
         }
     }
 
