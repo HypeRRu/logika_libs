@@ -8,6 +8,11 @@
 
 #include <logika/meters/tag_def.h>
 
+/// @cond
+#include <unordered_map>
+#include <vector>
+/// @endcond
+
 namespace logika
 {
 
@@ -77,6 +82,43 @@ protected:
     LocString address_;                 ///< Адрес тэга
 
 }; // class DataTagDef
+
+
+/// @brief Хранилище описаний тэгов с данными
+class DataTagDefVault
+{
+public:
+    /// @brief Конструктор хранилища описаний тэгов с данными
+    DataTagDefVault( const std::vector< std::shared_ptr< DataTagDef > >& tags );
+
+    /// @brief Получение описания тэга
+    /// @param[in] channelPrefix Префикс канала
+    /// @param[in] name Название тэга
+    /// @return Описание тэга или nullptr, если не найдено
+    const std::shared_ptr< DataTagDef > Find( const LocString& channelPrefix, const LocString& name ) const;
+    
+    /// @brief Получение описания тэга
+    /// @param[in] channelPrefix Префикс канала
+    /// @param[in] name Название тэга
+    /// @return Описание тэга или nullptr, если не найдено
+    std::shared_ptr< DataTagDef > Find( const LocString& channelPrefix, const LocString& name );
+
+    /// @brief Получение списка всех описаний тэгов
+    /// @return Список описаний тэгов
+    const std::vector< std::shared_ptr< DataTagDef > >& All() const;
+
+private:
+    /// @brief Формирование ключа таблицы
+    /// @param[in] channelPrefix Префикс канала
+    /// @param[in] name Название тэга
+    /// @return Ключ в таблице
+    static LocString CreateKey( const LocString& channelPrefix, const LocString& name );
+
+private:
+    std::unordered_map< LocString, std::shared_ptr< DataTagDef > > dataTagsMap_;    ///< Таблица тэгов
+    std::vector< std::shared_ptr< DataTagDef > > dataTags_;                         ///< Список тэгов
+
+}; // class DataTagDefVault
 
 } // namespace meters
 

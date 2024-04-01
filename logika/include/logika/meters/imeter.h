@@ -8,10 +8,12 @@
 
 #include <logika/common/iserializable.h>
 #include <logika/common/types.h>
+
 #include <logika/meters/types.h>
 
 /// @cond
 #include <string>
+#include <memory>
 /// @endcond
 
 namespace logika
@@ -20,8 +22,9 @@ namespace logika
 namespace meters
 {
 
+class DataTagDefVault;
+
 /// @brief Интерфейс прибора
-/// @todo Написать интерфейс
 class IMeter: public ISerializable
 {
 public:
@@ -67,6 +70,10 @@ public:
     /// @param[in] tv @todo ???
     /// @return Префикс события
     virtual LocString GetEventPrefix( uint32_t tv ) const = 0;
+
+    /// @brief Получение хранилища описаний тэгов
+    /// @return Хранилище описаний тэгов
+    virtual const std::shared_ptr< DataTagDefVault > GetTagsVault() const = 0;
 
 }; // class Meter
 

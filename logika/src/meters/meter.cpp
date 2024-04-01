@@ -3,12 +3,13 @@
 
 #include <logika/meters/meter.h>
 
+#include <logika/meters/data_tag_def.h>
+
 namespace logika
 {
 
 namespace meters
 {
-
 
 Meter::Meter(
       MeasureKind measureKind
@@ -27,8 +28,10 @@ Meter::Meter(
     , outdated_{ false }
     , channelKind_{ ChannelKind::Undefined }
     , busType_{ busType }
+    , tagsVault_{}
 {
     /// @todo Определение ChannelKind
+    /// @todo Создание tagsVault_
 } // Meter
 
 
@@ -106,6 +109,12 @@ LocString Meter::GetEventPrefix( uint32_t tv ) const
     (void) tv;
     return L""; /// @todo Реализовать
 } // GetEventPrefix
+
+
+const std::shared_ptr< DataTagDefVault > Meter::GetTagsVault() const
+{
+    return tagsVault_;
+} // GetTagsVault
 
 
 LocString Meter::ToString() const

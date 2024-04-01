@@ -3,6 +3,7 @@
 
 #include <logika/meters/channel.h>
 
+#include <logika/meters/imeter.h>
 #include <logika/common/misc.h>
 
 namespace logika

@@ -68,6 +68,9 @@ public:
     /// @copydoc IMeter::GetEventPrefix()
     virtual LocString GetEventPrefix( uint32_t tv ) const override;
 
+    /// @copydoc IMeter::GetTagsVault()
+    virtual const std::shared_ptr< DataTagDefVault > GetTagsVault() const override;
+
     /// @copydoc ISerializable::ToString()
     virtual LocString ToString() const override;
 
@@ -75,18 +78,17 @@ public:
     /// @todo get typed meters
 
 protected:
-    MeasureKind measureKind_;   ///< Тип измерения
-    LocString caption_;       ///< Название прибора
-    LocString description_;     ///< Описание прибора
-    uint32_t maxChannels_;      ///< Максимальное количество каналов
-    uint32_t maxGroups_;        ///< Максимальное количество групп
-    bool supportedByProlog4_;   ///< Имеется ли поддержка prolog4
-    bool outdated_;             ///< Является ли прибор устаревшим
-    ChannelKind channelKind_;   ///< Тип канала
-    BusProtocolType busType_;   ///< Тип протокола
+    MeasureKind measureKind_;                       ///< Тип измерения
+    LocString caption_;                             ///< Название прибора
+    LocString description_;                         ///< Описание прибора
+    uint32_t maxChannels_;                          ///< Максимальное количество каналов
+    uint32_t maxGroups_;                            ///< Максимальное количество групп
+    bool supportedByProlog4_;                       ///< Имеется ли поддержка prolog4
+    bool outdated_;                                 ///< Является ли прибор устаревшим
+    ChannelKind channelKind_;                       ///< Тип канала
+    BusProtocolType busType_;                       ///< Тип протокола
+    std::shared_ptr< DataTagDefVault > tagsVault_;  ///< Хранилище описаний тэгов
     /// @todo mutex?
-    /// @todo tags?
-
 
 }; // class Meter
 
