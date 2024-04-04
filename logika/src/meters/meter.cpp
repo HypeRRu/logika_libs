@@ -26,11 +26,10 @@ Meter::Meter(
     , maxGroups_{ maxGroups }
     , supportedByProlog4_{ false }
     , outdated_{ false }
-    , channelKind_{ ChannelKind::Undefined }
     , busType_{ busType }
     , tagsVault_{}
+    , ident_{ 0 }
 {
-    /// @todo Определение ChannelKind
     /// @todo Создание tagsVault_
 } // Meter
 
@@ -39,7 +38,6 @@ bool Meter::operator ==( const Meter& other ) const
 {
     return      measureKind_    == other.measureKind_
             &&  caption_        == other.caption_
-            &&  channelKind_    == other.channelKind_
             &&  busType_        == other.busType_;
 } // operator ==
 
@@ -80,9 +78,9 @@ uint32_t Meter::GetMaxGroups() const
 } // GetMaxGroups
 
 
-ChannelKind Meter::GetChannelKind() const
+ChannelKind Meter::GetChannelKind( int32_t cStart, uint32_t cCount, const LocString& cName ) const
 {
-    return channelKind_;
+    return ChannelKind::Undefined;
 } // GetChannelKind
 
 
@@ -115,6 +113,30 @@ const std::shared_ptr< DataTagDefVault > Meter::GetTagsVault() const
 {
     return tagsVault_;
 } // GetTagsVault
+
+
+LocString Meter::GetDisplayFormat( std::shared_ptr< TagDef > def ) const
+{
+    (void) def;
+    return L"";
+} // GetDisplayFormat
+
+
+bool Meter::IdentMatch( ByteType id0, ByteType id1, ByteType version ) const
+{
+    (void) id0;
+    (void) id1;
+    (void) version;
+    return false;
+} // IdentMatch
+
+
+bool Meter::GetNtFromTag( const LocString& value, ByteType& out ) const
+{
+    (void) value;
+    (void) out;
+    return false;
+} // GetNtFromTag
 
 
 LocString Meter::ToString() const

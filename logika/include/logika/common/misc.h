@@ -49,6 +49,20 @@ bool StrCaseEq( const LocString& lhs, const LocString& rhs );
 /// @return Обработанная строка
 LocString Trim( const LocString& str, const LocString& trimChars = L" \t\r\n" );
 
+/// @brief Получение индексов единичных битов
+/// @param[in] bits Набор битов
+/// @param[in] bitsCount Количество проверяемых битов
+/// @param[in] offset Номер первого проверяемого бита
+/// @return Массив индексов единичных битов
+std::vector< size_t > BitNumbers( uint64_t bits, size_t bitsCount, size_t offset );
+
+/// @brief Получение индексов единичных битов
+/// @param[in] buffer Набор битов
+/// @param[in] bitsCount Количество проверяемых битов
+/// @param[in] offset Номер первого проверяемого бита
+/// @return Массив индексов единичных битов
+std::vector< size_t > BitNumbers( const std::vector< ByteType >& buffer, size_t bitsCount, size_t offset );
+
 } // namespace logika
 
 #endif // LOGIKA_COMMON_MISC_H

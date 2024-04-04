@@ -26,6 +26,8 @@
 #endif // defined( _WIN32 ) || defined( _WIN64 )
 /// @endcond
 
+#define LOCALIZED( x ) L##x
+
 namespace logika
 {
 
@@ -38,6 +40,7 @@ using LocChar           = wchar_t;
 using LocString         = std::basic_string< LocChar >;
 using LocConverter      = std::wstring_convert< std::codecvt_utf8< LocChar >, LocChar >;
 using LocStringStream   = std::basic_stringstream< LocChar >;
+/// @todo Макрос LOCALIZED( x ) Lx
 
 #if defined( __linux__ ) || defined( __APPLE__ )
 using FileHandleType = int;

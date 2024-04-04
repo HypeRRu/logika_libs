@@ -54,7 +54,7 @@ public:
     virtual uint32_t GetMaxGroups() const override;
 
     /// @copydoc IMeter::GetChannelKind()
-    virtual ChannelKind GetChannelKind() const override;
+    virtual ChannelKind GetChannelKind( int32_t cStart, uint32_t cCount, const LocString& cName ) const override;
 
     /// @copydoc IMeter::GetVendorId()
     virtual LocString GetVendorId() const override;
@@ -71,11 +71,22 @@ public:
     /// @copydoc IMeter::GetTagsVault()
     virtual const std::shared_ptr< DataTagDefVault > GetTagsVault() const override;
 
+    /// @copydoc IMeter::GetDisplayFormat()
+    virtual LocString GetDisplayFormat( std::shared_ptr< TagDef > def ) const override;
+
+    /// @copydoc IMeter::IdentMatch()
+    virtual bool IdentMatch( ByteType id0, ByteType id1, ByteType version ) const override;
+
+    /// @copydoc IMeter::GetNtFromTag()
+    virtual bool GetNtFromTag( const LocString& value, ByteType& out ) const override;
+
     /// @copydoc ISerializable::ToString()
     virtual LocString ToString() const override;
 
     /// @todo hash code?
     /// @todo get typed meters
+    /// @todo well known tags
+    /// @todo lookup common tags
 
 protected:
     MeasureKind measureKind_;                       ///< Тип измерения
@@ -85,9 +96,9 @@ protected:
     uint32_t maxGroups_;                            ///< Максимальное количество групп
     bool supportedByProlog4_;                       ///< Имеется ли поддержка prolog4
     bool outdated_;                                 ///< Является ли прибор устаревшим
-    ChannelKind channelKind_;                       ///< Тип канала
     BusProtocolType busType_;                       ///< Тип протокола
     std::shared_ptr< DataTagDefVault > tagsVault_;  ///< Хранилище описаний тэгов
+    uint16_t ident_;                                ///< Идентификатор прибора
     /// @todo mutex?
 
 }; // class Meter

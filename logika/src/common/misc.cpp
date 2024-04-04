@@ -23,6 +23,8 @@ bool LocCharCaseEq( logika::LocChar lhs, logika::LocChar rhs )
         == std::towlower( rhs );
 } // CharCaseEq
 
+constexpr size_t byteSize = 8;
+
 } // anonymous namespace
 
 
@@ -107,5 +109,43 @@ LocString Trim( const LocString& str, const LocString& trimChars )
     size_t rightPos = str.find_last_not_of( trimChars );
     return str.substr( leftPos, rightPos - leftPos );
 } // Trim
+
+
+std::vector< size_t > BitNumbers( uint64_t bits, size_t bitsCount, size_t offset )
+{
+    std::vector< size_t > bitNums;
+    if ( bitsCount > sizeof( bits ) || sizeof( bits ) - bitsCount < offset )
+    {
+        return bitNums;
+    }
+    for ( size_t i = 0; i < bitsCount; ++i )
+    {
+        if( ( bits >> offset ) & ( 1ull << ( i % byteSize ) ) )
+        {
+            bitNums.push_back( i );
+        }
+    }
+    return bitNums;
+} // BitNumbers( uint64_t, size_t, size_t )
+
+
+std::vector< size_t > BitNumbers( const std::vector< ByteType >& buffer, size_t bitsCount, size_t offset )
+{
+    std::vector< size_t > bitNums;
+    const size_t bufSize = buffer.size() * byteSize;
+    if ( bitsCount > bufSize || bufSize - bitsCount < offset )
+    {
+        return bitNums;
+    }
+    for ( size_t i = 0; i < bitsCount; ++i )
+    {
+        const size_t idx = i + offset;
+        if( buffer.at( idx / byteSize ) & ( 1ull << ( idx % byteSize ) ) )
+        {
+            bitNums.push_back( idx );
+        }
+    }
+    return bitNums;
+} // BitNumbers( const std::vector< ByteType >&, size_t bitsCount, size_t offset )
 
 } // namespace logika

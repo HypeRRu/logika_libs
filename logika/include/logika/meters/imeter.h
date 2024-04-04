@@ -22,6 +22,7 @@ namespace logika
 namespace meters
 {
 
+class TagDef;
 class DataTagDefVault;
 
 /// @brief Интерфейс прибора
@@ -52,7 +53,7 @@ public:
 
     /// @brief Получение типа канала
     /// @return Тип канала
-    virtual ChannelKind GetChannelKind() const = 0;
+    virtual ChannelKind GetChannelKind( int32_t cStart, uint32_t cCount, const LocString& cName ) const = 0;
 
     /// @brief Получение краткого названия производителя
     /// @return Краткое название производителя
@@ -74,6 +75,24 @@ public:
     /// @brief Получение хранилища описаний тэгов
     /// @return Хранилище описаний тэгов
     virtual const std::shared_ptr< DataTagDefVault > GetTagsVault() const = 0;
+
+    /// @brief Получение формата отображения
+    /// @param[in] def Описание тэга
+    /// @return Формат отображения для тэга
+    virtual LocString GetDisplayFormat( std::shared_ptr< TagDef > def ) const = 0;
+
+    /// @brief Проверка на совпадение идентификатора прибора
+    /// @param[in] id0 Старший байт идентификатора
+    /// @param[in] id1 Младший байт идентификатора
+    /// @param[in] version Модификация
+    /// @return Совпадает ли идентификатор прибора
+    virtual bool IdentMatch( ByteType id0, ByteType id1, ByteType version ) const = 0;
+
+    /// @brief Получение NT из значения тэга
+    /// @param[in] value Значение тэга
+    /// @param[out] out NT
+    /// @return Удалось ли конвертировать значение
+    virtual bool GetNtFromTag( const LocString& value, ByteType& out ) const = 0;
 
 }; // class Meter
 

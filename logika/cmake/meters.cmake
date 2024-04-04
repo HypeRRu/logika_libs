@@ -19,6 +19,7 @@ set(
 	${SRC_DIR}/meters/data_tag.cpp
 	${SRC_DIR}/meters/logika4/archive_field_def4.cpp
 	${SRC_DIR}/meters/logika4/tag_def4.cpp
+	${SRC_DIR}/meters/logika4/logika4.cpp
 	${SRC_DIR}/meters/logika4/4l/tag_def4l.cpp
 	${SRC_DIR}/meters/logika4/4l/archive_def4l.cpp
 	${SRC_DIR}/meters/logika4/4l/archive_field_def4l.cpp

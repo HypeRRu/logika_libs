@@ -45,6 +45,52 @@ protected:
 
 }; // class TagDef4
 
+
+/// @brief Параметры расчетного тэга
+struct CalcFieldDefSettings: public TagDefSettings
+{
+public:
+    int32_t channelNo       = -1;   ///< Номер канала
+    LocString insertAfter   = L"";  ///< Имя тэга, после которого должен располагатся данный
+    LocString expression    = L"";  ///< Выражение
+    LocString eu            = L"";  ///< Единицы измерения
+
+}; // CalcFieldDefSettings
+
+
+/// @brief Расчетный тэг
+class CalcFieldDef: public TagDef
+{
+public:
+    /// @brief Конструктор расчетного тэга
+    /// @param[in] cdef Описание канала
+    /// @param[in] settings Параметры расчетного тэга
+    CalcFieldDef( const ChannelDef& cdef, const CalcFieldDefSettings& settings );
+
+    /// @brief Получение номера канала
+    /// @return Номер канала
+    int32_t GetChannelNo() const;
+
+    /// @brief Получение имени тэга, после которого располагается данный
+    /// @return Имя тэга
+    LocString GetInsertAfter() const;
+
+    /// @brief Получение выражения
+    /// @return Выражение
+    LocString GetExpression() const;
+
+    /// @brief Получение единиц измерения
+    /// @return Единицы измерения
+    LocString GetEu() const;
+
+protected:
+    int32_t channelNo_;     ///< Номер канала
+    LocString insertAfter_; ///< Имя тэга, после которого должен располагатся данный
+    LocString expression_;  ///< Выражение
+    LocString eu_;          ///< Единицы измерения
+
+}; // CalcFieldDef
+
 } // namespace meters
 
 } // namespace logika

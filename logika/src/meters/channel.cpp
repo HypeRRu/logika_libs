@@ -17,7 +17,7 @@ namespace meters
 ChannelDef::ChannelDef( std::shared_ptr< IMeter > m, const LocString& p, int32_t s
     , uint32_t c, const LocString& d )
     : meter{ m }
-    , kind{ m ? m->GetChannelKind() : ChannelKind::Undefined }
+    , kind{ m ? m->GetChannelKind( s, c, p ) : ChannelKind::Undefined }
     , prefix{ p }
     , start{ s }
     , count{ c }
