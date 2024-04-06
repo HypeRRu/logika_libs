@@ -55,7 +55,7 @@ LocString Logika4::GetNsDescription( const LocString& ns ) const
     {
         return LOCALIZED( "" );
     }
-    const LocString::size_type sPos = ns.find( LOCALIZED( 'С' ) );
+    const LocString::size_type sPos = ns.find( LOCALIZED( "С" ) );
     if ( LocString::npos == sPos || ns.length() - 2 <= sPos )
     {
         return LOCALIZED( "" );

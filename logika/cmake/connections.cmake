@@ -32,11 +32,11 @@ endif()
 
 add_library(${LIB_NAME} ${${LIB_NAME}_SOURCES_LIST})
 target_include_directories(${LIB_NAME} PUBLIC ${INCLUDE_DIR})
-target_link_libraries(${LIB_NAME} PUBLIC ${CMAKE_PROJECT_NAME}_logger)
-target_link_libraries(${LIB_NAME} PUBLIC ${CMAKE_PROJECT_NAME}_common)
+target_link_libraries(${LIB_NAME} INTERFACE ${CMAKE_PROJECT_NAME}_logger)
+target_link_libraries(${LIB_NAME} INTERFACE ${CMAKE_PROJECT_NAME}_common)
 
 if (WIN32)
-    target_link_libraries(${LIB_NAME} PUBLIC ws2_32)
+    target_link_libraries(${LIB_NAME} INTERFACE ws2_32)
 endif()
 
 unset(${LIB_NAME})

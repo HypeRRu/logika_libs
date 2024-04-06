@@ -20,6 +20,7 @@
 
 #if defined( _WIN32 ) || defined( _WIN64 )
 #define WIN32_LEAN_AND_MEAN
+#define NOMINMAX
 #include <windows.h>
 #include <winnt.h>      /// Для HANDLE
 #include <winsock2.h>	/// Для SOCKET и ADDRINFOA

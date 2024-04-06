@@ -7,6 +7,7 @@ set(BUILD_SHARED_LIBS ON)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lib)
 set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 set(INCLUDE_INSTALL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include/logika/resources)
 
@@ -16,12 +17,12 @@ find_package(Protobuf REQUIRED)
 
 add_library(
     logika_resources
+    logika/resources/enums.proto
     logika/resources/archive_types.proto
     logika/resources/buses.proto
     logika/resources/channels.proto
     logika/resources/data_types.proto
     logika/resources/devices.proto
-    logika/resources/enums.proto
     logika/resources/tag_kinds.proto
     logika/resources/vars.proto
     logika/resources/l4_archive_fields.proto
@@ -36,14 +37,15 @@ add_library(
     logika/resources/x6_tag_types.proto
     logika/resources/x6_tags.proto
 )
-target_include_directories(logika_resources PRIVATE ${SRC_DIR})
-target_include_directories(logika_resources PRIVATE ${INCLUDE_DIR})
+target_include_directories(logika_resources PUBLIC ${SRC_DIR})
+target_include_directories(logika_resources PUBLIC ${INCLUDE_DIR})
+target_include_directories(logika_resources PUBLIC ${Protobuf_INCLUDE_DIRS})
 
 protobuf_generate(
     TARGET logika_resources
     LANGUAGE cpp
     IMPORT_DIRS logika/resources
-    PROTOC_OUT_DIR src
+    PROTOC_OUT_DIR ${SRC_DIR}
     OUT_VAR PROTO_SRCS
 )
 
@@ -61,3 +63,5 @@ add_custom_command(
     COMMAND ${CMAKE_COMMAND} -E copy "$<JOIN:${PROTO_INCS},;>" ${INCLUDE_INSTALL_DIR}/
     COMMENT "Copy include files to ${INCLUDE_INSTALL_DIR}"
 )
+
+target_link_libraries(logika_resources PUBLIC protobuf::libprotobuf)
