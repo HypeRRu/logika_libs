@@ -139,7 +139,7 @@ bool Logika4::GetNtFromTag( const LocString& value, ByteType& out ) const
     {
         return false;
     }
-    out = converted;
+    out = static_cast< ByteType >( converted );
     return true;
 } // GetNtFromTag
 

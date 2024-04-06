@@ -23,19 +23,19 @@ DataTag6Container::DataTag6Container( std::shared_ptr< DataTagDef6 > def, int32_
     tags_.reserve( leafs.size() );
     for ( auto leafDef: leafs )
     {
-        tags_.emplace_back( leafDef, channelNo );
+        tags_.emplace_back( std::make_shared< DataTag >( leafDef, channelNo ) );
     }
     address_ = dataTagDef_ ? dataTagDef_->GetAddress() : L"";
 } // DataTag6Container
 
 
-const std::vector< DataTag >& DataTag6Container::GetTags() const
+const std::vector< std::shared_ptr< DataTag > >& DataTag6Container::GetTags() const
 {
     return tags_;
 } // GetTags() const
 
 
-std::vector< DataTag >& DataTag6Container::GetTags()
+std::vector< std::shared_ptr< DataTag > >& DataTag6Container::GetTags()
 {
     return tags_;
 } // GetTags()

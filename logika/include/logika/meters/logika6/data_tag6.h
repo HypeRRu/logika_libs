@@ -34,18 +34,18 @@ public:
 
     /// @brief Получение тэгов из контейнера
     /// @return Тэги из контейнера
-    const std::vector< DataTag >& GetTags() const;
+    const std::vector< std::shared_ptr< DataTag > >& GetTags() const;
 
     /// @brief Получение тэгов из контейнера
     /// @return Тэги из контейнера
-    std::vector< DataTag >& GetTags();
+    std::vector< std::shared_ptr< DataTag > >& GetTags();
 
     /// @copydoc ISerializable::ToString()
     virtual LocString ToString() const override;
 
 protected:
-    std::shared_ptr< DataTagDef6 > dataTagDef_; ///< Описание тэга
-    std::vector< DataTag > tags_;               ///< Массив тэгов
+    std::shared_ptr< DataTagDef6 > dataTagDef_;         ///< Описание тэга
+    std::vector< std::shared_ptr< DataTag > > tags_;    ///< Массив тэгов
 
 }; // class DataTag
 

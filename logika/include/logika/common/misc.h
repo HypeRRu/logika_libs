@@ -55,7 +55,7 @@ LOGIKA_COMMON_EXPORT LocString Trim( const LocString& str, const LocString& trim
 /// @param[in] bitsCount Количество проверяемых битов
 /// @param[in] offset Номер первого проверяемого бита
 /// @return Массив индексов единичных битов
-std::vector< size_t > BitNumbers( uint64_t bits, size_t bitsCount, size_t offset );
+LOGIKA_COMMON_EXPORT std::vector< size_t > BitNumbers( uint64_t bits, size_t bitsCount, size_t offset );
 
 /// @brief Получение индексов единичных битов
 /// @param[in] buffer Набор битов

@@ -3,10 +3,16 @@ cmake_minimum_required(VERSION 3.14)
 project(logika_migration LANGUAGES CXX VERSION 1.0)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(BUILD_SHARED_LIBS ON)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/bin)
 
 set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+# suppress MSVC warnings (for third_party/csv.hpp)
+if(MSVC)
+	add_definitions("/wd4244")
+endif()
 
 add_executable(
     logika_migration
@@ -32,6 +38,6 @@ add_executable(
     ${SRC_DIR}/converters/x6_tags.cpp
 )
 target_include_directories(logika_migration PRIVATE ${INCLUDE_DIR})
+target_include_directories(logika_migration PRIVATE ${logika_resources_INCLUDE_DIRS})
 
-target_link_libraries(logika_migration logika_resources)
-target_include_directories(logika_migration PRIVATE ${logika_resources_INCLUDE_DIR})
+target_link_libraries(logika_migration PUBLIC logika_resources)

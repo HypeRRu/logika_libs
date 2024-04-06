@@ -13,14 +13,17 @@ set(
     ${SRC_DIR}/meters/converters/l4_archive_field_converter.cpp
 )
 
-add_library(${LIB_NAME} ${${LIB_NAME}_SOURCES_LIST})
-# add_dependencies(${LIB_NAME} ${CMAKE_PROJECT_NAME}_resources)
+add_library(${LIB_NAME} SHARED ${${LIB_NAME}_SOURCES_LIST})
 target_include_directories(${LIB_NAME} PUBLIC ${INCLUDE_DIR})
-# target_link_libraries(${LIB_NAME} PUBLIC ${CMAKE_PROJECT_NAME}_resources SHARED)
-target_link_libraries(${LIB_NAME} LINK_PUBLIC ${CMAKE_PROJECT_NAME}_resources)
-# target_link_libraries(${LIB_NAME} INTERFACE ${CMAKE_PROJECT_NAME}_resources)
-target_link_libraries(${LIB_NAME} INTERFACE ${CMAKE_PROJECT_NAME}_logger)
-target_link_libraries(${LIB_NAME} INTERFACE ${CMAKE_PROJECT_NAME}_common)
-target_link_libraries(${LIB_NAME} INTERFACE ${CMAKE_PROJECT_NAME}_meters)
+target_include_directories(${LIB_NAME} PRIVATE ${logika_resources_INCLUDE_DIRS})
+target_link_libraries(${LIB_NAME} PUBLIC ${CMAKE_PROJECT_NAME}_resources)
+target_link_libraries(${LIB_NAME} PUBLIC ${CMAKE_PROJECT_NAME}_logger)
+target_link_libraries(${LIB_NAME} PUBLIC ${CMAKE_PROJECT_NAME}_common)
+target_link_libraries(${LIB_NAME} PUBLIC ${CMAKE_PROJECT_NAME}_meters)
+
+if (BUILD_SHARED_LIBS)
+    target_compile_definitions(${LIB_NAME} PRIVATE ${LIB_NAME}_EXPORT)
+    target_compile_definitions(${LIB_NAME} PRIVATE BUILD_SHARED_LIBS)
+endif()
 
 unset(${LIB_NAME})
