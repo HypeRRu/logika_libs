@@ -6,6 +6,7 @@
 #ifndef LOGIKA_PROTOCOLS_PROTOCOL_H
 #define LOGIKA_PROTOCOLS_PROTOCOL_H
 
+#include <logika/protocols/defs.h>
 #include <logika/protocols/iprotocol.h>
 
 namespace logika
@@ -15,7 +16,7 @@ namespace protocols
 {
 
 /// @brief Базовый класс для работы с протоколами
-class Protocol: public IProtocol
+class LOGIKA_PROTOCOLS_EXPORT Protocol: public IProtocol
 {
 public:
     /// @brief Конструктор протокола

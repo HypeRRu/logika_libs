@@ -6,6 +6,7 @@
 #ifndef LOGIKA_METERS_METER_H
 #define LOGIKA_METERS_METER_H
 
+#include <logika/meters/defs.h>
 #include <logika/meters/imeter.h>
 #include <logika/common/shared_constructible.hpp>
 
@@ -16,7 +17,7 @@ namespace meters
 {
 
 /// @brief Базовый класс прибора
-class Meter: public IMeter, public SharedConstructible< Meter >
+class LOGIKA_METERS_EXPORT Meter: public IMeter, public SharedConstructible< Meter >
 {
 public:
     /// @brief Конструктор класса прибора

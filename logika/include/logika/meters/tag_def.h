@@ -6,6 +6,7 @@
 #ifndef LOGIKA_METERS_TAG_DEF_H
 #define LOGIKA_METERS_TAG_DEF_H
 
+#include <logika/meters/defs.h>
 #include <logika/meters/item_def_base.h>
 
 #include <logika/common/iserializable.h>
@@ -21,7 +22,7 @@ namespace meters
 {
 
 /// @brief Параметры для создания базового тэга
-struct TagDefSettings
+struct LOGIKA_METERS_EXPORT TagDefSettings
 {
 public:
     int ordinal = 0;                    ///< Порядковый номер
@@ -36,7 +37,7 @@ public:
 
 
 /// @brief Базовое описание тэга
-class TagDef: public ItemDefBase
+class LOGIKA_METERS_EXPORT TagDef: public ItemDefBase
 {
 public:
     /// @brief Конструктор тэга

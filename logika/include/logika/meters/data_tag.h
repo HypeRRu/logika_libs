@@ -6,6 +6,7 @@
 #ifndef LOGIKA_METERS_DATA_TAG_H
 #define LOGIKA_METERS_DATA_TAG_H
 
+#include <logika/meters/defs.h>
 #include <logika/meters/tag.h>
 #include <logika/meters/data_tag_def.h>
 #include <logika/common/any.hpp>
@@ -21,7 +22,7 @@ namespace meters
 {
 
 /// @brief Тэг с данными
-class DataTag: public Tag
+class LOGIKA_METERS_EXPORT DataTag: public Tag
 {
 public:
     /// @brief Конструктор тэга с данными

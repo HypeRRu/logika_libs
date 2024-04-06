@@ -6,8 +6,10 @@
 #ifndef LOGIKA_PROTOCOLS_M4_PACKET_H
 #define LOGIKA_PROTOCOLS_M4_PACKET_H
 
-#include <logika/common/types.h>
+#include <logika/protocols/defs.h>
 #include <logika/protocols/m4/opcodes.h>
+
+#include <logika/common/types.h>
 
 namespace logika
 {
@@ -19,7 +21,7 @@ namespace M4
 {
 
 /// @brief Структура пакета в протоколе M4
-struct Packet
+struct LOGIKA_PROTOCOLS_EXPORT Packet
 {
 public:
     /// @brief Конструктор по умолчанию

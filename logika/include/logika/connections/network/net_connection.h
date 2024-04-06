@@ -6,6 +6,7 @@
 #ifndef LOGIKA_CONNECTIONS_NETWORK_NET_CONNECTION_H
 #define LOGIKA_CONNECTIONS_NETWORK_NET_CONNECTION_H
 
+#include <logika/connections/defs.h>
 #include <logika/connections/connection.h>
 
 namespace logika
@@ -15,7 +16,7 @@ namespace connections
 {
 
 /// @brief Базовый класс для работы с соединением по сети
-class NetConnection: public Connection
+class LOGIKA_CONNECTIONS_EXPORT NetConnection: public Connection
 {
 public:
     /// @brief Конструктор соединения по сети

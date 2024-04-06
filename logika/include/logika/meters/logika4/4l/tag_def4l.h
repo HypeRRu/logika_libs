@@ -6,6 +6,7 @@
 #ifndef LOGIKA_METERS_LOGIKA4_4L_TAG_DEF4L_H
 #define LOGIKA_METERS_LOGIKA4_4L_TAG_DEF4L_H
 
+#include <logika/meters/defs.h>
 #include <logika/meters/logika4/tag_def4.h>
 #include <logika/meters/logika4/4l/types.h>
 
@@ -19,7 +20,7 @@ namespace meters
 {
 
 /// @brief Параметры для создания тэга Logika4L
-struct TagDef4LSettings: public TagDef4Settings
+struct LOGIKA_METERS_EXPORT TagDef4LSettings: public TagDef4Settings
 {
 public:
     BinaryType4L::Type intType = BinaryType4L::Undefined;   ///< Внутренний тип тэга
@@ -33,7 +34,7 @@ public:
 
 
 /// @brief Тэг с данными Logika4L
-class TagDef4L: public TagDef4, public SharedConstructible< TagDef4L >
+class LOGIKA_METERS_EXPORT TagDef4L: public TagDef4, public SharedConstructible< TagDef4L >
 {
 public:
     /// @brief Конструктор тэга Logika4L

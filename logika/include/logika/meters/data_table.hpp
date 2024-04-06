@@ -6,6 +6,7 @@
 #ifndef LOGIKA_METERS_DATA_TABLE_HPP
 #define LOGIKA_METERS_DATA_TABLE_HPP
 
+#include <logika/meters/defs.h>
 #include <logika/meters/types.h>
 #include <logika/meters/archive_field.h>
 
@@ -24,7 +25,7 @@ namespace meters
 
 /// @brief Таблица данных
 /// @todo Поиск по имени/caption столбца
-class DataTable
+class LOGIKA_METERS_EXPORT DataTable
 {
 public:
     using FieldType     = std::shared_ptr< ArchiveField >;

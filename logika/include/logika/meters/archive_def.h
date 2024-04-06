@@ -6,6 +6,7 @@
 #ifndef LOGIKA_METERS_ARCHIVE_DEF_H
 #define LOGIKA_METERS_ARCHIVE_DEF_H
 
+#include <logika/meters/defs.h>
 #include <logika/meters/item_def_base.h>
 #include <logika/meters/types.h>
 
@@ -22,7 +23,7 @@ namespace meters
 {
 
 /// @brief Параметры для создания базового описания архива
-struct ArchiveDefSettings
+struct LOGIKA_METERS_EXPORT ArchiveDefSettings
 {
 public:
     int ordinal = 0;                                    ///< Порядковый номер
@@ -36,7 +37,7 @@ public:
 
 
 /// @brief Базовое описание архива
-class ArchiveDef: public ItemDefBase, public ISerializable
+class LOGIKA_METERS_EXPORT ArchiveDef: public ItemDefBase, public ISerializable
 {
 public:
     /// @brief Конструктор базового описания архива

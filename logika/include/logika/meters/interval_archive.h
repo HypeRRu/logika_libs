@@ -6,6 +6,7 @@
 #ifndef LOGIKA_METERS_INTERVAL_ARCHIVE_H
 #define LOGIKA_METERS_INTERVAL_ARCHIVE_H
 
+#include <logika/meters/defs.h>
 #include <logika/meters/data_table.hpp>
 #include <logika/meters/archive.h>
 
@@ -16,7 +17,7 @@ namespace meters
 {
 
 /// @brief Интервальный архив
-class IntervalArchive: public Archive
+class LOGIKA_METERS_EXPORT IntervalArchive: public Archive
 {
 public:
     /// @brief Конструктор интервального архива

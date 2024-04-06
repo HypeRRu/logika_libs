@@ -9,6 +9,7 @@
 #include <logika/common/iserializable.h>
 #include <logika/common/types.h>
 
+#include <logika/meters/defs.h>
 #include <logika/meters/types.h>
 
 /// @cond
@@ -22,11 +23,11 @@ namespace logika
 namespace meters
 {
 
-class TagDef;
-class DataTagDefVault;
+class LOGIKA_METERS_EXPORT TagDef;
+class LOGIKA_METERS_EXPORT DataTagDefVault;
 
 /// @brief Интерфейс прибора
-class IMeter: public ISerializable
+class LOGIKA_METERS_EXPORT IMeter: public ISerializable
 {
 public:
     virtual ~IMeter() = default;

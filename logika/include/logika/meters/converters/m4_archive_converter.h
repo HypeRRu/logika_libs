@@ -6,6 +6,8 @@
 #ifndef LOGIKA_METERS_CONVERTERS_M4_ARCHIVE_CONVERTER_H
 #define LOGIKA_METERS_CONVERTERS_M4_ARCHIVE_CONVERTER_H
 
+#include <logika/meters/converters/defs.h>
+
 #include <logika/meters/types.h>
 #include <logika/meters/channel.h>
 #include <logika/meters/meter.h>
@@ -30,7 +32,7 @@ namespace converters
 {
 
 /// @brief Конвертер архива Logika4M
-class M4ArchiveConverter
+class LOGIKA_RESOURCE_CONVERTERS_EXPORT M4ArchiveConverter
 {
 public:
     using BaseConvertedType         = ArchiveDef4M;

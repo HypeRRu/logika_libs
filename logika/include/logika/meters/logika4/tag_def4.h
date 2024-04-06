@@ -6,6 +6,7 @@
 #ifndef LOGIKA_METERS_LOGIKA4_TAG_DEF4_H
 #define LOGIKA_METERS_LOGIKA4_TAG_DEF4_H
 
+#include <logika/meters/defs.h>
 #include <logika/meters/tag_def.h>
 #include <logika/meters/data_tag_def.h>
 
@@ -16,7 +17,7 @@ namespace meters
 {
 
 /// @brief Параметры для создания тэга Logika4
-struct TagDef4Settings: public DataTagDefSettings
+struct LOGIKA_METERS_EXPORT TagDef4Settings: public DataTagDefSettings
 {
 public:
     LocString units = L""; ///< Единицы измерения
@@ -25,7 +26,7 @@ public:
 
 
 /// @brief Базовый тэг Logika4
-class TagDef4: public DataTagDef
+class LOGIKA_METERS_EXPORT TagDef4: public DataTagDef
 {
 public:
     /// @brief Конструктор тэга Logika4
@@ -47,7 +48,7 @@ protected:
 
 
 /// @brief Параметры расчетного тэга
-struct CalcFieldDefSettings: public TagDefSettings
+struct LOGIKA_METERS_EXPORT CalcFieldDefSettings: public TagDefSettings
 {
 public:
     int32_t channelNo       = -1;   ///< Номер канала
@@ -59,7 +60,7 @@ public:
 
 
 /// @brief Расчетный тэг
-class CalcFieldDef: public TagDef
+class LOGIKA_METERS_EXPORT CalcFieldDef: public TagDef
 {
 public:
     /// @brief Конструктор расчетного тэга

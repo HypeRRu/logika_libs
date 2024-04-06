@@ -6,6 +6,7 @@
 #ifndef LOGIKA_METERS_LOGIKA6_ARCHIVE_FIELD_DEF6_H
 #define LOGIKA_METERS_LOGIKA6_ARCHIVE_FIELD_DEF6_H
 
+#include <logika/meters/defs.h>
 #include <logika/meters/archive_field_def.h>
 
 namespace logika
@@ -15,7 +16,7 @@ namespace meters
 {
 
 /// @brief Параметры описания поля архива Logika6
-struct ArchiveFieldDef6Settings: public ArchiveFieldDefSettings
+struct LOGIKA_METERS_EXPORT ArchiveFieldDef6Settings: public ArchiveFieldDefSettings
 {
 public:
     
@@ -23,7 +24,7 @@ public:
 
 
 /// @brief Описание поля архива Logika6
-class ArchiveFieldDef6: public ArchiveFieldDef
+class LOGIKA_METERS_EXPORT ArchiveFieldDef6: public ArchiveFieldDef
 {
 public:
     /// @brief Конструктор описания поля архива Logika6

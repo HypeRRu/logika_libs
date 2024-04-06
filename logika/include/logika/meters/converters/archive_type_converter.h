@@ -6,6 +6,8 @@
 #ifndef LOGIKA_METERS_CONVERTERS_ARCHIVE_TYPE_CONVERTER_H
 #define LOGIKA_METERS_CONVERTERS_ARCHIVE_TYPE_CONVERTER_H
 
+#include <logika/meters/converters/defs.h>
+
 #include <logika/meters/types.h>
 
 #include <logika/resources/archive_types.pb.h>
@@ -25,7 +27,7 @@ namespace converters
 {
 
 /// @brief Конвертер типа архива
-class ArchiveTypeConverter
+class LOGIKA_RESOURCE_CONVERTERS_EXPORT ArchiveTypeConverter
 {
 public:
     using ConvertedType     = std::shared_ptr< ArchiveType >;

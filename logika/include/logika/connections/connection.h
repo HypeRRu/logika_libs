@@ -6,6 +6,7 @@
 #ifndef LOGIKA_CONNECTIONS_CONNECTION_H
 #define LOGIKA_CONNECTIONS_CONNECTION_H
 
+#include <logika/connections/defs.h>
 #include <logika/connections/iconnection.h>
 
 #include <logika/connections/rc.h>
@@ -19,7 +20,7 @@ namespace connections
 /// @brief Базовый класс для работы с соединением
 /// @todo Добавить блокировки?
 /// @todo move ctor?
-class Connection: public IConnection
+class LOGIKA_CONNECTIONS_EXPORT Connection: public IConnection
 {
 public:
     /// @brief Конструктор соединения

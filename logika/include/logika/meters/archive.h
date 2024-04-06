@@ -6,6 +6,7 @@
 #ifndef LOGIKA_METERS_ARCHIVE_H
 #define LOGIKA_METERS_ARCHIVE_H
 
+#include <logika/meters/defs.h>
 #include <logika/meters/types.h>
 #include <logika/meters/meter.h>
 
@@ -16,7 +17,7 @@ namespace meters
 {
 
 /// @brief Базовый класс архива
-class Archive
+class LOGIKA_METERS_EXPORT Archive
 {
 public:
     /// @brief Конструктор архива

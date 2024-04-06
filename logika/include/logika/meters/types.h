@@ -10,6 +10,8 @@
 #include <logika/common/iserializable.h>
 #include <logika/common/shared_constructible.hpp>
 
+#include <logika/meters/defs.h>
+
 /// @cond
 #include <string>
 #include <unordered_map>
@@ -139,7 +141,7 @@ enum class ImportantTag
 
 
 /// @brief Тип архива
-class ArchiveType: public ISerializable, public SharedConstructible< ArchiveType >
+class LOGIKA_METERS_EXPORT ArchiveType: public ISerializable, public SharedConstructible< ArchiveType >
 {
 public:
     /// @brief Получение типа архива по времени измерений
@@ -195,7 +197,7 @@ private:
 
 
 /// @brief Тип, состояший из метрики, ее значения и метки времени
-struct VQT: public ISerializable
+struct LOGIKA_METERS_EXPORT VQT: public ISerializable
 {
 public:
     /// @brief Конструктор без параметров
@@ -219,7 +221,7 @@ public:
 
 
 /// @brief Тип записей данных
-struct HistoricalSeries
+struct LOGIKA_METERS_EXPORT HistoricalSeries
 {
 public:
     int clientHandle;           ///< Клиентский дескриптор элемента
@@ -229,7 +231,7 @@ public:
 
 
 /// @brief Информация о конфигурации прибора
-struct VitalInfo
+struct LOGIKA_METERS_EXPORT VitalInfo
 {
 public:
     LocString id;                           ///< Идентификатор прибора из настроечной БД
@@ -248,7 +250,7 @@ public:
 
 
 /// @brief Информация о столбце БД
-struct ColumnInfo: public ISerializable
+struct LOGIKA_METERS_EXPORT ColumnInfo: public ISerializable
 {
 public:
     /// @copydoc ISerializable::ToString()

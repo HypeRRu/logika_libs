@@ -6,8 +6,9 @@
 #ifndef LOGIKA_PROTOCOLS_M4_ARCHIVE_RECORD_H
 #define LOGIKA_PROTOCOLS_M4_ARCHIVE_RECORD_H
 
-#include <logika/common/iserializable.h>
+#include <logika/protocols/defs.h>
 
+#include <logika/common/iserializable.h>
 #include <logika/common/types.h>
 
 /// @cond
@@ -24,7 +25,7 @@ namespace M4
 {
 
 /// @brief Структура записи архива в протоколе M4
-struct ArchiveRecord: public ISerializable
+struct LOGIKA_PROTOCOLS_EXPORT ArchiveRecord: public ISerializable
 {
 public:
     /// @brief Конструктор по умолчанию
