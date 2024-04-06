@@ -6,6 +6,7 @@
 #ifndef LOGIKA_METERS_UTILS_TYPES_CONVERTER_H
 #define LOGIKA_METERS_UTILS_TYPES_CONVERTER_H
 
+#include <logika/meters/defs.h>
 #include <logika/meters/types.h>
 
 /// @cond
@@ -21,12 +22,12 @@ namespace meters
 /// @brief Конвертация типа данных элемента в БД в строку
 /// @param[in] type Тип данных
 /// @return Строковое представление типа данных
-LocString DbTypeToString( DbType type );
+LOGIKA_METERS_EXPORT LocString DbTypeToString( DbType type );
 
 /// @brief Конвертация группы тэга в строку
 /// @param[in] Группа тэга
 /// @return Строковое представление группы тэга
-LocString TagKindToString( TagKind::Type type );
+LOGIKA_METERS_EXPORT LocString TagKindToString( TagKind::Type type );
 
 } // namespace meters
 

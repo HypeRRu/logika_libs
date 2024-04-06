@@ -6,6 +6,8 @@
 #ifndef LOGIKA_ANY_HPP
 #define LOGIKA_ANY_HPP
 
+#include <logika/common/defs.h>
+
 /// @cond
 #include <typeinfo>
 #include <memory>
@@ -18,7 +20,7 @@ namespace logika
 /// @note Тип сохраняемого объекта должен быть copy-constructible
 /// @todo Возможно стоит ограничить поддержку только базовыми типами
 /// и сохранять информацию о типе в виде enum? Это позволит добавить поддержу ToString
-class Any
+class LOGIKA_COMMON_EXPORT Any
 {
 public:
     /// @brief Конструктор объекта переменного типа

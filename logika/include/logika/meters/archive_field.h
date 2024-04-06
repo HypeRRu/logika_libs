@@ -6,6 +6,7 @@
 #ifndef LOGIKA_METERS_ARCHIVE_FIELD_H
 #define LOGIKA_METERS_ARCHIVE_FIELD_H
 
+#include <logika/meters/defs.h>
 #include <logika/meters/tag.h>
 #include <logika/meters/archive_field_def.h>
 
@@ -20,7 +21,7 @@ namespace meters
 {
 
 /// @brief Поле архива
-class ArchiveField: public Tag
+class LOGIKA_METERS_EXPORT ArchiveField: public Tag
 {
 public:
     /// @brief Конструктор поля архива

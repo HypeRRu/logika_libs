@@ -6,6 +6,7 @@
 #ifndef LOGIKA_METERS_LOGIKA4_4M_TAG_DEF4M_H
 #define LOGIKA_METERS_LOGIKA4_4M_TAG_DEF4M_H
 
+#include <logika/meters/defs.h>
 #include <logika/meters/logika4/tag_def4.h>
 
 #include <logika/common/shared_constructible.hpp>
@@ -17,7 +18,7 @@ namespace meters
 {
 
 /// @brief Параметры для создания тэга Logika4M
-struct TagDef4MSettings: public TagDef4Settings
+struct LOGIKA_METERS_EXPORT TagDef4MSettings: public TagDef4Settings
 {
 public:
 
@@ -25,7 +26,7 @@ public:
 
 
 /// @brief Тэг с данными Logika4M
-class TagDef4M: public TagDef4, public SharedConstructible< TagDef4M >
+class LOGIKA_METERS_EXPORT TagDef4M: public TagDef4, public SharedConstructible< TagDef4M >
 {
 public:
     /// @brief Конструктор тэга Logika4M

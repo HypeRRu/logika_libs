@@ -6,6 +6,7 @@
 #ifndef LOGIKA_METERS_SERVICE_ARCHIVE_H
 #define LOGIKA_METERS_SERVICE_ARCHIVE_H
 
+#include <logika/meters/defs.h>
 #include <logika/meters/archive.h>
 #include <logika/common/iserializable.h>
 
@@ -16,7 +17,7 @@ namespace meters
 {
 
 /// @brief Запись сервисного архива
-struct ServiceRecord: public ISerializable
+struct LOGIKA_METERS_EXPORT ServiceRecord: public ISerializable
 {
 public:
     /// @copydoc ISerializable::ToString()
@@ -31,7 +32,7 @@ public:
 
 
 /// @brief Сервисный архив
-class ServiceArchive: public Archive
+class LOGIKA_METERS_EXPORT ServiceArchive: public Archive
 {
 public:
     using RecordType = std::shared_ptr< ServiceRecord >;

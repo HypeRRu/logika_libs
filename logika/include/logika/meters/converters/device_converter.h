@@ -6,6 +6,8 @@
 #ifndef LOGIKA_METERS_CONVERTERS_DEVICE_CONVERTER_H
 #define LOGIKA_METERS_CONVERTERS_DEVICE_CONVERTER_H
 
+#include <logika/meters/converters/defs.h>
+
 #include <logika/meters/types.h>
 #include <logika/meters/meter.h>
 
@@ -26,7 +28,7 @@ namespace converters
 {
 
 /// @brief Конвертер типа прибора
-class DeviceConverter
+class LOGIKA_RESOURCE_CONVERTERS_EXPORT DeviceConverter
 {
 public:
     using BaseConvertedType = Meter;

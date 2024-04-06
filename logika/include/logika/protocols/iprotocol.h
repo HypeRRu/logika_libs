@@ -6,8 +6,10 @@
 #ifndef LOGIKA_PROTOCOLS_IPROTOCOL_H
 #define LOGIKA_PROTOCOLS_IPROTOCOL_H
 
-#include <logika/connections/iconnection.h>
+#include <logika/protocols/defs.h>
 #include <logika/protocols/rc.h>
+
+#include <logika/connections/iconnection.h>
 
 /// @cond
 #include <memory>
@@ -18,14 +20,14 @@ namespace logika
 
 namespace connections
 {
-    class IConnection; ///< forward declaration интерфейса соединения
+    class LOGIKA_PROTOCOLS_EXPORT IConnection; ///< forward declaration интерфейса соединения
 } // namespace connections;
 
 namespace protocols
 {
 
 /// @brief Интерфейс класса для работы с протоколами
-class IProtocol
+class LOGIKA_PROTOCOLS_EXPORT IProtocol
 {
 public:
     virtual ~IProtocol() = default;

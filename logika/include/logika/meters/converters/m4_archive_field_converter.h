@@ -6,6 +6,8 @@
 #ifndef LOGIKA_METERS_CONVERTERS_M4_ARCHIVE_FIELD_CONVERTER_H
 #define LOGIKA_METERS_CONVERTERS_M4_ARCHIVE_FIELD_CONVERTER_H
 
+#include <logika/meters/converters/defs.h>
+
 #include <logika/meters/types.h>
 #include <logika/meters/channel.h>
 #include <logika/meters/meter.h>
@@ -31,7 +33,7 @@ namespace converters
 {
 
 /// @brief Конвертер полей архива Logika4M
-class M4ArchiveFieldConverter
+class LOGIKA_RESOURCE_CONVERTERS_EXPORT M4ArchiveFieldConverter
 {
 public:
     using BaseConvertedType         = ArchiveFieldDef4M;

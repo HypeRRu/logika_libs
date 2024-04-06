@@ -6,6 +6,7 @@
 #ifndef LOGIKA_METERS_TAG_H
 #define LOGIKA_METERS_TAG_H
 
+#include <logika/meters/defs.h>
 #include <logika/meters/tag_def.h>
 #include <logika/meters/channel.h>
 
@@ -22,7 +23,7 @@ namespace meters
 {
 
 /// @brief Тэг
-class Tag: public ISerializable
+class LOGIKA_METERS_EXPORT Tag: public ISerializable
 {
 public:
     /// @brief Конструктор тэга

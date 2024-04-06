@@ -7,6 +7,8 @@
 #define LOGIKA_LOG_LOGGER_H
 
 #include <logika/common/types.h>
+
+#include <logika/log/defs.h>
 #include <logika/log/types.h>
 
 /// @cond
@@ -23,7 +25,7 @@ namespace log
 
 /// @brief Класс логгера
 /// @note Реализует паттерн "одиночка"
-class Logger
+class LOGIKA_LOGGER_EXPORT Logger
 {
 public:
     /// @brief Получение объекта логгера

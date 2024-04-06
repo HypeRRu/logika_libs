@@ -6,6 +6,7 @@
 #ifndef LOGIKA_METERS_ITEM_DEF_BASE_H
 #define LOGIKA_METERS_ITEM_DEF_BASE_H
 
+#include <logika/meters/defs.h>
 #include <logika/meters/channel.h>
 #include <logika/meters/types.h>
 
@@ -20,7 +21,7 @@ namespace meters
 {
 
 /// @brief Базовый элемент
-class ItemDefBase
+class LOGIKA_METERS_EXPORT ItemDefBase
 {
 public:
     /// @brief Конструктор базового элемента

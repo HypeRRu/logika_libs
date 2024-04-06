@@ -6,6 +6,8 @@
 #ifndef LOGIKA_METERS_CONVERTERS_M4_TAG_CONVERTER_H
 #define LOGIKA_METERS_CONVERTERS_M4_TAG_CONVERTER_H
 
+#include <logika/meters/converters/defs.h>
+
 #include <logika/meters/types.h>
 #include <logika/meters/channel.h>
 #include <logika/meters/meter.h>
@@ -30,7 +32,7 @@ namespace converters
 {
 
 /// @brief Конвертер тэга Logika4M
-class M4TagConverter
+class LOGIKA_RESOURCE_CONVERTERS_EXPORT M4TagConverter
 {
 public:
     using BaseConvertedType     = TagDef4M;

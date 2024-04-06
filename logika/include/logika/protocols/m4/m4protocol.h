@@ -6,8 +6,10 @@
 #ifndef LOGIKA_PROTOCOLS_M4_M4PROTOCOL_H
 #define LOGIKA_PROTOCOLS_M4_M4PROTOCOL_H
 
-#include <logika/common/types.h>
+#include <logika/protocols/defs.h>
 #include <logika/protocols/m4/opcodes.h>
+
+#include <logika/common/types.h>
 
 namespace logika
 {
@@ -19,7 +21,7 @@ namespace M4
 {
 
 /// @brief Протокол M4
-class M4Protocol
+class LOGIKA_PROTOCOLS_EXPORT M4Protocol
 {
 public:
     static const ByteType FRAME_START;

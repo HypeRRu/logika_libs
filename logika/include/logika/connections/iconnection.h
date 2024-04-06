@@ -6,6 +6,7 @@
 #ifndef LOGIKA_CONNECTIONS_ICONNECTION_H
 #define LOGIKA_CONNECTIONS_ICONNECTION_H
 
+#include <logika/connections/defs.h>
 #include <logika/connections/types.h>
 #include <logika/common/types.h>
 
@@ -21,7 +22,7 @@ namespace connections
 {
 
 /// @brief Интерфейс класса для работы с соединением
-class IConnection
+class LOGIKA_CONNECTIONS_EXPORT IConnection
 {
 public:
     virtual ~IConnection() = default;

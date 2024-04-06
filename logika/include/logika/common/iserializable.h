@@ -6,13 +6,14 @@
 #ifndef LOGIKA_ISERIALIZABLE_H
 #define LOGIKA_ISERIALIZABLE_H
 
+#include <logika/common/defs.h>
 #include <logika/common/types.h>
 
 namespace logika
 {
 
 /// @brief Интерфейс сериализуемого типа
-class ISerializable
+class LOGIKA_COMMON_EXPORT ISerializable
 {
 public:
     virtual ~ISerializable() = default;

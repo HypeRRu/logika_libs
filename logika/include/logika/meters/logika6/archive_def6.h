@@ -6,6 +6,7 @@
 #ifndef LOGIKA_METERS_LOGIKA6_ARCHIVE_DEF6_H
 #define LOGIKA_METERS_LOGIKA6_ARCHIVE_DEF6_H
 
+#include <logika/meters/defs.h>
 #include <logika/meters/archive_def.h>
 
 namespace logika
@@ -15,7 +16,7 @@ namespace meters
 {
 
 /// @brief Параметры для создания описания архива Logika6
-struct ArchiveDef6Settings: public ArchiveDefSettings
+struct LOGIKA_METERS_EXPORT ArchiveDef6Settings: public ArchiveDefSettings
 {
 public:
 
@@ -23,7 +24,7 @@ public:
 
 
 /// @brief Описание архива Logika6
-class ArchiveDef6: public ArchiveDef
+class LOGIKA_METERS_EXPORT ArchiveDef6: public ArchiveDef
 {
 public:
     /// @brief Конструктор описания архива Logika6
@@ -42,7 +43,7 @@ protected:
 
 
 /// @brief Параметры для создания описания многочастного архива Logika6
-struct MultipartArchiveDef6Settings: public ArchiveDefSettings
+struct LOGIKA_METERS_EXPORT MultipartArchiveDef6Settings: public ArchiveDefSettings
 {
 public:
     std::vector< int > ordinals; // Порядковые номера записей
@@ -50,7 +51,7 @@ public:
 
 
 /// @brief Описание многочастного архива Logika6
-class MultipartArchiveDef6: public ArchiveDef
+class LOGIKA_METERS_EXPORT MultipartArchiveDef6: public ArchiveDef
 {
 public:
     /// @brief Конструктор описания многочастного архива Logika6

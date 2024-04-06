@@ -6,6 +6,7 @@
 #ifndef LOGIKA_METERS_DATA_TAG_DEF_H
 #define LOGIKA_METERS_DATA_TAG_DEF_H
 
+#include <logika/meters/defs.h>
 #include <logika/meters/tag_def.h>
 
 /// @cond
@@ -20,7 +21,7 @@ namespace meters
 {
 
 /// @brief Параметры для создания тэга с данными
-struct DataTagDefSettings: public TagDefSettings
+struct LOGIKA_METERS_EXPORT DataTagDefSettings: public TagDefSettings
 {
 public:
     TagKind::Type kind = TagKind::Undefined;    ///< Тип тэга
@@ -33,7 +34,7 @@ public:
 
 
 /// @brief Описание тэга с данными
-class DataTagDef: public TagDef, public ISerializable
+class LOGIKA_METERS_EXPORT DataTagDef: public TagDef, public ISerializable
 {
 public:
     /// @brief Конструктор тэга с данными
@@ -85,7 +86,7 @@ protected:
 
 
 /// @brief Хранилище описаний тэгов с данными
-class DataTagDefVault
+class LOGIKA_METERS_EXPORT DataTagDefVault
 {
 public:
     /// @brief Конструктор хранилища описаний тэгов с данными

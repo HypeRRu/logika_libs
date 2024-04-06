@@ -6,6 +6,7 @@
 #ifndef LOGIKA_CONNECTIONS_NETWORK_TCP_CONNECTION_H
 #define LOGIKA_CONNECTIONS_NETWORK_TCP_CONNECTION_H
 
+#include <logika/connections/defs.h>
 #include <logika/connections/network/net_connection.h>
 
 namespace logika
@@ -15,7 +16,7 @@ namespace connections
 {
 
 /// @brief Класс для работы с соединением по TCP
-class TcpConnection: public NetConnection
+class LOGIKA_CONNECTIONS_EXPORT TcpConnection: public NetConnection
 {
 public:
     /// @brief Конструктор TCP-соединения

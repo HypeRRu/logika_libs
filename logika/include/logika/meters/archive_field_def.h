@@ -6,6 +6,7 @@
 #ifndef LOGIKA_METERS_ARCHIVE_FIELD_DEF_H
 #define LOGIKA_METERS_ARCHIVE_FIELD_DEF_H
 
+#include <logika/meters/defs.h>
 #include <logika/meters/tag_def.h>
 #include <logika/meters/types.h>
 
@@ -22,7 +23,7 @@ namespace meters
 {
 
 /// @brief Параметры описания поля архива
-struct ArchiveFieldDefSettings: public TagDefSettings
+struct LOGIKA_METERS_EXPORT ArchiveFieldDefSettings: public TagDefSettings
 {
 public:
     std::shared_ptr< ArchiveType > archiveType = nullptr;   ///< Название типа архива
@@ -31,7 +32,7 @@ public:
 
 
 /// @brief Описание поля архива
-class ArchiveFieldDef: public TagDef, public ISerializable
+class LOGIKA_METERS_EXPORT ArchiveFieldDef: public TagDef, public ISerializable
 {
 public:
     /// @brief Конструктор описания поля архива

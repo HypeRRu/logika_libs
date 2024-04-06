@@ -6,6 +6,7 @@
 #ifndef LOGIKA_METERS_CHANNEL_H
 #define LOGIKA_METERS_CHANNEL_H
 
+#include <logika/meters/defs.h>
 #include <logika/meters/imeter.h>
 #include <logika/meters/types.h>
 
@@ -25,7 +26,7 @@ namespace meters
 {
 
 /// @brief Структура описание канала
-struct ChannelDef: public ISerializable
+struct LOGIKA_METERS_EXPORT ChannelDef: public ISerializable
 {
 public:
     /// @brief Конструктор описания канала
@@ -52,7 +53,7 @@ public:
 
 
 /// @brief Структура канала
-struct Channel: public ChannelDef
+struct LOGIKA_METERS_EXPORT Channel: public ChannelDef
 {
 public:
     /// @brief Конструктор канала
