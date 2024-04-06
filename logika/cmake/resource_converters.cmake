@@ -15,7 +15,6 @@ set(
 
 add_library(${LIB_NAME} SHARED ${${LIB_NAME}_SOURCES_LIST})
 target_include_directories(${LIB_NAME} PUBLIC ${INCLUDE_DIR})
-target_include_directories(${LIB_NAME} PRIVATE ${logika_resources_INCLUDE_DIRS})
 target_link_libraries(${LIB_NAME} PUBLIC ${CMAKE_PROJECT_NAME}_resources)
 target_link_libraries(${LIB_NAME} PUBLIC ${CMAKE_PROJECT_NAME}_logger)
 target_link_libraries(${LIB_NAME} PUBLIC ${CMAKE_PROJECT_NAME}_common)
