@@ -9,10 +9,15 @@ set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 set(INCLUDE_INSTALL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include/logika/resources)
+set(logika_resources_INCLUDE_DIRS ${INCLUDE_INSTALL_DIR} PARENT_SCOPE)
 
 set(Protobuf_USE_STATIC_LIBS OFF)
 find_package(Protobuf CONFIG)
 find_package(Protobuf REQUIRED)
+
+if(MSVC)
+	add_definitions("/wd4267")
+endif()
 
 add_library(
     logika_resources
@@ -43,6 +48,7 @@ target_include_directories(logika_resources PUBLIC ${Protobuf_INCLUDE_DIRS})
 protobuf_generate(
     TARGET logika_resources
     LANGUAGE cpp
+    EXPORT_MACRO LOGIKA_RESOURCES_EXPORT
     IMPORT_DIRS logika/resources
     PROTOC_OUT_DIR ${SRC_DIR}
     OUT_VAR PROTO_SRCS
@@ -64,3 +70,18 @@ add_custom_command(
 )
 
 target_link_libraries(logika_resources PUBLIC protobuf::libprotobuf)
+
+if (WIN32 AND BUILD_SHARED_LIBS)
+    target_compile_definitions(
+        logika_resources
+        PRIVATE
+        LOGIKA_RESOURCES_EXPORT=__declspec\(dllexport\)
+    )
+    target_compile_definitions(
+        logika_resources
+        INTERFACE
+        LOGIKA_RESOURCES_EXPORT=__declspec\(dllimport\)
+    )
+else()
+    target_compile_definitions(logika_resources PUBLIC LOGIKA_RESOURCES_EXPORT)
+endif()

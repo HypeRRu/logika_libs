@@ -26,7 +26,7 @@ Tag::Tag( std::shared_ptr< TagDef > def, int32_t channelNo )
     }
 {
     if (   channelNo <  channel_.start
-        || channelNo >= channel_.start + channel_.count )
+        || channelNo >= channel_.start + static_cast< int32_t >( channel_.count ) )
     {
         throw std::out_of_range{ "Channel No is invalid" };
     }

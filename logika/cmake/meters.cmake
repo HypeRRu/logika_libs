@@ -33,8 +33,13 @@ set(
 	${SRC_DIR}/meters/utils/types_converter.cpp
 )
 
-add_library(${LIB_NAME} ${${LIB_NAME}_SOURCES_LIST})
+add_library(${LIB_NAME} SHARED ${${LIB_NAME}_SOURCES_LIST})
 target_include_directories(${LIB_NAME} PUBLIC ${INCLUDE_DIR})
-target_link_libraries(${LIB_NAME} INTERFACE ${CMAKE_PROJECT_NAME}_common)
+target_link_libraries(${LIB_NAME} PUBLIC ${CMAKE_PROJECT_NAME}_common)
+
+if (BUILD_SHARED_LIBS)
+	target_compile_definitions(${LIB_NAME} PRIVATE ${LIB_NAME}_EXPORT)
+    target_compile_definitions(${LIB_NAME} PRIVATE BUILD_SHARED_LIBS)
+endif()
 
 unset(${LIB_NAME})

@@ -23,7 +23,7 @@ ArchiveFieldDef6::ArchiveFieldDef6( const ChannelDef& cdef, const ArchiveFieldDe
     address_ = ss.str();
     const size_t leftPos = name_.find_first_of( L'(' );
     if ( LocString::npos != leftPos
-        && name_.length() - 1 == name_.find_last_of( leftPos, L')' ) )
+        && name_.length() - 1 == name_.find_last_of( L')' ) )
     {
         name_ = name_.substr( 0, leftPos );
     }

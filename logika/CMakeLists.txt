@@ -13,12 +13,12 @@ set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 # @todo Опции для выбора модулей для сборки
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/common.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/logger.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/connections.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/meters.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/resource_converters.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/protocols.cmake)
-include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/common.cmake)
 
 add_executable(
 	test_main
