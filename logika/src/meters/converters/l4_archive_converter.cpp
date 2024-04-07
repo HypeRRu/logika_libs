@@ -48,11 +48,9 @@ L4ArchiveConverter::ConvertedType L4ArchiveConverter::Convert( const L4ArchiveCo
     settings.headerAddr2    = from.has_headersaddr2() ? from.headersaddr2() : 0x0;
     settings.indexAddr      = from.indexaddr();
     settings.indexAddr2     = from.has_indexaddr2() ? from.indexaddr2() : 0x0;
-    /// @bug Как задавать
     settings.isTiny42       = false;
     settings.name           = ToLocString( from.name() );
-    /// @bug Как задавать
-    settings.ordinal        = 0;
+    settings.ordinal        = -1;
     settings.recordsAddr    = from.recordsaddr();
     settings.recordsAddr2   = from.has_recordsaddr2() ? from.recordsaddr2() : 0x0;
     settings.recordSize     = from.recordsize();

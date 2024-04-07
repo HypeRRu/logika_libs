@@ -18,9 +18,10 @@
 
 ### Meters
 - [x] Types
-- [ ] Meters
+- [ ] Logika4L
+- [ ] Logika4M
+- [ ] Logika6
 - [x] Archives
-- [ ] Devices
 
 ### WinComms
 ### WinUtils

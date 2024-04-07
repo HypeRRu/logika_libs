@@ -39,6 +39,9 @@ public:
     bool operator ==( const Meter& other ) const;
     bool operator !=( const Meter& other ) const;
 
+    /// @copydoc IMeter::Init()
+    virtual void Init( const storage::StorageKeeper& sKeeper ) override;
+
     /// @copydoc IMeter::GetMeasureKind()
     virtual MeasureKind GetMeasureKind() const override;
 
@@ -72,6 +75,12 @@ public:
     /// @copydoc IMeter::GetTagsVault()
     virtual const std::shared_ptr< DataTagDefVault > GetTagsVault() const override;
 
+    /// @copydoc IMeter::GetArchiveFields()
+    virtual const std::vector< std::shared_ptr< ArchiveFieldDef > >& GetArchiveFields() const override;
+
+    /// @copydoc IMeter::GetArchives()
+    virtual const std::vector< std::shared_ptr< ArchiveDef > >& GetArchives() const override;
+
     /// @copydoc IMeter::GetDisplayFormat()
     virtual LocString GetDisplayFormat( std::shared_ptr< TagDef > def ) const override;
 
@@ -99,6 +108,12 @@ protected:
     bool outdated_;                                 ///< Является ли прибор устаревшим
     BusProtocolType busType_;                       ///< Тип протокола
     std::shared_ptr< DataTagDefVault > tagsVault_;  ///< Хранилище описаний тэгов
+    std::vector<
+        std::shared_ptr< ArchiveFieldDef >
+    > archiveFields_;
+    std::vector<
+        std::shared_ptr< ArchiveDef >
+    > archives_;
     uint16_t ident_;                                ///< Идентификатор прибора
     /// @todo mutex?
 

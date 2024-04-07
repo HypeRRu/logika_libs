@@ -40,7 +40,7 @@ public:
     /// @param[in] identifier Идентификатор элемента
     /// @param[out] item Элемент из хранилища
     /// @return Удалось ли получить элемент
-    bool GetItem( const IdType& identifier, std::shared_ptr< StoredType >& item );
+    bool GetItem( const IdType& identifier, std::shared_ptr< StoredType >& item ) const;
 
     /// @brief Добавление элемента в хранилище
     /// @param[in] identifier Идентификатор элемента
@@ -78,6 +78,13 @@ public:
         static StorageKeeper instance;
         return instance;
     } // Instance
+
+    /// @brief Получение хранилища ресурса
+    /// @tparam IdType Тип идентификатор элемента в хранилище
+    /// @tparam StoredType Тип сохраняемых элементов в хранилище
+    /// @return Объект хранилища ресурса. nullptr в случае отсутствия хранилища
+    template < typename IdType, typename StoredType >
+    const std::shared_ptr< Storage< IdType, StoredType > > GetStorage() const;
 
     /// @brief Получение хранилища ресурса
     /// @tparam IdType Тип идентификатор элемента в хранилище

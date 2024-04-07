@@ -4,6 +4,8 @@
 #include <logika/meters/meter.h>
 
 #include <logika/meters/data_tag_def.h>
+#include <logika/meters/archive_def.h>
+#include <logika/meters/archive_field_def.h>
 
 namespace logika
 {
@@ -28,6 +30,8 @@ Meter::Meter(
     , outdated_{ false }
     , busType_{ busType }
     , tagsVault_{}
+    , archiveFields_{}
+    , archives_{}
     , ident_{ 0 }
 {
     /// @todo Создание tagsVault_
@@ -46,6 +50,12 @@ bool Meter::operator !=( const Meter& other ) const
 {
     return !(*this == other);
 } // operator !=
+
+
+void Meter::Init( const storage::StorageKeeper& sKeeper )
+{
+    (void) sKeeper;
+} // Init
 
 
 MeasureKind Meter::GetMeasureKind() const
@@ -113,6 +123,18 @@ const std::shared_ptr< DataTagDefVault > Meter::GetTagsVault() const
 {
     return tagsVault_;
 } // GetTagsVault
+
+
+const std::vector< std::shared_ptr< ArchiveFieldDef > >& Meter::GetArchiveFields() const
+{
+    return archiveFields_;
+} // GetArchiveFields
+
+
+const std::vector< std::shared_ptr< ArchiveDef > >& Meter::GetArchives() const
+{
+    return archives_;
+} // GetArchives
 
 
 LocString Meter::GetDisplayFormat( std::shared_ptr< TagDef > def ) const

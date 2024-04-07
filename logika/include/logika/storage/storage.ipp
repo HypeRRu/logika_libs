@@ -16,7 +16,7 @@ namespace storage
 
 template < typename IdType, typename StoredType >
 bool Storage< IdType, StoredType >::GetItem( const IdType& identifier
-    , std::shared_ptr< StoredType >& item )
+    , std::shared_ptr< StoredType >& item ) const
 {
     auto iter = items_.find( identifier );
     if ( items_.cend() == iter )
@@ -67,6 +67,20 @@ std::shared_ptr< Storage< IdType, StoredType > > Storage< IdType, StoredType >::
 /// StorageKeeper
 
 template < typename IdType, typename StoredType >
+const std::shared_ptr< Storage< IdType, StoredType > > StorageKeeper::GetStorage() const
+{
+    using StorageType = Storage< IdType, StoredType >;
+
+    auto iter = storages_.find( std::type_index( typeid( StoredType ) ) );
+    if ( storages_.cend() == iter )
+    {
+        return nullptr;
+    }
+    return std::dynamic_pointer_cast< StorageType >( iter->second );
+} // GetStorage() const
+
+
+template < typename IdType, typename StoredType >
 std::shared_ptr< Storage< IdType, StoredType > > StorageKeeper::GetStorage()
 {
     using StorageType = Storage< IdType, StoredType >;
@@ -77,7 +91,7 @@ std::shared_ptr< Storage< IdType, StoredType > > StorageKeeper::GetStorage()
         return nullptr;
     }
     return std::dynamic_pointer_cast< StorageType >( iter->second );
-} // GetStorage
+} // GetStorage()
 
 
 template < typename IdType, typename StoredType >

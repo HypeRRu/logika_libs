@@ -67,7 +67,7 @@ LocString SafeStrError( int error )
 } // SafeStrError
 
 
-LocString GetTimeString( TimeType timestamp )
+struct tm GetTimeStruct( TimeType timestamp )
 {
     time_t stamp = static_cast< time_t >( timestamp );
     if ( 0 == stamp )
@@ -84,12 +84,36 @@ LocString GetTimeString( TimeType timestamp )
     /// MT-unsafe
     timeStruct = *std::localtime( &stamp );
 #endif
+    return timeStruct;
+} // GetTimeStruct
 
+
+LocString GetTimeString( TimeType timestamp )
+{
+    struct tm timeStruct = GetTimeStruct( timestamp );
     constexpr size_t bufSize = sizeof( "dd.mm.yyyy HH:MM:SS TMZ" );
-    char buffer[ bufSize ] = { 0 };
-    std::strftime( buffer, bufSize, "%d.%m.%Y %H:%M:%S %Z", &timeStruct );
+    // char buffer[ bufSize ] = { 0 };
+    // std::strftime( buffer, bufSize, "%d.%m.%Y %H:%M:%S %Z", &timeStruct );
 
-    return ToLocString( buffer );
+    // return ToLocString( buffer );
+    return GetFormatTime( timeStruct, "%d.%m.%Y %H:%M:%S %Z", bufSize );
+} // GetTimeString
+
+
+LocString GetFormatTime( const struct tm& timeStruct,
+    const char* format, size_t bufSize )
+{
+    if ( !format )
+    {
+        return LOCALIZED( "" );
+    }
+
+    char* buffer = new char[ bufSize ]{ 0 };
+    std::strftime( buffer, bufSize, format, &timeStruct );
+    LocString result = ToLocString( buffer );
+    delete [] buffer;
+
+    return result;
 } // GetTimeString
 
 

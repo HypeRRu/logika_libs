@@ -110,13 +110,13 @@ int main()
     logika::meters::HistoricalSeries hs{ 0x11, { { nullptr, 0, 0 } } };
     logika::meters::VQT vqt{};
 
-#if 0
+#if 1
     logika::storage::StorageKeeper sKeeper = logika::storage::StorageKeeper::Instance();
     sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveType >();
     auto atStorage = sKeeper.GetStorage< logika::LocString, logika::meters::ArchiveType >();
     {
         logika::resources::Loader< logika::resources::ArchiveTypes > loader;
-        auto resource = loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/ArchiveTypes.dat" );
+        auto resource = loader.Load( "/home/hyper/prog/diploma/bin_data/ArchiveTypes.dat" );
         if ( resource )
         {
             auto types = logika::meters::converters::ArchiveTypeConverter::Convert( *resource );
@@ -144,7 +144,7 @@ int main()
     auto mStorage = sKeeper.GetStorage< logika::LocString, logika::meters::Meter >();
     {
         logika::resources::Loader< logika::resources::DeviceList > loader;
-        auto resource = loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/Devices.dat" );
+        auto resource = loader.Load( "/home/hyper/prog/diploma/bin_data/Devices.dat" );
         if ( resource )
         {
             auto devices = logika::meters::converters::DeviceConverter::Convert( *resource );
@@ -171,7 +171,7 @@ int main()
     auto cdStorage = sKeeper.GetStorage< logika::LocString, logika::meters::ChannelDef >();
     {
         logika::resources::Loader< logika::resources::ChannelList > loader;
-        auto resource = loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/Channels.dat" );
+        auto resource = loader.Load( "/home/hyper/prog/diploma/bin_data/Channels.dat" );
         if ( resource )
         {
             auto channels = logika::meters::converters::ChannelConverter::Convert( *resource, mStorage );
@@ -206,7 +206,7 @@ int main()
     auto m4tStorage = sKeeper.GetStorage< logika::LocString, logika::meters::TagDef4M >();
     {
         logika::resources::Loader< logika::resources::M4TagList > loader;
-        auto resource = loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/M4Tags.dat" );
+        auto resource = loader.Load( "/home/hyper/prog/diploma/bin_data/M4Tags.dat" );
         if ( resource )
         {
             auto m4tags = logika::meters::converters::M4TagConverter::Convert( *resource, mStorage, cdStorage );
@@ -244,7 +244,7 @@ int main()
     auto l4tStorage = sKeeper.GetStorage< logika::LocString, logika::meters::TagDef4L >();
     {
         logika::resources::Loader< logika::resources::L4TagList > loader;
-        auto resource = loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/L4Tags.dat" );
+        auto resource = loader.Load( "/home/hyper/prog/diploma/bin_data/L4Tags.dat" );
         if ( resource )
         {
             auto l4tags = logika::meters::converters::L4TagConverter::Convert( *resource, mStorage, cdStorage );
@@ -282,7 +282,7 @@ int main()
     auto m4aStorage = sKeeper.GetStorage< logika::LocString, logika::meters::ArchiveDef4M >();
     {
         logika::resources::Loader< logika::resources::M4ArchiveList > loader;
-        auto resource = loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/M4Archives.dat" );
+        auto resource = loader.Load( "/home/hyper/prog/diploma/bin_data/M4Archives.dat" );
         if ( resource )
         {
             auto m4archives = logika::meters::converters::M4ArchiveConverter::Convert( *resource, mStorage, cdStorage, atStorage );
@@ -320,7 +320,7 @@ int main()
     auto l4aStorage = sKeeper.GetStorage< logika::LocString, logika::meters::ArchiveDef4L >();
     {
         logika::resources::Loader< logika::resources::L4ArchiveList > loader;
-        auto resource = loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/L4Archives.dat" );
+        auto resource = loader.Load( "/home/hyper/prog/diploma/bin_data/L4Archives.dat" );
         if ( resource )
         {
             auto l4archives = logika::meters::converters::L4ArchiveConverter::Convert( *resource, mStorage, cdStorage, atStorage );
@@ -359,7 +359,7 @@ int main()
     auto m4afStorage = sKeeper.GetStorage< logika::LocString, logika::meters::ArchiveFieldDef4M >();
     {
         logika::resources::Loader< logika::resources::M4ArchiveFieldList > loader;
-        auto resource = loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/M4ArchiveFields.dat" );
+        auto resource = loader.Load( "/home/hyper/prog/diploma/bin_data/M4ArchiveFields.dat" );
         if ( resource )
         {
             auto m4afs = logika::meters::converters::M4ArchiveFieldConverter::Convert(
@@ -400,7 +400,7 @@ int main()
     auto l4afStorage = sKeeper.GetStorage< logika::LocString, logika::meters::ArchiveFieldDef4L >();
     {
         logika::resources::Loader< logika::resources::L4ArchiveFieldList > loader;
-        auto resource = loader.Load( "/home/hyper/prog/diploma/logika_libs/migration/binary/L4ArchiveFields.dat" );
+        auto resource = loader.Load( "/home/hyper/prog/diploma/bin_data/L4ArchiveFields.dat" );
         if ( resource )
         {
             auto l4afs = logika::meters::converters::L4ArchiveFieldConverter::Convert(

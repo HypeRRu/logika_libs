@@ -45,12 +45,9 @@ L4ArchiveFieldConverter::ConvertedType L4ArchiveFieldConverter::Convert( const L
     settings.binType        = ConvertInternalType( from.internaltype() );
     settings.dbType         = from.has_dbtype() ? ToLocString( from.dbtype() ) : L"";
     settings.description    = ToLocString( from.description() );
-    /// @bug Как заполнять
-    settings.displayFormat  = L"";
+    settings.displayFormat  = L""; ///< Не используется
     settings.fieldOffset    = from.fieldoffset();
     settings.name           = ToLocString( from.name() );
-    /// @bug Как заполнять
-    settings.ordinal        = 0;
     settings.stdVar         = ConvertVarType( from.vartype() );
     settings.type           = ConvertDbType( from.datatype() );
     settings.units          = from.has_units() ? ToLocString( from.units() ) : L"";

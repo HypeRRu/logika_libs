@@ -11,6 +11,7 @@
 
 /// @cond
 #include <string>
+#include <ctime>
 /// @endcond
 
 namespace logika
@@ -33,10 +34,23 @@ LOGIKA_COMMON_EXPORT const LocString& ToLocString( const LocString& str );
 /// @return Описание ошибки
 LOGIKA_COMMON_EXPORT LocString SafeStrError( int error );
 
+/// @brief Получение структуры со временем
+/// @param[in] timestamp Конвертируемая метка времени. При значении 0 берется текущее время
+/// @return Структура со временем
+LOGIKA_COMMON_EXPORT struct tm GetTimeStruct( TimeType timestamp = 0 );
+
 /// @brief Получение строки со временем в формате dd.MM.yy HH:mm:ss
 /// @param[in] timestamp Конвертируемая метка времени. При значении 0 берется текущее время
 /// @return Строка со временем
 LOGIKA_COMMON_EXPORT LocString GetTimeString( TimeType timestamp = 0 );
+
+/// @brief Получение строки со временем заданного формата
+/// @param[in] timeStruct Структура со временем
+/// @param[in] format Формат времени
+/// @param[in] bufSize Максимальный размер буфера для строки
+/// @return Строка со временем
+LOGIKA_COMMON_EXPORT LocString GetFormatTime( const struct tm& timeStruct,
+    const char* format, size_t bufSize );
 
 /// @brief Сравнение строк на равенство без учета регистра
 /// @param[in] lhs Первая строка

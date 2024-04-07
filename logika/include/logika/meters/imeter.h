@@ -12,6 +12,8 @@
 #include <logika/meters/defs.h>
 #include <logika/meters/types.h>
 
+#include <logika/storage/storage.hpp>
+
 /// @cond
 #include <string>
 #include <memory>
@@ -25,12 +27,22 @@ namespace meters
 
 class LOGIKA_METERS_EXPORT TagDef;
 class LOGIKA_METERS_EXPORT DataTagDefVault;
+class LOGIKA_METERS_EXPORT ArchiveDef;
+class LOGIKA_METERS_EXPORT ArchiveFieldDef;
 
 /// @brief Интерфейс прибора
 class LOGIKA_METERS_EXPORT IMeter: public ISerializable
 {
 public:
     virtual ~IMeter() = default;
+
+    /// @brief Инициализация объекта прибора
+    /// @details Загрузка описаний тэгов, архивов и полей архивов из хранилища
+    /// @param[in] sKeeper Хранилище параметров
+    /// @note Должен вызываться после загрузки в хранилище всех параметров
+    /// @todo Возможно, сделать Lazy Load
+    /// @todo Сделать static загрузку?
+    virtual void Init( const storage::StorageKeeper& sKeeper ) = 0;
 
     /// @brief Получение типа измерения
     /// @return Тип измерения
@@ -76,6 +88,14 @@ public:
     /// @brief Получение хранилища описаний тэгов
     /// @return Хранилище описаний тэгов
     virtual const std::shared_ptr< DataTagDefVault > GetTagsVault() const = 0;
+
+    /// @brief Получение списка описаний полей архивов
+    /// @return Список описаний полей архивов
+    virtual const std::vector< std::shared_ptr< ArchiveFieldDef > >& GetArchiveFields() const = 0;
+
+    /// @brief Получение списка описаний архивов
+    /// @return Список описаний архивов
+    virtual const std::vector< std::shared_ptr< ArchiveDef > >& GetArchives() const = 0;
 
     /// @brief Получение формата отображения
     /// @param[in] def Описание тэга
