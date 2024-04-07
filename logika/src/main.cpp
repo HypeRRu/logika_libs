@@ -28,6 +28,7 @@
 #include <logika/meters/interval_archive.h>
 
 #include <logika/meters/meter.h>
+#include <logika/meters/logika4/4l/logika4l.h>
 
 #include <logika/common/misc.h>
 
@@ -38,6 +39,11 @@
 #include <windows.h>
 #endif
 /// @endcond
+
+
+struct A: public logika::SharedConstructible< A > {};
+
+struct B: public A {};
 
 int main()
 {
@@ -443,6 +449,16 @@ int main()
         LOG_WRITE( LOG_INFO, L"ChannelDef key '" << key << L"'" );
     }
 
+    auto mKeys = mStorage->GetKeys();
+    for ( auto key: mKeys )
+    {
+        std::shared_ptr< logika::meters::Meter > meterItem;
+        mStorage->GetItem( key, meterItem );
+        if ( meterItem )
+        {
+            meterItem->Init( sKeeper );
+        }
+    }
 
     logika::meters::ArchiveFieldDefSettings afdSettings1;
     afdSettings1.ordinal = 10;
@@ -486,7 +502,10 @@ int main()
     std::shared_ptr< logika::meters::ArchiveType > monthArchive;
     std::shared_ptr< logika::meters::Meter > lgk410meter;
     atStorage->GetItem( logika::LocString{ L"Month" }, monthArchive );
-    mStorage->GetItem( logika::LocString{ L"LGK410" }, lgk410meter );
+    if ( lgk410meter )
+    {
+        lgk410meter->Init( sKeeper );
+    }
     logika::meters::IntervalArchive intervalArchive{
         lgk410meter,
         monthArchive,
@@ -502,7 +521,32 @@ int main()
         }
     }
 
-    auto meter = logika::meters::Meter::Create< logika::meters::Meter >();
+    auto meter = logika::meters::Meter::Create< logika::meters::Logika4L >(
+        logika::meters::MeasureKind::Undefined,
+        LOCALIZED( "DEV0" ),
+        LOCALIZED( "Some device" ),
+        1,
+        1,
+        logika::meters::BusProtocolType::RSBus
+    );
+    if ( !meter )
+    {
+        LOG_WRITE( LOG_INFO, L"Unable to create Logika4L" );
+    }
+    else
+    {
+        LOG_WRITE( LOG_INFO, L"Logika4L created" );
+        LOG_WRITE( LOG_INFO, meter->GetCaption() << L"(" << meter->GetDescription() << L")" );
+    }
+    auto strA = A::Create< B >();
+    if ( !strA )
+    {
+        LOG_WRITE( LOG_INFO, L"Unable to create struct B" );
+    }
+    else
+    {
+        LOG_WRITE( LOG_INFO, L"struct B created" );
+    }
 #endif // if 0
 
 #if defined( _WIN32 ) || defined( _WIN64 )

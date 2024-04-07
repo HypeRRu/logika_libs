@@ -6,6 +6,8 @@
 #include <logika/common/types.h>
 #include <logika/common/misc.h>
 
+#include <logika/meters/logika4/4l/logika4l.h>
+
 /// @cond
 #include <unordered_map>
 /// @endcond
@@ -32,6 +34,14 @@ DeviceConverter::ConvertedType DeviceConverter::Convert( const DeviceConverter::
     const uint32_t mg           = from.has_consumers() ? from.consumers() : 0; // maxGroups
     const BusProtocolType bt    = ConvertBusType( from.bus() );
 
+    if (   caption == LOCALIZED( "SPG741" )
+        || caption == LOCALIZED( "SPT941" )
+        || caption == LOCALIZED( "SPT941_10" )
+        || caption == LOCALIZED( "SPT942" )
+        || caption == LOCALIZED( "SPT943" ) )
+    {
+        return Meter::Create< Logika4L >( mk, caption, desc, mc, mg, bt );
+    }
     /// @todo Создание инстансов сразу нужных типов
     return Meter::Create< Meter >( mk, caption, desc, mc, mg, bt );
 } // Convert( const DeviceConverter::FromType& from )

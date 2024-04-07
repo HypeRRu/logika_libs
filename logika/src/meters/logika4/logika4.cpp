@@ -26,7 +26,8 @@ Logika4::Logika4(
     , uint32_t maxGroups
     , BusProtocolType busType
 )
-    : supportBaudRateChange_{ false }
+    : Meter( measureKind, caption, description, maxChannels, maxGroups, busType )
+    , supportBaudRateChange_{ false }
     , maxBaudRate_{ connections::BaudRate::NotSupported }
     , sessionTimeout_{ 0 }
     , supportFastSessionInit_{ false }
