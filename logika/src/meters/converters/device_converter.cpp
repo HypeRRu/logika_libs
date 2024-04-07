@@ -7,6 +7,7 @@
 #include <logika/common/misc.h>
 
 #include <logika/meters/logika4/4l/logika4l.h>
+#include <logika/meters/logika4/4m/logika4m.h>
 
 /// @cond
 #include <unordered_map>
@@ -41,6 +42,16 @@ DeviceConverter::ConvertedType DeviceConverter::Convert( const DeviceConverter::
         || caption == LOCALIZED( "SPT943" ) )
     {
         return Meter::Create< Logika4L >( mk, caption, desc, mc, mg, bt );
+    }
+    if (   caption == LOCALIZED( "LGK410" )
+        || caption == LOCALIZED( "SPT740" )
+        || caption == LOCALIZED( "SPT742" )
+        || caption == LOCALIZED( "SPT940" )
+        || caption == LOCALIZED( "SPT941_20" )
+        || caption == LOCALIZED( "SPT943rev3" )
+        || caption == LOCALIZED( "SPT944" ) )
+    {
+        return Meter::Create< Logika4M >( mk, caption, desc, mc, mg, bt );
     }
     /// @todo Создание инстансов сразу нужных типов
     return Meter::Create< Meter >( mk, caption, desc, mc, mg, bt );
