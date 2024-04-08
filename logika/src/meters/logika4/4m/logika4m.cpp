@@ -105,6 +105,12 @@ void Logika4M::Init( const storage::StorageKeeper& sKeeper )
 } // Init
 
 
+std::vector< AdsTagBlock > Logika4M::GetAdsTagBlocks() const
+{
+    return {};
+} // GetAdsTagBlocks
+
+
 MeterAddressType Logika4M::GetTagLength( const ByteVector& buffer
     , MeterAddressType idx, MeterAddressType& length )
 {

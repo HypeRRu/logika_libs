@@ -25,10 +25,12 @@ set(
 	${SRC_DIR}/meters/logika4/4l/archive_field_def4l.cpp
 	${SRC_DIR}/meters/logika4/4l/logika4l.cpp
 	${SRC_DIR}/meters/logika4/4l/spg741.cpp
+	${SRC_DIR}/meters/logika4/4m/ads_tag_block.cpp
 	${SRC_DIR}/meters/logika4/4m/tag_def4m.cpp
 	${SRC_DIR}/meters/logika4/4m/archive_def4m.cpp
 	${SRC_DIR}/meters/logika4/4m/archive_field_def4m.cpp
 	${SRC_DIR}/meters/logika4/4m/logika4m.cpp
+	${SRC_DIR}/meters/logika4/4m/spg740.cpp
 	${SRC_DIR}/meters/logika6/data_tag_def6.cpp
 	${SRC_DIR}/meters/logika6/data_tag6.cpp
 	${SRC_DIR}/meters/logika6/archive_def6.cpp

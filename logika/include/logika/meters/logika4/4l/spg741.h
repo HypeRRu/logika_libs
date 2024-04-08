@@ -9,9 +9,6 @@
 #include <logika/meters/defs.h>
 #include <logika/meters/logika4/4l/logika4l.h>
 
-/// @cond
-/// @
-
 namespace logika
 {
 

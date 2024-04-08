@@ -8,6 +8,7 @@
 
 #include <logika/meters/defs.h>
 #include <logika/meters/logika4/logika4.h>
+#include <logika/meters/logika4/4m/ads_tag_block.h>
 
 #include <logika/common/types.h>
 #include <logika/common/any.hpp>
@@ -78,6 +79,10 @@ public:
 
     /// @copydoc IMeter::Init()
     virtual void Init( const storage::StorageKeeper& sKeeper ) override;
+
+    /// @brief Получение списка тэгов ADS
+    /// @return Список тэгов ADS
+    virtual std::vector< AdsTagBlock > GetAdsTagBlocks() const;
 
 public:
     static constexpr LocChar ND_STR[] = LOCALIZED( "#н/д" );    ///< Строка "Нет данных"
