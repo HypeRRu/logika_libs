@@ -81,6 +81,9 @@ public:
     /// @copydoc IMeter::GetArchives()
     virtual const std::vector< std::shared_ptr< ArchiveDef > >& GetArchives() const override;
 
+    /// @copydoc IMeter::GetChannels()
+    virtual const std::vector< std::shared_ptr< ChannelDef > >& GetChannels() const override;
+
     /// @copydoc IMeter::GetDisplayFormat()
     virtual LocString GetDisplayFormat( std::shared_ptr< TagDef > def ) const override;
 
@@ -89,6 +92,19 @@ public:
 
     /// @copydoc IMeter::GetNtFromTag()
     virtual bool GetNtFromTag( const LocString& value, ByteType& out ) const override;
+
+    /// @copydoc IMeter::GetCommonTagDefs()
+    virtual const std::unordered_map< ImportantTag, std::vector< LocString > >& GetCommonTagDefs() const override;
+
+    /// @copydoc IMeter::LookupCommonTags()
+    virtual std::vector< std::shared_ptr< DataTag > > LookupCommonTags(
+        const std::vector< LocString >& tagDefList ) const override;
+
+    /// @copydoc IMeter::GetWellKnownTags()
+    virtual std::unordered_map<
+        ImportantTag,
+        std::vector< std::shared_ptr< DataTag > >
+    >GetWellKnownTags() const override;
 
     /// @copydoc ISerializable::ToString()
     virtual LocString ToString() const override;
@@ -110,10 +126,16 @@ protected:
     std::shared_ptr< DataTagDefVault > tagsVault_;  ///< Хранилище описаний тэгов
     std::vector<
         std::shared_ptr< ArchiveFieldDef >
-    > archiveFields_;
+    > archiveFields_;                               ///< Список описаний полей архивов
     std::vector<
         std::shared_ptr< ArchiveDef >
-    > archives_;
+    > archives_;                                    ///< Список описаний архивов
+    std::vector<
+        std::shared_ptr< ChannelDef >
+    > channels_;                                    ///< Список описаний каналов
+    std::unordered_map<
+        ImportantTag, std::vector< LocString >
+    > commonTagDefs_;                               ///< Описание стандартных тэгов
     uint16_t ident_;                                ///< Идентификатор прибора
     /// @todo mutex?
 

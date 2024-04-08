@@ -31,7 +31,7 @@ Logika4::Logika4(
     , maxBaudRate_{ connections::BaudRate::NotSupported }
     , sessionTimeout_{ 0 }
     , supportFastSessionInit_{ false }
-    , euMap_{}
+    , calcFields_{}
     , nsDescriptions_{}
 {
     busType_ = BusProtocolType::RSBus;
@@ -145,15 +145,30 @@ bool Logika4::GetNtFromTag( const LocString& value, ByteType& out ) const
 } // GetNtFromTag
 
 
-LocString Logika4::GetEu( const LocString& euDef ) const
+LocString Logika4::GetEu( const std::unordered_map< LocString, LocString >& euDict,
+    const LocString& euDef )
 {
-    auto iter = euMap_.find( euDef );
-    if ( euMap_.cend() == iter )
+    auto iter = euDict.find( euDef );
+    if ( euDict.cend() == iter )
     {
         return euDef;
     }
     return iter->second;
 } // GetEu
+
+
+std::unordered_map< LocString, LocString > Logika4::BuildEuDict(
+    const std::vector< std::shared_ptr< DataTag > >& euTags ) const
+{
+    (void) euTags;
+    return {};
+} // BuildEuDict
+
+
+const std::vector< std::shared_ptr< CalcFieldDef > >& Logika4::GetCalculatedFields() const
+{
+    return calcFields_;
+} // GetCalculatedFields
 
 
 LocString Logika4::DisplayNs( const ByteVector& values )

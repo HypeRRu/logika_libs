@@ -258,17 +258,17 @@ public:
         MeterAddressType length;    ///< Длина участка
     }; // struct AdsFlashRun
 
-        /// @brief Получение модели прибора по образу флэш-памяти
+    /// @brief Получение модели прибора по образу флэш-памяти
     /// @param[in] flashImage Образ флэш-памяти прибора
     /// @return Название модели прибора
-    LocString GetModelFromImage( const ByteVector& flashImage );
+    virtual LocString GetModelFromImage( const ByteVector& flashImage ) const;
 
     /// @brief Получение карты ADS
     /// @param[in] all Получение полной карты
     /// @param[in] model Название модели прибора
     /// @return Карта ADS
     /// @todo Уточнить
-    std::vector< AdsFlashRun > GetAdsFileLayout( bool all, const LocString& model );
+    virtual std::vector< Logika4L::AdsFlashRun > GetAdsFileLayout( bool all, const LocString& model ) const;
 
 }; // class Logika4L
 

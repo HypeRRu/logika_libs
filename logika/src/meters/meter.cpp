@@ -6,6 +6,13 @@
 #include <logika/meters/data_tag_def.h>
 #include <logika/meters/archive_def.h>
 #include <logika/meters/archive_field_def.h>
+#include <logika/meters/data_tag.h>
+#include <logika/meters/channel.h>
+
+/// @cond
+#include <cwctype>
+#include <algorithm>
+/// @endcond
 
 namespace logika
 {
@@ -32,6 +39,8 @@ Meter::Meter(
     , tagsVault_{}
     , archiveFields_{}
     , archives_{}
+    , channels_{}
+    , commonTagDefs_{}
     , ident_{ 0 }
 {
     /// @todo Создание tagsVault_
@@ -54,7 +63,27 @@ bool Meter::operator !=( const Meter& other ) const
 
 void Meter::Init( const storage::StorageKeeper& sKeeper )
 {
-    (void) sKeeper;
+    auto channelsStorage = sKeeper.GetStorage< LocString, ChannelDef >();
+
+    if ( channelsStorage && !tagsVault_ )
+    {
+        const auto keys = channelsStorage->GetKeys();
+        std::vector< std::shared_ptr< ChannelDef > > tags;
+        for ( const LocString& key: keys )
+        {
+            if ( LocString::npos == key.find( caption_ ) )
+            {
+                ///< Канал не относится к данному прибору
+                continue;
+            }
+            std::shared_ptr< ChannelDef > item;
+            channelsStorage->GetItem( key, item );
+            if ( item )
+            {
+                channels_.push_back( item );
+            }
+        }
+    }
 } // Init
 
 
@@ -137,6 +166,12 @@ const std::vector< std::shared_ptr< ArchiveDef > >& Meter::GetArchives() const
 } // GetArchives
 
 
+const std::vector< std::shared_ptr< ChannelDef > >& Meter::GetChannels() const
+{
+    return channels_;
+} // GetChannels
+
+
 LocString Meter::GetDisplayFormat( std::shared_ptr< TagDef > def ) const
 {
     (void) def;
@@ -159,6 +194,96 @@ bool Meter::GetNtFromTag( const LocString& value, ByteType& out ) const
     (void) out;
     return false;
 } // GetNtFromTag
+
+
+const std::unordered_map< ImportantTag, std::vector< LocString > >& Meter::GetCommonTagDefs() const
+{
+    return commonTagDefs_;
+} // GetCommonTagDefs
+
+
+std::vector< std::shared_ptr< DataTag > > Meter::LookupCommonTags( const std::vector< LocString >& tagDefList ) const
+{
+    constexpr LocChar separator = LOCALIZED( '.' );
+
+    std::vector< std::shared_ptr< DataTag > > tags;
+    tags.reserve( tagDefList.size() );
+
+    for ( const LocString& tagDef: tagDefList )
+    {
+        int32_t chNo        = -1;
+        LocString chType    = LOCALIZED( "" );
+        LocString tagName   = LOCALIZED( "" );
+
+        const LocString::size_type sepPos = tagDef.find_first_of( separator );
+        if ( LocString::npos == sepPos )
+        {
+            /// Тэги Logika6
+            tagName = tagDef;
+            chNo = 0;
+            const auto chIter = std::find_if( channels_.cbegin(), channels_.cend(), []( const auto& channel ){
+                return channel && channel->start == 0 && channel->count == 1;
+            } );
+            if ( channels_.cend() != chIter )
+            {
+                chType = ( *chIter )->prefix;
+            }
+        }
+        else if ( LocString::npos == tagDef.find_first_of( separator, sepPos + 1 ) )
+        {
+            /// Тэги Logika4
+            const LocString typeStr = tagDef.substr( 0, sepPos );
+            const auto typeIdIter = std::find_if( typeStr.cbegin(), typeStr.cend(), []( const LocChar c ){
+                return !std::iswalpha( c );
+            } );
+            chType = LocString( typeStr.cbegin(), typeIdIter );
+            tagName = tagDef.substr( sepPos + 1 );
+            chNo = 0;
+            if ( typeStr.cend() != typeIdIter )
+            {
+                uint64_t chan;
+                try
+                {
+                    chan = std::stoull( LocString( typeIdIter + 1, typeStr.cend() ) );
+                    chNo = static_cast< int32_t >( chan );
+                }
+                catch ( const std::exception& )
+                {}
+            }
+        }
+        else
+        {
+            throw std::runtime_error{ "Incorrect common tag address" };
+        }
+        std::shared_ptr< DataTagDef > def = tagsVault_ ? tagsVault_->Find( chType, tagName ) : nullptr;
+        if ( !def )
+        {
+            throw std::runtime_error{ "Common tag not found" };
+        }
+        tags.emplace_back(
+            std::make_shared< DataTag >( def, chNo )
+        );
+    }
+
+    return tags;
+} // LookupCommonTags
+
+
+std::unordered_map<
+    ImportantTag,
+    std::vector< std::shared_ptr< DataTag > >
+> Meter::GetWellKnownTags() const
+{
+    const std::unordered_map< ImportantTag, std::vector< LocString > >& tagDefs = GetCommonTagDefs();
+    std::unordered_map< ImportantTag, std::vector< std::shared_ptr< DataTag > > > tags;
+    
+    for ( const auto& def: tagDefs )
+    {
+        tags[ def.first ] = LookupCommonTags( def.second );
+    }
+
+    return tags;
+} // GetWellKnownTags
 
 
 LocString Meter::ToString() const

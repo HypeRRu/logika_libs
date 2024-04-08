@@ -9,6 +9,8 @@
 #include <logika/meters/defs.h>
 #include <logika/meters/meter.h>
 
+#include <logika/meters/logika4/tag_def4.h>
+
 #include <logika/common/types.h>
 #include <logika/connections/serial/types.h>
 
@@ -63,11 +65,6 @@ public:
     /// @copydoc IMeter::GetNtFromTag()
     virtual bool GetNtFromTag( const LocString& value, ByteType& out ) const override;
 
-    /// @brief Получение описания единиц измерения
-    /// @param[in] euDef Название единиц измерения
-    /// @return Описание единиц измерения
-    LocString GetEu( const LocString& euDef ) const;
-
     /// @brief Получение флага наличия поддержки смены BaudRate
     /// @return Наличие поддержки смены BaudRate
     bool GetSupportBaudRateChange() const;
@@ -83,6 +80,16 @@ public:
     /// @brief Получение флага наличия поддержки быстрой инициализации
     /// @return Наличие поддержки быстрой инициализации
     bool GetSupportFastSessionInit() const;
+
+    /// @brief Получение описаний расчетных тэгов
+    /// @return Описания расчетных тэгов
+    virtual const std::vector< std::shared_ptr< CalcFieldDef > >& GetCalculatedFields() const;
+
+    /// @brief Формирование таблицы конвертации имен единиц измерения
+    /// @param[in] euTags Список тэгов 
+    /// @return Таблица конвертации имен единиц измерения
+    virtual std::unordered_map< LocString, LocString > BuildEuDict(
+        const std::vector< std::shared_ptr< DataTag > >& euTags ) const;
 
 public:
     /// @brief Получение строки с номерами НС
@@ -113,6 +120,13 @@ public:
     /// @return Значение контрольной суммы
     static ByteType CheckSum8( const ByteVector& buffer, uint32_t start, uint32_t length );
 
+    /// @brief Получение описания единиц измерения
+    /// @param[in] euDict Таблица конвертации имен единиц измерения
+    /// @param[in] euDef Название единиц измерения
+    /// @return Описание единиц измерения
+    static LocString GetEu( const std::unordered_map< LocString, LocString >& euDict,
+        const LocString& euDef );
+
 protected:
     bool supportBaudRateChange_;                        ///< Наличие поддержки смены BaudRate
     connections::BaudRate::Type maxBaudRate_;           ///< Максимальный поддерживаемый BaudRate
@@ -121,7 +135,9 @@ protected:
     /// @details При наличии поддержки быстрой инициализации не нужно выдерживать паузу
     /// между байтами FF и после FF-ов в стартовой последовательности
     bool supportFastSessionInit_;
-    std::unordered_map< LocString, LocString > euMap_;  ///< Таблица единиц измерения
+    std::vector<
+        std::shared_ptr< CalcFieldDef >
+    > calcFields_;                                      ///< Список описаний расчетных тэгов
     std::vector< LocString > nsDescriptions_;           ///< Массив описаний нештатных событий
 
 }; // class Logika4

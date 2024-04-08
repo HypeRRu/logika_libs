@@ -41,6 +41,8 @@ Logika4L::Logika4L(
 
 void Logika4L::Init( const storage::StorageKeeper& sKeeper )
 {
+    Logika4::Init( sKeeper );
+
     auto tagsStorage            = sKeeper.GetStorage< LocString, TagDef4L >();
     auto archiveStorage         = sKeeper.GetStorage< LocString, ArchiveDef4L >();
     auto archiveFieldStorage    = sKeeper.GetStorage< LocString, ArchiveFieldDef4L >();
@@ -91,13 +93,13 @@ void Logika4L::Init( const storage::StorageKeeper& sKeeper )
 } // Init
 
 
-LocString Logika4L::GetModelFromImage( const ByteVector& flashImage )
+LocString Logika4L::GetModelFromImage( const ByteVector& flashImage ) const
 {
     return LOCALIZED( "" );
 } // GetModelFromImage
 
 
-std::vector< Logika4L::AdsFlashRun > Logika4L::GetAdsFileLayout( bool all, const LocString& model )
+std::vector< Logika4L::AdsFlashRun > Logika4L::GetAdsFileLayout( bool all, const LocString& model ) const
 {
     return {};
 } // GetAdsFileLayout

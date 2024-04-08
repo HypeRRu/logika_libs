@@ -7,6 +7,7 @@
 #include <logika/common/misc.h>
 
 #include <logika/meters/logika4/4l/logika4l.h>
+#include <logika/meters/logika4/4l/spg741.h>
 #include <logika/meters/logika4/4m/logika4m.h>
 
 /// @cond
@@ -35,8 +36,11 @@ DeviceConverter::ConvertedType DeviceConverter::Convert( const DeviceConverter::
     const uint32_t mg           = from.has_consumers() ? from.consumers() : 0; // maxGroups
     const BusProtocolType bt    = ConvertBusType( from.bus() );
 
-    if (   caption == LOCALIZED( "SPG741" )
-        || caption == LOCALIZED( "SPT941" )
+    if ( caption == LOCALIZED( "SPG741" ) )
+    {
+        return Meter::Create< Spg741 >( mk, caption, desc, mc, mg, bt );
+    }
+    if (   caption == LOCALIZED( "SPT941" )
         || caption == LOCALIZED( "SPT941_10" )
         || caption == LOCALIZED( "SPT942" )
         || caption == LOCALIZED( "SPT943" ) )

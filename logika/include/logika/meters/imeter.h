@@ -17,6 +17,7 @@
 /// @cond
 #include <string>
 #include <memory>
+#include <unordered_map>
 /// @endcond
 
 namespace logika
@@ -29,6 +30,8 @@ class LOGIKA_METERS_EXPORT TagDef;
 class LOGIKA_METERS_EXPORT DataTagDefVault;
 class LOGIKA_METERS_EXPORT ArchiveDef;
 class LOGIKA_METERS_EXPORT ArchiveFieldDef;
+class LOGIKA_METERS_EXPORT ChannelDef;
+class LOGIKA_METERS_EXPORT DataTag;
 
 /// @brief Интерфейс прибора
 class LOGIKA_METERS_EXPORT IMeter: public ISerializable
@@ -97,6 +100,10 @@ public:
     /// @return Список описаний архивов
     virtual const std::vector< std::shared_ptr< ArchiveDef > >& GetArchives() const = 0;
 
+    /// @brief Получение списка описаний каналов
+    /// @return Список описаний каналов
+    virtual const std::vector< std::shared_ptr< ChannelDef > >& GetChannels() const = 0;
+
     /// @brief Получение формата отображения
     /// @param[in] def Описание тэга
     /// @return Формат отображения для тэга
@@ -114,6 +121,23 @@ public:
     /// @param[out] out NT
     /// @return Удалось ли конвертировать значение
     virtual bool GetNtFromTag( const LocString& value, ByteType& out ) const = 0;
+
+    /// @brief Получение списка имен стандартных тэгов
+    /// @return Список имен стандартных тэгов
+    virtual const std::unordered_map< ImportantTag, std::vector< LocString > >& GetCommonTagDefs() const = 0;
+
+    /// @brief Формирование списка тэгов по описанию тэгов
+    /// @param[in] tagDefList Список описаний тэгов
+    /// @return Список тэгов
+    virtual std::vector< std::shared_ptr< DataTag > > LookupCommonTags(
+        const std::vector< LocString >& tagDefList ) const = 0;
+
+    /// @brief Формирование списка стандартных тэгов
+    /// @return Список стандартных тэгов
+    virtual std::unordered_map<
+        ImportantTag,
+        std::vector< std::shared_ptr< DataTag > >
+    >GetWellKnownTags() const = 0;
 
 }; // class Meter
 
