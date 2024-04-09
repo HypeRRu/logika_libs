@@ -83,9 +83,9 @@ public:
     /// @return Тип протокола
     virtual BusProtocolType GetBusType() const = 0;
 
-    /// @brief Получение префикса события
-    /// @param[in] tv @todo ???
-    /// @return Префикс события
+    /// @brief Получение префикса события тепловычислителя (ТВ)
+    /// @param[in] tv @todo Номер события тепловычислителя
+    /// @return Префикс события тепловычислителя
     virtual LocString GetEventPrefix( uint32_t tv ) const = 0;
 
     /// @brief Получение хранилища описаний тэгов
@@ -108,6 +108,10 @@ public:
     /// @param[in] def Описание тэга
     /// @return Формат отображения для тэга
     virtual LocString GetDisplayFormat( std::shared_ptr< TagDef > def ) const = 0;
+
+    /// @brief Получение идентификатора прибора
+    /// @return Идентификатор прибора
+    virtual uint16_t GetIdent() const = 0;
 
     /// @brief Проверка на совпадение идентификатора прибора
     /// @param[in] id0 Старший байт идентификатора

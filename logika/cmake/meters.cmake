@@ -30,7 +30,13 @@ set(
 	${SRC_DIR}/meters/logika4/4m/archive_def4m.cpp
 	${SRC_DIR}/meters/logika4/4m/archive_field_def4m.cpp
 	${SRC_DIR}/meters/logika4/4m/logika4m.cpp
+	${SRC_DIR}/meters/logika4/4m/lgk410.cpp
 	${SRC_DIR}/meters/logika4/4m/spg740.cpp
+	${SRC_DIR}/meters/logika4/4m/spg742.cpp
+	${SRC_DIR}/meters/logika4/4m/spt940.cpp
+	${SRC_DIR}/meters/logika4/4m/spt941_20.cpp
+	${SRC_DIR}/meters/logika4/4m/spt943rev3.cpp
+	${SRC_DIR}/meters/logika4/4m/spt944.cpp
 	${SRC_DIR}/meters/logika6/data_tag_def6.cpp
 	${SRC_DIR}/meters/logika6/data_tag6.cpp
 	${SRC_DIR}/meters/logika6/archive_def6.cpp

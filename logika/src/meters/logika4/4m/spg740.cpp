@@ -6,10 +6,6 @@
 #include <logika/meters/data_tag.h>
 #include <logika/meters/channel.h>
 
-/// @cond
-#include <algorithm>
-/// @endcond
-
 namespace logika
 {
 

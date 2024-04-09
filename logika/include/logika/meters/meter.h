@@ -87,6 +87,9 @@ public:
     /// @copydoc IMeter::GetDisplayFormat()
     virtual LocString GetDisplayFormat( std::shared_ptr< TagDef > def ) const override;
 
+    /// @copydoc IMeter::GetIdent()
+    virtual uint16_t GetIdent() const override;
+
     /// @copydoc IMeter::IdentMatch()
     virtual bool IdentMatch( ByteType id0, ByteType id1, ByteType version ) const override;
 

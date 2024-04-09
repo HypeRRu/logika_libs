@@ -179,6 +179,12 @@ LocString Meter::GetDisplayFormat( std::shared_ptr< TagDef > def ) const
 } // GetDisplayFormat
 
 
+uint16_t Meter::GetIdent() const
+{
+    return ident_;
+} // GetIdent
+
+
 bool Meter::IdentMatch( ByteType id0, ByteType id1, ByteType version ) const
 {
     (void) id0;

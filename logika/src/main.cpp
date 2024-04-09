@@ -163,7 +163,9 @@ int main()
                         << ( mStorage->AddItem( device->GetCaption(), device ) ? L"Success" : L"Failed" ) );
                     std::shared_ptr< logika::meters::Meter > item;
                     mStorage->GetItem( device->GetCaption(), item );
-                    std::wcout << item->GetDescription() << std::endl;
+                    std::wcout << item->GetDescription() << LOCALIZED( " | " )
+                        << LOCALIZED( "0x" ) << std::setfill( LOCALIZED( '0' ) )
+                        << std::setw( 4 ) << std::hex << item->GetIdent() << std::endl;
                 }
             }
         }
