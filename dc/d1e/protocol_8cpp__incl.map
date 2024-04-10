@@ -1,0 +1,32 @@
+<map id="logika/src/protocols/protocol.cpp" name="logika/src/protocols/protocol.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="339,5,474,46"/>
+<area shape="rect" id="Node000002" href="$d2/d5e/protocol_8h.html" title=" " alt="" coords="163,94,335,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="368,49,288,89,286,84,366,44"/>
+<area shape="rect" id="Node000007" href="$d8/de5/iconnection_8h.html" title=" " alt="" coords="342,241,471,282"/>
+<area shape="poly" id="edge11_Node000001_Node000007" title=" " alt="" coords="409,46,409,226,404,226,404,46"/>
+<area shape="rect" id="Node000011" href="$d8/db0/defines_8h.html" title=" " alt="" coords="443,94,575,120"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="433,44,483,82,480,86,430,49"/>
+<area shape="rect" id="Node000003" href="$d7/d37/protocols_2defs_8h.html" title=" " alt="" coords="5,249,157,275"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="224,123,187,143,151,170,121,203,98,237,93,234,117,200,147,166,185,138,221,118"/>
+<area shape="rect" id="Node000004" href="$d7/de4/iprotocol_8h.html" title=" " alt="" coords="161,168,337,193"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="252,120,252,152,246,152,246,120"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="224,196,121,244,119,240,222,192"/>
+<area shape="rect" id="Node000005" href="$da/db4/protocols_2rc_8h.html" title=" " alt="" coords="180,249,318,275"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="252,194,252,233,246,233,246,194"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="274,192,355,232,352,236,272,196"/>
+<area shape="rect" id="Node000006" href="$d0/d6b/common_2rc_8h.html" title=" " alt="" coords="30,338,164,363"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="229,277,133,332,130,327,227,273"/>
+<area shape="rect" id="Node000008" href="$d1/d90/connections_2defs_8h.html" title=" " alt="" coords="188,330,318,371"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="373,285,302,325,299,320,370,280"/>
+<area shape="rect" id="Node000009" href="$d3/d5a/connections_2types_8h.html" title=" " alt="" coords="342,330,471,371"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="409,283,409,314,404,314,404,283"/>
+<area shape="rect" id="Node000010" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="495,338,649,363"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="445,280,536,328,534,332,443,285"/>
+<area shape="rect" id="Node000012" href="$d1/d8c/logger_8h.html" title=" " alt="" coords="524,168,649,193"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="524,118,564,155,560,159,520,122"/>
+<area shape="poly" id="edge14_Node000012_Node000010" title=" " alt="" coords="583,195,568,242,565,284,569,322,564,323,560,284,562,241,578,193"/>
+<area shape="rect" id="Node000013" href="$d6/d8e/log_2defs_8h.html" title=" " alt="" coords="577,249,692,275"/>
+<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="596,192,621,234,617,237,591,195"/>
+<area shape="rect" id="Node000014" href="$dd/dd4/log_2types_8h.html" title=" " alt="" coords="716,249,838,275"/>
+<area shape="poly" id="edge16_Node000012_Node000014" title=" " alt="" coords="617,191,735,240,733,245,615,196"/>
+</map>

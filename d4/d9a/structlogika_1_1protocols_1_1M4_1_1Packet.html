@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Logika Libs: Структура logika::protocols::M4::Packet</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Logika Libs
+   </div>
+   <div id="projectbrief">Библиотеки для работы с приборами НПФ &quot;Логика&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d4/d9a/structlogika_1_1protocols_1_1M4_1_1Packet.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="../../dc/d8e/structlogika_1_1protocols_1_1M4_1_1Packet-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Структура logika::protocols::M4::Packet</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Структура пакета в протоколе <a class="el" href="../../de/d62/namespacelogika_1_1protocols_1_1M4.html">M4</a>.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d3/d76/packet_8h_source.html">packet.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса logika::protocols::M4::Packet:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/d69/structlogika_1_1protocols_1_1M4_1_1Packet__coll__graph.png" border="0" usemap="#alogika_1_1protocols_1_1M4_1_1Packet_coll__map" alt="Collaboration graph"/></div>
+<map name="alogika_1_1protocols_1_1M4_1_1Packet_coll__map" id="alogika_1_1protocols_1_1M4_1_1Packet_coll__map">
+<area shape="rect" title="Структура пакета в протоколе M4." alt="" coords="5,5,245,320"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a96fd4da42b8551a0ba6dbe0a878fe277" id="r_a96fd4da42b8551a0ba6dbe0a878fe277"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96fd4da42b8551a0ba6dbe0a878fe277">Packet</a> ()</td></tr>
+<tr class="memdesc:a96fd4da42b8551a0ba6dbe0a878fe277"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор по умолчанию  <br /></td></tr>
+<tr class="separator:a96fd4da42b8551a0ba6dbe0a878fe277"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a514097fbb86fafe3c4964e8f344dc563" id="r_a514097fbb86fafe3c4964e8f344dc563"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a514097fbb86fafe3c4964e8f344dc563">Packet</a> (<a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a> ntByte, bool isExtended, <a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a> identifier, <a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a> attributesByte, <a class="el" href="../../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#ad2f32ef715c031cee496f205f15960e4">Opcode::Type</a> opcode, const <a class="el" href="../../d7/d43/namespacelogika.html#a69c638914202f69eb544a992e2361a1c">ByteVector</a> &amp;dataVector, uint16_t cs)</td></tr>
+<tr class="memdesc:a514097fbb86fafe3c4964e8f344dc563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор с параметрами  <br /></td></tr>
+<tr class="separator:a514097fbb86fafe3c4964e8f344dc563"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26d09e6e4baabf318a18777f26375913" id="r_a26d09e6e4baabf318a18777f26375913"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d43/namespacelogika.html#a69c638914202f69eb544a992e2361a1c">ByteVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26d09e6e4baabf318a18777f26375913">GetDump</a> () const</td></tr>
+<tr class="memdesc:a26d09e6e4baabf318a18777f26375913"><td class="mdescLeft">&#160;</td><td class="mdescRight">Формирование пакета  <br /></td></tr>
+<tr class="separator:a26d09e6e4baabf318a18777f26375913"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:ad0c357bf9c2d1f4a8a5230b4ea4abee6" id="r_ad0c357bf9c2d1f4a8a5230b4ea4abee6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0c357bf9c2d1f4a8a5230b4ea4abee6">nt</a></td></tr>
+<tr class="memdesc:ad0c357bf9c2d1f4a8a5230b4ea4abee6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Значение байта NT.  <br /></td></tr>
+<tr class="separator:ad0c357bf9c2d1f4a8a5230b4ea4abee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab35381142fae0874bcb54e67c5ebf9f1" id="r_ab35381142fae0874bcb54e67c5ebf9f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab35381142fae0874bcb54e67c5ebf9f1">extended</a></td></tr>
+<tr class="memdesc:ab35381142fae0874bcb54e67c5ebf9f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Расширенный пакет  <br /></td></tr>
+<tr class="separator:ab35381142fae0874bcb54e67c5ebf9f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02efb71797d2cd6852dfb94f12fc1c86" id="r_a02efb71797d2cd6852dfb94f12fc1c86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02efb71797d2cd6852dfb94f12fc1c86">id</a></td></tr>
+<tr class="memdesc:a02efb71797d2cd6852dfb94f12fc1c86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Идентификатор  <br /></td></tr>
+<tr class="separator:a02efb71797d2cd6852dfb94f12fc1c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa36777d0e417a0f406736e5b8dfc225" id="r_aaa36777d0e417a0f406736e5b8dfc225"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa36777d0e417a0f406736e5b8dfc225">attributes</a></td></tr>
+<tr class="memdesc:aaa36777d0e417a0f406736e5b8dfc225"><td class="mdescLeft">&#160;</td><td class="mdescRight">Атрибуты пакета  <br /></td></tr>
+<tr class="separator:aaa36777d0e417a0f406736e5b8dfc225"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a610ed873a68084c1ef4c243aa68559ed" id="r_a610ed873a68084c1ef4c243aa68559ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#ad2f32ef715c031cee496f205f15960e4">Opcode::Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a610ed873a68084c1ef4c243aa68559ed">funcOpcode</a></td></tr>
+<tr class="memdesc:a610ed873a68084c1ef4c243aa68559ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Код операции  <br /></td></tr>
+<tr class="separator:a610ed873a68084c1ef4c243aa68559ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a489d9c0fc27e89a0f1ab260bab9ecce4" id="r_a489d9c0fc27e89a0f1ab260bab9ecce4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d43/namespacelogika.html#a69c638914202f69eb544a992e2361a1c">ByteVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a489d9c0fc27e89a0f1ab260bab9ecce4">data</a></td></tr>
+<tr class="memdesc:a489d9c0fc27e89a0f1ab260bab9ecce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Данные пакета  <br /></td></tr>
+<tr class="separator:a489d9c0fc27e89a0f1ab260bab9ecce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21dbd78d348fe501d2d33839a7eb3ae4" id="r_a21dbd78d348fe501d2d33839a7eb3ae4"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21dbd78d348fe501d2d33839a7eb3ae4">checkSum</a></td></tr>
+<tr class="memdesc:a21dbd78d348fe501d2d33839a7eb3ae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Контрольная сумма. CRC16 для расширенного пакета и CSUM8 для "легаси".  <br /></td></tr>
+<tr class="separator:a21dbd78d348fe501d2d33839a7eb3ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Структура пакета в протоколе <a class="el" href="../../de/d62/namespacelogika_1_1protocols_1_1M4.html">M4</a>. </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a96fd4da42b8551a0ba6dbe0a878fe277" name="a96fd4da42b8551a0ba6dbe0a878fe277"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96fd4da42b8551a0ba6dbe0a878fe277">&#9670;&#160;</a></span>Packet() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">logika::protocols::M4::Packet::Packet </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор по умолчанию </p>
+
+</div>
+</div>
+<a id="a514097fbb86fafe3c4964e8f344dc563" name="a514097fbb86fafe3c4964e8f344dc563"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a514097fbb86fafe3c4964e8f344dc563">&#9670;&#160;</a></span>Packet() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">logika::protocols::M4::Packet::Packet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a></td>          <td class="paramname"><span class="paramname"><em>ntByte</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>isExtended</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a></td>          <td class="paramname"><span class="paramname"><em>identifier</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a></td>          <td class="paramname"><span class="paramname"><em>attributesByte</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#ad2f32ef715c031cee496f205f15960e4">Opcode::Type</a></td>          <td class="paramname"><span class="paramname"><em>opcode</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d7/d43/namespacelogika.html#a69c638914202f69eb544a992e2361a1c">ByteVector</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>dataVector</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>cs</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор с параметрами </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ntByte</td><td>Значение байта NT </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">isExtended</td><td>Расширенный пакет </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">identifier</td><td>Идентификатор </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">attributesByte</td><td>Атрибуты пакета </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">opcode</td><td>Код операции </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dataVector</td><td>Данные пакета </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cs</td><td>Контрольная сумма </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a26d09e6e4baabf318a18777f26375913" name="a26d09e6e4baabf318a18777f26375913"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26d09e6e4baabf318a18777f26375913">&#9670;&#160;</a></span>GetDump()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d43/namespacelogika.html#a69c638914202f69eb544a992e2361a1c">ByteVector</a> logika::protocols::M4::Packet::GetDump </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Формирование пакета </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Массив байтов - пакет </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a id="aaa36777d0e417a0f406736e5b8dfc225" name="aaa36777d0e417a0f406736e5b8dfc225"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa36777d0e417a0f406736e5b8dfc225">&#9670;&#160;</a></span>attributes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a> logika::protocols::M4::Packet::attributes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Атрибуты пакета </p>
+
+<p class="reference">Используется в <a class="el" href="#a26d09e6e4baabf318a18777f26375913">GetDump()</a>.</p>
+
+</div>
+</div>
+<a id="a21dbd78d348fe501d2d33839a7eb3ae4" name="a21dbd78d348fe501d2d33839a7eb3ae4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21dbd78d348fe501d2d33839a7eb3ae4">&#9670;&#160;</a></span>checkSum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t logika::protocols::M4::Packet::checkSum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Контрольная сумма. CRC16 для расширенного пакета и CSUM8 для "легаси". </p>
+
+<p class="reference">Используется в <a class="el" href="#a26d09e6e4baabf318a18777f26375913">GetDump()</a>.</p>
+
+</div>
+</div>
+<a id="a489d9c0fc27e89a0f1ab260bab9ecce4" name="a489d9c0fc27e89a0f1ab260bab9ecce4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a489d9c0fc27e89a0f1ab260bab9ecce4">&#9670;&#160;</a></span>data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d43/namespacelogika.html#a69c638914202f69eb544a992e2361a1c">ByteVector</a> logika::protocols::M4::Packet::data</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Данные пакета </p>
+
+<p class="reference">Используется в <a class="el" href="#a26d09e6e4baabf318a18777f26375913">GetDump()</a>.</p>
+
+</div>
+</div>
+<a id="ab35381142fae0874bcb54e67c5ebf9f1" name="ab35381142fae0874bcb54e67c5ebf9f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab35381142fae0874bcb54e67c5ebf9f1">&#9670;&#160;</a></span>extended</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool logika::protocols::M4::Packet::extended</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Расширенный пакет </p>
+
+<p class="reference">Используется в <a class="el" href="#a26d09e6e4baabf318a18777f26375913">GetDump()</a>.</p>
+
+</div>
+</div>
+<a id="a610ed873a68084c1ef4c243aa68559ed" name="a610ed873a68084c1ef4c243aa68559ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a610ed873a68084c1ef4c243aa68559ed">&#9670;&#160;</a></span>funcOpcode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#ad2f32ef715c031cee496f205f15960e4">Opcode::Type</a> logika::protocols::M4::Packet::funcOpcode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Код операции </p>
+
+<p class="reference">Используется в <a class="el" href="#a26d09e6e4baabf318a18777f26375913">GetDump()</a>.</p>
+
+</div>
+</div>
+<a id="a02efb71797d2cd6852dfb94f12fc1c86" name="a02efb71797d2cd6852dfb94f12fc1c86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02efb71797d2cd6852dfb94f12fc1c86">&#9670;&#160;</a></span>id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a> logika::protocols::M4::Packet::id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Идентификатор </p>
+
+</div>
+</div>
+<a id="ad0c357bf9c2d1f4a8a5230b4ea4abee6" name="ad0c357bf9c2d1f4a8a5230b4ea4abee6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0c357bf9c2d1f4a8a5230b4ea4abee6">&#9670;&#160;</a></span>nt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a> logika::protocols::M4::Packet::nt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Значение байта NT. </p>
+
+<p class="reference">Используется в <a class="el" href="#a26d09e6e4baabf318a18777f26375913">GetDump()</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов структур находятся в файлах:<ul>
+<li>logika/include/logika/protocols/m4/<a class="el" href="../../d3/d76/packet_8h_source.html">packet.h</a></li>
+<li>logika/src/protocols/m4/<a class="el" href="../../d3/dae/packet_8cpp.html">packet.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/d43/namespacelogika.html">logika</a></li><li class="navelem"><a class="el" href="../../da/d59/namespacelogika_1_1protocols.html">protocols</a></li><li class="navelem"><a class="el" href="../../de/d62/namespacelogika_1_1protocols_1_1M4.html">M4</a></li><li class="navelem"><a class="el" href="../../d4/d9a/structlogika_1_1protocols_1_1M4_1_1Packet.html">Packet</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

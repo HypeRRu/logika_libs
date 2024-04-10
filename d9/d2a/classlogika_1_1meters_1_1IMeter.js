@@ -1,0 +1,26 @@
+var classlogika_1_1meters_1_1IMeter =
+[
+    [ "~IMeter", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#a23f8282f199b41ecd3505d8da51eae0a", null ],
+    [ "GetArchiveFields", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#a3fccf47d4ac89e8e36b7006987de9068", null ],
+    [ "GetArchives", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#ac6b8b7a8d20c3177b867f5ebc52b0476", null ],
+    [ "GetBusType", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#abf7c94df977600442c668bc0116ba4da", null ],
+    [ "GetCaption", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#a6bea8f4dc8ab0df55f256e29e5372d55", null ],
+    [ "GetChannelKind", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#a5320e6be983a161b1bf185c9f3d6e759", null ],
+    [ "GetChannels", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#aedab1a5daac3dc1df0b7bef470cd555d", null ],
+    [ "GetCommonTagDefs", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#af820830ec82c46c85c46c01773ae772a", null ],
+    [ "GetDescription", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#a2980b447c170b8a08347aa41205b1a3a", null ],
+    [ "GetDisplayFormat", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#af18e608064c650e13fadf55aba8193ac", null ],
+    [ "GetEventPrefix", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#afde2a6a8bfa67a38c86b9e0d22c1734f", null ],
+    [ "GetIdent", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#aa9bc6179aa94c066064f5fd40c954d17", null ],
+    [ "GetMaxChannels", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#aaeb71525fabc925fe251ad74b5dc265f", null ],
+    [ "GetMaxGroups", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#a6baab3a4582b155272f5580cad047456", null ],
+    [ "GetMeasureKind", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#aa9509c91d1593a3e7d591241e6b9984c", null ],
+    [ "GetNtFromTag", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#afc380ce80a7166bc139134001299a3b3", null ],
+    [ "GetTagsVault", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#a07e117eaa1802a1326a61c5b5b22abb9", null ],
+    [ "GetVendor", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#ab1ea3e13018dde8cf6077a5ee5003981", null ],
+    [ "GetVendorId", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#a44404c21fb6bc26676e91ad8fe38e72b", null ],
+    [ "GetWellKnownTags", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#a9ca99649b178ae4dc0180d315d0adb2d", null ],
+    [ "IdentMatch", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#a967f2d57bac9f5db0d6dcaf89e8836df", null ],
+    [ "Init", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#a138e495855f65ad4fef8f2a1fb37b74b", null ],
+    [ "LookupCommonTags", "d9/d2a/classlogika_1_1meters_1_1IMeter.html#ad216a684c155575ab306d7c933ee1c77", null ]
+];

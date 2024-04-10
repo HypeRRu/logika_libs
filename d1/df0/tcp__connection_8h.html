@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Logika Libs: Файл logika/include/logika/connections/network/tcp_connection.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Logika Libs
+   </div>
+   <div id="projectbrief">Библиотеки для работы с приборами НПФ &quot;Логика&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d1/df0/tcp__connection_8h.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#namespaces">Пространства имен</a> &#124;
+<a href="#define-members">Макросы</a>  </div>
+  <div class="headertitle"><div class="title">Файл tcp_connection.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="../../d1/d90/connections_2defs_8h_source.html">logika/connections/defs.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d6/d43/net__connection_8h_source.html">logika/connections/network/net_connection.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для tcp_connection.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/ddb/tcp__connection_8h__incl.png" border="0" usemap="#alogika_2include_2logika_2connections_2network_2tcp__connection_8h" alt=""/></div>
+<map name="alogika_2include_2logika_2connections_2network_2tcp__connection_8h" id="alogika_2include_2logika_2connections_2network_2tcp__connection_8h">
+<area shape="rect" title=" " alt="" coords="8,5,153,61"/>
+<area shape="rect" href="../../d1/d90/connections_2defs_8h.html" title=" " alt="" coords="5,375,135,416"/>
+<area shape="poly" title=" " alt="" coords="66,63,55,85,47,110,39,178,42,247,52,310,63,359,58,360,46,311,37,248,34,178,42,108,50,83,62,60"/>
+<area shape="rect" href="../../d6/d43/net__connection_8h.html" title=" " alt="" coords="57,109,230,150"/>
+<area shape="poly" title=" " alt="" coords="101,60,124,95,120,98,97,63"/>
+<area shape="poly" title=" " alt="" coords="139,151,123,198,81,360,75,359,118,197,134,149"/>
+<area shape="rect" href="../../d4/d67/connection_8h.html" title=" " alt="" coords="133,198,263,238"/>
+<area shape="poly" title=" " alt="" coords="158,149,180,183,175,186,153,152"/>
+<area shape="poly" title=" " alt="" coords="185,240,148,288,94,364,90,360,144,285,181,237"/>
+<area shape="rect" href="../../d8/de5/iconnection_8h.html" title=" " alt="" coords="159,286,288,327"/>
+<area shape="poly" title=" " alt="" coords="206,238,216,270,211,272,201,240"/>
+<area shape="rect" href="../../d2/d20/connections_2rc_8h.html" title=" " alt="" coords="396,294,550,320"/>
+<area shape="poly" title=" " alt="" coords="261,236,420,286,419,291,260,242"/>
+<area shape="poly" title=" " alt="" coords="190,330,119,370,116,365,187,325"/>
+<area shape="rect" href="../../d3/d5a/connections_2types_8h.html" title=" " alt="" coords="159,375,288,416"/>
+<area shape="poly" title=" " alt="" coords="226,328,226,359,221,359,221,328"/>
+<area shape="rect" href="../../d5/d7b/common_2types_8h.html" title=" " alt="" coords="312,383,466,408"/>
+<area shape="poly" title=" " alt="" coords="262,325,353,373,351,377,260,330"/>
+<area shape="rect" href="../../d0/d6b/common_2rc_8h.html" title=" " alt="" coords="490,383,624,408"/>
+<area shape="poly" title=" " alt="" coords="486,318,536,369,533,373,482,322"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Граф файлов, в которые включается этот файл:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d41/tcp__connection_8h__dep__incl.png" border="0" usemap="#alogika_2include_2logika_2connections_2network_2tcp__connection_8hdep" alt=""/></div>
+<map name="alogika_2include_2logika_2connections_2network_2tcp__connection_8hdep" id="alogika_2include_2logika_2connections_2network_2tcp__connection_8hdep">
+<area shape="rect" title=" " alt="" coords="320,5,465,61"/>
+<area shape="rect" href="../../d7/d27/tcp__connection_8cpp.html" title=" " alt="" coords="5,117,193,157"/>
+<area shape="poly" title=" " alt="" coords="306,67,157,118,155,113,304,62"/>
+<area shape="rect" href="../../d0/ddd/tcp__connection__linux_8cpp.html" title=" " alt="" coords="217,109,381,165"/>
+<area shape="poly" title=" " alt="" coords="359,74,326,110,322,107,355,71"/>
+<area shape="rect" href="../../d2/d16/tcp__connection__windows_8cpp.html" title=" " alt="" coords="405,109,569,165"/>
+<area shape="poly" title=" " alt="" coords="430,71,464,107,460,110,426,74"/>
+<area shape="rect" href="../../d4/d0b/logika_2src_2main_8cpp.html" title=" " alt="" coords="592,124,726,150"/>
+<area shape="poly" title=" " alt="" coords="479,64,628,121,626,126,477,69"/>
+</map>
+</div>
+</div>
+<p><a href="../../d1/df0/tcp__connection_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dcd/classlogika_1_1connections_1_1TcpConnection.html">logika::connections::TcpConnection</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Класс для работы с соединением по TCP.  <a href="../../de/dcd/classlogika_1_1connections_1_1TcpConnection.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Пространства имен</h2></td></tr>
+<tr class="memitem:d7/d43/namespacelogika" id="r_d7/d43/namespacelogika"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d43/namespacelogika.html">logika</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:df/da9/namespacelogika_1_1connections" id="r_df/da9/namespacelogika_1_1connections"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/da9/namespacelogika_1_1connections.html">logika::connections</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Макросы</h2></td></tr>
+<tr class="memitem:a2d6aa76468730577312ccfffbb88a008" id="r_a2d6aa76468730577312ccfffbb88a008"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d6aa76468730577312ccfffbb88a008">LOGIKA_CONNECTIONS_NETWORK_TCP_CONNECTION_H</a></td></tr>
+<tr class="separator:a2d6aa76468730577312ccfffbb88a008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Макросы</h2>
+<a id="a2d6aa76468730577312ccfffbb88a008" name="a2d6aa76468730577312ccfffbb88a008"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d6aa76468730577312ccfffbb88a008">&#9670;&#160;</a></span>LOGIKA_CONNECTIONS_NETWORK_TCP_CONNECTION_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOGIKA_CONNECTIONS_NETWORK_TCP_CONNECTION_H</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_84c4dbe6e1a79f99accf514d2173f793.html">logika</a></li><li class="navelem"><a class="el" href="../../dir_f1284c587673ddc2d78b9c445c5062b8.html">include</a></li><li class="navelem"><a class="el" href="../../dir_536f92a6556bef0406895bf0fd73acd4.html">logika</a></li><li class="navelem"><a class="el" href="../../dir_7b51ec3e2322a51b57802051b996306a.html">connections</a></li><li class="navelem"><a class="el" href="../../dir_9b6ccfd5de2aec179c5ebd1cac44a5c4.html">network</a></li><li class="navelem"><a class="el" href="../../d1/df0/tcp__connection_8h.html">tcp_connection.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

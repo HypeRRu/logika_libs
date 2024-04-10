@@ -1,0 +1,17 @@
+<map id="logika::meters::Spt941_20" name="logika::meters::Spt941_20">
+<area shape="rect" id="Node000001" title="Класс прибора SPT941_20." alt="" coords="76,6159,409,6554"/>
+<area shape="rect" id="Node000002" href="$dd/d0e/classlogika_1_1meters_1_1Logika4M.html" title="Класс прибора Logika4M." alt="" coords="105,4623,381,6110"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,6124,245,6159,240,6159,240,6124"/>
+<area shape="rect" id="Node000003" href="$d6/df4/classlogika_1_1meters_1_1Logika4.html" title="Класс прибора Logika4." alt="" coords="105,3354,381,4574"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="245,4589,245,4623,240,4623,240,4589"/>
+<area shape="rect" id="Node000004" href="$d3/d77/classlogika_1_1meters_1_1Meter.html" title="Базовый класс прибора" alt="" coords="105,1452,381,3304"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="245,3319,245,3354,240,3354,240,3319"/>
+<area shape="rect" id="Node000005" href="$d9/d2a/classlogika_1_1meters_1_1IMeter.html" title="Интерфейс прибора" alt="" coords="5,212,245,1403"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="174,1418,176,1452,171,1453,168,1418"/>
+<area shape="rect" id="Node000006" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="41,20,210,135"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="128,150,128,212,123,212,123,150"/>
+<area shape="rect" id="Node000007" href="$dd/d10/classlogika_1_1SharedConstructible.html" title=" " alt="" coords="270,736,455,880"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="359,895,316,1453,311,1452,353,894"/>
+<area shape="rect" id="Node000008" href="$dd/d10/classlogika_1_1SharedConstructible.html" title="Конструируемый в shared_ptr тип" alt="" coords="270,5,455,149"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="365,164,365,736,360,736,360,164"/>
+</map>

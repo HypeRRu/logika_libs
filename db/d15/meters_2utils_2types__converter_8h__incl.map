@@ -1,0 +1,15 @@
+<map id="logika/include/logika/meters/utils/types_converter.h" name="logika/include/logika/meters/utils/types_converter.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="30,5,229,46"/>
+<area shape="rect" id="Node000002" href="$d2/d4b/meters_2defs_8h.html" title=" " alt="" coords="5,175,144,201"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,48,102,95,83,161,78,160,97,93,117,46"/>
+<area shape="rect" id="Node000003" href="$dc/d3d/meters_2types_8h.html" title=" " alt="" coords="112,94,256,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="145,45,169,79,165,83,140,48"/>
+<area shape="poly" id="edge7_Node000003_Node000002" title=" " alt="" coords="169,122,105,168,102,164,166,118"/>
+<area shape="rect" id="Node000004" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="169,256,324,282"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="188,120,194,160,209,207,230,242,225,245,204,209,189,161,182,121"/>
+<area shape="rect" id="Node000005" href="$da/d08/iserializable_8h.html" title=" " alt="" coords="218,175,408,201"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="205,118,282,165,279,169,202,122"/>
+<area shape="rect" id="Node000006" href="$de/d23/shared__constructible_8hpp.html" title=" " alt="" coords="433,168,585,208"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="235,118,418,162,417,167,233,123"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="305,203,268,246,264,243,301,200"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="logika/include/logika/connections/iconnection.h" name="logika/include/logika/connections/iconnection.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="136,5,311,46"/>
+<area shape="rect" id="Node000002" href="$d1/d90/connections_2defs_8h.html" title=" " alt="" coords="5,94,135,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,49,119,89,116,84,187,44"/>
+<area shape="rect" id="Node000003" href="$d3/d5a/connections_2types_8h.html" title=" " alt="" coords="159,94,288,135"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="226,47,226,78,221,78,221,47"/>
+<area shape="rect" id="Node000004" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="312,102,466,127"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="262,44,353,92,351,96,260,49"/>
+</map>

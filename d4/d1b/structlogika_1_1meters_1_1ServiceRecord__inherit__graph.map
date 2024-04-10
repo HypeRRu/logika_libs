@@ -1,0 +1,5 @@
+<map id="logika::meters::ServiceRecord" name="logika::meters::ServiceRecord">
+<area shape="rect" id="Node000001" title="Запись сервисного архива" alt="" coords="5,168,189,288"/>
+<area shape="rect" id="Node000002" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="13,5,182,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,135,100,168,95,168,95,135"/>
+</map>

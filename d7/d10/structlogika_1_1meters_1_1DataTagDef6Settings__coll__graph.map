@@ -1,0 +1,7 @@
+<map id="logika::meters::DataTagDef6Settings" name="logika::meters::DataTagDef6Settings">
+<area shape="rect" id="Node000001" title="Параметры для создания тэга Logika6." alt="" coords="13,447,187,567"/>
+<area shape="rect" id="Node000002" href="$d1/dd1/structlogika_1_1meters_1_1DataTagDefSettings.html" title="Параметры для создания тэга с данными" alt="" coords="16,239,184,399"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,414,103,447,97,447,97,414"/>
+<area shape="rect" id="Node000003" href="$d0/de8/structlogika_1_1meters_1_1TagDefSettings.html" title="Параметры для создания базового тэга" alt="" coords="5,5,195,191"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="103,206,103,239,97,239,97,206"/>
+</map>

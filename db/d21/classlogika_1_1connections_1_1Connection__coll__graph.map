@@ -1,0 +1,5 @@
+<map id="logika::connections::Connection" name="logika::connections::Connection">
+<area shape="rect" id="Node000001" title="Базовый класс для работы с соединением" alt="" coords="5,747,207,2041"/>
+<area shape="rect" id="Node000002" href="$df/ddb/classlogika_1_1connections_1_1IConnection.html" title="Интерфейс класса для работы с соединением" alt="" coords="5,5,207,699"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,713,109,747,103,747,103,713"/>
+</map>

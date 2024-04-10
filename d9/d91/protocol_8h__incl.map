@@ -1,0 +1,20 @@
+<map id="logika/include/logika/protocols/protocol.h" name="logika/include/logika/protocols/protocol.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="96,5,234,46"/>
+<area shape="rect" id="Node000002" href="$d7/d37/protocols_2defs_8h.html" title=" " alt="" coords="5,175,157,201"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,48,97,163,92,160,152,45"/>
+<area shape="rect" id="Node000003" href="$d7/de4/iprotocol_8h.html" title=" " alt="" coords="151,94,326,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="185,45,219,81,215,84,181,48"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="215,123,120,170,117,166,213,118"/>
+<area shape="rect" id="Node000004" href="$da/db4/protocols_2rc_8h.html" title=" " alt="" coords="180,175,318,201"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="243,120,248,159,243,160,237,120"/>
+<area shape="rect" id="Node000006" href="$d8/de5/iconnection_8h.html" title=" " alt="" coords="418,168,547,208"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="277,118,408,160,406,165,275,123"/>
+<area shape="rect" id="Node000005" href="$d0/d6b/common_2rc_8h.html" title=" " alt="" coords="145,264,279,290"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="246,202,225,251,220,249,241,200"/>
+<area shape="rect" id="Node000007" href="$d1/d90/connections_2defs_8h.html" title=" " alt="" coords="303,256,432,297"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="458,211,407,249,404,245,455,207"/>
+<area shape="rect" id="Node000008" href="$d3/d5a/connections_2types_8h.html" title=" " alt="" coords="456,256,586,297"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="494,208,508,241,504,243,489,210"/>
+<area shape="rect" id="Node000009" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="609,264,764,290"/>
+<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="530,206,645,255,643,260,528,211"/>
+</map>

@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Logika Libs: Файл resources/include/logika/resources/loader.ipp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Logika Libs
+   </div>
+   <div id="projectbrief">Библиотеки для работы с приборами НПФ &quot;Логика&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d1/d95/loader_8ipp.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">Пространства имен</a>  </div>
+  <div class="headertitle"><div class="title">Файл loader.ipp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="../../d8/db0/defines_8h_source.html">logika/log/defines.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d4/d08/misc_8h_source.html">logika/common/misc.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для loader.ipp:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d39/loader_8ipp__incl.png" border="0" usemap="#aresources_2include_2logika_2resources_2loader_8ipp" alt=""/></div>
+<map name="aresources_2include_2logika_2resources_2loader_8ipp" id="aresources_2include_2logika_2resources_2loader_8ipp">
+<area shape="rect" title=" " alt="" coords="180,5,341,46"/>
+<area shape="rect" href="../../d8/db0/defines_8h.html" title=" " alt="" coords="112,94,243,120"/>
+<area shape="poly" title=" " alt="" coords="242,48,203,85,200,81,238,44"/>
+<area shape="rect" href="../../d4/d08/misc_8h.html" title=" " alt="" coords="267,94,419,120"/>
+<area shape="poly" title=" " alt="" coords="283,44,321,81,317,85,279,48"/>
+<area shape="rect" href="../../d1/d8c/logger_8h.html" title=" " alt="" coords="115,168,240,193"/>
+<area shape="poly" title=" " alt="" coords="180,120,180,152,175,152,175,120"/>
+<area shape="rect" href="../../d5/d7b/common_2types_8h.html" title=" " alt="" coords="346,241,500,267"/>
+<area shape="poly" title=" " alt="" coords="220,191,367,234,366,239,219,196"/>
+<area shape="rect" href="../../d6/d8e/log_2defs_8h.html" title=" " alt="" coords="5,241,121,267"/>
+<area shape="poly" title=" " alt="" coords="160,196,97,235,94,230,157,192"/>
+<area shape="rect" href="../../dd/dd4/log_2types_8h.html" title=" " alt="" coords="145,241,266,267"/>
+<area shape="poly" title=" " alt="" coords="185,193,198,226,193,228,180,195"/>
+<area shape="poly" title=" " alt="" coords="373,118,403,137,417,151,428,167,435,197,433,226,428,226,430,197,423,169,413,154,400,141,370,122"/>
+<area shape="rect" href="../../dd/da1/common_2defs_8h.html" title=" " alt="" coords="265,168,413,193"/>
+<area shape="poly" title=" " alt="" coords="345,120,343,152,338,152,340,120"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Граф файлов, в которые включается этот файл:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/df8/loader_8ipp__dep__incl.png" border="0" usemap="#aresources_2include_2logika_2resources_2loader_8ippdep" alt=""/></div>
+<map name="aresources_2include_2logika_2resources_2loader_8ippdep" id="aresources_2include_2logika_2resources_2loader_8ippdep">
+<area shape="rect" title=" " alt="" coords="5,5,167,46"/>
+<area shape="rect" href="../../d2/d8f/loader_8hpp.html" title=" " alt="" coords="5,94,167,135"/>
+<area shape="poly" title=" " alt="" coords="89,62,89,94,83,94,83,62"/>
+<area shape="rect" href="../../d4/d0b/logika_2src_2main_8cpp.html" title=" " alt="" coords="19,183,153,208"/>
+<area shape="poly" title=" " alt="" coords="89,150,89,182,83,182,83,150"/>
+</map>
+</div>
+</div>
+<p><a href="../../d1/d95/loader_8ipp_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Пространства имен</h2></td></tr>
+<tr class="memitem:d7/d43/namespacelogika" id="r_d7/d43/namespacelogika"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d43/namespacelogika.html">logika</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:d0/d65/namespacelogika_1_1resources" id="r_d0/d65/namespacelogika_1_1resources"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d65/namespacelogika_1_1resources.html">logika::resources</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_0fc3f8f3ef96ce2d45d66d6e29832317.html">resources</a></li><li class="navelem"><a class="el" href="../../dir_b965948af30f5dc2889bc83119f8022a.html">include</a></li><li class="navelem"><a class="el" href="../../dir_b5ad8ce137e8c273861640197b88d142.html">logika</a></li><li class="navelem"><a class="el" href="../../dir_4b57924817e9b53cfc95dcc86f22d09c.html">resources</a></li><li class="navelem"><a class="el" href="../../d1/d95/loader_8ipp.html">loader.ipp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

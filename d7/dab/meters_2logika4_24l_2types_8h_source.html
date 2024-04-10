@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Logika Libs: Исходный файл logika/include/logika/meters/logika4/4l/types.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Logika Libs
+   </div>
+   <div id="projectbrief">Библиотеки для работы с приборами НПФ &quot;Логика&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d7/dab/meters_2logika4_24l_2types_8h_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">types.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d7/dab/meters_2logika4_24l_2types_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef LOGIKA_METERS_LOGIKA4_4L_TYPES_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="../../d7/dab/meters_2logika4_24l_2types_8h.html#a34be513a8381ce0d858b3b15360193d3">    7</a></span><span class="preprocessor">#define LOGIKA_METERS_LOGIKA4_4L_TYPES_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d7/d43/namespacelogika.html">logika</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span>meters</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html">   15</a></span><span class="keyword">namespace </span>BinaryType4L</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#aead2be909773cd60590f689c076fac21">   18</a></span><span class="keyword">using </span><a class="code hl_typedef" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#aead2be909773cd60590f689c076fac21">Type</a> = uint8_t;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>enum : <a class="code hl_typedef" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#aead2be909773cd60590f689c076fac21">Type</a></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a9ad1293e6e21edf5359b742ca8f626c9">   23</a></span>    <a class="code hl_enumvalue" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a9ad1293e6e21edf5359b742ca8f626c9">Undefined</a> = 0,          </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90abd558b73141cafda516384c41b6d76ff">   24</a></span>    <a class="code hl_enumvalue" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90abd558b73141cafda516384c41b6d76ff">R32</a>,                    </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90aba37526af5627fcb003eed00dc2c2de4">   25</a></span>    <a class="code hl_enumvalue" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90aba37526af5627fcb003eed00dc2c2de4">TripleR32</a>,              </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90abc0f8ea065a5fa2b455e83c8f7ec24bc">   26</a></span>    <a class="code hl_enumvalue" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90abc0f8ea065a5fa2b455e83c8f7ec24bc">Time</a>,                   </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a5d7a4a87890abb8dc4881ea34e95a73a">   27</a></span>    <a class="code hl_enumvalue" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a5d7a4a87890abb8dc4881ea34e95a73a">Date</a>,                   </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a4411a331c9751df85008ddaac146616c">   28</a></span>    <a class="code hl_enumvalue" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a4411a331c9751df85008ddaac146616c">MmDdDate</a>,               </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a7f45e2a04c07b5a7bd47dd4a8c6d127d">   29</a></span>    <a class="code hl_enumvalue" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a7f45e2a04c07b5a7bd47dd4a8c6d127d">BitArray32</a>,             </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90aed13434546e016aed0d4f10da669b9a5">   30</a></span>    <a class="code hl_enumvalue" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90aed13434546e016aed0d4f10da669b9a5">BitArray24</a>,             </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a45a19cdb33b268a4c02d31077a53c939">   31</a></span>    <a class="code hl_enumvalue" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a45a19cdb33b268a4c02d31077a53c939">BitArray16</a>,             </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90ab742d3f4f8c96fb50780be8b3a74e0d6">   32</a></span>    <a class="code hl_enumvalue" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90ab742d3f4f8c96fb50780be8b3a74e0d6">BitArray8</a>,              </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a51a7f85b71bf0cc049f41d9d59d61ea1">   33</a></span>    <a class="code hl_enumvalue" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a51a7f85b71bf0cc049f41d9d59d61ea1">DbEntry</a>,                </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a3d79db97581940c4656407d9390b1e62">   34</a></span>    <a class="code hl_enumvalue" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a3d79db97581940c4656407d9390b1e62">DbEntryByte</a>,            </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90ae48f2112172775bd00012b4f9d6de08b">   35</a></span>    <a class="code hl_enumvalue" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90ae48f2112172775bd00012b4f9d6de08b">U8</a>,                     </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a841bab2c474dfeb62157b3120d7331b5">   36</a></span>    <a class="code hl_enumvalue" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a841bab2c474dfeb62157b3120d7331b5">I32R32</a>,                 </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a4c87d371ad826a8f2bd5158db32fd1b6">   37</a></span>    <a class="code hl_enumvalue" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a4c87d371ad826a8f2bd5158db32fd1b6">MmHhTime</a>,               </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a0e98e3d25b4027e638bf47cce7e4b567">   38</a></span>    <a class="code hl_enumvalue" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a0e98e3d25b4027e638bf47cce7e4b567">NsRecord</a>,               </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a1fc77359f08e186549ebbf09449af9f7">   39</a></span>    <a class="code hl_enumvalue" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a1fc77359f08e186549ebbf09449af9f7">IzmRecord</a>,              </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a5d026455511999bc3aaa7f2518f8b593">   40</a></span>    <a class="code hl_enumvalue" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a5d026455511999bc3aaa7f2518f8b593">ArchiveStruct</a>,          </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a2ec2aa71639c74aeddc7075f2f2c4e64">   41</a></span>    <a class="code hl_enumvalue" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a2ec2aa71639c74aeddc7075f2f2c4e64">ModelChar</a>,              </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a24abca684ccea29c80d9da175c0ed5c1">   42</a></span>    <a class="code hl_enumvalue" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a24abca684ccea29c80d9da175c0ed5c1">U24</a>,                    </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_enumvalue" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a12338fc650ba48ac60e1e3039d512a1a">ServiceRecordTimestamp</a>  </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a12338fc650ba48ac60e1e3039d512a1a">   44</a></span>}; <span class="comment">// anonymous enum</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>} <span class="comment">// namespace BinaryType4L</span></div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>} <span class="comment">// namespace meters</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>} <span class="comment">// namespace logika</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif </span><span class="comment">// LOGIKA_METERS_LOGIKA4_4L_TYPES_H</span></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_ae46513347c4ea0ea5563977484872d90a0e98e3d25b4027e638bf47cce7e4b567"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a0e98e3d25b4027e638bf47cce7e4b567">logika::meters::BinaryType4L::NsRecord</a></div><div class="ttdeci">@ NsRecord</div><div class="ttdoc">Запись НС</div><div class="ttdef"><b>Definition</b> types.h:38</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_ae46513347c4ea0ea5563977484872d90a12338fc650ba48ac60e1e3039d512a1a"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a12338fc650ba48ac60e1e3039d512a1a">logika::meters::BinaryType4L::ServiceRecordTimestamp</a></div><div class="ttdeci">@ ServiceRecordTimestamp</div><div class="ttdoc">Метка времени записи сервисного архива</div><div class="ttdef"><b>Definition</b> types.h:43</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_ae46513347c4ea0ea5563977484872d90a1fc77359f08e186549ebbf09449af9f7"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a1fc77359f08e186549ebbf09449af9f7">logika::meters::BinaryType4L::IzmRecord</a></div><div class="ttdeci">@ IzmRecord</div><div class="ttdoc">Запись измерения</div><div class="ttdef"><b>Definition</b> types.h:39</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_ae46513347c4ea0ea5563977484872d90a24abca684ccea29c80d9da175c0ed5c1"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a24abca684ccea29c80d9da175c0ed5c1">logika::meters::BinaryType4L::U24</a></div><div class="ttdeci">@ U24</div><div class="ttdoc">Серийный номер прибора</div><div class="ttdef"><b>Definition</b> types.h:42</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_ae46513347c4ea0ea5563977484872d90a2ec2aa71639c74aeddc7075f2f2c4e64"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a2ec2aa71639c74aeddc7075f2f2c4e64">logika::meters::BinaryType4L::ModelChar</a></div><div class="ttdeci">@ ModelChar</div><div class="ttdoc">Код модели прибора</div><div class="ttdef"><b>Definition</b> types.h:41</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_ae46513347c4ea0ea5563977484872d90a3d79db97581940c4656407d9390b1e62"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a3d79db97581940c4656407d9390b1e62">logika::meters::BinaryType4L::DbEntryByte</a></div><div class="ttdeci">@ DbEntryByte</div><div class="ttdoc">Тип параметра БД приборов (стандартный тип)</div><div class="ttdef"><b>Definition</b> types.h:34</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_ae46513347c4ea0ea5563977484872d90a4411a331c9751df85008ddaac146616c"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a4411a331c9751df85008ddaac146616c">logika::meters::BinaryType4L::MmDdDate</a></div><div class="ttdeci">@ MmDdDate</div><div class="ttdoc">Дата перехода на летнее/зимнее время MM-DD-xx-xx (4 байта)</div><div class="ttdef"><b>Definition</b> types.h:28</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_ae46513347c4ea0ea5563977484872d90a45a19cdb33b268a4c02d31077a53c939"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a45a19cdb33b268a4c02d31077a53c939">logika::meters::BinaryType4L::BitArray16</a></div><div class="ttdeci">@ BitArray16</div><div class="ttdoc">16 битная сборка НС</div><div class="ttdef"><b>Definition</b> types.h:31</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_ae46513347c4ea0ea5563977484872d90a4c87d371ad826a8f2bd5158db32fd1b6"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a4c87d371ad826a8f2bd5158db32fd1b6">logika::meters::BinaryType4L::MmHhTime</a></div><div class="ttdeci">@ MmHhTime</div><div class="ttdoc">Время в формате MM HH.</div><div class="ttdef"><b>Definition</b> types.h:37</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_ae46513347c4ea0ea5563977484872d90a51a7f85b71bf0cc049f41d9d59d61ea1"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a51a7f85b71bf0cc049f41d9d59d61ea1">logika::meters::BinaryType4L::DbEntry</a></div><div class="ttdeci">@ DbEntry</div><div class="ttdoc">Тип параметра БД приборов 942, 741, 943 (строка)</div><div class="ttdef"><b>Definition</b> types.h:33</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_ae46513347c4ea0ea5563977484872d90a5d026455511999bc3aaa7f2518f8b593"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a5d026455511999bc3aaa7f2518f8b593">logika::meters::BinaryType4L::ArchiveStruct</a></div><div class="ttdeci">@ ArchiveStruct</div><div class="ttdoc">Архивный срез (структура, определяемая прибором)</div><div class="ttdef"><b>Definition</b> types.h:40</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_ae46513347c4ea0ea5563977484872d90a5d7a4a87890abb8dc4881ea34e95a73a"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a5d7a4a87890abb8dc4881ea34e95a73a">logika::meters::BinaryType4L::Date</a></div><div class="ttdeci">@ Date</div><div class="ttdoc">Дата в формате YY MM DD (3 байта)</div><div class="ttdef"><b>Definition</b> types.h:27</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_ae46513347c4ea0ea5563977484872d90a7f45e2a04c07b5a7bd47dd4a8c6d127d"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a7f45e2a04c07b5a7bd47dd4a8c6d127d">logika::meters::BinaryType4L::BitArray32</a></div><div class="ttdeci">@ BitArray32</div><div class="ttdoc">32 битная сборка НС</div><div class="ttdef"><b>Definition</b> types.h:29</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_ae46513347c4ea0ea5563977484872d90a841bab2c474dfeb62157b3120d7331b5"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a841bab2c474dfeb62157b3120d7331b5">logika::meters::BinaryType4L::I32R32</a></div><div class="ttdeci">@ I32R32</div><div class="ttdoc">int32 + float во flash (+ float приращение за текущий час в ОЗУ, не читаем)</div><div class="ttdef"><b>Definition</b> types.h:36</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_ae46513347c4ea0ea5563977484872d90a9ad1293e6e21edf5359b742ca8f626c9"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a9ad1293e6e21edf5359b742ca8f626c9">logika::meters::BinaryType4L::Undefined</a></div><div class="ttdeci">@ Undefined</div><div class="ttdoc">Неопределенный тип</div><div class="ttdef"><b>Definition</b> types.h:23</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_ae46513347c4ea0ea5563977484872d90ab742d3f4f8c96fb50780be8b3a74e0d6"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90ab742d3f4f8c96fb50780be8b3a74e0d6">logika::meters::BinaryType4L::BitArray8</a></div><div class="ttdeci">@ BitArray8</div><div class="ttdoc">8 битная сборка НС</div><div class="ttdef"><b>Definition</b> types.h:32</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_ae46513347c4ea0ea5563977484872d90aba37526af5627fcb003eed00dc2c2de4"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90aba37526af5627fcb003eed00dc2c2de4">logika::meters::BinaryType4L::TripleR32</a></div><div class="ttdeci">@ TripleR32</div><div class="ttdoc">Три последовательных значения с плавающей точкой (float)</div><div class="ttdef"><b>Definition</b> types.h:25</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_ae46513347c4ea0ea5563977484872d90abc0f8ea065a5fa2b455e83c8f7ec24bc"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90abc0f8ea065a5fa2b455e83c8f7ec24bc">logika::meters::BinaryType4L::Time</a></div><div class="ttdeci">@ Time</div><div class="ttdoc">Время в формате HH MM SS (3 байта)</div><div class="ttdef"><b>Definition</b> types.h:26</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_ae46513347c4ea0ea5563977484872d90abd558b73141cafda516384c41b6d76ff"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90abd558b73141cafda516384c41b6d76ff">logika::meters::BinaryType4L::R32</a></div><div class="ttdeci">@ R32</div><div class="ttdoc">Одно значение с плавающей точкой (float)</div><div class="ttdef"><b>Definition</b> types.h:24</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_ae46513347c4ea0ea5563977484872d90ae48f2112172775bd00012b4f9d6de08b"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90ae48f2112172775bd00012b4f9d6de08b">logika::meters::BinaryType4L::U8</a></div><div class="ttdeci">@ U8</div><div class="ttdoc">Беззнаковое 8 битное целое число</div><div class="ttdef"><b>Definition</b> types.h:35</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_ae46513347c4ea0ea5563977484872d90aed13434546e016aed0d4f10da669b9a5"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90aed13434546e016aed0d4f10da669b9a5">logika::meters::BinaryType4L::BitArray24</a></div><div class="ttdeci">@ BitArray24</div><div class="ttdoc">24 битная сборка НС</div><div class="ttdef"><b>Definition</b> types.h:30</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1BinaryType4L_html_aead2be909773cd60590f689c076fac21"><div class="ttname"><a href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#aead2be909773cd60590f689c076fac21">logika::meters::BinaryType4L::Type</a></div><div class="ttdeci">uint8_t Type</div><div class="ttdef"><b>Definition</b> types.h:18</div></div>
+<div class="ttc" id="anamespacelogika_html"><div class="ttname"><a href="../../d7/d43/namespacelogika.html">logika</a></div><div class="ttdef"><b>Definition</b> any.hpp:17</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_84c4dbe6e1a79f99accf514d2173f793.html">logika</a></li><li class="navelem"><a class="el" href="../../dir_f1284c587673ddc2d78b9c445c5062b8.html">include</a></li><li class="navelem"><a class="el" href="../../dir_536f92a6556bef0406895bf0fd73acd4.html">logika</a></li><li class="navelem"><a class="el" href="../../dir_f19878882094456de11f8fe15da466da.html">meters</a></li><li class="navelem"><a class="el" href="../../dir_145197e52cab4af211bb13af13e01618.html">logika4</a></li><li class="navelem"><a class="el" href="../../dir_0e1eef3295ac3e301771dcfc96b5b9a8.html">4l</a></li><li class="navelem"><a class="el" href="../../d7/dab/meters_2logika4_24l_2types_8h.html">types.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Logika Libs: Файл logika/include/logika/log/logger.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Logika Libs
+   </div>
+   <div id="projectbrief">Библиотеки для работы с приборами НПФ &quot;Логика&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d1/d8c/logger_8h.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#namespaces">Пространства имен</a> &#124;
+<a href="#define-members">Макросы</a>  </div>
+  <div class="headertitle"><div class="title">Файл logger.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="../../d5/d7b/common_2types_8h_source.html">logika/common/types.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d6/d8e/log_2defs_8h_source.html">logika/log/defs.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../dd/dd4/log_2types_8h_source.html">logika/log/types.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для logger.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/db3/logger_8h__incl.png" border="0" usemap="#alogika_2include_2logika_2log_2logger_8h" alt=""/></div>
+<map name="alogika_2include_2logika_2log_2logger_8h" id="alogika_2include_2logika_2log_2logger_8h">
+<area shape="rect" title=" " alt="" coords="172,5,310,46"/>
+<area shape="rect" href="../../d5/d7b/common_2types_8h.html" title=" " alt="" coords="5,94,160,120"/>
+<area shape="poly" title=" " alt="" coords="203,49,121,89,119,84,200,44"/>
+<area shape="rect" href="../../d6/d8e/log_2defs_8h.html" title=" " alt="" coords="184,94,299,120"/>
+<area shape="poly" title=" " alt="" coords="244,46,244,78,239,78,239,46"/>
+<area shape="rect" href="../../dd/dd4/log_2types_8h.html" title=" " alt="" coords="323,94,445,120"/>
+<area shape="poly" title=" " alt="" coords="278,44,350,84,347,88,276,49"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Граф файлов, в которые включается этот файл:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/dcf/logger_8h__dep__incl.png" border="0" usemap="#alogika_2include_2logika_2log_2logger_8hdep" alt=""/></div>
+<map name="alogika_2include_2logika_2log_2logger_8hdep" id="alogika_2include_2logika_2log_2logger_8hdep">
+<area shape="rect" title=" " alt="" coords="2956,5,3094,46"/>
+<area shape="rect" href="../../d8/db0/defines_8h.html" title=" " alt="" coords="1564,94,1702,135"/>
+<area shape="poly" title=" " alt="" coords="2940,35,1703,111,1703,106,2940,30"/>
+<area shape="rect" href="../../d4/d0b/logika_2src_2main_8cpp.html" title=" " alt="" coords="2840,375,2973,401"/>
+<area shape="poly" title=" " alt="" coords="3034,61,3040,116,3041,185,3030,259,3018,295,3002,328,2989,344,2974,358,2941,377,2938,372,2971,353,2986,341,2997,326,3014,293,3025,258,3035,184,3035,116,3029,61"/>
+<area shape="rect" href="../../d3/d30/logger_8cpp.html" title=" " alt="" coords="3063,102,3224,127"/>
+<area shape="poly" title=" " alt="" coords="3066,53,3129,99,3126,103,3062,57"/>
+<area shape="rect" href="../../d0/d1d/linux__io_8cpp.html" title=" " alt="" coords="5,190,157,231"/>
+<area shape="poly" title=" " alt="" coords="1548,119,1256,125,858,137,460,156,294,170,169,185,139,192,138,187,169,180,294,164,459,151,858,131,1256,120,1548,114"/>
+<area shape="rect" href="../../db/ddd/windows__socket__io_8cpp.html" title=" " alt="" coords="181,183,357,238"/>
+<area shape="poly" title=" " alt="" coords="1548,121,952,142,615,161,475,173,369,185,358,187,357,182,369,180,475,167,615,156,952,137,1548,115"/>
+<area shape="rect" href="../../df/db6/connection_8cpp.html" title=" " alt="" coords="381,190,533,231"/>
+<area shape="poly" title=" " alt="" coords="1548,121,1036,143,752,162,635,173,545,185,516,192,515,187,545,180,634,168,752,156,1036,138,1548,116"/>
+<area shape="rect" href="../../d7/d27/tcp__connection_8cpp.html" title=" " alt="" coords="557,190,744,231"/>
+<area shape="poly" title=" " alt="" coords="1548,120,1399,126,1202,137,980,156,757,185,723,192,722,187,757,180,980,151,1201,132,1399,120,1548,115"/>
+<area shape="rect" href="../../d0/ddd/tcp__connection__linux_8cpp.html" title=" " alt="" coords="769,183,932,238"/>
+<area shape="poly" title=" " alt="" coords="1549,122,1279,141,1112,159,945,185,933,188,932,183,945,180,1111,154,1278,136,1548,116"/>
+<area shape="rect" href="../../d2/d16/tcp__connection__windows_8cpp.html" title=" " alt="" coords="957,183,1120,238"/>
+<area shape="poly" title=" " alt="" coords="1549,126,1358,148,1245,165,1134,185,1121,188,1120,183,1132,180,1244,160,1357,143,1548,121"/>
+<area shape="rect" href="../../db/d02/udp__connection_8cpp.html" title=" " alt="" coords="1145,190,1335,231"/>
+<area shape="poly" title=" " alt="" coords="1549,138,1348,185,1320,192,1319,187,1347,180,1548,133"/>
+<area shape="rect" href="../../d4/de8/udp__connection__linux_8cpp.html" title=" " alt="" coords="1359,183,1526,238"/>
+<area shape="poly" title=" " alt="" coords="1581,144,1499,185,1496,180,1578,140"/>
+<area shape="rect" href="../../da/dda/udp__connection__windows_8cpp.html" title=" " alt="" coords="1550,183,1716,238"/>
+<area shape="poly" title=" " alt="" coords="1636,150,1636,182,1630,182,1630,150"/>
+<area shape="rect" href="../../d7/d5a/serial__connection_8cpp.html" title=" " alt="" coords="1740,190,1926,231"/>
+<area shape="poly" title=" " alt="" coords="1690,139,1792,187,1790,192,1688,144"/>
+<area shape="rect" href="../../d0/db2/serial__port__connection_8cpp.html" title=" " alt="" coords="1950,190,2164,231"/>
+<area shape="poly" title=" " alt="" coords="1718,132,1938,180,1969,187,1968,192,1936,185,1717,137"/>
+<area shape="rect" href="../../df/d90/serial__port__connection__linux_8cpp.html" title=" " alt="" coords="2189,183,2379,238"/>
+<area shape="poly" title=" " alt="" coords="1718,120,1927,143,2052,160,2176,180,2189,183,2188,188,2175,185,2051,165,1926,148,1718,126"/>
+<area shape="rect" href="../../db/dfe/serial__port__connection__windows_8cpp.html" title=" " alt="" coords="2403,183,2594,238"/>
+<area shape="poly" title=" " alt="" coords="1718,116,2016,135,2203,154,2391,180,2403,182,2402,187,2390,185,2202,159,2016,141,1717,122"/>
+<area shape="poly" title=" " alt="" coords="1718,115,1939,123,2215,136,2465,155,2554,167,2606,180,2624,193,2634,207,2643,221,2657,236,2717,280,2780,318,2882,372,2879,377,2777,323,2714,284,2654,240,2639,224,2630,210,2620,196,2604,185,2553,172,2464,160,2215,141,1939,128,1718,121"/>
+<area shape="rect" href="../../d4/d25/protocol_8cpp.html" title=" " alt="" coords="2667,190,2802,231"/>
+<area shape="poly" title=" " alt="" coords="1718,112,1890,113,2122,122,2385,143,2519,159,2650,180,2679,187,2677,192,2648,185,2518,164,2384,148,2121,127,1889,119,1718,117"/>
+<area shape="rect" href="../../d1/d95/loader_8ipp.html" title=" " alt="" coords="2826,190,2987,231"/>
+<area shape="poly" title=" " alt="" coords="1718,115,2274,137,2586,156,2715,167,2813,180,2845,187,2844,192,2813,185,2715,173,2586,161,2274,142,1718,121"/>
+<area shape="rect" href="../../d2/d8f/loader_8hpp.html" title=" " alt="" coords="2826,286,2987,327"/>
+<area shape="poly" title=" " alt="" coords="2909,246,2909,286,2904,286,2904,246"/>
+<area shape="poly" title=" " alt="" coords="2909,343,2909,374,2904,374,2904,343"/>
+</map>
+</div>
+</div>
+<p><a href="../../d1/d8c/logger_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d0f/classlogika_1_1log_1_1Logger.html">logika::log::Logger</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Класс логгера  <a href="../../d9/d0f/classlogika_1_1log_1_1Logger.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Пространства имен</h2></td></tr>
+<tr class="memitem:d7/d43/namespacelogika" id="r_d7/d43/namespacelogika"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d43/namespacelogika.html">logika</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:d7/d77/namespacelogika_1_1log" id="r_d7/d77/namespacelogika_1_1log"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d77/namespacelogika_1_1log.html">logika::log</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Макросы</h2></td></tr>
+<tr class="memitem:af87e62fa2962df2edba10a2f3bcf4f37" id="r_af87e62fa2962df2edba10a2f3bcf4f37"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af87e62fa2962df2edba10a2f3bcf4f37">LOGIKA_LOG_LOGGER_H</a></td></tr>
+<tr class="separator:af87e62fa2962df2edba10a2f3bcf4f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Макросы</h2>
+<a id="af87e62fa2962df2edba10a2f3bcf4f37" name="af87e62fa2962df2edba10a2f3bcf4f37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af87e62fa2962df2edba10a2f3bcf4f37">&#9670;&#160;</a></span>LOGIKA_LOG_LOGGER_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOGIKA_LOG_LOGGER_H</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_84c4dbe6e1a79f99accf514d2173f793.html">logika</a></li><li class="navelem"><a class="el" href="../../dir_f1284c587673ddc2d78b9c445c5062b8.html">include</a></li><li class="navelem"><a class="el" href="../../dir_536f92a6556bef0406895bf0fd73acd4.html">logika</a></li><li class="navelem"><a class="el" href="../../dir_052a246e6d372cf38123363a66517ee2.html">log</a></li><li class="navelem"><a class="el" href="../../d1/d8c/logger_8h.html">logger.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

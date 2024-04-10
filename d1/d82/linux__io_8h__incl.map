@@ -1,0 +1,11 @@
+<map id="logika/include/logika/connections/common/linux_io.h" name="logika/include/logika/connections/common/linux_io.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="145,5,351,46"/>
+<area shape="rect" id="Node000002" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="5,102,160,127"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,49,120,96,118,92,209,44"/>
+<area shape="rect" id="Node000003" href="$d1/d90/connections_2defs_8h.html" title=" " alt="" coords="183,94,313,135"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="251,47,251,78,245,78,245,47"/>
+<area shape="rect" id="Node000004" href="$d2/d20/connections_2rc_8h.html" title=" " alt="" coords="336,102,490,127"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="287,44,378,92,375,96,284,49"/>
+<area shape="rect" id="Node000005" href="$d0/d6b/common_2rc_8h.html" title=" " alt="" coords="346,183,480,208"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="416,128,416,167,411,167,411,128"/>
+</map>

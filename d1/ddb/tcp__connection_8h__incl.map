@@ -1,0 +1,22 @@
+<map id="logika/include/logika/connections/network/tcp_connection.h" name="logika/include/logika/connections/network/tcp_connection.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="8,5,153,61"/>
+<area shape="rect" id="Node000002" href="$d1/d90/connections_2defs_8h.html" title=" " alt="" coords="5,375,135,416"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="66,63,55,85,47,110,39,178,42,247,52,310,63,359,58,360,46,311,37,248,34,178,42,108,50,83,62,60"/>
+<area shape="rect" id="Node000003" href="$d6/d43/net__connection_8h.html" title=" " alt="" coords="57,109,230,150"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="101,60,124,95,120,98,97,63"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="139,151,123,198,81,360,75,359,118,197,134,149"/>
+<area shape="rect" id="Node000004" href="$d4/d67/connection_8h.html" title=" " alt="" coords="133,198,263,238"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="158,149,180,183,175,186,153,152"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="185,240,148,288,94,364,90,360,144,285,181,237"/>
+<area shape="rect" id="Node000005" href="$d8/de5/iconnection_8h.html" title=" " alt="" coords="159,286,288,327"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="206,238,216,270,211,272,201,240"/>
+<area shape="rect" id="Node000008" href="$d2/d20/connections_2rc_8h.html" title=" " alt="" coords="396,294,550,320"/>
+<area shape="poly" id="edge10_Node000004_Node000008" title=" " alt="" coords="261,236,420,286,419,291,260,242"/>
+<area shape="poly" id="edge7_Node000005_Node000002" title=" " alt="" coords="190,330,119,370,116,365,187,325"/>
+<area shape="rect" id="Node000006" href="$d3/d5a/connections_2types_8h.html" title=" " alt="" coords="159,375,288,416"/>
+<area shape="poly" id="edge8_Node000005_Node000006" title=" " alt="" coords="226,328,226,359,221,359,221,328"/>
+<area shape="rect" id="Node000007" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="312,383,466,408"/>
+<area shape="poly" id="edge9_Node000005_Node000007" title=" " alt="" coords="262,325,353,373,351,377,260,330"/>
+<area shape="rect" id="Node000009" href="$d0/d6b/common_2rc_8h.html" title=" " alt="" coords="490,383,624,408"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="486,318,536,369,533,373,482,322"/>
+</map>

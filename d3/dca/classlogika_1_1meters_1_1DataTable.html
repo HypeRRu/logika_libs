@@ -1,0 +1,819 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Logika Libs: Класс logika::meters::DataTable</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Logika Libs
+   </div>
+   <div id="projectbrief">Библиотеки для работы с приборами НПФ &quot;Логика&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d3/dca/classlogika_1_1meters_1_1DataTable.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="../../d8/dee/classlogika_1_1meters_1_1DataTable-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс logika::meters::DataTable</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Таблица данных  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../db/dbf/data__table_8hpp_source.html">data_table.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса logika::meters::DataTable:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/d25/classlogika_1_1meters_1_1DataTable__coll__graph.png" border="0" usemap="#alogika_1_1meters_1_1DataTable_coll__map" alt="Collaboration graph"/></div>
+<map name="alogika_1_1meters_1_1DataTable_coll__map" id="alogika_1_1meters_1_1DataTable_coll__map">
+<area shape="rect" title="Таблица данных" alt="" coords="5,5,208,853"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:adc0adcccd1831067599c3fcb9c18a812" id="r_adc0adcccd1831067599c3fcb9c18a812"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc0adcccd1831067599c3fcb9c18a812">FieldType</a> = std::shared_ptr&lt; <a class="el" href="../../de/d9a/classlogika_1_1meters_1_1ArchiveField.html">ArchiveField</a> &gt;</td></tr>
+<tr class="separator:adc0adcccd1831067599c3fcb9c18a812"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cbcc6d0d740c8d6da0d8bf38fd00742" id="r_a1cbcc6d0d740c8d6da0d8bf38fd00742"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cbcc6d0d740c8d6da0d8bf38fd00742">RecordType</a> = std::shared_ptr&lt; std::vector&lt; <a class="el" href="../../d0/d78/classlogika_1_1Any.html">logika::Any</a> &gt; &gt;</td></tr>
+<tr class="separator:a1cbcc6d0d740c8d6da0d8bf38fd00742"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a927f2124aaa9f3254f8ef827a5b5e1cd" id="r_a927f2124aaa9f3254f8ef827a5b5e1cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a927f2124aaa9f3254f8ef827a5b5e1cd">DataTable</a> (const std::vector&lt; <a class="el" href="#adc0adcccd1831067599c3fcb9c18a812">FieldType</a> &gt; &amp;fieldList=std::vector&lt; <a class="el" href="#adc0adcccd1831067599c3fcb9c18a812">FieldType</a> &gt;{})</td></tr>
+<tr class="memdesc:a927f2124aaa9f3254f8ef827a5b5e1cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор таблицы данных  <br /></td></tr>
+<tr class="separator:a927f2124aaa9f3254f8ef827a5b5e1cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7bb03b859abfcd0922c8387941546f3" id="r_ab7bb03b859abfcd0922c8387941546f3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7bb03b859abfcd0922c8387941546f3">DataTable</a> (const <a class="el" href="../../d3/dca/classlogika_1_1meters_1_1DataTable.html">DataTable</a> &amp;)=delete</td></tr>
+<tr class="separator:ab7bb03b859abfcd0922c8387941546f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4a91dc20b78524bd0cf7e407d227830" id="r_ac4a91dc20b78524bd0cf7e407d227830"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/dca/classlogika_1_1meters_1_1DataTable.html">DataTable</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4a91dc20b78524bd0cf7e407d227830">operator=</a> (const <a class="el" href="../../d3/dca/classlogika_1_1meters_1_1DataTable.html">DataTable</a> &amp;)=delete</td></tr>
+<tr class="separator:ac4a91dc20b78524bd0cf7e407d227830"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10c802040d82e8a1f0af99bbe207bf95" id="r_a10c802040d82e8a1f0af99bbe207bf95"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10c802040d82e8a1f0af99bbe207bf95">RecordCount</a> () const</td></tr>
+<tr class="memdesc:a10c802040d82e8a1f0af99bbe207bf95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение количества записей в таблице  <br /></td></tr>
+<tr class="separator:a10c802040d82e8a1f0af99bbe207bf95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a138166b78f3991fdb81470cac1e68715" id="r_a138166b78f3991fdb81470cac1e68715"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a138166b78f3991fdb81470cac1e68715">FieldCount</a> () const</td></tr>
+<tr class="memdesc:a138166b78f3991fdb81470cac1e68715"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение количества столбцов в таблице  <br /></td></tr>
+<tr class="separator:a138166b78f3991fdb81470cac1e68715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf4dfce1c174a3b25c8de8ee433f21c8" id="r_aaf4dfce1c174a3b25c8de8ee433f21c8"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="#adc0adcccd1831067599c3fcb9c18a812">FieldType</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf4dfce1c174a3b25c8de8ee433f21c8">GetFieldsList</a> () const</td></tr>
+<tr class="memdesc:aaf4dfce1c174a3b25c8de8ee433f21c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение списка столбцов таблицы  <br /></td></tr>
+<tr class="separator:aaf4dfce1c174a3b25c8de8ee433f21c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac71342c89e52dce67ac666953792b31f" id="r_ac71342c89e52dce67ac666953792b31f"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="#a1cbcc6d0d740c8d6da0d8bf38fd00742">RecordType</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac71342c89e52dce67ac666953792b31f">GetRecordsList</a> () const</td></tr>
+<tr class="memdesc:ac71342c89e52dce67ac666953792b31f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение списка записей в таблице  <br /></td></tr>
+<tr class="separator:ac71342c89e52dce67ac666953792b31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf1a35e32dc13b29246893b759360eb9" id="r_abf1a35e32dc13b29246893b759360eb9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="#a1cbcc6d0d740c8d6da0d8bf38fd00742">RecordType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf1a35e32dc13b29246893b759360eb9">GetRecord</a> (size_t index) const</td></tr>
+<tr class="memdesc:abf1a35e32dc13b29246893b759360eb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение записи  <br /></td></tr>
+<tr class="separator:abf1a35e32dc13b29246893b759360eb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d358deefc6900ff08592192272ab4cf" id="r_a0d358deefc6900ff08592192272ab4cf"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="#a1cbcc6d0d740c8d6da0d8bf38fd00742">RecordType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d358deefc6900ff08592192272ab4cf">PopRecord</a> ()</td></tr>
+<tr class="memdesc:a0d358deefc6900ff08592192272ab4cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Извлечение последней записи  <br /></td></tr>
+<tr class="separator:a0d358deefc6900ff08592192272ab4cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4d02a015bcc383db9f15d7fddffb9b7" id="r_ae4d02a015bcc383db9f15d7fddffb9b7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4d02a015bcc383db9f15d7fddffb9b7">RemoveRecord</a> (<a class="el" href="#a1cbcc6d0d740c8d6da0d8bf38fd00742">RecordType</a> record)</td></tr>
+<tr class="memdesc:ae4d02a015bcc383db9f15d7fddffb9b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаление записи из таблицы  <br /></td></tr>
+<tr class="separator:ae4d02a015bcc383db9f15d7fddffb9b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d918bb91b6043fa96255bb20789049e" id="r_a7d918bb91b6043fa96255bb20789049e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d918bb91b6043fa96255bb20789049e">RemoveRecord</a> (size_t index)</td></tr>
+<tr class="memdesc:a7d918bb91b6043fa96255bb20789049e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаление записи из таблицы под заданным номером  <br /></td></tr>
+<tr class="separator:a7d918bb91b6043fa96255bb20789049e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86ed3ecf5f99412c6e394e310324fcd4" id="r_a86ed3ecf5f99412c6e394e310324fcd4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86ed3ecf5f99412c6e394e310324fcd4">PushRecord</a> (<a class="el" href="#a1cbcc6d0d740c8d6da0d8bf38fd00742">RecordType</a> record)</td></tr>
+<tr class="memdesc:a86ed3ecf5f99412c6e394e310324fcd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавление записи в конец таблицы  <br /></td></tr>
+<tr class="separator:a86ed3ecf5f99412c6e394e310324fcd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5feb5f9931e2cc397908db66e5b08ba" id="r_ad5feb5f9931e2cc397908db66e5b08ba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5feb5f9931e2cc397908db66e5b08ba">InsertRecord</a> (<a class="el" href="#a1cbcc6d0d740c8d6da0d8bf38fd00742">RecordType</a> record, size_t index)</td></tr>
+<tr class="memdesc:ad5feb5f9931e2cc397908db66e5b08ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавление записи  <br /></td></tr>
+<tr class="separator:ad5feb5f9931e2cc397908db66e5b08ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0e07af9b41524d85d0fac9504c63314" id="r_ae0e07af9b41524d85d0fac9504c63314"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:ae0e07af9b41524d85d0fac9504c63314"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae0e07af9b41524d85d0fac9504c63314">GetColumn</a> (<a class="el" href="#adc0adcccd1831067599c3fcb9c18a812">FieldType</a> field) const</td></tr>
+<tr class="memdesc:ae0e07af9b41524d85d0fac9504c63314"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение столбца таблицы  <br /></td></tr>
+<tr class="separator:ae0e07af9b41524d85d0fac9504c63314"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa06ab61b7ba71bc2e081961d3054f457" id="r_aa06ab61b7ba71bc2e081961d3054f457"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:aa06ab61b7ba71bc2e081961d3054f457"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa06ab61b7ba71bc2e081961d3054f457">GetColumn</a> (size_t fieldIndex) const</td></tr>
+<tr class="memdesc:aa06ab61b7ba71bc2e081961d3054f457"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение столбца таблицы  <br /></td></tr>
+<tr class="separator:aa06ab61b7ba71bc2e081961d3054f457"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90ef4dc862b3cefc0d367e4ac45c6fbd" id="r_a90ef4dc862b3cefc0d367e4ac45c6fbd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90ef4dc862b3cefc0d367e4ac45c6fbd">AddColumn</a> (<a class="el" href="#adc0adcccd1831067599c3fcb9c18a812">FieldType</a> field)</td></tr>
+<tr class="memdesc:a90ef4dc862b3cefc0d367e4ac45c6fbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавление столбца таблицы  <br /></td></tr>
+<tr class="separator:a90ef4dc862b3cefc0d367e4ac45c6fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af01cbb485d6d2c681118bedbbea72359" id="r_af01cbb485d6d2c681118bedbbea72359"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:af01cbb485d6d2c681118bedbbea72359"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af01cbb485d6d2c681118bedbbea72359">AddColumn</a> (<a class="el" href="#adc0adcccd1831067599c3fcb9c18a812">FieldType</a> field, const <a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;value)</td></tr>
+<tr class="memdesc:af01cbb485d6d2c681118bedbbea72359"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавление столбца таблицы  <br /></td></tr>
+<tr class="separator:af01cbb485d6d2c681118bedbbea72359"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc2d72bf1fb00482e950fc1f5105c0f5" id="r_adc2d72bf1fb00482e950fc1f5105c0f5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc2d72bf1fb00482e950fc1f5105c0f5">InsertColumn</a> (<a class="el" href="#adc0adcccd1831067599c3fcb9c18a812">FieldType</a> field, size_t index)</td></tr>
+<tr class="memdesc:adc2d72bf1fb00482e950fc1f5105c0f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавление столбца таблицы под определенным номером  <br /></td></tr>
+<tr class="separator:adc2d72bf1fb00482e950fc1f5105c0f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a620d577540cb326f123b27d75521ee36" id="r_a620d577540cb326f123b27d75521ee36"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:a620d577540cb326f123b27d75521ee36"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a620d577540cb326f123b27d75521ee36">InsertColumn</a> (<a class="el" href="#adc0adcccd1831067599c3fcb9c18a812">FieldType</a> field, size_t index, const <a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;value)</td></tr>
+<tr class="memdesc:a620d577540cb326f123b27d75521ee36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавление столбца таблицы под определенным номером  <br /></td></tr>
+<tr class="separator:a620d577540cb326f123b27d75521ee36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad45cf6eb413982cf766dbdb180db63cd" id="r_ad45cf6eb413982cf766dbdb180db63cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad45cf6eb413982cf766dbdb180db63cd">RemoveColumn</a> (<a class="el" href="#adc0adcccd1831067599c3fcb9c18a812">FieldType</a> field)</td></tr>
+<tr class="memdesc:ad45cf6eb413982cf766dbdb180db63cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаление столбца таблицы  <br /></td></tr>
+<tr class="separator:ad45cf6eb413982cf766dbdb180db63cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04e94b2abfb7786c3937a2c73b4b36b7" id="r_a04e94b2abfb7786c3937a2c73b4b36b7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04e94b2abfb7786c3937a2c73b4b36b7">RemoveColumn</a> (size_t fieldIndex)</td></tr>
+<tr class="memdesc:a04e94b2abfb7786c3937a2c73b4b36b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаление столбца таблицы  <br /></td></tr>
+<tr class="separator:a04e94b2abfb7786c3937a2c73b4b36b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Таблица данных </p>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000008">Необходимо сделать</a></b></dt><dd>Поиск по имени/caption столбца </dd></dl>
+</div><h2 class="groupheader">Определения типов</h2>
+<a id="adc0adcccd1831067599c3fcb9c18a812" name="adc0adcccd1831067599c3fcb9c18a812"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc0adcccd1831067599c3fcb9c18a812">&#9670;&#160;</a></span>FieldType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#adc0adcccd1831067599c3fcb9c18a812">logika::meters::DataTable::FieldType</a> = std::shared_ptr&lt; <a class="el" href="../../de/d9a/classlogika_1_1meters_1_1ArchiveField.html">ArchiveField</a> &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1cbcc6d0d740c8d6da0d8bf38fd00742" name="a1cbcc6d0d740c8d6da0d8bf38fd00742"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cbcc6d0d740c8d6da0d8bf38fd00742">&#9670;&#160;</a></span>RecordType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a1cbcc6d0d740c8d6da0d8bf38fd00742">logika::meters::DataTable::RecordType</a> = std::shared_ptr&lt; std::vector&lt; <a class="el" href="../../d0/d78/classlogika_1_1Any.html">logika::Any</a> &gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a927f2124aaa9f3254f8ef827a5b5e1cd" name="a927f2124aaa9f3254f8ef827a5b5e1cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a927f2124aaa9f3254f8ef827a5b5e1cd">&#9670;&#160;</a></span>DataTable() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">logika::meters::DataTable::DataTable </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="#adc0adcccd1831067599c3fcb9c18a812">FieldType</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>fieldList</em><span class="paramdefsep"> = </span><span class="paramdefval">std::vector&lt;&#160;<a class="el" href="#adc0adcccd1831067599c3fcb9c18a812">FieldType</a>&#160;&gt;{}</span></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор таблицы данных </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">fieldList</td><td>Список полей таблицы </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab7bb03b859abfcd0922c8387941546f3" name="ab7bb03b859abfcd0922c8387941546f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7bb03b859abfcd0922c8387941546f3">&#9670;&#160;</a></span>DataTable() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">logika::meters::DataTable::DataTable </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/dca/classlogika_1_1meters_1_1DataTable.html">DataTable</a> &amp;</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a90ef4dc862b3cefc0d367e4ac45c6fbd" name="a90ef4dc862b3cefc0d367e4ac45c6fbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90ef4dc862b3cefc0d367e4ac45c6fbd">&#9670;&#160;</a></span>AddColumn() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool logika::meters::DataTable::AddColumn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#adc0adcccd1831067599c3fcb9c18a812">DataTable::FieldType</a></td>          <td class="paramname"><span class="paramname"><em>field</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Добавление столбца таблицы </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Добавляемый столбец </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Удалось ли добавить столбец </dd></dl>
+
+<p class="reference">Используется в <a class="el" href="#af01cbb485d6d2c681118bedbbea72359">AddColumn()</a>.</p>
+
+</div>
+</div>
+<a id="af01cbb485d6d2c681118bedbbea72359" name="af01cbb485d6d2c681118bedbbea72359"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af01cbb485d6d2c681118bedbbea72359">&#9670;&#160;</a></span>AddColumn() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool logika::meters::DataTable::AddColumn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#adc0adcccd1831067599c3fcb9c18a812">DataTable::FieldType</a></td>          <td class="paramname"><span class="paramname"><em>field</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Добавление столбца таблицы </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>тип данных в столбце </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Добавляемый столбец </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Значение по умолчанию </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Удалось ли добавить столбец </dd></dl>
+
+</div>
+</div>
+<a id="a138166b78f3991fdb81470cac1e68715" name="a138166b78f3991fdb81470cac1e68715"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a138166b78f3991fdb81470cac1e68715">&#9670;&#160;</a></span>FieldCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t logika::meters::DataTable::FieldCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение количества столбцов в таблице </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Количество столбцов в таблице </dd></dl>
+
+</div>
+</div>
+<a id="ae0e07af9b41524d85d0fac9504c63314" name="ae0e07af9b41524d85d0fac9504c63314"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0e07af9b41524d85d0fac9504c63314">&#9670;&#160;</a></span>GetColumn() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; logika::meters::DataTable::GetColumn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#adc0adcccd1831067599c3fcb9c18a812">FieldType</a></td>          <td class="paramname"><span class="paramname"><em>field</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение столбца таблицы </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>тип данных в столбце </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Столбец </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Данные из столбца </dd></dl>
+
+</div>
+</div>
+<a id="aa06ab61b7ba71bc2e081961d3054f457" name="aa06ab61b7ba71bc2e081961d3054f457"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa06ab61b7ba71bc2e081961d3054f457">&#9670;&#160;</a></span>GetColumn() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; logika::meters::DataTable::GetColumn </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>fieldIndex</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение столбца таблицы </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>тип данных в столбце </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">fieldIndex</td><td>Номер столбца </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Данные из столбца </dd></dl>
+
+</div>
+</div>
+<a id="aaf4dfce1c174a3b25c8de8ee433f21c8" name="aaf4dfce1c174a3b25c8de8ee433f21c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf4dfce1c174a3b25c8de8ee433f21c8">&#9670;&#160;</a></span>GetFieldsList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; <a class="el" href="#adc0adcccd1831067599c3fcb9c18a812">DataTable::FieldType</a> &gt; &amp; logika::meters::DataTable::GetFieldsList </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение списка столбцов таблицы </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Список столбцов таблицы </dd></dl>
+
+</div>
+</div>
+<a id="abf1a35e32dc13b29246893b759360eb9" name="abf1a35e32dc13b29246893b759360eb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf1a35e32dc13b29246893b759360eb9">&#9670;&#160;</a></span>GetRecord()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="#a1cbcc6d0d740c8d6da0d8bf38fd00742">DataTable::RecordType</a> logika::meters::DataTable::GetRecord </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение записи </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Номер записи </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Запись под указанным номером или nullptr, если не существует </dd></dl>
+
+</div>
+</div>
+<a id="ac71342c89e52dce67ac666953792b31f" name="ac71342c89e52dce67ac666953792b31f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac71342c89e52dce67ac666953792b31f">&#9670;&#160;</a></span>GetRecordsList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; <a class="el" href="#a1cbcc6d0d740c8d6da0d8bf38fd00742">DataTable::RecordType</a> &gt; &amp; logika::meters::DataTable::GetRecordsList </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение списка записей в таблице </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Список записей в таблице </dd></dl>
+
+</div>
+</div>
+<a id="adc2d72bf1fb00482e950fc1f5105c0f5" name="adc2d72bf1fb00482e950fc1f5105c0f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc2d72bf1fb00482e950fc1f5105c0f5">&#9670;&#160;</a></span>InsertColumn() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool logika::meters::DataTable::InsertColumn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#adc0adcccd1831067599c3fcb9c18a812">DataTable::FieldType</a></td>          <td class="paramname"><span class="paramname"><em>field</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Добавление столбца таблицы под определенным номером </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Добавляемый столбец </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Номер столбца </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Удалось ли добавить столбец </dd></dl>
+
+<p class="reference">Используется в <a class="el" href="#a620d577540cb326f123b27d75521ee36">InsertColumn()</a>.</p>
+
+</div>
+</div>
+<a id="a620d577540cb326f123b27d75521ee36" name="a620d577540cb326f123b27d75521ee36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a620d577540cb326f123b27d75521ee36">&#9670;&#160;</a></span>InsertColumn() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool logika::meters::DataTable::InsertColumn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#adc0adcccd1831067599c3fcb9c18a812">DataTable::FieldType</a></td>          <td class="paramname"><span class="paramname"><em>field</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>index</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Добавление столбца таблицы под определенным номером </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>тип данных в столбце </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Добавляемый столбец </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Номер столбца </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Значение по умолчанию </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Удалось ли добавить столбец </dd></dl>
+
+</div>
+</div>
+<a id="ad5feb5f9931e2cc397908db66e5b08ba" name="ad5feb5f9931e2cc397908db66e5b08ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5feb5f9931e2cc397908db66e5b08ba">&#9670;&#160;</a></span>InsertRecord()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool logika::meters::DataTable::InsertRecord </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a1cbcc6d0d740c8d6da0d8bf38fd00742">DataTable::RecordType</a></td>          <td class="paramname"><span class="paramname"><em>record</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Добавление записи </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">record</td><td>Добавляемая запись </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Индекс добавляемой записи </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Удалось ли добавить запись </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Если index &gt; Count, то запись добавить нельзя </dd></dl>
+
+</div>
+</div>
+<a id="ac4a91dc20b78524bd0cf7e407d227830" name="ac4a91dc20b78524bd0cf7e407d227830"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4a91dc20b78524bd0cf7e407d227830">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/dca/classlogika_1_1meters_1_1DataTable.html">DataTable</a> &amp; logika::meters::DataTable::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/dca/classlogika_1_1meters_1_1DataTable.html">DataTable</a> &amp;</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0d358deefc6900ff08592192272ab4cf" name="a0d358deefc6900ff08592192272ab4cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d358deefc6900ff08592192272ab4cf">&#9670;&#160;</a></span>PopRecord()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="#a1cbcc6d0d740c8d6da0d8bf38fd00742">DataTable::RecordType</a> logika::meters::DataTable::PopRecord </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Извлечение последней записи </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Извлеченная запись или nullptr, если таблица пуста </dd></dl>
+
+</div>
+</div>
+<a id="a86ed3ecf5f99412c6e394e310324fcd4" name="a86ed3ecf5f99412c6e394e310324fcd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86ed3ecf5f99412c6e394e310324fcd4">&#9670;&#160;</a></span>PushRecord()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool logika::meters::DataTable::PushRecord </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a1cbcc6d0d740c8d6da0d8bf38fd00742">DataTable::RecordType</a></td>          <td class="paramname"><span class="paramname"><em>record</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Добавление записи в конец таблицы </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">record</td><td>Добавляемая запись </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Удалось ли добавить запись </dd></dl>
+
+</div>
+</div>
+<a id="a10c802040d82e8a1f0af99bbe207bf95" name="a10c802040d82e8a1f0af99bbe207bf95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10c802040d82e8a1f0af99bbe207bf95">&#9670;&#160;</a></span>RecordCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t logika::meters::DataTable::RecordCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение количества записей в таблице </p>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000009">Необходимо сделать</a></b></dt><dd>Сделать move-able </dd></dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Количество записей в таблице </dd></dl>
+
+</div>
+</div>
+<a id="ad45cf6eb413982cf766dbdb180db63cd" name="ad45cf6eb413982cf766dbdb180db63cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad45cf6eb413982cf766dbdb180db63cd">&#9670;&#160;</a></span>RemoveColumn() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool logika::meters::DataTable::RemoveColumn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#adc0adcccd1831067599c3fcb9c18a812">DataTable::FieldType</a></td>          <td class="paramname"><span class="paramname"><em>field</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Удаление столбца таблицы </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>Удаляемый столбец </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Удалось ли удалить столбец </dd></dl>
+
+<p class="reference">Используется в <a class="el" href="#ad45cf6eb413982cf766dbdb180db63cd">RemoveColumn()</a>.</p>
+
+</div>
+</div>
+<a id="a04e94b2abfb7786c3937a2c73b4b36b7" name="a04e94b2abfb7786c3937a2c73b4b36b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04e94b2abfb7786c3937a2c73b4b36b7">&#9670;&#160;</a></span>RemoveColumn() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool logika::meters::DataTable::RemoveColumn </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>fieldIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Удаление столбца таблицы </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">fieldIndex</td><td>Номер удаляемого столбца </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Удалось ли удалить столбец </dd></dl>
+
+</div>
+</div>
+<a id="ae4d02a015bcc383db9f15d7fddffb9b7" name="ae4d02a015bcc383db9f15d7fddffb9b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4d02a015bcc383db9f15d7fddffb9b7">&#9670;&#160;</a></span>RemoveRecord() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool logika::meters::DataTable::RemoveRecord </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a1cbcc6d0d740c8d6da0d8bf38fd00742">DataTable::RecordType</a></td>          <td class="paramname"><span class="paramname"><em>record</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Удаление записи из таблицы </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">record</td><td>Удаляемая запись </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Удалось ли удалить запись </dd></dl>
+
+</div>
+</div>
+<a id="a7d918bb91b6043fa96255bb20789049e" name="a7d918bb91b6043fa96255bb20789049e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d918bb91b6043fa96255bb20789049e">&#9670;&#160;</a></span>RemoveRecord() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool logika::meters::DataTable::RemoveRecord </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Удаление записи из таблицы под заданным номером </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Номер добавляемой записи </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Удалось ли удалить запись </dd></dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>logika/include/logika/meters/<a class="el" href="../../db/dbf/data__table_8hpp_source.html">data_table.hpp</a></li>
+<li>logika/include/logika/meters/<a class="el" href="../../d8/dce/data__table_8ipp.html">data_table.ipp</a></li>
+<li>logika/src/meters/<a class="el" href="../../d9/dcf/data__table_8cpp.html">data_table.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/d43/namespacelogika.html">logika</a></li><li class="navelem"><a class="el" href="../../dc/df7/namespacelogika_1_1meters.html">meters</a></li><li class="navelem"><a class="el" href="../../d3/dca/classlogika_1_1meters_1_1DataTable.html">DataTable</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

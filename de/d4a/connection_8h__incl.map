@@ -1,0 +1,16 @@
+<map id="logika/include/logika/connections/connection.h" name="logika/include/logika/connections/connection.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="137,5,310,46"/>
+<area shape="rect" id="Node000002" href="$d1/d90/connections_2defs_8h.html" title=" " alt="" coords="5,183,135,223"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,48,148,96,117,134,92,171,87,168,113,131,144,92,196,44"/>
+<area shape="rect" id="Node000003" href="$d8/de5/iconnection_8h.html" title=" " alt="" coords="159,94,288,135"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="226,47,226,78,221,78,221,47"/>
+<area shape="rect" id="Node000006" href="$d2/d20/connections_2rc_8h.html" title=" " alt="" coords="396,102,550,127"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="281,44,424,93,422,98,279,49"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="190,138,119,177,116,173,187,133"/>
+<area shape="rect" id="Node000004" href="$d3/d5a/connections_2types_8h.html" title=" " alt="" coords="159,183,288,223"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="226,135,226,167,221,167,221,135"/>
+<area shape="rect" id="Node000005" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="312,190,466,216"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="262,133,353,180,351,185,260,138"/>
+<area shape="rect" id="Node000007" href="$d0/d6b/common_2rc_8h.html" title=" " alt="" coords="490,190,624,216"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="486,126,536,177,533,181,482,129"/>
+</map>
