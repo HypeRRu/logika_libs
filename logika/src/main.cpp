@@ -195,7 +195,7 @@ int main()
                     }
                     else
                     {
-                        logika::LocString label = channel->meter->GetCaption() + L"_" + channel->prefix;
+                        logika::LocString label = channel->meter->GetCaption() + L"." + channel->prefix;
                         LOG_WRITE( LOG_INFO, L"Add Channel '" << label << L"' to storage: "
                             << ( cdStorage->AddItem( label, channel ) ? L"Success" : L"Failed" ) );
                         std::shared_ptr< logika::meters::ChannelDef > item;
@@ -229,7 +229,7 @@ int main()
                     }
                     else
                     {
-                        logika::LocString label = tag->GetMeter()->GetCaption() + L"_" + tag->GetName();
+                        logika::LocString label = tag->GetMeter()->GetCaption() + L"." + tag->GetName();
                         LOG_WRITE( LOG_INFO, L"Add M4Tag '" << label << L"' to storage: "
                             << ( m4tStorage->AddItem( label, tag ) ? L"Success" : L"Failed" ) );
                         std::shared_ptr< logika::meters::TagDef4M > item;
@@ -267,7 +267,7 @@ int main()
                     }
                     else
                     {
-                        logika::LocString label = tag->GetMeter()->GetCaption() + L"_" + tag->GetName();
+                        logika::LocString label = tag->GetMeter()->GetCaption() + L"." + tag->GetName();
                         LOG_WRITE( LOG_INFO, L"Add L4Tag '" << label << L"' to storage: "
                             << ( l4tStorage->AddItem( label, tag ) ? L"Success" : L"Failed" ) );
                         std::shared_ptr< logika::meters::TagDef4L > item;
@@ -305,7 +305,7 @@ int main()
                     }
                     else
                     {
-                        logika::LocString label = archive->GetMeter()->GetCaption() + L"_" + archive->GetArchiveType()->GetName();
+                        logika::LocString label = archive->GetMeter()->GetCaption() + L"." + archive->GetArchiveType()->GetName();
                         LOG_WRITE( LOG_INFO, L"Add M4Archive '" << label << L"' to storage: "
                             << ( m4aStorage->AddItem( label, archive ) ? L"Success" : L"Failed" ) );
                         std::shared_ptr< logika::meters::ArchiveDef4M > item;
@@ -344,7 +344,7 @@ int main()
                     else
                     {
                         /// @todo GetName() -> GetArchiveType()->GetName()
-                        logika::LocString label = archive->GetMeter()->GetCaption() + L"_" + archive->GetArchiveType()->GetName();
+                        logika::LocString label = archive->GetMeter()->GetCaption() + L"." + archive->GetArchiveType()->GetName();
                         LOG_WRITE( LOG_INFO, L"Add L4Archive '" << label << L"' to storage: "
                             << ( l4aStorage->AddItem( label, archive ) ? L"Success" : L"Failed" ) );
                         std::shared_ptr< logika::meters::ArchiveDef4L > item;
@@ -384,8 +384,8 @@ int main()
                     else
                     {
                         logika::LocString label = field->GetMeter()->GetCaption()
-                            + L"_" + field->GetArchiveType()->GetName()
-                            + L"_" + field->GetName();
+                            + L"." + field->GetArchiveType()->GetName()
+                            + L"." + field->GetName();
                         LOG_WRITE( LOG_INFO, L"Add M4ArchiveField '" << label << L"' to storage: "
                             << ( m4afStorage->AddItem( label, field ) ? L"Success" : L"Failed" ) );
                         std::shared_ptr< logika::meters::ArchiveFieldDef4M > item;
@@ -425,8 +425,8 @@ int main()
                     else
                     {
                         logika::LocString label = field->GetMeter()->GetCaption()
-                            + L"_" + field->GetArchiveType()->GetName()
-                            + L"_" + field->GetName();
+                            + L"." + field->GetArchiveType()->GetName()
+                            + L"." + field->GetName();
                         LOG_WRITE( LOG_INFO, L"Add L4ArchiveField '" << label << L"' to storage: "
                             << ( l4afStorage->AddItem( label, field ) ? L"Success" : L"Failed" ) );
                         std::shared_ptr< logika::meters::ArchiveFieldDef4L > item;

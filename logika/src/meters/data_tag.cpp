@@ -35,6 +35,12 @@ DataTag::DataTag( std::shared_ptr< DataTagDef > def, int32_t channelNo )
 } // DataTag
 
 
+bool DataTag::HasValue() const
+{
+    return !value_.Empty();
+} // HasValue
+
+
 int32_t DataTag::GetIndex() const
 {
     return ( dataTagDef_ ? dataTagDef_->GetIndex() : -1 );

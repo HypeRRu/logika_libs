@@ -43,6 +43,10 @@ public:
     template < typename T >
     void SetValue( const T& value );
 
+    /// @brief Содержит ли тэг данные
+    /// @return Наличие данных в тэге
+    bool HasValue() const;
+
     /// @brief Получение индекса элемента
     /// @return Индекс элемента или -1, если не задан
     int32_t GetIndex() const;

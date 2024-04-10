@@ -33,7 +33,7 @@ M4ArchiveFieldConverter::ConvertedType M4ArchiveFieldConverter::Convert( const M
     {
         return nullptr;
     }
-    LocString archiveLabel = ToLocString( from.device() ) + L"_" + ConvertArchiveTypeName( from.archivetype() );
+    LocString archiveLabel = ToLocString( from.device() ) + L"." + ConvertArchiveTypeName( from.archivetype() );
     std::shared_ptr< ArchiveDef4M > archive = ConvertArchive( archiveLabel, archiveStorage );
     if ( !archive )
     {

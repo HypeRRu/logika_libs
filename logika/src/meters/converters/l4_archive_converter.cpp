@@ -33,7 +33,7 @@ L4ArchiveConverter::ConvertedType L4ArchiveConverter::Convert( const L4ArchiveCo
     {
         return nullptr;
     }
-    LocString channelLabel = meter->GetCaption() + L"_" + ToLocString( from.channel() );
+    LocString channelLabel = meter->GetCaption() + L"." + ToLocString( from.channel() );
     std::shared_ptr< ChannelDef > channelDef = ConvertChannel( channelLabel, channelStorage );
     if ( !channelDef )
     {

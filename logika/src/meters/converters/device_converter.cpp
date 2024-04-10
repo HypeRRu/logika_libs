@@ -8,6 +8,10 @@
 
 #include <logika/meters/logika4/4l/logika4l.h>
 #include <logika/meters/logika4/4l/spg741.h>
+#include <logika/meters/logika4/4l/spt941.h>
+#include <logika/meters/logika4/4l/spt941_10.h>
+#include <logika/meters/logika4/4l/spt942.h>
+#include <logika/meters/logika4/4l/spt943.h>
 #include <logika/meters/logika4/4m/logika4m.h>
 #include <logika/meters/logika4/4m/lgk410.h>
 #include <logika/meters/logika4/4m/spg740.h>
@@ -63,9 +67,25 @@ DeviceConverter::ConvertedType DeviceConverter::Convert( const DeviceConverter::
     {
         return Meter::Create< Spt940 >( mk, caption, desc, mc, mg, bt );
     }
+    else if ( caption == LOCALIZED( "SPT941" ) )
+    {
+        return Meter::Create< Spt941 >( mk, caption, desc, mc, mg, bt );
+    }
+    else if ( caption == LOCALIZED( "SPT941_10" ) )
+    {
+        return Meter::Create< Spt941_10 >( mk, caption, desc, mc, mg, bt );
+    }
     else if ( caption == LOCALIZED( "SPT941_20" ) )
     {
         return Meter::Create< Spt941_20 >( mk, caption, desc, mc, mg, bt );
+    }
+    else if ( caption == LOCALIZED( "SPT942" ) )
+    {
+        return Meter::Create< Spt942 >( mk, caption, desc, mc, mg, bt );
+    }
+    else if ( caption == LOCALIZED( "SPT943" ) )
+    {
+        return Meter::Create< Spt943 >( mk, caption, desc, mc, mg, bt );
     }
     else if ( caption == LOCALIZED( "SPT943rev3" ) )
     {
@@ -75,14 +95,7 @@ DeviceConverter::ConvertedType DeviceConverter::Convert( const DeviceConverter::
     {
         return Meter::Create< Spt944 >( mk, caption, desc, mc, mg, bt );
     }
-    if (   caption == LOCALIZED( "SPT941" )
-        || caption == LOCALIZED( "SPT941_10" )
-        || caption == LOCALIZED( "SPT942" )
-        || caption == LOCALIZED( "SPT943" ) )
-    {
-        return Meter::Create< Logika4L >( mk, caption, desc, mc, mg, bt );
-    }
-    /// @todo Создание инстансов сразу нужных типов
+    /// @todo Создание инстансов сразу нужных типов (Logika6)
     return Meter::Create< Meter >( mk, caption, desc, mc, mg, bt );
 } // Convert( const DeviceConverter::FromType& from )
 

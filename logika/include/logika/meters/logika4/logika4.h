@@ -83,7 +83,7 @@ public:
 
     /// @brief Получение описаний расчетных тэгов
     /// @return Описания расчетных тэгов
-    virtual const std::vector< std::shared_ptr< CalcFieldDef > >& GetCalculatedFields() const;
+    const std::vector< std::shared_ptr< CalcFieldDef > >& GetCalculatedFields() const;
 
     /// @brief Формирование таблицы конвертации имен единиц измерения
     /// @param[in] euTags Список тэгов 

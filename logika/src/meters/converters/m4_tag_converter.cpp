@@ -27,7 +27,7 @@ M4TagConverter::ConvertedType M4TagConverter::Convert( const M4TagConverter::Fro
     {
         return nullptr;
     }
-    LocString channelLabel = meter->GetCaption() + L"_" + ToLocString( from.channel() );
+    LocString channelLabel = meter->GetCaption() + L"." + ToLocString( from.channel() );
     std::shared_ptr< ChannelDef > channelDef = ConvertChannel( channelLabel, channelStorage );
     if ( !channelDef )
     {
