@@ -37,7 +37,7 @@ var searchData=
   ['columninfo_34',['ColumnInfo',['../d8/d46/structlogika_1_1meters_1_1ColumnInfo.html',1,'logika::meters']]],
   ['common_35',['Common',['../dc/df7/namespacelogika_1_1meters.html#a5dfbf075f197444da7e5af115bbeb50fad13bc5b68b2bd9e18f29777db17cc563',1,'logika::meters']]],
   ['commontagdefs_5f_36',['commonTagDefs_',['../d3/d77/classlogika_1_1meters_1_1Meter.html#a2f697f97b24a3e34580514135da55ada',1,'logika::meters::Meter']]],
-  ['comport_37',['ComPort',['../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#ae0ac97ef46d8c7293e0ac4e0dc872774a6f48ddbef4a0111166006269b274ba41',1,'logika::connections::ConnectionType']]],
+  ['comport_37',['ComPort',['../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#a4a8329efb416b5853518060e074f29bba6f48ddbef4a0111166006269b274ba41',1,'logika::connections::ConnectionType']]],
   ['connected_38',['Connected',['../df/da9/namespacelogika_1_1connections.html#aac9f3568307bb7171e2a5874a167121ea2ec0d16e4ca169baedb9b2d50ec5c6d7',1,'logika::connections']]],
   ['connecting_39',['Connecting',['../df/da9/namespacelogika_1_1connections.html#aac9f3568307bb7171e2a5874a167121eae321c53b354930ba96f0243e652df458',1,'logika::connections']]],
   ['connection_40',['Connection',['../db/da7/classlogika_1_1connections_1_1Connection.html',1,'logika::connections::Connection'],['../db/da7/classlogika_1_1connections_1_1Connection.html#a4ac2ce67ddecede2c9e315e641e59234',1,'logika::connections::Connection::Connection(const std::string &amp;address, uint32_t readTimeout=0)'],['../db/da7/classlogika_1_1connections_1_1Connection.html#a787c17098c0ababac96291d7ea5062c0',1,'logika::connections::Connection::Connection(const Connection &amp;)=delete']]],

@@ -3,7 +3,7 @@ var searchData=
   ['safestrerror_0',['SafeStrError',['../d7/d43/namespacelogika.html#a862a046527ae24f3b1a32193bd8caed9',1,'logika']]],
   ['sensors_1',['sensors',['../d3/de1/classlogika_1_1meters_1_1Spg741.html#aa12d0dca279cb294189e65529294eda7',1,'logika::meters::Spg741']]],
   ['sensorvars_2',['sensorVars',['../d3/de1/classlogika_1_1meters_1_1Spg741.html#ab6d1464374421ffb5f7f0306857b0e94',1,'logika::meters::Spg741']]],
-  ['serial_3',['Serial',['../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#ae0ac97ef46d8c7293e0ac4e0dc872774a72925cfba8176d99d9f4fcb0baeba020',1,'logika::connections::ConnectionType']]],
+  ['serial_3',['Serial',['../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#a4a8329efb416b5853518060e074f29bba72925cfba8176d99d9f4fcb0baeba020',1,'logika::connections::ConnectionType']]],
   ['serial_5fconnection_2ecpp_4',['serial_connection.cpp',['../d7/d5a/serial__connection_8cpp.html',1,'']]],
   ['serial_5fconnection_2eh_5',['serial_connection.h',['../d0/d60/serial__connection_8h.html',1,'']]],
   ['serial_5fport_5fconnection_2ecpp_6',['serial_port_connection.cpp',['../d0/db2/serial__port__connection_8cpp.html',1,'']]],

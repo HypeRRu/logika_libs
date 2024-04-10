@@ -2,7 +2,7 @@ var searchData=
 [
   ['u24_0',['U24',['../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a24abca684ccea29c80d9da175c0ed5c1',1,'logika::meters::BinaryType4L']]],
   ['u8_1',['U8',['../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90ae48f2112172775bd00012b4f9d6de08b',1,'logika::meters::BinaryType4L']]],
-  ['udp_2',['Udp',['../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#ae0ac97ef46d8c7293e0ac4e0dc872774a71a9b5dff39c78b0779c2b5f2b04e7e0',1,'logika::connections::ConnectionType']]],
+  ['udp_2',['Udp',['../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#a4a8329efb416b5853518060e074f29bba71a9b5dff39c78b0779c2b5f2b04e7e0',1,'logika::connections::ConnectionType']]],
   ['udp_5fconnection_2ecpp_3',['udp_connection.cpp',['../db/d02/udp__connection_8cpp.html',1,'']]],
   ['udp_5fconnection_2eh_4',['udp_connection.h',['../d4/d90/udp__connection_8h.html',1,'']]],
   ['udp_5fconnection_5flinux_2ecpp_5',['udp_connection_linux.cpp',['../d4/de8/udp__connection__linux_8cpp.html',1,'']]],
