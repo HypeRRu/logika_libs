@@ -1,9 +1,0 @@
-<map id="logika::meters::MultipartArchiveDef6" name="logika::meters::MultipartArchiveDef6">
-<area shape="rect" id="Node000001" title="Описание многочастного архива Logika6." alt="" coords="127,881,357,1105"/>
-<area shape="rect" id="Node000002" href="$d5/d76/classlogika_1_1meters_1_1ArchiveDef.html" title="Базовое описание архива" alt="" coords="125,585,359,833"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,848,245,882,239,882,239,848"/>
-<area shape="rect" id="Node000003" href="$da/dc9/classlogika_1_1meters_1_1ItemDefBase.html" title="Базовый элемент" alt="" coords="5,5,249,537"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="203,551,212,585,207,586,198,553"/>
-<area shape="rect" id="Node000004" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="273,214,443,329"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="342,344,277,586,272,585,337,342"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="logika::protocols::M4::ArchiveRecord" name="logika::protocols::M4::ArchiveRecord">
-<area shape="rect" id="Node000001" title="Структура записи архива в протоколе M4." alt="" coords="5,168,175,403"/>
-<area shape="rect" id="Node000002" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="5,5,175,120"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,135,93,168,87,168,87,135"/>
-</map>
