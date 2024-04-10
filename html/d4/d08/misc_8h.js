@@ -10,5 +10,5 @@ var misc_8h =
     [ "StrCaseEq", "d4/d08/misc_8h.html#acfbaf10116b98ced17273d06014ce6d3", null ],
     [ "ToLocString", "d4/d08/misc_8h.html#ab057873579afa54b627ab6ebdf42e1e1", null ],
     [ "ToLocString", "d4/d08/misc_8h.html#addc7df13cf361869ebc9a8ca73e5dda6", null ],
-    [ "Trim", "d4/d08/misc_8h.html#a655fdc86f58e92469d4d72fedc88d326", null ]
+    [ "Trim", "d4/d08/misc_8h.html#a5f51dcb21f7594ac30c26ab048526fc9", null ]
 ];

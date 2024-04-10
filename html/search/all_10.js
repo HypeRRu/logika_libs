@@ -1,10 +1,10 @@
 var searchData=
 [
   ['r32_0',['R32',['../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90abd558b73141cafda516384c41b6d76ff',1,'logika::meters::BinaryType4L']]],
-  ['radius_1',['Radius',['../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#a4f3bb7c6e56809defab370d60e70872cae4ce8382644126fc4d6d927444e4e0d6',1,'logika::connections::ConnectionType']]],
+  ['radius_1',['Radius',['../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#a4a8329efb416b5853518060e074f29bbae4ce8382644126fc4d6d927444e4e0d6',1,'logika::connections::ConnectionType']]],
   ['range_2',['range',['../d1/dd1/structlogika_1_1meters_1_1DataTagDefSettings.html#ac95a8e08c9f0d71ebe9943b0bb3d928e',1,'logika::meters::DataTagDefSettings']]],
   ['range_5f_3',['range_',['../da/dcc/classlogika_1_1meters_1_1DataTagDef.html#af58ff359fab567a7aaa33fe606f832c8',1,'logika::meters::DataTagDef']]],
-  ['ratedefault_4',['RateDefault',['../d7/de4/namespacelogika_1_1connections_1_1BaudRate.html#ae868552a0cee81c9f202e0a9933f879faa45fc9a42c5347a2c03df023d60f2924',1,'logika::connections::BaudRate']]],
+  ['ratedefault_4',['RateDefault',['../d7/de4/namespacelogika_1_1connections_1_1BaudRate.html#a62075d4c809cadb5830b791eea6c61a5aa45fc9a42c5347a2c03df023d60f2924',1,'logika::connections::BaudRate']]],
   ['rc_2eh_5',['rc.h',['../d0/d6b/common_2rc_8h.html',1,'(Глобальное пространство имён)'],['../d2/d20/connections_2rc_8h.html',1,'(Глобальное пространство имён)'],['../da/db4/protocols_2rc_8h.html',1,'(Глобальное пространство имён)']]],
   ['rcshift_6',['RcShift',['../d6/d61/namespacelogika_1_1Rc.html#afa2afc7dc6f2db0b311515486bfc91b0a875fac6954f820bbdca34c0ec65d15ec',1,'logika::Rc::RcShift'],['../df/dea/namespacelogika_1_1connections_1_1Rc.html#ad077f3dcd802ffc6a350f1a97877a4c6aaa224718edc5717212d8b7f1b1ac0075',1,'logika::connections::Rc::RcShift'],['../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a872492076566fbe3b59bb9488390550b',1,'logika::protocols::Rc::RcShift']]],
   ['rd_7',['rd',['../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a63082a7cacc62647eeb6bed2336670eb',1,'logika::meters::VitalInfo']]],
@@ -38,7 +38,7 @@ var searchData=
   ['rh_35',['rh',['../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a909d60164cf9e972b4473535b646fd02',1,'logika::meters::VitalInfo']]],
   ['rhour_36',['RHour',['../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357daa7924d0a8c0bb5e5cfa106d3afa7a936',1,'logika::meters']]],
   ['rsbus_37',['RSBus',['../dc/df7/namespacelogika_1_1meters.html#aaba4278b447ba2e737ab5f95a0c14bbaaec0c8973d082934817c932a12035081d',1,'logika::meters']]],
-  ['rx_38',['Rx',['../d0/d3a/namespacelogika_1_1connections_1_1PurgeFlags.html#a4f557703ce858b73ba9f6d84d4abf820a46ac5284d2fd771eb4835ec2a88b0721',1,'logika::connections::PurgeFlags']]],
+  ['rx_38',['Rx',['../d0/d3a/namespacelogika_1_1connections_1_1PurgeFlags.html#a112b2860a870647b1aa90be88b78c6efa46ac5284d2fd771eb4835ec2a88b0721',1,'logika::connections::PurgeFlags']]],
   ['rxbytescount_5f_39',['rxBytesCount_',['../db/da7/classlogika_1_1connections_1_1Connection.html#aa9d5ecb02903e3033bcd3df547949cf3',1,'logika::connections::Connection']]],
   ['rxcrc_5f_40',['rxCrc_',['../da/d50/classlogika_1_1protocols_1_1Protocol.html#af9bb62bd6d16033de2260f744705c547',1,'logika::protocols::Protocol']]],
   ['rxcrcerror_41',['RxCrcError',['../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a995fb56dec3bc0d03bd23e93189120f4',1,'logika::protocols::Rc']]],

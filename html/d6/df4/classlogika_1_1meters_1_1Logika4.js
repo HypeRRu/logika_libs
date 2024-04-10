@@ -1,6 +1,6 @@
 var classlogika_1_1meters_1_1Logika4 =
 [
-    [ "Logika4", "d6/df4/classlogika_1_1meters_1_1Logika4.html#a377a76b8c2e407cce714affd353901a9", null ],
+    [ "Logika4", "d6/df4/classlogika_1_1meters_1_1Logika4.html#ae7108934106060b921d4c44766eeea2c", null ],
     [ "BuildEuDict", "d6/df4/classlogika_1_1meters_1_1Logika4.html#adc180281fe657a1d0a307d64aa5d3521", null ],
     [ "GetCalculatedFields", "d6/df4/classlogika_1_1meters_1_1Logika4.html#a3b11a367e0f4ff1be78897b1fc76ee51", null ],
     [ "GetChannelKind", "d6/df4/classlogika_1_1meters_1_1Logika4.html#a6075e09b3aabb56304581fe7c198932d", null ],

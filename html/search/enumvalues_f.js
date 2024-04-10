@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['serial_0',['Serial',['../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#a4f3bb7c6e56809defab370d60e70872ca72925cfba8176d99d9f4fcb0baeba020',1,'logika::connections::ConnectionType']]],
+  ['serial_0',['Serial',['../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#a4a8329efb416b5853518060e074f29bba72925cfba8176d99d9f4fcb0baeba020',1,'logika::connections::ConnectionType']]],
   ['serialno_1',['SerialNo',['../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357dab8ce85826432f1a30c9c041c224ecda8',1,'logika::meters']]],
   ['servicerecordtimestamp_2',['ServiceRecordTimestamp',['../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a12338fc650ba48ac60e1e3039d512a1a',1,'logika::meters::BinaryType4L']]],
   ['sessionclose_3',['SessionClose',['../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#a016c55574b5aa04fd535e02f5a320029a1e60f101fcc1921444ee8a51dedf3efe',1,'logika::protocols::M4::Opcode']]],

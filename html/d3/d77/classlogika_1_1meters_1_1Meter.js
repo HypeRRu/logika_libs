@@ -1,6 +1,6 @@
 var classlogika_1_1meters_1_1Meter =
 [
-    [ "Meter", "d3/d77/classlogika_1_1meters_1_1Meter.html#a36f1856a18c09b173c977555b8e422d6", null ],
+    [ "Meter", "d3/d77/classlogika_1_1meters_1_1Meter.html#a8e09893a90a63c1319aa0c7e7575c134", null ],
     [ "GetArchiveFields", "d3/d77/classlogika_1_1meters_1_1Meter.html#a414c2242dbfa5ffb027165d5db541ea5", null ],
     [ "GetArchives", "d3/d77/classlogika_1_1meters_1_1Meter.html#ac88f838c22c65890f593fa1f2b9b6825", null ],
     [ "GetBusType", "d3/d77/classlogika_1_1meters_1_1Meter.html#a6b39191d04e3bd0b0b279a282438f6e0", null ],

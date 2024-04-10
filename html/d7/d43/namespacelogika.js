@@ -29,5 +29,5 @@ var namespacelogika =
     [ "StrCaseEq", "d7/d43/namespacelogika.html#acfbaf10116b98ced17273d06014ce6d3", null ],
     [ "ToLocString", "d7/d43/namespacelogika.html#ab057873579afa54b627ab6ebdf42e1e1", null ],
     [ "ToLocString", "d7/d43/namespacelogika.html#addc7df13cf361869ebc9a8ca73e5dda6", null ],
-    [ "Trim", "d7/d43/namespacelogika.html#a655fdc86f58e92469d4d72fedc88d326", null ]
+    [ "Trim", "d7/d43/namespacelogika.html#a5f51dcb21f7594ac30c26ab048526fc9", null ]
 ];

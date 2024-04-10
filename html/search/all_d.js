@@ -1,7 +1,7 @@
 var searchData=
 [
   ['objectarray_0',['ObjectArray',['../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefaee219de6a043fc9d26cb89af7a20d4a1',1,'logika::meters']]],
-  ['offline_1',['Offline',['../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#a4f3bb7c6e56809defab370d60e70872ca886a39306e508769b37f1475c303a24a',1,'logika::connections::ConnectionType']]],
+  ['offline_1',['Offline',['../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#a4a8329efb416b5853518060e074f29bba886a39306e508769b37f1475c303a24a',1,'logika::connections::ConnectionType']]],
   ['onafterconnect_5f_2',['onAfterConnect_',['../db/da7/classlogika_1_1connections_1_1Connection.html#a4db4c0a9ff4c8358863563b7a0be8e15',1,'logika::connections::Connection']]],
   ['onbeforedisonnect_5f_3',['onBeforeDisonnect_',['../db/da7/classlogika_1_1connections_1_1Connection.html#ae78983613e204755f6b170b2dd24b950',1,'logika::connections::Connection']]],
   ['opcodes_2eh_4',['opcodes.h',['../d3/de6/opcodes_8h.html',1,'']]],
