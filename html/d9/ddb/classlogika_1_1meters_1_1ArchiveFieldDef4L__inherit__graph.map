@@ -1,0 +1,17 @@
+<map id="logika::meters::ArchiveFieldDef4L" name="logika::meters::ArchiveFieldDef4L">
+<area shape="rect" id="Node000001" title="Описание поля архива Logika4L." alt="" coords="231,1570,447,1799"/>
+<area shape="rect" id="Node000002" href="$db/d33/classlogika_1_1meters_1_1ArchiveFieldDef4.html" title="Описание поля архива Logika4." alt="" coords="134,1256,331,1520"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="288,1533,301,1569,296,1571,283,1535"/>
+<area shape="rect" id="Node000003" href="$df/df9/classlogika_1_1meters_1_1ArchiveFieldDef.html" title="Описание поля архива" alt="" coords="137,929,328,1193"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="235,1209,235,1257,230,1257,230,1209"/>
+<area shape="rect" id="Node000004" href="$d5/dfb/classlogika_1_1meters_1_1TagDef.html" title="Базовое описание тэга" alt="" coords="25,587,230,880"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="182,893,193,929,188,930,176,895"/>
+<area shape="rect" id="Node000005" href="$da/dc9/classlogika_1_1meters_1_1ItemDefBase.html" title="Базовый элемент" alt="" coords="5,5,249,537"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="130,552,130,587,125,587,125,552"/>
+<area shape="rect" id="Node000006" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="255,676,424,791"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="319,806,278,930,273,929,314,804"/>
+<area shape="rect" id="Node000007" href="$dd/d10/classlogika_1_1SharedConstructible.html" title=" " alt="" coords="356,1316,541,1460"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="420,1475,384,1571,379,1569,415,1474"/>
+<area shape="rect" id="Node000008" href="$dd/d10/classlogika_1_1SharedConstructible.html" title="Конструируемый в shared_ptr тип" alt="" coords="356,989,541,1133"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="451,1148,451,1317,446,1317,446,1148"/>
+</map>

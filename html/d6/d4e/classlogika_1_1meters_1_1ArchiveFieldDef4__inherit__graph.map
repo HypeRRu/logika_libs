@@ -1,0 +1,15 @@
+<map id="logika::meters::ArchiveFieldDef4" name="logika::meters::ArchiveFieldDef4">
+<area shape="rect" id="Node000001" title="Описание поля архива Logika4." alt="" coords="136,1239,333,1503"/>
+<area shape="rect" id="Node000006" href="$d3/d70/classlogika_1_1meters_1_1ArchiveFieldDef4L.html" title="Описание поля архива Logika4L." alt="" coords="5,1551,221,1780"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="177,1518,163,1552,158,1550,172,1516"/>
+<area shape="rect" id="Node000007" href="$d7/d97/classlogika_1_1meters_1_1ArchiveFieldDef4M.html" title="Описание поля архива Logika4M." alt="" coords="246,1585,466,1745"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="297,1516,326,1584,321,1586,292,1518"/>
+<area shape="rect" id="Node000002" href="$df/df9/classlogika_1_1meters_1_1ArchiveFieldDef.html" title="Описание поля архива" alt="" coords="139,927,330,1191"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,1205,237,1239,232,1239,232,1205"/>
+<area shape="rect" id="Node000003" href="$d5/dfb/classlogika_1_1meters_1_1TagDef.html" title="Базовое описание тэга" alt="" coords="27,585,232,879"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="184,892,195,926,190,928,179,894"/>
+<area shape="rect" id="Node000004" href="$da/dc9/classlogika_1_1meters_1_1ItemDefBase.html" title="Базовый элемент" alt="" coords="7,5,251,537"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="132,552,132,585,127,585,127,552"/>
+<area shape="rect" id="Node000005" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="257,675,426,789"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="321,804,280,928,275,926,316,803"/>
+</map>

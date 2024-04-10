@@ -1,0 +1,745 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Logika Libs: Класс logika::connections::IConnection</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Logika Libs
+   </div>
+   <div id="projectbrief">Библиотеки для работы с приборами НПФ &quot;Логика&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('df/ddb/classlogika_1_1connections_1_1IConnection.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="../../d6/d1d/classlogika_1_1connections_1_1IConnection-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс logika::connections::IConnection<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Интерфейс класса для работы с соединением  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d8/de5/iconnection_8h_source.html">iconnection.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:logika::connections::IConnection:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/db9/classlogika_1_1connections_1_1IConnection__inherit__graph.png" border="0" usemap="#alogika_1_1connections_1_1IConnection_inherit__map" alt="Inheritance graph"/></div>
+<map name="alogika_1_1connections_1_1IConnection_inherit__map" id="alogika_1_1connections_1_1IConnection_inherit__map">
+<area shape="rect" title="Интерфейс класса для работы с соединением" alt="" coords="335,5,537,699"/>
+<area shape="rect" href="../../db/da7/classlogika_1_1connections_1_1Connection.html" title="Базовый класс для работы с соединением" alt="" coords="335,747,537,2041"/>
+<area shape="poly" title=" " alt="" coords="439,713,439,747,433,747,433,713"/>
+<area shape="rect" href="../../d7/d70/classlogika_1_1connections_1_1NetConnection.html" title="Базовый класс для работы с соединением по сети" alt="" coords="227,2240,424,2385"/>
+<area shape="poly" title=" " alt="" coords="359,2056,337,2241,331,2240,354,2055"/>
+<area shape="rect" href="../../d4/d4f/classlogika_1_1connections_1_1SerialConnection.html" title="Базовый класс для работы с соединением по последовательному порту" alt="" coords="454,2089,650,2536"/>
+<area shape="poly" title=" " alt="" coords="522,2056,527,2089,521,2090,517,2056"/>
+<area shape="rect" href="../../de/dcd/classlogika_1_1connections_1_1TcpConnection.html" title="Класс для работы с соединением по TCP." alt="" coords="5,2651,203,3001"/>
+<area shape="poly" title=" " alt="" coords="291,2400,182,2652,177,2650,286,2398"/>
+<area shape="rect" href="../../d0/d22/classlogika_1_1connections_1_1UdpConnection.html" title="Класс для работы с соединением по UDP." alt="" coords="227,2651,424,3001"/>
+<area shape="poly" title=" " alt="" coords="328,2400,328,2651,323,2651,323,2400"/>
+<area shape="rect" href="../../de/d68/classlogika_1_1connections_1_1SerialPortConnection.html" title="Класс для работы с соединением COM&#45;порту" alt="" coords="449,2584,669,3068"/>
+<area shape="poly" title=" " alt="" coords="558,2551,558,2584,553,2584,552,2551"/>
+</map>
+</div>
+<div class="dynheader">
+Граф связей класса logika::connections::IConnection:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/dae/classlogika_1_1connections_1_1IConnection__coll__graph.png" border="0" usemap="#alogika_1_1connections_1_1IConnection_coll__map" alt="Collaboration graph"/></div>
+<map name="alogika_1_1connections_1_1IConnection_coll__map" id="alogika_1_1connections_1_1IConnection_coll__map">
+<area shape="rect" title="Интерфейс класса для работы с соединением" alt="" coords="5,5,207,699"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:acf9049a2e586dace2ad89bbf2eee762b" id="r_acf9049a2e586dace2ad89bbf2eee762b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf9049a2e586dace2ad89bbf2eee762b">~IConnection</a> ()=default</td></tr>
+<tr class="separator:acf9049a2e586dace2ad89bbf2eee762b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbe1e81aae23ad34cd44e237f1cd93a7" id="r_acbe1e81aae23ad34cd44e237f1cd93a7"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbe1e81aae23ad34cd44e237f1cd93a7">Open</a> ()=0</td></tr>
+<tr class="memdesc:acbe1e81aae23ad34cd44e237f1cd93a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Установка соединения  <br /></td></tr>
+<tr class="separator:acbe1e81aae23ad34cd44e237f1cd93a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a149967bb6c0d82bab191fb3e95bb4bf8" id="r_a149967bb6c0d82bab191fb3e95bb4bf8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a149967bb6c0d82bab191fb3e95bb4bf8">Close</a> ()=0</td></tr>
+<tr class="memdesc:a149967bb6c0d82bab191fb3e95bb4bf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Закрытие соединения  <br /></td></tr>
+<tr class="separator:a149967bb6c0d82bab191fb3e95bb4bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ac783fed698d81ef622ad961f09209b" id="r_a0ac783fed698d81ef622ad961f09209b"><td class="memItemLeft" align="right" valign="top">virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ac783fed698d81ef622ad961f09209b">GetAddress</a> () const =0</td></tr>
+<tr class="memdesc:a0ac783fed698d81ef622ad961f09209b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение адреса соединения  <br /></td></tr>
+<tr class="separator:a0ac783fed698d81ef622ad961f09209b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af520864f9a3b94933bb032b613aa7af3" id="r_af520864f9a3b94933bb032b613aa7af3"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af520864f9a3b94933bb032b613aa7af3">GetReadTimeout</a> () const =0</td></tr>
+<tr class="memdesc:af520864f9a3b94933bb032b613aa7af3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение времени ожидания данных для чтения  <br /></td></tr>
+<tr class="separator:af520864f9a3b94933bb032b613aa7af3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fd6e58cf3b61aaf7f860461a9f00537" id="r_a1fd6e58cf3b61aaf7f860461a9f00537"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#a3bcc31ad79b5ee40ed19e82c3025ce1b">ConnectionType::Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fd6e58cf3b61aaf7f860461a9f00537">GetConnectionType</a> () const =0</td></tr>
+<tr class="memdesc:a1fd6e58cf3b61aaf7f860461a9f00537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение типа соединения  <br /></td></tr>
+<tr class="separator:a1fd6e58cf3b61aaf7f860461a9f00537"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab47ea6795a097edc28c5384d04283253" id="r_ab47ea6795a097edc28c5384d04283253"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../df/da9/namespacelogika_1_1connections.html#aac9f3568307bb7171e2a5874a167121e">ConnectionState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab47ea6795a097edc28c5384d04283253">GetConnectionState</a> () const =0</td></tr>
+<tr class="memdesc:ab47ea6795a097edc28c5384d04283253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение состояния соединения  <br /></td></tr>
+<tr class="separator:ab47ea6795a097edc28c5384d04283253"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16bb40cd9c0eab8af1755b243bd6764f" id="r_a16bb40cd9c0eab8af1755b243bd6764f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16bb40cd9c0eab8af1755b243bd6764f">IsConnected</a> () const =0</td></tr>
+<tr class="memdesc:a16bb40cd9c0eab8af1755b243bd6764f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Установлено ли соединение  <br /></td></tr>
+<tr class="separator:a16bb40cd9c0eab8af1755b243bd6764f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50ed1a60f3f306f4a5bcabad9095fb5c" id="r_a50ed1a60f3f306f4a5bcabad9095fb5c"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50ed1a60f3f306f4a5bcabad9095fb5c">GetTxBytesCount</a> () const =0</td></tr>
+<tr class="memdesc:a50ed1a60f3f306f4a5bcabad9095fb5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение количества переданных байтов  <br /></td></tr>
+<tr class="separator:a50ed1a60f3f306f4a5bcabad9095fb5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a542f520485735b6a3d22fae472046dae" id="r_a542f520485735b6a3d22fae472046dae"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a542f520485735b6a3d22fae472046dae">GetRxBytesCount</a> () const =0</td></tr>
+<tr class="memdesc:a542f520485735b6a3d22fae472046dae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение количества полученных байтов  <br /></td></tr>
+<tr class="separator:a542f520485735b6a3d22fae472046dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaefc18ec01471d3ebaf52d7c134b585f" id="r_aaefc18ec01471d3ebaf52d7c134b585f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaefc18ec01471d3ebaf52d7c134b585f">GetLastRxTime</a> () const =0</td></tr>
+<tr class="memdesc:aaefc18ec01471d3ebaf52d7c134b585f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение времени последнего чтения  <br /></td></tr>
+<tr class="separator:aaefc18ec01471d3ebaf52d7c134b585f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a812bda6ce96732f59cc3adbc7ff88858" id="r_a812bda6ce96732f59cc3adbc7ff88858"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a812bda6ce96732f59cc3adbc7ff88858">Purge</a> (<a class="el" href="../../d0/d3a/namespacelogika_1_1connections_1_1PurgeFlags.html#a874233f940d5821a48b0d73d62a9096b">PurgeFlags::Type</a> flags)=0</td></tr>
+<tr class="memdesc:a812bda6ce96732f59cc3adbc7ff88858"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очистка заданных буферов  <br /></td></tr>
+<tr class="separator:a812bda6ce96732f59cc3adbc7ff88858"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0e4a6c1eb180828eaa234dba134b6bb" id="r_ae0e4a6c1eb180828eaa234dba134b6bb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0e4a6c1eb180828eaa234dba134b6bb">SetOnAfterConnect</a> (const std::function&lt; void() &gt; &amp;hook)=0</td></tr>
+<tr class="memdesc:ae0e4a6c1eb180828eaa234dba134b6bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Установка обработчика события "Подключение установлено".  <br /></td></tr>
+<tr class="separator:ae0e4a6c1eb180828eaa234dba134b6bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa94a4063278c8f14003c683fc4019160" id="r_aa94a4063278c8f14003c683fc4019160"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa94a4063278c8f14003c683fc4019160">SetOnBeforeDisonnect</a> (const std::function&lt; void() &gt; &amp;hook)=0</td></tr>
+<tr class="memdesc:aa94a4063278c8f14003c683fc4019160"><td class="mdescLeft">&#160;</td><td class="mdescRight">Установка обработчика события "Соединение будет разорвано".  <br /></td></tr>
+<tr class="separator:aa94a4063278c8f14003c683fc4019160"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f64e099c04ab6f76b21d741ace9d092" id="r_a5f64e099c04ab6f76b21d741ace9d092"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f64e099c04ab6f76b21d741ace9d092">ResetStatistics</a> ()=0</td></tr>
+<tr class="memdesc:a5f64e099c04ab6f76b21d741ace9d092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сброс статистики по полученным/переданным байтам  <br /></td></tr>
+<tr class="separator:a5f64e099c04ab6f76b21d741ace9d092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92ae69052fd7fb89ce3b2964af8570a0" id="r_a92ae69052fd7fb89ce3b2964af8570a0"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92ae69052fd7fb89ce3b2964af8570a0">Read</a> (<a class="el" href="../../d7/d43/namespacelogika.html#a69c638914202f69eb544a992e2361a1c">ByteVector</a> &amp;buffer, uint32_t needed)=0</td></tr>
+<tr class="memdesc:a92ae69052fd7fb89ce3b2964af8570a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чтение данных  <br /></td></tr>
+<tr class="separator:a92ae69052fd7fb89ce3b2964af8570a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d733ab5b264c662182f722fe8985d10" id="r_a6d733ab5b264c662182f722fe8985d10"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d733ab5b264c662182f722fe8985d10">Write</a> (const <a class="el" href="../../d7/d43/namespacelogika.html#a69c638914202f69eb544a992e2361a1c">ByteVector</a> &amp;buffer)=0</td></tr>
+<tr class="memdesc:a6d733ab5b264c662182f722fe8985d10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запись данных  <br /></td></tr>
+<tr class="separator:a6d733ab5b264c662182f722fe8985d10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Интерфейс класса для работы с соединением </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="acf9049a2e586dace2ad89bbf2eee762b" name="acf9049a2e586dace2ad89bbf2eee762b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf9049a2e586dace2ad89bbf2eee762b">&#9670;&#160;</a></span>~IConnection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual logika::connections::IConnection::~IConnection </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a149967bb6c0d82bab191fb3e95bb4bf8" name="a149967bb6c0d82bab191fb3e95bb4bf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a149967bb6c0d82bab191fb3e95bb4bf8">&#9670;&#160;</a></span>Close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void logika::connections::IConnection::Close </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Закрытие соединения </p>
+
+<p>Замещается в <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#ae036e9fb2edf878a3ce5ad27f59b7683">logika::connections::Connection</a>.</p>
+
+</div>
+</div>
+<a id="a0ac783fed698d81ef622ad961f09209b" name="a0ac783fed698d81ef622ad961f09209b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ac783fed698d81ef622ad961f09209b">&#9670;&#160;</a></span>GetAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const std::string &amp; logika::connections::IConnection::GetAddress </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получение адреса соединения </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Адрес соединения </dd></dl>
+
+<p>Замещается в <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#a1dcf63c0dbecd501bdb73a4276bb7e9f">logika::connections::Connection</a>.</p>
+
+</div>
+</div>
+<a id="ab47ea6795a097edc28c5384d04283253" name="ab47ea6795a097edc28c5384d04283253"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab47ea6795a097edc28c5384d04283253">&#9670;&#160;</a></span>GetConnectionState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="../../df/da9/namespacelogika_1_1connections.html#aac9f3568307bb7171e2a5874a167121e">ConnectionState</a> logika::connections::IConnection::GetConnectionState </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получение состояния соединения </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Состояние соединения </dd></dl>
+
+<p>Замещается в <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#afafe3827e6a5c3aa1d4e1d297c2ea914">logika::connections::Connection</a>.</p>
+
+</div>
+</div>
+<a id="a1fd6e58cf3b61aaf7f860461a9f00537" name="a1fd6e58cf3b61aaf7f860461a9f00537"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fd6e58cf3b61aaf7f860461a9f00537">&#9670;&#160;</a></span>GetConnectionType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="../../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#a3bcc31ad79b5ee40ed19e82c3025ce1b">ConnectionType::Type</a> logika::connections::IConnection::GetConnectionType </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получение типа соединения </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Тип соединения </dd></dl>
+
+<p>Замещается в <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#a38b4004a85a2d739a1b63712868c3300">logika::connections::Connection</a>.</p>
+
+</div>
+</div>
+<a id="aaefc18ec01471d3ebaf52d7c134b585f" name="aaefc18ec01471d3ebaf52d7c134b585f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaefc18ec01471d3ebaf52d7c134b585f">&#9670;&#160;</a></span>GetLastRxTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a> logika::connections::IConnection::GetLastRxTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получение времени последнего чтения </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Время последнего чтения </dd></dl>
+
+<p>Замещается в <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#ae23d993819a59096d1aa56ac7a69a730">logika::connections::Connection</a>.</p>
+
+</div>
+</div>
+<a id="af520864f9a3b94933bb032b613aa7af3" name="af520864f9a3b94933bb032b613aa7af3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af520864f9a3b94933bb032b613aa7af3">&#9670;&#160;</a></span>GetReadTimeout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual uint32_t logika::connections::IConnection::GetReadTimeout </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получение времени ожидания данных для чтения </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Время ожидания данных для чтения, мс </dd></dl>
+
+<p>Замещается в <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#a64aa08bf7b14c653695af5927e81a77d">logika::connections::Connection</a>.</p>
+
+</div>
+</div>
+<a id="a542f520485735b6a3d22fae472046dae" name="a542f520485735b6a3d22fae472046dae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a542f520485735b6a3d22fae472046dae">&#9670;&#160;</a></span>GetRxBytesCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual uint32_t logika::connections::IConnection::GetRxBytesCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получение количества полученных байтов </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Количество полученных байтов </dd></dl>
+
+<p>Замещается в <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#a9d82930c67e31e57ed8fef8f2850966b">logika::connections::Connection</a>.</p>
+
+</div>
+</div>
+<a id="a50ed1a60f3f306f4a5bcabad9095fb5c" name="a50ed1a60f3f306f4a5bcabad9095fb5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50ed1a60f3f306f4a5bcabad9095fb5c">&#9670;&#160;</a></span>GetTxBytesCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual uint32_t logika::connections::IConnection::GetTxBytesCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получение количества переданных байтов </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Количество переданных байтов </dd></dl>
+
+<p>Замещается в <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#a6c96653a114089e5dfb7326c5cb87709">logika::connections::Connection</a>.</p>
+
+</div>
+</div>
+<a id="a16bb40cd9c0eab8af1755b243bd6764f" name="a16bb40cd9c0eab8af1755b243bd6764f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16bb40cd9c0eab8af1755b243bd6764f">&#9670;&#160;</a></span>IsConnected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool logika::connections::IConnection::IsConnected </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Установлено ли соединение </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Было ли установлено соединение </dd></dl>
+
+<p>Замещается в <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#a657465c6032182c01aa0d9de0bd3f05f">logika::connections::Connection</a>.</p>
+
+</div>
+</div>
+<a id="acbe1e81aae23ad34cd44e237f1cd93a7" name="acbe1e81aae23ad34cd44e237f1cd93a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbe1e81aae23ad34cd44e237f1cd93a7">&#9670;&#160;</a></span>Open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool logika::connections::IConnection::Open </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Установка соединения </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Удалось ли установить соединение </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Сбрасывает текущее соединение, если было установлено </dd></dl>
+
+<p>Замещается в <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#aca637cc4b968162d1ae93258b33d2ff9">logika::connections::Connection</a>.</p>
+
+</div>
+</div>
+<a id="a812bda6ce96732f59cc3adbc7ff88858" name="a812bda6ce96732f59cc3adbc7ff88858"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a812bda6ce96732f59cc3adbc7ff88858">&#9670;&#160;</a></span>Purge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void logika::connections::IConnection::Purge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/d3a/namespacelogika_1_1connections_1_1PurgeFlags.html#a874233f940d5821a48b0d73d62a9096b">PurgeFlags::Type</a></td>          <td class="paramname"><span class="paramname"><em>flags</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Очистка заданных буферов </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">flags</td><td>Типы буферов для очистки </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Замещается в <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#afebb4ecf6c11ef891e5aaa9a753ec9a9">logika::connections::Connection</a>.</p>
+
+</div>
+</div>
+<a id="a92ae69052fd7fb89ce3b2964af8570a0" name="a92ae69052fd7fb89ce3b2964af8570a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92ae69052fd7fb89ce3b2964af8570a0">&#9670;&#160;</a></span>Read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual uint32_t logika::connections::IConnection::Read </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d43/namespacelogika.html#a69c638914202f69eb544a992e2361a1c">ByteVector</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>needed</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Чтение данных </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">buffer</td><td>Буфер для записи данных </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">needed</td><td>Желаемое количество байтов </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Количество прочитанных байтов </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Количество прочитанных байтов может быть меньше желаемого количества, если соединение было закрыто </dd></dl>
+
+<p>Замещается в <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#a04cb9c650e0340edab4d84f7b9c834af">logika::connections::Connection</a>.</p>
+
+</div>
+</div>
+<a id="a5f64e099c04ab6f76b21d741ace9d092" name="a5f64e099c04ab6f76b21d741ace9d092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f64e099c04ab6f76b21d741ace9d092">&#9670;&#160;</a></span>ResetStatistics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void logika::connections::IConnection::ResetStatistics </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сброс статистики по полученным/переданным байтам </p>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000004">Необходимо сделать</a></b></dt><dd>OnConnectionRequired? </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000005">Необходимо сделать</a></b></dt><dd>IsConflictsWith? </dd></dl>
+
+<p>Замещается в <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#a2151ab25399878c5516b46f81daa5c7c">logika::connections::Connection</a>.</p>
+
+</div>
+</div>
+<a id="ae0e4a6c1eb180828eaa234dba134b6bb" name="ae0e4a6c1eb180828eaa234dba134b6bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0e4a6c1eb180828eaa234dba134b6bb">&#9670;&#160;</a></span>SetOnAfterConnect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void logika::connections::IConnection::SetOnAfterConnect </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; void() &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>hook</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Установка обработчика события "Подключение установлено". </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hook</td><td>Обработчик события </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Замещается в <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#a9ee65031e6562593b7f44c95cbca5ef6">logika::connections::Connection</a>.</p>
+
+</div>
+</div>
+<a id="aa94a4063278c8f14003c683fc4019160" name="aa94a4063278c8f14003c683fc4019160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa94a4063278c8f14003c683fc4019160">&#9670;&#160;</a></span>SetOnBeforeDisonnect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void logika::connections::IConnection::SetOnBeforeDisonnect </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; void() &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>hook</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Установка обработчика события "Соединение будет разорвано". </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hook</td><td>Обработчик события </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Замещается в <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#a03c0b8da477fa378056e02ebe14408c4">logika::connections::Connection</a>.</p>
+
+</div>
+</div>
+<a id="a6d733ab5b264c662182f722fe8985d10" name="a6d733ab5b264c662182f722fe8985d10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d733ab5b264c662182f722fe8985d10">&#9670;&#160;</a></span>Write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual uint32_t logika::connections::IConnection::Write </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d7/d43/namespacelogika.html#a69c638914202f69eb544a992e2361a1c">ByteVector</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Запись данных </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>Буфер, содержащий данные для записи </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Количество записанных байтов </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Количество записанных байтов может быть меньше размера буфера, если соединение было закрыто </dd></dl>
+
+<p>Замещается в <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#a17f2f3e398f76cbc5029e39308060640">logika::connections::Connection</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>logika/include/logika/connections/<a class="el" href="../../d8/de5/iconnection_8h_source.html">iconnection.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/d43/namespacelogika.html">logika</a></li><li class="navelem"><a class="el" href="../../df/da9/namespacelogika_1_1connections.html">connections</a></li><li class="navelem"><a class="el" href="../../df/ddb/classlogika_1_1connections_1_1IConnection.html">IConnection</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

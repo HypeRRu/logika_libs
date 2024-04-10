@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Logika Libs: Файл logika/src/meters/data_table.cpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Logika Libs
+   </div>
+   <div id="projectbrief">Библиотеки для работы с приборами НПФ &quot;Логика&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d9/dcf/data__table_8cpp.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">Пространства имен</a>  </div>
+  <div class="headertitle"><div class="title">Файл data_table.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="../../db/dbf/data__table_8hpp_source.html">logika/meters/data_table.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для data_table.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d53/data__table_8cpp__incl.png" border="0" usemap="#alogika_2src_2meters_2data__table_8cpp" alt=""/></div>
+<map name="alogika_2src_2meters_2data__table_8cpp" id="alogika_2src_2meters_2data__table_8cpp">
+<area shape="rect" title=" " alt="" coords="149,5,299,46"/>
+<area shape="rect" href="../../db/dbf/data__table_8hpp.html" title=" " alt="" coords="160,94,288,135"/>
+<area shape="poly" title=" " alt="" coords="227,47,227,78,221,78,221,47"/>
+<area shape="rect" href="../../d2/d4b/meters_2defs_8h.html" title=" " alt="" coords="139,751,277,777"/>
+<area shape="poly" title=" " alt="" coords="164,138,112,161,61,194,40,214,23,237,12,262,8,291,8,610,12,635,22,657,37,677,56,695,102,723,149,743,147,748,99,728,53,699,33,681,17,660,6,637,3,610,3,290,7,261,18,234,36,210,58,190,109,156,161,133"/>
+<area shape="rect" href="../../dc/d3d/meters_2types_8h.html" title=" " alt="" coords="347,670,491,695"/>
+<area shape="poly" title=" " alt="" coords="215,136,205,158,197,183,187,248,189,276,197,311,216,365,239,419,296,518,354,600,400,656,396,660,350,603,292,521,235,421,211,367,192,313,184,277,182,248,192,182,200,156,211,134"/>
+<area shape="rect" href="../../d3/dcf/archive__field_8h.html" title=" " alt="" coords="207,183,353,223"/>
+<area shape="poly" title=" " alt="" coords="239,134,261,168,257,171,234,137"/>
+<area shape="rect" href="../../d2/d62/any_8hpp.html" title=" " alt="" coords="621,190,779,216"/>
+<area shape="poly" title=" " alt="" coords="289,125,618,184,617,189,288,130"/>
+<area shape="poly" title=" " alt="" coords="387,698,255,748,253,743,385,693"/>
+<area shape="rect" href="../../d5/d7b/common_2types_8h.html" title=" " alt="" coords="699,832,853,858"/>
+<area shape="poly" title=" " alt="" coords="409,697,394,716,381,738,375,762,376,773,382,782,401,797,430,809,507,827,598,836,684,840,683,846,597,842,507,832,428,814,398,802,378,786,371,774,369,762,376,736,390,713,405,694"/>
+<area shape="rect" href="../../da/d08/iserializable_8h.html" title=" " alt="" coords="813,751,1003,777"/>
+<area shape="poly" title=" " alt="" coords="492,693,818,745,817,751,491,698"/>
+<area shape="rect" href="../../de/d23/shared__constructible_8hpp.html" title=" " alt="" coords="392,743,544,784"/>
+<area shape="poly" title=" " alt="" coords="428,694,450,729,446,732,424,697"/>
+<area shape="poly" title=" " alt="" coords="889,779,811,826,808,821,887,775"/>
+<area shape="poly" title=" " alt="" coords="212,226,160,248,110,279,90,298,73,320,63,344,59,372,59,610,62,632,69,653,97,690,132,719,169,741,166,746,129,724,93,693,65,656,56,634,53,610,53,371,57,343,69,317,86,295,107,275,158,243,210,221"/>
+<area shape="rect" href="../../d2/dcd/tag_8h.html" title=" " alt="" coords="468,279,599,305"/>
+<area shape="poly" title=" " alt="" coords="338,221,484,271,483,276,337,226"/>
+<area shape="rect" href="../../d3/d3e/archive__field__def_8h.html" title=" " alt="" coords="207,271,353,312"/>
+<area shape="poly" title=" " alt="" coords="283,224,283,256,277,256,277,224"/>
+<area shape="poly" title=" " alt="" coords="539,305,544,336,547,380,543,429,536,453,526,476,501,514,475,543,448,565,421,583,361,618,329,641,294,672,229,741,225,737,290,668,325,637,358,614,418,579,445,561,471,539,497,511,522,473,531,451,538,428,542,380,539,337,534,305"/>
+<area shape="poly" title=" " alt="" coords="579,303,851,380,977,422,1016,439,1032,452,1032,610,1030,636,1025,657,999,697,973,724,945,745,942,740,970,720,995,694,1020,655,1025,636,1027,610,1027,454,1014,443,975,427,849,385,578,308"/>
+<area shape="rect" href="../../d6/d96/tag__def_8h.html" title=" " alt="" coords="370,360,526,386"/>
+<area shape="poly" title=" " alt="" coords="522,307,474,351,470,347,519,303"/>
+<area shape="rect" href="../../d5/d7b/channel_8h.html" title=" " alt="" coords="522,522,681,548"/>
+<area shape="poly" title=" " alt="" coords="589,303,635,323,655,339,672,359,686,389,690,416,685,444,672,476,657,498,637,515,633,511,653,494,667,473,679,442,685,416,681,390,667,361,651,343,632,328,587,308"/>
+<area shape="poly" title=" " alt="" coords="431,388,403,409,374,436,322,495,284,544,255,598,225,671,216,704,212,736,207,735,211,703,220,669,250,595,280,541,317,491,370,432,399,405,427,384"/>
+<area shape="poly" title=" " alt="" coords="465,384,526,432,583,472,613,487,638,495,663,504,693,520,747,555,787,584,823,619,863,668,885,702,901,736,896,738,880,705,859,671,819,623,784,588,744,559,691,525,661,509,636,500,611,492,580,477,522,436,461,388"/>
+<area shape="rect" href="../../d7/dbc/item__def__base_8h.html" title=" " alt="" coords="384,434,512,474"/>
+<area shape="poly" title=" " alt="" coords="451,386,451,418,445,418,445,386"/>
+<area shape="poly" title=" " alt="" coords="424,477,384,510,335,555,285,610,242,671,227,704,217,736,212,735,222,702,238,668,281,607,331,552,380,506,420,473"/>
+<area shape="poly" title=" " alt="" coords="448,475,425,655,420,654,443,475"/>
+<area shape="poly" title=" " alt="" coords="488,473,566,513,564,518,485,477"/>
+<area shape="poly" title=" " alt="" coords="574,551,468,601,336,672,282,708,236,743,233,739,279,704,333,667,466,596,572,546"/>
+<area shape="poly" title=" " alt="" coords="588,550,447,662,444,658,585,546"/>
+<area shape="poly" title=" " alt="" coords="632,546,726,593,781,627,832,668,866,703,893,737,889,740,862,706,829,672,778,632,723,597,630,551"/>
+<area shape="rect" href="../../d8/dd2/imeter_8h.html" title=" " alt="" coords="564,596,713,622"/>
+<area shape="poly" title=" " alt="" coords="610,547,628,581,623,583,605,549"/>
+<area shape="poly" title=" " alt="" coords="625,624,573,661,504,698,450,717,395,733,293,754,292,748,394,727,449,712,502,693,570,656,622,620"/>
+<area shape="poly" title=" " alt="" coords="602,625,471,667,469,662,601,620"/>
+<area shape="poly" title=" " alt="" coords="683,620,720,638,738,652,753,668,771,705,780,746,783,784,782,817,776,817,778,784,775,746,766,707,748,671,734,656,718,643,680,625"/>
+<area shape="poly" title=" " alt="" coords="682,620,737,639,796,667,847,703,887,738,884,742,843,707,793,672,735,644,680,625"/>
+<area shape="rect" href="../../da/d07/storage_8hpp.html" title=" " alt="" coords="565,670,739,695"/>
+<area shape="poly" title=" " alt="" coords="643,621,650,654,644,655,638,622"/>
+<area shape="rect" href="../../d7/d61/storage_8ipp.html" title=" " alt="" coords="569,751,738,777"/>
+<area shape="poly" title=" " alt="" coords="655,696,656,735,650,735,650,696"/>
+<area shape="poly" title=" " alt="" coords="278,313,246,461,228,564,213,670,210,736,205,735,208,669,222,563,241,460,273,312"/>
+<area shape="poly" title=" " alt="" coords="289,311,412,654,407,656,284,313"/>
+<area shape="poly" title=" " alt="" coords="354,301,445,321,493,337,540,358,631,410,696,460,755,519,829,594,864,628,877,645,890,669,902,703,908,735,903,736,897,704,886,671,873,648,860,632,825,598,751,522,692,464,628,414,537,362,491,342,443,327,353,306"/>
+<area shape="poly" title=" " alt="" coords="323,310,409,351,407,355,321,315"/>
+<area shape="rect" href="../../dd/da1/common_2defs_8h.html" title=" " alt="" coords="801,279,949,305"/>
+<area shape="poly" title=" " alt="" coords="726,214,838,269,835,274,723,219"/>
+<area shape="rect" href="../../de/d59/any_8ipp.html" title=" " alt="" coords="623,279,777,305"/>
+<area shape="poly" title=" " alt="" coords="696,216,694,264,689,264,691,216"/>
+<area shape="poly" title=" " alt="" coords="704,278,706,231,711,231,709,279"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Пространства имен</h2></td></tr>
+<tr class="memitem:d7/d43/namespacelogika" id="r_d7/d43/namespacelogika"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d43/namespacelogika.html">logika</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:dc/df7/namespacelogika_1_1meters" id="r_dc/df7/namespacelogika_1_1meters"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/df7/namespacelogika_1_1meters.html">logika::meters</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_84c4dbe6e1a79f99accf514d2173f793.html">logika</a></li><li class="navelem"><a class="el" href="../../dir_63f72bf46903862c21ea06243b31e027.html">src</a></li><li class="navelem"><a class="el" href="../../dir_13efb6abce8f26014fba2c1dc4cf3c76.html">meters</a></li><li class="navelem"><a class="el" href="../../d9/dcf/data__table_8cpp.html">data_table.cpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

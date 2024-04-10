@@ -1,0 +1,6 @@
+<map id="logika::meters::VQT" name="logika::meters::VQT">
+<area shape="rect" id="Node000001" title="Тип, состояший из метрики, ее значения и метки времени" alt="" coords="5,183,175,338"/>
+<area shape="rect" id="Node000002" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="5,5,175,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,135,90,144,90,184,85,184,85,144,85,135"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="93,120,93,166,87,166,87,120"/>
+</map>

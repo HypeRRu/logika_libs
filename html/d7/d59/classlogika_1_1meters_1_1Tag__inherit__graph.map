@@ -1,0 +1,11 @@
+<map id="logika::meters::Tag" name="logika::meters::Tag">
+<area shape="rect" id="Node000001" title="Тэг" alt="" coords="211,168,422,620"/>
+<area shape="rect" id="Node000003" href="$de/d9a/classlogika_1_1meters_1_1ArchiveField.html" title="Поле архива" alt="" coords="5,755,193,1127"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="222,635,208,669,174,757,169,755,204,667,217,633"/>
+<area shape="rect" id="Node000004" href="$d9/d53/classlogika_1_1meters_1_1DataTag.html" title="Тэг с данными" alt="" coords="218,668,415,1215"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="319,635,319,668,314,668,314,635"/>
+<area shape="rect" id="Node000005" href="$db/d12/classlogika_1_1meters_1_1DataTag6Container.html" title="Контейнер тэгов с данными Logika6." alt="" coords="439,787,639,1095"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="417,633,479,786,474,788,412,635"/>
+<area shape="rect" id="Node000002" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="232,5,401,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="319,135,319,168,314,168,314,135"/>
+</map>
