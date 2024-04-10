@@ -18,10 +18,11 @@
 
 ### Meters
 - [x] Types
-- [ ] Logika4L
-- [ ] Logika4M
+- [x] Logika4L
+- [x] Logika4M
 - [ ] Logika6
 - [x] Archives
+- [ ] Debug log for meters
 
 ### WinComms
 ### WinUtils
