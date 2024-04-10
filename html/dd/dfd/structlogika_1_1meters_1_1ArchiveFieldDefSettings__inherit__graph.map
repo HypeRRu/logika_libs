@@ -1,0 +1,13 @@
+<map id="logika::meters::ArchiveFieldDefSettings" name="logika::meters::ArchiveFieldDefSettings">
+<area shape="rect" id="Node000001" title="Параметры описания поля архива" alt="" coords="217,239,387,333"/>
+<area shape="rect" id="Node000003" href="$dd/dc4/structlogika_1_1meters_1_1ArchiveFieldDef4Settings.html" title="Параметры описания поля архива Logika4." alt="" coords="119,381,290,496"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="266,347,243,383,238,380,262,344"/>
+<area shape="rect" id="Node000006" href="$db/d1d/structlogika_1_1meters_1_1ArchiveFieldDef6Settings.html" title="Параметры описания поля архива Logika6." alt="" coords="314,399,485,479"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="342,344,377,397,372,400,338,347"/>
+<area shape="rect" id="Node000002" href="$d0/de8/structlogika_1_1meters_1_1TagDefSettings.html" title="Параметры для создания базового тэга" alt="" coords="207,5,397,191"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="305,205,305,239,299,239,299,205"/>
+<area shape="rect" id="Node000004" href="$d3/dbb/structlogika_1_1meters_1_1ArchiveFieldDef4LSettings.html" title="Параметры описания поля архива Logika4L." alt="" coords="5,544,199,659"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="163,510,140,546,135,543,158,507"/>
+<area shape="rect" id="Node000005" href="$d6/d41/structlogika_1_1meters_1_1ArchiveFieldDef4MSettings.html" title="Параметры описания поля архива Logika4L." alt="" coords="223,561,394,641"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="251,507,286,560,281,563,247,510"/>
+</map>

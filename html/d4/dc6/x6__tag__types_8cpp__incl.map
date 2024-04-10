@@ -1,0 +1,11 @@
+<map id="migration/src/converters/x6_tag_types.cpp" name="migration/src/converters/x6_tag_types.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="184,5,346,46"/>
+<area shape="rect" id="Node000002" href="$df/dc0/x6__tag__types_8h.html" title=" " alt="" coords="5,102,178,127"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="227,49,130,97,128,92,224,44"/>
+<area shape="rect" id="Node000003" href="$dc/dd0/enums__string__to__pb_8h.html" title=" " alt="" coords="201,94,329,135"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="268,47,268,78,262,78,262,47"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="353,94,486,135"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="301,44,373,84,370,89,299,49"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="172,183,358,208"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="268,135,268,167,262,167,262,135"/>
+</map>

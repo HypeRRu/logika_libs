@@ -1,0 +1,9 @@
+<map id="logika::connections::SerialPortConnection" name="logika::connections::SerialPortConnection">
+<area shape="rect" id="Node000001" title="Класс для работы с соединением COM&#45;порту" alt="" coords="5,2584,225,3068"/>
+<area shape="rect" id="Node000002" href="$d4/d4f/classlogika_1_1connections_1_1SerialConnection.html" title="Базовый класс для работы с соединением по последовательному порту" alt="" coords="17,2089,213,2536"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,2551,118,2584,113,2584,113,2551"/>
+<area shape="rect" id="Node000003" href="$db/da7/classlogika_1_1connections_1_1Connection.html" title="Базовый класс для работы с соединением" alt="" coords="15,747,216,2041"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="118,2056,118,2089,113,2089,113,2056"/>
+<area shape="rect" id="Node000004" href="$df/ddb/classlogika_1_1connections_1_1IConnection.html" title="Интерфейс класса для работы с соединением" alt="" coords="15,5,216,699"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="118,713,118,747,113,747,113,713"/>
+</map>

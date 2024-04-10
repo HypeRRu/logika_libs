@@ -1,0 +1,17 @@
+<map id="logika::meters::ArchiveFieldDef" name="logika::meters::ArchiveFieldDef">
+<area shape="rect" id="Node000001" title="Описание поля архива" alt="" coords="250,927,441,1191"/>
+<area shape="rect" id="Node000005" href="$db/d33/classlogika_1_1meters_1_1ArchiveFieldDef4.html" title="Описание поля архива Logika4." alt="" coords="136,1239,333,1503"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="296,1206,284,1240,279,1238,291,1204"/>
+<area shape="rect" id="Node000008" href="$d1/d26/classlogika_1_1meters_1_1ArchiveFieldDef6.html" title="Описание поля архива Logika6." alt="" coords="357,1288,555,1453"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="399,1203,429,1287,424,1289,394,1205"/>
+<area shape="rect" id="Node000002" href="$d5/dfb/classlogika_1_1meters_1_1TagDef.html" title="Базовое описание тэга" alt="" coords="137,585,343,879"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="294,892,305,926,300,928,289,894"/>
+<area shape="rect" id="Node000003" href="$da/dc9/classlogika_1_1meters_1_1ItemDefBase.html" title="Базовый элемент" alt="" coords="118,5,362,537"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="243,552,243,585,237,585,237,552"/>
+<area shape="rect" id="Node000004" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="367,675,537,789"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="431,804,391,928,386,926,426,803"/>
+<area shape="rect" id="Node000006" href="$d3/d70/classlogika_1_1meters_1_1ArchiveFieldDef4L.html" title="Описание поля архива Logika4L." alt="" coords="5,1551,221,1780"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="177,1518,163,1552,158,1550,172,1516"/>
+<area shape="rect" id="Node000007" href="$d7/d97/classlogika_1_1meters_1_1ArchiveFieldDef4M.html" title="Описание поля архива Logika4M." alt="" coords="246,1585,466,1745"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="297,1516,326,1584,321,1586,292,1518"/>
+</map>

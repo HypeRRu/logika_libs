@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Logika Libs: Исходный файл logika/include/logika/protocols/rc.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Logika Libs
+   </div>
+   <div id="projectbrief">Библиотеки для работы с приборами НПФ &quot;Логика&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('da/db4/protocols_2rc_8h_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rc.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../da/db4/protocols_2rc_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef LOGIKA_PROTOCOLS_RC_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="../../da/db4/protocols_2rc_8h.html#a82693f8d6fa271db0b180ae015033bab">    7</a></span><span class="preprocessor">#define LOGIKA_PROTOCOLS_RC_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="../../d0/d6b/common_2rc_8h.html">logika/common/rc.h</a>&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d7/d43/namespacelogika.html">logika</a></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span>protocols</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html">   17</a></span><span class="keyword">namespace </span>Rc</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a1f3c68a5f356ea9b076385a57c27fddb">   20</a></span><span class="keyword">using </span><a class="code hl_typedef" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a1f3c68a5f356ea9b076385a57c27fddb">Type</a> = <a class="code hl_typedef" href="../../d6/d61/namespacelogika_1_1Rc.html#ac832d7620142310fe5edc8a037396efe">logika::Rc::Type</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>enum : <a class="code hl_typedef" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a1f3c68a5f356ea9b076385a57c27fddb">Type</a></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10acc82662b25c40706246e99d166e97a5a">   25</a></span>    <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10acc82662b25c40706246e99d166e97a5a">Success</a>             = <a class="code hl_enumvalue" href="../../d6/d61/namespacelogika_1_1Rc.html#afa2afc7dc6f2db0b311515486bfc91b0a2a87fb2343f3198b7162dedeaab9e6de">logika::Rc::Success</a>,              </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a228761971d6869dbdba3e59112c3e21b">   26</a></span>    <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a228761971d6869dbdba3e59112c3e21b">Fail</a>                = <a class="code hl_enumvalue" href="../../d6/d61/namespacelogika_1_1Rc.html#afa2afc7dc6f2db0b311515486bfc91b0a7323bb5fd823c80d2e94c943887f68a3">logika::Rc::Fail</a>,                 </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a872492076566fbe3b59bb9488390550b">   27</a></span>    <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a872492076566fbe3b59bb9488390550b">RcShift</a>             = <a class="code hl_enumvalue" href="../../d6/d61/namespacelogika_1_1Rc.html#afa2afc7dc6f2db0b311515486bfc91b0a875fac6954f820bbdca34c0ec65d15ec">logika::Rc::RcShift</a>,              </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10aa983c4f194c0f765a216f6fa4840da66">   28</a></span>    <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10aa983c4f194c0f765a216f6fa4840da66">ProtocolRc</a>          = 0x2,                              </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a7e56354baae5a1cbe832a02a6e373014">   30</a></span>    <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a7e56354baae5a1cbe832a02a6e373014">PacketReceived</a>      = ( 0x1 &lt;&lt; <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a872492076566fbe3b59bb9488390550b">RcShift</a> ) | <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10aa983c4f194c0f765a216f6fa4840da66">ProtocolRc</a>,  </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10ad8065d30dd736f0c480e4421d0006b23">   31</a></span>    <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10ad8065d30dd736f0c480e4421d0006b23">PacketTransmitted</a>   = ( 0x2 &lt;&lt; <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a872492076566fbe3b59bb9488390550b">RcShift</a> ) | <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10aa983c4f194c0f765a216f6fa4840da66">ProtocolRc</a>,  </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10ae71fd547de91f7f0c64ec4508fe04265">   32</a></span>    <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10ae71fd547de91f7f0c64ec4508fe04265">RxTimeoutError</a>      = ( 0x3 &lt;&lt; <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a872492076566fbe3b59bb9488390550b">RcShift</a> ) | <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10aa983c4f194c0f765a216f6fa4840da66">ProtocolRc</a>,  </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a995fb56dec3bc0d03bd23e93189120f4">   33</a></span>    <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a995fb56dec3bc0d03bd23e93189120f4">RxCrcError</a>          = ( 0x4 &lt;&lt; <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a872492076566fbe3b59bb9488390550b">RcShift</a> ) | <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10aa983c4f194c0f765a216f6fa4840da66">ProtocolRc</a>,  </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10afc530a55244a1ea2b28fa36a3e5e1b73">   34</a></span>    <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10afc530a55244a1ea2b28fa36a3e5e1b73">RxLatePacketError</a>   = ( 0x5 &lt;&lt; <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a872492076566fbe3b59bb9488390550b">RcShift</a> ) | <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10aa983c4f194c0f765a216f6fa4840da66">ProtocolRc</a>,  </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a90ee0fedd42e5c674b1ac926b408dacf">   35</a></span>    <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a90ee0fedd42e5c674b1ac926b408dacf">RxGeneralError</a>      = ( 0x6 &lt;&lt; <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a872492076566fbe3b59bb9488390550b">RcShift</a> ) | <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10aa983c4f194c0f765a216f6fa4840da66">ProtocolRc</a>,  </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a0889d5a278a237904c2c3e1f1ef1a269">   36</a></span>    <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a0889d5a278a237904c2c3e1f1ef1a269">BadRequestError</a>     = ( 0x7 &lt;&lt; <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a872492076566fbe3b59bb9488390550b">RcShift</a> ) | <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10aa983c4f194c0f765a216f6fa4840da66">ProtocolRc</a>,  </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a82f60af1d105f9e40950a365361202fa">   37</a></span>    <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a82f60af1d105f9e40950a365361202fa">WriteProtectedError</a> = ( 0x8 &lt;&lt; <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a872492076566fbe3b59bb9488390550b">RcShift</a> ) | <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10aa983c4f194c0f765a216f6fa4840da66">ProtocolRc</a>,  </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10ab52eb51e5fb3eb79e380837514c34815">   38</a></span>    <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10ab52eb51e5fb3eb79e380837514c34815">InvalidArgError</a>     = ( 0x9 &lt;&lt; <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a872492076566fbe3b59bb9488390550b">RcShift</a> ) | <a class="code hl_enumvalue" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10aa983c4f194c0f765a216f6fa4840da66">ProtocolRc</a>,  </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}; <span class="comment">// anonymous enum</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>} <span class="comment">// namespace Rc</span></div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>} <span class="comment">// namespace protocols</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>} <span class="comment">// namespace logika</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif </span><span class="comment">// LOGIKA_PROTOCOLS_RC_H</span></div>
+<div class="ttc" id="acommon_2rc_8h_html"><div class="ttname"><a href="../../d0/d6b/common_2rc_8h.html">rc.h</a></div></div>
+<div class="ttc" id="anamespacelogika_1_1Rc_html_ac832d7620142310fe5edc8a037396efe"><div class="ttname"><a href="../../d6/d61/namespacelogika_1_1Rc.html#ac832d7620142310fe5edc8a037396efe">logika::Rc::Type</a></div><div class="ttdeci">uint32_t Type</div><div class="ttdef"><b>Definition</b> rc.h:19</div></div>
+<div class="ttc" id="anamespacelogika_1_1Rc_html_afa2afc7dc6f2db0b311515486bfc91b0a2a87fb2343f3198b7162dedeaab9e6de"><div class="ttname"><a href="../../d6/d61/namespacelogika_1_1Rc.html#afa2afc7dc6f2db0b311515486bfc91b0a2a87fb2343f3198b7162dedeaab9e6de">logika::Rc::Success</a></div><div class="ttdeci">@ Success</div><div class="ttdoc">( 0x0; 0 ) Успешное завершение операции</div><div class="ttdef"><b>Definition</b> rc.h:24</div></div>
+<div class="ttc" id="anamespacelogika_1_1Rc_html_afa2afc7dc6f2db0b311515486bfc91b0a7323bb5fd823c80d2e94c943887f68a3"><div class="ttname"><a href="../../d6/d61/namespacelogika_1_1Rc.html#afa2afc7dc6f2db0b311515486bfc91b0a7323bb5fd823c80d2e94c943887f68a3">logika::Rc::Fail</a></div><div class="ttdeci">@ Fail</div><div class="ttdoc">( 0xFFFF; 65535 ) Провал операции</div><div class="ttdef"><b>Definition</b> rc.h:25</div></div>
+<div class="ttc" id="anamespacelogika_1_1Rc_html_afa2afc7dc6f2db0b311515486bfc91b0a875fac6954f820bbdca34c0ec65d15ec"><div class="ttname"><a href="../../d6/d61/namespacelogika_1_1Rc.html#afa2afc7dc6f2db0b311515486bfc91b0a875fac6954f820bbdca34c0ec65d15ec">logika::Rc::RcShift</a></div><div class="ttdeci">@ RcShift</div><div class="ttdoc">Сдвиг кода возврата</div><div class="ttdef"><b>Definition</b> rc.h:26</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_1_1Rc_html_a1f3c68a5f356ea9b076385a57c27fddb"><div class="ttname"><a href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a1f3c68a5f356ea9b076385a57c27fddb">logika::protocols::Rc::Type</a></div><div class="ttdeci">logika::Rc::Type Type</div><div class="ttdef"><b>Definition</b> rc.h:20</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_1_1Rc_html_a9c9824ecce08cb2f89a2a702938c2c10a0889d5a278a237904c2c3e1f1ef1a269"><div class="ttname"><a href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a0889d5a278a237904c2c3e1f1ef1a269">logika::protocols::Rc::BadRequestError</a></div><div class="ttdeci">@ BadRequestError</div><div class="ttdoc">( 0x70002; 458754 ) Неверная структура запроса</div><div class="ttdef"><b>Definition</b> rc.h:36</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_1_1Rc_html_a9c9824ecce08cb2f89a2a702938c2c10a228761971d6869dbdba3e59112c3e21b"><div class="ttname"><a href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a228761971d6869dbdba3e59112c3e21b">logika::protocols::Rc::Fail</a></div><div class="ttdeci">@ Fail</div><div class="ttdoc">( 0xFFFF; 65535 ) Провал операции</div><div class="ttdef"><b>Definition</b> rc.h:26</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_1_1Rc_html_a9c9824ecce08cb2f89a2a702938c2c10a7e56354baae5a1cbe832a02a6e373014"><div class="ttname"><a href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a7e56354baae5a1cbe832a02a6e373014">logika::protocols::Rc::PacketReceived</a></div><div class="ttdeci">@ PacketReceived</div><div class="ttdoc">( 0x10002; 65538 ) Пакет успешно получен</div><div class="ttdef"><b>Definition</b> rc.h:30</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_1_1Rc_html_a9c9824ecce08cb2f89a2a702938c2c10a82f60af1d105f9e40950a365361202fa"><div class="ttname"><a href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a82f60af1d105f9e40950a365361202fa">logika::protocols::Rc::WriteProtectedError</a></div><div class="ttdeci">@ WriteProtectedError</div><div class="ttdoc">( 0x80002; 524290 ) Запись запрещена</div><div class="ttdef"><b>Definition</b> rc.h:37</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_1_1Rc_html_a9c9824ecce08cb2f89a2a702938c2c10a872492076566fbe3b59bb9488390550b"><div class="ttname"><a href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a872492076566fbe3b59bb9488390550b">logika::protocols::Rc::RcShift</a></div><div class="ttdeci">@ RcShift</div><div class="ttdoc">Сдвиг кода возврата</div><div class="ttdef"><b>Definition</b> rc.h:27</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_1_1Rc_html_a9c9824ecce08cb2f89a2a702938c2c10a90ee0fedd42e5c674b1ac926b408dacf"><div class="ttname"><a href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a90ee0fedd42e5c674b1ac926b408dacf">logika::protocols::Rc::RxGeneralError</a></div><div class="ttdeci">@ RxGeneralError</div><div class="ttdoc">( 0x60002; 393218 ) Неклассифицировання ошибка получения</div><div class="ttdef"><b>Definition</b> rc.h:35</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_1_1Rc_html_a9c9824ecce08cb2f89a2a702938c2c10a995fb56dec3bc0d03bd23e93189120f4"><div class="ttname"><a href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a995fb56dec3bc0d03bd23e93189120f4">logika::protocols::Rc::RxCrcError</a></div><div class="ttdeci">@ RxCrcError</div><div class="ttdoc">( 0x40002; 262146 ) Ошибка CRC (Cyclic Redundancy Check)</div><div class="ttdef"><b>Definition</b> rc.h:33</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_1_1Rc_html_a9c9824ecce08cb2f89a2a702938c2c10aa983c4f194c0f765a216f6fa4840da66"><div class="ttname"><a href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10aa983c4f194c0f765a216f6fa4840da66">logika::protocols::Rc::ProtocolRc</a></div><div class="ttdeci">@ ProtocolRc</div><div class="ttdoc">Индикатор кода возврата для соединений</div><div class="ttdef"><b>Definition</b> rc.h:28</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_1_1Rc_html_a9c9824ecce08cb2f89a2a702938c2c10ab52eb51e5fb3eb79e380837514c34815"><div class="ttname"><a href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10ab52eb51e5fb3eb79e380837514c34815">logika::protocols::Rc::InvalidArgError</a></div><div class="ttdeci">@ InvalidArgError</div><div class="ttdoc">( 0x90002; 589826 ) Неверный аргумент</div><div class="ttdef"><b>Definition</b> rc.h:38</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_1_1Rc_html_a9c9824ecce08cb2f89a2a702938c2c10acc82662b25c40706246e99d166e97a5a"><div class="ttname"><a href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10acc82662b25c40706246e99d166e97a5a">logika::protocols::Rc::Success</a></div><div class="ttdeci">@ Success</div><div class="ttdoc">( 0x0; 0 ) Успешное завершение операции</div><div class="ttdef"><b>Definition</b> rc.h:25</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_1_1Rc_html_a9c9824ecce08cb2f89a2a702938c2c10ad8065d30dd736f0c480e4421d0006b23"><div class="ttname"><a href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10ad8065d30dd736f0c480e4421d0006b23">logika::protocols::Rc::PacketTransmitted</a></div><div class="ttdeci">@ PacketTransmitted</div><div class="ttdoc">( 0x20002; 131074 ) Пакет успешно передан</div><div class="ttdef"><b>Definition</b> rc.h:31</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_1_1Rc_html_a9c9824ecce08cb2f89a2a702938c2c10ae71fd547de91f7f0c64ec4508fe04265"><div class="ttname"><a href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10ae71fd547de91f7f0c64ec4508fe04265">logika::protocols::Rc::RxTimeoutError</a></div><div class="ttdeci">@ RxTimeoutError</div><div class="ttdoc">( 0x30002; 196610 ) Истекло время ожидания получения</div><div class="ttdef"><b>Definition</b> rc.h:32</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_1_1Rc_html_a9c9824ecce08cb2f89a2a702938c2c10afc530a55244a1ea2b28fa36a3e5e1b73"><div class="ttname"><a href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10afc530a55244a1ea2b28fa36a3e5e1b73">logika::protocols::Rc::RxLatePacketError</a></div><div class="ttdeci">@ RxLatePacketError</div><div class="ttdoc">( 0x50002; 327682 ) Пакет пришел не вовремя</div><div class="ttdef"><b>Definition</b> rc.h:34</div></div>
+<div class="ttc" id="anamespacelogika_html"><div class="ttname"><a href="../../d7/d43/namespacelogika.html">logika</a></div><div class="ttdef"><b>Definition</b> any.hpp:17</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_84c4dbe6e1a79f99accf514d2173f793.html">logika</a></li><li class="navelem"><a class="el" href="../../dir_f1284c587673ddc2d78b9c445c5062b8.html">include</a></li><li class="navelem"><a class="el" href="../../dir_536f92a6556bef0406895bf0fd73acd4.html">logika</a></li><li class="navelem"><a class="el" href="../../dir_42cb901e50ce833ed144c9fb04bddde6.html">protocols</a></li><li class="navelem"><a class="el" href="../../da/db4/protocols_2rc_8h.html">rc.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

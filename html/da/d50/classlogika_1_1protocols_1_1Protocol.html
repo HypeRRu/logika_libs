@@ -1,0 +1,814 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Logika Libs: Класс logika::protocols::Protocol</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Logika Libs
+   </div>
+   <div id="projectbrief">Библиотеки для работы с приборами НПФ &quot;Логика&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('da/d50/classlogika_1_1protocols_1_1Protocol.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="#pro-attribs">Защищенные данные</a> &#124;
+<a href="../../d3/dd2/classlogika_1_1protocols_1_1Protocol-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс logika::protocols::Protocol<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Базовый класс для работы с протоколами  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d2/d5e/protocol_8h_source.html">protocol.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:logika::protocols::Protocol:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/d7a/classlogika_1_1protocols_1_1Protocol__inherit__graph.png" border="0" usemap="#alogika_1_1protocols_1_1Protocol_inherit__map" alt="Inheritance graph"/></div>
+<map name="alogika_1_1protocols_1_1Protocol_inherit__map" id="alogika_1_1protocols_1_1Protocol_inherit__map">
+<area shape="rect" title="Базовый класс для работы с протоколами" alt="" coords="5,544,221,1225"/>
+<area shape="rect" href="../../da/dd0/classlogika_1_1protocols_1_1IProtocol.html" title="Интерфейс класса для работы с протоколами" alt="" coords="13,5,214,496"/>
+<area shape="poly" title=" " alt="" coords="116,511,116,544,111,544,111,511"/>
+</map>
+</div>
+<div class="dynheader">
+Граф связей класса logika::protocols::Protocol:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/d7a/classlogika_1_1protocols_1_1Protocol__coll__graph.png" border="0" usemap="#alogika_1_1protocols_1_1Protocol_coll__map" alt="Collaboration graph"/></div>
+<map name="alogika_1_1protocols_1_1Protocol_coll__map" id="alogika_1_1protocols_1_1Protocol_coll__map">
+<area shape="rect" title="Базовый класс для работы с протоколами" alt="" coords="5,544,221,1225"/>
+<area shape="rect" href="../../da/dd0/classlogika_1_1protocols_1_1IProtocol.html" title="Интерфейс класса для работы с протоколами" alt="" coords="13,5,214,496"/>
+<area shape="poly" title=" " alt="" coords="116,511,116,544,111,544,111,511"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ace66cd8938fe926e198f1b4adc2960f0" id="r_ace66cd8938fe926e198f1b4adc2960f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace66cd8938fe926e198f1b4adc2960f0">Protocol</a> ()</td></tr>
+<tr class="memdesc:ace66cd8938fe926e198f1b4adc2960f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор протокола  <br /></td></tr>
+<tr class="separator:ace66cd8938fe926e198f1b4adc2960f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff0c2780d37fb971bf67e875e79a38c4" id="r_aff0c2780d37fb971bf67e875e79a38c4"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="../../df/ddb/classlogika_1_1connections_1_1IConnection.html">connections::IConnection</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff0c2780d37fb971bf67e875e79a38c4">GetConnection</a> () const override</td></tr>
+<tr class="memdesc:aff0c2780d37fb971bf67e875e79a38c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение соединения для работы протокола    <br /></td></tr>
+<tr class="separator:aff0c2780d37fb971bf67e875e79a38c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a023e56c96e2e8bfc44070ad821372ee8" id="r_a023e56c96e2e8bfc44070ad821372ee8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a023e56c96e2e8bfc44070ad821372ee8">SetConnection</a> (std::shared_ptr&lt; <a class="el" href="../../df/ddb/classlogika_1_1connections_1_1IConnection.html">connections::IConnection</a> &gt; connection) override</td></tr>
+<tr class="memdesc:a023e56c96e2e8bfc44070ad821372ee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Задание соединения для работы протокола    <br /></td></tr>
+<tr class="separator:a023e56c96e2e8bfc44070ad821372ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e4df92786011bc675efb39124b59fc5" id="r_a8e4df92786011bc675efb39124b59fc5"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e4df92786011bc675efb39124b59fc5">GetPacketsSent</a> () const override</td></tr>
+<tr class="memdesc:a8e4df92786011bc675efb39124b59fc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение количества отправленных пакетов    <br /></td></tr>
+<tr class="separator:a8e4df92786011bc675efb39124b59fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4df266ffbf2a4930967ee81b5c4f17b8" id="r_a4df266ffbf2a4930967ee81b5c4f17b8"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4df266ffbf2a4930967ee81b5c4f17b8">GetPacketsReceived</a> () const override</td></tr>
+<tr class="memdesc:a4df266ffbf2a4930967ee81b5c4f17b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение количества полученных пакетов    <br /></td></tr>
+<tr class="separator:a4df266ffbf2a4930967ee81b5c4f17b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7417a9bfded7a3e5700774b7d55147bc" id="r_a7417a9bfded7a3e5700774b7d55147bc"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7417a9bfded7a3e5700774b7d55147bc">GetRxTimeouts</a> () const override</td></tr>
+<tr class="memdesc:a7417a9bfded7a3e5700774b7d55147bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение количества ошибок TimeOut.    <br /></td></tr>
+<tr class="separator:a7417a9bfded7a3e5700774b7d55147bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e7eaf3395a713ab3d882a75871d99c1" id="r_a2e7eaf3395a713ab3d882a75871d99c1"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e7eaf3395a713ab3d882a75871d99c1">GetRxCrc</a> () const override</td></tr>
+<tr class="memdesc:a2e7eaf3395a713ab3d882a75871d99c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение количества ошибок CRC.    <br /></td></tr>
+<tr class="separator:a2e7eaf3395a713ab3d882a75871d99c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6001d8c1ae3ec41d8d0871d54a6febf6" id="r_a6001d8c1ae3ec41d8d0871d54a6febf6"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6001d8c1ae3ec41d8d0871d54a6febf6">GetRxLatePackets</a> () const override</td></tr>
+<tr class="memdesc:a6001d8c1ae3ec41d8d0871d54a6febf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение количества ошибок LatePacket.    <br /></td></tr>
+<tr class="separator:a6001d8c1ae3ec41d8d0871d54a6febf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0d0297c68191f39cbdfb51c66d2874b" id="r_ab0d0297c68191f39cbdfb51c66d2874b"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0d0297c68191f39cbdfb51c66d2874b">GetRxGeneralErrors</a> () const override</td></tr>
+<tr class="memdesc:ab0d0297c68191f39cbdfb51c66d2874b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение количества неклассифицированных ошибок получения    <br /></td></tr>
+<tr class="separator:ab0d0297c68191f39cbdfb51c66d2874b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87ae3180e0af206b6899f880bfda8711" id="r_a87ae3180e0af206b6899f880bfda8711"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87ae3180e0af206b6899f880bfda8711">GetGeneralErrors</a> () const =0</td></tr>
+<tr class="memdesc:a87ae3180e0af206b6899f880bfda8711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение количества неклассифицированных ошибок    <br /></td></tr>
+<tr class="separator:a87ae3180e0af206b6899f880bfda8711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ba9768eb16ca12ba7579efc41b9638d" id="r_a4ba9768eb16ca12ba7579efc41b9638d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ba9768eb16ca12ba7579efc41b9638d">RegisterEvent</a> (<a class="el" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a1f3c68a5f356ea9b076385a57c27fddb">Rc::Type</a> event) override</td></tr>
+<tr class="memdesc:a4ba9768eb16ca12ba7579efc41b9638d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение количества неклассифицированных ошибок получения    <br /></td></tr>
+<tr class="separator:a4ba9768eb16ca12ba7579efc41b9638d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac393f644b7c378776e4b71b7a8c880fd" id="r_ac393f644b7c378776e4b71b7a8c880fd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac393f644b7c378776e4b71b7a8c880fd">Reset</a> () override</td></tr>
+<tr class="memdesc:ac393f644b7c378776e4b71b7a8c880fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сброс статистики событий    <br /></td></tr>
+<tr class="separator:ac393f644b7c378776e4b71b7a8c880fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classlogika_1_1protocols_1_1IProtocol"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classlogika_1_1protocols_1_1IProtocol')"><img src="../../closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="../../da/dd0/classlogika_1_1protocols_1_1IProtocol.html">logika::protocols::IProtocol</a></td></tr>
+<tr class="memitem:a7b017e7990724b74307232592d875959 inherit pub_methods_classlogika_1_1protocols_1_1IProtocol" id="r_a7b017e7990724b74307232592d875959"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a7b017e7990724b74307232592d875959">~IProtocol</a> ()=default</td></tr>
+<tr class="separator:a7b017e7990724b74307232592d875959 inherit pub_methods_classlogika_1_1protocols_1_1IProtocol"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:a482641fe6139858307e590af43608751" id="r_a482641fe6139858307e590af43608751"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a482641fe6139858307e590af43608751">ResetImpl</a> ()</td></tr>
+<tr class="memdesc:a482641fe6139858307e590af43608751"><td class="mdescLeft">&#160;</td><td class="mdescRight">Реализация сброса статистики  <br /></td></tr>
+<tr class="separator:a482641fe6139858307e590af43608751"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Защищенные данные</h2></td></tr>
+<tr class="memitem:a94550cb0218f69ab62c80c68d5e0ab9b" id="r_a94550cb0218f69ab62c80c68d5e0ab9b"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="../../df/ddb/classlogika_1_1connections_1_1IConnection.html">connections::IConnection</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94550cb0218f69ab62c80c68d5e0ab9b">connection_</a></td></tr>
+<tr class="memdesc:a94550cb0218f69ab62c80c68d5e0ab9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Соединения для работы по протоколу  <br /></td></tr>
+<tr class="separator:a94550cb0218f69ab62c80c68d5e0ab9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1d7df9155311cabfc0baf8ec63d187c" id="r_ab1d7df9155311cabfc0baf8ec63d187c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1d7df9155311cabfc0baf8ec63d187c">packetsSent_</a></td></tr>
+<tr class="memdesc:ab1d7df9155311cabfc0baf8ec63d187c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Количество отправленных пакетов  <br /></td></tr>
+<tr class="separator:ab1d7df9155311cabfc0baf8ec63d187c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa817fdbda3141059256e9e9e0d5cb2ba" id="r_aa817fdbda3141059256e9e9e0d5cb2ba"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa817fdbda3141059256e9e9e0d5cb2ba">packetsReceived_</a></td></tr>
+<tr class="memdesc:aa817fdbda3141059256e9e9e0d5cb2ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Количество полученных пакетов  <br /></td></tr>
+<tr class="separator:aa817fdbda3141059256e9e9e0d5cb2ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42faad59e66c98eb235d2beaee31e05e" id="r_a42faad59e66c98eb235d2beaee31e05e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42faad59e66c98eb235d2beaee31e05e">rxTimeout_</a></td></tr>
+<tr class="memdesc:a42faad59e66c98eb235d2beaee31e05e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Количество ошибок чтения TimeOut.  <br /></td></tr>
+<tr class="separator:a42faad59e66c98eb235d2beaee31e05e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9bb62bd6d16033de2260f744705c547" id="r_af9bb62bd6d16033de2260f744705c547"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9bb62bd6d16033de2260f744705c547">rxCrc_</a></td></tr>
+<tr class="memdesc:af9bb62bd6d16033de2260f744705c547"><td class="mdescLeft">&#160;</td><td class="mdescRight">Количество ошибок чтения CRC.  <br /></td></tr>
+<tr class="separator:af9bb62bd6d16033de2260f744705c547"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0b97e0571f4b0cab2c1bcd370297283" id="r_ac0b97e0571f4b0cab2c1bcd370297283"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0b97e0571f4b0cab2c1bcd370297283">rxLatePacket_</a></td></tr>
+<tr class="memdesc:ac0b97e0571f4b0cab2c1bcd370297283"><td class="mdescLeft">&#160;</td><td class="mdescRight">Количество ошибок чтения Late Packet.  <br /></td></tr>
+<tr class="separator:ac0b97e0571f4b0cab2c1bcd370297283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82a380bad318a55d8c9ed98757765e65" id="r_a82a380bad318a55d8c9ed98757765e65"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82a380bad318a55d8c9ed98757765e65">rxGeneral_</a></td></tr>
+<tr class="memdesc:a82a380bad318a55d8c9ed98757765e65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Количество неклассифицированных ошибок чтения  <br /></td></tr>
+<tr class="separator:a82a380bad318a55d8c9ed98757765e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a213681b269b5cf72263d743f77da6aea" id="r_a213681b269b5cf72263d743f77da6aea"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a213681b269b5cf72263d743f77da6aea">generalError_</a></td></tr>
+<tr class="memdesc:a213681b269b5cf72263d743f77da6aea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Количество неклассифицированных ошибок  <br /></td></tr>
+<tr class="separator:a213681b269b5cf72263d743f77da6aea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Базовый класс для работы с протоколами </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="ace66cd8938fe926e198f1b4adc2960f0" name="ace66cd8938fe926e198f1b4adc2960f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace66cd8938fe926e198f1b4adc2960f0">&#9670;&#160;</a></span>Protocol()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">logika::protocols::Protocol::Protocol </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор протокола </p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="aff0c2780d37fb971bf67e875e79a38c4" name="aff0c2780d37fb971bf67e875e79a38c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff0c2780d37fb971bf67e875e79a38c4">&#9670;&#160;</a></span>GetConnection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="../../df/ddb/classlogika_1_1connections_1_1IConnection.html">connections::IConnection</a> &gt; logika::protocols::Protocol::GetConnection </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получение соединения для работы протокола   </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Соединение для работы протокола   </dd></dl>
+
+<p>Замещает <a class="el" href="../../da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a0eb9fdab8a7baea1b7f999342faaf7ed">logika::protocols::IProtocol</a>.</p>
+
+</div>
+</div>
+<a id="a87ae3180e0af206b6899f880bfda8711" name="a87ae3180e0af206b6899f880bfda8711"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87ae3180e0af206b6899f880bfda8711">&#9670;&#160;</a></span>GetGeneralErrors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t logika::protocols::Protocol::GetGeneralErrors </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получение количества неклассифицированных ошибок   </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Количество неклассифицированных ошибок   </dd></dl>
+
+<p>Замещает <a class="el" href="../../da/dd0/classlogika_1_1protocols_1_1IProtocol.html#afa089ecf555055fe6028444d807c32f7">logika::protocols::IProtocol</a>.</p>
+
+</div>
+</div>
+<a id="a4df266ffbf2a4930967ee81b5c4f17b8" name="a4df266ffbf2a4930967ee81b5c4f17b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4df266ffbf2a4930967ee81b5c4f17b8">&#9670;&#160;</a></span>GetPacketsReceived()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t logika::protocols::Protocol::GetPacketsReceived </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получение количества полученных пакетов   </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Количество полученных пакетов   </dd></dl>
+
+<p>Замещает <a class="el" href="../../da/dd0/classlogika_1_1protocols_1_1IProtocol.html#aaabdf50932e2c9379df1fa9cdd945ba5">logika::protocols::IProtocol</a>.</p>
+
+</div>
+</div>
+<a id="a8e4df92786011bc675efb39124b59fc5" name="a8e4df92786011bc675efb39124b59fc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e4df92786011bc675efb39124b59fc5">&#9670;&#160;</a></span>GetPacketsSent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t logika::protocols::Protocol::GetPacketsSent </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получение количества отправленных пакетов   </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Количество отправленных пакетов   </dd></dl>
+
+<p>Замещает <a class="el" href="../../da/dd0/classlogika_1_1protocols_1_1IProtocol.html#ad66df5ecae2da8b409a33d4a87a0e1cc">logika::protocols::IProtocol</a>.</p>
+
+</div>
+</div>
+<a id="a2e7eaf3395a713ab3d882a75871d99c1" name="a2e7eaf3395a713ab3d882a75871d99c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e7eaf3395a713ab3d882a75871d99c1">&#9670;&#160;</a></span>GetRxCrc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t logika::protocols::Protocol::GetRxCrc </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получение количества ошибок CRC.   </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Количество ошибок CRC   </dd></dl>
+
+<p>Замещает <a class="el" href="../../da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a34d0a641b21885533a2913e69a729f06">logika::protocols::IProtocol</a>.</p>
+
+</div>
+</div>
+<a id="ab0d0297c68191f39cbdfb51c66d2874b" name="ab0d0297c68191f39cbdfb51c66d2874b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0d0297c68191f39cbdfb51c66d2874b">&#9670;&#160;</a></span>GetRxGeneralErrors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t logika::protocols::Protocol::GetRxGeneralErrors </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получение количества неклассифицированных ошибок получения   </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Количество неклассифицированных ошибок получения   </dd></dl>
+
+<p>Замещает <a class="el" href="../../da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a97130ede7dcf03f316fa2bbf6df34c33">logika::protocols::IProtocol</a>.</p>
+
+</div>
+</div>
+<a id="a6001d8c1ae3ec41d8d0871d54a6febf6" name="a6001d8c1ae3ec41d8d0871d54a6febf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6001d8c1ae3ec41d8d0871d54a6febf6">&#9670;&#160;</a></span>GetRxLatePackets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t logika::protocols::Protocol::GetRxLatePackets </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получение количества ошибок LatePacket.   </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Количество ошибок LatePacket   </dd></dl>
+
+<p>Замещает <a class="el" href="../../da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a9b8edce85af4303cf8596730c410990d">logika::protocols::IProtocol</a>.</p>
+
+</div>
+</div>
+<a id="a7417a9bfded7a3e5700774b7d55147bc" name="a7417a9bfded7a3e5700774b7d55147bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7417a9bfded7a3e5700774b7d55147bc">&#9670;&#160;</a></span>GetRxTimeouts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t logika::protocols::Protocol::GetRxTimeouts </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получение количества ошибок TimeOut.   </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Количество ошибок TimeOut   </dd></dl>
+
+<p>Замещает <a class="el" href="../../da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a2305b6394908f4cf7edd30e0ab04bdcf">logika::protocols::IProtocol</a>.</p>
+
+</div>
+</div>
+<a id="a4ba9768eb16ca12ba7579efc41b9638d" name="a4ba9768eb16ca12ba7579efc41b9638d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ba9768eb16ca12ba7579efc41b9638d">&#9670;&#160;</a></span>RegisterEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void logika::protocols::Protocol::RegisterEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a1f3c68a5f356ea9b076385a57c27fddb">Rc::Type</a></td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получение количества неклассифицированных ошибок получения   </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Количество неклассифицированных ошибок получения   </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000033">Необходимо сделать</a></b></dt><dd>monitor event </dd></dl>
+
+<p>Замещает <a class="el" href="../../da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a44ee235986badf905f3940499fa23f21">logika::protocols::IProtocol</a>.</p>
+
+</div>
+</div>
+<a id="ac393f644b7c378776e4b71b7a8c880fd" name="ac393f644b7c378776e4b71b7a8c880fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac393f644b7c378776e4b71b7a8c880fd">&#9670;&#160;</a></span>Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void logika::protocols::Protocol::Reset </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сброс статистики событий   </p>
+
+<p>Замещает <a class="el" href="../../da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a64963c2406249f842b0c619fe3b71653">logika::protocols::IProtocol</a>.</p>
+
+</div>
+</div>
+<a id="a482641fe6139858307e590af43608751" name="a482641fe6139858307e590af43608751"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a482641fe6139858307e590af43608751">&#9670;&#160;</a></span>ResetImpl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void logika::protocols::Protocol::ResetImpl </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Реализация сброса статистики </p>
+
+<p class="reference">Используется в <a class="el" href="#ac393f644b7c378776e4b71b7a8c880fd">Reset()</a>.</p>
+
+</div>
+</div>
+<a id="a023e56c96e2e8bfc44070ad821372ee8" name="a023e56c96e2e8bfc44070ad821372ee8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a023e56c96e2e8bfc44070ad821372ee8">&#9670;&#160;</a></span>SetConnection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void logika::protocols::Protocol::SetConnection </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="../../df/ddb/classlogika_1_1connections_1_1IConnection.html">connections::IConnection</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>connection</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Задание соединения для работы протокола   </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">connection</td><td>Соединение для работы протокола. Для сброса можно передать nullptr   </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Замещает <a class="el" href="../../da/dd0/classlogika_1_1protocols_1_1IProtocol.html#af41db62fd4cf76f1f4b5a9b16b052963">logika::protocols::IProtocol</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a id="a94550cb0218f69ab62c80c68d5e0ab9b" name="a94550cb0218f69ab62c80c68d5e0ab9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94550cb0218f69ab62c80c68d5e0ab9b">&#9670;&#160;</a></span>connection_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="../../df/ddb/classlogika_1_1connections_1_1IConnection.html">connections::IConnection</a> &gt; logika::protocols::Protocol::connection_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Соединения для работы по протоколу </p>
+
+<p class="reference">Используется в <a class="el" href="#aff0c2780d37fb971bf67e875e79a38c4">GetConnection()</a> и <a class="el" href="#a023e56c96e2e8bfc44070ad821372ee8">SetConnection()</a>.</p>
+
+</div>
+</div>
+<a id="a213681b269b5cf72263d743f77da6aea" name="a213681b269b5cf72263d743f77da6aea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a213681b269b5cf72263d743f77da6aea">&#9670;&#160;</a></span>generalError_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t logika::protocols::Protocol::generalError_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Количество неклассифицированных ошибок </p>
+
+<p class="reference">Используется в <a class="el" href="#a87ae3180e0af206b6899f880bfda8711">GetGeneralErrors()</a>, <a class="el" href="#a4ba9768eb16ca12ba7579efc41b9638d">RegisterEvent()</a> и <a class="el" href="#ac393f644b7c378776e4b71b7a8c880fd">Reset()</a>.</p>
+
+</div>
+</div>
+<a id="aa817fdbda3141059256e9e9e0d5cb2ba" name="aa817fdbda3141059256e9e9e0d5cb2ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa817fdbda3141059256e9e9e0d5cb2ba">&#9670;&#160;</a></span>packetsReceived_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t logika::protocols::Protocol::packetsReceived_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Количество полученных пакетов </p>
+
+<p class="reference">Используется в <a class="el" href="#a4df266ffbf2a4930967ee81b5c4f17b8">GetPacketsReceived()</a>, <a class="el" href="#a4ba9768eb16ca12ba7579efc41b9638d">RegisterEvent()</a> и <a class="el" href="#ac393f644b7c378776e4b71b7a8c880fd">Reset()</a>.</p>
+
+</div>
+</div>
+<a id="ab1d7df9155311cabfc0baf8ec63d187c" name="ab1d7df9155311cabfc0baf8ec63d187c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1d7df9155311cabfc0baf8ec63d187c">&#9670;&#160;</a></span>packetsSent_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t logika::protocols::Protocol::packetsSent_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Количество отправленных пакетов </p>
+
+<p class="reference">Используется в <a class="el" href="#a8e4df92786011bc675efb39124b59fc5">GetPacketsSent()</a>, <a class="el" href="#a4ba9768eb16ca12ba7579efc41b9638d">RegisterEvent()</a> и <a class="el" href="#ac393f644b7c378776e4b71b7a8c880fd">Reset()</a>.</p>
+
+</div>
+</div>
+<a id="af9bb62bd6d16033de2260f744705c547" name="af9bb62bd6d16033de2260f744705c547"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9bb62bd6d16033de2260f744705c547">&#9670;&#160;</a></span>rxCrc_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t logika::protocols::Protocol::rxCrc_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Количество ошибок чтения CRC. </p>
+
+<p class="reference">Используется в <a class="el" href="#a2e7eaf3395a713ab3d882a75871d99c1">GetRxCrc()</a>, <a class="el" href="#a4ba9768eb16ca12ba7579efc41b9638d">RegisterEvent()</a> и <a class="el" href="#ac393f644b7c378776e4b71b7a8c880fd">Reset()</a>.</p>
+
+</div>
+</div>
+<a id="a82a380bad318a55d8c9ed98757765e65" name="a82a380bad318a55d8c9ed98757765e65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82a380bad318a55d8c9ed98757765e65">&#9670;&#160;</a></span>rxGeneral_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t logika::protocols::Protocol::rxGeneral_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Количество неклассифицированных ошибок чтения </p>
+
+<p class="reference">Используется в <a class="el" href="#ab0d0297c68191f39cbdfb51c66d2874b">GetRxGeneralErrors()</a> и <a class="el" href="#ac393f644b7c378776e4b71b7a8c880fd">Reset()</a>.</p>
+
+</div>
+</div>
+<a id="ac0b97e0571f4b0cab2c1bcd370297283" name="ac0b97e0571f4b0cab2c1bcd370297283"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0b97e0571f4b0cab2c1bcd370297283">&#9670;&#160;</a></span>rxLatePacket_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t logika::protocols::Protocol::rxLatePacket_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Количество ошибок чтения Late Packet. </p>
+
+<p class="reference">Используется в <a class="el" href="#a6001d8c1ae3ec41d8d0871d54a6febf6">GetRxLatePackets()</a>, <a class="el" href="#a4ba9768eb16ca12ba7579efc41b9638d">RegisterEvent()</a> и <a class="el" href="#ac393f644b7c378776e4b71b7a8c880fd">Reset()</a>.</p>
+
+</div>
+</div>
+<a id="a42faad59e66c98eb235d2beaee31e05e" name="a42faad59e66c98eb235d2beaee31e05e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42faad59e66c98eb235d2beaee31e05e">&#9670;&#160;</a></span>rxTimeout_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t logika::protocols::Protocol::rxTimeout_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Количество ошибок чтения TimeOut. </p>
+
+<p class="reference">Используется в <a class="el" href="#a7417a9bfded7a3e5700774b7d55147bc">GetRxTimeouts()</a>, <a class="el" href="#a4ba9768eb16ca12ba7579efc41b9638d">RegisterEvent()</a> и <a class="el" href="#ac393f644b7c378776e4b71b7a8c880fd">Reset()</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>logika/include/logika/protocols/<a class="el" href="../../d2/d5e/protocol_8h_source.html">protocol.h</a></li>
+<li>logika/src/protocols/<a class="el" href="../../d4/d25/protocol_8cpp.html">protocol.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/d43/namespacelogika.html">logika</a></li><li class="navelem"><a class="el" href="../../da/d59/namespacelogika_1_1protocols.html">protocols</a></li><li class="navelem"><a class="el" href="../../da/d50/classlogika_1_1protocols_1_1Protocol.html">Protocol</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

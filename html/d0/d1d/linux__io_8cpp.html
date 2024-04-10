@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Logika Libs: Файл logika/src/connections/common/linux_io.cpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Logika Libs
+   </div>
+   <div id="projectbrief">Библиотеки для работы с приборами НПФ &quot;Логика&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d0/d1d/linux__io_8cpp.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">Пространства имен</a> &#124;
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle"><div class="title">Файл linux_io.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="../../d8/da1/linux__io_8h_source.html">logika/connections/common/linux_io.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d8/db0/defines_8h_source.html">logika/log/defines.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d4/d08/misc_8h_source.html">logika/common/misc.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для linux_io.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d0d/linux__io_8cpp__incl.png" border="0" usemap="#alogika_2src_2connections_2common_2linux__io_8cpp" alt=""/></div>
+<map name="alogika_2src_2connections_2common_2linux__io_8cpp" id="alogika_2src_2connections_2common_2linux__io_8cpp">
+<area shape="rect" title=" " alt="" coords="313,5,464,46"/>
+<area shape="rect" href="../../d8/da1/linux__io_8h.html" title=" " alt="" coords="500,94,632,135"/>
+<area shape="poly" title=" " alt="" coords="430,44,514,85,511,89,428,49"/>
+<area shape="rect" href="../../d8/db0/defines_8h.html" title=" " alt="" coords="134,102,265,127"/>
+<area shape="poly" title=" " alt="" coords="347,49,241,97,239,92,345,44"/>
+<area shape="rect" href="../../d4/d08/misc_8h.html" title=" " alt="" coords="313,102,464,127"/>
+<area shape="poly" title=" " alt="" coords="391,47,391,86,386,86,386,47"/>
+<area shape="rect" href="../../d5/d7b/common_2types_8h.html" title=" " alt="" coords="348,271,502,297"/>
+<area shape="poly" title=" " alt="" coords="548,137,504,184,444,260,440,257,500,181,544,133"/>
+<area shape="rect" href="../../d1/d90/connections_2defs_8h.html" title=" " alt="" coords="513,183,643,223"/>
+<area shape="poly" title=" " alt="" coords="571,135,576,167,571,168,566,136"/>
+<area shape="rect" href="../../d2/d20/connections_2rc_8h.html" title=" " alt="" coords="666,190,821,216"/>
+<area shape="poly" title=" " alt="" coords="607,133,706,181,704,185,605,138"/>
+<area shape="rect" href="../../d0/d6b/common_2rc_8h.html" title=" " alt="" coords="676,271,811,297"/>
+<area shape="poly" title=" " alt="" coords="746,216,746,255,741,255,741,216"/>
+<area shape="rect" href="../../d1/d8c/logger_8h.html" title=" " alt="" coords="89,190,214,216"/>
+<area shape="poly" title=" " alt="" coords="195,129,168,178,163,175,190,126"/>
+<area shape="poly" title=" " alt="" coords="194,214,369,264,367,269,193,219"/>
+<area shape="rect" href="../../d6/d8e/log_2defs_8h.html" title=" " alt="" coords="151,271,266,297"/>
+<area shape="poly" title=" " alt="" coords="162,215,193,257,189,260,158,218"/>
+<area shape="rect" href="../../dd/dd4/log_2types_8h.html" title=" " alt="" coords="5,271,127,297"/>
+<area shape="poly" title=" " alt="" coords="140,218,92,263,88,259,137,214"/>
+<area shape="poly" title=" " alt="" coords="394,127,422,256,416,257,389,128"/>
+<area shape="rect" href="../../dd/da1/common_2defs_8h.html" title=" " alt="" coords="239,190,387,216"/>
+<area shape="poly" title=" " alt="" coords="380,129,335,180,331,177,376,126"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Пространства имен</h2></td></tr>
+<tr class="memitem:d7/d43/namespacelogika" id="r_d7/d43/namespacelogika"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d43/namespacelogika.html">logika</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:df/da9/namespacelogika_1_1connections" id="r_df/da9/namespacelogika_1_1connections"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/da9/namespacelogika_1_1connections.html">logika::connections</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:d5/d15/namespacelogika_1_1connections_1_1linux__io" id="r_d5/d15/namespacelogika_1_1connections_1_1linux__io"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d15/namespacelogika_1_1connections_1_1linux__io.html">logika::connections::linux_io</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:ae8bac9ed90f7ca0fe42352460d6f3241" id="r_ae8bac9ed90f7ca0fe42352460d6f3241"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d90/connections_2defs_8h.html#ae92b2ea58b605ca3e28f187603789281">LOGIKA_CONNECTIONS_EXPORT</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d15/namespacelogika_1_1connections_1_1linux__io.html#ae8bac9ed90f7ca0fe42352460d6f3241">logika::connections::linux_io::ReadBuffer</a> (<a class="el" href="../../d5/d15/namespacelogika_1_1connections_1_1linux__io.html#a4fc0acd697ceb265bd79906f0a2b52b1">ReadFunction</a> readfn, FileHandleType handle, <a class="el" href="../../d7/d43/namespacelogika.html#a69c638914202f69eb544a992e2361a1c">ByteVector</a> &amp;buffer, uint32_t start, uint32_t needed, uint32_t timeout=0, <a class="el" href="../../df/dea/namespacelogika_1_1connections_1_1Rc.html#a64d02efc024e00e03f9fb9012ab4cce7">Rc::Type</a> *rc=nullptr)</td></tr>
+<tr class="memdesc:ae8bac9ed90f7ca0fe42352460d6f3241"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чтение из дескриптора в буфер  <br /></td></tr>
+<tr class="separator:ae8bac9ed90f7ca0fe42352460d6f3241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1896d9d667c41740a8fee23e50b0830f" id="r_a1896d9d667c41740a8fee23e50b0830f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d90/connections_2defs_8h.html#ae92b2ea58b605ca3e28f187603789281">LOGIKA_CONNECTIONS_EXPORT</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d15/namespacelogika_1_1connections_1_1linux__io.html#a1896d9d667c41740a8fee23e50b0830f">logika::connections::linux_io::WriteBuffer</a> (<a class="el" href="../../d5/d15/namespacelogika_1_1connections_1_1linux__io.html#ab10fd15365d2f8eca240a736b851892e">WriteFunction</a> writefn, FileHandleType handle, const <a class="el" href="../../d7/d43/namespacelogika.html#a69c638914202f69eb544a992e2361a1c">ByteVector</a> &amp;buffer, uint32_t start, <a class="el" href="../../df/dea/namespacelogika_1_1connections_1_1Rc.html#a64d02efc024e00e03f9fb9012ab4cce7">Rc::Type</a> *rc=nullptr)</td></tr>
+<tr class="memdesc:a1896d9d667c41740a8fee23e50b0830f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запись в дескриптор содержимого буфера  <br /></td></tr>
+<tr class="separator:a1896d9d667c41740a8fee23e50b0830f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39452c6892e2cf72faabc0321916800b" id="r_a39452c6892e2cf72faabc0321916800b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d90/connections_2defs_8h.html#ae92b2ea58b605ca3e28f187603789281">LOGIKA_CONNECTIONS_EXPORT</a> int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d15/namespacelogika_1_1connections_1_1linux__io.html#a39452c6892e2cf72faabc0321916800b">logika::connections::linux_io::BytesAvailable</a> (FileHandleType handle)</td></tr>
+<tr class="memdesc:a39452c6892e2cf72faabc0321916800b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение количества доступных для чтения байтов  <br /></td></tr>
+<tr class="separator:a39452c6892e2cf72faabc0321916800b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_84c4dbe6e1a79f99accf514d2173f793.html">logika</a></li><li class="navelem"><a class="el" href="../../dir_63f72bf46903862c21ea06243b31e027.html">src</a></li><li class="navelem"><a class="el" href="../../dir_2cc36c5847ba67c95155c2224e3ce169.html">connections</a></li><li class="navelem"><a class="el" href="../../dir_5ea021661248894f5609772f96c337c2.html">common</a></li><li class="navelem"><a class="el" href="../../d0/d1d/linux__io_8cpp.html">linux_io.cpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

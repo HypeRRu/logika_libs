@@ -1,0 +1,17 @@
+<map id="logika::meters::DataTagDef" name="logika::meters::DataTagDef">
+<area shape="rect" id="Node000001" title="Описание тэга с данными" alt="" coords="113,927,353,1419"/>
+<area shape="rect" id="Node000005" href="$d1/dcb/classlogika_1_1meters_1_1DataTagDef6.html" title="Тэг с данными Logika6." alt="" coords="12,1467,224,1685"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="161,1434,151,1467,146,1466,156,1433"/>
+<area shape="rect" id="Node000006" href="$d8/d42/classlogika_1_1meters_1_1TagDef4.html" title="Базовый тэг Logika4." alt="" coords="249,1494,449,1658"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="310,1432,328,1493,323,1495,305,1434"/>
+<area shape="rect" id="Node000002" href="$d5/dfb/classlogika_1_1meters_1_1TagDef.html" title="Базовое описание тэга" alt="" coords="25,585,230,879"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,893,176,926,171,928,163,894"/>
+<area shape="rect" id="Node000003" href="$da/dc9/classlogika_1_1meters_1_1ItemDefBase.html" title="Базовый элемент" alt="" coords="5,5,249,537"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="130,552,130,585,125,585,125,552"/>
+<area shape="rect" id="Node000004" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="255,675,424,789"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="325,804,295,927,290,926,320,803"/>
+<area shape="rect" id="Node000007" href="$db/d67/classlogika_1_1meters_1_1TagDef4L.html" title="Тэг с данными Logika4L." alt="" coords="115,1733,340,2165"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="320,1673,300,1734,295,1733,315,1671"/>
+<area shape="rect" id="Node000008" href="$dc/dc3/classlogika_1_1meters_1_1TagDef4M.html" title="Тэг с данными Logika4M." alt="" coords="365,1902,575,1997"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="382,1671,458,1901,452,1903,377,1673"/>
+</map>

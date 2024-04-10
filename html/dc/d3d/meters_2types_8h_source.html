@@ -1,0 +1,461 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Logika Libs: Исходный файл logika/include/logika/meters/types.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Logika Libs
+   </div>
+   <div id="projectbrief">Библиотеки для работы с приборами НПФ &quot;Логика&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('dc/d3d/meters_2types_8h_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">types.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dc/d3d/meters_2types_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef LOGIKA_METERS_TYPES_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="../../dc/d3d/meters_2types_8h.html#ab602e9ff5aafb679ad207c2742920ad7">    7</a></span><span class="preprocessor">#define LOGIKA_METERS_TYPES_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="../../d5/d7b/common_2types_8h.html">logika/common/types.h</a>&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="../../da/d08/iserializable_8h.html">logika/common/iserializable.h</a>&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="../../de/d23/shared__constructible_8hpp.html">logika/common/shared_constructible.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="../../d2/d4b/meters_2defs_8h.html">logika/meters/defs.h</a>&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d7/d43/namespacelogika.html">logika</a></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">namespace </span>meters</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3a">   31</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3a">MeasureKind</a></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aaec0fc0100c4fc1ce4eea230c3dc10360">Undefined</a>,  </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>,          </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aadfcf28d0734569a6a693bc8194de62bf">G</a>,          </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aa3a3ea00cfc35332cedf6e5e9a32e94da">E</a>           </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}; <span class="comment">// enum class MeasureKind</span></div>
+</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../dc/df7/namespacelogika_1_1meters.html#aaba4278b447ba2e737ab5f95a0c14bba">   41</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../dc/df7/namespacelogika_1_1meters.html#aaba4278b447ba2e737ab5f95a0c14bba">BusProtocolType</a></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aaec0fc0100c4fc1ce4eea230c3dc10360">Undefined</a>,  </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#aaba4278b447ba2e737ab5f95a0c14bbaaec0c8973d082934817c932a12035081d">RSBus</a>,      </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#aaba4278b447ba2e737ab5f95a0c14bbaabe805990769fac8d4090a7282cf0d40d">SPBus</a>       </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}; <span class="comment">// enum class BusProtocolType</span></div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="};">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="../../dc/df7/namespacelogika_1_1meters.html#a5dfbf075f197444da7e5af115bbeb50f">   50</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../dc/df7/namespacelogika_1_1meters.html#a5dfbf075f197444da7e5af115bbeb50f">ChannelKind</a></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>{</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aaec0fc0100c4fc1ce4eea230c3dc10360">Undefined</a>,  </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a5dfbf075f197444da7e5af115bbeb50fad13bc5b68b2bd9e18f29777db17cc563">Common</a>,     </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a5dfbf075f197444da7e5af115bbeb50fa781dc97dc62331eec3ea9ec4373a3ca8">Channel</a>,    </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a5dfbf075f197444da7e5af115bbeb50fa03937134cedab9078be39a77ee3a48a0">Group</a>,      </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a5dfbf075f197444da7e5af115bbeb50fa271ddf829afeece44d8732757fba1a66">TV</a>          </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}; <span class="comment">// enum class ChannelKind</span></div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="../../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html">   60</a></span><span class="keyword">namespace </span>TagKind</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="../../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html#aad699a6921f17aab1cf7bc920731a4e0">   63</a></span><span class="keyword">using </span><a class="code hl_typedef" href="../../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html#aad699a6921f17aab1cf7bc920731a4e0">Type</a> = uint8_t;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>enum : <a class="code hl_typedef" href="../../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html#aad699a6921f17aab1cf7bc920731a4e0">Type</a></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>{</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="../../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html#accf7d7f47cf257977aaae4ba4ce4147caaf3d370b3fafe0f6b21f8b6b524e461a">   68</a></span>    <a class="code hl_enumvalue" href="../../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html#accf7d7f47cf257977aaae4ba4ce4147caaf3d370b3fafe0f6b21f8b6b524e461a">Undefined</a>   = 0,    </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="../../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html#accf7d7f47cf257977aaae4ba4ce4147caf584c47d7fded81d28d72e35e8b2781f">   69</a></span>    <a class="code hl_enumvalue" href="../../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html#accf7d7f47cf257977aaae4ba4ce4147caf584c47d7fded81d28d72e35e8b2781f">Parameter</a>   = 1,    </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="../../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html#accf7d7f47cf257977aaae4ba4ce4147ca63a55be2651d10c9322377b47a10ca1a">   70</a></span>    <a class="code hl_enumvalue" href="../../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html#accf7d7f47cf257977aaae4ba4ce4147ca63a55be2651d10c9322377b47a10ca1a">Info</a>        = 2,    </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="../../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html#accf7d7f47cf257977aaae4ba4ce4147ca1195fdfd8e174e2489ba9e03611479b6">   71</a></span>    <a class="code hl_enumvalue" href="../../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html#accf7d7f47cf257977aaae4ba4ce4147ca1195fdfd8e174e2489ba9e03611479b6">Realtime</a>    = 3,    </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <a class="code hl_enumvalue" href="../../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html#accf7d7f47cf257977aaae4ba4ce4147ca48571f876d0502b43f4140d3e0f2340f">TotalCtr</a>    = 4     </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="../../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html#accf7d7f47cf257977aaae4ba4ce4147ca48571f876d0502b43f4140d3e0f2340f">   73</a></span>}; <span class="comment">// anonymous enum</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}; <span class="comment">// namespace TagKind</span></div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="};">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97">   79</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97">StdVar</a></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>{</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aaec0fc0100c4fc1ce4eea230c3dc10360">Undefined</a>,  </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97a674769e3326f8cf937af4282f2815c02">SP</a>,         </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97a53c8d15a175221d2127083e66a8cc937">NS</a>,         </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97afcefd647d6a866603c627b11347c707a">AVG</a>,        </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aadfcf28d0734569a6a693bc8194de62bf">G</a>,          </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97a69691c7bdcc3ce6d5d8a1361f22d04ac">M</a>,          </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97a44c29edb103a2872f519ad0c9a0fdaaa">P</a>,          </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97a488ab29adec84b0394426c82ab48b26d">dP</a>,         </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>,          </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97ae00fba6fedfb8a49e13346f7099a23fc">ti</a>,         </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97a5206560a306a2e085a437fd258eb57ce">V</a>,          </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97a61e9c06ea9a85a5088a499df6458d276">W</a>,          </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97a335d367aa669edbd02627d8f6357e6e1">auxInt</a>      </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}; <span class="comment">// enum class StdVar</span></div>
+</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="foldopen" id="foldopen00098" data-start="{" data-end="};">
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fef">   98</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fef">DbType</a></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>{</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aaec0fc0100c4fc1ce4eea230c3dc10360">Undefined</a>,      </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefaa245c3230debe5c956484ecc6fa93877">Byte</a>,           </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefac06129f6e6e15c09328365e553f1dc31">Int32</a>,          </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefafbde23b11d7e59af7828e81144c8b487">Int64</a>,          </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefa66ba162102bbf6ae31b522aec561735e">Single</a>,         </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefad909d38d705ce75386dd86e611a82f5b">Double</a>,         </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefa27118326006d3829667a400ad23d5d98">String</a>,         </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefa29d83f0080e24c1f4b3975dc9ff9e868">ByteArray</a>,      </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefabfe39fc9f161e24f5cb31f40b98af4d3">Int32Array</a>,     </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefa8647c824cc337c0245db15728e32ec3d">StringArray</a>,    </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefaee219de6a043fc9d26cb89af7a20d4a1">ObjectArray</a>     </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}; <span class="comment">// enum class DbType</span></div>
+</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="foldopen" id="foldopen00115" data-start="{" data-end="};">
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="../../dc/df7/namespacelogika_1_1meters.html#a5dc3ac0486d84a28a12cec0c0be9bd85">  115</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../dc/df7/namespacelogika_1_1meters.html#a5dc3ac0486d84a28a12cec0c0be9bd85">ArchiveTimingType</a></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>{</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aaec0fc0100c4fc1ce4eea230c3dc10360">Undefined</a>,      </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a5dc3ac0486d84a28a12cec0c0be9bd85a6adf97f83acf6453d4a6a4b1070f3754">None</a>,           </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a5dc3ac0486d84a28a12cec0c0be9bd85a2fe4167817733fec8e6ba1afddf78f1b">Synchronous</a>,    </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a5dc3ac0486d84a28a12cec0c0be9bd85a288aae25bc408055f50c21c991903a44">Asynchronous</a>    </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}; <span class="comment">// enum class ArchiveTimingType</span></div>
+</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="foldopen" id="foldopen00125" data-start="{" data-end="};">
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="../../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357d">  125</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357d">ImportantTag</a></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>{</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357da35cef9b551d46ecfd244f4694de9e228">Ident</a>,          </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357daa559b87068921eec05086ce5485e9784">Model</a>,          </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357dab8ce85826432f1a30c9c041c224ecda8">SerialNo</a>,       </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="comment">// ConsConfig,     ///&lt; Конфигурация потребителей (или СП для x4)</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="comment">// PipeConfig,     ///&lt; Конфигурация трубопроводов </span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="comment">// IfConfig,       ///&lt; Конфигурация интерфейса(ов)</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357daabedafcf96b2dfce78c95ca207c4bdfa">NetAddr</a>,        </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357dadc0a71955be3dd79f1cb75c067f877ee">RDay</a>,           </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357daa7924d0a8c0bb5e5cfa106d3afa7a936">RHour</a>,          </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357daddaee13d9c06767b36984c619088a247">EngUnits</a>,       </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="comment">// TO,             ///&lt; Время пуска</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="comment">// DO,             ///&lt; Дата пуска</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <a class="code hl_enumvalue" href="../../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357da40f710a4065803932ab2e2cca78e05f5">ParamsCSum</a>,     </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>}; <span class="comment">// enum class ImportantTag</span></div>
+</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="foldopen" id="foldopen00144" data-start="{" data-end="};">
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="../../d2/d02/classlogika_1_1meters_1_1ArchiveType.html">  144</a></span><span class="keyword">class </span><a class="code hl_define" href="../../d2/d4b/meters_2defs_8h.html#a5c59f5e14c7104e97cc4bc2a0820d322">LOGIKA_METERS_EXPORT</a> <a class="code hl_class" href="../../d2/d02/classlogika_1_1meters_1_1ArchiveType.html">ArchiveType</a>: <span class="keyword">public</span> <a class="code hl_class" href="../../dd/dbc/classlogika_1_1ISerializable.html">ISerializable</a>, <span class="keyword">public</span> <a class="code hl_class" href="../../dd/d10/classlogika_1_1SharedConstructible.html">SharedConstructible</a>&lt; ArchiveType &gt;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>{</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <a class="code hl_enumeration" href="../../dc/df7/namespacelogika_1_1meters.html#a5dc3ac0486d84a28a12cec0c0be9bd85">ArchiveTimingType</a> GetTimingType() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a>&amp; GetName() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a>&amp; GetAcronym() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a>&amp; GetDescription() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a> GetInterval() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="../../d2/d02/classlogika_1_1meters_1_1ArchiveType.html#a6c2c1810887bc642564192274136fb1d">  169</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d2/d02/classlogika_1_1meters_1_1ArchiveType.html#a6c2c1810887bc642564192274136fb1d">IsVariableInterval</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordtype">bool</span> IsIntervalArchive() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordtype">bool</span> IsServiceArchive() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <span class="keyword">virtual</span> <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> ToString() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <a class="code hl_class" href="../../d2/d02/classlogika_1_1meters_1_1ArchiveType.html">ArchiveType</a>( <span class="keyword">const</span> <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a>&amp; name, <span class="keyword">const</span> <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a>&amp; description</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        , <a class="code hl_enumeration" href="../../dc/df7/namespacelogika_1_1meters.html#a5dc3ac0486d84a28a12cec0c0be9bd85">ArchiveTimingType</a> timing, <span class="keyword">const</span> <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a>&amp; acronym</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        , <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a> interval, <span class="keywordtype">bool</span> variableInterval = <span class="keyword">false</span> );</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <a class="code hl_enumeration" href="../../dc/df7/namespacelogika_1_1meters.html#a5dc3ac0486d84a28a12cec0c0be9bd85">ArchiveTimingType</a> timing_;  </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> name_;            </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> acronym_;         </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> description_;     </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a> interval_;         </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordtype">bool</span> variableInterval_;     </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>}; <span class="comment">// class ArchiveType</span></div>
+</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="foldopen" id="foldopen00200" data-start="{" data-end="};">
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="../../d1/d18/structlogika_1_1meters_1_1VQT.html">  200</a></span><span class="keyword">struct </span><a class="code hl_define" href="../../d2/d4b/meters_2defs_8h.html#a5c59f5e14c7104e97cc4bc2a0820d322">LOGIKA_METERS_EXPORT</a> <a class="code hl_struct" href="../../d1/d18/structlogika_1_1meters_1_1VQT.html">VQT</a>: <span class="keyword">public</span> <a class="code hl_class" href="../../dd/dbc/classlogika_1_1ISerializable.html">ISerializable</a></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>{</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <a class="code hl_struct" href="../../d1/d18/structlogika_1_1meters_1_1VQT.html">VQT</a>();</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <a class="code hl_struct" href="../../d1/d18/structlogika_1_1meters_1_1VQT.html">VQT</a>( <a class="code hl_class" href="../../dd/dbc/classlogika_1_1ISerializable.html">ISerializable</a>* v, int32_t q, <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a> t );</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="keyword">virtual</span> <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> ToString() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="../../d1/d18/structlogika_1_1meters_1_1VQT.html#a8c9e1faaae96afc14a8db1f9db7b0e38">  216</a></span>    <a class="code hl_class" href="../../dd/dbc/classlogika_1_1ISerializable.html">ISerializable</a>* <a class="code hl_variable" href="../../d1/d18/structlogika_1_1meters_1_1VQT.html#a8c9e1faaae96afc14a8db1f9db7b0e38">value</a>;   </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="../../d1/d18/structlogika_1_1meters_1_1VQT.html#a1c46f3c0a06a59ff4d7c624132273773">  217</a></span>    int32_t <a class="code hl_variable" href="../../d1/d18/structlogika_1_1meters_1_1VQT.html#a1c46f3c0a06a59ff4d7c624132273773">quality</a>;        </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno"><a class="line" href="../../d1/d18/structlogika_1_1meters_1_1VQT.html#a1fdd7bb5e88d3dcee01e8e3ee25da89e">  218</a></span>    <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a> <a class="code hl_variable" href="../../d1/d18/structlogika_1_1meters_1_1VQT.html#a1fdd7bb5e88d3dcee01e8e3ee25da89e">timestamp</a>;     </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>}; <span class="comment">// struct VQT</span></div>
+</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="foldopen" id="foldopen00224" data-start="{" data-end="};">
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="../../db/d35/structlogika_1_1meters_1_1HistoricalSeries.html">  224</a></span><span class="keyword">struct </span><a class="code hl_define" href="../../d2/d4b/meters_2defs_8h.html#a5c59f5e14c7104e97cc4bc2a0820d322">LOGIKA_METERS_EXPORT</a> <a class="code hl_struct" href="../../db/d35/structlogika_1_1meters_1_1HistoricalSeries.html">HistoricalSeries</a></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>{</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno"><a class="line" href="../../db/d35/structlogika_1_1meters_1_1HistoricalSeries.html#a2c4d5fc21e447ad0af10ac72bc5728f1">  227</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="../../db/d35/structlogika_1_1meters_1_1HistoricalSeries.html#a2c4d5fc21e447ad0af10ac72bc5728f1">clientHandle</a>;           </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="../../db/d35/structlogika_1_1meters_1_1HistoricalSeries.html#a514180fa068294acbad0d1cf72a43310">  228</a></span>    std::vector&lt; VQT &gt; <a class="code hl_variable" href="../../db/d35/structlogika_1_1meters_1_1HistoricalSeries.html#a514180fa068294acbad0d1cf72a43310">data</a>;    </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>}; <span class="comment">// struct HistoricalSeries</span></div>
+</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="foldopen" id="foldopen00234" data-start="{" data-end="};">
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno"><a class="line" href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html">  234</a></span><span class="keyword">struct </span><a class="code hl_define" href="../../d2/d4b/meters_2defs_8h.html#a5c59f5e14c7104e97cc4bc2a0820d322">LOGIKA_METERS_EXPORT</a> <a class="code hl_struct" href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html">VitalInfo</a></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>{</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno"><a class="line" href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a429fcd9ca31808703ab0cb9d1a89bdba">  237</a></span>    <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> <a class="code hl_variable" href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a429fcd9ca31808703ab0cb9d1a89bdba">id</a>;                           </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno"><a class="line" href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a096911c408851a82ebcd539d54afd95b">  238</a></span>    <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> <a class="code hl_variable" href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a096911c408851a82ebcd539d54afd95b">hwRev</a>;                        </div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno"><a class="line" href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a2c6e203191546e95fdacec17f2a2a7e2">  239</a></span>    <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> <a class="code hl_variable" href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a2c6e203191546e95fdacec17f2a2a7e2">hwSerial</a>;                     </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno"><a class="line" href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a0222d286e7de883235031370ee954848">  240</a></span>    std::vector&lt; LocString &gt; <a class="code hl_variable" href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a0222d286e7de883235031370ee954848">intfConfig</a>;    </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno"><a class="line" href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#af0d04ef98acf98a4e4399549b429890f">  241</a></span>    <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a> <a class="code hl_variable" href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#af0d04ef98acf98a4e4399549b429890f">nt</a>;                            </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a63082a7cacc62647eeb6bed2336670eb">  242</a></span>    <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a> <a class="code hl_variable" href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a63082a7cacc62647eeb6bed2336670eb">rd</a>;                            </div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a909d60164cf9e972b4473535b646fd02">  243</a></span>    <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a> <a class="code hl_variable" href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a909d60164cf9e972b4473535b646fd02">rh</a>;                            </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="comment">// std::vector&lt; LocString &gt; eu;            ///&lt; Единицы измерения (у некоторых приборов отдельно по P и Q)</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="comment">// LocString pipeConf;                     ///&lt; Конфигурация трубопроводов (только у x6)</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="comment">// std::vector&lt; LocString &gt; consConf;      ///&lt; Конфигурация потребителей (у x4 - СП, +СП по ТВ2)</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno"><a class="line" href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#acfff11f35c0dea1e1bdcff1c14216b3a">  247</a></span>    <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> <a class="code hl_variable" href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#acfff11f35c0dea1e1bdcff1c14216b3a">mtrParamsHash</a>;                </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno"><a class="line" href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#aacfe0efed64bccf1687ded1cb505b8e5">  248</a></span>    <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a> <a class="code hl_variable" href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#aacfe0efed64bccf1687ded1cb505b8e5">clockDiff</a>;                     </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>}; <span class="comment">// struct VitalInfo</span></div>
+</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
+<div class="foldopen" id="foldopen00253" data-start="{" data-end="};">
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="../../d8/d46/structlogika_1_1meters_1_1ColumnInfo.html">  253</a></span><span class="keyword">struct </span><a class="code hl_define" href="../../d2/d4b/meters_2defs_8h.html#a5c59f5e14c7104e97cc4bc2a0820d322">LOGIKA_METERS_EXPORT</a> <a class="code hl_struct" href="../../d8/d46/structlogika_1_1meters_1_1ColumnInfo.html">ColumnInfo</a>: <span class="keyword">public</span> <a class="code hl_class" href="../../dd/dbc/classlogika_1_1ISerializable.html">ISerializable</a></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>{</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="keyword">virtual</span> <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> ToString() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <span class="keywordtype">bool</span> operator ==( <span class="keyword">const</span> <a class="code hl_struct" href="../../d8/d46/structlogika_1_1meters_1_1ColumnInfo.html">ColumnInfo</a>&amp; other );</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    <span class="keywordtype">bool</span> operator !=( <span class="keyword">const</span> <a class="code hl_struct" href="../../d8/d46/structlogika_1_1meters_1_1ColumnInfo.html">ColumnInfo</a>&amp; other );</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="comment">// int index;          ///&lt; Индекс столбца</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="../../d8/d46/structlogika_1_1meters_1_1ColumnInfo.html#a3025621ebcc5a6f33042bb8f4a4bc479">  264</a></span>    <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> <a class="code hl_variable" href="../../d8/d46/structlogika_1_1meters_1_1ColumnInfo.html#a3025621ebcc5a6f33042bb8f4a4bc479">name</a>;     </div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno"><a class="line" href="../../d8/d46/structlogika_1_1meters_1_1ColumnInfo.html#a44a525cb6ac37e9f5df2cb90d14275be">  265</a></span>    <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> <a class="code hl_variable" href="../../d8/d46/structlogika_1_1meters_1_1ColumnInfo.html#a44a525cb6ac37e9f5df2cb90d14275be">dataType</a>; </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    <span class="comment">// int maxCharLen;     ///&lt; Максимальная длина строки</span></div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno"><a class="line" href="../../d8/d46/structlogika_1_1meters_1_1ColumnInfo.html#ab467ae7d6e0145ef644d9f81b91c5adc">  267</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../d8/d46/structlogika_1_1meters_1_1ColumnInfo.html#ab467ae7d6e0145ef644d9f81b91c5adc">nullable</a>;      </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>}; <span class="comment">// struct ColumnInfo</span></div>
+</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>} <span class="comment">// namespace meters</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>} <span class="comment">// namespace logika</span></div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="preprocessor">#endif </span><span class="comment">// LOGIKA_METERS_TYPES_H</span></div>
+<div class="ttc" id="aclasslogika_1_1ISerializable_html"><div class="ttname"><a href="../../dd/dbc/classlogika_1_1ISerializable.html">logika::ISerializable</a></div><div class="ttdoc">Интерфейс сериализуемого типа</div><div class="ttdef"><b>Definition</b> iserializable.h:16</div></div>
+<div class="ttc" id="aclasslogika_1_1SharedConstructible_html"><div class="ttname"><a href="../../dd/d10/classlogika_1_1SharedConstructible.html">logika::SharedConstructible</a></div><div class="ttdoc">Конструируемый в shared_ptr тип</div><div class="ttdef"><b>Definition</b> shared_constructible.hpp:21</div></div>
+<div class="ttc" id="aclasslogika_1_1meters_1_1ArchiveType_html"><div class="ttname"><a href="../../d2/d02/classlogika_1_1meters_1_1ArchiveType.html">logika::meters::ArchiveType</a></div><div class="ttdoc">Тип архива</div><div class="ttdef"><b>Definition</b> types.h:145</div></div>
+<div class="ttc" id="aclasslogika_1_1meters_1_1ArchiveType_html_a6c2c1810887bc642564192274136fb1d"><div class="ttname"><a href="../../d2/d02/classlogika_1_1meters_1_1ArchiveType.html#a6c2c1810887bc642564192274136fb1d">logika::meters::ArchiveType::IsVariableInterval</a></div><div class="ttdeci">bool IsVariableInterval() const</div><div class="ttdoc">Получение флага переменного интервала</div></div>
+<div class="ttc" id="acommon_2types_8h_html"><div class="ttname"><a href="../../d5/d7b/common_2types_8h.html">types.h</a></div></div>
+<div class="ttc" id="aiserializable_8h_html"><div class="ttname"><a href="../../da/d08/iserializable_8h.html">iserializable.h</a></div></div>
+<div class="ttc" id="ameters_2defs_8h_html"><div class="ttname"><a href="../../d2/d4b/meters_2defs_8h.html">defs.h</a></div></div>
+<div class="ttc" id="ameters_2defs_8h_html_a5c59f5e14c7104e97cc4bc2a0820d322"><div class="ttname"><a href="../../d2/d4b/meters_2defs_8h.html#a5c59f5e14c7104e97cc4bc2a0820d322">LOGIKA_METERS_EXPORT</a></div><div class="ttdeci">#define LOGIKA_METERS_EXPORT</div><div class="ttdef"><b>Definition</b> defs.h:16</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1TagKind_html_aad699a6921f17aab1cf7bc920731a4e0"><div class="ttname"><a href="../../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html#aad699a6921f17aab1cf7bc920731a4e0">logika::meters::TagKind::Type</a></div><div class="ttdeci">uint8_t Type</div><div class="ttdef"><b>Definition</b> types.h:63</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1TagKind_html_accf7d7f47cf257977aaae4ba4ce4147ca1195fdfd8e174e2489ba9e03611479b6"><div class="ttname"><a href="../../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html#accf7d7f47cf257977aaae4ba4ce4147ca1195fdfd8e174e2489ba9e03611479b6">logika::meters::TagKind::Realtime</a></div><div class="ttdeci">@ Realtime</div><div class="ttdoc">Текущие</div><div class="ttdef"><b>Definition</b> types.h:71</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1TagKind_html_accf7d7f47cf257977aaae4ba4ce4147ca48571f876d0502b43f4140d3e0f2340f"><div class="ttname"><a href="../../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html#accf7d7f47cf257977aaae4ba4ce4147ca48571f876d0502b43f4140d3e0f2340f">logika::meters::TagKind::TotalCtr</a></div><div class="ttdeci">@ TotalCtr</div><div class="ttdoc">Суммарные</div><div class="ttdef"><b>Definition</b> types.h:72</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1TagKind_html_accf7d7f47cf257977aaae4ba4ce4147ca63a55be2651d10c9322377b47a10ca1a"><div class="ttname"><a href="../../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html#accf7d7f47cf257977aaae4ba4ce4147ca63a55be2651d10c9322377b47a10ca1a">logika::meters::TagKind::Info</a></div><div class="ttdeci">@ Info</div><div class="ttdoc">Информационные</div><div class="ttdef"><b>Definition</b> types.h:70</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1TagKind_html_accf7d7f47cf257977aaae4ba4ce4147caaf3d370b3fafe0f6b21f8b6b524e461a"><div class="ttname"><a href="../../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html#accf7d7f47cf257977aaae4ba4ce4147caaf3d370b3fafe0f6b21f8b6b524e461a">logika::meters::TagKind::Undefined</a></div><div class="ttdeci">@ Undefined</div><div class="ttdoc">Неизвестные</div><div class="ttdef"><b>Definition</b> types.h:68</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_1_1TagKind_html_accf7d7f47cf257977aaae4ba4ce4147caf584c47d7fded81d28d72e35e8b2781f"><div class="ttname"><a href="../../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html#accf7d7f47cf257977aaae4ba4ce4147caf584c47d7fded81d28d72e35e8b2781f">logika::meters::TagKind::Parameter</a></div><div class="ttdeci">@ Parameter</div><div class="ttdoc">Настроечные</div><div class="ttdef"><b>Definition</b> types.h:69</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a199715557a67e6906bb2ee196129357d"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357d">logika::meters::ImportantTag</a></div><div class="ttdeci">ImportantTag</div><div class="ttdoc">Типы тэгов</div><div class="ttdef"><b>Definition</b> types.h:126</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a199715557a67e6906bb2ee196129357da35cef9b551d46ecfd244f4694de9e228"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357da35cef9b551d46ecfd244f4694de9e228">logika::meters::ImportantTag::Ident</a></div><div class="ttdeci">@ Ident</div><div class="ttdoc">ИД или 008.</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a199715557a67e6906bb2ee196129357da40f710a4065803932ab2e2cca78e05f5"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357da40f710a4065803932ab2e2cca78e05f5">logika::meters::ImportantTag::ParamsCSum</a></div><div class="ttdeci">@ ParamsCSum</div><div class="ttdoc">Контрольная сумма БД, рассчитанная прибором</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a199715557a67e6906bb2ee196129357daa559b87068921eec05086ce5485e9784"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357daa559b87068921eec05086ce5485e9784">logika::meters::ImportantTag::Model</a></div><div class="ttdeci">@ Model</div><div class="ttdoc">Модель (исполнение) прибора</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a199715557a67e6906bb2ee196129357daa7924d0a8c0bb5e5cfa106d3afa7a936"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357daa7924d0a8c0bb5e5cfa106d3afa7a936">logika::meters::ImportantTag::RHour</a></div><div class="ttdeci">@ RHour</div><div class="ttdoc">Расчетный час</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a199715557a67e6906bb2ee196129357daabedafcf96b2dfce78c95ca207c4bdfa"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357daabedafcf96b2dfce78c95ca207c4bdfa">logika::meters::ImportantTag::NetAddr</a></div><div class="ttdeci">@ NetAddr</div><div class="ttdoc">Сетевой адрес</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a199715557a67e6906bb2ee196129357dab8ce85826432f1a30c9c041c224ecda8"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357dab8ce85826432f1a30c9c041c224ecda8">logika::meters::ImportantTag::SerialNo</a></div><div class="ttdeci">@ SerialNo</div><div class="ttdoc">Серийный номер платы</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a199715557a67e6906bb2ee196129357dadc0a71955be3dd79f1cb75c067f877ee"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357dadc0a71955be3dd79f1cb75c067f877ee">logika::meters::ImportantTag::RDay</a></div><div class="ttdeci">@ RDay</div><div class="ttdoc">Расчетные сутки</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a199715557a67e6906bb2ee196129357daddaee13d9c06767b36984c619088a247"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357daddaee13d9c06767b36984c619088a247">logika::meters::ImportantTag::EngUnits</a></div><div class="ttdeci">@ EngUnits</div><div class="ttdoc">Единицы измерения</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a3c9c221a1135a439bbbaf4a504c70fef"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fef">logika::meters::DbType</a></div><div class="ttdeci">DbType</div><div class="ttdoc">Тип данных элемента в БД</div><div class="ttdef"><b>Definition</b> types.h:99</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a3c9c221a1135a439bbbaf4a504c70fefa27118326006d3829667a400ad23d5d98"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefa27118326006d3829667a400ad23d5d98">logika::meters::DbType::String</a></div><div class="ttdeci">@ String</div><div class="ttdoc">Строка (макс. длина - 128 байтов)</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a3c9c221a1135a439bbbaf4a504c70fefa29d83f0080e24c1f4b3975dc9ff9e868"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefa29d83f0080e24c1f4b3975dc9ff9e868">logika::meters::DbType::ByteArray</a></div><div class="ttdeci">@ ByteArray</div><div class="ttdoc">Массив байтов</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a3c9c221a1135a439bbbaf4a504c70fefa66ba162102bbf6ae31b522aec561735e"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefa66ba162102bbf6ae31b522aec561735e">logika::meters::DbType::Single</a></div><div class="ttdeci">@ Single</div><div class="ttdoc">32-битное число с плавающей точкой; float(24)</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a3c9c221a1135a439bbbaf4a504c70fefa8647c824cc337c0245db15728e32ec3d"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefa8647c824cc337c0245db15728e32ec3d">logika::meters::DbType::StringArray</a></div><div class="ttdeci">@ StringArray</div><div class="ttdoc">Массив строк</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a3c9c221a1135a439bbbaf4a504c70fefaa245c3230debe5c956484ecc6fa93877"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefaa245c3230debe5c956484ecc6fa93877">logika::meters::DbType::Byte</a></div><div class="ttdeci">@ Byte</div><div class="ttdoc">Байт</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a3c9c221a1135a439bbbaf4a504c70fefabfe39fc9f161e24f5cb31f40b98af4d3"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefabfe39fc9f161e24f5cb31f40b98af4d3">logika::meters::DbType::Int32Array</a></div><div class="ttdeci">@ Int32Array</div><div class="ttdoc">Массив 32-битных целых чисел</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a3c9c221a1135a439bbbaf4a504c70fefac06129f6e6e15c09328365e553f1dc31"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefac06129f6e6e15c09328365e553f1dc31">logika::meters::DbType::Int32</a></div><div class="ttdeci">@ Int32</div><div class="ttdoc">32-битное целое число</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a3c9c221a1135a439bbbaf4a504c70fefad909d38d705ce75386dd86e611a82f5b"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefad909d38d705ce75386dd86e611a82f5b">logika::meters::DbType::Double</a></div><div class="ttdeci">@ Double</div><div class="ttdoc">64-битное число с плавающей точкой; float(53)</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a3c9c221a1135a439bbbaf4a504c70fefaee219de6a043fc9d26cb89af7a20d4a1"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefaee219de6a043fc9d26cb89af7a20d4a1">logika::meters::DbType::ObjectArray</a></div><div class="ttdeci">@ ObjectArray</div><div class="ttdoc">Массив объектов (архивный срез)</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a3c9c221a1135a439bbbaf4a504c70fefafbde23b11d7e59af7828e81144c8b487"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefafbde23b11d7e59af7828e81144c8b487">logika::meters::DbType::Int64</a></div><div class="ttdeci">@ Int64</div><div class="ttdoc">64-битное целое число</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a4bf1b86a815cd64f495e604d459e3b3a"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3a">logika::meters::MeasureKind</a></div><div class="ttdeci">MeasureKind</div><div class="ttdoc">Тип измерения</div><div class="ttdef"><b>Definition</b> types.h:32</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a4bf1b86a815cd64f495e604d459e3b3aa3a3ea00cfc35332cedf6e5e9a32e94da"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aa3a3ea00cfc35332cedf6e5e9a32e94da">logika::meters::MeasureKind::E</a></div><div class="ttdeci">@ E</div><div class="ttdoc">Электроэнергия</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a4bf1b86a815cd64f495e604d459e3b3aab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aab9ece18c950afbfa6b0fdbfa4ff731d3">logika::meters::MeasureKind::T</a></div><div class="ttdeci">@ T</div><div class="ttdoc">Тепло/вода</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a4bf1b86a815cd64f495e604d459e3b3aadfcf28d0734569a6a693bc8194de62bf"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aadfcf28d0734569a6a693bc8194de62bf">logika::meters::MeasureKind::G</a></div><div class="ttdeci">@ G</div><div class="ttdoc">Газ</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a4bf1b86a815cd64f495e604d459e3b3aaec0fc0100c4fc1ce4eea230c3dc10360"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3aaec0fc0100c4fc1ce4eea230c3dc10360">logika::meters::MeasureKind::Undefined</a></div><div class="ttdeci">@ Undefined</div><div class="ttdoc">Неопределенный тип</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a5dc3ac0486d84a28a12cec0c0be9bd85"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a5dc3ac0486d84a28a12cec0c0be9bd85">logika::meters::ArchiveTimingType</a></div><div class="ttdeci">ArchiveTimingType</div><div class="ttdoc">Тип архива по времени измерений</div><div class="ttdef"><b>Definition</b> types.h:116</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a5dc3ac0486d84a28a12cec0c0be9bd85a288aae25bc408055f50c21c991903a44"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a5dc3ac0486d84a28a12cec0c0be9bd85a288aae25bc408055f50c21c991903a44">logika::meters::ArchiveTimingType::Asynchronous</a></div><div class="ttdeci">@ Asynchronous</div><div class="ttdoc">Сервисный архив</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a5dc3ac0486d84a28a12cec0c0be9bd85a2fe4167817733fec8e6ba1afddf78f1b"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a5dc3ac0486d84a28a12cec0c0be9bd85a2fe4167817733fec8e6ba1afddf78f1b">logika::meters::ArchiveTimingType::Synchronous</a></div><div class="ttdeci">@ Synchronous</div><div class="ttdoc">Интервальный архив</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a5dc3ac0486d84a28a12cec0c0be9bd85a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a5dc3ac0486d84a28a12cec0c0be9bd85a6adf97f83acf6453d4a6a4b1070f3754">logika::meters::ArchiveTimingType::None</a></div><div class="ttdeci">@ None</div><div class="ttdoc">Не архив (набор тэгов)</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a5dfbf075f197444da7e5af115bbeb50f"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a5dfbf075f197444da7e5af115bbeb50f">logika::meters::ChannelKind</a></div><div class="ttdeci">ChannelKind</div><div class="ttdoc">Тип канала</div><div class="ttdef"><b>Definition</b> types.h:51</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a5dfbf075f197444da7e5af115bbeb50fa03937134cedab9078be39a77ee3a48a0"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a5dfbf075f197444da7e5af115bbeb50fa03937134cedab9078be39a77ee3a48a0">logika::meters::ChannelKind::Group</a></div><div class="ttdeci">@ Group</div><div class="ttdoc">Группа каналов / потребитель (СПТ(Г): &quot;п&quot;, СПЕ: &quot;г&quot;)</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a5dfbf075f197444da7e5af115bbeb50fa271ddf829afeece44d8732757fba1a66"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a5dfbf075f197444da7e5af115bbeb50fa271ddf829afeece44d8732757fba1a66">logika::meters::ChannelKind::TV</a></div><div class="ttdeci">@ TV</div><div class="ttdoc">ТВ</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a5dfbf075f197444da7e5af115bbeb50fa781dc97dc62331eec3ea9ec4373a3ca8"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a5dfbf075f197444da7e5af115bbeb50fa781dc97dc62331eec3ea9ec4373a3ca8">logika::meters::ChannelKind::Channel</a></div><div class="ttdeci">@ Channel</div><div class="ttdoc">Канал измерения / труба (СПТ(Г): &quot;т&quot;, СПЕ: &quot;к&quot;)</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_a5dfbf075f197444da7e5af115bbeb50fad13bc5b68b2bd9e18f29777db17cc563"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#a5dfbf075f197444da7e5af115bbeb50fad13bc5b68b2bd9e18f29777db17cc563">logika::meters::ChannelKind::Common</a></div><div class="ttdeci">@ Common</div><div class="ttdoc">Заголовок записи</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_aaba4278b447ba2e737ab5f95a0c14bba"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#aaba4278b447ba2e737ab5f95a0c14bba">logika::meters::BusProtocolType</a></div><div class="ttdeci">BusProtocolType</div><div class="ttdoc">Тип протокола</div><div class="ttdef"><b>Definition</b> types.h:42</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_aaba4278b447ba2e737ab5f95a0c14bbaabe805990769fac8d4090a7282cf0d40d"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#aaba4278b447ba2e737ab5f95a0c14bbaabe805990769fac8d4090a7282cf0d40d">logika::meters::BusProtocolType::SPBus</a></div><div class="ttdeci">@ SPBus</div><div class="ttdoc">протокол СПСеть</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_aaba4278b447ba2e737ab5f95a0c14bbaaec0c8973d082934817c932a12035081d"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#aaba4278b447ba2e737ab5f95a0c14bbaaec0c8973d082934817c932a12035081d">logika::meters::BusProtocolType::RSBus</a></div><div class="ttdeci">@ RSBus</div><div class="ttdoc">протокол M4</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_afb48755c238c8e35d9ffd51bf0e5dd97"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97">logika::meters::StdVar</a></div><div class="ttdeci">StdVar</div><div class="ttdoc">Стандартные величины</div><div class="ttdef"><b>Definition</b> types.h:80</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_afb48755c238c8e35d9ffd51bf0e5dd97a335d367aa669edbd02627d8f6357e6e1"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97a335d367aa669edbd02627d8f6357e6e1">logika::meters::StdVar::auxInt</a></div><div class="ttdeci">@ auxInt</div><div class="ttdoc">int общего назначения</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_afb48755c238c8e35d9ffd51bf0e5dd97a44c29edb103a2872f519ad0c9a0fdaaa"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97a44c29edb103a2872f519ad0c9a0fdaaa">logika::meters::StdVar::P</a></div><div class="ttdeci">@ P</div><div class="ttdoc">Давление</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_afb48755c238c8e35d9ffd51bf0e5dd97a488ab29adec84b0394426c82ab48b26d"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97a488ab29adec84b0394426c82ab48b26d">logika::meters::StdVar::dP</a></div><div class="ttdeci">@ dP</div><div class="ttdoc">Изменение давления</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_afb48755c238c8e35d9ffd51bf0e5dd97a5206560a306a2e085a437fd258eb57ce"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97a5206560a306a2e085a437fd258eb57ce">logika::meters::StdVar::V</a></div><div class="ttdeci">@ V</div><div class="ttdoc">Объем</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_afb48755c238c8e35d9ffd51bf0e5dd97a53c8d15a175221d2127083e66a8cc937"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97a53c8d15a175221d2127083e66a8cc937">logika::meters::StdVar::NS</a></div><div class="ttdeci">@ NS</div><div class="ttdoc">Битовые сборки НС/ДС (НС - нештатная ситуация)</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_afb48755c238c8e35d9ffd51bf0e5dd97a61e9c06ea9a85a5088a499df6458d276"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97a61e9c06ea9a85a5088a499df6458d276">logika::meters::StdVar::W</a></div><div class="ttdeci">@ W</div><div class="ttdoc">Энергия</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_afb48755c238c8e35d9ffd51bf0e5dd97a674769e3326f8cf937af4282f2815c02"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97a674769e3326f8cf937af4282f2815c02">logika::meters::StdVar::SP</a></div><div class="ttdeci">@ SP</div><div class="ttdoc">Схема потребления</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_afb48755c238c8e35d9ffd51bf0e5dd97a69691c7bdcc3ce6d5d8a1361f22d04ac"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97a69691c7bdcc3ce6d5d8a1361f22d04ac">logika::meters::StdVar::M</a></div><div class="ttdeci">@ M</div><div class="ttdoc">Масса</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_afb48755c238c8e35d9ffd51bf0e5dd97ae00fba6fedfb8a49e13346f7099a23fc"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97ae00fba6fedfb8a49e13346f7099a23fc">logika::meters::StdVar::ti</a></div><div class="ttdeci">@ ti</div><div class="ttdoc">Временной интервал</div></div>
+<div class="ttc" id="anamespacelogika_1_1meters_html_afb48755c238c8e35d9ffd51bf0e5dd97afcefd647d6a866603c627b11347c707a"><div class="ttname"><a href="../../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97afcefd647d6a866603c627b11347c707a">logika::meters::StdVar::AVG</a></div><div class="ttdeci">@ AVG</div><div class="ttdoc">Среднее значение</div></div>
+<div class="ttc" id="anamespacelogika_html"><div class="ttname"><a href="../../d7/d43/namespacelogika.html">logika</a></div><div class="ttdef"><b>Definition</b> any.hpp:17</div></div>
+<div class="ttc" id="anamespacelogika_html_a8c808fe368963682034c99faed301260"><div class="ttname"><a href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">logika::ByteType</a></div><div class="ttdeci">char ByteType</div><div class="ttdef"><b>Definition</b> types.h:36</div></div>
+<div class="ttc" id="anamespacelogika_html_ae27d6ea049a1b4b142dc128ced8f4df2"><div class="ttname"><a href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">logika::TimeType</a></div><div class="ttdeci">uint64_t TimeType</div><div class="ttdef"><b>Definition</b> types.h:35</div></div>
+<div class="ttc" id="anamespacelogika_html_afcb9cc5f17bbcec128f49f126f45c081"><div class="ttname"><a href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">logika::LocString</a></div><div class="ttdeci">std::basic_string&lt; LocChar &gt; LocString</div><div class="ttdef"><b>Definition</b> types.h:41</div></div>
+<div class="ttc" id="ashared__constructible_8hpp_html"><div class="ttname"><a href="../../de/d23/shared__constructible_8hpp.html">shared_constructible.hpp</a></div></div>
+<div class="ttc" id="astructlogika_1_1meters_1_1ColumnInfo_html"><div class="ttname"><a href="../../d8/d46/structlogika_1_1meters_1_1ColumnInfo.html">logika::meters::ColumnInfo</a></div><div class="ttdoc">Информация о столбце БД</div><div class="ttdef"><b>Definition</b> types.h:254</div></div>
+<div class="ttc" id="astructlogika_1_1meters_1_1ColumnInfo_html_a3025621ebcc5a6f33042bb8f4a4bc479"><div class="ttname"><a href="../../d8/d46/structlogika_1_1meters_1_1ColumnInfo.html#a3025621ebcc5a6f33042bb8f4a4bc479">logika::meters::ColumnInfo::name</a></div><div class="ttdeci">LocString name</div><div class="ttdoc">Имя столбца</div><div class="ttdef"><b>Definition</b> types.h:264</div></div>
+<div class="ttc" id="astructlogika_1_1meters_1_1ColumnInfo_html_a44a525cb6ac37e9f5df2cb90d14275be"><div class="ttname"><a href="../../d8/d46/structlogika_1_1meters_1_1ColumnInfo.html#a44a525cb6ac37e9f5df2cb90d14275be">logika::meters::ColumnInfo::dataType</a></div><div class="ttdeci">LocString dataType</div><div class="ttdoc">Тип данных столбца</div><div class="ttdef"><b>Definition</b> types.h:265</div></div>
+<div class="ttc" id="astructlogika_1_1meters_1_1ColumnInfo_html_ab467ae7d6e0145ef644d9f81b91c5adc"><div class="ttname"><a href="../../d8/d46/structlogika_1_1meters_1_1ColumnInfo.html#ab467ae7d6e0145ef644d9f81b91c5adc">logika::meters::ColumnInfo::nullable</a></div><div class="ttdeci">bool nullable</div><div class="ttdoc">Разрешено ли пустое поле</div><div class="ttdef"><b>Definition</b> types.h:267</div></div>
+<div class="ttc" id="astructlogika_1_1meters_1_1HistoricalSeries_html"><div class="ttname"><a href="../../db/d35/structlogika_1_1meters_1_1HistoricalSeries.html">logika::meters::HistoricalSeries</a></div><div class="ttdoc">Тип записей данных</div><div class="ttdef"><b>Definition</b> types.h:225</div></div>
+<div class="ttc" id="astructlogika_1_1meters_1_1HistoricalSeries_html_a2c4d5fc21e447ad0af10ac72bc5728f1"><div class="ttname"><a href="../../db/d35/structlogika_1_1meters_1_1HistoricalSeries.html#a2c4d5fc21e447ad0af10ac72bc5728f1">logika::meters::HistoricalSeries::clientHandle</a></div><div class="ttdeci">int clientHandle</div><div class="ttdoc">Клиентский дескриптор элемента</div><div class="ttdef"><b>Definition</b> types.h:227</div></div>
+<div class="ttc" id="astructlogika_1_1meters_1_1HistoricalSeries_html_a514180fa068294acbad0d1cf72a43310"><div class="ttname"><a href="../../db/d35/structlogika_1_1meters_1_1HistoricalSeries.html#a514180fa068294acbad0d1cf72a43310">logika::meters::HistoricalSeries::data</a></div><div class="ttdeci">std::vector&lt; VQT &gt; data</div><div class="ttdoc">Данные (метрики, значения, временные метки)</div><div class="ttdef"><b>Definition</b> types.h:228</div></div>
+<div class="ttc" id="astructlogika_1_1meters_1_1VQT_html"><div class="ttname"><a href="../../d1/d18/structlogika_1_1meters_1_1VQT.html">logika::meters::VQT</a></div><div class="ttdoc">Тип, состояший из метрики, ее значения и метки времени</div><div class="ttdef"><b>Definition</b> types.h:201</div></div>
+<div class="ttc" id="astructlogika_1_1meters_1_1VQT_html_a1c46f3c0a06a59ff4d7c624132273773"><div class="ttname"><a href="../../d1/d18/structlogika_1_1meters_1_1VQT.html#a1c46f3c0a06a59ff4d7c624132273773">logika::meters::VQT::quality</a></div><div class="ttdeci">int32_t quality</div><div class="ttdoc">Значение метрики</div><div class="ttdef"><b>Definition</b> types.h:217</div></div>
+<div class="ttc" id="astructlogika_1_1meters_1_1VQT_html_a1fdd7bb5e88d3dcee01e8e3ee25da89e"><div class="ttname"><a href="../../d1/d18/structlogika_1_1meters_1_1VQT.html#a1fdd7bb5e88d3dcee01e8e3ee25da89e">logika::meters::VQT::timestamp</a></div><div class="ttdeci">TimeType timestamp</div><div class="ttdoc">Метка времени</div><div class="ttdef"><b>Definition</b> types.h:218</div></div>
+<div class="ttc" id="astructlogika_1_1meters_1_1VQT_html_a8c9e1faaae96afc14a8db1f9db7b0e38"><div class="ttname"><a href="../../d1/d18/structlogika_1_1meters_1_1VQT.html#a8c9e1faaae96afc14a8db1f9db7b0e38">logika::meters::VQT::value</a></div><div class="ttdeci">ISerializable * value</div><div class="ttdoc">Метрика</div><div class="ttdef"><b>Definition</b> types.h:216</div></div>
+<div class="ttc" id="astructlogika_1_1meters_1_1VitalInfo_html"><div class="ttname"><a href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html">logika::meters::VitalInfo</a></div><div class="ttdoc">Информация о конфигурации прибора</div><div class="ttdef"><b>Definition</b> types.h:235</div></div>
+<div class="ttc" id="astructlogika_1_1meters_1_1VitalInfo_html_a0222d286e7de883235031370ee954848"><div class="ttname"><a href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a0222d286e7de883235031370ee954848">logika::meters::VitalInfo::intfConfig</a></div><div class="ttdeci">std::vector&lt; LocString &gt; intfConfig</div><div class="ttdoc">Конфигурация интерфейсов</div><div class="ttdef"><b>Definition</b> types.h:240</div></div>
+<div class="ttc" id="astructlogika_1_1meters_1_1VitalInfo_html_a096911c408851a82ebcd539d54afd95b"><div class="ttname"><a href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a096911c408851a82ebcd539d54afd95b">logika::meters::VitalInfo::hwRev</a></div><div class="ttdeci">LocString hwRev</div><div class="ttdoc">Модель прибора (x4) / 099н00 (x6)</div><div class="ttdef"><b>Definition</b> types.h:238</div></div>
+<div class="ttc" id="astructlogika_1_1meters_1_1VitalInfo_html_a2c6e203191546e95fdacec17f2a2a7e2"><div class="ttname"><a href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a2c6e203191546e95fdacec17f2a2a7e2">logika::meters::VitalInfo::hwSerial</a></div><div class="ttdeci">LocString hwSerial</div><div class="ttdoc">Серийный номер прибора</div><div class="ttdef"><b>Definition</b> types.h:239</div></div>
+<div class="ttc" id="astructlogika_1_1meters_1_1VitalInfo_html_a429fcd9ca31808703ab0cb9d1a89bdba"><div class="ttname"><a href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a429fcd9ca31808703ab0cb9d1a89bdba">logika::meters::VitalInfo::id</a></div><div class="ttdeci">LocString id</div><div class="ttdoc">Идентификатор прибора из настроечной БД</div><div class="ttdef"><b>Definition</b> types.h:237</div></div>
+<div class="ttc" id="astructlogika_1_1meters_1_1VitalInfo_html_a63082a7cacc62647eeb6bed2336670eb"><div class="ttname"><a href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a63082a7cacc62647eeb6bed2336670eb">logika::meters::VitalInfo::rd</a></div><div class="ttdeci">ByteType rd</div><div class="ttdoc">Байт RD.</div><div class="ttdef"><b>Definition</b> types.h:242</div></div>
+<div class="ttc" id="astructlogika_1_1meters_1_1VitalInfo_html_a909d60164cf9e972b4473535b646fd02"><div class="ttname"><a href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a909d60164cf9e972b4473535b646fd02">logika::meters::VitalInfo::rh</a></div><div class="ttdeci">ByteType rh</div><div class="ttdoc">Байт RH.</div><div class="ttdef"><b>Definition</b> types.h:243</div></div>
+<div class="ttc" id="astructlogika_1_1meters_1_1VitalInfo_html_aacfe0efed64bccf1687ded1cb505b8e5"><div class="ttname"><a href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#aacfe0efed64bccf1687ded1cb505b8e5">logika::meters::VitalInfo::clockDiff</a></div><div class="ttdeci">TimeType clockDiff</div><div class="ttdoc">clockDiff = Tdevice - Tcomp. Tdevice = Tcomp + clockDiff</div><div class="ttdef"><b>Definition</b> types.h:248</div></div>
+<div class="ttc" id="astructlogika_1_1meters_1_1VitalInfo_html_acfff11f35c0dea1e1bdcff1c14216b3a"><div class="ttname"><a href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#acfff11f35c0dea1e1bdcff1c14216b3a">logika::meters::VitalInfo::mtrParamsHash</a></div><div class="ttdeci">LocString mtrParamsHash</div><div class="ttdoc">Контрольная сумма БД (рассчитанная прибором)</div><div class="ttdef"><b>Definition</b> types.h:247</div></div>
+<div class="ttc" id="astructlogika_1_1meters_1_1VitalInfo_html_af0d04ef98acf98a4e4399549b429890f"><div class="ttname"><a href="../../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#af0d04ef98acf98a4e4399549b429890f">logika::meters::VitalInfo::nt</a></div><div class="ttdeci">ByteType nt</div><div class="ttdoc">Байт NT.</div><div class="ttdef"><b>Definition</b> types.h:241</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_84c4dbe6e1a79f99accf514d2173f793.html">logika</a></li><li class="navelem"><a class="el" href="../../dir_f1284c587673ddc2d78b9c445c5062b8.html">include</a></li><li class="navelem"><a class="el" href="../../dir_536f92a6556bef0406895bf0fd73acd4.html">logika</a></li><li class="navelem"><a class="el" href="../../dir_f19878882094456de11f8fe15da466da.html">meters</a></li><li class="navelem"><a class="el" href="../../dc/d3d/meters_2types_8h.html">types.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>
