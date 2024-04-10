@@ -1,7 +1,7 @@
 var searchData=
 [
   ['caddonoffset_0',['cAddonOffset',['../d9/d4c/structlogika_1_1meters_1_1TagDef4LSettings.html#a6a070a8ea483b01fce39726c44cfc19c',1,'logika::meters::TagDef4LSettings']]],
-  ['calccontrol_1',['CalcControl',['../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#a016c55574b5aa04fd535e02f5a320029ae5edf9c7fc9533c44439ea9da2da8924',1,'logika::protocols::M4::Opcode']]],
+  ['calccontrol_1',['CalcControl',['../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#a55940b9f58f5f7663ee7ae38c8fdc72bae5edf9c7fc9533c44439ea9da2da8924',1,'logika::protocols::M4::Opcode']]],
   ['calcfielddef_2',['CalcFieldDef',['../d8/d13/classlogika_1_1meters_1_1CalcFieldDef.html',1,'logika::meters::CalcFieldDef'],['../d8/d13/classlogika_1_1meters_1_1CalcFieldDef.html#a564d49e02bb851c0deeb6cb39de6ec10',1,'logika::meters::CalcFieldDef::CalcFieldDef()']]],
   ['calcfielddefsettings_3',['CalcFieldDefSettings',['../d0/d69/structlogika_1_1meters_1_1CalcFieldDefSettings.html',1,'logika::meters']]],
   ['calcfields_5f_4',['calcFields_',['../d6/df4/classlogika_1_1meters_1_1Logika4.html#acbeb252065102e73c1aceec714cfe0a2',1,'logika::meters::Logika4']]],

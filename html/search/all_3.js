@@ -47,7 +47,7 @@ var searchData=
   ['device_5fconverter_2ecpp_44',['device_converter.cpp',['../da/de4/device__converter_8cpp.html',1,'']]],
   ['device_5fconverter_2eh_45',['device_converter.h',['../d9/d3f/device__converter_8h.html',1,'']]],
   ['deviceconverter_46',['DeviceConverter',['../d8/d9f/classlogika_1_1meters_1_1converters_1_1DeviceConverter.html',1,'logika::meters::converters']]],
-  ['devicediscovery_47',['DeviceDiscovery',['../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#a016c55574b5aa04fd535e02f5a320029a64a4e16bec7a17a1f43610fc2c6df97e',1,'logika::protocols::M4::Opcode']]],
+  ['devicediscovery_47',['DeviceDiscovery',['../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#a55940b9f58f5f7663ee7ae38c8fdc72ba64a4e16bec7a17a1f43610fc2c6df97e',1,'logika::protocols::M4::Opcode']]],
   ['devices_2ecpp_48',['devices.cpp',['../d9/d70/devices_8cpp.html',1,'']]],
   ['devices_2eh_49',['devices.h',['../d7/dde/devices_8h.html',1,'']]],
   ['devices_5fh_50',['DEVICES_H',['../d7/dde/devices_8h.html#a3caa0397d733033e72f0c4cc20b21368',1,'devices.h']]],

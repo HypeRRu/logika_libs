@@ -8,7 +8,7 @@ var searchData=
   ['enums_5fstring_5fto_5fpb_5fh_5',['ENUMS_STRING_TO_PB_H',['../dc/dd0/enums__string__to__pb_8h.html#a32cb871b713b5a0b81f94e02c0a5cb45',1,'enums_string_to_pb.h']]],
   ['erase_6',['Erase',['../d0/d78/classlogika_1_1Any.html#ae46d411749f81bf15f4035ed80642895',1,'logika::Any']]],
   ['errdesc_5f_7',['errDesc_',['../d9/d53/classlogika_1_1meters_1_1DataTag.html#ae6045c72b74b032625b16d1b17346346',1,'logika::meters::DataTag']]],
-  ['error_8',['Error',['../d0/d25/namespacelogika_1_1meters_1_1TagId4M.html#ad5d432462a0eeb320d2d0b444052c7eaabda9d07fc2372d75e580c56e0e1ef151',1,'logika::meters::TagId4M::Error'],['../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#a016c55574b5aa04fd535e02f5a320029a7e6259c0cdaedbb076f18c1cd2906055',1,'logika::protocols::M4::Opcode::Error']]],
+  ['error_8',['Error',['../d0/d25/namespacelogika_1_1meters_1_1TagId4M.html#ad5d432462a0eeb320d2d0b444052c7eaabda9d07fc2372d75e580c56e0e1ef151',1,'logika::meters::TagId4M::Error'],['../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#a55940b9f58f5f7663ee7ae38c8fdc72ba7e6259c0cdaedbb076f18c1cd2906055',1,'logika::protocols::M4::Opcode::Error']]],
   ['eu_9',['eu',['../d0/d69/structlogika_1_1meters_1_1CalcFieldDefSettings.html#aa8a08fa128b58cd131a7da7adfadfee4',1,'logika::meters::CalcFieldDefSettings']]],
   ['eu_5f_10',['eu_',['../d8/d13/classlogika_1_1meters_1_1CalcFieldDef.html#a2095c918fa4be33756b005aa17071858',1,'logika::meters::CalcFieldDef::eu_'],['../d1/d29/classlogika_1_1meters_1_1Tag.html#aa21fe5d45e7ac77ff1754a1279a7fe59',1,'logika::meters::Tag::eu_']]],
   ['event_11',['event',['../dd/d9b/structlogika_1_1meters_1_1ServiceRecord.html#aa2e9ec2f0938aa3b9e9d3e22896fa72f',1,'logika::meters::ServiceRecord']]],

@@ -8,9 +8,9 @@ var searchData=
   ['timeouterror_5',['TimeOutError',['../df/dea/namespacelogika_1_1connections_1_1Rc.html#ad077f3dcd802ffc6a350f1a97877a4c6ad6d991bdccc5a53c8cc72f5d122ec80d',1,'logika::connections::Rc']]],
   ['timestamp_6',['Timestamp',['../d0/d25/namespacelogika_1_1meters_1_1TagId4M.html#ad5d432462a0eeb320d2d0b444052c7eaaaf80a69fa1e12b7674027f7e6fcfbc2c',1,'logika::meters::TagId4M']]],
   ['total_7',['Total',['../d0/d25/namespacelogika_1_1meters_1_1TagId4M.html#ad5d432462a0eeb320d2d0b444052c7eaa0d89118bd10cfd073ff2aa5f31c6c230',1,'logika::meters::TagId4M']]],
-  ['totalctr_8',['TotalCtr',['../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html#a3d640d9c5b6a1690db9cba65ff2f393ba48571f876d0502b43f4140d3e0f2340f',1,'logika::meters::TagKind']]],
+  ['totalctr_8',['TotalCtr',['../d3/d8d/namespacelogika_1_1meters_1_1TagKind.html#accf7d7f47cf257977aaae4ba4ce4147ca48571f876d0502b43f4140d3e0f2340f',1,'logika::meters::TagKind']]],
   ['tripler32_9',['TripleR32',['../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90aba37526af5627fcb003eed00dc2c2de4',1,'logika::meters::BinaryType4L']]],
   ['tv_10',['TV',['../dc/df7/namespacelogika_1_1meters.html#a5dfbf075f197444da7e5af115bbeb50fa271ddf829afeece44d8732757fba1a66',1,'logika::meters']]],
-  ['tx_11',['Tx',['../d0/d3a/namespacelogika_1_1connections_1_1PurgeFlags.html#a4f557703ce858b73ba9f6d84d4abf820aa8b66a0bbe61e9315b38c47261853486',1,'logika::connections::PurgeFlags']]],
-  ['txrx_12',['TxRx',['../d0/d3a/namespacelogika_1_1connections_1_1PurgeFlags.html#a4f557703ce858b73ba9f6d84d4abf820a87b25923aac4a7dae8fa550d03fd6f75',1,'logika::connections::PurgeFlags']]]
+  ['tx_11',['Tx',['../d0/d3a/namespacelogika_1_1connections_1_1PurgeFlags.html#a296eb468d7877959170924ec598cd1aeaa8b66a0bbe61e9315b38c47261853486',1,'logika::connections::PurgeFlags']]],
+  ['txrx_12',['TxRx',['../d0/d3a/namespacelogika_1_1connections_1_1PurgeFlags.html#a296eb468d7877959170924ec598cd1aea87b25923aac4a7dae8fa550d03fd6f75',1,'logika::connections::PurgeFlags']]]
 ];
