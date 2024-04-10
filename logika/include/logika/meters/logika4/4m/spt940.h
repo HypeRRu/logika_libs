@@ -24,8 +24,8 @@ public:
     /// @copydoc Logika4M::Logika4M()
     Spt940(
           MeasureKind measureKind               = MeasureKind::T
-        , const LocString& caption              = L"СПТ940"
-        , const LocString& description          = L"тепловычислитель СПТ940"
+        , const LocString& caption              = LOCALIZED( "СПТ940" )
+        , const LocString& description          = LOCALIZED( "тепловычислитель СПТ940" )
         , uint32_t maxChannels                  = 3
         , uint32_t maxGroups                    = 1
         , BusProtocolType busType               = BusProtocolType::RSBus

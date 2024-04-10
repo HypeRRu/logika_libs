@@ -20,11 +20,11 @@ namespace // anonymous
 {
 
 const std::array< logika::LocString, logika::log::LogLevel::Count > logLevelStrings{
-      L"DISABLED"
-    , L" ERROR "
-    , L"  WARN "
-    , L"  INFO "
-    , L" DEBUG "
+      LOCALIZED( "DISABLED" )
+    , LOCALIZED( " ERROR "  )
+    , LOCALIZED( "  WARN "  )
+    , LOCALIZED( "  INFO "  )
+    , LOCALIZED( " DEBUG "  )
 };
 
 } // anonymous namespace
@@ -100,11 +100,11 @@ void Logger::SetLogLevel( LogLevel::Type level )
 void Logger::Write( LogLevel::Type level, const LocString& message, const std::string& funcName )
 {
     LocStringStream msgToWrite;
-    msgToWrite << GetTimeString() << ' ';
-    msgToWrite << '[' << logLevelStrings[ level ] << ']' << ' ';
+    msgToWrite << GetTimeString() << LOCALIZED( ' ' );
+    msgToWrite << LOCALIZED( '[' ) << logLevelStrings[ level ] << LOCALIZED( "] " );
     if ( !funcName.empty() )
     {
-        msgToWrite << ToLocString( funcName ) << L" | ";
+        msgToWrite << ToLocString( funcName ) << LOCALIZED( " | " );
     }
     msgToWrite << message << '\n';
     
@@ -127,10 +127,10 @@ void Logger::Write( LogLevel::Type level, const LocString& message, const std::s
 
 void Logger::CheckLogLevel()
 {
-    Write( LogLevel::LogError, L"Logging error messages" );
-    Write( LogLevel::LogWarning, L"Logging warning messages" );
-    Write( LogLevel::LogInfo, L"Logging info messages" );
-    Write( LogLevel::LogDebug, L"Logging debug messages" );
+    Write( LogLevel::LogError, LOCALIZED( "Logging error messages" ) );
+    Write( LogLevel::LogWarning, LOCALIZED( "Logging warning messages" ) );
+    Write( LogLevel::LogInfo, LOCALIZED( "Logging info messages" ) );
+    Write( LogLevel::LogDebug, LOCALIZED( "Logging debug messages" ) );
 } // CheckLogLevel
 
 
@@ -138,8 +138,6 @@ void Logger::InitLocale()
 {
     std::locale::global( std::locale( "" ) );
     std::wcout.imbue( std::locale() );
-    std::wcout << L"Init locale\n";
-    /// @todo А надо ли выводить?
 } // InitLocale
 
 } // namespace log

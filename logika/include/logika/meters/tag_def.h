@@ -25,13 +25,13 @@ namespace meters
 struct LOGIKA_METERS_EXPORT TagDefSettings
 {
 public:
-    int ordinal = 0;                    ///< Порядковый номер
-    LocString name = L"";               ///< Название тэга
-    StdVar stdVar = StdVar::Undefined;  ///< Тип тэга (величина)
-    LocString description = L"";        ///< Описание тэга
-    DbType type = DbType::Undefined;    ///< Тип элемента в базе данных (стандартный)
-    LocString dbType = L"";             ///< Тип элемента в базе данных (не стандартный). Если не задан, используется стандартный
-    LocString displayFormat = L"";      ///< Формат отображения
+    int ordinal = 0;                                ///< Порядковый номер
+    LocString name = LOCALIZED( "" );               ///< Название тэга
+    StdVar stdVar = StdVar::Undefined;              ///< Тип тэга (величина)
+    LocString description = LOCALIZED( "" );        ///< Описание тэга
+    DbType type = DbType::Undefined;                ///< Тип элемента в базе данных (стандартный)
+    LocString dbType = LOCALIZED( "" );             ///< Тип элемента в базе данных (не стандартный). Если не задан, используется стандартный
+    LocString displayFormat = LOCALIZED( "" );      ///< Формат отображения
 
 }; // struct TagDefSettings
 

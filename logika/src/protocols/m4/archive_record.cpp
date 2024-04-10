@@ -39,16 +39,16 @@ LocString ArchiveRecord::ToString() const
 
     if ( !values.empty() )
     {
-        stream << L"{";
-        stream << ( values[ 0 ] ? values[ 0 ]->ToString() : L"null" );
+        stream << LOCALIZED( "{" );
+        stream << ( values[ 0 ] ? values[ 0 ]->ToString() : LOCALIZED( "null" ) );
     }
     for ( size_t i = 1; i < values.size(); ++i )
     {
-        stream << L", " << ( values[ i ] ? values[ i ]->ToString() : L"null" );
+        stream << LOCALIZED( ", " ) << ( values[ i ] ? values[ i ]->ToString() : LOCALIZED( "null" ) );
     }
     if ( !values.empty() )
     {
-        stream << L"}";
+        stream << LOCALIZED( "}" );
     }
 
     return stream.str();

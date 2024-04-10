@@ -37,7 +37,7 @@ bool UdpConnection::OpenImpl()
     int result = getaddrinfo( serverHostName_.c_str(), portStr.c_str(), &hints, &addrinfo );
     if ( 0 != result )
     {
-        LOG_WRITE( LOG_ERROR, L"Failed to get server address info: " << result );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Failed to get server address info: " ) << result );
         return false;
     }
     /// Открываем соединение
@@ -54,7 +54,7 @@ bool UdpConnection::OpenImpl()
             u_long mode = 1;
             ioctlsocket(socket_, FIONBIO, &mode);
 
-            LOG_WRITE( LOG_INFO, L"Connected to " << ToLocString( address_ ) );
+            LOG_WRITE( LOG_INFO, LOCALIZED( "Connected to " ) << ToLocString( address_ ) );
             freeaddrinfo( info ); /// Больше не используется
             return true;
         }
@@ -62,14 +62,14 @@ bool UdpConnection::OpenImpl()
         closesocket( socket_ );
         socket_ = LOGIKA_SOCKET_INVALID;
     }
-    LOG_WRITE( LOG_ERROR, L"Can't open connection with " << ToLocString( address_ ) );
+    LOG_WRITE( LOG_ERROR, LOCALIZED( "Can't open connection with " ) << ToLocString( address_ ) );
     return false;
 } // OpenImpl
 
 
 void UdpConnection::CloseImpl()
 {
-    LOG_WRITE( LOG_INFO, L"Closing connection with " << ToLocString( address_ ) );  
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Closing connection with " ) << ToLocString( address_ ) );  
     if ( LOGIKA_SOCKET_INVALID != socket_ )
     {
         closesocket( socket_ );
@@ -87,7 +87,7 @@ void UdpConnection::PurgeImpl( PurgeFlags::Type flags )
         char buffer[ flushBufferSize ];
         while ( recv( socket_, buffer, flushBufferSize, MSG_PEEK ) > 0 )
         {
-            LOG_WRITE_MSG( LOG_INFO, L"Have unreceived datagram, reading" );
+            LOG_WRITE_MSG( LOG_INFO, LOCALIZED( "Have unreceived datagram, reading" ) );
             recv( socket_, buffer, flushBufferSize, 0 );
         }
     }

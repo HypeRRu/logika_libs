@@ -27,7 +27,7 @@ ChannelDef::ChannelDef( std::shared_ptr< IMeter > m, const LocString& p, int32_t
 
 LocString ChannelDef::ToString() const
 {
-    return prefix + L"(" + description + L")";
+    return prefix + LOCALIZED( "(" ) + description + LOCALIZED( ")" );
 } // ToString
 
 
@@ -42,7 +42,7 @@ Channel::Channel( const ChannelDef& cdef, int32_t channelNo )
 
 LocString Channel::ToString() const
 {
-    return name + L"(" + description + L")";
+    return name + LOCALIZED( "(" ) + description + LOCALIZED( ")" );
 } // ToString
 
 } // namespace meters

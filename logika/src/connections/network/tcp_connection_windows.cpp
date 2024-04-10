@@ -37,7 +37,7 @@ bool TcpConnection::OpenImpl()
     int result = getaddrinfo( serverHostName_.c_str(), portStr.c_str(), &hints, &addrinfo );
     if ( 0 != result )
     {
-        LOG_WRITE( LOG_ERROR, L"Failed to get server address info: " << result );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Failed to get server address info: " ) << result );
         return false;
     }
     /// Открываем соединение
@@ -54,7 +54,7 @@ bool TcpConnection::OpenImpl()
             u_long mode = 1;
             ioctlsocket(socket_, FIONBIO, &mode);
 
-            LOG_WRITE( LOG_INFO, L"Connected to " << ToLocString( address_ ) );
+            LOG_WRITE( LOG_INFO, LOCALIZED( "Connected to " ) << ToLocString( address_ ) );
             freeaddrinfo( info ); /// Больше не используется
             return true;
         }
@@ -62,14 +62,14 @@ bool TcpConnection::OpenImpl()
         closesocket( socket_ );
         socket_ = LOGIKA_SOCKET_INVALID;
     }
-    LOG_WRITE( LOG_ERROR, L"Can't open connection with " << ToLocString( address_ ) );
+    LOG_WRITE( LOG_ERROR, LOCALIZED( "Can't open connection with " ) << ToLocString( address_ ) );
     return false;
 } // OpenImpl
 
 
 void TcpConnection::CloseImpl()
 {
-    LOG_WRITE( LOG_INFO, L"Closing connection with " << ToLocString( address_ ) );  
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Closing connection with " ) << ToLocString( address_ ) );  
     if ( LOGIKA_SOCKET_INVALID != socket_ )
     {
         closesocket( socket_ );
@@ -88,11 +88,11 @@ void TcpConnection::PurgeImpl( PurgeFlags::Type flags )
         uint32_t readed = 0;
         while ( static_cast< int32_t >( readed ) < available )
         {
-            LOG_WRITE_MSG( LOG_INFO, L"Have unreceived packets, flushing" );
+            LOG_WRITE_MSG( LOG_INFO, LOCALIZED( "Have unreceived packets, flushing" ) );
             int rd = recv( socket_, buffer, flushBufferSize, 0 );
             if ( rd <= 0 )
             {
-                LOG_WRITE( LOG_ERROR, L"Error while reading. Purged " << rd << L" bytes" );
+                LOG_WRITE( LOG_ERROR, LOCALIZED( "Error while reading. Purged " ) << rd << LOCALIZED( " bytes" ) );
                 break;
             }
             readed += static_cast< uint32_t >( rd );

@@ -21,7 +21,7 @@ struct LOGIKA_METERS_EXPORT ArchiveFieldDef4Settings: public ArchiveFieldDefSett
 {
 public:
     std::shared_ptr< ArchiveDef > archive = nullptr;    ///< Описание архива
-    LocString units = L"";                              ///< Единицы измерения
+    LocString units = LOCALIZED( "" );                  ///< Единицы измерения
 
 }; // struct ArchiveFieldDef4Settings
 

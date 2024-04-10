@@ -24,9 +24,9 @@ public:
     virtual LocString ToString() const override;
 
 public:
-    TimeType timestamp = 0;         ///< Метка времени записи
-    LocString event = L"";          ///< Событие
-    LocString description = L"";    ///< Описание события
+    TimeType timestamp = 0;                     ///< Метка времени записи
+    LocString event = LOCALIZED( "" );          ///< Событие
+    LocString description = LOCALIZED( "" );    ///< Описание события
 
 }; // struct ServiceRecord
 

@@ -38,15 +38,16 @@ bool Connection::Open()
 {
     if ( ConnectionState::Connected == state_ )
     {
-        LOG_WRITE( LOG_WARNING, L"Found active connection to " << ToLocString( address_ ) << L". Closing" );
+        LOG_WRITE( LOG_WARNING, LOCALIZED( "Found active connection to " )
+            << ToLocString( address_ ) << LOCALIZED( ". Closing" ) );
         Close();
     }
-    LOG_WRITE( LOG_INFO, L"Connecting to " << ToLocString( address_ )
-        << L" (" << ToLocString( ConnectionTypeToString( type_ ) ) << L")" );
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Connecting to " ) << ToLocString( address_ )
+        << LOCALIZED( " (" ) << ToLocString( ConnectionTypeToString( type_ ) ) << LOCALIZED( ")" ) );
     state_ = ConnectionState::Connecting;
     if ( OpenImpl() )
     {
-        LOG_WRITE( LOG_INFO, L"Successfully connected to " << ToLocString( address_ ) );
+        LOG_WRITE( LOG_INFO, LOCALIZED( "Successfully connected to " ) << ToLocString( address_ ) );
         state_ = ConnectionState::Connected;
         if ( onAfterConnect_ )
         {
@@ -56,7 +57,7 @@ bool Connection::Open()
     }
     else
     {
-        LOG_WRITE( LOG_ERROR, L"Failed to connect to " << ToLocString( address_ ) );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Failed to connect to " ) << ToLocString( address_ ) );
         state_ = ConnectionState::NotConnected;
         return false;
     }
@@ -68,7 +69,7 @@ void Connection::Close()
     if (   ConnectionState::Connected  == state_
         || ConnectionState::Connecting == state_ )
     {
-        LOG_WRITE( LOG_INFO, L"Disconnecting from " << ToLocString( address_ ) );
+        LOG_WRITE( LOG_INFO, LOCALIZED( "Disconnecting from " ) << ToLocString( address_ ) );
         state_ = ConnectionState::Disconnecting;
         if ( onBeforeDisonnect_ )
         {
@@ -132,31 +133,32 @@ void Connection::Purge( PurgeFlags::Type flags )
 {
     if ( !IsConnected() )
     {
-        LOG_WRITE( LOG_ERROR, L"Purge " << ToLocString( PurgeFlagsToString( flags ) ) << L" failed: Not connected" );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Purge " ) << ToLocString( PurgeFlagsToString( flags ) )
+            << LOCALIZED( " failed: Not connected" ) );
         return;
     }
-    LOG_WRITE( LOG_INFO, L"Purge " << ToLocString( PurgeFlagsToString( flags ) ) );
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Purge " ) << ToLocString( PurgeFlagsToString( flags ) ) );
     PurgeImpl( flags );
 } // Purge
 
 
 void Connection::SetOnAfterConnect( const std::function< void() >& hook )
 {
-    LOG_WRITE_MSG( LOG_INFO, L"Set OnAfterConnect hook" );
+    LOG_WRITE_MSG( LOG_INFO, LOCALIZED( "Set OnAfterConnect hook" ) );
     onAfterConnect_ = hook;
 } // SetOnAfterConnect
 
 
 void Connection::SetOnBeforeDisonnect( const std::function< void() >& hook )
 {
-    LOG_WRITE_MSG( LOG_INFO, L"Set OnBeforeDisconnect hook" );
+    LOG_WRITE_MSG( LOG_INFO, LOCALIZED( "Set OnBeforeDisconnect hook" ) );
     onBeforeDisonnect_ = hook;
 } // SetOnBeforeDisonnect
 
 
 void Connection::ResetStatistics()
 {
-    LOG_WRITE_MSG( LOG_INFO, L"Reset statistics" );
+    LOG_WRITE_MSG( LOG_INFO, LOCALIZED( "Reset statistics" ) );
     txBytesCount_ = 0;
     rxBytesCount_ = 0;
 } // ResetStatistics
@@ -169,7 +171,7 @@ uint32_t Connection::Read( ByteVector& buffer, uint32_t needed )
 
     if ( buffer.size() < needed )
     {
-        LOG_WRITE( LOG_DEBUG, L"Resizing buffer. New size: " << needed );
+        LOG_WRITE( LOG_DEBUG, LOCALIZED( "Resizing buffer. New size: " ) << needed );
         buffer.resize( needed );
     }
 
@@ -177,13 +179,14 @@ uint32_t Connection::Read( ByteVector& buffer, uint32_t needed )
     {
         if ( !IsConnected() )
         {
-            LOG_WRITE( LOG_INFO, L"Connection not established. Readed " << readed << L" bytes" );
+            LOG_WRITE( LOG_INFO, LOCALIZED( "Connection not established. Readed " )
+                << readed << LOCALIZED( " bytes" ) );
             break;
         }
         const uint32_t readCurrent = ReadImpl( buffer, readed, needed - readed, &rc );
         if ( 0 == readCurrent )
         {
-            LOG_WRITE( LOG_ERROR, L"Read error. Readed " << readed << L" bytes. Rc: " << rc );
+            LOG_WRITE( LOG_ERROR, LOCALIZED( "Read error. Readed " ) << readed << LOCALIZED( " bytes. Rc: " ) << rc );
             break;
         }
         readed += readCurrent;
@@ -203,13 +206,15 @@ uint32_t Connection::Write( const ByteVector& buffer )
     {
         if ( !IsConnected() )
         {
-            LOG_WRITE( LOG_INFO, L"Connection not established. Written " << written << L" bytes" );
+            LOG_WRITE( LOG_INFO, LOCALIZED( "Connection not established. Written " )
+                << written << LOCALIZED( " bytes" ) );
             break;
         }
         const uint32_t writeCurrent = WriteImpl( buffer, written, &rc );
         if ( 0 == writeCurrent )
         {
-            LOG_WRITE( LOG_ERROR, L"Write error. Written " << written << L" bytes. Rc: " << rc );
+            LOG_WRITE( LOG_ERROR, LOCALIZED( "Write error. Written " )
+                << written << LOCALIZED( " bytes. Rc: " ) << rc );
             break;
         }
         written += writeCurrent;

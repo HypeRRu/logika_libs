@@ -25,7 +25,7 @@ TagDef::TagDef( const ChannelDef& cdef, const TagDefSettings& settings)
         : DbTypeToString( settings.type ) 
     }
     , displayFormat_{ settings.displayFormat }
-    , key_{ L"" }
+    , key_{ LOCALIZED( "" ) }
 {} // TagDef
 
 
@@ -49,7 +49,7 @@ LocString TagDef::GetDisplayFormat() const
 
 LocString TagDef::GetKey() const
 {
-    return L"";
+    return LOCALIZED( "" );
 } // GetKey
 
 } // namespace meters

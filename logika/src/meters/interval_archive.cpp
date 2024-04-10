@@ -46,7 +46,7 @@ IntervalArchive::IntervalArchive( std::shared_ptr< IMeter > meter
     const size_t fCount = tableTemplate->FieldCount();
     for ( auto field: tableTemplate->GetFieldsList() )
     {
-        if ( !field || StrCaseEq( field->GetName(), L"tm" ) )
+        if ( !field || StrCaseEq( field->GetName(), LOCALIZED( "tm" ) ) )
         {
             continue;
         }
@@ -68,19 +68,19 @@ bool IntervalArchive::AddDefaultColumns()
         {
             return false;
         }
-        return StrCaseEq( field->GetName(), L"tm" );
+        return StrCaseEq( field->GetName(), LOCALIZED( "tm" ) );
     } );
     if ( fields.cend() != tmIter )
     {
         return true;
     }
 
-    ChannelDef cDef{ meter_, L"tm", 0, 1, L"Timestamp" };
+    ChannelDef cDef{ meter_, LOCALIZED( "tm" ), 0, 1, LOCALIZED( "Timestamp" ) };
     ArchiveFieldDefSettings afDefSettings;
     afDefSettings.archiveType   = archiveType_;
-    afDefSettings.name          = L"tm";
+    afDefSettings.name          = LOCALIZED( "tm" );
     afDefSettings.type          = DbType::Int64;
-    afDefSettings.description   = L"Timestamp";
+    afDefSettings.description   = LOCALIZED( "Timestamp" );
     std::shared_ptr< ArchiveFieldDef > afDef = std::make_shared< ArchiveFieldDef >( cDef, afDefSettings );
     DataTable::FieldType field = std::make_shared< ArchiveField >( afDef, 0 );
     

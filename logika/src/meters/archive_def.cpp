@@ -35,8 +35,8 @@ uint32_t ArchiveDef::GetCapacity() const
 
 LocString ArchiveDef::ToString() const
 {
-    return ( archiveType_ ? archiveType_->ToString() : L"[unknown]" )
-        + L" " + name_ + L" (" + description_ + L")";
+    return ( archiveType_ ? archiveType_->ToString() : LOCALIZED( "[unknown]" ) )
+        + LOCALIZED( " " ) + name_ + LOCALIZED( " (" ) + description_ + LOCALIZED( ")" );
 } // ToString
 
 } // namespace meters

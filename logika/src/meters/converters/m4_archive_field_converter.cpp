@@ -33,7 +33,7 @@ M4ArchiveFieldConverter::ConvertedType M4ArchiveFieldConverter::Convert( const M
     {
         return nullptr;
     }
-    LocString archiveLabel = ToLocString( from.device() ) + L"." + ConvertArchiveTypeName( from.archivetype() );
+    LocString archiveLabel = ToLocString( from.device() ) + LOCALIZED( "." ) + ConvertArchiveTypeName( from.archivetype() );
     std::shared_ptr< ArchiveDef4M > archive = ConvertArchive( archiveLabel, archiveStorage );
     if ( !archive )
     {
@@ -42,7 +42,7 @@ M4ArchiveFieldConverter::ConvertedType M4ArchiveFieldConverter::Convert( const M
     ArchiveFieldDef4MSettings settings;
     settings.archive        = archive;
     settings.archiveType    = archiveType;
-    settings.dbType         = from.has_dbtype() ? ToLocString( from.dbtype() ) : L"";
+    settings.dbType         = from.has_dbtype() ? ToLocString( from.dbtype() ) : LOCALIZED( "" );
     settings.description    = ToLocString( from.description() );
     settings.displayFormat  = ToLocString( from.displayformat() );
     settings.fieldIndex     = from.index();
@@ -51,7 +51,7 @@ M4ArchiveFieldConverter::ConvertedType M4ArchiveFieldConverter::Convert( const M
     settings.ordinal        = 0;
     settings.stdVar         = ConvertVarType( from.vartype() );
     settings.type           = ConvertDbType( from.datatype() );
-    settings.units          = from.has_units() ? ToLocString( from.units() ) : L"";
+    settings.units          = from.has_units() ? ToLocString( from.units() ) : LOCALIZED( "" );
 
     return ArchiveFieldDef4M::Create< ArchiveFieldDef4M >( archive->GetChannelDef(), settings );
 } // Convert( const FromType&, MeterStorageType, ArchiveStorageType, ArchiveTypeStorageType )
@@ -104,18 +104,18 @@ LocString M4ArchiveFieldConverter::ConvertArchiveTypeName(
     const resources::ArchiveTypeEnum type )
 {
     static const std::unordered_map< resources::ArchiveTypeEnum, LocString > converter{
-          { logika::resources::ARCHIVE_TYPE_CONTROL,    L"Control" }
-        , { logika::resources::ARCHIVE_TYPE_DAY,        L"Day" }
-        , { logika::resources::ARCHIVE_TYPE_DECADE,     L"Decade" }
-        , { logika::resources::ARCHIVE_TYPE_DIAGS_LOG,  L"DiagsLog" }
-        , { logika::resources::ARCHIVE_TYPE_ERRORS_LOG, L"ErrorsLog" }
-        , { logika::resources::ARCHIVE_TYPE_HOUR,       L"Hour" }
-        , { logika::resources::ARCHIVE_TYPE_MONTH,      L"Month" }
-        , { logika::resources::ARCHIVE_TYPE_PARAMS_LOG, L"ParamsLog" }
-        , { logika::resources::ARCHIVE_TYPE_POWER_LOG,  L"PowerLog" }
-        , { logika::resources::ARCHIVE_TYPE_TURN,       L"Turn" }
-        , { logika::resources::ARCHIVE_TYPE_MINUTE,     L"Minute" }
-        , { logika::resources::ARCHIVE_TYPE_HALF_HOUR,  L"HalfHour" }
+          { logika::resources::ARCHIVE_TYPE_CONTROL,    LOCALIZED( "Control" ) }
+        , { logika::resources::ARCHIVE_TYPE_DAY,        LOCALIZED( "Day" ) }
+        , { logika::resources::ARCHIVE_TYPE_DECADE,     LOCALIZED( "Decade" ) }
+        , { logika::resources::ARCHIVE_TYPE_DIAGS_LOG,  LOCALIZED( "DiagsLog" ) }
+        , { logika::resources::ARCHIVE_TYPE_ERRORS_LOG, LOCALIZED( "ErrorsLog" ) }
+        , { logika::resources::ARCHIVE_TYPE_HOUR,       LOCALIZED( "Hour" ) }
+        , { logika::resources::ARCHIVE_TYPE_MONTH,      LOCALIZED( "Month" ) }
+        , { logika::resources::ARCHIVE_TYPE_PARAMS_LOG, LOCALIZED( "ParamsLog" ) }
+        , { logika::resources::ARCHIVE_TYPE_POWER_LOG,  LOCALIZED( "PowerLog" ) }
+        , { logika::resources::ARCHIVE_TYPE_TURN,       LOCALIZED( "Turn" ) }
+        , { logika::resources::ARCHIVE_TYPE_MINUTE,     LOCALIZED( "Minute" ) }
+        , { logika::resources::ARCHIVE_TYPE_HALF_HOUR,  LOCALIZED( "HalfHour" ) }
     };
 
     auto iter = converter.find( type );
@@ -123,7 +123,7 @@ LocString M4ArchiveFieldConverter::ConvertArchiveTypeName(
     {
         return iter->second;
     }
-    return L"?";
+    return LOCALIZED( "?" );
 } // ConvertArchiveTypeName
 
 

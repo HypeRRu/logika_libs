@@ -53,7 +53,7 @@ LocString SafeStrError( int error )
 #if ( _POSIX_C_SOURCE >= 200112L ) && ! _GNU_SOURCE
     if ( !strerror_r( error, buffer, errorStrSize ) )
     {
-        return L"";
+        return LOCALIZED( "" );
     }
     ss << ToLocString( buffer );
 #elif _GNU_SOURCE
@@ -62,7 +62,7 @@ LocString SafeStrError( int error )
     strerror_s( buffer, errorStrSize, error );
     ss << ToLocString( buffer );
 #endif
-    ss << L" (" << error << L")";
+    ss << LOCALIZED( " (" ) << error << LOCALIZED( ")" );
     return ss.str();
 } // SafeStrError
 
@@ -129,7 +129,7 @@ LocString Trim( const LocString& str, const LocString& trimChars )
     size_t leftPos = str.find_first_not_of( trimChars );
     if ( LocString::npos == leftPos )
     {
-        return L"";
+        return LOCALIZED( "" );
     }
     size_t rightPos = str.find_last_not_of( trimChars );
     return str.substr( leftPos, rightPos - leftPos );

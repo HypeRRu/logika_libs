@@ -27,7 +27,7 @@ uint32_t ReadBuffer( SocketType sock, ByteVector& buffer
 {
     if ( LOGIKA_SOCKET_INVALID == sock )
     {
-        LOG_WRITE_MSG( LOG_ERROR, L"Invalid connection socket" );
+        LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "Invalid connection socket" ) );
         if ( rc )
         {
             *rc = Rc::ConnectionNotSetError;
@@ -36,8 +36,8 @@ uint32_t ReadBuffer( SocketType sock, ByteVector& buffer
     }
     if ( buffer.size() < start + needed )
     {
-        LOG_WRITE( LOG_ERROR, L"Buffer size (" << buffer.size() << L") is less "
-                              << L"than end position (" << start + needed << L")" );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Buffer size (" ) << buffer.size() << LOCALIZED( ") is less " )
+                              << LOCALIZED( "than end position (" ) << start + needed << LOCALIZED( ")" ) );
         if ( rc )
         {
             *rc = Rc::InvalidArgError;
@@ -59,7 +59,7 @@ uint32_t ReadBuffer( SocketType sock, ByteVector& buffer
             {
                 continue;
             }
-            LOG_WRITE( LOG_ERROR, L"Poll failed: " << WSAGetLastError() );
+            LOG_WRITE( LOG_ERROR, LOCALIZED( "Poll failed: " ) << WSAGetLastError() );
             if ( rc )
             {
                 *rc = Rc::PollError;
@@ -68,7 +68,7 @@ uint32_t ReadBuffer( SocketType sock, ByteVector& buffer
         }
         if ( 0 == ready ) /// Истекло время ожидания данных
         {
-            LOG_WRITE_MSG( LOG_WARNING, L"Read timeout expired" );
+            LOG_WRITE_MSG( LOG_WARNING, LOCALIZED( "Read timeout expired" ) );
             if ( rc )
             {
                 *rc = Rc::TimeOutError;
@@ -76,16 +76,16 @@ uint32_t ReadBuffer( SocketType sock, ByteVector& buffer
             return 0;
         }
 
-        LOG_WRITE_MSG( LOG_DEBUG, L"Read started" );
+        LOG_WRITE_MSG( LOG_DEBUG, LOCALIZED( "Read started" ) );
         readed = recv( sock, &buffer[ start ], needed, 0 );
-        LOG_WRITE_MSG( LOG_DEBUG, L"Read finished" );
+        LOG_WRITE_MSG( LOG_DEBUG, LOCALIZED( "Read finished" ) );
         if ( -1 == readed )
         {
             if ( WSAGetLastError() & WSAEWOULDBLOCK )
             {
                 continue;
             }
-            LOG_WRITE( LOG_ERROR, L"Read failed: " << WSAGetLastError() );
+            LOG_WRITE( LOG_ERROR, LOCALIZED( "Read failed: " ) << WSAGetLastError() );
             if ( rc )
             {
                 *rc = Rc::ReadError;
@@ -98,7 +98,7 @@ uint32_t ReadBuffer( SocketType sock, ByteVector& buffer
         }
     } while ( true );
     
-    LOG_WRITE( LOG_INFO, L"Readed " << readed << L" bytes" );
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Readed " ) << readed << LOCALIZED( " bytes" ) );
     if ( rc )
     {
         *rc = Rc::Success;
@@ -111,7 +111,7 @@ uint32_t WriteBuffer( SocketType sock, const ByteVector& buffer, uint32_t start,
 {
     if ( LOGIKA_SOCKET_INVALID == sock )
     {
-        LOG_WRITE_MSG( LOG_ERROR, L"Invalid connection socket" );
+        LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "Invalid connection socket" ) );
         if ( rc )
         {
             *rc = Rc::ConnectionNotSetError;
@@ -120,8 +120,8 @@ uint32_t WriteBuffer( SocketType sock, const ByteVector& buffer, uint32_t start,
     }
     if ( buffer.size() <= start )
     {
-        LOG_WRITE( LOG_ERROR, L"Buffer size (" << buffer.size() << L") is less or equal "
-                              << L"than start position (" << start << L")" );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Buffer size (" ) << buffer.size() << LOCALIZED( ") is less or equal " )
+                              << LOCALIZED( "than start position (" ) << start << LOCALIZED( ")" ) );
         if ( rc )
         {
             *rc = Rc::InvalidArgError;
@@ -132,16 +132,16 @@ uint32_t WriteBuffer( SocketType sock, const ByteVector& buffer, uint32_t start,
     int written;
     do
     {
-        LOG_WRITE_MSG( LOG_DEBUG, L"Write started" );
+        LOG_WRITE_MSG( LOG_DEBUG, LOCALIZED( "Write started" ) );
         written = send( sock, &buffer[ start ], static_cast< int >( buffer.size() - start ), 0 );
-        LOG_WRITE_MSG( LOG_DEBUG, L"Write finished" );
+        LOG_WRITE_MSG( LOG_DEBUG, LOCALIZED( "Write finished" ) );
         if ( -1 == written )
         {
             if ( WSAGetLastError() & WSAEWOULDBLOCK )
             {
                 continue;
             }
-            LOG_WRITE( LOG_ERROR, L"Write failed: " << WSAGetLastError() );
+            LOG_WRITE( LOG_ERROR, LOCALIZED( "Write failed: " ) << WSAGetLastError() );
             if ( rc )
             {
                 *rc = Rc::WriteError;
@@ -154,7 +154,7 @@ uint32_t WriteBuffer( SocketType sock, const ByteVector& buffer, uint32_t start,
         }
     } while ( true );
     
-    LOG_WRITE( LOG_INFO, L"Written " << written << L" bytes" );
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Written " ) << written << LOCALIZED( " bytes" ) );
     if ( rc )
     {
         *rc = Rc::Success;
@@ -167,14 +167,14 @@ int32_t BytesAvailable( SocketType sock )
 {
     if ( LOGIKA_SOCKET_INVALID == sock )
     {
-        LOG_WRITE_MSG( LOG_ERROR, L"Invalid connection socket" );
+        LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "Invalid connection socket" ) );
         return 0;
     }
 
     u_long available;
     if ( -1 == ioctlsocket( sock, FIONREAD, &available ) )
     {
-        LOG_WRITE( LOG_ERROR, L"Unable to get bytes available: " << WSAGetLastError() );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to get bytes available: " ) << WSAGetLastError() );
         return -1;
     }
     return static_cast< int32_t >( available );

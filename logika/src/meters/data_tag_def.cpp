@@ -68,7 +68,8 @@ LocString DataTagDef::GetAddress() const
 
 LocString DataTagDef::ToString() const
 {
-    return key_ + L" " + ToLocString( std::to_string( ordinal_ ) ) + L" " + name_;
+    return key_ + LOCALIZED( " " ) + ToLocString( std::to_string( ordinal_ ) )
+        + LOCALIZED( " " ) + name_;
 } // ToString
 
 /// Хранилище описаний тэгов с данными
@@ -113,7 +114,7 @@ const std::vector< std::shared_ptr< DataTagDef > >& DataTagDefVault::All() const
 
 LocString DataTagDefVault::CreateKey( const LocString& channelPrefix, const LocString& name )
 {
-    return channelPrefix + L"_" + name;
+    return channelPrefix + LOCALIZED( "_" ) + name;
 } // CreateKey
 
 } // namespace meters

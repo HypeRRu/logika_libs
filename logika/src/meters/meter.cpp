@@ -125,13 +125,13 @@ ChannelKind Meter::GetChannelKind( int32_t cStart, uint32_t cCount, const LocStr
 
 LocString Meter::GetVendorId() const
 {
-    return L"ЛОГИКА";
+    return LOCALIZED( "ЛОГИКА" );
 } // GetVendorId
 
 
 LocString Meter::GetVendor() const
 {
-    return L"ЗАО НПФ ЛОГИКА";
+    return LOCALIZED( "ЗАО НПФ ЛОГИКА" );
 } // GetVendor
 
 
@@ -144,7 +144,7 @@ BusProtocolType Meter::GetBusType() const
 LocString Meter::GetEventPrefix( uint32_t tv ) const
 {
     (void) tv;
-    return L""; /// @todo Реализовать
+    return LOCALIZED( "" );
 } // GetEventPrefix
 
 
@@ -175,7 +175,7 @@ const std::vector< std::shared_ptr< ChannelDef > >& Meter::GetChannels() const
 LocString Meter::GetDisplayFormat( std::shared_ptr< TagDef > def ) const
 {
     (void) def;
-    return L"";
+    return LOCALIZED( "" );
 } // GetDisplayFormat
 
 

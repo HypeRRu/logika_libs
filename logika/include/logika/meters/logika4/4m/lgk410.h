@@ -24,8 +24,8 @@ public:
     /// @copydoc Logika4M::Logika4M()
     Lgk410(
           MeasureKind measureKind               = MeasureKind::T
-        , const LocString& caption              = L"ЛГК410"
-        , const LocString& description          = L"расходомер ЛГК410"
+        , const LocString& caption              = LOCALIZED( "ЛГК410" )
+        , const LocString& description          = LOCALIZED( "расходомер ЛГК410" )
         , uint32_t maxChannels                  = 1
         , uint32_t maxGroups                    = 0
         , BusProtocolType busType               = BusProtocolType::RSBus

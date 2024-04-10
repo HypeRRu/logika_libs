@@ -88,9 +88,9 @@ VQT::VQT( ISerializable* v, int32_t q, TimeType t )
 
 LocString VQT::ToString() const
 {
-    return GetTimeString( timestamp ) + L" - "
-        + ( value ? value->ToString() : L"[null]" )
-        + L": " + ToLocString( std::to_string( quality ) );
+    return GetTimeString( timestamp ) + LOCALIZED( " - " )
+        + ( value ? value->ToString() : LOCALIZED( "[null]" ) )
+        + LOCALIZED( ": " ) + ToLocString( std::to_string( quality ) );
 } // ToString
 
 

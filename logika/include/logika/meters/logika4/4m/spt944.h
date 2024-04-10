@@ -24,8 +24,8 @@ public:
     /// @copydoc Logika4M::Logika4M()
     Spt944(
           MeasureKind measureKind               = MeasureKind::T
-        , const LocString& caption              = L"СПТ944"
-        , const LocString& description          = L"тепловычислитель СПТ944"
+        , const LocString& caption              = LOCALIZED( "СПТ944" )
+        , const LocString& description          = LOCALIZED( "тепловычислитель СПТ944" )
         , uint32_t maxChannels                  = 6
         , uint32_t maxGroups                    = 1
         , BusProtocolType busType               = BusProtocolType::RSBus

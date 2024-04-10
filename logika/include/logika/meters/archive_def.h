@@ -30,8 +30,8 @@ public:
     std::shared_ptr< ArchiveType > archType = nullptr;  ///< Тип архива
     DbType type = DbType::Undefined;                    ///< Тип элемента в базе данных (стандартный)
     uint32_t capacity = 0;                              ///< Емкость архива
-    LocString name = L"";                               ///< Имя тэга
-    LocString description = L"";                        ///< Описание тэга
+    LocString name = LOCALIZED( "" );                   ///< Имя тэга
+    LocString description = LOCALIZED( "" );            ///< Описание тэга
 
 }; // struct ArchiveDefSettings
 

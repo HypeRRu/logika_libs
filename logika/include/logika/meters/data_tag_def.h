@@ -25,8 +25,8 @@ struct LOGIKA_METERS_EXPORT DataTagDefSettings: public TagDefSettings
 {
 public:
     TagKind::Type kind = TagKind::Undefined;    ///< Тип тэга
-    LocString descriptionEx = L"";              ///< Расширенное описание (для настроечных параметров)
-    LocString range = L"";                      ///< Диапазон (для настроечных параметров)
+    LocString descriptionEx = LOCALIZED( "" );  ///< Расширенное описание (для настроечных параметров)
+    LocString range = LOCALIZED( "" );          ///< Диапазон (для настроечных параметров)
     bool isBasicParam = true;                   ///< Является ли параметр базовым
     uint32_t updateRate = 0;                    ///< Частота обновления параметра
 

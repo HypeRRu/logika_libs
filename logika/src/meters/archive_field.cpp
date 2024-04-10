@@ -14,7 +14,7 @@ namespace meters
 ArchiveField::ArchiveField( std::shared_ptr< ArchiveFieldDef > afdef, int32_t channelNo )
     : Tag( afdef, channelNo )
 {
-    address_ = afdef ? afdef->GetAddress() : L"";
+    address_ = afdef ? afdef->GetAddress() : LOCALIZED( "" );
     archiveType_ = afdef ? afdef->GetArchiveType() : nullptr;
 } // ArchiveField
 
@@ -45,7 +45,7 @@ std::shared_ptr< ArchiveType > ArchiveField::GetArchiveType() const
 
 LocString ArchiveField::GetDisplayFormat() const
 {
-    return def_ ? def_->GetDisplayFormat() : L"";
+    return def_ ? def_->GetDisplayFormat() : LOCALIZED( "" );
 } // GetDisplayFormat
 
 
@@ -55,9 +55,10 @@ LocString ArchiveField::ToString() const
     LocString euStr = Trim( eu_ );
     if ( !euStr.empty() )
     {
-        euStr = L"[" + euStr + L"]";
+        euStr = LOCALIZED( "[" ) + euStr + LOCALIZED( "]" );
     }
-    return channel_.name + L" " + channelNoStr + L" " + euStr;
+    return channel_.name + LOCALIZED( " " ) + channelNoStr
+        + LOCALIZED( " " ) + euStr;
 } // ToString
 
 } // namespace meters

@@ -23,8 +23,8 @@ public:
     /// @copydoc Logika4L::Logika4L()
     Spt941_10(
           MeasureKind measureKind               = MeasureKind::T
-        , const LocString& caption              = L"СПТ941.10/11"
-        , const LocString& description          = L"тепловычислитель СПТ941, мод. 10, 11"
+        , const LocString& caption              = LOCALIZED( "СПТ941.10/11" )
+        , const LocString& description          = LOCALIZED( "тепловычислитель СПТ941, мод. 10, 11" )
         , uint32_t maxChannels                  = 3
         , uint32_t maxGroups                    = 1
         , BusProtocolType busType               = BusProtocolType::RSBus

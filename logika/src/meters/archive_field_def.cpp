@@ -15,7 +15,7 @@ ArchiveFieldDef::ArchiveFieldDef( const ChannelDef& cdef
     , const ArchiveFieldDefSettings& settings )
     : TagDef( cdef, settings )
     , archiveType_{ settings.archiveType }
-    , address_{ L"" }
+    , address_{ LOCALIZED( "" ) }
 {} // ArchiveFieldDef
 
 
@@ -33,7 +33,7 @@ LocString ArchiveFieldDef::GetAddress() const
 
 LocString ArchiveFieldDef::ToString() const
 {
-    return channelDef_.prefix + L" " + name_;
+    return channelDef_.prefix + LOCALIZED( " " ) + name_;
 } // ToString
 
 } // namespace meters

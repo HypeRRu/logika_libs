@@ -28,8 +28,8 @@ LocString TagDef4::GetUnits() const
 
 LocString TagDef4::ToString() const
 {
-    return ToLocString( std::to_string( ordinal_ ) ) + L" " + channelDef_.prefix
-        + L" " + name_ + L" " + TagKindToString( kind_ );
+    return ToLocString( std::to_string( ordinal_ ) ) + LOCALIZED( " " ) + channelDef_.prefix
+        + LOCALIZED( " " ) + name_ + LOCALIZED( " " ) + TagKindToString( kind_ );
 } // ToString
 
 
@@ -40,7 +40,7 @@ CalcFieldDef::CalcFieldDef( const ChannelDef& cdef, const CalcFieldDefSettings& 
     , expression_{ settings.expression }
     , eu_{ settings.eu }
 {
-    key_ = L"";
+    key_ = LOCALIZED( "" );
 } // CalcFieldDef
 
 

@@ -27,7 +27,7 @@ uint32_t ReadBuffer( ReadFunction readfn, FileHandleType handle, ByteVector& buf
 {
     if ( LOGIKA_FILE_HANDLE_INVALID == handle )
     {
-        LOG_WRITE_MSG( LOG_ERROR, L"Invalid connection handle" );
+        LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "Invalid connection handle" ) );
         if ( rc )
         {
             *rc = Rc::ConnectionNotSetError;
@@ -36,7 +36,7 @@ uint32_t ReadBuffer( ReadFunction readfn, FileHandleType handle, ByteVector& buf
     }
     if ( !readfn )
     {
-        LOG_WRITE_MSG( LOG_ERROR, L"Invalid read function" );
+        LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "Invalid read function" ) );
         if ( rc )
         {
             *rc = Rc::InvalidArgError;
@@ -45,8 +45,8 @@ uint32_t ReadBuffer( ReadFunction readfn, FileHandleType handle, ByteVector& buf
     }
     if ( buffer.size() < start + needed )
     {
-        LOG_WRITE( LOG_ERROR, L"Buffer size (" << buffer.size() << L") is less "
-                              << L"than end position (" << start + needed << L")" );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Buffer size (" ) << buffer.size() << LOCALIZED( ") is less " )
+                              << LOCALIZED( "than end position (" ) << start + needed << LOCALIZED( ")" ) );
         if ( rc )
         {
             *rc = Rc::InvalidArgError;
@@ -68,7 +68,7 @@ uint32_t ReadBuffer( ReadFunction readfn, FileHandleType handle, ByteVector& buf
             {
                 continue;
             }
-            LOG_WRITE( LOG_ERROR, L"Poll failed: " << ToLocString( SafeStrError( errno ) ) );
+            LOG_WRITE( LOG_ERROR, LOCALIZED( "Poll failed: " ) << ToLocString( SafeStrError( errno ) ) );
             if ( rc )
             {
                 *rc = Rc::PollError;
@@ -77,7 +77,7 @@ uint32_t ReadBuffer( ReadFunction readfn, FileHandleType handle, ByteVector& buf
         }
         if ( 0 == ready ) /// Истекло время ожидания данных
         {
-            LOG_WRITE_MSG( LOG_WARNING, L"Read timeout expired" );
+            LOG_WRITE_MSG( LOG_WARNING, LOCALIZED( "Read timeout expired" ) );
             if ( rc )
             {
                 *rc = Rc::TimeOutError;
@@ -85,16 +85,16 @@ uint32_t ReadBuffer( ReadFunction readfn, FileHandleType handle, ByteVector& buf
             return 0;
         }
 
-        LOG_WRITE_MSG( LOG_DEBUG, L"Read started" );
+        LOG_WRITE_MSG( LOG_DEBUG, LOCALIZED( "Read started" ) );
         readed = readfn( handle, &buffer[ start ], needed );
-        LOG_WRITE_MSG( LOG_DEBUG, L"Read finished" );
+        LOG_WRITE_MSG( LOG_DEBUG, LOCALIZED( "Read finished" ) );
         if ( -1 == readed )
         {
             if ( ( errno & EAGAIN ) || ( errno & EWOULDBLOCK ) )
             {
                 continue;
             }
-            LOG_WRITE( LOG_ERROR, L"Read failed: " << ToLocString( SafeStrError( errno ) ) );
+            LOG_WRITE( LOG_ERROR, LOCALIZED( "Read failed: " ) << ToLocString( SafeStrError( errno ) ) );
             if ( rc )
             {
                 *rc = Rc::ReadError;
@@ -107,7 +107,7 @@ uint32_t ReadBuffer( ReadFunction readfn, FileHandleType handle, ByteVector& buf
         }
     } while ( true );
     
-    LOG_WRITE( LOG_INFO, L"Readed " << readed << L" bytes" );
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Readed " ) << readed << LOCALIZED( " bytes" ) );
     if ( rc )
     {
         *rc = Rc::Success;
@@ -120,7 +120,7 @@ uint32_t WriteBuffer( WriteFunction writefn, FileHandleType handle, const ByteVe
 {
     if ( LOGIKA_FILE_HANDLE_INVALID == handle )
     {
-        LOG_WRITE_MSG( LOG_ERROR, L"Invalid connection handle" );
+        LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "Invalid connection handle" ) );
         if ( rc )
         {
             *rc = Rc::ConnectionNotSetError;
@@ -129,7 +129,7 @@ uint32_t WriteBuffer( WriteFunction writefn, FileHandleType handle, const ByteVe
     }
     if ( !writefn )
     {
-        LOG_WRITE_MSG( LOG_ERROR, L"Invalid write function" );
+        LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "Invalid write function" ) );
         if ( rc )
         {
             *rc = Rc::InvalidArgError;
@@ -138,8 +138,8 @@ uint32_t WriteBuffer( WriteFunction writefn, FileHandleType handle, const ByteVe
     }
     if ( buffer.size() <= start )
     {
-        LOG_WRITE( LOG_ERROR, L"Buffer size (" << buffer.size() << L") is less or equal "
-                              << L"than start position (" << start << L")" );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Buffer size (" ) << buffer.size() << LOCALIZED( ") is less or equal " )
+            << LOCALIZED( "than start position (" ) << start << LOCALIZED( ")" ) );
         if ( rc )
         {
             *rc = Rc::InvalidArgError;
@@ -150,16 +150,16 @@ uint32_t WriteBuffer( WriteFunction writefn, FileHandleType handle, const ByteVe
     ssize_t written;
     do
     {
-        LOG_WRITE_MSG( LOG_DEBUG, L"Write started" );
+        LOG_WRITE_MSG( LOG_DEBUG, LOCALIZED( "Write started" ) );
         written = writefn( handle, &buffer[ start ], buffer.size() - start );
-        LOG_WRITE_MSG( LOG_DEBUG, L"Write finished" );
+        LOG_WRITE_MSG( LOG_DEBUG, LOCALIZED( "Write finished" ) );
         if ( -1 == written )
         {
             if ( ( errno & EAGAIN ) || ( errno & EWOULDBLOCK ) )
             {
                 continue;
             }
-            LOG_WRITE( LOG_ERROR, L"Write failed: " << ToLocString( SafeStrError( errno ) ) );
+            LOG_WRITE( LOG_ERROR, LOCALIZED( "Write failed: " ) << ToLocString( SafeStrError( errno ) ) );
             if ( rc )
             {
                 *rc = Rc::WriteError;
@@ -172,7 +172,7 @@ uint32_t WriteBuffer( WriteFunction writefn, FileHandleType handle, const ByteVe
         }
     } while ( true );
     
-    LOG_WRITE( LOG_INFO, L"Written " << written << L" bytes" );
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Written " ) << written << LOCALIZED( " bytes" ) );
     if ( rc )
     {
         *rc = Rc::Success;
@@ -185,14 +185,15 @@ int32_t BytesAvailable( FileHandleType handle )
 {
     if ( LOGIKA_FILE_HANDLE_INVALID == handle )
     {
-        LOG_WRITE_MSG( LOG_ERROR, L"Invalid connection handle" );
+        LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "Invalid connection handle" ) );
         return 0;
     }
 
     int32_t available;
     if ( -1 == ioctl( handle, FIONREAD, &available ) )
     {
-        LOG_WRITE( LOG_ERROR, L"Unable to get bytes available: " << ToLocString( SafeStrError( errno ) ) );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to get bytes available: " )
+            << ToLocString( SafeStrError( errno ) ) );
         return -1;
     }
     return available;

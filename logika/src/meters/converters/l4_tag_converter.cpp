@@ -27,7 +27,7 @@ L4TagConverter::ConvertedType L4TagConverter::Convert( const L4TagConverter::Fro
     {
         return nullptr;
     }
-    LocString channelLabel = meter->GetCaption() + L"." + ToLocString( from.channel() );
+    LocString channelLabel = meter->GetCaption() + LOCALIZED( "." ) + ToLocString( from.channel() );
     std::shared_ptr< ChannelDef > channelDef = ConvertChannel( channelLabel, channelStorage );
     if ( !channelDef )
     {
@@ -41,18 +41,18 @@ L4TagConverter::ConvertedType L4TagConverter::Convert( const L4TagConverter::Fro
     settings.cOffset = from.has_channeloffset() ? from.channeloffset() : 0x00;
     settings.dbType = ToLocString( from.dbtype() );
     settings.description = ToLocString( from.description() );
-    settings.descriptionEx = from.has_descriptionex() ? ToLocString( from.descriptionex() ) : L"";
-    settings.displayFormat = from.has_displayformat() ? ToLocString( from.displayformat() ) : L"";
+    settings.descriptionEx = from.has_descriptionex() ? ToLocString( from.descriptionex() ) : LOCALIZED( "" );
+    settings.displayFormat = from.has_displayformat() ? ToLocString( from.displayformat() ) : LOCALIZED( "" );
     settings.inRam = from.inram();
     settings.intType = ConvertInternalType( from.internaltype() );
     settings.isBasicParam = from.basic();
     settings.kind = ConvertTagKind( from.kind() );
     settings.name = ToLocString( from.name() );
     settings.ordinal = from.ordinal();
-    settings.range = from.has_range() ? ToLocString( from.range() ) : L"";
+    settings.range = from.has_range() ? ToLocString( from.range() ) : LOCALIZED( "" );
     settings.stdVar = ConvertVarType( from.vartype() );
     settings.type = ConvertDbType( from.datatype() );
-    settings.units = from.has_units() ? ToLocString( from.units() ) : L"";
+    settings.units = from.has_units() ? ToLocString( from.units() ) : LOCALIZED( "" );
     settings.updateRate = from.updaterate();
 
     return TagDef4L::Create< TagDef4L >(

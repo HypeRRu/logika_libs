@@ -24,8 +24,8 @@ public:
     /// @copydoc Logika4M::Logika4M()
     Spt941_20(
           MeasureKind measureKind               = MeasureKind::T
-        , const LocString& caption              = L"СПТ941.20"
-        , const LocString& description          = L"тепловычислитель СПТ941, мод. 20"
+        , const LocString& caption              = LOCALIZED( "СПТ941.20" )
+        , const LocString& description          = LOCALIZED( "тепловычислитель СПТ941, мод. 20" )
         , uint32_t maxChannels                  = 3
         , uint32_t maxGroups                    = 1
         , BusProtocolType busType               = BusProtocolType::RSBus

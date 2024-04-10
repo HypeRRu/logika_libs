@@ -20,8 +20,8 @@ namespace meters
 
 LocString ServiceRecord::ToString() const
 {
-    return ToLocString( std::to_string( timestamp ) ) + L" "
-        + event + L" " + description;
+    return ToLocString( std::to_string( timestamp ) ) + LOCALIZED( " " )
+        + event + LOCALIZED( " " ) + description;
 } // ToString
 
 

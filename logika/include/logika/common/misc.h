@@ -62,7 +62,7 @@ LOGIKA_COMMON_EXPORT bool StrCaseEq( const LocString& lhs, const LocString& rhs 
 /// @param[in] str Обрабатываемая строка
 /// @param[in] trimChars Обрезаемые символы
 /// @return Обработанная строка
-LOGIKA_COMMON_EXPORT LocString Trim( const LocString& str, const LocString& trimChars = L" \t\r\n" );
+LOGIKA_COMMON_EXPORT LocString Trim( const LocString& str, const LocString& trimChars = LOCALIZED( " \t\r\n" ) );
 
 /// @brief Получение индексов единичных битов
 /// @param[in] bits Набор битов

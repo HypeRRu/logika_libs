@@ -17,12 +17,12 @@ namespace meters
 LocString DbTypeToString( DbType type )
 {
     static const std::unordered_map< DbType, LocString > mapToString{
-          { DbType::Byte,   L"tinyint" }
-        , { DbType::Int32,  L"int" }
-        , { DbType::Int64,  L"bigint" }
-        , { DbType::Single, L"real" }
-        , { DbType::Double, L"float" }
-        , { DbType::String, L"varchar(128)" }
+          { DbType::Byte,   LOCALIZED( "tinyint" ) }
+        , { DbType::Int32,  LOCALIZED( "int" ) }
+        , { DbType::Int64,  LOCALIZED( "bigint" ) }
+        , { DbType::Single, LOCALIZED( "real" ) }
+        , { DbType::Double, LOCALIZED( "float" ) }
+        , { DbType::String, LOCALIZED( "varchar(128)" )}
         /// @todo Массивы
     };
     auto converted = mapToString.find( type );
@@ -31,24 +31,24 @@ LocString DbTypeToString( DbType type )
         return converted->second;
     }
     /// @todo Стоит ли использовать exception?
-    return L"";
+    return LOCALIZED( "" );
 } // DbTypeToString
 
 
 LocString TagKindToString( TagKind::Type type )
 {
     static const std::unordered_map< TagKind::Type, LocString > mapToString{
-          { TagKind::Parameter, L"tuning" }
-        , { TagKind::Info,      L"informational" }
-        , { TagKind::Realtime,  L"current" }
-        , { TagKind::TotalCtr,  L"total" }
+          { TagKind::Parameter, LOCALIZED( "tuning" ) }
+        , { TagKind::Info,      LOCALIZED( "informational" ) }
+        , { TagKind::Realtime,  LOCALIZED( "current" ) }
+        , { TagKind::TotalCtr,  LOCALIZED( "total" ) }
     };
     auto converted = mapToString.find( type );
     if ( converted != mapToString.cend() )
     {
         return converted->second;
     }
-    return L"?";
+    return LOCALIZED( "?" );
 } // TagKindToString
 
 } // namespace meters

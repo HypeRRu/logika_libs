@@ -25,7 +25,7 @@ DataTag6Container::DataTag6Container( std::shared_ptr< DataTagDef6 > def, int32_
     {
         tags_.emplace_back( std::make_shared< DataTag >( leafDef, channelNo ) );
     }
-    address_ = dataTagDef_ ? dataTagDef_->GetAddress() : L"";
+    address_ = dataTagDef_ ? dataTagDef_->GetAddress() : LOCALIZED( "" );
 } // DataTag6Container
 
 
@@ -43,26 +43,27 @@ std::vector< std::shared_ptr< DataTag > >& DataTag6Container::GetTags()
 
 LocString DataTag6Container::ToString() const
 {
-    LocString containerType = L"<U>";
+    LocString containerType = LOCALIZED( "<U>" );
     auto nodeType = dataTagDef_ ? dataTagDef_->GetNodeType() : Tag6NodeType::Tag;
     switch ( nodeType )
     {
         case Tag6NodeType::Tag:
-            containerType = L"<T>";
+            containerType = LOCALIZED( "<T>" );
             break;
         case Tag6NodeType::Array:
-            containerType = L"<A>";
+            containerType = LOCALIZED( "<A>" );
             break;
         case Tag6NodeType::Structure:
-            containerType = L"<S>";
+            containerType = LOCALIZED( "<S>" );
             break;
         default:
             break;
     }
     LocStringStream ordinalStr;
-    ordinalStr << std::setw( 3 ) << std::setfill( L'0' ) << ( dataTagDef_ ? dataTagDef_->GetOrdinal() : -1 );
-    return containerType + channel_.name + L"." + ordinalStr.str()
-        + L" (" + ( dataTagDef_ ? dataTagDef_->GetDescription() : L"" ) + L")";
+    ordinalStr << std::setw( 3 ) << std::setfill( LOCALIZED( '0' ) )
+        << ( dataTagDef_ ? dataTagDef_->GetOrdinal() : -1 );
+    return containerType + channel_.name + LOCALIZED( "." ) + ordinalStr.str()
+        + LOCALIZED( " (" ) + ( dataTagDef_ ? dataTagDef_->GetDescription() : LOCALIZED( "" ) ) + LOCALIZED( ")" );
 } // ToString
 
 } // namespace meters

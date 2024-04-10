@@ -21,7 +21,8 @@ namespace meters
 Tag::Tag( std::shared_ptr< TagDef > def, int32_t channelNo )
     : def_{ def }
     , channel_{
-          def_ ? def_->GetChannelDef() : ChannelDef{ nullptr, L"", -1, 0, L"" }
+          def_ ? def_->GetChannelDef() : ChannelDef{ nullptr,
+            LOCALIZED( "" ), -1, 0, LOCALIZED( "" ) }
         , channelNo
     }
 {
@@ -41,7 +42,7 @@ std::shared_ptr< TagDef > Tag::GetDef() const
 
 LocString Tag::GetName() const
 {
-    return def_ ? def_->GetName() : L"";
+    return def_ ? def_->GetName() : LOCALIZED( "" ); 
 } // GetName
 
 
@@ -51,10 +52,10 @@ LocString Tag::GetFieldName() const
     if ( channel_.no > 0 && !channel_.prefix.empty() )
     {
         formatter << channel_.prefix;
-        formatter << std::setw( 2 ) << std::setfill( L'0' ) << channel_.no;
+        formatter << std::setw( 2 ) << std::setfill( LOCALIZED( '0' ) ) << channel_.no;
     }
 
-    return ( !channel_.name.empty() ? ( channel_.name + L"_" ) : L"" )
+    return ( !channel_.name.empty() ? ( channel_.name + LOCALIZED( "_" ) ) : LOCALIZED( "" ) )
         + GetName() + formatter.str();
 } // GetFieldName
 
@@ -67,7 +68,7 @@ int32_t Tag::GetOrdinal() const
 
 LocString Tag::GetDescription() const
 {
-    return def_ ? def_->GetDescription() : L"";
+    return def_ ? def_->GetDescription() : LOCALIZED( "" );
 } // GetDescription
 
 
@@ -91,9 +92,9 @@ void Tag::SetEu( const LocString& eu )
 
 LocString Tag::ToString() const
 {
-    return channel_.name + L"."
+    return channel_.name + LOCALIZED( "." )
         + ToLocString( std::to_string( GetOrdinal() ) )
-        + L"(" + GetName() + L")";
+        + LOCALIZED( "(" ) + GetName() + LOCALIZED( ")" );
 } // ToString
 
 } // namespace meters

@@ -67,18 +67,18 @@ ArchiveTypeConverter::ConvertedTypeList ArchiveTypeConverter::Convert( const Arc
 LocString ArchiveTypeConverter::ConvertName( const resources::ArchiveTypeEnum type )
 {
     static const std::unordered_map< resources::ArchiveTypeEnum, LocString > converter{
-          { logika::resources::ARCHIVE_TYPE_CONTROL,    L"Control" }
-        , { logika::resources::ARCHIVE_TYPE_DAY,        L"Day" }
-        , { logika::resources::ARCHIVE_TYPE_DECADE,     L"Decade" }
-        , { logika::resources::ARCHIVE_TYPE_DIAGS_LOG,  L"DiagsLog" }
-        , { logika::resources::ARCHIVE_TYPE_ERRORS_LOG, L"ErrorsLog" }
-        , { logika::resources::ARCHIVE_TYPE_HOUR,       L"Hour" }
-        , { logika::resources::ARCHIVE_TYPE_MONTH,      L"Month" }
-        , { logika::resources::ARCHIVE_TYPE_PARAMS_LOG, L"ParamsLog" }
-        , { logika::resources::ARCHIVE_TYPE_POWER_LOG,  L"PowerLog" }
-        , { logika::resources::ARCHIVE_TYPE_TURN,       L"Turn" }
-        , { logika::resources::ARCHIVE_TYPE_MINUTE,     L"Minute" }
-        , { logika::resources::ARCHIVE_TYPE_HALF_HOUR,  L"HalfHour" }
+          { logika::resources::ARCHIVE_TYPE_CONTROL,    LOCALIZED( "Control" ) }
+        , { logika::resources::ARCHIVE_TYPE_DAY,        LOCALIZED( "Day" ) }
+        , { logika::resources::ARCHIVE_TYPE_DECADE,     LOCALIZED( "Decade" ) }
+        , { logika::resources::ARCHIVE_TYPE_DIAGS_LOG,  LOCALIZED( "DiagsLog" ) }
+        , { logika::resources::ARCHIVE_TYPE_ERRORS_LOG, LOCALIZED( "ErrorsLog" ) }
+        , { logika::resources::ARCHIVE_TYPE_HOUR,       LOCALIZED( "Hour" ) }
+        , { logika::resources::ARCHIVE_TYPE_MONTH,      LOCALIZED( "Month" ) }
+        , { logika::resources::ARCHIVE_TYPE_PARAMS_LOG, LOCALIZED( "ParamsLog" ) }
+        , { logika::resources::ARCHIVE_TYPE_POWER_LOG,  LOCALIZED( "PowerLog" ) }
+        , { logika::resources::ARCHIVE_TYPE_TURN,       LOCALIZED( "Turn" ) }
+        , { logika::resources::ARCHIVE_TYPE_MINUTE,     LOCALIZED( "Minute" ) }
+        , { logika::resources::ARCHIVE_TYPE_HALF_HOUR,  LOCALIZED( "HalfHour" ) }
     };
 
     auto iter = converter.find( type );
@@ -86,25 +86,25 @@ LocString ArchiveTypeConverter::ConvertName( const resources::ArchiveTypeEnum ty
     {
         return iter->second;
     }
-    return L"?";
+    return LOCALIZED( "?" );
 } // ConvertName
 
 
 LocString ArchiveTypeConverter::ConvertAcronym( const resources::ArchiveTypeEnum type )
 {
     static const std::unordered_map< resources::ArchiveTypeEnum, LocString > converter{
-          { logika::resources::ARCHIVE_TYPE_CONTROL,    L"Контр" }
-        , { logika::resources::ARCHIVE_TYPE_DAY,        L"Сут"   }
-        , { logika::resources::ARCHIVE_TYPE_DECADE,     L"Дек"   }
-        , { logika::resources::ARCHIVE_TYPE_DIAGS_LOG,  L"ДСа"   }
-        , { logika::resources::ARCHIVE_TYPE_ERRORS_LOG, L"НСа"   }
-        , { logika::resources::ARCHIVE_TYPE_HOUR,       L"Час"   }
-        , { logika::resources::ARCHIVE_TYPE_MONTH,      L"Мес"   }
-        , { logika::resources::ARCHIVE_TYPE_PARAMS_LOG, L"Изм"   }
-        , { logika::resources::ARCHIVE_TYPE_POWER_LOG,  L"Пит"   }
-        , { logika::resources::ARCHIVE_TYPE_TURN,       L"См"    }
-        , { logika::resources::ARCHIVE_TYPE_MINUTE,     L"Мин"   }
-        , { logika::resources::ARCHIVE_TYPE_HALF_HOUR,  L"ПЧас"  }
+          { logika::resources::ARCHIVE_TYPE_CONTROL,    LOCALIZED( "Контр" ) }
+        , { logika::resources::ARCHIVE_TYPE_DAY,        LOCALIZED( "Сут" )   }
+        , { logika::resources::ARCHIVE_TYPE_DECADE,     LOCALIZED( "Дек" )   }
+        , { logika::resources::ARCHIVE_TYPE_DIAGS_LOG,  LOCALIZED( "ДСа" )   }
+        , { logika::resources::ARCHIVE_TYPE_ERRORS_LOG, LOCALIZED( "НСа" )   }
+        , { logika::resources::ARCHIVE_TYPE_HOUR,       LOCALIZED( "Час" )   }
+        , { logika::resources::ARCHIVE_TYPE_MONTH,      LOCALIZED( "Мес" )   }
+        , { logika::resources::ARCHIVE_TYPE_PARAMS_LOG, LOCALIZED( "Изм" )   }
+        , { logika::resources::ARCHIVE_TYPE_POWER_LOG,  LOCALIZED( "Пит" )   }
+        , { logika::resources::ARCHIVE_TYPE_TURN,       LOCALIZED( "См" )    }
+        , { logika::resources::ARCHIVE_TYPE_MINUTE,     LOCALIZED( "Мин" )   }
+        , { logika::resources::ARCHIVE_TYPE_HALF_HOUR,  LOCALIZED( "ПЧас" )  }
     };
 
     auto iter = converter.find( type );
@@ -112,7 +112,7 @@ LocString ArchiveTypeConverter::ConvertAcronym( const resources::ArchiveTypeEnum
     {
         return iter->second;
     }
-    return L"?";
+    return LOCALIZED( "?" );
 } // ConvertAcronym
 
 

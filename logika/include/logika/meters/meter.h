@@ -29,8 +29,8 @@ public:
     /// @param[in] busType Тип протокола
     Meter(
           MeasureKind measureKind           = MeasureKind::Undefined
-        , const LocString& caption          = L""
-        , const LocString& description      = L""
+        , const LocString& caption          = LOCALIZED( "" )
+        , const LocString& description      = LOCALIZED( "" )
         , uint32_t maxChannels              = 1
         , uint32_t maxGroups                = 1
         , BusProtocolType busType           = BusProtocolType::Undefined

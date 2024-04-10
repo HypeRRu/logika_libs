@@ -31,7 +31,7 @@ std::shared_ptr< connections::IConnection > Protocol::GetConnection() const
 
 void Protocol::SetConnection( std::shared_ptr< connections::IConnection > connection )
 {
-    LOG_WRITE( LOG_INFO, ( connection ? L"Set" : L"Reset" ) << L" protocol connection" );
+    LOG_WRITE( LOG_INFO, ( connection ? LOCALIZED( "Set" ) : LOCALIZED( "Reset" ) ) << LOCALIZED( " protocol connection" ) );
     connection_ = connection;
 } // SetConnection
 
@@ -85,31 +85,31 @@ void Protocol::RegisterEvent( Rc::Type event )
         case Rc::Success:
             return;
         case Rc::PacketReceived:
-            LOG_WRITE_MSG( LOG_DEBUG, L"Packet received event registered" );
+            LOG_WRITE_MSG( LOG_DEBUG, LOCALIZED( "Packet received event registered" ) );
             ++packetsReceived_;
             break;
         case Rc::PacketTransmitted:
-            LOG_WRITE_MSG( LOG_DEBUG, L"Packet transmitted event registered" );
+            LOG_WRITE_MSG( LOG_DEBUG, LOCALIZED( "Packet transmitted event registered" ) );
             ++packetsSent_;
             break;
         case Rc::RxTimeoutError:
-            LOG_WRITE_MSG( LOG_DEBUG, L"Read Timeout error registered" );
+            LOG_WRITE_MSG( LOG_DEBUG, LOCALIZED( "Read Timeout error registered" ) );
             ++rxTimeout_;
             break;
         case Rc::RxCrcError:
-            LOG_WRITE_MSG( LOG_DEBUG, L"Read CRC error registered" );
+            LOG_WRITE_MSG( LOG_DEBUG, LOCALIZED( "Read CRC error registered" ) );
             ++rxCrc_;
             break;
         case Rc::RxLatePacketError:
-            LOG_WRITE_MSG( LOG_DEBUG, L"Read Packet Late error registered" );
+            LOG_WRITE_MSG( LOG_DEBUG, LOCALIZED( "Read Packet Late error registered" ) );
             ++rxLatePacket_;
             break;
         case Rc::RxGeneralError:
-            LOG_WRITE_MSG( LOG_DEBUG, L"Read general error registered" );
+            LOG_WRITE_MSG( LOG_DEBUG, LOCALIZED( "Read general error registered" ) );
             ++rxLatePacket_;
             break;
         default:
-            LOG_WRITE( LOG_DEBUG, L"General error registered. Code " << event );
+            LOG_WRITE( LOG_DEBUG, LOCALIZED( "General error registered. Code " ) << event );
             ++generalError_;
             break;
     }

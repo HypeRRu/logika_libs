@@ -23,8 +23,8 @@ public:
     /// @copydoc Logika4L::Logika4L()
     Spg741(
           MeasureKind measureKind               = MeasureKind::G
-        , const LocString& caption              = L"СПГ741"
-        , const LocString& description          = L"корректор СПГ741"
+        , const LocString& caption              = LOCALIZED( "СПГ741" )
+        , const LocString& description          = LOCALIZED( "корректор СПГ741" )
         , uint32_t maxChannels                  = 2
         , uint32_t maxGroups                    = 1
         , BusProtocolType busType               = BusProtocolType::RSBus

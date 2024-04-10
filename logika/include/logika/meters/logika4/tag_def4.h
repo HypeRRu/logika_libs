@@ -20,7 +20,7 @@ namespace meters
 struct LOGIKA_METERS_EXPORT TagDef4Settings: public DataTagDefSettings
 {
 public:
-    LocString units = L""; ///< Единицы измерения
+    LocString units = LOCALIZED( "" );  ///< Единицы измерения
 
 }; // struct TagDef4Settings
 
@@ -51,10 +51,10 @@ protected:
 struct LOGIKA_METERS_EXPORT CalcFieldDefSettings: public TagDefSettings
 {
 public:
-    int32_t channelNo       = -1;   ///< Номер канала
-    LocString insertAfter   = L"";  ///< Имя тэга, после которого должен располагатся данный
-    LocString expression    = L"";  ///< Выражение
-    LocString eu            = L"";  ///< Единицы измерения
+    int32_t channelNo       = -1;               ///< Номер канала
+    LocString insertAfter   = LOCALIZED( "" );  ///< Имя тэга, после которого должен располагатся данный
+    LocString expression    = LOCALIZED( "" );  ///< Выражение
+    LocString eu            = LOCALIZED( "" );  ///< Единицы измерения
 
 }; // CalcFieldDefSettings
 

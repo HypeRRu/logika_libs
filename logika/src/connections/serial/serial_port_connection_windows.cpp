@@ -26,7 +26,7 @@ bool SerialPortConnection::OpenImpl()
     /// Проверка настроек соединения
     if ( !IsSettingsValid() )
     {
-        LOG_WRITE_MSG( LOG_ERROR, L"Connection options invalid" );
+        LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "Connection options invalid" ) );
         return false;
     }
     /// Открытие соединения с устройством
@@ -36,8 +36,8 @@ bool SerialPortConnection::OpenImpl()
         , FILE_ATTRIBUTE_NORMAL, 0 );
     if ( LOGIKA_FILE_HANDLE_INVALID == handle_ )
     {
-        LOG_WRITE( LOG_ERROR, L"Can't open device " << ToLocString( address_ )
-                              << L": " << GetLastError() );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Can't open device " ) << ToLocString( address_ )
+                              << LOCALIZED( ": " ) << GetLastError() );
         return false;
     }
 
@@ -47,7 +47,7 @@ bool SerialPortConnection::OpenImpl()
     /// Получение текущих настроек устройства
     if ( !GetCommState( handle_, &options ) )
     {
-        LOG_WRITE( LOG_ERROR, L"Unable to get device options for " << ToLocString( address_ ) );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to get device options for " ) << ToLocString( address_ ) );
         CloseImpl();
         return false;
     }
@@ -65,7 +65,7 @@ bool SerialPortConnection::OpenImpl()
     /// Применение конфигурации
     if ( !SetCommState( handle_, &options ) )
     {
-        LOG_WRITE( LOG_ERROR, L"Unable to set device options for " << ToLocString( address_ ) );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to set device options for " ) << ToLocString( address_ ) );
         CloseImpl();
         return false;
     }
@@ -80,19 +80,19 @@ bool SerialPortConnection::OpenImpl()
 
     if ( !SetCommTimeouts( handle_, &timeouts ) )
     {
-        LOG_WRITE( LOG_ERROR, L"Unable to set RW timeouts for " << ToLocString( address_ ) );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to set RW timeouts for " ) << ToLocString( address_ ) );
         CloseImpl();
         return false;
     }
 
-    LOG_WRITE( LOG_INFO, L"Connected successfully to " << ToLocString( address_ ) );
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Connected successfully to " ) << ToLocString( address_ ) );
     return true;
 } // OpenImpl
 
 
 void SerialPortConnection::CloseImpl()
 {
-    LOG_WRITE( LOG_INFO, L"Closing connection to device " << ToLocString( address_ ) );  
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Closing connection to device " ) << ToLocString( address_ ) );  
     if ( LOGIKA_FILE_HANDLE_INVALID == handle_ )
     {
         CloseHandle( handle_ );
@@ -126,8 +126,8 @@ uint32_t SerialPortConnection::ReadImpl( ByteVector& buffer, uint32_t start, uin
     }
     if ( buffer.size() < start + needed )
     {
-        LOG_WRITE( LOG_ERROR, L"Buffer size (" << buffer.size() << L") is less "
-                              << L"than end position (" << start + needed << L")" );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Buffer size (" ) << buffer.size() << LOCALIZED( ") is less " )
+                              << LOCALIZED( "than end position (" ) << start + needed << LOCALIZED( ")" ) );
         if ( rc )
         {
             *rc = Rc::InvalidArgError;
@@ -138,7 +138,7 @@ uint32_t SerialPortConnection::ReadImpl( ByteVector& buffer, uint32_t start, uin
     DWORD readed = 0;
     if ( !ReadFile( handle_, &buffer[ start ], needed, &readed, nullptr ) )
     {
-        LOG_WRITE( LOG_ERROR, L"Read failed: " << GetLastError() );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Read failed: " ) << GetLastError() );
         if ( rc )
         {
             if ( GetLastError() == WAIT_TIMEOUT )
@@ -173,8 +173,8 @@ uint32_t SerialPortConnection::WriteImpl( const ByteVector& buffer, uint32_t sta
     }
     if ( buffer.size() <= start )
     {
-        LOG_WRITE( LOG_ERROR, L"Buffer size (" << buffer.size() << L") is less or equal "
-                              << L"than start position (" << start << L")" );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Buffer size (" ) << buffer.size() << LOCALIZED( ") is less or equal " )
+                              << LOCALIZED( "than start position (" ) << start << LOCALIZED( ")" ) );
         if ( rc )
         {
             *rc = Rc::InvalidArgError;
@@ -185,7 +185,7 @@ uint32_t SerialPortConnection::WriteImpl( const ByteVector& buffer, uint32_t sta
     DWORD written = 0;
     if ( !WriteFile( handle_, &buffer[ start ], static_cast< DWORD >( buffer.size() - start ), &written, nullptr ) )
     {
-        LOG_WRITE( LOG_ERROR, L"Write failed: " << GetLastError() );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Write failed: " ) << GetLastError() );
         if ( rc )
         {
             *rc = Rc::WriteError;
@@ -205,7 +205,7 @@ int32_t SerialPortConnection::BytesAvailable()
 {
     if ( IsConnected() )
     {
-        LOG_WRITE_MSG( LOG_ERROR, L"Connection not established" );
+        LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "Connection not established" ) );
         return -1;
     }
 
@@ -213,7 +213,7 @@ int32_t SerialPortConnection::BytesAvailable()
     COMSTAT status;
     if ( !ClearCommError( handle_, &errors, &status ) )
     {
-        LOG_WRITE_MSG( LOG_ERROR, L"Unable to get bytes available" );
+        LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "Unable to get bytes available" ) );
         return -1;
     }
     return status.cbInQue;

@@ -33,7 +33,7 @@ M4ArchiveConverter::ConvertedType M4ArchiveConverter::Convert( const M4ArchiveCo
     {
         return nullptr;
     }
-    LocString channelLabel = meter->GetCaption() + L"." + ToLocString( from.channel() );
+    LocString channelLabel = meter->GetCaption() + LOCALIZED( "." ) + ToLocString( from.channel() );
     std::shared_ptr< ChannelDef > channelDef = ConvertChannel( channelLabel, channelStorage );
     if ( !channelDef )
     {
@@ -105,21 +105,21 @@ std::shared_ptr< ArchiveType > M4ArchiveConverter::ConvertArchiveType(
     }
     
     static const std::unordered_map< resources::ArchiveTypeEnum, LocString > converter{
-          { logika::resources::ARCHIVE_TYPE_CONTROL,    L"Control" }
-        , { logika::resources::ARCHIVE_TYPE_DAY,        L"Day" }
-        , { logika::resources::ARCHIVE_TYPE_DECADE,     L"Decade" }
-        , { logika::resources::ARCHIVE_TYPE_DIAGS_LOG,  L"DiagsLog" }
-        , { logika::resources::ARCHIVE_TYPE_ERRORS_LOG, L"ErrorsLog" }
-        , { logika::resources::ARCHIVE_TYPE_HOUR,       L"Hour" }
-        , { logika::resources::ARCHIVE_TYPE_MONTH,      L"Month" }
-        , { logika::resources::ARCHIVE_TYPE_PARAMS_LOG, L"ParamsLog" }
-        , { logika::resources::ARCHIVE_TYPE_POWER_LOG,  L"PowerLog" }
-        , { logika::resources::ARCHIVE_TYPE_TURN,       L"Turn" }
-        , { logika::resources::ARCHIVE_TYPE_MINUTE,     L"Minute" }
-        , { logika::resources::ARCHIVE_TYPE_HALF_HOUR,  L"HalfHour" }
+          { logika::resources::ARCHIVE_TYPE_CONTROL,    LOCALIZED( "Control" ) }
+        , { logika::resources::ARCHIVE_TYPE_DAY,        LOCALIZED( "Day" ) }
+        , { logika::resources::ARCHIVE_TYPE_DECADE,     LOCALIZED( "Decade" ) }
+        , { logika::resources::ARCHIVE_TYPE_DIAGS_LOG,  LOCALIZED( "DiagsLog" ) }
+        , { logika::resources::ARCHIVE_TYPE_ERRORS_LOG, LOCALIZED( "ErrorsLog" ) }
+        , { logika::resources::ARCHIVE_TYPE_HOUR,       LOCALIZED( "Hour" ) }
+        , { logika::resources::ARCHIVE_TYPE_MONTH,      LOCALIZED( "Month" ) }
+        , { logika::resources::ARCHIVE_TYPE_PARAMS_LOG, LOCALIZED( "ParamsLog" ) }
+        , { logika::resources::ARCHIVE_TYPE_POWER_LOG,  LOCALIZED( "PowerLog" ) }
+        , { logika::resources::ARCHIVE_TYPE_TURN,       LOCALIZED( "Turn" ) }
+        , { logika::resources::ARCHIVE_TYPE_MINUTE,     LOCALIZED( "Minute" ) }
+        , { logika::resources::ARCHIVE_TYPE_HALF_HOUR,  LOCALIZED( "HalfHour" ) }
     };
 
-    LocString typeName = L"";
+    LocString typeName = LOCALIZED( "" );
     auto iter = converter.find( type );
     if ( converter.cend() != iter )
     {

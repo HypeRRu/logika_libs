@@ -24,8 +24,8 @@ public:
     /// @copydoc Logika4M::Logika4M()
     Spg740(
           MeasureKind measureKind               = MeasureKind::G
-        , const LocString& caption              = L"СПГ740"
-        , const LocString& description          = L"корректор СПГ740"
+        , const LocString& caption              = LOCALIZED( "СПГ740" )
+        , const LocString& description          = LOCALIZED( "корректор СПГ740" )
         , uint32_t maxChannels                  = 3
         , uint32_t maxGroups                    = 1
         , BusProtocolType busType               = BusProtocolType::RSBus

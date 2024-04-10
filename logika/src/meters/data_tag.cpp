@@ -21,17 +21,17 @@ DataTag::DataTag( std::shared_ptr< DataTagDef > def, int32_t channelNo )
     , value_{}
     , timestamp_{ 0 }
     , oper_{ false }
-    , errDesc_{ L"" }
+    , errDesc_{ LOCALIZED( "" ) }
     , dataTagDef_{ def }
 {
     /// @bug Будет ли все правильно работать?
-    address_ = L"";
+    address_ = LOCALIZED( "" );
     if ( channelNo > 0 )
     {
-        address_ = ( dataTagDef_ ? dataTagDef_->GetChannelDef().prefix : L"" )
-            + ToLocString( std::to_string( channelNo ) ) + L"_";
+        address_ = ( dataTagDef_ ? dataTagDef_->GetChannelDef().prefix : LOCALIZED( "" ) )
+            + ToLocString( std::to_string( channelNo ) ) + LOCALIZED( "_" );
     }
-    address_ += ( dataTagDef_ ? dataTagDef_->GetAddress() : L"" );
+    address_ += ( dataTagDef_ ? dataTagDef_->GetAddress() : LOCALIZED( "" ) );
 } // DataTag
 
 
@@ -85,7 +85,7 @@ void DataTag::SetErrorDescription( const LocString& description )
 
 LocString DataTag::GetDisplayFormat() const
 {
-    return ( dataTagDef_ ? dataTagDef_->GetDisplayFormat() : L"" );
+    return ( dataTagDef_ ? dataTagDef_->GetDisplayFormat() : LOCALIZED( "" ) );
 } // GetDisplayFormat
 
 
@@ -96,18 +96,21 @@ LocString DataTag::ToString() const
     if ( idx != -1 )
     {
         idxStr << '#';
-        idxStr << std::setw( 2 ) << std::setfill( L'0' ) << idx;
+        idxStr << std::setw( 2 ) << std::setfill( LOCALIZED( '0' ) ) << idx;
     }
     LocString euStr = Trim( eu_ );
     if ( !euStr.empty() )
     {
-        euStr = L"[" + euStr + L"]";
+        euStr = LOCALIZED( "[" ) + euStr + LOCALIZED( "]" );
     }
     LocStringStream ordinalStr;
-    ordinalStr << std::setw( 3 ) << std::setfill( L'0' ) << ( dataTagDef_ ? dataTagDef_->GetOrdinal() : -1 );
-    return channel_.name + L"." + ordinalStr.str()
-        + idxStr.str() + L"(" + ( dataTagDef_ ? dataTagDef_->GetName() : L"" ) + L") "
-        + ( value_.Empty() ? L"without" : L"with" ) + L" value " + euStr;
+    ordinalStr << std::setw( 3 ) << std::setfill( LOCALIZED( '0' ) )
+        << ( dataTagDef_ ? dataTagDef_->GetOrdinal() : -1 );
+    return channel_.name + LOCALIZED( "." ) + ordinalStr.str()
+        + idxStr.str() + LOCALIZED( "(" )
+        + ( dataTagDef_ ? dataTagDef_->GetName() : LOCALIZED( "" ) ) + LOCALIZED( ") " )
+        + ( value_.Empty() ? LOCALIZED( "without" ) : LOCALIZED( "with" ) )
+        + LOCALIZED( " value " ) + euStr;
 } // ToString
 
 } // namespace meters
