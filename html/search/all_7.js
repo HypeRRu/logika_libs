@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['handshake_0',['Handshake',['../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#a55940b9f58f5f7663ee7ae38c8fdc72bacd8422ba40dab4a9425f75f8dfc244f3',1,'logika::protocols::M4::Opcode']]],
+  ['handshake_0',['Handshake',['../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#a016c55574b5aa04fd535e02f5a320029acd8422ba40dab4a9425f75f8dfc244f3',1,'logika::protocols::M4::Opcode']]],
   ['hasvalue_1',['HasValue',['../d9/d53/classlogika_1_1meters_1_1DataTag.html#ae3d72ebf492bc883833b3982fe74c2ac',1,'logika::meters::DataTag']]],
   ['headeraddr_2',['headerAddr',['../d3/db0/structlogika_1_1meters_1_1ArchiveDef4LSettings.html#a321bba3b935fba2c7def8767ebe0d799',1,'logika::meters::ArchiveDef4LSettings']]],
   ['headeraddr2_3',['headerAddr2',['../d3/db0/structlogika_1_1meters_1_1ArchiveDef4LSettings.html#a55f723083703f994e5982ce3d43d30c9',1,'logika::meters::ArchiveDef4LSettings']]],

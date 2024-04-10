@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['serial_0',['Serial',['../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#a4a8329efb416b5853518060e074f29bba72925cfba8176d99d9f4fcb0baeba020',1,'logika::connections::ConnectionType']]],
+  ['serial_0',['Serial',['../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#a4f3bb7c6e56809defab370d60e70872ca72925cfba8176d99d9f4fcb0baeba020',1,'logika::connections::ConnectionType']]],
   ['serialno_1',['SerialNo',['../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357dab8ce85826432f1a30c9c041c224ecda8',1,'logika::meters']]],
   ['servicerecordtimestamp_2',['ServiceRecordTimestamp',['../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a12338fc650ba48ac60e1e3039d512a1a',1,'logika::meters::BinaryType4L']]],
-  ['sessionclose_3',['SessionClose',['../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#a55940b9f58f5f7663ee7ae38c8fdc72ba1e60f101fcc1921444ee8a51dedf3efe',1,'logika::protocols::M4::Opcode']]],
-  ['setspeed_4',['SetSpeed',['../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#a55940b9f58f5f7663ee7ae38c8fdc72ba1edd0fb81837b2efd0b58bf334e55631',1,'logika::protocols::M4::Opcode']]],
-  ['settechnologicalnt_5',['SetTechnologicalNT',['../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#a55940b9f58f5f7663ee7ae38c8fdc72baec4e8dc8c1affdf5a5b38a1321d48fb6',1,'logika::protocols::M4::Opcode']]],
+  ['sessionclose_3',['SessionClose',['../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#a016c55574b5aa04fd535e02f5a320029a1e60f101fcc1921444ee8a51dedf3efe',1,'logika::protocols::M4::Opcode']]],
+  ['setspeed_4',['SetSpeed',['../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#a016c55574b5aa04fd535e02f5a320029a1edd0fb81837b2efd0b58bf334e55631',1,'logika::protocols::M4::Opcode']]],
+  ['settechnologicalnt_5',['SetTechnologicalNT',['../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#a016c55574b5aa04fd535e02f5a320029aec4e8dc8c1affdf5a5b38a1321d48fb6',1,'logika::protocols::M4::Opcode']]],
   ['single_6',['Single',['../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefa66ba162102bbf6ae31b522aec561735e',1,'logika::meters']]],
   ['sp_7',['SP',['../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97a674769e3326f8cf937af4282f2815c02',1,'logika::meters']]],
   ['spbus_8',['SPBus',['../dc/df7/namespacelogika_1_1meters.html#aaba4278b447ba2e737ab5f95a0c14bbaabe805990769fac8d4090a7282cf0d40d',1,'logika::meters']]],
