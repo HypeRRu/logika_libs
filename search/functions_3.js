@@ -9,6 +9,9 @@ var searchData=
   ['datatagdefvault_6',['DataTagDefVault',['../d3/d03/classlogika_1_1meters_1_1DataTagDefVault.html#aeb9792dd7bbd07dcf22a70b76199f194',1,'logika::meters::DataTagDefVault']]],
   ['datatypefromstring_7',['DataTypeFromString',['../dd/dfb/namespacelogika__migration_1_1EnumsStringToPb.html#aff65ceaa81e273188f7af5df55f53fbf',1,'logika_migration::EnumsStringToPb']]],
   ['dbtypetostring_8',['DbTypeToString',['../dc/df7/namespacelogika_1_1meters.html#ad7d6c2cfba017c8df878d1831b58cd50',1,'logika::meters']]],
-  ['determinemeter_9',['DetermineMeter',['../d6/df4/classlogika_1_1meters_1_1Logika4.html#a5fa740cb860859058a32260d0e0cd3db',1,'logika::meters::Logika4']]],
-  ['displayns_10',['DisplayNs',['../d6/df4/classlogika_1_1meters_1_1Logika4.html#ad6f8baf3b2f5002ec73a77fd0624521f',1,'logika::meters::Logika4']]]
+  ['detectm4_9',['DetectM4',['../da/d50/classlogika_1_1protocols_1_1Protocol.html#a9a6978d058fb65ac97a92cd0585ec81c',1,'logika::protocols::Protocol']]],
+  ['detectresponse_10',['DetectResponse',['../da/d50/classlogika_1_1protocols_1_1Protocol.html#ae83fe0cfe29302dcd83265c3f44a8f4b',1,'logika::protocols::Protocol']]],
+  ['detectx6_11',['DetectX6',['../da/d50/classlogika_1_1protocols_1_1Protocol.html#a686a36dd845b1f2b2dd8a0017f5eff35',1,'logika::protocols::Protocol']]],
+  ['determinemeter_12',['DetermineMeter',['../d6/df4/classlogika_1_1meters_1_1Logika4.html#a5fa740cb860859058a32260d0e0cd3db',1,'logika::meters::Logika4']]],
+  ['displayns_13',['DisplayNs',['../d6/df4/classlogika_1_1meters_1_1Logika4.html#ad6f8baf3b2f5002ec73a77fd0624521f',1,'logika::meters::Logika4']]]
 ];

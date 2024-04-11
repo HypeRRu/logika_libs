@@ -38,7 +38,7 @@ var searchData=
   ['rh_35',['rh',['../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a909d60164cf9e972b4473535b646fd02',1,'logika::meters::VitalInfo']]],
   ['rhour_36',['RHour',['../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357daa7924d0a8c0bb5e5cfa106d3afa7a936',1,'logika::meters']]],
   ['rsbus_37',['RSBus',['../dc/df7/namespacelogika_1_1meters.html#aaba4278b447ba2e737ab5f95a0c14bbaaec0c8973d082934817c932a12035081d',1,'logika::meters']]],
-  ['rx_38',['Rx',['../d0/d3a/namespacelogika_1_1connections_1_1PurgeFlags.html#a19987ee5393cb2b31fe4ef6b997482b5a46ac5284d2fd771eb4835ec2a88b0721',1,'logika::connections::PurgeFlags']]],
+  ['rx_38',['Rx',['../d0/d3a/namespacelogika_1_1connections_1_1PurgeFlags.html#a296eb468d7877959170924ec598cd1aea46ac5284d2fd771eb4835ec2a88b0721',1,'logika::connections::PurgeFlags']]],
   ['rxbytescount_5f_39',['rxBytesCount_',['../db/da7/classlogika_1_1connections_1_1Connection.html#aa9d5ecb02903e3033bcd3df547949cf3',1,'logika::connections::Connection']]],
   ['rxcrc_5f_40',['rxCrc_',['../da/d50/classlogika_1_1protocols_1_1Protocol.html#af9bb62bd6d16033de2260f744705c547',1,'logika::protocols::Protocol']]],
   ['rxcrcerror_41',['RxCrcError',['../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10a995fb56dec3bc0d03bd23e93189120f4',1,'logika::protocols::Rc']]],

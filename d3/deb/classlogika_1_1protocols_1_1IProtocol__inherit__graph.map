@@ -1,5 +1,5 @@
 <map id="logika::protocols::IProtocol" name="logika::protocols::IProtocol">
-<area shape="rect" id="Node000001" title="Интерфейс класса для работы с протоколами" alt="" coords="13,5,214,496"/>
-<area shape="rect" id="Node000002" href="$da/d50/classlogika_1_1protocols_1_1Protocol.html" title="Базовый класс для работы с протоколами" alt="" coords="5,544,221,1225"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,511,116,544,111,544,111,511"/>
+<area shape="rect" id="Node000001" title="Интерфейс класса для работы с протоколами" alt="" coords="68,5,269,496"/>
+<area shape="rect" id="Node000002" href="$da/d50/classlogika_1_1protocols_1_1Protocol.html" title="Базовый класс для работы с протоколами" alt="" coords="5,544,332,1840"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,511,171,544,166,544,166,511"/>
 </map>

@@ -19,5 +19,6 @@ var searchData=
   ['archivefielddef6_16',['ArchiveFieldDef6',['../d1/d26/classlogika_1_1meters_1_1ArchiveFieldDef6.html#ab5763b54c7fcb4150f0f70b22532e20a',1,'logika::meters::ArchiveFieldDef6']]],
   ['archiverecord_17',['ArchiveRecord',['../d1/d10/structlogika_1_1protocols_1_1M4_1_1ArchiveRecord.html#aa460612b144b1b53658476e157b79dc6',1,'logika::protocols::M4::ArchiveRecord::ArchiveRecord()'],['../d1/d10/structlogika_1_1protocols_1_1M4_1_1ArchiveRecord.html#aa1bdc3f37bcfdbe9571f19826cb1628a',1,'logika::protocols::M4::ArchiveRecord::ArchiveRecord(TimeType sinceStart, TimeType full, const std::vector&lt; ISerializable * &gt; &amp;vals)']]],
   ['archivetype_18',['ArchiveType',['../d2/d02/classlogika_1_1meters_1_1ArchiveType.html#a2273671cdd097046abb7cb93784b2fc5',1,'logika::meters::ArchiveType']]],
-  ['archivetypefromstring_19',['ArchiveTypeFromString',['../dd/dfb/namespacelogika__migration_1_1EnumsStringToPb.html#a6cd2403ebf8b61a8f64789e71b0d685e',1,'logika_migration::EnumsStringToPb']]]
+  ['archivetypefromstring_19',['ArchiveTypeFromString',['../dd/dfb/namespacelogika__migration_1_1EnumsStringToPb.html#a6cd2403ebf8b61a8f64789e71b0d685e',1,'logika_migration::EnumsStringToPb']]],
+  ['autodectspt_20',['AutodectSpt',['../da/d50/classlogika_1_1protocols_1_1Protocol.html#ad8a7e23ccb5af5471031c1d17a6bf6fe',1,'logika::protocols::Protocol']]]
 ];

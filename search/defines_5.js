@@ -110,9 +110,10 @@ var searchData=
   ['logika_5fprotocols_5fm4_5fpacket_5fh_107',['LOGIKA_PROTOCOLS_M4_PACKET_H',['../d3/d76/packet_8h.html#ac37a7e01a443eef63643a7997c1ca869',1,'packet.h']]],
   ['logika_5fprotocols_5fprotocol_5fh_108',['LOGIKA_PROTOCOLS_PROTOCOL_H',['../d2/d5e/protocol_8h.html#a50aa12fb38cdf3fa5ff1aefbe3f0805f',1,'protocol.h']]],
   ['logika_5fprotocols_5frc_5fh_109',['LOGIKA_PROTOCOLS_RC_H',['../da/db4/protocols_2rc_8h.html#a82693f8d6fa271db0b180ae015033bab',1,'rc.h']]],
-  ['logika_5fresource_5fconverters_5fexport_110',['LOGIKA_RESOURCE_CONVERTERS_EXPORT',['../da/da6/meters_2converters_2defs_8h.html#a502e19a71de21544d93600c4a246e3fd',1,'defs.h']]],
-  ['logika_5fresources_5floader_5fhpp_111',['LOGIKA_RESOURCES_LOADER_HPP',['../d2/d8f/loader_8hpp.html#a924200d3c355a3e10854095356d1a974',1,'loader.hpp']]],
-  ['logika_5fshared_5fconstructible_5fhpp_112',['LOGIKA_SHARED_CONSTRUCTIBLE_HPP',['../de/d23/shared__constructible_8hpp.html#a2a7a6b3596563c27b23086d238afe06c',1,'shared_constructible.hpp']]],
-  ['logika_5fstorage_5fstorage_5fhpp_113',['LOGIKA_STORAGE_STORAGE_HPP',['../da/d07/storage_8hpp.html#aac796b088ab1ec6b170a453d230a8ebc',1,'storage.hpp']]],
-  ['logika_5fstorage_5fstorage_5fipp_114',['LOGIKA_STORAGE_STORAGE_IPP',['../d7/d61/storage_8ipp.html#a46545722e944e909e3dc919ea9c72150',1,'storage.ipp']]]
+  ['logika_5fprotocols_5fspbus_5fspbusprotocol_5fh_110',['LOGIKA_PROTOCOLS_SPBUS_SPBUSPROTOCOL_H',['../d7/d79/spbusprotocol_8h.html#a77c31d47ffcff1a55cfa1d66abfe7ae6',1,'spbusprotocol.h']]],
+  ['logika_5fresource_5fconverters_5fexport_111',['LOGIKA_RESOURCE_CONVERTERS_EXPORT',['../da/da6/meters_2converters_2defs_8h.html#a502e19a71de21544d93600c4a246e3fd',1,'defs.h']]],
+  ['logika_5fresources_5floader_5fhpp_112',['LOGIKA_RESOURCES_LOADER_HPP',['../d2/d8f/loader_8hpp.html#a924200d3c355a3e10854095356d1a974',1,'loader.hpp']]],
+  ['logika_5fshared_5fconstructible_5fhpp_113',['LOGIKA_SHARED_CONSTRUCTIBLE_HPP',['../de/d23/shared__constructible_8hpp.html#a2a7a6b3596563c27b23086d238afe06c',1,'shared_constructible.hpp']]],
+  ['logika_5fstorage_5fstorage_5fhpp_114',['LOGIKA_STORAGE_STORAGE_HPP',['../da/d07/storage_8hpp.html#aac796b088ab1ec6b170a453d230a8ebc',1,'storage.hpp']]],
+  ['logika_5fstorage_5fstorage_5fipp_115',['LOGIKA_STORAGE_STORAGE_IPP',['../d7/d61/storage_8ipp.html#a46545722e944e909e3dc919ea9c72150',1,'storage.ipp']]]
 ];

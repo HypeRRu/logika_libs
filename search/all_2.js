@@ -72,6 +72,7 @@ var searchData=
   ['count_69',['count',['../d3/dce/structlogika_1_1meters_1_1ChannelDef.html#a355d7a86311c58add72d1ec439d4969b',1,'logika::meters::ChannelDef::count'],['../d5/d2d/structlogika_1_1meters_1_1DataTagDef6Settings.html#a725b41182c5e72defcc1a38123fc36cd',1,'logika::meters::DataTagDef6Settings::count']]],
   ['count_70',['Count',['../d3/dc8/namespacelogika_1_1log_1_1LogLevel.html#a95bb2436ad8f48fcb2649ec313ec5c9ca328fcb75c42117987d047e34c4899f3b',1,'logika::log::LogLevel']]],
   ['count_5f_71',['count_',['../d1/dcb/classlogika_1_1meters_1_1DataTagDef6.html#a391823e463f9c9ccddad19461c7a4951',1,'logika::meters::DataTagDef6']]],
-  ['create_72',['Create',['../dd/d10/classlogika_1_1SharedConstructible.html#a7a34563d8123ec2aef92c8c0efb1ecc9',1,'logika::SharedConstructible']]],
-  ['createstorage_73',['CreateStorage',['../d5/d47/classlogika_1_1storage_1_1StorageKeeper.html#ab19970dc1bc1a351e387b2fb01d62131',1,'logika::storage::StorageKeeper']]]
+  ['crc16_72',['Crc16',['../da/d50/classlogika_1_1protocols_1_1Protocol.html#a453a78fa2e56bb630bf22beef76857ea',1,'logika::protocols::Protocol']]],
+  ['create_73',['Create',['../dd/d10/classlogika_1_1SharedConstructible.html#a7a34563d8123ec2aef92c8c0efb1ecc9',1,'logika::SharedConstructible']]],
+  ['createstorage_74',['CreateStorage',['../d5/d47/classlogika_1_1storage_1_1StorageKeeper.html#ab19970dc1bc1a351e387b2fb01d62131',1,'logika::storage::StorageKeeper']]]
 ];

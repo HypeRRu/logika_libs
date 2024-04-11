@@ -64,16 +64,16 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d1/dd1/structlogika_1_1meters_1_1DataTagDefSettings.html",
-"d3/d77/classlogika_1_1meters_1_1Meter.html#aef0b3f5ed2d8dd01179b5416e736aa57",
-"d4/db6/classlogika_1_1meters_1_1Spt941.html#a3980ba2953ab5e84ae389bdef9116ff0",
-"d6/da8/data__tag_8h_source.html",
-"d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html",
-"da/d50/classlogika_1_1protocols_1_1Protocol.html#aa817fdbda3141059256e9e9e0d5cb2ba",
-"db/da7/classlogika_1_1connections_1_1Connection.html#a04cb9c650e0340edab4d84f7b9c834af",
-"dc/df7/namespacelogika_1_1meters.html#a9db2b94b1977c35818c8ad2ef48c61eb",
-"de/d68/classlogika_1_1connections_1_1SerialPortConnection.html#a4891d218dd96b8ff86346b23cfa5254d",
-"dir_d3e73aa336ae32ed098aa1876d676697.html"
+"d1/dcb/classlogika_1_1meters_1_1DataTagDef6.html#a77fce22578f87733c57a6575475392f1",
+"d3/d77/classlogika_1_1meters_1_1Meter.html#abad93f4641525e5f98b92692b14a12ef",
+"d4/db1/archive__def_8h_source.html",
+"d6/d96/x6__archives_8h.html#add56310f91aa9c6a65a5284be29ccb28",
+"d8/d94/classlogika_1_1meters_1_1converters_1_1M4TagConverter.html#ad28b476a84a041a4f14b96f2a0f09ea8",
+"da/d50/classlogika_1_1protocols_1_1Protocol.html#a82a380bad318a55d8c9ed98757765e65",
+"db/d8b/migration_2src_2main_8cpp.html",
+"dc/df7/namespacelogika_1_1meters.html#a5dc3ac0486d84a28a12cec0c0be9bd85aec0fc0100c4fc1ce4eea230c3dc10360",
+"de/d59/any_8ipp.html#a8e311442e268992b5ce8d19b756e4750",
+"dir_8e0e2d8be2b159afca4652544d342a9c.html"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

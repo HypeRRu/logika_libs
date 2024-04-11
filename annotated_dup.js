@@ -102,6 +102,9 @@ var annotated_dup =
           [ "M4Protocol", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html", null ],
           [ "Packet", "d4/d9a/structlogika_1_1protocols_1_1M4_1_1Packet.html", "d4/d9a/structlogika_1_1protocols_1_1M4_1_1Packet" ]
         ] ],
+        [ "X6", "d1/df0/namespacelogika_1_1protocols_1_1X6.html", [
+          [ "SPBusProtocol", "d0/dc3/classlogika_1_1protocols_1_1X6_1_1SPBusProtocol.html", null ]
+        ] ],
         [ "IProtocol", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html", "da/dd0/classlogika_1_1protocols_1_1IProtocol" ],
         [ "Protocol", "da/d50/classlogika_1_1protocols_1_1Protocol.html", "da/d50/classlogika_1_1protocols_1_1Protocol" ]
       ] ],
