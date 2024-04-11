@@ -25,7 +25,7 @@ Spt941_10::Spt941_10(
     ident_ = 0x9229;
     supportBaudRateChange_ = true;
     maxBaudRate_ = connections::BaudRate::Rate19200;
-    sessionTimeout_ = 2 * 60; /// 2 минуты
+    sessionTimeout_ = 2 * 60 * 1000; /// 2 минуты
     supportFastSessionInit_ = true;
 
     commonTagDefs_ = {

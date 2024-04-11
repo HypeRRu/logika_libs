@@ -52,11 +52,11 @@ public:
     int32_t GetIndex() const;
 
     /// @brief Получение метки времени
-    /// @return Метка времени
+    /// @return Метка времени (мс)
     TimeType GetTimestamp() const;
 
     /// @brief Установка метки времени
-    /// @param[in] stamp Метка времени
+    /// @param[in] stamp Метка времени (мс)
     void SetTimestamp( TimeType stamp );
 
     /// @brief Получение флага операции
@@ -84,7 +84,7 @@ public:
 
 protected:
     logika::Any value_;                         ///< Данные тэга
-    TimeType timestamp_;                        ///< Метка времени
+    TimeType timestamp_;                        ///< Метка времени (мс)
     bool oper_;                                 ///< Флаг операции
     LocString errDesc_;                         ///< Описание ошибки
     std::shared_ptr< DataTagDef > dataTagDef_;  ///< Описание тэга

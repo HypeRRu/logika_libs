@@ -29,7 +29,7 @@ Spt941_20::Spt941_20(
     ident_ = 0x9229;
     supportBaudRateChange_ = true;
     maxBaudRate_ = connections::BaudRate::Rate57600;
-    sessionTimeout_ = 1 * 60; /// 1 минута
+    sessionTimeout_ = 1 * 60 * 1000; /// 1 минута
     supportArchivePartitions_ = true;
     supportFlz_ = false;
 

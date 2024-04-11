@@ -34,13 +34,17 @@ LOGIKA_COMMON_EXPORT const LocString& ToLocString( const LocString& str );
 /// @return Описание ошибки
 LOGIKA_COMMON_EXPORT LocString SafeStrError( int error );
 
+/// @brief Получение текущей метки времени
+/// @return Текущая метка времени (мс)
+LOGIKA_COMMON_EXPORT TimeType GetCurrentTimestamp();
+
 /// @brief Получение структуры со временем
-/// @param[in] timestamp Конвертируемая метка времени. При значении 0 берется текущее время
+/// @param[in] timestamp Конвертируемая метка времени (мс). При значении 0 берется текущее время
 /// @return Структура со временем
 LOGIKA_COMMON_EXPORT struct tm GetTimeStruct( TimeType timestamp = 0 );
 
 /// @brief Получение строки со временем в формате dd.MM.yy HH:mm:ss
-/// @param[in] timestamp Конвертируемая метка времени. При значении 0 берется текущее время
+/// @param[in] timestamp Конвертируемая метка времени (мс). При значении 0 берется текущее время
 /// @return Строка со временем
 LOGIKA_COMMON_EXPORT LocString GetTimeString( TimeType timestamp = 0 );
 

@@ -55,7 +55,7 @@ Spt942::Spt942(
     ident_ = 0x542A;
     supportBaudRateChange_ = true;
     maxBaudRate_ = connections::BaudRate::Rate9600;
-    sessionTimeout_ = 30 * 60; /// 30 минут
+    sessionTimeout_ = 30 * 60 * 1000; /// 30 минут
     supportFastSessionInit_ = false;
 
     commonTagDefs_ = {

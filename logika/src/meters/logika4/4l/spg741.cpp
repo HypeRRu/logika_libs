@@ -78,7 +78,7 @@ Spg741::Spg741(
     ident_ = 0x4729;
     supportBaudRateChange_ = false;
     maxBaudRate_ = connections::BaudRate::Rate2400;
-    sessionTimeout_ = 30 * 60; /// 30 минут
+    sessionTimeout_ = 30 * 60 * 1000; /// 30 минут
     supportFastSessionInit_ = false;
 
     commonTagDefs_ = {

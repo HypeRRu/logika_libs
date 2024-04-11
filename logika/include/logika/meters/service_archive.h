@@ -24,7 +24,7 @@ public:
     virtual LocString ToString() const override;
 
 public:
-    TimeType timestamp = 0;                     ///< Метка времени записи
+    TimeType timestamp = 0;                     ///< Метка времени записи (мс)
     LocString event = LOCALIZED( "" );          ///< Событие
     LocString description = LOCALIZED( "" );    ///< Описание события
 
@@ -57,7 +57,7 @@ public:
     const RecordType GetRecord( size_t index ) const;
 
     /// @brief Получение записи по метке времени
-    /// @param[in] timestamp Временная метка события
+    /// @param[in] timestamp Метка времени (мс) события
     /// @return Получаемая запись или nullptr, если не найдена
     const RecordType GetRecordByTimestamp( TimeType timestamp ) const;
 
@@ -72,7 +72,7 @@ public:
     bool RemoveRecord( RecordType record );
 
     /// @brief Удаление записи по метке времени
-    /// @param[in] timestamp Временная метка события
+    /// @param[in] timestamp Метка времени (мс) события
     /// @return Была ли удалена запись
     bool RemoveRecordByTimestamp( TimeType timestamp );
 

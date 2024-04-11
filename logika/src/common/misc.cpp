@@ -67,13 +67,20 @@ LocString SafeStrError( int error )
 } // SafeStrError
 
 
+TimeType GetCurrentTimestamp()
+{
+    return std::chrono::system_clock::to_time_t( std::chrono::system_clock::now() ) * 1000;
+} // GetCurrentTimestamp
+
+
 struct tm GetTimeStruct( TimeType timestamp )
 {
     time_t stamp = static_cast< time_t >( timestamp );
     if ( 0 == stamp )
     {
-        stamp = std::chrono::system_clock::to_time_t( std::chrono::system_clock::now() );
+        stamp = GetCurrentTimestamp();
     }
+    stamp /= 1000; /// мс -> с
     
     struct tm timeStruct;
 #if defined( _POSIX_C_SOURCE ) || defined( _BSD_SOURCE ) || defined( _SVID_SOURCE )

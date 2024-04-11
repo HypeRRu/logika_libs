@@ -395,7 +395,7 @@ TimeType Logika4M::ParseTimestampTag(
     timeStruct.tm_min  = timeVal[ 4 ];
     timeStruct.tm_sec  = timeVal[ 5 ];
 
-    return std::mktime( &timeStruct );
+    return std::mktime( &timeStruct ) * 1000 + millis;
 } // ParseTimestampTag
 
 

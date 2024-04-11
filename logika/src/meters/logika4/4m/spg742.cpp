@@ -25,7 +25,7 @@ Spg742::Spg742(
     ident_ = 0x472A;
     supportBaudRateChange_ = true;
     maxBaudRate_ = connections::BaudRate::Rate57600;
-    sessionTimeout_ = 1 * 60; /// 1 минута
+    sessionTimeout_ = 1 * 60 * 1000; /// 1 минута
     supportFastSessionInit_ = true;
     supportArchivePartitions_ = true;
     supportFlz_ = false;

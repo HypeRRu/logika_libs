@@ -139,6 +139,7 @@ void Connection::Purge( PurgeFlags::Type flags )
     }
     LOG_WRITE( LOG_INFO, LOCALIZED( "Purge " ) << ToLocString( PurgeFlagsToString( flags ) ) );
     PurgeImpl( flags );
+    lastRxTime_ = GetCurrentTimestamp();
 } // Purge
 
 
@@ -190,6 +191,7 @@ uint32_t Connection::Read( ByteVector& buffer, uint32_t needed )
             break;
         }
         readed += readCurrent;
+        lastRxTime_ = GetCurrentTimestamp();
     }
 
     rxBytesCount_ += readed;

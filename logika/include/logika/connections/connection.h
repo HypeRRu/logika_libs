@@ -26,6 +26,7 @@ public:
     /// @brief Конструктор соединения
     /// @param[in] address Адрес соединения
     /// @param[in] readTimeout Время ожидания данных для чтения, мс. По умолчанию 0 - не ограничено.
+    /// @todo change readTimeout type to TimeType 
     Connection( const std::string& address, uint32_t readTimeout = 0 );
 
     /// @brief Деструктор соединения
@@ -121,7 +122,7 @@ protected:
     uint32_t txBytesCount_;                     ///< Количество переданных байтов
     uint32_t rxBytesCount_;                     ///< Количество полученных байтов
 
-    TimeType lastRxTime_;                       ///< Время последнего чтения
+    TimeType lastRxTime_;                       ///< Метка времени последнего чтения (мс)
 
     std::function< void() > onAfterConnect_;    ///< Обработчик установленного соединения
     std::function< void() > onBeforeDisonnect_; ///< Обработчик разрыва соединения

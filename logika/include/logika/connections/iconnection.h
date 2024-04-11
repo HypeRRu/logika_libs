@@ -64,7 +64,7 @@ public:
     virtual uint32_t GetRxBytesCount() const = 0;
 
     /// @brief Получение времени последнего чтения
-    /// @return Время последнего чтения
+    /// @return Метка времени последнего чтения (мс)
     virtual TimeType GetLastRxTime() const = 0;
 
     /// @brief Очистка заданных буферов

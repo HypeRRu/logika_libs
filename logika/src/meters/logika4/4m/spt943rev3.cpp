@@ -29,7 +29,7 @@ Spt943rev3::Spt943rev3(
     ident_ = 0x542B;
     supportBaudRateChange_ = true;
     maxBaudRate_ = connections::BaudRate::Rate19200;
-    sessionTimeout_ = 1 * 60; /// 1 минута
+    sessionTimeout_ = 1 * 60 * 1000; /// 1 минута
     supportArchivePartitions_ = false;
     supportFlz_ = false;
 

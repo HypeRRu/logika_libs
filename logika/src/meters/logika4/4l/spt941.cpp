@@ -31,7 +31,7 @@ Spt941::Spt941(
     supportBaudRateChange_ = false;
     supportedByProlog4_ = false;
     maxBaudRate_ = connections::BaudRate::Rate2400;
-    sessionTimeout_ = 30 * 60; /// 30 минут
+    sessionTimeout_ = 30 * 60 * 1000; /// 30 минут
     supportFastSessionInit_ = false;
 
     commonTagDefs_ = {

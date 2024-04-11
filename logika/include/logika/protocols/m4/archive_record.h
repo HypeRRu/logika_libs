@@ -32,8 +32,8 @@ public:
     ArchiveRecord();
 
     /// @brief Конструктор с параметрами
-    /// @param[in] sinceStart Временная метка с момента запуска
-    /// @param[in] full Временная метка без учета момента запуска
+    /// @param[in] sinceStart Метка времени (мс) с момента запуска
+    /// @param[in] full Метка времени (мс) без учета момента запуска
     /// @param[in] vals Элементы записи архива
     ArchiveRecord( TimeType sinceStart, TimeType full, const std::vector< ISerializable* >& vals );
 
@@ -41,8 +41,8 @@ public:
     virtual LocString ToString() const override;
 
 public:
-    TimeType timeSinceStart;                ///< Временная метка с момента запуска
-    TimeType fullTime;                      ///< Временная метка без учета момента запуска
+    TimeType timeSinceStart;                ///< Метка времени (мс) с момента запуска
+    TimeType fullTime;                      ///< Метка времени (мс) без учета момента запуска
     std::vector< ISerializable* > values;   ///< Элементы записи архива
 
 }; // struct ArchiveRecord

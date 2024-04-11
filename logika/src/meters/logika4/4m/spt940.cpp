@@ -29,7 +29,7 @@ Spt940::Spt940(
     ident_ = 0x9228;
     supportBaudRateChange_ = true;
     maxBaudRate_ = connections::BaudRate::Rate57600;
-    sessionTimeout_ = 1 * 60; /// 1 минута
+    sessionTimeout_ = 1 * 60 * 1000; /// 1 минута
     supportArchivePartitions_ = true;
     supportFlz_ = false;
 

@@ -11,6 +11,10 @@
 
 #include <logika/meters/logika4/logika4.h>
 
+/// @cond
+#include <chrono>
+/// @endcond
+
 namespace logika
 {
 
@@ -25,6 +29,8 @@ Protocol::Protocol()
     , rxCrc_{ 0 }
     , rxLatePacket_{ 0 }
     , rxGeneral_{ 0 }
+    , waitMtx_{}
+    , waitCond_{}
 {} // Protocol
 
 
@@ -132,13 +138,44 @@ void Protocol::Reset()
     rxGeneral_ = 0;
     generalError_ = 0;
 
-    ResetImpl();
+    ResetBusActiveState();
 } // Reset
 
 
-void Protocol::ResetImpl()
+void Protocol::CloseCommSession( ByteType srcNt, ByteType dstNt )
 {
-} // ResetImpl
+    if ( connection_
+        && connection_->GetConnectionState() == connections::ConnectionState::Connected )
+    {
+        CloseCommSessionImpl( srcNt, dstNt );
+    }
+} // CloseCommSession
+
+
+void Protocol::ResetBusActiveState()
+{} // ResetBusActiveState
+
+
+void Protocol::CloseCommSessionImpl( ByteType srcNt, ByteType dstNt )
+{
+    (void) srcNt;
+    (void) dstNt;
+} // CloseCommSessionImpl
+
+
+bool Protocol::WaitFor( TimeType duration )
+{
+    std::unique_lock< std::mutex > waitLock{ waitMtx_ };
+    return waitCond_.wait_for( waitLock, std::chrono::milliseconds( duration ) )
+        == std::cv_status::timeout;
+} // WaitFor
+
+
+void Protocol::CancelWait()
+{
+    std::unique_lock< std::mutex > waitLock{ waitMtx_ };
+    waitCond_.notify_all();
+} // CancelWait
 
 
 std::shared_ptr< meters::Meter > Protocol::DetectM4( std::shared_ptr< M4::M4Protocol > bus,

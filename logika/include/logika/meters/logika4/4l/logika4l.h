@@ -56,7 +56,7 @@ public:
     static float ConvertMFloat( const ByteVector& buffer, MeterAddressType offset );
 
     /// @brief Извлечение даты из заголовка
-    /// @return 0, если заголовок битый или пустой, иначе метку времени
+    /// @return 0, если заголовок битый или пустой, иначе метку времени (мс)
     static TimeType SyncHeaderToDateTime( std::shared_ptr< ArchiveType > arType
         , ByteType rd, ByteType rh, const ByteVector& buffer, MeterAddressType offset );
 

@@ -161,7 +161,7 @@ public:
     const LocString& GetDescription() const;
 
     /// @brief Получение интервала архивирования
-    /// @return Интервал архивирования
+    /// @return Интервал архивирования (мс)
     TimeType GetInterval() const;
 
     /// @brief Получение флага переменного интервала
@@ -206,7 +206,7 @@ public:
     /// @brief Конструктор с параметрами
     /// @param[in] v Метрика
     /// @param[in] q Значение метрики
-    /// @param[in] t Метка времени
+    /// @param[in] t Метка времени (мс)
     VQT( ISerializable* v, int32_t q, TimeType t );
 
     /// @copydoc ISerializable::ToString()
@@ -215,7 +215,7 @@ public:
 public:
     ISerializable* value;   ///< Метрика
     int32_t quality;        ///< Значение метрики
-    TimeType timestamp;     ///< Метка времени
+    TimeType timestamp;     ///< Метка времени (мс)
 
 }; // struct VQT
 
@@ -245,7 +245,8 @@ public:
     // LocString pipeConf;                     ///< Конфигурация трубопроводов (только у x6)
     // std::vector< LocString > consConf;      ///< Конфигурация потребителей (у x4 - СП, +СП по ТВ2)
     LocString mtrParamsHash;                ///< Контрольная сумма БД (рассчитанная прибором)
-    TimeType clockDiff;                     ///< clockDiff = Tdevice - Tcomp.  Tdevice = Tcomp + clockDiff
+    TimeType clockDiff;                     ///< clockDiff = Tdevice - Tcomp.  Tdevice = Tcomp + clockDiff (мс)
+
 }; // struct VitalInfo
 
 

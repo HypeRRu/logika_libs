@@ -203,7 +203,7 @@ TimeType Logika4L::SyncHeaderToDateTime( std::shared_ptr< ArchiveType > arType
     timeStruct.tm_mon   = mon - 1;
     timeStruct.tm_year  = year;
 
-    return std::mktime( &timeStruct );
+    return std::mktime( &timeStruct ) * 1000;
 } // SyncHeaderToDateTime
 
 
@@ -523,7 +523,7 @@ TimeType Logika4L::GetSRTimestampValue( const ByteVector& buffer, MeterAddressTy
         return 0;
     }
 
-    return std::mktime( &timeStruct );
+    return std::mktime( &timeStruct ) * 1000;
 } // GetSRTimestampValue
 
 

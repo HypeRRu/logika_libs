@@ -16,6 +16,11 @@
 #include <logika/meters/meter.h>
 #include <logika/storage/storage.hpp>
 
+/// @cond
+#include <mutex>
+#include <condition_variable>
+/// @endcond
+
 namespace logika
 {
 
@@ -72,6 +77,15 @@ public:
     /// @copydoc IProtocol::Reset()
     virtual void Reset() override;
 
+    /// @copydoc IProtocol::CloseCommSession()
+    virtual void CloseCommSession( ByteType srcNt, ByteType dstNt ) override;
+
+    /// @copydoc IProtocol::WaitFor()
+    virtual bool WaitFor( TimeType duration ) override;
+
+    /// @copydoc IProtocol::CancelWait()
+    virtual void CancelWait() override;
+
     /// @todo GetMeterType
     /// @todo GetDeviceClock
     /// @todo UpdateTags
@@ -103,7 +117,7 @@ public:
     /// @param[in] sKeeper Хранилище приложения
     /// @param[out] dump Дамп ответа от прибора
     /// @param[out] model Модификация прибора
-    /// @param[out] rxDetected Обнаружены ошибка чтения
+    /// @param[out] rxDetected Обнаружено чтение
     /// @return Модель прибора. nullptr, если не распознан
     static std::shared_ptr< meters::Meter > DetectResponse( std::shared_ptr< connections::IConnection > connection,
         const storage::StorageKeeper& sKeeper, ByteVector& dump, LocString& model, bool& rxDetected );
@@ -142,8 +156,13 @@ public:
     static uint16_t Crc16( uint16_t crc, const ByteVector& buffer, uint32_t offset, uint32_t length );
 
 protected:
-    /// @brief Реализация сброса статистики
-    virtual void ResetImpl();
+    /// @brief Сброс внутреннего состояния шины
+    virtual void ResetBusActiveState();
+
+    /// @brief Реализация закрытия сессии соединения
+    /// @param[in] srcNt NT отправителя
+    /// @param[in] dstNt NT получателя
+    virtual void CloseCommSessionImpl( ByteType srcNt, ByteType dstNt );
 
 protected:
     std::shared_ptr< connections::IConnection > connection_;    ///< Соединения для работы по протоколу
@@ -155,6 +174,9 @@ protected:
     uint32_t rxLatePacket_;                                     ///< Количество ошибок чтения Late Packet
     uint32_t rxGeneral_;                                        ///< Количество неклассифицированных ошибок чтения
     uint32_t generalError_;                                     ///< Количество неклассифицированных ошибок
+    
+    std::mutex waitMtx_;                                        ///< Мьютекс для отменяемого ожидания
+    std::condition_variable waitCond_;                          ///< Условная переменная для отменяемого ожидания
 
 }; // class Protocol
 

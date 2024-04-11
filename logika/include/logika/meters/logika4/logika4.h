@@ -74,7 +74,7 @@ public:
     connections::BaudRate::Type GetMaxBaudRate() const;
 
     /// @brief Получение времени жизни соединения
-    /// @return Время жизни соединения
+    /// @return Время жизни соединения (мс)
     TimeType GetSessionTimeout() const;
 
     /// @brief Получение флага наличия поддержки быстрой инициализации
@@ -130,7 +130,7 @@ public:
 protected:
     bool supportBaudRateChange_;                        ///< Наличие поддержки смены BaudRate
     connections::BaudRate::Type maxBaudRate_;           ///< Максимальный поддерживаемый BaudRate
-    TimeType sessionTimeout_;                           ///< Время жизни соединения
+    TimeType sessionTimeout_;                           ///< Время жизни соединения (мс)
     /// @brief Наличие поддержки быстрой инициализации
     /// @details При наличии поддержки быстрой инициализации не нужно выдерживать паузу
     /// между байтами FF и после FF-ов в стартовой последовательности
