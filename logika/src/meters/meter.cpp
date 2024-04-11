@@ -42,9 +42,7 @@ Meter::Meter(
     , channels_{}
     , commonTagDefs_{}
     , ident_{ 0 }
-{
-    /// @todo Создание tagsVault_
-} // Meter
+{} // Meter
 
 
 bool Meter::operator ==( const Meter& other ) const

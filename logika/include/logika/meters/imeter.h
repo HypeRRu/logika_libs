@@ -84,7 +84,7 @@ public:
     virtual BusProtocolType GetBusType() const = 0;
 
     /// @brief Получение префикса события тепловычислителя (ТВ)
-    /// @param[in] tv @todo Номер события тепловычислителя
+    /// @param[in] tv Номер события тепловычислителя
     /// @return Префикс события тепловычислителя
     virtual LocString GetEventPrefix( uint32_t tv ) const = 0;
 

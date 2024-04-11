@@ -36,7 +36,7 @@ namespace converters
 
 DeviceConverter::ConvertedType DeviceConverter::Convert( const DeviceConverter::FromType& from )
 {
-    /// @todo Данные поля игнорируются
+    /// @note Данные поля игнорируются
     // from.m4();
     // from.has_auxno();
     // from.auxno();

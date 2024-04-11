@@ -9,11 +9,28 @@
 #include <logika/protocols/defs.h>
 #include <logika/protocols/iprotocol.h>
 
+#include <logika/common/types.h>
+#include <logika/connections/types.h>
+#include <logika/connections/serial/types.h>
+#include <logika/meters/types.h>
+#include <logika/meters/meter.h>
+#include <logika/storage/storage.hpp>
+
 namespace logika
 {
 
 namespace protocols
 {
+
+namespace M4
+{
+class LOGIKA_PROTOCOLS_EXPORT M4Protocol;
+} // namespace M4
+
+namespace X6
+{
+class LOGIKA_PROTOCOLS_EXPORT SPBusProtocol;
+} // namespace X6
 
 /// @brief Базовый класс для работы с протоколами
 class LOGIKA_PROTOCOLS_EXPORT Protocol: public IProtocol
@@ -54,6 +71,75 @@ public:
 
     /// @copydoc IProtocol::Reset()
     virtual void Reset() override;
+
+    /// @todo GetMeterType
+    /// @todo GetDeviceClock
+    /// @todo UpdateTags
+    /// @todo ReadIntervalArchiveDef
+    /// @todo ReadIntervalArchive
+    /// @todo ReadServiceArchive
+
+public:
+    /// @brief Определение модели прибора на шине M4
+    /// @param[in] bus Шина
+    /// @param[in] sKeeper Хранилище приложения
+    /// @param[out] dump Дамп ответа от прибора
+    /// @param[out] model Модификация прибора
+    /// @return Модель прибора. nullptr, если не распознан
+    static std::shared_ptr< meters::Meter > DetectM4( std::shared_ptr< M4::M4Protocol > bus,
+        const storage::StorageKeeper& sKeeper, ByteVector& dump, LocString& model );
+    
+    /// @brief Определение модели прибора на шине SPBus
+    /// @param[in] bus Шина
+    /// @param[in] sKeeper Хранилище приложения
+    /// @param[out] dump Дамп ответа от прибора
+    /// @param[out] model Модификация прибора
+    /// @return Модель прибора. nullptr, если не распознан
+    static std::shared_ptr< meters::Meter > DetectX6( std::shared_ptr< X6::SPBusProtocol > bus,
+        const storage::StorageKeeper& sKeeper, ByteVector& dump, LocString& model );
+
+    /// @brief Определение модели прибора
+    /// @param[in] connection Соединение с прибором
+    /// @param[in] sKeeper Хранилище приложения
+    /// @param[out] dump Дамп ответа от прибора
+    /// @param[out] model Модификация прибора
+    /// @param[out] rxDetected Обнаружены ошибка чтения
+    /// @return Модель прибора. nullptr, если не распознан
+    static std::shared_ptr< meters::Meter > DetectResponse( std::shared_ptr< connections::IConnection > connection,
+        const storage::StorageKeeper& sKeeper, ByteVector& dump, LocString& model, bool& rxDetected );
+
+    /// @brief Определение модели прибора
+    /// @param[in] connection Соединение с прибором
+    /// @param[in] sKeeper Хранилище приложения
+    /// @param[in] fixedBaudRate Фиксированное значение BaudRate
+    /// @param[in] waitTimeout Время ожидания ответа
+    /// @param[in] tryM4 Проверка приборов на шине M4
+    /// @param[in] trySpBus Проверка приборов на шине SPBus
+    /// @param[in] tryMek Проверка приборов MEK на шине SPBus
+    /// @param[in] srcAddr Адрес источника
+    /// @param[in] dstAddr Адрес назначения
+    /// @param[out] dump Дамп ответа от прибора
+    /// @param[out] deviceBaudRate Детектированное значение BaudRate
+    /// @param[out] model Модификация прибора
+    static std::shared_ptr< meters::Meter > AutodectSpt( std::shared_ptr< connections::IConnection > connection,
+        const storage::StorageKeeper& sKeeper, connections::BaudRate::Type fixedBaudRate,
+        uint32_t waitTimeout, bool tryM4, bool trySpBus, bool tryMek,
+        ByteType srcAddr, ByteType dstAddr, ByteVector& dump,
+        connections::BaudRate::Type& deviceBaudRate, LocString& model );
+
+    /// @brief Получение стандартного времени ожидания чтения (мс)
+    /// @param[in] proto Тип шины
+    /// @param[in] connType Тип соединения
+    /// @return Стандартное время ожидания чтения
+    static uint32_t GetDefaultTimeout( meters::BusProtocolType proto, connections::ConnectionType::Type connType );
+
+    /// @brief Расчет контрольной суммы CRC16
+    /// @param[in] crc Контрольная сумма CRC16, расчитанная ранее (для предыдущих блоков)
+    /// @param[in] buffer Буфер с данными
+    /// @param[in] offset Отступ до данных
+    /// @param[in] length Длина данных
+    /// @return Значение контрольной суммы CRC16
+    static uint16_t Crc16( uint16_t crc, const ByteVector& buffer, uint32_t offset, uint32_t length );
 
 protected:
     /// @brief Реализация сброса статистики

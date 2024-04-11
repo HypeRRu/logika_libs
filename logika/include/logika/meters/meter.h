@@ -114,8 +114,6 @@ public:
 
     /// @todo hash code?
     /// @todo get typed meters
-    /// @todo well known tags
-    /// @todo lookup common tags
 
 protected:
     MeasureKind measureKind_;                       ///< Тип измерения
