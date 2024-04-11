@@ -99,7 +99,7 @@ var annotated_dup =
       [ "protocols", "da/d59/namespacelogika_1_1protocols.html", [
         [ "M4", "de/d62/namespacelogika_1_1protocols_1_1M4.html", [
           [ "ArchiveRecord", "d1/d10/structlogika_1_1protocols_1_1M4_1_1ArchiveRecord.html", "d1/d10/structlogika_1_1protocols_1_1M4_1_1ArchiveRecord" ],
-          [ "M4Protocol", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html", null ],
+          [ "M4Protocol", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol" ],
           [ "Packet", "d4/d9a/structlogika_1_1protocols_1_1M4_1_1Packet.html", "d4/d9a/structlogika_1_1protocols_1_1M4_1_1Packet" ]
         ] ],
         [ "X6", "d1/df0/namespacelogika_1_1protocols_1_1X6.html", [

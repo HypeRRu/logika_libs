@@ -108,9 +108,11 @@ $(function(){initNavTree('da/dd0/classlogika_1_1protocols_1_1IProtocol.html','..
 <div class="dyncontent">
 <div class="center"><img src="../../d3/deb/classlogika_1_1protocols_1_1IProtocol__inherit__graph.png" border="0" usemap="#alogika_1_1protocols_1_1IProtocol_inherit__map" alt="Inheritance graph"/></div>
 <map name="alogika_1_1protocols_1_1IProtocol_inherit__map" id="alogika_1_1protocols_1_1IProtocol_inherit__map">
-<area shape="rect" title="Интерфейс класса для работы с протоколами" alt="" coords="68,5,269,496"/>
-<area shape="rect" href="../../da/d50/classlogika_1_1protocols_1_1Protocol.html" title="Базовый класс для работы с протоколами" alt="" coords="5,544,332,1840"/>
-<area shape="poly" title=" " alt="" coords="171,511,171,544,166,544,166,511"/>
+<area shape="rect" title="Интерфейс класса для работы с протоколами" alt="" coords="65,5,272,600"/>
+<area shape="rect" href="../../da/d50/classlogika_1_1protocols_1_1Protocol.html" title="Базовый класс для работы с протоколами" alt="" coords="5,648,332,2167"/>
+<area shape="poly" title=" " alt="" coords="171,615,171,648,166,648,166,615"/>
+<area shape="rect" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html" title="Протокол M4." alt="" coords="41,2215,296,2784"/>
+<area shape="poly" title=" " alt="" coords="171,2182,171,2215,166,2215,166,2182"/>
 </map>
 </div>
 <div class="dynheader">
@@ -118,7 +120,7 @@ $(function(){initNavTree('da/dd0/classlogika_1_1protocols_1_1IProtocol.html','..
 <div class="dyncontent">
 <div class="center"><img src="../../dd/daf/classlogika_1_1protocols_1_1IProtocol__coll__graph.png" border="0" usemap="#alogika_1_1protocols_1_1IProtocol_coll__map" alt="Collaboration graph"/></div>
 <map name="alogika_1_1protocols_1_1IProtocol_coll__map" id="alogika_1_1protocols_1_1IProtocol_coll__map">
-<area shape="rect" title="Интерфейс класса для работы с протоколами" alt="" coords="5,5,207,496"/>
+<area shape="rect" title="Интерфейс класса для работы с протоколами" alt="" coords="5,5,212,600"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -159,6 +161,15 @@ $(function(){initNavTree('da/dd0/classlogika_1_1protocols_1_1IProtocol.html','..
 <tr class="memitem:a64963c2406249f842b0c619fe3b71653" id="r_a64963c2406249f842b0c619fe3b71653"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64963c2406249f842b0c619fe3b71653">Reset</a> ()=0</td></tr>
 <tr class="memdesc:a64963c2406249f842b0c619fe3b71653"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сброс статистики событий  <br /></td></tr>
 <tr class="separator:a64963c2406249f842b0c619fe3b71653"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dc8b47ff70bd10d5c5f22bde8227ebb" id="r_a8dc8b47ff70bd10d5c5f22bde8227ebb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8dc8b47ff70bd10d5c5f22bde8227ebb">CloseCommSession</a> (<a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a> srcNt, <a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a> dstNt)=0</td></tr>
+<tr class="memdesc:a8dc8b47ff70bd10d5c5f22bde8227ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Закрытие сессии соединения  <br /></td></tr>
+<tr class="separator:a8dc8b47ff70bd10d5c5f22bde8227ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a684da47c0fe3ed85a1c82fdd956311f6" id="r_a684da47c0fe3ed85a1c82fdd956311f6"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a684da47c0fe3ed85a1c82fdd956311f6">WaitFor</a> (<a class="el" href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a> duration)=0</td></tr>
+<tr class="memdesc:a684da47c0fe3ed85a1c82fdd956311f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ожидание таймаута  <br /></td></tr>
+<tr class="separator:a684da47c0fe3ed85a1c82fdd956311f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50f891e3d2ea88debdc04ac86a03ac92" id="r_a50f891e3d2ea88debdc04ac86a03ac92"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50f891e3d2ea88debdc04ac86a03ac92">CancelWait</a> ()=0</td></tr>
+<tr class="memdesc:a50f891e3d2ea88debdc04ac86a03ac92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отмена активного ожидания  <br /></td></tr>
+<tr class="separator:a50f891e3d2ea88debdc04ac86a03ac92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Интерфейс класса для работы с протоколами </p>
@@ -189,6 +200,75 @@ $(function(){initNavTree('da/dd0/classlogika_1_1protocols_1_1IProtocol.html','..
 </div>
 </div>
 <h2 class="groupheader">Методы</h2>
+<a id="a50f891e3d2ea88debdc04ac86a03ac92" name="a50f891e3d2ea88debdc04ac86a03ac92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50f891e3d2ea88debdc04ac86a03ac92">&#9670;&#160;</a></span>CancelWait()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void logika::protocols::IProtocol::CancelWait </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Отмена активного ожидания </p>
+
+<p>Замещается в <a class="el" href="../../da/d50/classlogika_1_1protocols_1_1Protocol.html#a6285d415e8860d76152430648dca3a2d">logika::protocols::Protocol</a>.</p>
+
+</div>
+</div>
+<a id="a8dc8b47ff70bd10d5c5f22bde8227ebb" name="a8dc8b47ff70bd10d5c5f22bde8227ebb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dc8b47ff70bd10d5c5f22bde8227ebb">&#9670;&#160;</a></span>CloseCommSession()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void logika::protocols::IProtocol::CloseCommSession </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a></td>          <td class="paramname"><span class="paramname"><em>srcNt</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a></td>          <td class="paramname"><span class="paramname"><em>dstNt</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Закрытие сессии соединения </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">srcNt</td><td>NT отправителя </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dstNt</td><td>NT получателя </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Замещается в <a class="el" href="../../da/d50/classlogika_1_1protocols_1_1Protocol.html#a48f529bc218cb45df9bb757b48804cd0">logika::protocols::Protocol</a>.</p>
+
+</div>
+</div>
 <a id="a0eb9fdab8a7baea1b7f999342faaf7ed" name="a0eb9fdab8a7baea1b7f999342faaf7ed"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0eb9fdab8a7baea1b7f999342faaf7ed">&#9670;&#160;</a></span>GetConnection()</h2>
 
@@ -525,6 +605,43 @@ $(function(){initNavTree('da/dd0/classlogika_1_1protocols_1_1IProtocol.html','..
 </dl>
 
 <p>Замещается в <a class="el" href="../../da/d50/classlogika_1_1protocols_1_1Protocol.html#a023e56c96e2e8bfc44070ad821372ee8">logika::protocols::Protocol</a>.</p>
+
+</div>
+</div>
+<a id="a684da47c0fe3ed85a1c82fdd956311f6" name="a684da47c0fe3ed85a1c82fdd956311f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a684da47c0fe3ed85a1c82fdd956311f6">&#9670;&#160;</a></span>WaitFor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool logika::protocols::IProtocol::WaitFor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a></td>          <td class="paramname"><span class="paramname"><em>duration</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ожидание таймаута </p>
+<p>Усыпление потока исполнения на duration миллисекунд с возможностью досрочного пробуждения (</p><dl class="section see"><dt>См. также</dt><dd><a class="el" href="#a50f891e3d2ea88debdc04ac86a03ac92" title="Отмена активного ожидания">CancelWait</a>) </dd></dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">duration</td><td>Таймаут (мс) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true - Пробуждение по истечении таймаута, false - иначе </dd></dl>
+
+<p>Замещается в <a class="el" href="../../da/d50/classlogika_1_1protocols_1_1Protocol.html#ae1df64ec5136be7b0da872908c1da0b9">logika::protocols::Protocol</a>.</p>
 
 </div>
 </div>

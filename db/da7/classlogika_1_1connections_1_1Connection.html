@@ -239,7 +239,7 @@ $(function(){initNavTree('db/da7/classlogika_1_1connections_1_1Connection.html',
 <tr class="memdesc:aa9d5ecb02903e3033bcd3df547949cf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Количество полученных байтов  <br /></td></tr>
 <tr class="separator:aa9d5ecb02903e3033bcd3df547949cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c0379bcb826184cf42017a2f6c5657e" id="r_a2c0379bcb826184cf42017a2f6c5657e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c0379bcb826184cf42017a2f6c5657e">lastRxTime_</a></td></tr>
-<tr class="memdesc:a2c0379bcb826184cf42017a2f6c5657e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Время последнего чтения  <br /></td></tr>
+<tr class="memdesc:a2c0379bcb826184cf42017a2f6c5657e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метка времени последнего чтения (мс)  <br /></td></tr>
 <tr class="separator:a2c0379bcb826184cf42017a2f6c5657e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4db4c0a9ff4c8358863563b7a0be8e15" id="r_a4db4c0a9ff4c8358863563b7a0be8e15"><td class="memItemLeft" align="right" valign="top">std::function&lt; void() &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4db4c0a9ff4c8358863563b7a0be8e15">onAfterConnect_</a></td></tr>
 <tr class="memdesc:a4db4c0a9ff4c8358863563b7a0be8e15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик установленного соединения  <br /></td></tr>
@@ -250,7 +250,7 @@ $(function(){initNavTree('db/da7/classlogika_1_1connections_1_1Connection.html',
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Базовый класс для работы с соединением </p>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000003">Необходимо сделать</a></b></dt><dd><p class="startdd">Добавить блокировки? </p>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000002">Необходимо сделать</a></b></dt><dd><p class="startdd">Добавить блокировки? </p>
 <p class="enddd">move ctor? </p>
 </dd></dl>
 </div><h2 class="groupheader">Конструктор(ы)</h2>
@@ -277,11 +277,13 @@ $(function(){initNavTree('db/da7/classlogika_1_1connections_1_1Connection.html',
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>Адрес соединения </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">readTimeout</td><td>Время ожидания данных для чтения, мс. По умолчанию 0 - не ограничено.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">readTimeout</td><td>Время ожидания данных для чтения, мс. По умолчанию 0 - не ограничено. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000018">Необходимо сделать</a></b></dt><dd>Заменить ToLocString( address_ ) на locAddress_ </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000003">Необходимо сделать</a></b></dt><dd>change readTimeout type to TimeType <br  />
+ </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000020">Необходимо сделать</a></b></dt><dd>Заменить ToLocString( address_ ) на locAddress_ </dd></dl>
 
 </div>
 </div>
@@ -506,7 +508,7 @@ $(function(){initNavTree('db/da7/classlogika_1_1connections_1_1Connection.html',
 </div><div class="memdoc">
 
 <p>Получение времени последнего чтения   </p>
-<dl class="section return"><dt>Возвращает</dt><dd>Время последнего чтения   </dd></dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Метка времени последнего чтения (мс)   </dd></dl>
 
 <p>Замещает <a class="el" href="../../df/ddb/classlogika_1_1connections_1_1IConnection.html#aaefc18ec01471d3ebaf52d7c134b585f">logika::connections::IConnection</a>.</p>
 
@@ -918,8 +920,8 @@ $(function(){initNavTree('db/da7/classlogika_1_1connections_1_1Connection.html',
 </div><div class="memdoc">
 
 <p>Сброс статистики по полученным/переданным байтам   </p>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000004">Необходимо сделать</a></b></dt><dd>OnConnectionRequired? </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000005">Необходимо сделать</a></b></dt><dd>IsConflictsWith? </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000005">Необходимо сделать</a></b></dt><dd>OnConnectionRequired? </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000006">Необходимо сделать</a></b></dt><dd>IsConflictsWith? </dd></dl>
 
 <p>Замещает <a class="el" href="../../df/ddb/classlogika_1_1connections_1_1IConnection.html#a5f64e099c04ab6f76b21d741ace9d092">logika::connections::IConnection</a>.</p>
 
@@ -1129,9 +1131,9 @@ $(function(){initNavTree('db/da7/classlogika_1_1connections_1_1Connection.html',
 </table>
 </div><div class="memdoc">
 
-<p>Время последнего чтения </p>
+<p>Метка времени последнего чтения (мс) </p>
 
-<p class="reference">Используется в <a class="el" href="#ae23d993819a59096d1aa56ac7a69a730">GetLastRxTime()</a>.</p>
+<p class="reference">Используется в <a class="el" href="#ae23d993819a59096d1aa56ac7a69a730">GetLastRxTime()</a>, <a class="el" href="#afebb4ecf6c11ef891e5aaa9a753ec9a9">Purge()</a> и <a class="el" href="#a04cb9c650e0340edab4d84f7b9c834af">Read()</a>.</p>
 
 </div>
 </div>

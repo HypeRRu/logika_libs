@@ -1,6 +1,8 @@
 var classlogika_1_1protocols_1_1IProtocol =
 [
     [ "~IProtocol", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a7b017e7990724b74307232592d875959", null ],
+    [ "CancelWait", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a50f891e3d2ea88debdc04ac86a03ac92", null ],
+    [ "CloseCommSession", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a8dc8b47ff70bd10d5c5f22bde8227ebb", null ],
     [ "GetConnection", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a0eb9fdab8a7baea1b7f999342faaf7ed", null ],
     [ "GetGeneralErrors", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html#afa089ecf555055fe6028444d807c32f7", null ],
     [ "GetPacketsReceived", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html#aaabdf50932e2c9379df1fa9cdd945ba5", null ],
@@ -11,5 +13,6 @@ var classlogika_1_1protocols_1_1IProtocol =
     [ "GetRxTimeouts", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a2305b6394908f4cf7edd30e0ab04bdcf", null ],
     [ "RegisterEvent", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a44ee235986badf905f3940499fa23f21", null ],
     [ "Reset", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a64963c2406249f842b0c619fe3b71653", null ],
-    [ "SetConnection", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html#af41db62fd4cf76f1f4b5a9b16b052963", null ]
+    [ "SetConnection", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html#af41db62fd4cf76f1f4b5a9b16b052963", null ],
+    [ "WaitFor", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a684da47c0fe3ed85a1c82fdd956311f6", null ]
 ];

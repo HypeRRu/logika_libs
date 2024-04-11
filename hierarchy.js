@@ -14,6 +14,7 @@ var hierarchy =
       [ "logika::meters::MultipartArchiveDef6Settings", "d7/d3d/structlogika_1_1meters_1_1MultipartArchiveDef6Settings.html", null ]
     ] ],
     [ "logika::meters::converters::ArchiveTypeConverter", "d9/dbc/classlogika_1_1meters_1_1converters_1_1ArchiveTypeConverter.html", null ],
+    [ "logika::protocols::M4::M4Protocol::BusActiveState", "d9/d1e/structlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1BusActiveState.html", null ],
     [ "logika::meters::converters::ChannelConverter", "d7/de8/classlogika_1_1meters_1_1converters_1_1ChannelConverter.html", null ],
     [ "logika::meters::DataTable", "d3/dca/classlogika_1_1meters_1_1DataTable.html", null ],
     [ "logika::meters::DataTagDefVault", "d3/d03/classlogika_1_1meters_1_1DataTagDefVault.html", null ],
@@ -34,7 +35,9 @@ var hierarchy =
       [ "logika::resources::Loader< ResourceType >", "d0/d9e/classlogika_1_1resources_1_1Loader.html", null ]
     ] ],
     [ "logika::protocols::IProtocol", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html", [
-      [ "logika::protocols::Protocol", "da/d50/classlogika_1_1protocols_1_1Protocol.html", null ]
+      [ "logika::protocols::Protocol", "da/d50/classlogika_1_1protocols_1_1Protocol.html", [
+        [ "logika::protocols::M4::M4Protocol", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html", null ]
+      ] ]
     ] ],
     [ "logika::ISerializable", "dd/dbc/classlogika_1_1ISerializable.html", [
       [ "logika::meters::ArchiveDef", "d5/d76/classlogika_1_1meters_1_1ArchiveDef.html", [
@@ -110,7 +113,6 @@ var hierarchy =
     [ "logika::log::Logger", "d9/d0f/classlogika_1_1log_1_1Logger.html", null ],
     [ "logika::meters::converters::M4ArchiveConverter", "d4/dcd/classlogika_1_1meters_1_1converters_1_1M4ArchiveConverter.html", null ],
     [ "logika::meters::converters::M4ArchiveFieldConverter", "de/d13/classlogika_1_1meters_1_1converters_1_1M4ArchiveFieldConverter.html", null ],
-    [ "logika::protocols::M4::M4Protocol", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html", null ],
     [ "logika::meters::converters::M4TagConverter", "d8/d94/classlogika_1_1meters_1_1converters_1_1M4TagConverter.html", null ],
     [ "logika::protocols::M4::Packet", "d4/d9a/structlogika_1_1protocols_1_1M4_1_1Packet.html", null ],
     [ "logika::SharedConstructible< Type >", "dd/d10/classlogika_1_1SharedConstructible.html", null ],

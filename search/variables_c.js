@@ -8,6 +8,6 @@ var searchData=
   ['nodetype_5',['nodeType',['../d5/d2d/structlogika_1_1meters_1_1DataTagDef6Settings.html#a1e87ee1e7904ebf936938c88bfb665c5',1,'logika::meters::DataTagDef6Settings']]],
   ['nodetype_5f_6',['nodeType_',['../d1/dcb/classlogika_1_1meters_1_1DataTagDef6.html#a7501c869008d8e030d3ad4b3a8b503b8',1,'logika::meters::DataTagDef6']]],
   ['nsdescriptions_5f_7',['nsDescriptions_',['../d6/df4/classlogika_1_1meters_1_1Logika4.html#a30bb335416b5a7ae2cb42596366ac900',1,'logika::meters::Logika4']]],
-  ['nt_8',['nt',['../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#af0d04ef98acf98a4e4399549b429890f',1,'logika::meters::VitalInfo::nt'],['../d4/d9a/structlogika_1_1protocols_1_1M4_1_1Packet.html#ad0c357bf9c2d1f4a8a5230b4ea4abee6',1,'logika::protocols::M4::Packet::nt']]],
+  ['nt_8',['nt',['../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#af0d04ef98acf98a4e4399549b429890f',1,'logika::meters::VitalInfo::nt'],['../d9/d1e/structlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1BusActiveState.html#a9e8674f8cd3122a4f7fc6ffe6d4b5a33',1,'logika::protocols::M4::M4Protocol::BusActiveState::nt'],['../d4/d9a/structlogika_1_1protocols_1_1M4_1_1Packet.html#ad0c357bf9c2d1f4a8a5230b4ea4abee6',1,'logika::protocols::M4::Packet::nt']]],
   ['nullable_9',['nullable',['../d8/d46/structlogika_1_1meters_1_1ColumnInfo.html#ab467ae7d6e0145ef644d9f81b91c5adc',1,'logika::meters::ColumnInfo']]]
 ];

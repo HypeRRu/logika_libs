@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['calccontrol_0',['CalcControl',['../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#a55940b9f58f5f7663ee7ae38c8fdc72bae5edf9c7fc9533c44439ea9da2da8924',1,'logika::protocols::M4::Opcode']]],
+  ['calccontrol_0',['CalcControl',['../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#a9f04d40067c1ad7fff863b87ae3a8854ae5edf9c7fc9533c44439ea9da2da8924',1,'logika::protocols::M4::Opcode']]],
   ['channel_1',['Channel',['../dc/df7/namespacelogika_1_1meters.html#a5dfbf075f197444da7e5af115bbeb50fa781dc97dc62331eec3ea9ec4373a3ca8',1,'logika::meters']]],
   ['common_2',['Common',['../dc/df7/namespacelogika_1_1meters.html#a5dfbf075f197444da7e5af115bbeb50fad13bc5b68b2bd9e18f29777db17cc563',1,'logika::meters']]],
   ['comport_3',['ComPort',['../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#a4a8329efb416b5853518060e074f29bba6f48ddbef4a0111166006269b274ba41',1,'logika::connections::ConnectionType']]],
