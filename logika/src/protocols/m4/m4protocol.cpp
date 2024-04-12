@@ -5,8 +5,10 @@
 
 #include <logika/log/defines.h>
 
+#include <logika/protocols/m4/opcodes.h>
 #include <logika/connections/utils/types_converter.h>
 #include <logika/connections/serial/serial_connection.h>
+#include <logika/meters/logika4/logika4.h>
 #include <logika/common/misc.h>
 
 
@@ -57,7 +59,7 @@ const uint16_t M4Protocol::PARTITION_CURRENT        = 0xFFFF;
 const uint32_t M4Protocol::ALT_SPEED_FALLBACK_TIME  = 10000;
 /// Последовательность состоит из 16 байтов 0xFF
 const ByteVector M4Protocol::WAKEUP_SEQUENCE        = ByteVector( 16, static_cast< ByteType >( 0xFF ) );
-
+const TimeType M4Protocol::WAKE_SESSION_DELAY       = 100;
 
 M4Protocol::BusActiveState::BusActiveState( std::shared_ptr< meters::Meter > mtr,
     ByteType ntByte, MeterChannel::Type chan )
@@ -109,7 +111,7 @@ void M4Protocol::ResetBusActiveState()
 
 void M4Protocol::SendAttention( bool slowWake )
 {
-    constexpr TimeType slowWakeTimeout = 20; ///< 20 мс между отправками
+    constexpr TimeType slowWakeTimeout = 20; /// 20 мс между отправками
 
     if ( !connection_ )
     {
@@ -131,7 +133,297 @@ void M4Protocol::SendAttention( bool slowWake )
 } // SendAttention
 
 
-void M4Protocol::CloseCommSessionImpl( ByteType srcNt, ByteType dstNt )
+ByteVector M4Protocol::GenerateRawHandshake( ByteType* dstNt )
+{
+    static const ByteVector hsArgs{ 0, 0, 0, 0 };
+    ByteVector packet;
+    packet.resize( 3 + hsArgs.size() + 2 );
+    packet[ 0 ] = M4Protocol::FRAME_START;
+    packet[ 1 ] = dstNt ? *dstNt : M4Protocol::BROADCAST_NT;
+    packet[ 2 ] = Opcode::Handshake;
+    for ( size_t i = 0; i < hsArgs.size(); ++i )
+    {
+        packet[ 3 + i ] = hsArgs.at( i );
+    }
+    packet[ 3 + hsArgs.size() ] = meters::Logika4::CheckSum8( packet, 1, hsArgs.size() + 2 );
+    packet[ 3 + hsArgs.size() + 1 ] = M4Protocol::FRAME_END;
+    return packet;
+} // GenerateRawHandshake
+
+
+Packet M4Protocol::RecvPacket( ByteType* excpectedNt, Opcode::Type* expectedOpcode, ByteType* expectedId,
+    uint32_t expectedDataLength, RecvFlags::Type flags )
+{
+    ByteVector buffer;
+    ByteVector check;
+    uint32_t readed     = 0;
+    uint32_t payloadLen = 0;
+
+    Packet packet{};
+    if ( !connection_ )
+    {
+        LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "Connection not established" ) );
+        return packet;
+    }
+
+    try
+    {
+        while ( true ) // Чтение пакетов
+        {
+            TimeType readStart = GetCurrentTimestamp();
+            while ( true ) /// Чтение пока не будет обнаружено начало фрейма или не исчеет таймаут
+            {
+                buffer.clear();
+                readed = connection_->Read( buffer, 1 );
+                if ( readed == 1 && buffer.at( 0 ) == M4Protocol::FRAME_START )
+                {
+                    break; // Считано начало фрейма
+                }
+                TimeType elapsed = GetCurrentTimestamp() - readStart;
+                if ( elapsed > connection_->GetReadTimeout() )
+                {
+                    OnRecoverableError();
+                    /// @todo CommError
+                    throw std::runtime_error{ "Timeout expired" };
+                }
+            }
+            /// Чтение NT и кода операции
+            readed = connection_->Read( buffer, 2 );
+            if ( readed < 2 )
+            {
+                OnRecoverableError();
+                /// @todo CommError
+                throw std::runtime_error{ "General read error" };
+            }
+            packet.nt           = buffer.at( 1 );
+            packet.funcOpcode   = static_cast< Opcode::Type >( buffer.at( 2 ) );
+            packet.data         = ByteVector{};
+            /// Это может быть как ответ другого прибора (очень маловероятно),
+            /// так и случайная синхронизация по 0x10 в потоке данных
+            if ( excpectedNt && packet.nt != *excpectedNt )
+            {
+                continue; /// Чтение следующего пакета
+            }
+            /// Либо задержавшийся в буферах устройств связи ответ на предыдущий запрос(наиболее вероятно),
+            /// либо случайно случившиеся в потоке 10 NT(маловероятно),
+            /// либо ответ другого прибора(крайне маловероятно)
+            if (   expectedOpcode
+                && static_cast< Opcode::Type >( packet.funcOpcode ) != *expectedOpcode
+                && static_cast< Opcode::Type >( packet.funcOpcode ) != Opcode::Error
+                && packet.funcOpcode != M4Protocol::EXT_PROTO )
+            {
+                /// Для многостраничного чтения Flash ошибки в приеме
+                /// последовательности пакетов недопустимы, поэтому никаких переприёмов.
+                if ( static_cast< Opcode::Type >( packet.funcOpcode ) == Opcode::ReadFlash )
+                {
+                    OnRecoverableError();
+                    /// @bug Сделать повторное чтение?
+                    /// @todo CommError
+                    throw std::runtime_error{ "Invalid comm sequence" };
+                }
+                continue; /// Чтение следующего пакета
+            }
+
+            if ( packet.funcOpcode == M4Protocol::EXT_PROTO )
+            {
+                /// Extended протокол
+                packet.extended = true;
+                readed = connection_->Read( buffer, 5 );
+                if ( readed < 5 )
+                {
+                    OnRecoverableError();
+                    /// @bug Сделать повторное чтение?
+                    /// @todo CommError
+                    throw std::runtime_error{ "General read error" };
+                }
+                packet.id           = buffer.at( 3 );
+                packet.attributes   = buffer.at( 4 );
+                /// payload = opcode + data
+                payloadLen          = buffer.at( 5 ) + ( buffer.at( 6 ) << 8 ) - 1;
+                packet.funcOpcode   = static_cast< Opcode::Type >( buffer.at( 7 ) );
+                if ( expectedOpcode && packet.funcOpcode != *expectedOpcode )
+                {
+                    continue; /// Чтение следующего пакета
+                }
+                if ( expectedId && packet.id != *expectedId )
+                {
+                    LOG_WRITE( LOG_WARNING, LOCALIZED( "Invalid comm sequence: expected ID 0x"
+                        << std::hex << *expectedId << ", got 0x" << std::hex << packet.id ) );
+                    continue; /// Чтение следующего пакета
+                }
+            }
+            else
+            {
+                /// Стандартный протокол
+                packet.extended = false;
+                if ( static_cast< Opcode::Type >( packet.funcOpcode ) == Opcode::Error )
+                {
+                    /// Данные состоят только из кода ошибки
+                    payloadLen = 1;
+                }
+                else
+                {
+                    payloadLen = expectedDataLength;
+                }
+            }
+            /// data + CSUM + frame end
+            readed = connection_->Read( packet.data, payloadLen );
+            if ( readed < payloadLen )
+            {
+                OnRecoverableError();
+                /// @bug Сделать повторное чтение?
+                /// @todo CommError
+                throw std::runtime_error{ "General read error" };
+            }
+            /// legacy: checksum8 + frame end, M4: CRC16
+            readed = connection_->Read( check, 2 );
+            if ( readed < 2 )
+            {
+                OnRecoverableError();
+                /// @bug Сделать повторное чтение?
+                /// @todo CommError
+                throw std::runtime_error{ "General read error" };
+            }
+            if ( packet.extended )
+            {
+                /// MSB first
+                packet.checkSum = ( static_cast< uint16_t >( check.at( 0 ) ) << 8 ) | check.at( 1 );
+            }
+            else
+            {
+                // Используется доп проверка END_OF_FRAME (0x16)
+                packet.checkSum = check.at( 0 ) | ( static_cast< uint16_t >( check.at( 1 ) ) << 8 );
+            }
+            if ( activeDev_ )
+            {
+                activeDev_->lastIo = GetCurrentTimestamp();
+            }
+            break; // Пакет считан
+        }
+    }
+    catch( const std::exception& e )
+    {
+        OnRecoverableError();
+        throw;
+    }
+
+    uint16_t calculatedChecksum = 0;
+    if ( packet.extended )
+    {
+        /// Расчет CRC16
+        calculatedChecksum = Protocol::Crc16( calculatedChecksum, buffer, 1, 7 );
+        calculatedChecksum = Protocol::Crc16( calculatedChecksum, packet.data, 0, packet.data.size() );
+    }
+    else
+    {
+        /// Расчет Checksum8
+        calculatedChecksum = 0x1600; /// END_OF_FRAME << 8
+        /// header + data
+        calculatedChecksum |= static_cast< ByteType >(
+            ~meters::Logika4::CheckSum8( buffer, 1, 2 ) +
+            ~meters::Logika4::CheckSum8( packet.data, 0, packet.data.size() )
+        );
+        if ( packet.checkSum != calculatedChecksum )
+        {
+            /// Несовпадение контрольной суммы
+            RegisterEvent( Rc::RxCrcError );
+            throw std::logic_error{ "Invalid checkum" };
+        }
+        RegisterEvent( Rc::PacketReceived );
+        if ( static_cast< Opcode::Type >( packet.funcOpcode ) == Opcode::Error )
+        {
+            Rc::Type errorCode = static_cast< Rc::Type >( packet.data.at( 0 ) );
+            RegisterEvent( Rc::RxGeneralError );
+            if ( ( flags & RecvFlags::DontThrowOnErrorReply ) == 0 )
+            {
+                throw std::runtime_error{ "Unspecified read error" };
+            }
+        }
+    }
+
+    return packet;
+} // RecvPacket
+
+
+void M4Protocol::SendLegacyPacket( ByteType* nt, Opcode::Type func, const ByteVector& data )
+{
+    if ( !connection_ )
+    {
+        LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "Connection not established" ) );
+        return;
+    }
+
+    /// @note Пакет формируется в виде сырого массива байтов
+    ByteVector buffer( 3 + data.size() + 2, 0x0 );
+    buffer[ 0 ] = M4Protocol::FRAME_START;
+    buffer[ 1 ] = nt ? *nt : M4Protocol::BROADCAST_NT;
+    buffer[ 2 ] = static_cast< ByteType >( func );
+    for ( size_t i = 0; i < data.size(); ++i )
+    {
+        buffer[ 3 + i ] = data.at( i );
+    }
+    buffer[ 3 + data.size() ] = meters::Logika4::CheckSum8( buffer, 1, data.size() + 2 );
+    buffer[ 3 + data.size() + 1 ] = M4Protocol::FRAME_END;
+
+    if ( 0 != connection_->Write( buffer ) )
+    {
+        RegisterEvent( Rc::PacketTransmitted );
+    }
+    else
+    {
+        LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "Legacy packet send error" ) );
+    }
+} // SendLegacyPacket
+
+
+void M4Protocol::SendExtendedPacket( ByteType* nt, ByteType packetId, Opcode::Type opcode, const ByteVector& data )
+{
+    constexpr uint32_t headerLen    = 8;
+    constexpr uint32_t crcLen       = 2;
+
+    if ( !connection_ )
+    {
+        LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "Connection not established" ) );
+        return;
+    }
+    /// @note Пакет формируется в виде сырого массива байтов
+    ByteVector buffer( headerLen + data.size() + crcLen, 0x0 );
+
+    buffer[ 0 ] = M4Protocol::FRAME_START;
+    buffer[ 1 ] = nt ? *nt : M4Protocol::BROADCAST_NT;
+    buffer[ 2 ] = M4Protocol::EXT_PROTO; /// Идентификатор расширенной версии протокола
+    buffer[ 3 ] = packetId; /// Идентификатор пакета
+    buffer[ 4 ] = 0x00; /// Атрибуты пакета
+
+    /// opcode + data
+    const uint32_t payloadLen = static_cast< uint16_t >( data.size() + 1 );
+    /// Размер данных: 2 байта
+    buffer[ 5 ] = static_cast< ByteType >( payloadLen & 0xFF );
+    buffer[ 6 ] = static_cast< ByteType >( payloadLen >> 8 );
+    buffer[ 7 ] = static_cast< ByteType >( opcode );
+    /// Данные пакета
+    for ( size_t i = 0; i < data.size(); ++i )
+    {
+        buffer[ headerLen + i ] = data.at( i );
+    }
+    /// Расчет контрольной суммы CRC16
+    uint16_t checkSum = 0;
+    checkSum = Protocol::Crc16( checkSum, buffer, 1, headerLen - 1 + data.size() );
+    buffer[ headerLen + data.size() ] = static_cast< ByteType >( checkSum >> 8 );
+    buffer[ headerLen + data.size() + 1 ] = static_cast< ByteType >( checkSum & 0xFF );
+
+    if ( 0 != connection_->Write( buffer ) )
+    {
+        RegisterEvent( Rc::PacketTransmitted );
+    }
+    else
+    {
+        LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "Legacy packet send error" ) );
+    }
+} // SendExtendedPacket
+
+
+void M4Protocol::CloseCommSessionImpl( ByteType* srcNt, ByteType* dstNt )
 {
     /// @todo реализовать
 } // CloseCommSessionImpl
@@ -157,6 +449,15 @@ void M4Protocol::SerialSpeedFallback()
     LOG_WRITE( LOG_DEBUG, LOCALIZED( "Restored default baud rate: " )
         << ToLocString( connections::BaudRateToString( initialBaudRate_ ) ) );
 } // SerialSpeedFallback
+
+
+void M4Protocol::OnRecoverableError()
+{
+    if ( activeDev_ )
+    {
+        activeDev_->hasIoError = true;
+    }
+} // OnRecoverableError
 
 } // namespace M4
 

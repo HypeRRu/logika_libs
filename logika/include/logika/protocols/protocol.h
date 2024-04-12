@@ -78,7 +78,7 @@ public:
     virtual void Reset() override;
 
     /// @copydoc IProtocol::CloseCommSession()
-    virtual void CloseCommSession( ByteType srcNt, ByteType dstNt ) override;
+    virtual void CloseCommSession( ByteType* srcNt, ByteType* dstNt ) override;
 
     /// @copydoc IProtocol::WaitFor()
     virtual bool WaitFor( TimeType duration ) override;
@@ -138,7 +138,7 @@ public:
     static std::shared_ptr< meters::Meter > AutodectSpt( std::shared_ptr< connections::IConnection > connection,
         const storage::StorageKeeper& sKeeper, connections::BaudRate::Type fixedBaudRate,
         uint32_t waitTimeout, bool tryM4, bool trySpBus, bool tryMek,
-        ByteType srcAddr, ByteType dstAddr, ByteVector& dump,
+        ByteType* srcAddr, ByteType* dstAddr, ByteVector& dump,
         connections::BaudRate::Type& deviceBaudRate, LocString& model );
 
     /// @brief Получение стандартного времени ожидания чтения (мс)
@@ -162,7 +162,7 @@ protected:
     /// @brief Реализация закрытия сессии соединения
     /// @param[in] srcNt NT отправителя
     /// @param[in] dstNt NT получателя
-    virtual void CloseCommSessionImpl( ByteType srcNt, ByteType dstNt );
+    virtual void CloseCommSessionImpl( ByteType* srcNt, ByteType* dstNt );
 
 protected:
     std::shared_ptr< connections::IConnection > connection_;    ///< Соединения для работы по протоколу

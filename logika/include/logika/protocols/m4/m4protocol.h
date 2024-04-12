@@ -9,6 +9,7 @@
 #include <logika/protocols/defs.h>
 #include <logika/protocols/protocol.h>
 #include <logika/protocols/m4/opcodes.h>
+#include <logika/protocols/m4/packet.h>
 
 #include <logika/common/types.h>
 #include <logika/connections/serial/types.h>
@@ -38,6 +39,21 @@ enum : Type
 } // namespace MeterChannel
 
 
+namespace RecvFlags
+{
+
+using Type = ByteType;
+
+/// @brief Флаги чтения
+enum : Type
+{
+    NotSet                  = 0x00, ///< Флаги не заданы
+    DontThrowOnErrorReply   = 0x01  ///< Не бросать исключение при ошибке
+}; // anonymous enum
+
+} // namespace RecvFlags
+
+
 /// @brief Протокол M4
 class LOGIKA_PROTOCOLS_EXPORT M4Protocol: public Protocol
 {
@@ -46,13 +62,14 @@ public:
 
     static const ByteType FRAME_START;              ///< Начало кадра
     static const ByteType FRAME_END;                ///< Конец кадра
-    static const ByteType EXT_PROTO;                ///< @todo
+    static const ByteType EXT_PROTO;                ///< Флаг расширенной версии протокола
     static const ByteType BROADCAST_NT;             ///< NT для безадресных (широковещательных) запросов
     static const uint32_t MAX_RAM_REQUEST;          ///< Максимальный объем данных, запрашиваемых из RAM
     static const uint32_t MAX_TAGS_AT_ONCE;         ///< Максимальное количество считываемых за один запрос тэгов
     static const uint16_t PARTITION_CURRENT;        ///< Текущий раздел
     static const uint32_t ALT_SPEED_FALLBACK_TIME;  ///< Время сброса альтернативной скорости работы
     static const ByteVector WAKEUP_SEQUENCE;        ///< Последовательность байтов для "пробуждения" прибора
+    static const TimeType WAKE_SESSION_DELAY;       /// Задержка (мс) между серией FF и запросом сеанса (нужна только для АДС99 в режиме TCP сервер)
 
 public:
     /// @brief Конструктор шины
@@ -73,15 +90,51 @@ public:
     /// @note Совсем старым приборам нужна пауза между байтами FF
     void SendAttention( bool slowWake );
 
+    /// @brief Получение пакета M4
+    /// @param[in] expectedNt Ожидаемый NT пакета
+    /// @param[in] expectedOpcode Ожидаемый код операции
+    /// @param[in] expectedId Ожидаемый идентификатор
+    /// @param[in] expectedDataLength Ожидаемая длина данных
+    /// @param[in] flags Флаги получения
+    /// @return Полученный пакет
+    Packet RecvPacket( ByteType* excpectedNt, Opcode::Type* expectedOpcode, ByteType* expectedId,
+        uint32_t expectedDataLength, RecvFlags::Type flags = RecvFlags::NotSet );
+
+    /// @todo SelectDeviceAndChannel
+
+    /// @brief Отправка пакета (legacy)
+    /// @details Отправка пакета для старых приборов Logika4L
+    /// @param[in] nt NT назначения
+    /// @param[in] func Код операции
+    /// @param[in] data Данные пакета
+    void SendLegacyPacket( ByteType* nt, Opcode::Type func, const ByteVector& data );
+
+    /// @brief Отправка пакета (modern)
+    /// @details Отправка пакета для современных приборов Logika4M
+    /// @param[in] nt NT назначения
+    /// @param[in] packetId Идентификатор пакета
+    /// @param[in] opcode Код операции
+    /// @param[in] data Данные пакета
+    void SendExtendedPacket( ByteType* nt, ByteType packetId, Opcode::Type opcode, const ByteVector& data );
+
+public:
+    /// @brief Генерация сырого пакет (набора байтов) рукопожатия
+    /// @param[in] dstNt NT назначения
+    /// @return Сырой пакет (набор байтов) рукопожатия с прибором
+    static ByteVector GenerateRawHandshake( ByteType* dstNt );
+
 protected:
     /// @copydoc Protocol::CloseCommSessionImpl()
-    virtual void CloseCommSessionImpl( ByteType srcNt, ByteType dstNt ) override;
+    virtual void CloseCommSessionImpl( ByteType* srcNt, ByteType* dstNt ) override;
 
-private:
     /// @brief Сброс скорости работы прибора до начального значения
     /// @throws std::logical_error если тип соединения указан как serial,
     /// но при этом соединение не является SerialConnection
     void SerialSpeedFallback();
+
+    /// @brief Обработчик ошибки ввода/вывода
+    /// @details Устанавливает флаг ошибки ввода вывода во внутреннем состоянии
+    void OnRecoverableError();
 
 private:
     connections::BaudRate::Type initialBaudRate_;   ///< Начальное значение BaudRate для соединений с автоподнятием скорости

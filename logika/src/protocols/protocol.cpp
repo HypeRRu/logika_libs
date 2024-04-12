@@ -142,7 +142,7 @@ void Protocol::Reset()
 } // Reset
 
 
-void Protocol::CloseCommSession( ByteType srcNt, ByteType dstNt )
+void Protocol::CloseCommSession( ByteType* srcNt, ByteType* dstNt )
 {
     if ( connection_
         && connection_->GetConnectionState() == connections::ConnectionState::Connected )
@@ -156,7 +156,7 @@ void Protocol::ResetBusActiveState()
 {} // ResetBusActiveState
 
 
-void Protocol::CloseCommSessionImpl( ByteType srcNt, ByteType dstNt )
+void Protocol::CloseCommSessionImpl( ByteType* srcNt, ByteType* dstNt )
 {
     (void) srcNt;
     (void) dstNt;
@@ -244,7 +244,7 @@ std::shared_ptr< meters::Meter > Protocol::DetectResponse( std::shared_ptr< conn
 std::shared_ptr< meters::Meter > Protocol::AutodectSpt( std::shared_ptr< connections::IConnection > connection,
     const storage::StorageKeeper& sKeeper, connections::BaudRate::Type fixedBaudRate,
     uint32_t waitTimeout, bool tryM4, bool trySpBus, bool tryMek,
-    ByteType srcAddr, ByteType dstAddr, ByteVector& dump,
+    ByteType* srcAddr, ByteType* dstAddr, ByteVector& dump,
     connections::BaudRate::Type& deviceBaudRate, LocString& model )
 {
     /// @todo реализовать

@@ -78,7 +78,7 @@ public:
     /// @brief Закрытие сессии соединения
     /// @param[in] srcNt NT отправителя
     /// @param[in] dstNt NT получателя
-    virtual void CloseCommSession( ByteType srcNt, ByteType dstNt ) = 0;
+    virtual void CloseCommSession( ByteType* srcNt, ByteType* dstNt ) = 0;
 
     /// @brief Ожидание таймаута
     /// @details Усыпление потока исполнения на duration миллисекунд

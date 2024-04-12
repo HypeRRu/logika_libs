@@ -25,7 +25,7 @@ using Type = ByteType;
 /// @brief Коды операции при работе с протоколом M4
 enum : Type
 {
-    NoOp                = static_cast< Type >(  0x0 ),  ///< Операция не задана
+    NoOp                = static_cast< Type >( 0x00 ),  ///< Операция не задана
     /// "Легаси" коды операций M4
     Error               = static_cast< Type >( 0x21 ),  ///< Ошибка
     Handshake           = static_cast< Type >( 0x3F ),  ///< Рукопожатие
