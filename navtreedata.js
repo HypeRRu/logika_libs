@@ -65,15 +65,15 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "d1/dcb/classlogika_1_1meters_1_1DataTagDef6.html#a77fce22578f87733c57a6575475392f1",
-"d3/d77/classlogika_1_1meters_1_1Meter.html#a8e09893a90a63c1319aa0c7e7575c134",
-"d4/d9a/structlogika_1_1protocols_1_1M4_1_1Packet.html#a96fd4da42b8551a0ba6dbe0a878fe277",
-"d6/d6a/classlogika_1_1meters_1_1Spt942.html#adddd5b1dcf75c0385dec9f54ec895fdf",
-"d8/d46/structlogika_1_1meters_1_1ColumnInfo.html#a44a525cb6ac37e9f5df2cb90d14275be",
-"d9/dcf/data__table_8cpp.html",
-"db/d33/classlogika_1_1meters_1_1ArchiveFieldDef4.html",
-"dc/dcc/archive__types_8h_source.html",
-"dd/dfb/namespacelogika__migration_1_1EnumsStringToPb.html#aff65ceaa81e273188f7af5df55f53fbf",
-"df/ddb/classlogika_1_1connections_1_1IConnection.html#acbe1e81aae23ad34cd44e237f1cd93a7"
+"d3/d77/classlogika_1_1meters_1_1Meter.html#a756ecac533efc4b79b1050704e140753",
+"d4/d9a/structlogika_1_1protocols_1_1M4_1_1Packet.html#a21dbd78d348fe501d2d33839a7eb3ae4",
+"d6/d6a/classlogika_1_1meters_1_1Spt942.html",
+"d8/d42/classlogika_1_1meters_1_1TagDef4.html#a92988a903451efb1ed282dbcf73ba946",
+"d9/db7/m4__tags_8h.html#af4ef374cc4470059245551e942d36acd",
+"db/d12/classlogika_1_1meters_1_1DataTag6Container.html#a57bacfeecc5e3c2a44724946f6734f92",
+"dc/d3d/namespacelogika_1_1connections_1_1windows__io.html#adf246c648ccedf6c513c079218b76834",
+"dd/def/structlogika_1_1meters_1_1Channel.html#a3ab72afe9957cfff62e8d381f820b4a3",
+"df/ddb/classlogika_1_1connections_1_1IConnection.html#a6d733ab5b264c662182f722fe8985d10"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

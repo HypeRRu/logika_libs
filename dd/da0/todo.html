@@ -102,18 +102,18 @@ $(function(){initNavTree('dd/da0/todo.html','../../'); initResizable(); });
 <p class="enddd">Убрать лишние проверки в Read/Write  </p>
 </dd>
 <dt>Class <a class="el" href="../../d0/d78/classlogika_1_1Any.html">logika::Any</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000004"></a>Можно сделать разделение с помощью trivially_copyable и сохранять не тривиально копируемый в shared_ptr </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000002"></a>Можно сделать разделение с помощью trivially_copyable и сохранять не тривиально копируемый в shared_ptr </p>
 <p class="interdd"></p>
 <p class="enddd">Возможно стоит ограничить поддержку только базовыми типами и сохранять информацию о типе в виде enum? Это позволит добавить поддержу ToString  </p>
 </dd>
 <dt>Class <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html">logika::connections::Connection</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000002"></a>Добавить блокировки? </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000003"></a>Добавить блокировки? </p>
 <p class="interdd"></p>
 <p class="enddd">move ctor?  </p>
 </dd>
 <dt>Член <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#a4ac2ce67ddecede2c9e315e641e59234">logika::connections::Connection::Connection</a>  (const std::string &amp;address, uint32_t readTimeout=0)</dt>
 <dd><p class="startdd"><a class="anchor" id="_todo000020"></a>Заменить ToLocString( address_ ) на locAddress_ </p>
-<p class="enddd"><a class="anchor" id="_todo000003"></a>change readTimeout type to TimeType <br  />
+<p class="enddd"><a class="anchor" id="_todo000004"></a>change readTimeout type to TimeType <br  />
   </p>
 </dd>
 <dt>Член <a class="el" href="../../df/ddb/classlogika_1_1connections_1_1IConnection.html#a5f64e099c04ab6f76b21d741ace9d092">logika::connections::IConnection::ResetStatistics</a>  ()=0</dt>
@@ -121,7 +121,7 @@ $(function(){initNavTree('dd/da0/todo.html','../../'); initResizable(); });
 <p class="enddd"><a class="anchor" id="_todo000005"></a>OnConnectionRequired?  </p>
 </dd>
 <dt>Член <a class="el" href="../../d7/d97/classlogika_1_1meters_1_1ArchiveFieldDef4M.html#a9dab61ac38f16597fcf049c66b9f22cf">logika::meters::ArchiveFieldDef4M::ArchiveFieldDef4M</a>  (const <a class="el" href="../../d3/dce/structlogika_1_1meters_1_1ChannelDef.html" title="Структура описание канала">ChannelDef</a> &amp;cdef, const <a class="el" href="../../d6/d41/structlogika_1_1meters_1_1ArchiveFieldDef4MSettings.html" title="Параметры описания поля архива Logika4L.">ArchiveFieldDef4MSettings</a> &amp;settings)</dt>
-<dd><a class="anchor" id="_todo000030"></a>Нужен ли здесь ordinal ?  </dd>
+<dd><a class="anchor" id="_todo000028"></a>Нужен ли здесь ordinal ?  </dd>
 <dt>Член <a class="el" href="../../d8/d9f/classlogika_1_1meters_1_1converters_1_1DeviceConverter.html#acce7f71e3937b9197ced33063cfa890f">logika::meters::converters::DeviceConverter::Convert</a>  (const FromType &amp;from)</dt>
 <dd><a class="anchor" id="_todo000024"></a>Создание инстансов сразу нужных типов (Logika6)  </dd>
 <dt>Член <a class="el" href="../../dd/d57/classlogika_1_1meters_1_1converters_1_1L4TagConverter.html#a99042536dcf0b16d3bcf1bbc53e5c09b">logika::meters::converters::L4TagConverter::ConvertDevice</a>  (const LocString &amp;devName, MeterStorageType meterStorage)</dt>
@@ -131,8 +131,8 @@ $(function(){initNavTree('dd/da0/todo.html','../../'); initResizable(); });
 <dt>Член <a class="el" href="../../d3/dca/classlogika_1_1meters_1_1DataTable.html#a10c802040d82e8a1f0af99bbe207bf95">logika::meters::DataTable::RecordCount</a>  () const</dt>
 <dd><a class="anchor" id="_todo000010"></a>Сделать move-able  </dd>
 <dt>Член <a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#ad7d6c2cfba017c8df878d1831b58cd50">logika::meters::DbTypeToString</a>  (DbType type)</dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000031"></a>Массивы </p>
-<p class="enddd"><a class="anchor" id="_todo000032"></a>Стоит ли использовать exception?  </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000032"></a>Стоит ли использовать exception? </p>
+<p class="enddd"><a class="anchor" id="_todo000031"></a>Массивы  </p>
 </dd>
 <dt>Член <a class="el" href="../../d9/d2a/classlogika_1_1meters_1_1IMeter.html#a138e495855f65ad4fef8f2a1fb37b74b">logika::meters::IMeter::Init</a>  (const <a class="el" href="../../d5/d47/classlogika_1_1storage_1_1StorageKeeper.html" title="Объект для работы со всеми хранилищами ресурсов">storage::StorageKeeper</a> &amp;sKeeper)=0</dt>
 <dd><p class="startdd"><a class="anchor" id="_todo000011"></a>Возможно, сделать Lazy Load </p>
@@ -140,13 +140,13 @@ $(function(){initNavTree('dd/da0/todo.html','../../'); initResizable(); });
 <p class="enddd">Сделать static загрузку?  </p>
 </dd>
 <dt>Член <a class="el" href="../../d7/d1b/classlogika_1_1meters_1_1Logika4L.html#a494c6151b1798f1b286591805db4ad8b">logika::meters::Logika4L::GetAdsFileLayout</a>  (bool all, const LocString &amp;model) const</dt>
-<dd><a class="anchor" id="_todo000014"></a>Уточнить  </dd>
+<dd><a class="anchor" id="_todo000013"></a>Уточнить  </dd>
 <dt>Член <a class="el" href="../../d7/d1b/classlogika_1_1meters_1_1Logika4L.html#aa9f9d30efd8a27de9c86a96103320a22">logika::meters::Logika4L::GetValue</a>  (<a class="el" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#aead2be909773cd60590f689c076fac21">BinaryType4L::Type</a> binType, const ByteVector &amp;buffer, MeterAddressType offset, bool &amp;oper)</dt>
 <dd><a class="anchor" id="_todo000012"></a>Флаг операции?  </dd>
 <dt>Член <a class="el" href="../../dd/d0e/classlogika_1_1meters_1_1Logika4M.html#ae8a0f4b441610aef3484ac7e5152b88b">logika::meters::Logika4M::GetTagLength</a>  (const ByteVector &amp;buffer, MeterAddressType idx, MeterAddressType &amp;length)</dt>
-<dd><a class="anchor" id="_todo000028"></a>Проверить границы  </dd>
+<dd><a class="anchor" id="_todo000029"></a>Проверить границы  </dd>
 <dt>Член <a class="el" href="../../dd/d0e/classlogika_1_1meters_1_1Logika4M.html#af014af8a3e00f3386c513e6bb9437ca6">logika::meters::Logika4M::ParseIa5StringTag</a>  (const ByteVector &amp;buffer, MeterAddressType payloadStart, MeterAddressType payloadLen)</dt>
-<dd><a class="anchor" id="_todo000029"></a>Исправить кодировку  </dd>
+<dd><a class="anchor" id="_todo000030"></a>Исправить кодировку  </dd>
 <dt>Член <a class="el" href="../../d3/d77/classlogika_1_1meters_1_1Meter.html#a478848a30e9192419f24035da49ed4db">logika::meters::Meter::measureKind_</a>  </dt>
 <dd><p class="startdd"><a class="anchor" id="_todo000015"></a>hash code? </p>
 <p class="interdd"></p>
@@ -154,15 +154,22 @@ $(function(){initNavTree('dd/da0/todo.html','../../'); initResizable(); });
 </dd>
 <dt>Член <a class="el" href="../../d6/d6a/classlogika_1_1meters_1_1Spt942.html#aba52e2590d45f9024e73eb338aa701b1">logika::meters::Spt942::Init</a>  (const <a class="el" href="../../d5/d47/classlogika_1_1storage_1_1StorageKeeper.html" title="Объект для работы со всеми хранилищами ресурсов">storage::StorageKeeper</a> &amp;sKeeper) override</dt>
 <dd><a class="anchor" id="_todo000027"></a>warning if not found  </dd>
-<dt>Член <a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a3ac59fceca9a70bb45a418f198a2e389">logika::protocols::M4::M4Protocol::CloseCommSessionImpl</a>  (ByteType srcNt, ByteType dstNt) override</dt>
-<dd><a class="anchor" id="_todo000033"></a>реализовать  </dd>
-<dt>Член <a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a6fe81156379e016449c0e15a1fa0bf04">logika::protocols::M4::M4Protocol::EXT_PROTO</a>  </dt>
-<dd><a class="anchor" id="_todo000017"></a>  </dd>
-<dt>Член <a class="el" href="../../da/d50/classlogika_1_1protocols_1_1Protocol.html#ad8a7e23ccb5af5471031c1d17a6bf6fe">logika::protocols::Protocol::AutodectSpt</a>  (std::shared_ptr&lt; connections::IConnection &gt; connection, const <a class="el" href="../../d5/d47/classlogika_1_1storage_1_1StorageKeeper.html" title="Объект для работы со всеми хранилищами ресурсов">storage::StorageKeeper</a> &amp;sKeeper, connections::BaudRate::Type fixedBaudRate, uint32_t waitTimeout, bool tryM4, bool trySpBus, bool tryMek, ByteType srcAddr, ByteType dstAddr, ByteVector &amp;dump, connections::BaudRate::Type &amp;deviceBaudRate, LocString &amp;model)</dt>
-<dd><a class="anchor" id="_todo000037"></a>реализовать  </dd>
+<dt>Член <a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a544671ab9dc599f77c54a845ab87f361">logika::protocols::M4::M4Protocol::CloseCommSessionImpl</a>  (ByteType *srcNt, ByteType *dstNt) override</dt>
+<dd><a class="anchor" id="_todo000043"></a>реализовать  </dd>
+<dt>Член <a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a02fa0f747f13040bff0e8067f95d1303">logika::protocols::M4::M4Protocol::RecvPacket</a>  (ByteType *excpectedNt, <a class="el" href="../../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#ad2f32ef715c031cee496f205f15960e4">Opcode::Type</a> *expectedOpcode, ByteType *expectedId, uint32_t expectedDataLength, <a class="el" href="../../d8/db6/namespacelogika_1_1protocols_1_1M4_1_1RecvFlags.html#a9bc9304a5bac676091c4f33282aacad6">RecvFlags::Type</a> flags=<a class="el" href="../../d8/db6/namespacelogika_1_1protocols_1_1M4_1_1RecvFlags.html#a2091d4d6f9fd0b97a418b282514d559aa7ba3b2996c8296674f9553c6a0959025" title="Флаги не заданы">RecvFlags::NotSet</a>)</dt>
+<dd><p class="startdd"><a class="anchor" id="_todo000034"></a>CommError </p>
+<p class="interdd"><a class="anchor" id="_todo000035"></a>CommError </p>
+<p class="interdd"><a class="anchor" id="_todo000038"></a>CommError </p>
+<p class="interdd"><a class="anchor" id="_todo000040"></a>CommError </p>
+<p class="interdd"><a class="anchor" id="_todo000041"></a>CommError </p>
+<p class="enddd"><a class="anchor" id="_todo000042"></a>CommError  </p>
+</dd>
+<dt>Член <a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a72bc6e7dbcc2a119854aa20d4fc1c741">logika::protocols::M4::M4Protocol::SendLegacyPacket</a>  (ByteType *nt, <a class="el" href="../../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#ad2f32ef715c031cee496f205f15960e4">Opcode::Type</a> func, const ByteVector &amp;data)</dt>
+<dd><a class="anchor" id="_todo000017"></a>SelectDeviceAndChannel  </dd>
+<dt>Член <a class="el" href="../../da/d50/classlogika_1_1protocols_1_1Protocol.html#a8d589eeb62b11589e8938473889f226c">logika::protocols::Protocol::AutodectSpt</a>  (std::shared_ptr&lt; connections::IConnection &gt; connection, const <a class="el" href="../../d5/d47/classlogika_1_1storage_1_1StorageKeeper.html" title="Объект для работы со всеми хранилищами ресурсов">storage::StorageKeeper</a> &amp;sKeeper, connections::BaudRate::Type fixedBaudRate, uint32_t waitTimeout, bool tryM4, bool trySpBus, bool tryMek, ByteType *srcAddr, ByteType *dstAddr, ByteVector &amp;dump, connections::BaudRate::Type &amp;deviceBaudRate, LocString &amp;model)</dt>
+<dd><a class="anchor" id="_todo000039"></a>реализовать  </dd>
 <dt>Член <a class="el" href="../../da/d50/classlogika_1_1protocols_1_1Protocol.html#a9a6978d058fb65ac97a92cd0585ec81c">logika::protocols::Protocol::DetectM4</a>  (std::shared_ptr&lt; M4::M4Protocol &gt; bus, const <a class="el" href="../../d5/d47/classlogika_1_1storage_1_1StorageKeeper.html" title="Объект для работы со всеми хранилищами ресурсов">storage::StorageKeeper</a> &amp;sKeeper, ByteVector &amp;dump, LocString &amp;model)</dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000035"></a>Реализовать </p>
-<p class="interdd"><a class="anchor" id="_todo000019"></a>GetMeterType </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000019"></a>GetMeterType </p>
 <p class="interdd"></p>
 <p class="interdd">GetDeviceClock </p>
 <p class="interdd"></p>
@@ -172,12 +179,13 @@ $(function(){initNavTree('dd/da0/todo.html','../../'); initResizable(); });
 <p class="interdd"></p>
 <p class="interdd">ReadIntervalArchive </p>
 <p class="interdd"></p>
-<p class="enddd">ReadServiceArchive  </p>
+<p class="interdd">ReadServiceArchive </p>
+<p class="enddd"><a class="anchor" id="_todo000036"></a>Реализовать  </p>
 </dd>
 <dt>Член <a class="el" href="../../da/d50/classlogika_1_1protocols_1_1Protocol.html#ae83fe0cfe29302dcd83265c3f44a8f4b">logika::protocols::Protocol::DetectResponse</a>  (std::shared_ptr&lt; connections::IConnection &gt; connection, const <a class="el" href="../../d5/d47/classlogika_1_1storage_1_1StorageKeeper.html" title="Объект для работы со всеми хранилищами ресурсов">storage::StorageKeeper</a> &amp;sKeeper, ByteVector &amp;dump, LocString &amp;model, bool &amp;rxDetected)</dt>
-<dd><a class="anchor" id="_todo000036"></a>реализовать  </dd>
+<dd><a class="anchor" id="_todo000037"></a>реализовать  </dd>
 <dt>Член <a class="el" href="../../da/d50/classlogika_1_1protocols_1_1Protocol.html#a4ba9768eb16ca12ba7579efc41b9638d">logika::protocols::Protocol::RegisterEvent</a>  (<a class="el" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a1f3c68a5f356ea9b076385a57c27fddb">Rc::Type</a> event) override</dt>
-<dd><a class="anchor" id="_todo000034"></a>monitor event  </dd>
+<dd><a class="anchor" id="_todo000033"></a>monitor event  </dd>
 <dt>Член <a class="el" href="../../d4/d0b/logika_2src_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>  ()</dt>
 <dd><a class="anchor" id="_todo000023"></a>GetName() -&gt; GetArchiveType()-&gt;GetName() </dd>
 </dl>

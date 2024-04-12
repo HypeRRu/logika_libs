@@ -2,7 +2,7 @@ var classlogika_1_1protocols_1_1IProtocol =
 [
     [ "~IProtocol", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a7b017e7990724b74307232592d875959", null ],
     [ "CancelWait", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a50f891e3d2ea88debdc04ac86a03ac92", null ],
-    [ "CloseCommSession", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a8dc8b47ff70bd10d5c5f22bde8227ebb", null ],
+    [ "CloseCommSession", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a3fd3143caa37d713117e9c9e1824d5e6", null ],
     [ "GetConnection", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a0eb9fdab8a7baea1b7f999342faaf7ed", null ],
     [ "GetGeneralErrors", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html#afa089ecf555055fe6028444d807c32f7", null ],
     [ "GetPacketsReceived", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html#aaabdf50932e2c9379df1fa9cdd945ba5", null ],

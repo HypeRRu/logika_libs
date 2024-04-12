@@ -2,8 +2,8 @@ var classlogika_1_1protocols_1_1Protocol =
 [
     [ "Protocol", "da/d50/classlogika_1_1protocols_1_1Protocol.html#ace66cd8938fe926e198f1b4adc2960f0", null ],
     [ "CancelWait", "da/d50/classlogika_1_1protocols_1_1Protocol.html#a6285d415e8860d76152430648dca3a2d", null ],
-    [ "CloseCommSession", "da/d50/classlogika_1_1protocols_1_1Protocol.html#a48f529bc218cb45df9bb757b48804cd0", null ],
-    [ "CloseCommSessionImpl", "da/d50/classlogika_1_1protocols_1_1Protocol.html#a022c89d240305112d60efe93c5693193", null ],
+    [ "CloseCommSession", "da/d50/classlogika_1_1protocols_1_1Protocol.html#abecc950d7fe7957c12488dbd16231fa9", null ],
+    [ "CloseCommSessionImpl", "da/d50/classlogika_1_1protocols_1_1Protocol.html#adceb0f0652b84e93bfdc7945524c4f60", null ],
     [ "GetConnection", "da/d50/classlogika_1_1protocols_1_1Protocol.html#aff0c2780d37fb971bf67e875e79a38c4", null ],
     [ "GetGeneralErrors", "da/d50/classlogika_1_1protocols_1_1Protocol.html#a87ae3180e0af206b6899f880bfda8711", null ],
     [ "GetPacketsReceived", "da/d50/classlogika_1_1protocols_1_1Protocol.html#a4df266ffbf2a4930967ee81b5c4f17b8", null ],
