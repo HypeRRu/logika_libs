@@ -67,6 +67,13 @@ public:
     template < typename T >
     T Cast() const;
 
+    /// @brief Попытка получения значения объекта
+    /// @tparam Тип получаемого объекта
+    /// @param[out] result Хранимый объект
+    /// @return true - если удалось извлечь хранимый объект, false - иначе
+    template < typename T >
+    bool TryCast( T& result ) const;
+
 private:
     /// @brief Базовая вспомогательная структура для хранения значения
     struct BaseHolder

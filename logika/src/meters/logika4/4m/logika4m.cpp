@@ -145,7 +145,7 @@ MeterAddressType Logika4M::GetTagLength( const ByteVector& buffer
 } // GetTagLength
 
 
-std::pair< TagId4M::Type, std::unique_ptr< logika::Any > > Logika4M::ParseTag(
+Logika4M::Tag4MRecordType Logika4M::ParseTag(
     const ByteVector& buffer, MeterAddressType idx, MeterAddressType& readLen )
 {
     CheckBounds( buffer, idx, 1 );
@@ -161,72 +161,72 @@ std::pair< TagId4M::Type, std::unique_ptr< logika::Any > > Logika4M::ParseTag(
             ParseEmptyTag( buffer, idx + 1 + offset, 0 );
             return std::make_pair(
                 tagId,
-                std::make_unique< logika::Any >()
+                std::make_shared< logika::Any >()
             );
         case TagId4M::Float:
             return std::make_pair(
                 tagId,
-                std::make_unique< logika::Any >( ParseFloatTag( buffer, payloadOffset, 0 ) )
+                std::make_shared< logika::Any >( ParseFloatTag( buffer, payloadOffset, 0 ) )
             );
         case TagId4M::I32LE:
             return std::make_pair(
                 tagId,
-                std::make_unique< logika::Any >( ParseI32LeTag( buffer, payloadOffset, payloadLen ) )
+                std::make_shared< logika::Any >( ParseI32LeTag( buffer, payloadOffset, payloadLen ) )
             );
         case TagId4M::ByteArray:
             return std::make_pair(
                 tagId,
-                std::make_unique< logika::Any >( ParseByteArrayTag( buffer, payloadOffset, payloadLen ) )
+                std::make_shared< logika::Any >( ParseByteArrayTag( buffer, payloadOffset, payloadLen ) )
             );
         case TagId4M::Ia5String:
             return std::make_pair(
                 tagId,
-                std::make_unique< logika::Any >( ParseIa5StringTag( buffer, payloadOffset, payloadLen ) )
+                std::make_shared< logika::Any >( ParseIa5StringTag( buffer, payloadOffset, payloadLen ) )
             );
         case TagId4M::Total:
             return std::make_pair(
                 tagId,
-                std::make_unique< logika::Any >( ParseTotalTag( buffer, payloadOffset, payloadLen ) )
+                std::make_shared< logika::Any >( ParseTotalTag( buffer, payloadOffset, payloadLen ) )
             );
         case TagId4M::Oper:
             return std::make_pair(
                 tagId,
-                std::make_unique< logika::Any >( ParseOperTag( buffer, payloadOffset, payloadLen ) )
+                std::make_shared< logika::Any >( ParseOperTag( buffer, payloadOffset, payloadLen ) )
             );
         case TagId4M::Ack:
             return std::make_pair(
                 tagId,
-                std::make_unique< logika::Any >( ParseAckTag( buffer, payloadOffset, payloadLen ) )
+                std::make_shared< logika::Any >( ParseAckTag( buffer, payloadOffset, payloadLen ) )
             );
         case TagId4M::Time:
             return std::make_pair(
                 tagId,
-                std::make_unique< logika::Any >( ParseTimeTag( buffer, payloadOffset, payloadLen ) )
+                std::make_shared< logika::Any >( ParseTimeTag( buffer, payloadOffset, payloadLen ) )
             );
         case TagId4M::Date:
             return std::make_pair(
                 tagId,
-                std::make_unique< logika::Any >( ParseDateTag( buffer, payloadOffset, payloadLen ) )
+                std::make_shared< logika::Any >( ParseDateTag( buffer, payloadOffset, payloadLen ) )
             );
         case TagId4M::Timestamp:
             return std::make_pair(
                 tagId,
-                std::make_unique< logika::Any >( ParseTimestampTag( buffer, payloadOffset, payloadLen ) )
+                std::make_shared< logika::Any >( ParseTimestampTag( buffer, payloadOffset, payloadLen ) )
             );
         case TagId4M::ParamNum:
             return std::make_pair(
                 tagId,
-                std::make_unique< logika::Any >( ParseParamNumTag( buffer, payloadOffset, payloadLen ) )
+                std::make_shared< logika::Any >( ParseParamNumTag( buffer, payloadOffset, payloadLen ) )
             );
         case TagId4M::NsRecord:
             return std::make_pair(
                 tagId,
-                std::make_unique< logika::Any >( ParseNsRecordTag( buffer, payloadOffset, payloadLen ) )
+                std::make_shared< logika::Any >( ParseNsRecordTag( buffer, payloadOffset, payloadLen ) )
             );
         case TagId4M::Error:
             return std::make_pair(
                 tagId,
-                std::make_unique< logika::Any >( ParseErrorTag( buffer, payloadOffset, payloadLen ) )
+                std::make_shared< logika::Any >( ParseErrorTag( buffer, payloadOffset, payloadLen ) )
             );
     }
     throw std::runtime_error{ "Unknown tag type " + tagId };

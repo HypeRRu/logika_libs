@@ -47,7 +47,7 @@ enum : Type
     Float       = 0x43, ///< Значение с плавающей точкой
     I32LE       = 0x41, ///< Значение 32 битного целого числа (Little Endian)
     ByteArray   = 0x04, ///< Массив байтов
-    Ia5String   = 0x16, ///< Строка в кодировке CP1251
+    Ia5String   = 0x16, ///< Строка в кодировке ASCII
     Total       = 0x44, ///< Сумма INT32 и FLOAT чисел
     Oper        = 0x45, ///< Флаг оперативности тэга
     Ack         = 0x46, ///< ACK
@@ -66,6 +66,8 @@ enum : Type
 class LOGIKA_METERS_EXPORT Logika4M: public Logika4
 {
 public:
+    using Tag4MRecordType = std::pair< TagId4M::Type, std::shared_ptr< logika::Any > >;
+
     /// @details Конструктор прибора Logika4M
     /// @copydoc Logika4::Logika4()
     Logika4M(
@@ -101,8 +103,7 @@ public:
     /// @param[out] readLen Количество считанных данных
     /// @return Пара: тип тэга - значение
     /// @throws std::out_of_range Если idx + len + payload выходит за границу данных
-    static std::pair< TagId4M::Type, std::unique_ptr< logika::Any > > ParseTag(
-        const ByteVector& buffer, MeterAddressType idx, MeterAddressType& readLen );
+    static Tag4MRecordType ParseTag( const ByteVector& buffer, MeterAddressType idx, MeterAddressType& readLen );
 
     /// @brief Разбора тэга типа Empty
     /// @param[in] buffer Буфер

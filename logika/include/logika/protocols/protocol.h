@@ -42,7 +42,8 @@ class LOGIKA_PROTOCOLS_EXPORT Protocol: public IProtocol
 {
 public:
     /// @brief Конструктор протокола
-    Protocol();
+    /// @param[in] sKeeper Хранилище приложения
+    Protocol( const storage::StorageKeeper& sKeeper );
 
     /// @copydoc IProtocol::GetConnection()
     virtual std::shared_ptr< connections::IConnection > GetConnection() const override;
@@ -177,6 +178,8 @@ protected:
     
     std::mutex waitMtx_;                                        ///< Мьютекс для отменяемого ожидания
     std::condition_variable waitCond_;                          ///< Условная переменная для отменяемого ожидания
+
+    const storage::StorageKeeper& sKeeper_;                     ///< Хранилище приложения
 
 }; // class Protocol
 

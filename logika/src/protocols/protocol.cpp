@@ -23,7 +23,7 @@ namespace logika
 namespace protocols
 {
 
-Protocol::Protocol()
+Protocol::Protocol( const storage::StorageKeeper& sKeeper )
     : connection_{ nullptr }
     , packetsSent_{ 0 }
     , packetsReceived_{ 0 }
@@ -33,6 +33,7 @@ Protocol::Protocol()
     , rxGeneral_{ 0 }
     , waitMtx_{}
     , waitCond_{}
+    , sKeeper_{ sKeeper }
 {} // Protocol
 
 
@@ -183,7 +184,6 @@ void Protocol::CancelWait()
 std::shared_ptr< meters::Meter > Protocol::DetectM4( std::shared_ptr< M4::M4Protocol > bus,
     const storage::StorageKeeper& sKeeper, ByteVector& dump, LocString& model )
 {
-    /// @todo Реализовать
     model = LOCALIZED( "" );
 
     auto meterStorage = sKeeper.GetStorage< LocString, meters::Meter >();

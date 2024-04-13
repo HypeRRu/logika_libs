@@ -7,9 +7,12 @@
 
 #include <logika/protocols/comm_exception.h>
 #include <logika/protocols/m4/opcodes.h>
+#include <logika/protocols/m4/tag_write_data.h>
 #include <logika/connections/utils/types_converter.h>
 #include <logika/connections/serial/serial_connection.h>
-#include <logika/meters/logika4/4m/logika4m.h>
+#include <logika/meters/logika4/logika4.h>
+#include <logika/meters/logika4/4l/logika4l.h>
+#include <logika/meters/logika4/4l/spg741.h>
 #include <logika/common/misc.h>
 
 /// @cond
@@ -42,6 +45,42 @@ std::shared_ptr< logika::connections::SerialConnection > ConnectionAsSerial(
     return serialConnection;
 } // ConnectionAsSerial
 
+
+/// @brief Конвертация номера ошибки в код
+/// @param[in] errCode Номер ошибки
+/// @return Код ошибки
+logika::protocols::Rc::Type RcFromError( logika::ByteType errCode )
+{
+    switch ( errCode )
+    {
+        case 0:
+            return logika::protocols::Rc::BadRequestError;
+        case 1:
+            return logika::protocols::Rc::WriteProtectedError;
+        case 2:
+            return logika::protocols::Rc::InvalidArgError;
+        default:
+            return logika::protocols::Rc::Fail;
+    }
+} // RcFromError
+
+/// @brief Приведение 32 битного целого числа к LE порядку байтов
+/// @param[in] number
+/// @return Число number в LE порядке байтов
+uint32_t UintToLe( uint32_t number )
+{
+    volatile uint32_t i = 0x01234567;
+    // return false for big endian, true for little endian.
+    if ( ( *reinterpret_cast< uint8_t* >( i ) ) == 0x67 )
+    {
+        return number;
+    }
+    return ( ( ( number >> 24 ) & 0xFF ) <<  0 )
+        +  ( ( ( number >> 16 ) & 0xFF ) <<  8 )
+        +  ( ( ( number >>  8 ) & 0xFF ) << 16 )
+        +  ( ( ( number >>  0 ) & 0xFF ) << 24 );
+} // UintToLe
+
 } // anonymous namespace
 
 
@@ -66,6 +105,8 @@ const uint32_t M4Protocol::ALT_SPEED_FALLBACK_TIME  = 10000;
 const ByteVector M4Protocol::WAKEUP_SEQUENCE        = ByteVector( 16, static_cast< ByteType >( 0xFF ) );
 const TimeType M4Protocol::WAKE_SESSION_DELAY       = 100;
 uint32_t M4Protocol::packetId_                      = 0;
+const uint32_t M4Protocol::MAX_PAGE_BLOCK           = 8;
+const uint32_t M4Protocol::CHANNEL_NBASE            = 100000;
 
 
 M4Protocol::BusActiveState::BusActiveState( std::shared_ptr< meters::Logika4 > mtr,
@@ -89,8 +130,9 @@ TimeType M4Protocol::BusActiveState::GetTimeFromLastIo() const
 } // GetTimeFromLastIo
 
 
-M4Protocol::M4Protocol( connections::BaudRate::Type targetBaudRate )
-    : Protocol()
+M4Protocol::M4Protocol( const storage::StorageKeeper& sKeeper,
+    connections::BaudRate::Type targetBaudRate )
+    : Protocol( sKeeper )
     , initialBaudRate_{ connections::BaudRate::NotSupported }
     , suggestedBaudRate_{ targetBaudRate }
     , activeDev_{ nullptr }
@@ -141,7 +183,7 @@ void M4Protocol::SendAttention( bool slowWake )
 
 
 void M4Protocol::SelectDeviceAndChannel( std::shared_ptr< meters::Logika4 > meter,
-    const storage::StorageKeeper& sKeeper, ByteType* zNt, MeterChannel::Type tv )
+    ByteType* zNt, MeterChannel::Type tv )
 {
     if ( !connection_ )
     {
@@ -194,7 +236,7 @@ void M4Protocol::SelectDeviceAndChannel( std::shared_ptr< meters::Logika4 > mete
                 /// @note connection_ не nullptr, проверено выше, поэтому Packet не пуст
                 std::shared_ptr< meters::Meter > detectedMtr = meters::Logika4::DetermineMeter(
                     handshakePacket.data.at( 0 ), handshakePacket.data.at( 1 ), handshakePacket.data.at( 2 ),
-                    sKeeper.GetStorage< LocString, meters::Meter >()
+                    sKeeper_.GetStorage< LocString, meters::Meter >()
                 );
                 if ( detectedMtr != meter )
                 {
@@ -256,6 +298,68 @@ ByteVector M4Protocol::GenerateRawHandshake( ByteType* dstNt )
     packet[ 3 + hsArgs.size() + 1 ] = M4Protocol::FRAME_END;
     return packet;
 } // GenerateRawHandshake
+
+
+void M4Protocol::AppendParamNum( ByteVector& buffer, ByteType channel, uint16_t ordinal )
+{
+    buffer.push_back( static_cast< ByteType >( 0x4A ) );
+    buffer.push_back( static_cast< ByteType >( 0x03 ) );
+
+    buffer.push_back( channel );
+    buffer.push_back( static_cast< ByteType >( ordinal & 0xFF ) );
+    buffer.push_back( static_cast< ByteType >( ( ordinal >> 8 ) & 0xFF ) );
+} // AppendParamNum
+
+
+std::vector< meters::Logika4M::Tag4MRecordType > M4Protocol::ParseM4TagsPacket( const Packet& packet,
+    std::vector< bool >& opFlags )
+{
+    if ( !packet.extended || packet.funcOpcode != Opcode::ReadTags )
+    {
+        throw std::invalid_argument{ "Invalid packet passed" };
+    }
+    std::vector< meters::Logika4M::Tag4MRecordType > tags;
+    opFlags.clear();
+
+    MeterAddressType tagPos = 0;
+    while ( tagPos < packet.data.size() )
+    {
+        MeterAddressType readLen = 0;
+        try
+        {
+            auto tagData = meters::Logika4M::ParseTag( packet.data, tagPos, readLen );
+            if ( tagData.first == meters::TagId4M::Oper )
+            {
+                /// Флаг оперативности идет вслед за считанным тэгом
+                auto& data = tagData.second;
+                if ( !data || opFlags.empty() )
+                {
+                    throw std::logic_error{ "Empty oper tag or tags list is empty" };
+                }
+                meters::OperParamFlag::Type oper = data->Cast< meters::OperParamFlag::Type >();
+                opFlags.back() = ( oper == meters::OperParamFlag::Yes );
+                tagPos += readLen;
+                continue;
+            }
+            tagPos += readLen;
+            tags.emplace_back( std::move( tagData ) );
+            opFlags.push_back( false );
+        }
+        catch ( const std::exception& )
+        {
+            LOG_WRITE( LOG_ERROR, LOCALIZED( "Tags parsing failed at 0x" )  << std::hex << tagPos );
+            throw;
+        }
+    }
+    return tags;
+} // ParseM4TagsPacket
+
+
+TimeType M4Protocol::RestrictTime( TimeType date )
+{
+    constexpr TimeType restrictTimestamp = 8993721600000; /// 01-01-2025 00:00:00
+    return date < restrictTimestamp ? date : restrictTimestamp;
+} // RestrictTime
 
 
 Packet M4Protocol::RecvPacket( ByteType* excpectedNt, Opcode::Type* expectedOpcode, ByteType* expectedId,
@@ -660,6 +764,360 @@ bool M4Protocol::SetBusSpeed( std::shared_ptr< meters::Logika4 > meter, ByteType
 } // SetBusSpeed
 
 
+Rc::Type M4Protocol::WriteParameterL4( std::shared_ptr< meters::Logika4L > meter, ByteType* nt,
+    ByteType channel, uint32_t paramNum, LocString value, bool operFlag )
+{
+    const auto devStorage = sKeeper_.GetStorage< LocString, meters::Meter >();
+    std::shared_ptr< meters::Meter >  baseSpg741    = nullptr;
+    std::shared_ptr< meters::Spg741 > spg741Meter   = nullptr;
+    if ( devStorage && devStorage->GetItem( LOCALIZED( "SPG741" ), baseSpg741 ) )
+    {
+        spg741Meter = std::dynamic_pointer_cast< meters::Spg741 >( baseSpg741 );
+    }
+    if ( spg741Meter && meter == spg741Meter && paramNum >= 200 && paramNum <= 300 )
+    {
+        /// Транслируемые через СП параметры СПГ741
+        const auto tagsVault = spg741Meter->GetTagsVault();
+        if ( !tagsVault )
+        {
+            return Rc::Success;
+        }
+        const auto tags = tagsVault->All();
+        const auto tagDefIter = std::find_if( tags.cbegin(), tags.cend(), [ paramNum ]( const auto& tag ){
+            return tag && tag->GetOrdinal() == paramNum;
+        } );
+        if ( tags.cend() == tagDefIter )
+        {
+            return Rc::Success;
+        }
+        ByteType sp = GetSpg741Sp( nt );
+        int32_t mappedOrdinal = meters::Spg741::GetMappedDbParamOrdinal( ( *tagDefIter )->GetKey(), sp );
+        if ( -1 == mappedOrdinal )
+        {
+            /// Параметр не существует при текущем СП
+            return Rc::Success;
+        }
+        paramNum = static_cast< uint32_t >( mappedOrdinal );
+    }
+    SelectDeviceAndChannel( meter, nt, static_cast< MeterChannel::Type >( channel ) );
+    if ( channel == 1 || channel == 2 )
+    {
+        /// При записи указывается относительный номер параметра по каналу
+        constexpr uint32_t shift = 50;
+        paramNum = paramNum > shift ? paramNum - shift : 0;
+    }
+    ByteVector requestData{
+          static_cast< ByteType >( paramNum & 0xFF )
+        , static_cast< ByteType >( ( paramNum >> 8 ) & 0xFF )
+        , 0, 0
+    };
+    /// Проверка записи
+    Packet packet = DoLegacyRequest( nt, Opcode::WriteParam, requestData, 0, RecvFlags::DontThrowOnErrorReply );
+    if ( packet.funcOpcode == Opcode::Error )
+    {
+        if ( packet.data.empty() )
+        {
+            return Rc::Fail;
+        }
+        return RcFromError( packet.data.at( 0 ) );
+    }
+    /// Запись параметра
+    requestData = ByteVector( 64, 0x0 );
+    for ( size_t i = 0; i < requestData.size(); ++i )
+    {
+        if ( i < value.length() )
+        {
+            requestData[ i ] = static_cast< ByteType >( value.at( i ) );
+        }
+        else
+        {
+            requestData[ i ] = static_cast< ByteType >( 0x20 );
+        }
+    }
+    if ( operFlag )
+    {
+        requestData.back() = static_cast< ByteType >( '*' );
+    }
+    
+    packet = DoLegacyRequest( nt, Opcode::WriteParam, requestData, 0, RecvFlags::DontThrowOnErrorReply );
+    if ( packet.funcOpcode == Opcode::Error )
+    {
+        if ( packet.data.empty() )
+        {
+            return Rc::Fail;
+        }
+        return RcFromError( packet.data.at( 0 ) );
+    }
+    return Rc::Success;
+} // WriteParameterL4
+
+
+ByteVector M4Protocol::ReadRamL4( std::shared_ptr< meters::Logika4L > meter, ByteType* nt,
+    MeterAddressType startAddr, MeterAddressType numBytes )
+{
+    if ( numBytes > M4Protocol::MAX_RAM_REQUEST )
+    {
+        throw std::invalid_argument{ "Too much data requested from RAM" };
+    }
+
+    SelectDeviceAndChannel( meter, nt );
+    const ByteVector requestData{
+          static_cast< ByteType >( startAddr & 0xFF )
+        , static_cast< ByteType >( ( startAddr >> 8 ) & 0xFF )
+        , static_cast< ByteType >( numBytes ), 0
+    };
+    Packet packet = DoLegacyRequest( nt, Opcode::ReadRam, requestData, numBytes );
+    return packet.data;
+} // ReadRamL4
+
+
+ByteVector M4Protocol::ReadFlashPagesL4( std::shared_ptr< meters::Logika4L > meter, ByteType* nt,
+    uint32_t startPage, uint32_t pageCount )
+{
+    if ( pageCount == 0 )
+    {
+        throw std::invalid_argument{ "Attempt to read zero pages of flash" };
+    }
+
+    const MeterAddressType pageSize = meters::Logika4L::FLASH_PAGE_SIZE;
+
+    SelectDeviceAndChannel( meter, nt );
+    ByteVector cmdBuffer( 4, 0x0 );
+    ByteVector retbuf{};
+    retbuf.reserve( pageCount * pageSize );
+
+    const size_t pagesToRead = ( pageCount + MAX_PAGE_BLOCK - 1 ) / MAX_PAGE_BLOCK;
+    for ( size_t page = 0; page < pagesToRead; ++page )
+    {
+        uint32_t requestPagesCount = pageCount - page * MAX_PAGE_BLOCK;
+        if ( requestPagesCount > MAX_PAGE_BLOCK )
+        {
+            requestPagesCount = MAX_PAGE_BLOCK;
+        }
+        uint32_t blockStart = startPage + page * MAX_PAGE_BLOCK;
+        const ByteVector requestData{
+              static_cast< ByteType >( blockStart & 0xFF )
+            , static_cast< ByteType >( ( blockStart >> 8 ) & 0xFF )
+            , static_cast< ByteType >( requestPagesCount ), 0
+        };
+        SendLegacyPacket( nt, Opcode::ReadFlash, requestData );
+        /// Чтение страниц флэш-памяти
+        for ( uint32_t i = 0; i < requestPagesCount; ++i )
+        {
+            Packet packet;
+            try
+            {
+                Opcode::Type opcode = Opcode::ReadFlash;
+                packet = RecvPacket( nt, &opcode, nullptr, pageSize );
+            }
+            catch ( const std::exception& )
+            {
+                if ( pageCount > 1 )
+                {
+                    /// При ошибке в многостраничных запросах флеша - пересинхронизируем поток чтения,
+                    /// чтобы не словить опоздавшую страницу с другим адресом
+                    OnRecoverableError();
+                }
+                throw;
+            }
+            if ( packet.funcOpcode != Opcode::ReadFlash || packet.data.size() != pageSize )
+            {
+                throw ECommException( ExceptionSeverity::Error, CommunicationError::Unspecified,
+                    "Invalid packet read, opcode is " + std::to_string( packet.funcOpcode ) );
+            }
+            for ( size_t j = 0; j < packet.data.size(); ++j )
+            {
+                retbuf.push_back( packet.data.at( j ) );
+            }
+        }
+    }
+    return retbuf;
+} // ReadFlashPagesL4
+
+
+ByteVector M4Protocol::ReadFlashBytesL4( std::shared_ptr< meters::Logika4L > meter, ByteType* nt,
+    MeterAddressType startAddr, MeterAddressType length )
+{
+    if ( length == 0 )
+    {
+        throw std::invalid_argument{ "Attempt to read zero bytes of flash" };
+    }
+
+    const MeterAddressType pageSize = meters::Logika4L::FLASH_PAGE_SIZE;
+    const uint32_t startPage    = startAddr / pageSize;
+    const uint32_t endPage      = ( startAddr + length - 1 ) / pageSize;
+    const uint32_t pageCount    = endPage - startPage + 1;
+    
+    ByteVector memory = ReadFlashPagesL4( meter, nt, startPage, pageCount );
+    memory.erase( memory.begin(), memory.begin() + ( startAddr % pageSize ) );
+    memory.resize( length );
+    return memory;
+} // ReadFlashBytesL4
+
+
+std::vector< meters::Logika4M::Tag4MRecordType > M4Protocol::ReadTags4M( std::shared_ptr< meters::Logika4M > meter,
+    ByteType* nt, const std::vector< int32_t >& channels,
+    const std::vector< int32_t >& ordinals, std::vector< bool >& opFlags )
+{
+    SelectDeviceAndChannel( meter, nt );
+    if ( channels.empty() || ordinals.empty() || channels.size() != ordinals.size() )
+    {
+        throw std::invalid_argument{ "Invalid parameters for ReadTags4M" };
+    }
+    ByteVector requestData;
+    for ( size_t i = 0; i < ordinals.size(); ++i )
+    {
+        ByteType channel = static_cast< ByteType >(
+            ordinals.at( i ) < M4Protocol::CHANNEL_NBASE
+            ? channels.at( i )
+            : channels.at( i ) / M4Protocol::CHANNEL_NBASE
+        );
+        uint16_t ordinal = static_cast< uint16_t >( ordinals.at( i ) % M4Protocol::CHANNEL_NBASE );
+        AppendParamNum( requestData, channel, ordinal );
+    }
+
+    Packet packet = DoM4Request( nt, Opcode::ReadTags, requestData );
+    std::vector< meters::Logika4M::Tag4MRecordType > tagsData = M4Protocol::ParseM4TagsPacket( packet, opFlags );
+    if (   meter->GetCaption() == LOCALIZED( "SPG742" )
+        || meter->GetCaption() == LOCALIZED( "SPT941_20" ) )
+    {
+        /// Серийный номер СПxx4x (M4) - отрезаем старший байт
+        for ( size_t i = 0; i < ordinals.size(); ++i )
+        {
+            if ( ordinals.at( i ) == 8256 )
+            {
+                auto& data = tagsData.at( i ).second;
+                if ( !data )
+                {
+                    continue;
+                }
+                uint32_t uintData;
+                if ( data->TryCast< uint32_t >( uintData ) )
+                {
+                    tagsData[ i ] = std::make_pair(
+                        tagsData.at( i ).first,
+                        std::make_shared< logika::Any >( uintData & 0x00FFFFFF )
+                    );
+                }
+                else
+                {
+                    continue;
+                }
+            }
+        }
+    }
+
+    return tagsData;
+} // ReadTags4M
+
+
+std::vector< Rc::Type > M4Protocol::WriteParams4M( std::shared_ptr< meters::Logika4M > meter, ByteType* nt,
+    const std::vector< TagWriteData >& data )
+{
+    SelectDeviceAndChannel( meter, nt );
+
+    ByteVector requestData;
+    for ( const TagWriteData& tagData: data )
+    {
+        std::shared_ptr< logika::Any > value = tagData.value;
+        bool found = false;
+        LocString sValue;
+        if ( !value || value->Empty()
+            || ( value->TryCast< LocString >( sValue ) && sValue.empty() ) )
+        {
+            requestData.push_back( static_cast< ByteType >( meters::TagId4M::Empty ) ); /// null
+            requestData.push_back( static_cast< ByteType >( 0x00 ) );
+            found = true;
+        }
+        if ( !found && value->TryCast< LocString >( sValue ) )
+        {
+            requestData.push_back( static_cast< ByteType >( meters::TagId4M::Ia5String ) ); /// ASCII string
+            requestData.push_back( static_cast< ByteType >( sValue.length() ) );
+            for ( size_t i = 0; i < sValue.length(); ++i )
+            {
+                requestData.push_back( static_cast< ByteType >( sValue.at( i ) ) );
+            }
+            found = true;
+        }
+        uint32_t uValue;
+        if ( !found && value->TryCast< uint32_t >( uValue ) )
+        {
+            requestData.push_back( static_cast< ByteType >( meters::TagId4M::I32LE ) ); /// unsigned int
+            requestData.push_back( static_cast< ByteType >( 0x04 ) ); /// length
+            uValue = UintToLe( uValue );
+            for ( size_t i = 0; i < 4; ++i )
+            {
+                /// @todo Проверить правильность заполнения
+                requestData.push_back( static_cast< ByteType >( ( uValue >> ( 8 * ( 3 - i ) ) ) & 0xFF ) );
+            }
+            found = true;
+        }
+        ByteVector baValue;
+        if ( !found && value->TryCast< ByteVector >( baValue ) )
+        {
+            requestData.push_back( static_cast< ByteType >( meters::TagId4M::ByteArray ) ); /// octet string
+            if ( baValue.size() < 0x80 )
+            {
+                requestData.push_back( static_cast< ByteType >( baValue.size() ) ); // single-byte length
+            }
+            else if ( baValue.size() < 0x10000 )
+            {
+                requestData.push_back( static_cast< ByteType >( 0x82 ) ); /// two-byte length
+                /// @todo Проверить правильность заполнения
+                requestData.push_back( static_cast< ByteType >( ( baValue.size() >> 8 ) & 0xFF ) );
+                requestData.push_back( static_cast< ByteType >( baValue.size() & 0xFF ) );
+            }
+            else
+            {
+                throw std::invalid_argument{ "Octet string is too large" };
+            }
+            for ( ByteType b: baValue )
+            {
+                requestData.push_back( b );
+            }
+            found = true;
+        }
+        if ( !found )
+        {
+            throw std::invalid_argument{ "Unsupported data tag value" };
+        }
+
+        if ( tagData.oper )
+        {
+            requestData.push_back( static_cast< ByteType >( meters::TagId4M::Oper ) ); /// oper tag
+            requestData.push_back( static_cast< ByteType >( 0x01 ) );
+            requestData.push_back( static_cast< ByteType >( tagData.oper ) );
+        }
+    }
+
+    Packet packet = DoM4Request( nt, Opcode::WriteTags, requestData );
+    std::vector< Rc::Type > errors;
+
+    MeterAddressType tagPos = 0x0;
+    for ( size_t i = 0; i < data.size(); ++i )
+    {
+        ByteType tagId = packet.data.at( tagPos );
+        ByteType tagLength = packet.data.at( tagPos + 1 );
+        if ( tagId == static_cast< ByteType >( meters::TagId4M::Ack ) ) /// ACK
+        {
+            tagLength = 0;
+            errors[ i ] = Rc::Success;
+        }
+        else if ( tagId == static_cast< ByteType >( meters::TagId4M::Error ) ) /// ERR
+        {
+            errors[ i ] = RcFromError( packet.data.at( tagPos + 2 ) );
+        }
+        else
+        {
+            errors[ i ] = Rc::Fail; /// Unkown tag code
+        }
+        tagPos += 2 + tagLength;
+    }
+
+    return errors;
+} // WriteParams4M
+
+
 void M4Protocol::CloseCommSessionImpl( ByteType* srcNt, ByteType* dstNt )
 {
     (void) srcNt;
@@ -696,6 +1154,13 @@ void M4Protocol::OnRecoverableError()
         activeDev_->hasIoError = true;
     }
 } // OnRecoverableError
+
+
+ByteType M4Protocol::GetSpg741Sp( ByteType* nt )
+{
+    /// @todo Реализовать
+    return 0;
+} // GetSpg741Sp
 
 } // namespace M4
 

@@ -228,51 +228,51 @@ LocString Logika4L::LcdCharsToString( const ByteVector& buffer, MeterAddressType
 } // LcdCharsToString
 
 
-std::unique_ptr< logika::Any > Logika4L::GetValue( BinaryType4L::Type binType,
+std::shared_ptr< logika::Any > Logika4L::GetValue( BinaryType4L::Type binType,
     const ByteVector& buffer, MeterAddressType offset, bool& oper )
 {
     switch ( binType )
     {
         case BinaryType4L::R32:
-            return std::make_unique< logika::Any >( GetR32Value( buffer, offset, oper ) );
+            return std::make_shared< logika::Any >( GetR32Value( buffer, offset, oper ) );
         case BinaryType4L::TripleR32:
-            return std::make_unique< logika::Any >( GetTripleR32Value( buffer, offset, oper ) );
+            return std::make_shared< logika::Any >( GetTripleR32Value( buffer, offset, oper ) );
         case BinaryType4L::Time:
-            return std::make_unique< logika::Any >( GetTimeValue( buffer, offset, oper ) );
+            return std::make_shared< logika::Any >( GetTimeValue( buffer, offset, oper ) );
         case BinaryType4L::Date:
-            return std::make_unique< logika::Any >( GetDateValue( buffer, offset, oper ) );
+            return std::make_shared< logika::Any >( GetDateValue( buffer, offset, oper ) );
         case BinaryType4L::MmDdDate:
-            return std::make_unique< logika::Any >( GetMmDdValue( buffer, offset, oper ) );
+            return std::make_shared< logika::Any >( GetMmDdValue( buffer, offset, oper ) );
         case BinaryType4L::BitArray32:
-            return std::make_unique< logika::Any >( GetBitArray32Value( buffer, offset, oper ) );
+            return std::make_shared< logika::Any >( GetBitArray32Value( buffer, offset, oper ) );
         case BinaryType4L::BitArray24:
-            return std::make_unique< logika::Any >( GetBitArray24Value( buffer, offset, oper ) );
+            return std::make_shared< logika::Any >( GetBitArray24Value( buffer, offset, oper ) );
         case BinaryType4L::BitArray16:
-            return std::make_unique< logika::Any >( GetBitArray16Value( buffer, offset, oper ) );
+            return std::make_shared< logika::Any >( GetBitArray16Value( buffer, offset, oper ) );
         case BinaryType4L::BitArray8:
-            return std::make_unique< logika::Any >( GetBitArray8Value( buffer, offset, oper ) );
+            return std::make_shared< logika::Any >( GetBitArray8Value( buffer, offset, oper ) );
         case BinaryType4L::DbEntry:
-            return std::make_unique< logika::Any >( GetDbEntryValue( buffer, offset, oper ) );
+            return std::make_shared< logika::Any >( GetDbEntryValue( buffer, offset, oper ) );
         case BinaryType4L::DbEntryByte:
-            return std::make_unique< logika::Any >( GetDbEntryByteValue( buffer, offset, oper ) );
+            return std::make_shared< logika::Any >( GetDbEntryByteValue( buffer, offset, oper ) );
         case BinaryType4L::U8:
-            return std::make_unique< logika::Any >( GetU8Value( buffer, offset, oper ) );
+            return std::make_shared< logika::Any >( GetU8Value( buffer, offset, oper ) );
         case BinaryType4L::I32R32:
-            return std::make_unique< logika::Any >( GetI32R32Value( buffer, offset, oper ) );
+            return std::make_shared< logika::Any >( GetI32R32Value( buffer, offset, oper ) );
         case BinaryType4L::MmHhTime:
-            return std::make_unique< logika::Any >( GetMmHhValue( buffer, offset, oper ) );
+            return std::make_shared< logika::Any >( GetMmHhValue( buffer, offset, oper ) );
         case BinaryType4L::NsRecord:
-            return std::make_unique< logika::Any >( GetNsRecordValue( buffer, offset, oper ) );
+            return std::make_shared< logika::Any >( GetNsRecordValue( buffer, offset, oper ) );
         case BinaryType4L::IzmRecord:
-            return std::make_unique< logika::Any >( GetIzmRecordValue( buffer, offset, oper ) );
+            return std::make_shared< logika::Any >( GetIzmRecordValue( buffer, offset, oper ) );
         // case BinaryType4L::ArchiveStruct:
-            // return std::make_unique< logika::Any >(  );
+            // return std::make_shared< logika::Any >(  );
         case BinaryType4L::ModelChar:
-            return std::make_unique< logika::Any >( GetModelCharValue( buffer, offset, oper ) );
+            return std::make_shared< logika::Any >( GetModelCharValue( buffer, offset, oper ) );
         case BinaryType4L::U24:
-            return std::make_unique< logika::Any >( GetU24Value( buffer, offset, oper ) );
+            return std::make_shared< logika::Any >( GetU24Value( buffer, offset, oper ) );
         case BinaryType4L::ServiceRecordTimestamp:
-            return std::make_unique< logika::Any >( GetSRTimestampValue( buffer, offset, oper ) );
+            return std::make_shared< logika::Any >( GetSRTimestampValue( buffer, offset, oper ) );
     }
     return nullptr;
 } // GetValue

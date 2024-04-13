@@ -554,6 +554,8 @@ int main()
     }
 #endif // if 0
 
+    std::wcerr << static_cast< int8_t >( 0xFF ) << std::endl;
+
 #if defined( _WIN32 ) || defined( _WIN64 )
     WSACleanup();
 #endif

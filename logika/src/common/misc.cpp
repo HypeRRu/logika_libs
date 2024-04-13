@@ -73,12 +73,16 @@ TimeType GetCurrentTimestamp()
 } // GetCurrentTimestamp
 
 
-struct tm GetTimeStruct( TimeType timestamp )
+struct tm GetTimeStruct( TimeType timestamp, uint16_t* millis )
 {
     time_t stamp = static_cast< time_t >( timestamp );
     if ( 0 == stamp )
     {
         stamp = GetCurrentTimestamp();
+    }
+    if ( millis )
+    {
+        *millis = stamp % 1000;
     }
     stamp /= 1000; /// мс -> с
     
@@ -97,13 +101,16 @@ struct tm GetTimeStruct( TimeType timestamp )
 
 LocString GetTimeString( TimeType timestamp )
 {
-    struct tm timeStruct = GetTimeStruct( timestamp );
-    constexpr size_t bufSize = sizeof( "dd.mm.yyyy HH:MM:SS TMZ" );
-    // char buffer[ bufSize ] = { 0 };
-    // std::strftime( buffer, bufSize, "%d.%m.%Y %H:%M:%S %Z", &timeStruct );
+    uint16_t millis = 0;
+    struct tm timeStruct = GetTimeStruct( timestamp, &millis );
+    constexpr size_t bufSize = sizeof( "dd.mm.yyyy HH:MM:SS.000 TMZ" );
 
-    // return ToLocString( buffer );
-    return GetFormatTime( timeStruct, "%d.%m.%Y %H:%M:%S %Z", bufSize );
+    LocString ft = GetFormatTime( timeStruct, "%d.%m.%Y %H:%M:%S.000 %Z", bufSize );
+    /// Добавление милисекунд
+    ft[ 20 ] = static_cast< LocChar >( ( ( millis % 1000 ) / 100 ) + LOCALIZED( '0' ) );
+    ft[ 21 ] = static_cast< LocChar >( ( ( millis % 100 ) / 10 ) + LOCALIZED( '0' ) );
+    ft[ 22 ] = static_cast< LocChar >( ( ( millis % 10 ) ) + LOCALIZED( '0' ) );
+    return ft;
 } // GetTimeString
 
 

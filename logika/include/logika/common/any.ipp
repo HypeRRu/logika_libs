@@ -53,6 +53,22 @@ T Any::Cast() const
 
 
 template < typename T >
+bool Any::TryCast( T& result ) const
+{
+    if ( Empty() )
+    {
+        return false;
+    }
+    if ( typeid( T ) != holder_->TypeInfo() )
+    {
+        return false;
+    }
+    result = static_cast< Holder< T >* >( holder_.get() )->value;
+    return true;
+} // TryCast
+
+
+template < typename T >
 Any::Holder< T >::Holder( const T& t )
     : value{ t }
 {} // Holder( const T& t )

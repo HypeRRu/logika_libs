@@ -75,7 +75,7 @@ public:
     /// @param[out] oper @todo Флаг операции?
     /// @return Указатель на считанное значение (инкапсулированное в Any)
     /// @throws std::out_of_range Если offset + sizeof выходит за границу данных
-    static std::unique_ptr< logika::Any > GetValue( BinaryType4L::Type binType,
+    static std::shared_ptr< logika::Any > GetValue( BinaryType4L::Type binType,
         const ByteVector& buffer, MeterAddressType offset, bool& oper );
 
     /// @brief Получение значения типа R32 из буфера

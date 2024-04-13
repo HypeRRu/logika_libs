@@ -13,16 +13,28 @@
 
 #include <logika/common/types.h>
 #include <logika/connections/serial/types.h>
-#include <logika/meters/logika4/logika4.h>
+#include <logika/meters/defs.h>
+#include <logika/meters/logika4/4m/logika4m.h>
 
 namespace logika
 {
+
+namespace meters
+{
+
+/// forward declaration
+class LOGIKA_METERS_EXPORT Logika4;
+class LOGIKA_METERS_EXPORT Logika4L;
+
+} // namespace meters
 
 namespace protocols
 {
 
 namespace M4
 {
+
+struct LOGIKA_PROTOCOLS_EXPORT TagWriteData;
 
 namespace MeterChannel
 {
@@ -39,7 +51,6 @@ enum : Type
 
 } // namespace MeterChannel
 
-
 namespace RecvFlags
 {
 
@@ -53,8 +64,6 @@ enum : Type
 }; // anonymous enum
 
 } // namespace RecvFlags
-
-/// @todo CommExceptions
 
 /// @brief Протокол M4
 class LOGIKA_PROTOCOLS_EXPORT M4Protocol: public Protocol
@@ -71,12 +80,16 @@ public:
     static const uint16_t PARTITION_CURRENT;        ///< Текущий раздел
     static const uint32_t ALT_SPEED_FALLBACK_TIME;  ///< Время сброса альтернативной скорости работы
     static const ByteVector WAKEUP_SEQUENCE;        ///< Последовательность байтов для "пробуждения" прибора
-    static const TimeType WAKE_SESSION_DELAY;       /// Задержка (мс) между серией FF и запросом сеанса (нужна только для АДС99 в режиме TCP сервер)
+    static const TimeType WAKE_SESSION_DELAY;       ///< Задержка (мс) между серией FF и запросом сеанса (нужна только для АДС99 в режиме TCP сервер)
+    static const uint32_t MAX_PAGE_BLOCK;           ///< Максимальный размер блока страниц для чтения
+    static const uint32_t CHANNEL_NBASE;            ///< @todo Что это
 
 public:
-    /// @brief Конструктор шины
+    /// @brief Конструктор шины M4
+    /// @param[in] sKeeper Хранилище приложения
     /// @param[in] targetBaudRate Скорость работы с прибором
-    M4Protocol( connections::BaudRate::Type targetBaudRate = connections::BaudRate::NotSupported );
+    M4Protocol( const storage::StorageKeeper& sKeeper,
+        connections::BaudRate::Type targetBaudRate = connections::BaudRate::NotSupported );
 
     /// @brief Получение текущей скорости работы прибора
     /// @return Текущая скорость работы прибора (если прибор Serial), иначе NotSupported
@@ -96,12 +109,10 @@ public:
     /// @details Используется для проверки типа прибора, канала
     /// определение скорости работы и запись во внутреннее состояние шины
     /// @param[in] meter Ожидаемый тип прибора
-    /// @param[in] sKeeper Хранилище приложения
     /// @param[in] zNt NT прибора
     /// @param[in] tv Тип канала
     void SelectDeviceAndChannel( std::shared_ptr< meters::Logika4 > meter,
-        const storage::StorageKeeper& sKeeper, ByteType* zNt,
-        MeterChannel::Type tv = MeterChannel::Sys );
+        ByteType* zNt, MeterChannel::Type tv = MeterChannel::Sys );
 
     /// @brief Получение пакета M4
     /// @param[in] expectedNt Ожидаемый NT пакета
@@ -164,11 +175,88 @@ public:
     bool SetBusSpeed( std::shared_ptr< meters::Logika4 > meter, ByteType* nt,
         connections::BaudRate::Type baudRate, MeterChannel::Type tv = MeterChannel::Sys );
 
+    /// @brief Запись параметра в прибор Logika4L
+    /// @param[in] meter Прибор
+    /// @param[in] nt NT назначения
+    /// @param[in] channel Номер канала
+    /// @param[in] paramNum Номер параметра
+    /// @param[in] value Значение параметра
+    /// @param[in] operFlag Флаг оперативности
+    /// @return Код результата операции
+    Rc::Type WriteParameterL4( std::shared_ptr< meters::Logika4L > meter, ByteType* nt,
+        ByteType channel, uint32_t paramNum, LocString value, bool operFlag = false );
+
+    /// @brief Чтение данных из ОЗУ прибора Logika4L
+    /// @param[in] meter Прибор
+    /// @param[in] nt NT назначения
+    /// @param[in] startAddr Адрес начала чтения
+    /// @param[in] numBytes Количество считываемых байтов
+    /// @return Данные из ОЗУ
+    ByteVector ReadRamL4( std::shared_ptr< meters::Logika4L > meter, ByteType* nt,
+        MeterAddressType startAddr, MeterAddressType numBytes );
+
+    /// @brief Чтение страниц флэш-памяти прибора Logika4L
+    /// @details Чтение страниц флэш-памяти напрямую из прибора, без использования кэша
+    /// @param[in] meter Прибор
+    /// @param[in] nt NT назначения
+    /// @param[in] startPage Первая считываемая страница
+    /// @param[in] pageCount Количество считываемых страниц
+    /// @return Считанные страницы флэш-памяти
+    ByteVector ReadFlashPagesL4( std::shared_ptr< meters::Logika4L > meter, ByteType* nt,
+        uint32_t startPage, uint32_t pageCount );
+
+    /// @brief Чтение блока данных из флэш-памяти прибора Logika4L
+    /// @details Чтение блока данных флэш-памяти напрямую из прибора, без использования кэша
+    /// @param[in] meter Прибор
+    /// @param[in] nt NT назначения
+    /// @param[in] startAddr Начало считываемого блока
+    /// @param[in] length Количество считываемых данных
+    /// @return Считанный блок данных из флэш-памяти
+    ByteVector ReadFlashBytesL4( std::shared_ptr< meters::Logika4L > meter, ByteType* nt,
+        MeterAddressType startAddr, MeterAddressType length );
+    
+    /// @brief Чтение тэгов прибора Logika4M
+    /// @param[in] meter Прибор
+    /// @param[in] nt NT назначения
+    /// @param[in] channels Каналы
+    /// @param[in] ordinals Порядковые номера
+    /// @param[out] opFlags Флаги оперативности
+    /// @return Набор тэгов Logika4M
+    std::vector< meters::Logika4M::Tag4MRecordType > ReadTags4M( std::shared_ptr< meters::Logika4M > meter,
+        ByteType* nt, const std::vector< int32_t >& channels,
+        const std::vector< int32_t >& ordinals, std::vector< bool >& opFlags );
+
+    /// @brief Запись параметров в прибор Logika4M
+    /// @param[in] meter Прибор
+    /// @param[in] nt NT назначения
+    /// @return Ошибки записи
+    std::vector< Rc::Type > WriteParams4M( std::shared_ptr< meters::Logika4M > meter, ByteType* nt,
+        const std::vector< TagWriteData >& data );
+
 public:
     /// @brief Генерация сырого пакет (набора байтов) рукопожатия
     /// @param[in] dstNt NT назначения
     /// @return Сырой пакет (набор байтов) рукопожатия с прибором
     static ByteVector GenerateRawHandshake( ByteType* dstNt );
+
+    /// @brief Добавление номера параметра в буфер
+    /// @param[inout] buffer Буфер
+    /// @param[in] channel Номер канала
+    /// @param[in] ordinal Порядковый номер
+    static void AppendParamNum( ByteVector& buffer, ByteType channel, uint16_t ordinal );
+
+    /// @brief Разбора пакета для чтения тэгов прибора Logika4M
+    /// @param[in] packet Пакет
+    /// @param[out] opFlags Флаги оперативности
+    static std::vector< meters::Logika4M::Tag4MRecordType > ParseM4TagsPacket( const Packet& packet,
+        std::vector< bool >& opFlags );
+
+    /// @brief Ограничение времени
+    /// @details Если год в указанной дате превышает 2255, то выставляется 2255 год,
+    /// т.к. год указывается одним байтом (с 2000)
+    /// @param[in] date Время
+    /// @return Время с ограничением
+    static TimeType RestrictTime( TimeType date );
 
 protected:
     /// @copydoc Protocol::CloseCommSessionImpl()
@@ -182,6 +270,11 @@ protected:
     /// @brief Обработчик ошибки ввода/вывода
     /// @details Устанавливает флаг ошибки ввода вывода во внутреннем состоянии
     void OnRecoverableError();
+
+    /// @brief Получение СП для СПГ741
+    /// @param[in] nt NT назначения
+    /// @return СП
+    ByteType GetSpg741Sp( ByteType* nt );
 
 private:
     connections::BaudRate::Type initialBaudRate_;   ///< Начальное значение BaudRate для соединений с автоподнятием скорости

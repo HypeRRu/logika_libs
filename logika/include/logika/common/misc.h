@@ -40,8 +40,9 @@ LOGIKA_COMMON_EXPORT TimeType GetCurrentTimestamp();
 
 /// @brief Получение структуры со временем
 /// @param[in] timestamp Конвертируемая метка времени (мс). При значении 0 берется текущее время
+/// @param[out] millis Количество милисекунд
 /// @return Структура со временем
-LOGIKA_COMMON_EXPORT struct tm GetTimeStruct( TimeType timestamp = 0 );
+LOGIKA_COMMON_EXPORT struct tm GetTimeStruct( TimeType timestamp = 0, uint16_t* millis = nullptr );
 
 /// @brief Получение строки со временем в формате dd.MM.yy HH:mm:ss
 /// @param[in] timestamp Конвертируемая метка времени (мс). При значении 0 берется текущее время
