@@ -5,12 +5,17 @@
 
 #include <logika/log/defines.h>
 
+#include <logika/protocols/comm_exception.h>
 #include <logika/protocols/m4/opcodes.h>
 #include <logika/connections/utils/types_converter.h>
 #include <logika/connections/serial/serial_connection.h>
-#include <logika/meters/logika4/logika4.h>
+#include <logika/meters/logika4/4m/logika4m.h>
 #include <logika/common/misc.h>
 
+/// @cond
+#include <array>
+#include <algorithm>
+/// @endcond
 
 namespace // anonymous
 {
@@ -60,8 +65,10 @@ const uint32_t M4Protocol::ALT_SPEED_FALLBACK_TIME  = 10000;
 /// Последовательность состоит из 16 байтов 0xFF
 const ByteVector M4Protocol::WAKEUP_SEQUENCE        = ByteVector( 16, static_cast< ByteType >( 0xFF ) );
 const TimeType M4Protocol::WAKE_SESSION_DELAY       = 100;
+uint32_t M4Protocol::packetId_                      = 0;
 
-M4Protocol::BusActiveState::BusActiveState( std::shared_ptr< meters::Meter > mtr,
+
+M4Protocol::BusActiveState::BusActiveState( std::shared_ptr< meters::Logika4 > mtr,
     ByteType ntByte, MeterChannel::Type chan )
     : meter{ mtr }
     , nt{ ntByte }
@@ -71,7 +78,7 @@ M4Protocol::BusActiveState::BusActiveState( std::shared_ptr< meters::Meter > mtr
 {
     if ( !meter )
     {
-        throw std::runtime_error{ "Invalid meter passed" };
+        throw std::invalid_argument{ "Invalid meter passed" };
     }
 } // BusActiveState
 
@@ -133,6 +140,106 @@ void M4Protocol::SendAttention( bool slowWake )
 } // SendAttention
 
 
+void M4Protocol::SelectDeviceAndChannel( std::shared_ptr< meters::Logika4 > meter,
+    const storage::StorageKeeper& sKeeper, ByteType* zNt, MeterChannel::Type tv )
+{
+    if ( !connection_ )
+    {
+        throw ECommException( ExceptionSeverity::Stop,
+            CommunicationError::NotConnected, "Connection not established" );
+    }
+    if ( !meter )
+    {
+        throw std::invalid_argument{ "Invalid meter passed" };
+    }
+    ByteType nt = zNt ? *zNt : M4Protocol::BROADCAST_NT;
+
+    /// @note activeDev_->meter проверяется в конструкторе BusActiveState
+    /// Проверяем, не закончилась ли сессия в приборе по неактивности
+    if ( activeDev_ && activeDev_->GetTimeFromLastIo() > activeDev_->meter->GetSessionTimeout() )
+    {
+        ResetBusActiveState();
+    }
+    std::shared_ptr< connections::SerialConnection > serialConnection = ConnectionAsSerial( connection_ );
+    if ( serialConnection )
+    {
+        /// Менеджмент повышенных скоростей для serial соединений
+        if ( suggestedBaudRate_ != connections::BaudRate::NotSupported
+            && initialBaudRate_ == connections::BaudRate::NotSupported )
+        {
+            initialBaudRate_ = serialConnection->GetBaudRate();
+        }
+        /// Проверяем, не вывалился ли прибор из повышенной скорости
+        /// (прибор сбрасывает скорость обмена при отсутствии обмена в течение 10 с )
+        if ( activeDev_ && activeDev_->GetTimeFromLastIo() > M4Protocol::ALT_SPEED_FALLBACK_TIME )
+        {
+            SerialSpeedFallback();
+        }
+        /// Если внутреннее состояние не задано или не совпадает с ожидаемым,
+        /// или произошла ошибка ввода/вывода, то нужно его переинициализровать
+        bool needReselect = !activeDev_ || activeDev_->nt != nt
+            || activeDev_->tv != tv || activeDev_->hasIoError;
+        if ( needReselect )
+        {
+            if ( activeDev_ )
+            {
+                activeDev_->hasIoError = false;
+            }
+            bool alreadyAwake = activeDev_ && activeDev_->nt == nt;
+            /// Выдерживаем паузы между FFами и после них, только если устройство этого требует
+            bool slowWake = !meter->GetSupportFastSessionInit() && !alreadyAwake;
+            try
+            {
+                Packet handshakePacket = DoHandshake( &nt, static_cast< ByteType >( tv ), slowWake );
+                /// @note connection_ не nullptr, проверено выше, поэтому Packet не пуст
+                std::shared_ptr< meters::Meter > detectedMtr = meters::Logika4::DetermineMeter(
+                    handshakePacket.data.at( 0 ), handshakePacket.data.at( 1 ), handshakePacket.data.at( 2 ),
+                    sKeeper.GetStorage< LocString, meters::Meter >()
+                );
+                if ( detectedMtr != meter )
+                {
+                    ResetBusActiveState();
+                    throw std::runtime_error{ "Invalid meter type detected" };
+                }
+                activeDev_ = std::make_shared< BusActiveState >( meter, nt, tv );
+                activeDev_->lastIo = GetCurrentTimestamp();
+            }
+            catch ( const std::exception& )
+            {
+                LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "An error occured due handshake and meter check" ) );
+                activeDev_->hasIoError = true;
+                throw;
+            }
+        }
+        /// Обновление скорости работы прибора
+        while ( true )
+        {
+            if ( serialConnection
+                && suggestedBaudRate_ != connections::BaudRate::NotSupported
+                && GetCurrentBaudRate() != suggestedBaudRate_ )
+            {
+                bool updatedSpeed = SetBusSpeed( activeDev_->meter, &nt, suggestedBaudRate_, tv );
+                if ( !updatedSpeed )
+                {
+                    /// У некоторых M4 приборов (941.20, 944, 742? прочие?) встречается несовместимость,
+                    /// не позволяющая нормально работать на максимальной скорости 57600 через АПС71
+                    std::shared_ptr< meters::Logika4M > meter4M =
+                        std::dynamic_pointer_cast< meters::Logika4M >( meter );
+                    if ( meter4M && suggestedBaudRate_ >= connections::BaudRate::Rate57600 )
+                    {
+                        suggestedBaudRate_ = connections::BaudRate::Rate38400;
+                        continue;
+                    }
+                    /// Также, 942 поддерживает 9600 только на оптическом интерфейсе, на проводном - только 2400
+                    suggestedBaudRate_ = connections::BaudRate::NotSupported;
+                }
+            }
+            break;
+        }
+    }
+} // SelectDeviceAndChannel
+
+
 ByteVector M4Protocol::GenerateRawHandshake( ByteType* dstNt )
 {
     static const ByteVector hsArgs{ 0, 0, 0, 0 };
@@ -183,8 +290,8 @@ Packet M4Protocol::RecvPacket( ByteType* excpectedNt, Opcode::Type* expectedOpco
                 if ( elapsed > connection_->GetReadTimeout() )
                 {
                     OnRecoverableError();
-                    /// @todo CommError
-                    throw std::runtime_error{ "Timeout expired" };
+                    throw ECommException( ExceptionSeverity::Error,
+                        CommunicationError::Timeout, "Timeout expired" );
                 }
             }
             /// Чтение NT и кода операции
@@ -192,8 +299,8 @@ Packet M4Protocol::RecvPacket( ByteType* excpectedNt, Opcode::Type* expectedOpco
             if ( readed < 2 )
             {
                 OnRecoverableError();
-                /// @todo CommError
-                throw std::runtime_error{ "General read error" };
+                throw ECommException( ExceptionSeverity::Error,
+                    CommunicationError::Unspecified, "Communication sequence error" );
             }
             packet.nt           = buffer.at( 1 );
             packet.funcOpcode   = static_cast< Opcode::Type >( buffer.at( 2 ) );
@@ -217,9 +324,8 @@ Packet M4Protocol::RecvPacket( ByteType* excpectedNt, Opcode::Type* expectedOpco
                 if ( static_cast< Opcode::Type >( packet.funcOpcode ) == Opcode::ReadFlash )
                 {
                     OnRecoverableError();
-                    /// @bug Сделать повторное чтение?
-                    /// @todo CommError
-                    throw std::runtime_error{ "Invalid comm sequence" };
+                    throw ECommException( ExceptionSeverity::Error,
+                        CommunicationError::Unspecified, "Communication sequence error" );
                 }
                 continue; /// Чтение следующего пакета
             }
@@ -233,8 +339,8 @@ Packet M4Protocol::RecvPacket( ByteType* excpectedNt, Opcode::Type* expectedOpco
                 {
                     OnRecoverableError();
                     /// @bug Сделать повторное чтение?
-                    /// @todo CommError
-                    throw std::runtime_error{ "General read error" };
+                    throw ECommException( ExceptionSeverity::Error,
+                        CommunicationError::SystemError, "General read error" );
                 }
                 packet.id           = buffer.at( 3 );
                 packet.attributes   = buffer.at( 4 );
@@ -272,8 +378,8 @@ Packet M4Protocol::RecvPacket( ByteType* excpectedNt, Opcode::Type* expectedOpco
             {
                 OnRecoverableError();
                 /// @bug Сделать повторное чтение?
-                /// @todo CommError
-                throw std::runtime_error{ "General read error" };
+                throw ECommException( ExceptionSeverity::Error,
+                    CommunicationError::SystemError, "General read error" );
             }
             /// legacy: checksum8 + frame end, M4: CRC16
             readed = connection_->Read( check, 2 );
@@ -281,8 +387,8 @@ Packet M4Protocol::RecvPacket( ByteType* excpectedNt, Opcode::Type* expectedOpco
             {
                 OnRecoverableError();
                 /// @bug Сделать повторное чтение?
-                /// @todo CommError
-                throw std::runtime_error{ "General read error" };
+                throw ECommException( ExceptionSeverity::Error,
+                    CommunicationError::SystemError, "General read error" );
             }
             if ( packet.extended )
             {
@@ -327,7 +433,7 @@ Packet M4Protocol::RecvPacket( ByteType* excpectedNt, Opcode::Type* expectedOpco
         {
             /// Несовпадение контрольной суммы
             RegisterEvent( Rc::RxCrcError );
-            throw std::logic_error{ "Invalid checkum" };
+            throw ECommException( ExceptionSeverity::Error, CommunicationError::Checksum );
         }
         RegisterEvent( Rc::PacketReceived );
         if ( static_cast< Opcode::Type >( packet.funcOpcode ) == Opcode::Error )
@@ -336,7 +442,8 @@ Packet M4Protocol::RecvPacket( ByteType* excpectedNt, Opcode::Type* expectedOpco
             RegisterEvent( Rc::RxGeneralError );
             if ( ( flags & RecvFlags::DontThrowOnErrorReply ) == 0 )
             {
-                throw std::runtime_error{ "Unspecified read error" };
+                throw ECommException( ExceptionSeverity::Error, CommunicationError::Unspecified,
+                    "", LOCALIZED( "Device returned error: " ) + ToLocString( std::to_string( errorCode ) ) );
             }
         }
     }
@@ -423,9 +530,140 @@ void M4Protocol::SendExtendedPacket( ByteType* nt, ByteType packetId, Opcode::Ty
 } // SendExtendedPacket
 
 
+Packet M4Protocol::DoLegacyRequest( ByteType* nt, Opcode::Type requestOpcode, const ByteVector& data,
+    uint32_t expectedDataLength, RecvFlags::Type flags )
+{
+    SendLegacyPacket( nt, requestOpcode, data );
+    return RecvPacket( nt, &requestOpcode, nullptr, expectedDataLength, flags );
+} // DoLegacyRequest
+
+
+Packet M4Protocol::DoM4Request( ByteType* nt, Opcode::Type requestOpcode, const ByteVector& data,
+    ByteType* packetId, RecvFlags::Type flags )
+{
+    ByteType identifier;
+    if ( nt )
+    {
+        identifier = *nt;
+    }
+    else
+    {
+        identifier = static_cast< ByteType >( packetId_++ );
+    }
+    SendExtendedPacket( nt, identifier, requestOpcode, data );
+    return RecvPacket( nt, &requestOpcode, &identifier, 0, flags );
+} // DoM4Request
+
+
+Packet M4Protocol::DoHandshake( ByteType* nt, ByteType channel, bool slowWake )
+{
+    if ( !connection_ )
+    {
+        LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "Connection not established" ) );
+        return Packet{};
+    }
+    if ( activeDev_ && nt && activeDev_->nt == *nt )
+    {
+        ResetBusActiveState();
+    }
+    SendAttention( slowWake );
+    /// Пауза обязательна для АДС99 в режиме TCP сервер,
+    /// без неё он всячески таймаутится, остальным приборам +/- всё равно
+    WaitFor( M4Protocol::WAKE_SESSION_DELAY );
+    connection_->Purge( connections::PurgeFlags::Rx );
+    const ByteVector requestData{ channel, 0, 0, 0 };
+    return DoLegacyRequest( nt, Opcode::Handshake, requestData, 3 );
+} // DoHandshake
+
+
+bool M4Protocol::SetBusSpeed( std::shared_ptr< meters::Logika4 > meter, ByteType* nt,
+    connections::BaudRate::Type baudRate, MeterChannel::Type tv )
+{
+    static const std::array< connections::BaudRate::Type, 7 > m4BaudRates{
+          connections::BaudRate::Rate2400, connections::BaudRate::Rate4800
+        , connections::BaudRate::Rate9600, connections::BaudRate::Rate19200
+        , connections::BaudRate::Rate38400, connections::BaudRate::Rate57600
+        , connections::BaudRate::Rate115200
+    };
+
+    std::shared_ptr< connections::SerialConnection > serialConnection = ConnectionAsSerial( connection_ );
+    if ( !serialConnection )
+    {
+        throw std::runtime_error{ "Baud rate change only available for serial connections" };
+    }
+
+    const auto brIter = std::find( m4BaudRates.cbegin(), m4BaudRates.cend(), baudRate );
+    if ( m4BaudRates.cend() == brIter )
+    {
+        throw ECommException( ExceptionSeverity::Stop, CommunicationError::Unspecified, "Unsupported baud rate" );
+    }
+    ByteType baudRateIdx = static_cast< ByteType >( m4BaudRates.cend() - brIter );
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Setting baud rate to " )
+        << ToLocString( connections::BaudRateToString( baudRate ) ) );
+
+    connections::BaudRate::Type prevBaudRate = serialConnection->GetBaudRate();
+    bool changedOk = false;
+    bool devAcksNewBaudRate = false;
+    
+    try
+    {
+        ByteVector pData{ baudRateIdx, 0, 0, 0 };
+        Packet response = DoLegacyRequest( nt, Opcode::SetSpeed, pData, 0, RecvFlags::DontThrowOnErrorReply );
+        if ( response.funcOpcode == Opcode::SetSpeed )
+        {
+            /// Поступил запрос от прибора на изменение BaudRate
+            devAcksNewBaudRate = true;
+            WaitFor( 250 );
+            serialConnection->Purge( connections::PurgeFlags::TxRx );
+            /// Проверяем, что прибор отвечает на новой скорости
+            serialConnection->SetBaudRate( baudRate );
+            pData = ByteVector{ static_cast< ByteType >( tv ), 0, 0, 0 };
+            response = DoLegacyRequest( nt, Opcode::Handshake, pData, 3, RecvFlags::DontThrowOnErrorReply );
+            changedOk = response.funcOpcode == Opcode::Handshake;
+            LOG_WRITE( LOG_DEBUG, LOCALIZED( "Set new baud rate: " )
+                << ToLocString( connections::BaudRateToString( baudRate ) ) );
+        }
+    }
+    catch ( const ECommException& e )
+    {
+        if (   e.GetReason() != CommunicationError::Timeout
+            && e.GetReason() != CommunicationError::Checksum )
+        {
+            throw;
+        }
+        changedOk = false;
+    }
+    catch ( const std::exception& e )
+    {
+        LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "Unspecified error" ) );
+        throw;
+    }
+
+    if ( !changedOk )
+    {
+        LocString message = LOCALIZED( "Error occured" );
+        if ( devAcksNewBaudRate )
+        {
+            message += LOCALIZED( ", restoring previous baud rate..." );
+        }
+        LOG_WRITE( LOG_WARNING, message );
+        serialConnection->SetBaudRate( prevBaudRate );
+        if ( devAcksNewBaudRate )
+        {
+            constexpr uint32_t fallbackTimeout = static_cast< uint32_t >( ALT_SPEED_FALLBACK_TIME * 1.1 );
+            WaitFor( fallbackTimeout );
+            LOG_WRITE( LOG_INFO, LOCALIZED( "Restored previous baud rate " )
+                << ToLocString( connections::BaudRateToString( prevBaudRate ) ) );
+        }
+    }
+    return changedOk;
+} // SetBusSpeed
+
+
 void M4Protocol::CloseCommSessionImpl( ByteType* srcNt, ByteType* dstNt )
 {
-    /// @todo реализовать
+    (void) srcNt;
+    DoLegacyRequest( dstNt, Opcode::SessionClose, ByteVector( 4, 0x0 ), 0, RecvFlags::DontThrowOnErrorReply );
 } // CloseCommSessionImpl
 
 

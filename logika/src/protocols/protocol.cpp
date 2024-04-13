@@ -8,8 +8,10 @@
 
 #include <logika/protocols/m4/m4protocol.h>
 #include <logika/protocols/x6/spbusprotocol.h>
+#include <logika/protocols/m4/packet.h>
 
 #include <logika/meters/logika4/logika4.h>
+#include <logika/meters/logika4/4l/logika4l.h>
 
 /// @cond
 #include <chrono>
@@ -192,19 +194,21 @@ std::shared_ptr< meters::Meter > Protocol::DetectM4( std::shared_ptr< M4::M4Prot
     std::shared_ptr< meters::Meter > spt942 = nullptr;
     meterStorage->GetItem( LOCALIZED( "SPT942" ), spt942 );
 
-    // M4::M4Packet reply = bus->Handshake( static_cast< ByteType >( 0xFF ), 0, false );
-    // dump = reply.GetDump();
-    // if ( reply.data.size() < 3 )
-    // {
-    //     return nullptr;
-    // }
-    // std::shared_ptr< meters::Meter > meter = Logika4::DetermineMeter(
-    //     reply.data[ 0 ], reply.data[ 1 ], reply.data[ 2 ], meterStorage );
-    // if ( !meter )
-    // {
-    //     return nullptr;
-    // }
+    ByteType nt = M4::M4Protocol::BROADCAST_NT;
+    M4::Packet reply = bus->DoHandshake( &nt, 0, false );
+    dump = reply.GetDump();
+    if ( reply.data.size() < 3 )
+    {
+        return nullptr;
+    }
+    std::shared_ptr< meters::Meter > meter = meters::Logika4::DetermineMeter(
+        reply.data[ 0 ], reply.data[ 1 ], reply.data[ 2 ], meterStorage );
+    if ( !meter )
+    {
+        return nullptr;
+    }
 
+    /// @todo Реализовать
     // if ( meter == spt942 )
     // {
     //     std::shared_ptr< meters::Logika4L > meter4l = std::dynamic_pointer_cast< meters::Logika4L >( meter );
@@ -220,9 +224,7 @@ std::shared_ptr< meters::Meter > Protocol::DetectM4( std::shared_ptr< M4::M4Prot
     //     }
     // }
     
-    // return meter;
-
-    return nullptr;
+    return meter;
 } // DetectM4
     
 

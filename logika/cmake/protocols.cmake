@@ -3,6 +3,7 @@ set(LIB_NAME ${CMAKE_PROJECT_NAME}_protocols)
 set(
     ${LIB_NAME}_SOURCES_LIST
 	${SRC_DIR}/protocols/protocol.cpp
+	${SRC_DIR}/protocols/comm_exception.cpp
 	${SRC_DIR}/protocols/m4/archive_record.cpp
 	${SRC_DIR}/protocols/m4/packet.cpp
 	${SRC_DIR}/protocols/m4/m4protocol.cpp
