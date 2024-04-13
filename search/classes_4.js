@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['historicalseries_0',['HistoricalSeries',['../db/d35/structlogika_1_1meters_1_1HistoricalSeries.html',1,'logika::meters']]]
+  ['ecommexception_0',['ECommException',['../d2/d02/classlogika_1_1protocols_1_1ECommException.html',1,'logika::protocols']]]
 ];

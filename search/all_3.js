@@ -50,7 +50,7 @@ var searchData=
   ['device_5fconverter_2ecpp_47',['device_converter.cpp',['../da/de4/device__converter_8cpp.html',1,'']]],
   ['device_5fconverter_2eh_48',['device_converter.h',['../d9/d3f/device__converter_8h.html',1,'']]],
   ['deviceconverter_49',['DeviceConverter',['../d8/d9f/classlogika_1_1meters_1_1converters_1_1DeviceConverter.html',1,'logika::meters::converters']]],
-  ['devicediscovery_50',['DeviceDiscovery',['../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#a399fe99af47750da7459306b1ff0736ba64a4e16bec7a17a1f43610fc2c6df97e',1,'logika::protocols::M4::Opcode']]],
+  ['devicediscovery_50',['DeviceDiscovery',['../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#a55940b9f58f5f7663ee7ae38c8fdc72ba64a4e16bec7a17a1f43610fc2c6df97e',1,'logika::protocols::M4::Opcode']]],
   ['devices_2ecpp_51',['devices.cpp',['../d9/d70/devices_8cpp.html',1,'']]],
   ['devices_2eh_52',['devices.h',['../d7/dde/devices_8h.html',1,'']]],
   ['devices_5fh_53',['DEVICES_H',['../d7/dde/devices_8h.html#a3caa0397d733033e72f0c4cc20b21368',1,'devices.h']]],
@@ -58,7 +58,10 @@ var searchData=
   ['displayformat_55',['displayFormat',['../d0/de8/structlogika_1_1meters_1_1TagDefSettings.html#af1f1df9f1320e1a408438fca7935603a',1,'logika::meters::TagDefSettings']]],
   ['displayformat_5f_56',['displayFormat_',['../d5/dfb/classlogika_1_1meters_1_1TagDef.html#a667c176fb6ff4c107fe57807b7a7bd83',1,'logika::meters::TagDef']]],
   ['displayns_57',['DisplayNs',['../d6/df4/classlogika_1_1meters_1_1Logika4.html#ad6f8baf3b2f5002ec73a77fd0624521f',1,'logika::meters::Logika4']]],
-  ['dontthrowonerrorreply_58',['DontThrowOnErrorReply',['../d8/db6/namespacelogika_1_1protocols_1_1M4_1_1RecvFlags.html#a2091d4d6f9fd0b97a418b282514d559aa3bb5341d2b2108623dee5859bd678c7a',1,'logika::protocols::M4::RecvFlags']]],
-  ['double_59',['Double',['../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefad909d38d705ce75386dd86e611a82f5b',1,'logika::meters']]],
-  ['dp_60',['dP',['../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97a488ab29adec84b0394426c82ab48b26d',1,'logika::meters']]]
+  ['dohandshake_58',['DoHandshake',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#afe93aa0f2807cb9666bc9c8bda67ce95',1,'logika::protocols::M4::M4Protocol']]],
+  ['dolegacyrequest_59',['DoLegacyRequest',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#acafccf2bc8fbe87617da5a8545bc4a19',1,'logika::protocols::M4::M4Protocol']]],
+  ['dom4request_60',['DoM4Request',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a4563ccd6198f757b78473bca25deb588',1,'logika::protocols::M4::M4Protocol']]],
+  ['dontthrowonerrorreply_61',['DontThrowOnErrorReply',['../d8/db6/namespacelogika_1_1protocols_1_1M4_1_1RecvFlags.html#a34e776538bfa860c487e599f5ac99a4aa3bb5341d2b2108623dee5859bd678c7a',1,'logika::protocols::M4::RecvFlags']]],
+  ['double_62',['Double',['../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefad909d38d705ce75386dd86e611a82f5b',1,'logika::meters']]],
+  ['dp_63',['dP',['../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97a488ab29adec84b0394426c82ab48b26d',1,'logika::meters']]]
 ];

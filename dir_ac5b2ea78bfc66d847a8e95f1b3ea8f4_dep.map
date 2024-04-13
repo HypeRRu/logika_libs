@@ -1,10 +1,13 @@
 <map id="logika/include/logika/protocols/m4" name="logika/include/logika/protocols/m4">
-<area shape="rect" id="node1" href="dir_ac5b2ea78bfc66d847a8e95f1b3ea8f4.html" title="m4" alt="" coords="83,52,123,78"/>
+<area shape="rect" id="node1" href="dir_ac5b2ea78bfc66d847a8e95f1b3ea8f4.html" title="m4" alt="" coords="137,52,176,78"/>
 <area shape="rect" id="node2" href="dir_7b51ec3e2322a51b57802051b996306a.html" title="connections" alt="" coords="5,126,97,152"/>
-<area shape="poly" id="edge1" href="dir_000026_000008.html" alt="" coords="97,80,71,115,67,112,92,77"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000026_000008.html" title="1" alt="" coords="74,108,81,123"/>
+<area shape="poly" id="edge1" href="dir_000026_000008.html" alt="" coords="140,81,83,119,80,115,137,76"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000026_000008.html" title="1" alt="" coords="85,115,92,130"/>
 <area shape="rect" id="node3" href="dir_eb1dac8808724e9096ff641449d2941b.html" title="common" alt="" coords="121,126,192,152"/>
-<area shape="poly" id="edge2" href="dir_000026_000004.html" alt="" coords="114,77,140,112,136,115,110,80"/>
-<area shape="rect" id="edge2-headlabel" href="dir_000026_000004.html" title="5" alt="" coords="140,98,147,113"/>
-<area shape="rect" id="clust1" href="dir_42cb901e50ce833ed144c9fb04bddde6.html" title="protocols" alt="" coords="67,16,140,89"/>
+<area shape="poly" id="edge2" href="dir_000026_000004.html" alt="" coords="159,78,159,110,154,110,154,78"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000026_000004.html" title="5" alt="" coords="161,100,168,115"/>
+<area shape="rect" id="node4" href="dir_f19878882094456de11f8fe15da466da.html" title="meters" alt="" coords="216,126,278,152"/>
+<area shape="poly" id="edge3" href="dir_000026_000028.html" alt="" coords="173,76,222,114,218,119,170,81"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000026_000028.html" title="1" alt="" coords="219,100,226,115"/>
+<area shape="rect" id="clust1" href="dir_42cb901e50ce833ed144c9fb04bddde6.html" title="protocols" alt="" coords="120,16,194,89"/>
 </map>

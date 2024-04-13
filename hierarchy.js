@@ -115,6 +115,9 @@ var hierarchy =
     [ "logika::meters::converters::M4ArchiveFieldConverter", "de/d13/classlogika_1_1meters_1_1converters_1_1M4ArchiveFieldConverter.html", null ],
     [ "logika::meters::converters::M4TagConverter", "d8/d94/classlogika_1_1meters_1_1converters_1_1M4TagConverter.html", null ],
     [ "logika::protocols::M4::Packet", "d4/d9a/structlogika_1_1protocols_1_1M4_1_1Packet.html", null ],
+    [ "std::runtime_error", null, [
+      [ "logika::protocols::ECommException", "d2/d02/classlogika_1_1protocols_1_1ECommException.html", null ]
+    ] ],
     [ "logika::SharedConstructible< Type >", "dd/d10/classlogika_1_1SharedConstructible.html", null ],
     [ "logika::SharedConstructible< A >", "dd/d10/classlogika_1_1SharedConstructible.html", [
       [ "A", "d4/dc4/structA.html", [

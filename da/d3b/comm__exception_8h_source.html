@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Logika Libs: Исходный файл logika/include/logika/protocols/comm_exception.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Logika Libs
+   </div>
+   <div id="projectbrief">Библиотеки для работы с приборами НПФ &quot;Логика&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('da/d3b/comm__exception_8h_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">comm_exception.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../da/d3b/comm__exception_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef LOGIKA_PROTOCOLS_COMM_EXCEPTION_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="../../da/d3b/comm__exception_8h.html#a90484081f3aa93ed2b32a2c4e26c0eb7">    7</a></span><span class="preprocessor">#define LOGIKA_PROTOCOLS_COMM_EXCEPTION_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="../../d5/d7b/common_2types_8h.html">logika/common/types.h</a>&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d7/d43/namespacelogika.html">logika</a></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../da/d59/namespacelogika_1_1protocols.html">   19</a></span><span class="keyword">namespace </span>protocols</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../da/d59/namespacelogika_1_1protocols.html#ac2249da78a8c87c4f76b71a244cc30bc">   23</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../da/d59/namespacelogika_1_1protocols.html#ac2249da78a8c87c4f76b71a244cc30bc">ExceptionSeverity</a></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_enumvalue" href="../../da/d59/namespacelogika_1_1protocols.html#ac2249da78a8c87c4f76b71a244cc30bca902b0d55fddef6f8d651fe1035b7d4bd">Error</a>,      </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_enumvalue" href="../../da/d59/namespacelogika_1_1protocols.html#ac2249da78a8c87c4f76b71a244cc30bca526d688f37a86d3c3f27d0c5016eb71d">Reset</a>,      </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_enumvalue" href="../../da/d59/namespacelogika_1_1protocols.html#ac2249da78a8c87c4f76b71a244cc30bca11a755d598c0c417f9a36758c3da7481">Stop</a>,       </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_enumvalue" href="../../da/d59/namespacelogika_1_1protocols.html#ac2249da78a8c87c4f76b71a244cc30bcae45cc432c180e6999b2011751f4e9db8">WaitRadius</a>  </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}; <span class="comment">// enum class ExceptionSeverity</span></div>
+</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../da/d59/namespacelogika_1_1protocols.html#aa64881855fc9daae34694be31193b840">   32</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../da/d59/namespacelogika_1_1protocols.html#aa64881855fc9daae34694be31193b840">CommunicationError</a></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_enumvalue" href="../../da/d59/namespacelogika_1_1protocols.html#aa64881855fc9daae34694be31193b840ac85a251cc457840f1e032f1b733e9398">Timeout</a>,        </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_enumvalue" href="../../da/d59/namespacelogika_1_1protocols.html#aa64881855fc9daae34694be31193b840a89f37066d4c35e04431160d607fb2b46">Checksum</a>,       </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_enumvalue" href="../../da/d59/namespacelogika_1_1protocols.html#aa64881855fc9daae34694be31193b840a4075072d219e061ca0f3124f8fbef463">NotConnected</a>,   </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_enumvalue" href="../../da/d59/namespacelogika_1_1protocols.html#aa64881855fc9daae34694be31193b840ab932b91f686c2aa588adfd9a407155ca">SystemError</a>,    </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_enumvalue" href="../../da/d59/namespacelogika_1_1protocols.html#aa64881855fc9daae34694be31193b840a6fcdc090caeade09d0efd6253932b6f5">Unspecified</a>     </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}; <span class="comment">// enum class CommunicationError</span></div>
+</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../d2/d02/classlogika_1_1protocols_1_1ECommException.html">   42</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d2/d02/classlogika_1_1protocols_1_1ECommException.html">ECommException</a>: <span class="keyword">public</span> std::runtime_error</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_function" href="../../d2/d02/classlogika_1_1protocols_1_1ECommException.html#a58376e10828375f626876ce1502dd290">ECommException</a>( <a class="code hl_enumeration" href="../../da/d59/namespacelogika_1_1protocols.html#ac2249da78a8c87c4f76b71a244cc30bc">ExceptionSeverity</a> severity, <a class="code hl_enumeration" href="../../da/d59/namespacelogika_1_1protocols.html#aa64881855fc9daae34694be31193b840">CommunicationError</a> reason,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keyword">const</span> std::string&amp; baseMsg = <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">const</span> <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a>&amp; extInfo = <a class="code hl_define" href="../../d5/d7b/common_2types_8h.html#a450c34cdc4d85a2a7fa797a85914af92">LOCALIZED</a>( <span class="stringliteral">&quot;&quot;</span> ) );</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_enumeration" href="../../da/d59/namespacelogika_1_1protocols.html#ac2249da78a8c87c4f76b71a244cc30bc">ExceptionSeverity</a> <a class="code hl_function" href="../../d2/d02/classlogika_1_1protocols_1_1ECommException.html#a88cc56723994b7084d6e96fc10080373">GetSeverity</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <a class="code hl_enumeration" href="../../da/d59/namespacelogika_1_1protocols.html#aa64881855fc9daae34694be31193b840">CommunicationError</a> <a class="code hl_function" href="../../d2/d02/classlogika_1_1protocols_1_1ECommException.html#a7f45f907aea91030ebda95017554884f">GetReason</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> <a class="code hl_function" href="../../d2/d02/classlogika_1_1protocols_1_1ECommException.html#a6a16c55262460c2a2fdc4b3c529838ab">GetExtendedInfo</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keyword">static</span> <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> <a class="code hl_function" href="../../d2/d02/classlogika_1_1protocols_1_1ECommException.html#a8f6fd42d57d2f258bb11fc65df0e42aa">GetReasonDescription</a>( <a class="code hl_enumeration" href="../../da/d59/namespacelogika_1_1protocols.html#aa64881855fc9daae34694be31193b840">CommunicationError</a> reason );</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keyword">static</span> <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> <a class="code hl_function" href="../../d2/d02/classlogika_1_1protocols_1_1ECommException.html#a7e0e332612350085e00252f6dbd925ce">GetSeverityDescription</a>( <a class="code hl_enumeration" href="../../da/d59/namespacelogika_1_1protocols.html#ac2249da78a8c87c4f76b71a244cc30bc">ExceptionSeverity</a> severity );</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_enumeration" href="../../da/d59/namespacelogika_1_1protocols.html#ac2249da78a8c87c4f76b71a244cc30bc">ExceptionSeverity</a> severity_;    </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <a class="code hl_enumeration" href="../../da/d59/namespacelogika_1_1protocols.html#aa64881855fc9daae34694be31193b840">CommunicationError</a> reason_;     </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> extendedInfo_;        </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}; <span class="comment">// class ECommException</span></div>
+</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>} <span class="comment">// namespace protocols</span></div>
+</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>} <span class="comment">// namespace logika</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="preprocessor">#endif </span><span class="comment">// LOGIKA_PROTOCOLS_COMM_EXCEPTION_H</span></div>
+<div class="ttc" id="aclasslogika_1_1protocols_1_1ECommException_html"><div class="ttname"><a href="../../d2/d02/classlogika_1_1protocols_1_1ECommException.html">logika::protocols::ECommException</a></div><div class="ttdoc">Класс ошибки обмена</div><div class="ttdef"><b>Definition</b> comm_exception.h:43</div></div>
+<div class="ttc" id="aclasslogika_1_1protocols_1_1ECommException_html_a58376e10828375f626876ce1502dd290"><div class="ttname"><a href="../../d2/d02/classlogika_1_1protocols_1_1ECommException.html#a58376e10828375f626876ce1502dd290">logika::protocols::ECommException::ECommException</a></div><div class="ttdeci">ECommException(ExceptionSeverity severity, CommunicationError reason, const std::string &amp;baseMsg=&quot;&quot;, const LocString &amp;extInfo=LOCALIZED(&quot;&quot;))</div><div class="ttdoc">Конструктор ошибки обмена</div><div class="ttdef"><b>Definition</b> comm_exception.cpp:16</div></div>
+<div class="ttc" id="aclasslogika_1_1protocols_1_1ECommException_html_a6a16c55262460c2a2fdc4b3c529838ab"><div class="ttname"><a href="../../d2/d02/classlogika_1_1protocols_1_1ECommException.html#a6a16c55262460c2a2fdc4b3c529838ab">logika::protocols::ECommException::GetExtendedInfo</a></div><div class="ttdeci">LocString GetExtendedInfo() const</div><div class="ttdoc">Получение расширенной информации об ошибки</div><div class="ttdef"><b>Definition</b> comm_exception.cpp:37</div></div>
+<div class="ttc" id="aclasslogika_1_1protocols_1_1ECommException_html_a7e0e332612350085e00252f6dbd925ce"><div class="ttname"><a href="../../d2/d02/classlogika_1_1protocols_1_1ECommException.html#a7e0e332612350085e00252f6dbd925ce">logika::protocols::ECommException::GetSeverityDescription</a></div><div class="ttdeci">static LocString GetSeverityDescription(ExceptionSeverity severity)</div><div class="ttdoc">Получение текстового представления критичности ошибки</div><div class="ttdef"><b>Definition</b> comm_exception.cpp:62</div></div>
+<div class="ttc" id="aclasslogika_1_1protocols_1_1ECommException_html_a7f45f907aea91030ebda95017554884f"><div class="ttname"><a href="../../d2/d02/classlogika_1_1protocols_1_1ECommException.html#a7f45f907aea91030ebda95017554884f">logika::protocols::ECommException::GetReason</a></div><div class="ttdeci">CommunicationError GetReason() const</div><div class="ttdoc">Получение причины ошибки</div><div class="ttdef"><b>Definition</b> comm_exception.cpp:31</div></div>
+<div class="ttc" id="aclasslogika_1_1protocols_1_1ECommException_html_a88cc56723994b7084d6e96fc10080373"><div class="ttname"><a href="../../d2/d02/classlogika_1_1protocols_1_1ECommException.html#a88cc56723994b7084d6e96fc10080373">logika::protocols::ECommException::GetSeverity</a></div><div class="ttdeci">ExceptionSeverity GetSeverity() const</div><div class="ttdoc">Получение критичности ошибки</div><div class="ttdef"><b>Definition</b> comm_exception.cpp:25</div></div>
+<div class="ttc" id="aclasslogika_1_1protocols_1_1ECommException_html_a8f6fd42d57d2f258bb11fc65df0e42aa"><div class="ttname"><a href="../../d2/d02/classlogika_1_1protocols_1_1ECommException.html#a8f6fd42d57d2f258bb11fc65df0e42aa">logika::protocols::ECommException::GetReasonDescription</a></div><div class="ttdeci">static LocString GetReasonDescription(CommunicationError reason)</div><div class="ttdoc">Получение текстового представления причины ошибки</div><div class="ttdef"><b>Definition</b> comm_exception.cpp:43</div></div>
+<div class="ttc" id="acommon_2types_8h_html"><div class="ttname"><a href="../../d5/d7b/common_2types_8h.html">types.h</a></div></div>
+<div class="ttc" id="acommon_2types_8h_html_a450c34cdc4d85a2a7fa797a85914af92"><div class="ttname"><a href="../../d5/d7b/common_2types_8h.html#a450c34cdc4d85a2a7fa797a85914af92">LOCALIZED</a></div><div class="ttdeci">#define LOCALIZED(x)</div><div class="ttdef"><b>Definition</b> types.h:30</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_html_aa64881855fc9daae34694be31193b840"><div class="ttname"><a href="../../da/d59/namespacelogika_1_1protocols.html#aa64881855fc9daae34694be31193b840">logika::protocols::CommunicationError</a></div><div class="ttdeci">CommunicationError</div><div class="ttdoc">Причина возникновения ошибки обмена</div><div class="ttdef"><b>Definition</b> comm_exception.h:33</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_html_aa64881855fc9daae34694be31193b840a4075072d219e061ca0f3124f8fbef463"><div class="ttname"><a href="../../da/d59/namespacelogika_1_1protocols.html#aa64881855fc9daae34694be31193b840a4075072d219e061ca0f3124f8fbef463">logika::protocols::CommunicationError::NotConnected</a></div><div class="ttdeci">@ NotConnected</div><div class="ttdoc">Соединение не установлено</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_html_aa64881855fc9daae34694be31193b840a6fcdc090caeade09d0efd6253932b6f5"><div class="ttname"><a href="../../da/d59/namespacelogika_1_1protocols.html#aa64881855fc9daae34694be31193b840a6fcdc090caeade09d0efd6253932b6f5">logika::protocols::CommunicationError::Unspecified</a></div><div class="ttdeci">@ Unspecified</div><div class="ttdoc">Неопределенная ошибка</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_html_aa64881855fc9daae34694be31193b840a89f37066d4c35e04431160d607fb2b46"><div class="ttname"><a href="../../da/d59/namespacelogika_1_1protocols.html#aa64881855fc9daae34694be31193b840a89f37066d4c35e04431160d607fb2b46">logika::protocols::CommunicationError::Checksum</a></div><div class="ttdeci">@ Checksum</div><div class="ttdoc">Неверная контрольная сумма</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_html_aa64881855fc9daae34694be31193b840ab932b91f686c2aa588adfd9a407155ca"><div class="ttname"><a href="../../da/d59/namespacelogika_1_1protocols.html#aa64881855fc9daae34694be31193b840ab932b91f686c2aa588adfd9a407155ca">logika::protocols::CommunicationError::SystemError</a></div><div class="ttdeci">@ SystemError</div><div class="ttdoc">Системная ошибка</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_html_aa64881855fc9daae34694be31193b840ac85a251cc457840f1e032f1b733e9398"><div class="ttname"><a href="../../da/d59/namespacelogika_1_1protocols.html#aa64881855fc9daae34694be31193b840ac85a251cc457840f1e032f1b733e9398">logika::protocols::CommunicationError::Timeout</a></div><div class="ttdeci">@ Timeout</div><div class="ttdoc">Истекло время ожидания</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_html_ac2249da78a8c87c4f76b71a244cc30bc"><div class="ttname"><a href="../../da/d59/namespacelogika_1_1protocols.html#ac2249da78a8c87c4f76b71a244cc30bc">logika::protocols::ExceptionSeverity</a></div><div class="ttdeci">ExceptionSeverity</div><div class="ttdoc">Критичность ошибки (по отношению к установленному соединению)</div><div class="ttdef"><b>Definition</b> comm_exception.h:24</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_html_ac2249da78a8c87c4f76b71a244cc30bca11a755d598c0c417f9a36758c3da7481"><div class="ttname"><a href="../../da/d59/namespacelogika_1_1protocols.html#ac2249da78a8c87c4f76b71a244cc30bca11a755d598c0c417f9a36758c3da7481">logika::protocols::ExceptionSeverity::Stop</a></div><div class="ttdeci">@ Stop</div><div class="ttdoc">Требуется сброс соединения, но шина должна оставаться остановленной</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_html_ac2249da78a8c87c4f76b71a244cc30bca526d688f37a86d3c3f27d0c5016eb71d"><div class="ttname"><a href="../../da/d59/namespacelogika_1_1protocols.html#ac2249da78a8c87c4f76b71a244cc30bca526d688f37a86d3c3f27d0c5016eb71d">logika::protocols::ExceptionSeverity::Reset</a></div><div class="ttdeci">@ Reset</div><div class="ttdoc">Требуется сброс соединения</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_html_ac2249da78a8c87c4f76b71a244cc30bca902b0d55fddef6f8d651fe1035b7d4bd"><div class="ttname"><a href="../../da/d59/namespacelogika_1_1protocols.html#ac2249da78a8c87c4f76b71a244cc30bca902b0d55fddef6f8d651fe1035b7d4bd">logika::protocols::ExceptionSeverity::Error</a></div><div class="ttdeci">@ Error</div><div class="ttdoc">Сброс соединения не требуется</div></div>
+<div class="ttc" id="anamespacelogika_1_1protocols_html_ac2249da78a8c87c4f76b71a244cc30bcae45cc432c180e6999b2011751f4e9db8"><div class="ttname"><a href="../../da/d59/namespacelogika_1_1protocols.html#ac2249da78a8c87c4f76b71a244cc30bcae45cc432c180e6999b2011751f4e9db8">logika::protocols::ExceptionSeverity::WaitRadius</a></div><div class="ttdeci">@ WaitRadius</div><div class="ttdoc">Соединение в порядке, но шина временно недоступна</div></div>
+<div class="ttc" id="anamespacelogika_html"><div class="ttname"><a href="../../d7/d43/namespacelogika.html">logika</a></div><div class="ttdef"><b>Definition</b> any.hpp:17</div></div>
+<div class="ttc" id="anamespacelogika_html_afcb9cc5f17bbcec128f49f126f45c081"><div class="ttname"><a href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">logika::LocString</a></div><div class="ttdeci">std::basic_string&lt; LocChar &gt; LocString</div><div class="ttdef"><b>Definition</b> types.h:41</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_84c4dbe6e1a79f99accf514d2173f793.html">logika</a></li><li class="navelem"><a class="el" href="../../dir_f1284c587673ddc2d78b9c445c5062b8.html">include</a></li><li class="navelem"><a class="el" href="../../dir_536f92a6556bef0406895bf0fd73acd4.html">logika</a></li><li class="navelem"><a class="el" href="../../dir_42cb901e50ce833ed144c9fb04bddde6.html">protocols</a></li><li class="navelem"><a class="el" href="../../da/d3b/comm__exception_8h.html">comm_exception.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

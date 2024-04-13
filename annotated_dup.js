@@ -105,6 +105,7 @@ var annotated_dup =
         [ "X6", "d1/df0/namespacelogika_1_1protocols_1_1X6.html", [
           [ "SPBusProtocol", "d0/dc3/classlogika_1_1protocols_1_1X6_1_1SPBusProtocol.html", null ]
         ] ],
+        [ "ECommException", "d2/d02/classlogika_1_1protocols_1_1ECommException.html", "d2/d02/classlogika_1_1protocols_1_1ECommException" ],
         [ "IProtocol", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html", "da/dd0/classlogika_1_1protocols_1_1IProtocol" ],
         [ "Protocol", "da/d50/classlogika_1_1protocols_1_1Protocol.html", "da/d50/classlogika_1_1protocols_1_1Protocol" ]
       ] ],

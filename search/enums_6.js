@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stdvar_0',['StdVar',['../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97',1,'logika::meters']]]
+  ['measurekind_0',['MeasureKind',['../dc/df7/namespacelogika_1_1meters.html#a4bf1b86a815cd64f495e604d459e3b3a',1,'logika::meters']]]
 ];

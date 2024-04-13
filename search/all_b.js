@@ -34,7 +34,7 @@ var searchData=
   ['measurekind_5f_31',['measureKind_',['../d3/d77/classlogika_1_1meters_1_1Meter.html#a478848a30e9192419f24035da49ed4db',1,'logika::meters::Meter']]],
   ['measurekindfromstring_32',['MeasureKindFromString',['../dd/dfb/namespacelogika__migration_1_1EnumsStringToPb.html#a38f7740a0684ed2b34e76429b762031f',1,'logika_migration::EnumsStringToPb']]],
   ['meter_33',['Meter',['../d3/d77/classlogika_1_1meters_1_1Meter.html',1,'logika::meters::Meter'],['../d3/d77/classlogika_1_1meters_1_1Meter.html#a8e09893a90a63c1319aa0c7e7575c134',1,'logika::meters::Meter::Meter()']]],
-  ['meter_34',['meter',['../d3/dce/structlogika_1_1meters_1_1ChannelDef.html#adc15f3b8551ee3864f4c29f9e9552825',1,'logika::meters::ChannelDef::meter'],['../d9/d1e/structlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1BusActiveState.html#aa66cf89eba876712c52a956144f253dc',1,'logika::protocols::M4::M4Protocol::BusActiveState::meter']]],
+  ['meter_34',['meter',['../d3/dce/structlogika_1_1meters_1_1ChannelDef.html#adc15f3b8551ee3864f4c29f9e9552825',1,'logika::meters::ChannelDef::meter'],['../d9/d1e/structlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1BusActiveState.html#af31a5e4d2797ee1c65d382913296da18',1,'logika::protocols::M4::M4Protocol::BusActiveState::meter']]],
   ['meter_2ecpp_35',['meter.cpp',['../d8/d21/meter_8cpp.html',1,'']]],
   ['meter_2eh_36',['meter.h',['../d3/de2/meter_8h.html',1,'']]],
   ['meter_5f_37',['meter_',['../da/d89/classlogika_1_1meters_1_1Archive.html#a676c6f7149e6456edb460a250d2c9872',1,'logika::meters::Archive']]],
