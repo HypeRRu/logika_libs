@@ -1,7 +1,7 @@
 var searchData=
 [
   ['safestrerror_0',['SafeStrError',['../d7/d43/namespacelogika.html#a862a046527ae24f3b1a32193bd8caed9',1,'logika']]],
-  ['selectdeviceandchannel_1',['SelectDeviceAndChannel',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a73f0a47b97fee88c7b5f1d3bfea4e46b',1,'logika::protocols::M4::M4Protocol']]],
+  ['selectdeviceandchannel_1',['SelectDeviceAndChannel',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#ade4e70ea3e4c2e73bb9f4a7f888aae54',1,'logika::protocols::M4::M4Protocol']]],
   ['sendattention_2',['SendAttention',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#afad95025b61dea08d8ddfb0a5dc69438',1,'logika::protocols::M4::M4Protocol']]],
   ['sendextendedpacket_3',['SendExtendedPacket',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#abb3dbe57d701648644d9577efa8eacac',1,'logika::protocols::M4::M4Protocol']]],
   ['sendlegacypacket_4',['SendLegacyPacket',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a72bc6e7dbcc2a119854aa20d4fc1c741',1,'logika::protocols::M4::M4Protocol']]],

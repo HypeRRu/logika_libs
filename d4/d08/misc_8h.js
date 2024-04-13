@@ -6,7 +6,7 @@ var misc_8h =
     [ "GetCurrentTimestamp", "d4/d08/misc_8h.html#ae74d5b2466856cd500af0f847d87559f", null ],
     [ "GetFormatTime", "d4/d08/misc_8h.html#a2c5a4bfdc2c01f4add6a525ca351e64e", null ],
     [ "GetTimeString", "d4/d08/misc_8h.html#aeca8817c06c7716a61151f4b124427c8", null ],
-    [ "GetTimeStruct", "d4/d08/misc_8h.html#a3aad37443f9a2b1c0feb2dfd8156be28", null ],
+    [ "GetTimeStruct", "d4/d08/misc_8h.html#ad824347293b970cc5c3da35a1e775dd7", null ],
     [ "SafeStrError", "d4/d08/misc_8h.html#a862a046527ae24f3b1a32193bd8caed9", null ],
     [ "StrCaseEq", "d4/d08/misc_8h.html#acfbaf10116b98ced17273d06014ce6d3", null ],
     [ "ToLocString", "d4/d08/misc_8h.html#ab057873579afa54b627ab6ebdf42e1e1", null ],

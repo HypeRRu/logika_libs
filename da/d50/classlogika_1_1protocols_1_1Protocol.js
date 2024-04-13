@@ -1,6 +1,6 @@
 var classlogika_1_1protocols_1_1Protocol =
 [
-    [ "Protocol", "da/d50/classlogika_1_1protocols_1_1Protocol.html#ace66cd8938fe926e198f1b4adc2960f0", null ],
+    [ "Protocol", "da/d50/classlogika_1_1protocols_1_1Protocol.html#aa3f44b6333ca188853a42da637d9d33f", null ],
     [ "CancelWait", "da/d50/classlogika_1_1protocols_1_1Protocol.html#a6285d415e8860d76152430648dca3a2d", null ],
     [ "CloseCommSession", "da/d50/classlogika_1_1protocols_1_1Protocol.html#abecc950d7fe7957c12488dbd16231fa9", null ],
     [ "CloseCommSessionImpl", "da/d50/classlogika_1_1protocols_1_1Protocol.html#adceb0f0652b84e93bfdc7945524c4f60", null ],
@@ -25,6 +25,7 @@ var classlogika_1_1protocols_1_1Protocol =
     [ "rxGeneral_", "da/d50/classlogika_1_1protocols_1_1Protocol.html#a82a380bad318a55d8c9ed98757765e65", null ],
     [ "rxLatePacket_", "da/d50/classlogika_1_1protocols_1_1Protocol.html#ac0b97e0571f4b0cab2c1bcd370297283", null ],
     [ "rxTimeout_", "da/d50/classlogika_1_1protocols_1_1Protocol.html#a42faad59e66c98eb235d2beaee31e05e", null ],
+    [ "sKeeper_", "da/d50/classlogika_1_1protocols_1_1Protocol.html#a2821da78e4145e53cfab5a7d14973cf8", null ],
     [ "waitCond_", "da/d50/classlogika_1_1protocols_1_1Protocol.html#a926a0bc8befb43c811d815ac628abb7d", null ],
     [ "waitMtx_", "da/d50/classlogika_1_1protocols_1_1Protocol.html#a67948f1451ab0552e7c5fa68e7b367ed", null ]
 ];

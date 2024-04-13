@@ -157,5 +157,7 @@ var namespacelogika_1_1meters =
     [ "ChannelDef", "dc/df7/namespacelogika_1_1meters.html#adca70441f410a4ca65374f77921c4943", null ],
     [ "DataTag", "dc/df7/namespacelogika_1_1meters.html#a47bb51a40b7092685b7ebef95780a676", null ],
     [ "DataTagDefVault", "dc/df7/namespacelogika_1_1meters.html#a774ce986b0735e0e5ac5f7cf77bd102a", null ],
+    [ "Logika4", "dc/df7/namespacelogika_1_1meters.html#a46017f1bda94273b11b9841a32c4c5c8", null ],
+    [ "Logika4L", "dc/df7/namespacelogika_1_1meters.html#a803e8fb2f446c48d3fb81544f9a2cbe4", null ],
     [ "TagDef", "dc/df7/namespacelogika_1_1meters.html#a783dcfcc1b344f5e0a1ce2e96f88c815", null ]
 ];

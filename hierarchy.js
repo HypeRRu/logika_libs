@@ -170,5 +170,6 @@ var hierarchy =
         ] ]
       ] ]
     ] ],
+    [ "logika::protocols::M4::TagWriteData", "db/dd8/structlogika_1_1protocols_1_1M4_1_1TagWriteData.html", null ],
     [ "logika::meters::VitalInfo", "d3/d26/structlogika_1_1meters_1_1VitalInfo.html", null ]
 ];

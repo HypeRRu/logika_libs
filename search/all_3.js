@@ -61,7 +61,7 @@ var searchData=
   ['dohandshake_58',['DoHandshake',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#afe93aa0f2807cb9666bc9c8bda67ce95',1,'logika::protocols::M4::M4Protocol']]],
   ['dolegacyrequest_59',['DoLegacyRequest',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#acafccf2bc8fbe87617da5a8545bc4a19',1,'logika::protocols::M4::M4Protocol']]],
   ['dom4request_60',['DoM4Request',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a4563ccd6198f757b78473bca25deb588',1,'logika::protocols::M4::M4Protocol']]],
-  ['dontthrowonerrorreply_61',['DontThrowOnErrorReply',['../d8/db6/namespacelogika_1_1protocols_1_1M4_1_1RecvFlags.html#a34e776538bfa860c487e599f5ac99a4aa3bb5341d2b2108623dee5859bd678c7a',1,'logika::protocols::M4::RecvFlags']]],
+  ['dontthrowonerrorreply_61',['DontThrowOnErrorReply',['../d8/db6/namespacelogika_1_1protocols_1_1M4_1_1RecvFlags.html#a0f27c3375cee1d712535dde1ba359491a3bb5341d2b2108623dee5859bd678c7a',1,'logika::protocols::M4::RecvFlags']]],
   ['double_62',['Double',['../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefad909d38d705ce75386dd86e611a82f5b',1,'logika::meters']]],
   ['dp_63',['dP',['../dc/df7/namespacelogika_1_1meters.html#afb48755c238c8e35d9ffd51bf0e5dd97a488ab29adec84b0394426c82ab48b26d',1,'logika::meters']]]
 ];

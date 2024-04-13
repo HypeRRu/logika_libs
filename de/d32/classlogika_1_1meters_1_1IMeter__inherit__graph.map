@@ -8,7 +8,7 @@
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1622,3274,1622,3307,1617,3307,1617,3274"/>
 <area shape="rect" id="Node000005" href="$d7/d1b/classlogika_1_1meters_1_1Logika4L.html" title="Класс прибора Logika4L." alt="" coords="891,4575,1167,6504"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1479,4311,1169,5161,1164,5159,1474,4310"/>
-<area shape="rect" id="Node000011" href="$dd/d0e/classlogika_1_1meters_1_1Logika4M.html" title="Класс прибора Logika4M." alt="" coords="2393,4796,2669,6283"/>
+<area shape="rect" id="Node000011" href="$dd/d0e/classlogika_1_1meters_1_1Logika4M.html" title="Класс прибора Logika4M." alt="" coords="2393,4811,2669,6268"/>
 <area shape="poly" id="edge10_Node000004_Node000011" title=" " alt="" coords="1767,4175,2396,5292,2391,5295,1762,4177"/>
 <area shape="rect" id="Node000006" href="$d3/de1/classlogika_1_1meters_1_1Spg741.html" title="Класс прибора SPG741." alt="" coords="5,6552,271,7175"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="883,5719,749,5889,594,6094,434,6321,357,6437,286,6553,273,6576,268,6573,281,6551,353,6434,430,6318,589,6091,744,5886,879,5716"/>
@@ -25,9 +25,9 @@
 <area shape="rect" id="Node000013" href="$df/d55/classlogika_1_1meters_1_1Spg740.html" title="Класс прибора SPG740." alt="" coords="1961,6699,2227,7028"/>
 <area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="2391,5973,2151,6700,2146,6698,2386,5971"/>
 <area shape="rect" id="Node000014" href="$de/d48/classlogika_1_1meters_1_1Spg742.html" title="Класс прибора SPG742." alt="" coords="2251,6699,2516,7028"/>
-<area shape="poly" id="edge13_Node000011_Node000014" title=" " alt="" coords="2449,6298,2404,6699,2399,6698,2444,6297"/>
+<area shape="poly" id="edge13_Node000011_Node000014" title=" " alt="" coords="2451,6283,2404,6699,2399,6699,2446,6282"/>
 <area shape="rect" id="Node000015" href="$df/d52/classlogika_1_1meters_1_1Spt940.html" title="Класс прибора SPT940." alt="" coords="2540,6699,2821,7028"/>
-<area shape="poly" id="edge14_Node000011_Node000015" title=" " alt="" coords="2620,6297,2665,6698,2660,6699,2614,6298"/>
+<area shape="poly" id="edge14_Node000011_Node000015" title=" " alt="" coords="2618,6282,2665,6699,2660,6699,2613,6283"/>
 <area shape="rect" id="Node000016" href="$d1/d0c/classlogika_1_1meters_1_1Spt941__20.html" title="Класс прибора SPT941_20." alt="" coords="2846,6666,3179,7061"/>
 <area shape="poly" id="edge15_Node000011_Node000016" title=" " alt="" coords="2677,5933,2944,6665,2939,6667,2672,5935"/>
 <area shape="rect" id="Node000017" href="$da/d78/classlogika_1_1meters_1_1Spt943rev3.html" title="Класс прибора SPT943rev3." alt="" coords="3204,6666,3485,7061"/>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['m4protocol_0',['M4Protocol',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a17d3bb54873b57be99fac7b2abda8d5a',1,'logika::protocols::M4::M4Protocol']]],
+  ['m4protocol_0',['M4Protocol',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a5def721e02eaddcee277ced35613ba30',1,'logika::protocols::M4::M4Protocol']]],
   ['main_1',['main',['../d4/d0b/logika_2src_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp'],['../db/d8b/migration_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;main.cpp']]],
   ['measurekindfromstring_2',['MeasureKindFromString',['../dd/dfb/namespacelogika__migration_1_1EnumsStringToPb.html#a38f7740a0684ed2b34e76429b762031f',1,'logika_migration::EnumsStringToPb']]],
   ['meter_3',['Meter',['../d3/d77/classlogika_1_1meters_1_1Meter.html#a8e09893a90a63c1319aa0c7e7575c134',1,'logika::meters::Meter']]],

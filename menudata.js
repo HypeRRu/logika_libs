@@ -170,7 +170,8 @@ var menudata={children:[
 {text:"f",url:"functions_type.html#index_f"},
 {text:"m",url:"functions_type.html#index_m"},
 {text:"r",url:"functions_type.html#index_r"},
-{text:"s",url:"functions_type.html#index_s"}]},
+{text:"s",url:"functions_type.html#index_s"},
+{text:"t",url:"functions_type.html#index_t"}]},
 {text:"Относящиеся к классу функции",url:"functions_rela.html"}]}]},
 {text:"Файлы",url:"files.html",children:[
 {text:"Файлы",url:"files.html"},

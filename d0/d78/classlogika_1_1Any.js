@@ -9,5 +9,6 @@ var classlogika_1_1Any =
     [ "Erase", "d0/d78/classlogika_1_1Any.html#ae46d411749f81bf15f4035ed80642895", null ],
     [ "operator=", "d0/d78/classlogika_1_1Any.html#ad71860c67c77559a50615679816d8764", null ],
     [ "operator=", "d0/d78/classlogika_1_1Any.html#a48fe808323c2a4c15d3ebd01ae9a0250", null ],
-    [ "operator=", "d0/d78/classlogika_1_1Any.html#a6695d17be38c8c9bb42e83c6c3275fcf", null ]
+    [ "operator=", "d0/d78/classlogika_1_1Any.html#a6695d17be38c8c9bb42e83c6c3275fcf", null ],
+    [ "TryCast", "d0/d78/classlogika_1_1Any.html#a2f611c26351ba4afd5443cc1de59c6c4", null ]
 ];

@@ -163,9 +163,9 @@ $(function(){initNavTree('d7/d43/namespacelogika.html','../../'); initResizable(
 <tr class="memitem:ae74d5b2466856cd500af0f847d87559f" id="r_ae74d5b2466856cd500af0f847d87559f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/da1/common_2defs_8h.html#aac0608cb4194c0aa09a5525f7a46a14f">LOGIKA_COMMON_EXPORT</a> <a class="el" href="#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae74d5b2466856cd500af0f847d87559f">GetCurrentTimestamp</a> ()</td></tr>
 <tr class="memdesc:ae74d5b2466856cd500af0f847d87559f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение текущей метки времени  <br /></td></tr>
 <tr class="separator:ae74d5b2466856cd500af0f847d87559f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3aad37443f9a2b1c0feb2dfd8156be28" id="r_a3aad37443f9a2b1c0feb2dfd8156be28"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/da1/common_2defs_8h.html#aac0608cb4194c0aa09a5525f7a46a14f">LOGIKA_COMMON_EXPORT</a> struct tm&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3aad37443f9a2b1c0feb2dfd8156be28">GetTimeStruct</a> (<a class="el" href="#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a> timestamp=0)</td></tr>
-<tr class="memdesc:a3aad37443f9a2b1c0feb2dfd8156be28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение структуры со временем  <br /></td></tr>
-<tr class="separator:a3aad37443f9a2b1c0feb2dfd8156be28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad824347293b970cc5c3da35a1e775dd7" id="r_ad824347293b970cc5c3da35a1e775dd7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/da1/common_2defs_8h.html#aac0608cb4194c0aa09a5525f7a46a14f">LOGIKA_COMMON_EXPORT</a> struct tm&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad824347293b970cc5c3da35a1e775dd7">GetTimeStruct</a> (<a class="el" href="#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a> timestamp=0, uint16_t *millis=nullptr)</td></tr>
+<tr class="memdesc:ad824347293b970cc5c3da35a1e775dd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение структуры со временем  <br /></td></tr>
+<tr class="separator:ad824347293b970cc5c3da35a1e775dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeca8817c06c7716a61151f4b124427c8" id="r_aeca8817c06c7716a61151f4b124427c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/da1/common_2defs_8h.html#aac0608cb4194c0aa09a5525f7a46a14f">LOGIKA_COMMON_EXPORT</a> <a class="el" href="#afcb9cc5f17bbcec128f49f126f45c081">LocString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeca8817c06c7716a61151f4b124427c8">GetTimeString</a> (<a class="el" href="#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a> timestamp=0)</td></tr>
 <tr class="memdesc:aeca8817c06c7716a61151f4b124427c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение строки со временем в формате dd.MM.yy HH:mm:ss.  <br /></td></tr>
 <tr class="separator:aeca8817c06c7716a61151f4b124427c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -397,7 +397,7 @@ $(function(){initNavTree('d7/d43/namespacelogika.html','../../'); initResizable(
 <p>Получение текущей метки времени </p>
 <dl class="section return"><dt>Возвращает</dt><dd>Текущая метка времени (мс) </dd></dl>
 
-<p class="reference">Используется в <a class="el" href="../../d9/d1e/structlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1BusActiveState.html#a831bedec9e34254800232dbdf4fc3a1a">logika::protocols::M4::M4Protocol::BusActiveState::GetTimeFromLastIo()</a>, <a class="el" href="#a3aad37443f9a2b1c0feb2dfd8156be28">GetTimeStruct()</a>, <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#afebb4ecf6c11ef891e5aaa9a753ec9a9">logika::connections::Connection::Purge()</a>, <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#a04cb9c650e0340edab4d84f7b9c834af">logika::connections::Connection::Read()</a>, <a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a02fa0f747f13040bff0e8067f95d1303">logika::protocols::M4::M4Protocol::RecvPacket()</a> и <a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a73f0a47b97fee88c7b5f1d3bfea4e46b">logika::protocols::M4::M4Protocol::SelectDeviceAndChannel()</a>.</p>
+<p class="reference">Используется в <a class="el" href="../../d9/d1e/structlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1BusActiveState.html#a831bedec9e34254800232dbdf4fc3a1a">logika::protocols::M4::M4Protocol::BusActiveState::GetTimeFromLastIo()</a>, <a class="el" href="#ad824347293b970cc5c3da35a1e775dd7">GetTimeStruct()</a>, <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#afebb4ecf6c11ef891e5aaa9a753ec9a9">logika::connections::Connection::Purge()</a>, <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#a04cb9c650e0340edab4d84f7b9c834af">logika::connections::Connection::Read()</a>, <a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a02fa0f747f13040bff0e8067f95d1303">logika::protocols::M4::M4Protocol::RecvPacket()</a> и <a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#ade4e70ea3e4c2e73bb9f4a7f888aae54">logika::protocols::M4::M4Protocol::SelectDeviceAndChannel()</a>.</p>
 
 </div>
 </div>
@@ -463,13 +463,15 @@ $(function(){initNavTree('d7/d43/namespacelogika.html','../../'); initResizable(
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Строка со временем </dd></dl>
+<p>Добавление милисекунд</p>
+<p>Добавление милисекунд</p>
 
 <p class="reference">Используется в <a class="el" href="../../d1/d18/structlogika_1_1meters_1_1VQT.html#ae5afd9dee9339627add30ecc022bf71a">logika::meters::VQT::ToString()</a>, <a class="el" href="../../d1/d10/structlogika_1_1protocols_1_1M4_1_1ArchiveRecord.html#a9d1535afe5e6e171762f64c07e6ba12f">logika::protocols::M4::ArchiveRecord::ToString()</a> и <a class="el" href="../../d9/d0f/classlogika_1_1log_1_1Logger.html#afdd131c09f6309317be4dd149a10b8ec">logika::log::Logger::Write()</a>.</p>
 
 </div>
 </div>
-<a id="a3aad37443f9a2b1c0feb2dfd8156be28" name="a3aad37443f9a2b1c0feb2dfd8156be28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3aad37443f9a2b1c0feb2dfd8156be28">&#9670;&#160;</a></span>GetTimeStruct()</h2>
+<a id="ad824347293b970cc5c3da35a1e775dd7" name="ad824347293b970cc5c3da35a1e775dd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad824347293b970cc5c3da35a1e775dd7">&#9670;&#160;</a></span>GetTimeStruct()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -477,8 +479,12 @@ $(function(){initNavTree('d7/d43/namespacelogika.html','../../'); initResizable(
         <tr>
           <td class="memname">struct tm logika::GetTimeStruct </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a></td>          <td class="paramname"><span class="paramname"><em>timestamp</em><span class="paramdefsep"> = </span><span class="paramdefval">0</span></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a></td>          <td class="paramname"><span class="paramname"><em>timestamp</em><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">uint16_t *</td>          <td class="paramname"><span class="paramname"><em>millis</em><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -487,6 +493,7 @@ $(function(){initNavTree('d7/d43/namespacelogika.html','../../'); initResizable(
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">timestamp</td><td>Конвертируемая метка времени (мс). При значении 0 берется текущее время </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">millis</td><td>Количество милисекунд </td></tr>
   </table>
   </dd>
 </dl>
