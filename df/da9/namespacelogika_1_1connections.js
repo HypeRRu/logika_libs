@@ -51,5 +51,5 @@ var namespacelogika_1_1connections =
     [ "ParityToString", "df/da9/namespacelogika_1_1connections.html#a6e73baa5c29ebc3f5d97efa1ecae0f6b", null ],
     [ "PurgeFlagsToString", "df/da9/namespacelogika_1_1connections.html#aaea30d3c102858d9635c3011a6d5ed9e", null ],
     [ "StopBitsToString", "df/da9/namespacelogika_1_1connections.html#ad54bb3220d0b8761657e1887a114e094", null ],
-    [ "IConnection", "df/da9/namespacelogika_1_1connections.html#a4e41d11b6cd6b9d002723384495353ea", null ]
+    [ "IConnection", "df/da9/namespacelogika_1_1connections.html#a447dbdd1dcf03327577c102320cc5cd8", null ]
 ];

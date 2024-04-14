@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['iconnection_0',['IConnection',['../df/da9/namespacelogika_1_1connections.html#a4e41d11b6cd6b9d002723384495353ea',1,'logika::connections']]],
+  ['iconnection_0',['IConnection',['../df/da9/namespacelogika_1_1connections.html#a447dbdd1dcf03327577c102320cc5cd8',1,'logika::connections']]],
   ['id_1',['id',['../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a429fcd9ca31808703ab0cb9d1a89bdba',1,'logika::meters::VitalInfo::id'],['../d4/d9a/structlogika_1_1protocols_1_1M4_1_1Packet.html#a02efb71797d2cd6852dfb94f12fc1c86',1,'logika::protocols::M4::Packet::id']]],
   ['ident_5f_2',['ident_',['../d3/d77/classlogika_1_1meters_1_1Meter.html#a43c2d4755133ac61fd5200d06ebbeba7',1,'logika::meters::Meter']]],
   ['index_3',['index',['../d5/d2d/structlogika_1_1meters_1_1DataTagDef6Settings.html#a8c46bc299c18c35ae2d19f381b178a89',1,'logika::meters::DataTagDef6Settings']]],

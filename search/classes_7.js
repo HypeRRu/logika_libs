@@ -1,12 +1,11 @@
 var searchData=
 [
-  ['l4archiveconverter_0',['L4ArchiveConverter',['../db/dec/classlogika_1_1meters_1_1converters_1_1L4ArchiveConverter.html',1,'logika::meters::converters']]],
-  ['l4archivefieldconverter_1',['L4ArchiveFieldConverter',['../dd/dde/classlogika_1_1meters_1_1converters_1_1L4ArchiveFieldConverter.html',1,'logika::meters::converters']]],
-  ['l4tagconverter_2',['L4TagConverter',['../dd/d57/classlogika_1_1meters_1_1converters_1_1L4TagConverter.html',1,'logika::meters::converters']]],
-  ['lgk410_3',['Lgk410',['../d4/d4e/classlogika_1_1meters_1_1Lgk410.html',1,'logika::meters']]],
-  ['loader_4',['Loader',['../d0/d9e/classlogika_1_1resources_1_1Loader.html',1,'logika::resources']]],
-  ['logger_5',['Logger',['../d9/d0f/classlogika_1_1log_1_1Logger.html',1,'logika::log']]],
-  ['logika4_6',['Logika4',['../d6/df4/classlogika_1_1meters_1_1Logika4.html',1,'logika::meters']]],
-  ['logika4l_7',['Logika4L',['../d7/d1b/classlogika_1_1meters_1_1Logika4L.html',1,'logika::meters']]],
-  ['logika4m_8',['Logika4M',['../dd/d0e/classlogika_1_1meters_1_1Logika4M.html',1,'logika::meters']]]
+  ['iconnection_0',['IConnection',['../df/ddb/classlogika_1_1connections_1_1IConnection.html',1,'logika::connections']]],
+  ['iloader_1',['ILoader',['../d4/dce/classlogika_1_1resources_1_1ILoader.html',1,'logika::resources']]],
+  ['imeter_2',['IMeter',['../d9/d2a/classlogika_1_1meters_1_1IMeter.html',1,'logika::meters']]],
+  ['intervalarchive_3',['IntervalArchive',['../d2/dd3/classlogika_1_1meters_1_1IntervalArchive.html',1,'logika::meters']]],
+  ['iprotocol_4',['IProtocol',['../da/dd0/classlogika_1_1protocols_1_1IProtocol.html',1,'logika::protocols']]],
+  ['iserializable_5',['ISerializable',['../dd/dbc/classlogika_1_1ISerializable.html',1,'logika']]],
+  ['istorage_6',['IStorage',['../d2/d94/classlogika_1_1storage_1_1IStorage.html',1,'logika::storage']]],
+  ['itemdefbase_7',['ItemDefBase',['../da/dc9/classlogika_1_1meters_1_1ItemDefBase.html',1,'logika::meters']]]
 ];

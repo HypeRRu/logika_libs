@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Logika Libs: Класс logika::protocols::M4::M4Protocol::MeterCache</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Logika Libs
+   </div>
+   <div id="projectbrief">Библиотеки для работы с приборами НПФ &quot;Логика&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d7/d0a/classlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="../../d4/de8/classlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс logika::protocols::M4::M4Protocol::MeterCache</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Структура записи кэша прибора  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../db/d8d/m4protocol_8h_source.html">m4protocol.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса logika::protocols::M4::M4Protocol::MeterCache:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/d89/classlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache__coll__graph.png" border="0" usemap="#alogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache_coll__map" alt="Collaboration graph"/></div>
+<map name="alogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache_coll__map" id="alogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache_coll__map">
+<area shape="rect" title="Структура записи кэша прибора" alt="" coords="5,5,200,463"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ad1c608d3af4f8952cbaadd71d707bb83" id="r_ad1c608d3af4f8952cbaadd71d707bb83"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1c608d3af4f8952cbaadd71d707bb83">MeterCache</a> (<a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html">M4Protocol</a> *owner, std::shared_ptr&lt; <a class="el" href="../../d6/df4/classlogika_1_1meters_1_1Logika4.html">meters::Logika4</a> &gt; meter, <a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a> nt)</td></tr>
+<tr class="memdesc:ad1c608d3af4f8952cbaadd71d707bb83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор записи кэша прибора  <br /></td></tr>
+<tr class="separator:ad1c608d3af4f8952cbaadd71d707bb83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3690c933e520883fcbd340d4a42f64e8" id="r_a3690c933e520883fcbd340d4a42f64e8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html">M4Protocol</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3690c933e520883fcbd340d4a42f64e8">GetBus</a> () const</td></tr>
+<tr class="memdesc:a3690c933e520883fcbd340d4a42f64e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение протокола  <br /></td></tr>
+<tr class="separator:a3690c933e520883fcbd340d4a42f64e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a760a9093bea3ccce4cf424bd79fbe3" id="r_a1a760a9093bea3ccce4cf424bd79fbe3"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; <a class="el" href="../../d6/df4/classlogika_1_1meters_1_1Logika4.html">meters::Logika4</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a760a9093bea3ccce4cf424bd79fbe3">GetMeter</a> () const</td></tr>
+<tr class="memdesc:a1a760a9093bea3ccce4cf424bd79fbe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение прибора  <br /></td></tr>
+<tr class="separator:a1a760a9093bea3ccce4cf424bd79fbe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e95645e8ced0923567bac323ab19662" id="r_a8e95645e8ced0923567bac323ab19662"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e95645e8ced0923567bac323ab19662">GetNt</a> () const</td></tr>
+<tr class="memdesc:a8e95645e8ced0923567bac323ab19662"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение NT прибора  <br /></td></tr>
+<tr class="separator:a8e95645e8ced0923567bac323ab19662"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c43a37416272e6ce0a93573d366e32d" id="r_a3c43a37416272e6ce0a93573d366e32d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c43a37416272e6ce0a93573d366e32d">GetModel</a> () const</td></tr>
+<tr class="memdesc:a3c43a37416272e6ce0a93573d366e32d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение модели прибора  <br /></td></tr>
+<tr class="separator:a3c43a37416272e6ce0a93573d366e32d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a99bf468f620caf9fed4ce74663323c" id="r_a6a99bf468f620caf9fed4ce74663323c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a99bf468f620caf9fed4ce74663323c">GetSp</a> () const</td></tr>
+<tr class="memdesc:a6a99bf468f620caf9fed4ce74663323c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение СП для СПГ741.  <br /></td></tr>
+<tr class="separator:a6a99bf468f620caf9fed4ce74663323c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2384fa46a5eac6368c93471b9ee5ab2a" id="r_a2384fa46a5eac6368c93471b9ee5ab2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2384fa46a5eac6368c93471b9ee5ab2a">SetSp</a> (<a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a> sp)</td></tr>
+<tr class="memdesc:a2384fa46a5eac6368c93471b9ee5ab2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Задание СП для СПГ741.  <br /></td></tr>
+<tr class="separator:a2384fa46a5eac6368c93471b9ee5ab2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a2bbd8031d2af85ccdcd7810583b6b4" id="r_a4a2bbd8031d2af85ccdcd7810583b6b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a2bbd8031d2af85ccdcd7810583b6b4">GetRd</a> () const</td></tr>
+<tr class="memdesc:a4a2bbd8031d2af85ccdcd7810583b6b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение адреса суточного архива  <br /></td></tr>
+<tr class="separator:a4a2bbd8031d2af85ccdcd7810583b6b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6868b6a9861f0a2ec5367a4183763f6" id="r_ae6868b6a9861f0a2ec5367a4183763f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6868b6a9861f0a2ec5367a4183763f6">GetRh</a> () const</td></tr>
+<tr class="memdesc:ae6868b6a9861f0a2ec5367a4183763f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение адреса часового архива  <br /></td></tr>
+<tr class="separator:ae6868b6a9861f0a2ec5367a4183763f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a550b1f5761be26d7a651f9d6e0dd28f3" id="r_a550b1f5761be26d7a651f9d6e0dd28f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a550b1f5761be26d7a651f9d6e0dd28f3">GetCurrentDeviceTime</a> () const</td></tr>
+<tr class="memdesc:a550b1f5761be26d7a651f9d6e0dd28f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение текущего времени на приборе  <br /></td></tr>
+<tr class="separator:a550b1f5761be26d7a651f9d6e0dd28f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4ebc5df1d8d841e1b026f036434b08a" id="r_ae4ebc5df1d8d841e1b026f036434b08a"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; <a class="el" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a>, <a class="el" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4ebc5df1d8d841e1b026f036434b08a">GetEuDict</a> () const</td></tr>
+<tr class="memdesc:ae4ebc5df1d8d841e1b026f036434b08a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение таблицы конвертации имен единиц измерения  <br /></td></tr>
+<tr class="separator:ae4ebc5df1d8d841e1b026f036434b08a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Структура записи кэша прибора </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="ad1c608d3af4f8952cbaadd71d707bb83" name="ad1c608d3af4f8952cbaadd71d707bb83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1c608d3af4f8952cbaadd71d707bb83">&#9670;&#160;</a></span>MeterCache()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">logika::protocols::M4::M4Protocol::MeterCache::MeterCache </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html">M4Protocol</a> *</td>          <td class="paramname"><span class="paramname"><em>owner</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="../../d6/df4/classlogika_1_1meters_1_1Logika4.html">meters::Logika4</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>meter</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a></td>          <td class="paramname"><span class="paramname"><em>nt</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор записи кэша прибора </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">owner</td><td>Шина, к которой подключен прибор </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">meter</td><td>Прибор </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nt</td><td>NT прибора </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a3690c933e520883fcbd340d4a42f64e8" name="a3690c933e520883fcbd340d4a42f64e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3690c933e520883fcbd340d4a42f64e8">&#9670;&#160;</a></span>GetBus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html">M4Protocol</a> * logika::protocols::M4::M4Protocol::MeterCache::GetBus </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение протокола </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Протокол </dd></dl>
+
+</div>
+</div>
+<a id="a550b1f5761be26d7a651f9d6e0dd28f3" name="a550b1f5761be26d7a651f9d6e0dd28f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a550b1f5761be26d7a651f9d6e0dd28f3">&#9670;&#160;</a></span>GetCurrentDeviceTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a> logika::protocols::M4::M4Protocol::MeterCache::GetCurrentDeviceTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение текущего времени на приборе </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Текущее время на приборе </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000038">Необходимо сделать</a></b></dt><dd>Реализовать </dd></dl>
+
+</div>
+</div>
+<a id="ae4ebc5df1d8d841e1b026f036434b08a" name="ae4ebc5df1d8d841e1b026f036434b08a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4ebc5df1d8d841e1b026f036434b08a">&#9670;&#160;</a></span>GetEuDict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::unordered_map&lt; <a class="el" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a>, <a class="el" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> &gt; &amp; logika::protocols::M4::M4Protocol::MeterCache::GetEuDict </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение таблицы конвертации имен единиц измерения </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Таблица конвертации имен единиц измерения </dd></dl>
+
+</div>
+</div>
+<a id="a1a760a9093bea3ccce4cf424bd79fbe3" name="a1a760a9093bea3ccce4cf424bd79fbe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a760a9093bea3ccce4cf424bd79fbe3">&#9670;&#160;</a></span>GetMeter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::shared_ptr&lt; <a class="el" href="../../d6/df4/classlogika_1_1meters_1_1Logika4.html">meters::Logika4</a> &gt; logika::protocols::M4::M4Protocol::MeterCache::GetMeter </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение прибора </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Прибора </dd></dl>
+
+</div>
+</div>
+<a id="a3c43a37416272e6ce0a93573d366e32d" name="a3c43a37416272e6ce0a93573d366e32d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c43a37416272e6ce0a93573d366e32d">&#9670;&#160;</a></span>GetModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> logika::protocols::M4::M4Protocol::MeterCache::GetModel </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение модели прибора </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Модель прибора </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000033">Необходимо сделать</a></b></dt><dd>Реализовать </dd></dl>
+
+</div>
+</div>
+<a id="a8e95645e8ced0923567bac323ab19662" name="a8e95645e8ced0923567bac323ab19662"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e95645e8ced0923567bac323ab19662">&#9670;&#160;</a></span>GetNt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a> logika::protocols::M4::M4Protocol::MeterCache::GetNt </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение NT прибора </p>
+<dl class="section return"><dt>Возвращает</dt><dd>NT прибора </dd></dl>
+
+</div>
+</div>
+<a id="a4a2bbd8031d2af85ccdcd7810583b6b4" name="a4a2bbd8031d2af85ccdcd7810583b6b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a2bbd8031d2af85ccdcd7810583b6b4">&#9670;&#160;</a></span>GetRd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a> logika::protocols::M4::M4Protocol::MeterCache::GetRd </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение адреса суточного архива </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Адрес суточного архива </dd></dl>
+
+</div>
+</div>
+<a id="ae6868b6a9861f0a2ec5367a4183763f6" name="ae6868b6a9861f0a2ec5367a4183763f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6868b6a9861f0a2ec5367a4183763f6">&#9670;&#160;</a></span>GetRh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a> logika::protocols::M4::M4Protocol::MeterCache::GetRh </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение адреса часового архива </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Адрес часового архива </dd></dl>
+
+</div>
+</div>
+<a id="a6a99bf468f620caf9fed4ce74663323c" name="a6a99bf468f620caf9fed4ce74663323c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a99bf468f620caf9fed4ce74663323c">&#9670;&#160;</a></span>GetSp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a> logika::protocols::M4::M4Protocol::MeterCache::GetSp </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение СП для СПГ741. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>СП </dd></dl>
+
+</div>
+</div>
+<a id="a2384fa46a5eac6368c93471b9ee5ab2a" name="a2384fa46a5eac6368c93471b9ee5ab2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2384fa46a5eac6368c93471b9ee5ab2a">&#9670;&#160;</a></span>SetSp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void logika::protocols::M4::M4Protocol::MeterCache::SetSp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a></td>          <td class="paramname"><span class="paramname"><em>sp</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Задание СП для СПГ741. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sp</td><td>СП </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>logika/include/logika/protocols/m4/<a class="el" href="../../db/d8d/m4protocol_8h_source.html">m4protocol.h</a></li>
+<li>logika/src/protocols/m4/<a class="el" href="../../d6/d61/m4protocol__api_8cpp.html">m4protocol_api.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/d43/namespacelogika.html">logika</a></li><li class="navelem"><a class="el" href="../../da/d59/namespacelogika_1_1protocols.html">protocols</a></li><li class="navelem"><a class="el" href="../../de/d62/namespacelogika_1_1protocols_1_1M4.html">M4</a></li><li class="navelem"><a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html">M4Protocol</a></li><li class="navelem"><a class="el" href="../../d7/d0a/classlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache.html">MeterCache</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

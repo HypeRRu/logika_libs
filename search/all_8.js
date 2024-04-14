@@ -3,7 +3,7 @@ var searchData=
   ['i32le_0',['I32LE',['../d0/d25/namespacelogika_1_1meters_1_1TagId4M.html#ad5d432462a0eeb320d2d0b444052c7eaa8b00b17c3e38ca5e5ba75116c233783d',1,'logika::meters::TagId4M']]],
   ['i32r32_1',['I32R32',['../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a841bab2c474dfeb62157b3120d7331b5',1,'logika::meters::BinaryType4L']]],
   ['ia5string_2',['Ia5String',['../d0/d25/namespacelogika_1_1meters_1_1TagId4M.html#ad5d432462a0eeb320d2d0b444052c7eaa404f197be50f0370b39ef37c38cbae5b',1,'logika::meters::TagId4M']]],
-  ['iconnection_3',['IConnection',['../df/ddb/classlogika_1_1connections_1_1IConnection.html',1,'logika::connections::IConnection'],['../df/da9/namespacelogika_1_1connections.html#a4e41d11b6cd6b9d002723384495353ea',1,'logika::connections::IConnection']]],
+  ['iconnection_3',['IConnection',['../df/ddb/classlogika_1_1connections_1_1IConnection.html',1,'logika::connections::IConnection'],['../df/da9/namespacelogika_1_1connections.html#a447dbdd1dcf03327577c102320cc5cd8',1,'logika::connections::IConnection']]],
   ['iconnection_2eh_4',['iconnection.h',['../d8/de5/iconnection_8h.html',1,'']]],
   ['id_5',['id',['../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a429fcd9ca31808703ab0cb9d1a89bdba',1,'logika::meters::VitalInfo::id'],['../d4/d9a/structlogika_1_1protocols_1_1M4_1_1Packet.html#a02efb71797d2cd6852dfb94f12fc1c86',1,'logika::protocols::M4::Packet::id']]],
   ['ident_6',['Ident',['../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357da35cef9b551d46ecfd244f4694de9e228',1,'logika::meters']]],

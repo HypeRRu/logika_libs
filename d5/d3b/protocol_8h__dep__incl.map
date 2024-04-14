@@ -1,12 +1,14 @@
 <map id="logika/include/logika/protocols/protocol.h" name="logika/include/logika/protocols/protocol.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="241,5,380,46"/>
-<area shape="rect" id="Node000002" href="$db/d8d/m4protocol_8h.html" title=" " alt="" coords="159,94,337,135"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="289,60,264,95,260,92,285,57"/>
-<area shape="rect" id="Node000005" href="$d4/d25/protocol_8cpp.html" title=" " alt="" coords="323,183,458,223"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="333,58,351,93,386,181,381,183,347,95,328,61"/>
-<area shape="rect" id="Node000003" href="$d1/d61/m4protocol_8cpp.html" title=" " alt="" coords="5,183,141,223"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="196,144,114,185,111,180,193,140"/>
-<area shape="rect" id="Node000004" href="$d3/dae/packet_8cpp.html" title=" " alt="" coords="165,183,299,223"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="244,151,238,183,233,182,239,150"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="294,141,359,180,357,185,291,145"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="440,5,578,46"/>
+<area shape="rect" id="Node000002" href="$db/d8d/m4protocol_8h.html" title=" " alt="" coords="357,94,536,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="488,60,463,95,458,92,484,57"/>
+<area shape="rect" id="Node000006" href="$d4/d25/protocol_8cpp.html" title=" " alt="" coords="538,183,672,223"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="530,58,550,93,597,181,592,183,545,95,526,61"/>
+<area shape="rect" id="Node000003" href="$d6/d61/m4protocol__api_8cpp.html" title=" " alt="" coords="5,183,165,223"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="350,141,166,185,165,180,349,136"/>
+<area shape="rect" id="Node000004" href="$d9/d14/m4protocol__impl_8cpp.html" title=" " alt="" coords="189,183,355,223"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="394,144,312,185,310,180,392,140"/>
+<area shape="rect" id="Node000005" href="$d3/dae/packet_8cpp.html" title=" " alt="" coords="379,183,514,223"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="449,150,449,182,444,182,444,150"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="497,140,570,180,568,185,494,145"/>
 </map>

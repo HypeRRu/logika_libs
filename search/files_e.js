@@ -1,7 +1,26 @@
 var searchData=
 [
-  ['udp_5fconnection_2ecpp_0',['udp_connection.cpp',['../db/d02/udp__connection_8cpp.html',1,'']]],
-  ['udp_5fconnection_2eh_1',['udp_connection.h',['../d4/d90/udp__connection_8h.html',1,'']]],
-  ['udp_5fconnection_5flinux_2ecpp_2',['udp_connection_linux.cpp',['../d4/de8/udp__connection__linux_8cpp.html',1,'']]],
-  ['udp_5fconnection_5fwindows_2ecpp_3',['udp_connection_windows.cpp',['../da/dda/udp__connection__windows_8cpp.html',1,'']]]
+  ['tag_2ecpp_0',['tag.cpp',['../dd/d72/tag_8cpp.html',1,'']]],
+  ['tag_2eh_1',['tag.h',['../d2/dcd/tag_8h.html',1,'']]],
+  ['tag_5fdef_2ecpp_2',['tag_def.cpp',['../d1/d96/tag__def_8cpp.html',1,'']]],
+  ['tag_5fdef_2eh_3',['tag_def.h',['../d6/d96/tag__def_8h.html',1,'']]],
+  ['tag_5fdef4_2ecpp_4',['tag_def4.cpp',['../d4/d5d/tag__def4_8cpp.html',1,'']]],
+  ['tag_5fdef4_2eh_5',['tag_def4.h',['../de/dd1/tag__def4_8h.html',1,'']]],
+  ['tag_5fdef4l_2ecpp_6',['tag_def4l.cpp',['../dc/d5a/tag__def4l_8cpp.html',1,'']]],
+  ['tag_5fdef4l_2eh_7',['tag_def4l.h',['../df/d68/tag__def4l_8h.html',1,'']]],
+  ['tag_5fdef4m_2ecpp_8',['tag_def4m.cpp',['../de/df8/tag__def4m_8cpp.html',1,'']]],
+  ['tag_5fdef4m_2eh_9',['tag_def4m.h',['../de/dfb/tag__def4m_8h.html',1,'']]],
+  ['tag_5fkinds_2ecpp_10',['tag_kinds.cpp',['../d3/dc6/tag__kinds_8cpp.html',1,'']]],
+  ['tag_5fkinds_2eh_11',['tag_kinds.h',['../d4/d9e/tag__kinds_8h.html',1,'']]],
+  ['tag_5fwrite_5fdata_2eh_12',['tag_write_data.h',['../d3/d1b/tag__write__data_8h.html',1,'']]],
+  ['tcp_5fconnection_2ecpp_13',['tcp_connection.cpp',['../d7/d27/tcp__connection_8cpp.html',1,'']]],
+  ['tcp_5fconnection_2eh_14',['tcp_connection.h',['../d1/df0/tcp__connection_8h.html',1,'']]],
+  ['tcp_5fconnection_5flinux_2ecpp_15',['tcp_connection_linux.cpp',['../d0/ddd/tcp__connection__linux_8cpp.html',1,'']]],
+  ['tcp_5fconnection_5fwindows_2ecpp_16',['tcp_connection_windows.cpp',['../d2/d16/tcp__connection__windows_8cpp.html',1,'']]],
+  ['types_2ecpp_17',['types.cpp',['../da/ddf/types_8cpp.html',1,'']]],
+  ['types_2eh_18',['types.h',['../d5/d7b/common_2types_8h.html',1,'(Глобальное пространство имён)'],['../d9/d7d/connections_2serial_2types_8h.html',1,'(Глобальное пространство имён)'],['../d3/d5a/connections_2types_8h.html',1,'(Глобальное пространство имён)'],['../dd/dd4/log_2types_8h.html',1,'(Глобальное пространство имён)'],['../d7/dab/meters_2logika4_24l_2types_8h.html',1,'(Глобальное пространство имён)'],['../dc/d3d/meters_2types_8h.html',1,'(Глобальное пространство имён)']]],
+  ['types_5fchecker_2ehpp_19',['types_checker.hpp',['../d2/db5/types__checker_8hpp.html',1,'']]],
+  ['types_5fchecker_2einl_20',['types_checker.inl',['../dd/d02/types__checker_8inl.html',1,'']]],
+  ['types_5fconverter_2ecpp_21',['types_converter.cpp',['../d9/d14/connections_2utils_2types__converter_8cpp.html',1,'(Глобальное пространство имён)'],['../d0/dff/meters_2utils_2types__converter_8cpp.html',1,'(Глобальное пространство имён)']]],
+  ['types_5fconverter_2eh_22',['types_converter.h',['../de/d22/connections_2utils_2types__converter_8h.html',1,'(Глобальное пространство имён)'],['../de/d6a/meters_2utils_2types__converter_8h.html',1,'(Глобальное пространство имён)']]]
 ];

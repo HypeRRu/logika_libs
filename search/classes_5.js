@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['historicalseries_0',['HistoricalSeries',['../db/d35/structlogika_1_1meters_1_1HistoricalSeries.html',1,'logika::meters']]]
+  ['flasharray_0',['FlashArray',['../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html',1,'logika::protocols::M4']]]
 ];

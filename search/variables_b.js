@@ -10,7 +10,9 @@ var searchData=
   ['maxlevel_5f_7',['maxLevel_',['../d9/d0f/classlogika_1_1log_1_1Logger.html#a9ee494b1a6b1f640aa7591c45661f495',1,'logika::log::Logger']]],
   ['measurekind_5f_8',['measureKind_',['../d3/d77/classlogika_1_1meters_1_1Meter.html#a478848a30e9192419f24035da49ed4db',1,'logika::meters::Meter']]],
   ['meter_9',['meter',['../d3/dce/structlogika_1_1meters_1_1ChannelDef.html#adc15f3b8551ee3864f4c29f9e9552825',1,'logika::meters::ChannelDef::meter'],['../d9/d1e/structlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1BusActiveState.html#af31a5e4d2797ee1c65d382913296da18',1,'logika::protocols::M4::M4Protocol::BusActiveState::meter']]],
-  ['meter_5f_10',['meter_',['../da/d89/classlogika_1_1meters_1_1Archive.html#a676c6f7149e6456edb460a250d2c9872',1,'logika::meters::Archive']]],
-  ['mtrparamshash_11',['mtrParamsHash',['../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#acfff11f35c0dea1e1bdcff1c14216b3a',1,'logika::meters::VitalInfo']]],
-  ['mtx_5f_12',['mtx_',['../d9/d0f/classlogika_1_1log_1_1Logger.html#aaa08a694b3acef457ffadf2fdd77898d',1,'logika::log::Logger']]]
+  ['meter_10',['Meter',['../dc/df7/namespacelogika_1_1meters.html#a74aeaa4e413cc7a339bac9f55b6d6b41',1,'logika::meters']]],
+  ['meter_5f_11',['meter_',['../da/d89/classlogika_1_1meters_1_1Archive.html#a676c6f7149e6456edb460a250d2c9872',1,'logika::meters::Archive']]],
+  ['mtrinstance_5f_12',['mtrInstance_',['../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#ac26d131bec45cb9df7db5677b935a0bf',1,'logika::protocols::M4::FlashArray']]],
+  ['mtrparamshash_13',['mtrParamsHash',['../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#acfff11f35c0dea1e1bdcff1c14216b3a',1,'logika::meters::VitalInfo']]],
+  ['mtx_5f_14',['mtx_',['../d9/d0f/classlogika_1_1log_1_1Logger.html#aaa08a694b3acef457ffadf2fdd77898d',1,'logika::log::Logger']]]
 ];
