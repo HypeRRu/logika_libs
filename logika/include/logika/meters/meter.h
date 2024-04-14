@@ -107,7 +107,7 @@ public:
     virtual std::unordered_map<
         ImportantTag,
         std::vector< std::shared_ptr< DataTag > >
-    >GetWellKnownTags() const override;
+    > GetWellKnownTags() const override;
 
     /// @copydoc ISerializable::ToString()
     virtual LocString ToString() const override;

@@ -12,6 +12,7 @@
 
 #include <logika/meters/logika4/logika4.h>
 #include <logika/meters/logika4/4l/logika4l.h>
+#include <logika/meters/data_tag.h>
 
 /// @cond
 #include <chrono>
@@ -145,7 +146,7 @@ void Protocol::Reset()
 } // Reset
 
 
-void Protocol::CloseCommSession( ByteType* srcNt, ByteType* dstNt )
+void Protocol::CloseCommSession( const ByteType* srcNt, const ByteType* dstNt )
 {
     if ( connection_
         && connection_->GetConnectionState() == connections::ConnectionState::Connected )
@@ -159,7 +160,7 @@ void Protocol::ResetBusActiveState()
 {} // ResetBusActiveState
 
 
-void Protocol::CloseCommSessionImpl( ByteType* srcNt, ByteType* dstNt )
+void Protocol::CloseCommSessionImpl( const ByteType* srcNt, const ByteType* dstNt )
 {
     (void) srcNt;
     (void) dstNt;
@@ -179,6 +180,25 @@ void Protocol::CancelWait()
     std::unique_lock< std::mutex > waitLock{ waitMtx_ };
     waitCond_.notify_all();
 } // CancelWait
+
+
+std::shared_ptr< meters::Meter > Protocol::GetMeterType( const ByteType* srcNt,
+    const ByteType* dstNt, LocString& extraData )
+{
+    (void) srcNt;
+    (void) dstNt;
+    (void) extraData;
+    return nullptr;
+} // GetMeterType
+
+
+void Protocol::UpdateTags( const ByteType* srcNt, const ByteType* dstNt,
+    std::vector< std::shared_ptr< meters::DataTag > >& tags )
+{
+    (void) srcNt;
+    (void) dstNt;
+    (void) tags;
+} // UpdateTags
 
 
 std::shared_ptr< meters::Meter > Protocol::DetectM4( std::shared_ptr< M4::M4Protocol > bus,
@@ -208,21 +228,21 @@ std::shared_ptr< meters::Meter > Protocol::DetectM4( std::shared_ptr< M4::M4Prot
         return nullptr;
     }
 
-    /// @todo Реализовать
-    // if ( meter == spt942 )
-    // {
-    //     std::shared_ptr< meters::Logika4L > meter4l = std::dynamic_pointer_cast< meters::Logika4L >( meter );
-    //     const ByteVector modelBytes = bus.ReadFlashBytes(
-    //           meter4l
-    //         , static_cast< ByteType >( 0xFF )
-    //         , static_cast< ByteType >( 0x30 )
-    //         , 1
-    //     );
-    //     if ( !modelBytes.empty() )
-    //     {
-    //         model = LocString( static_cast< LocChar >( modelBytes.at( 0 ) ), 1 );
-    //     }
-    // }
+    if ( meter == spt942 )
+    {
+        std::shared_ptr< meters::Logika4L > meter4l = std::dynamic_pointer_cast< meters::Logika4L >( meter );
+        ByteType dstNt = static_cast< ByteType >( M4::M4Protocol::BROADCAST_NT );
+        const ByteVector modelBytes = bus->ReadFlashBytesL4(
+              meter4l
+            , &dstNt
+            , static_cast< ByteType >( 0x30 )
+            , 1
+        );
+        if ( !modelBytes.empty() )
+        {
+            model = LocString( static_cast< LocChar >( modelBytes.at( 0 ) ), 1 );
+        }
+    }
     
     return meter;
 } // DetectM4
@@ -246,7 +266,7 @@ std::shared_ptr< meters::Meter > Protocol::DetectResponse( std::shared_ptr< conn
 std::shared_ptr< meters::Meter > Protocol::AutodectSpt( std::shared_ptr< connections::IConnection > connection,
     const storage::StorageKeeper& sKeeper, connections::BaudRate::Type fixedBaudRate,
     uint32_t waitTimeout, bool tryM4, bool trySpBus, bool tryMek,
-    ByteType* srcAddr, ByteType* dstAddr, ByteVector& dump,
+    const ByteType* srcAddr, const ByteType* dstAddr, ByteVector& dump,
     connections::BaudRate::Type& deviceBaudRate, LocString& model )
 {
     /// @todo реализовать

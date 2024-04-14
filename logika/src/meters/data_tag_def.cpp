@@ -114,7 +114,7 @@ const std::vector< std::shared_ptr< DataTagDef > >& DataTagDefVault::All() const
 
 LocString DataTagDefVault::CreateKey( const LocString& channelPrefix, const LocString& name )
 {
-    return channelPrefix + LOCALIZED( "_" ) + name;
+    return channelPrefix + LOCALIZED( "." ) + name;
 } // CreateKey
 
 } // namespace meters

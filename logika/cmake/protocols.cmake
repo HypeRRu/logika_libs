@@ -6,7 +6,8 @@ set(
 	${SRC_DIR}/protocols/comm_exception.cpp
 	${SRC_DIR}/protocols/m4/archive_record.cpp
 	${SRC_DIR}/protocols/m4/packet.cpp
-	${SRC_DIR}/protocols/m4/m4protocol.cpp
+	${SRC_DIR}/protocols/m4/m4protocol_impl.cpp
+	${SRC_DIR}/protocols/m4/m4protocol_api.cpp
 )
 
 add_library(${LIB_NAME} SHARED ${${LIB_NAME}_SOURCES_LIST})

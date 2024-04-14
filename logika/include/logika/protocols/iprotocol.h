@@ -9,7 +9,9 @@
 #include <logika/protocols/defs.h>
 #include <logika/protocols/rc.h>
 
-#include <logika/connections/iconnection.h>
+#include <logika/common/types.h>
+#include <logika/connections/defs.h>
+#include <logika/meters/defs.h>
 
 /// @cond
 #include <memory>
@@ -20,8 +22,16 @@ namespace logika
 
 namespace connections
 {
-    class LOGIKA_PROTOCOLS_EXPORT IConnection; ///< forward declaration интерфейса соединения
-} // namespace connections;
+    class LOGIKA_CONNECTIONS_EXPORT IConnection;
+} // namespace connections
+
+
+namespace meters
+{
+    class LOGIKA_METERS_EXPORT Meter;
+    class LOGIKA_METERS_EXPORT DataTag;
+} // namespace meters
+
 
 namespace protocols
 {
@@ -78,7 +88,7 @@ public:
     /// @brief Закрытие сессии соединения
     /// @param[in] srcNt NT отправителя
     /// @param[in] dstNt NT получателя
-    virtual void CloseCommSession( ByteType* srcNt, ByteType* dstNt ) = 0;
+    virtual void CloseCommSession( const ByteType* srcNt, const ByteType* dstNt ) = 0;
 
     /// @brief Ожидание таймаута
     /// @details Усыпление потока исполнения на duration миллисекунд
@@ -90,7 +100,20 @@ public:
     /// @brief Отмена активного ожидания
     virtual void CancelWait() = 0;
 
-    /// @todo Архив и т.д
+    /// @brief Определение типа прибора
+    /// @param[in] srcNt NT источника
+    /// @param[in] dstNt NT назначения
+    /// @param[out] extraData Дополнительная информация о модели прибора
+    virtual std::shared_ptr< meters::Meter > GetMeterType( const ByteType* srcNt,
+        const ByteType* dstNt, LocString& extraData ) = 0;
+
+    /// @brief Обновление значений тэгов
+    /// @param[in] srcNt NT источника
+    /// @param[in] dstNt NT назначения
+    /// @param[inout] tags Обновляемые тэги
+    virtual void UpdateTags( const ByteType* srcNt, const ByteType* dstNt,
+        std::vector< std::shared_ptr< meters::DataTag > >& tags ) = 0;
+
 }; // class IProtocol
 
 } // namespace protocols

@@ -1,5 +1,6 @@
-/// @file Реализация протокола M4
+/// @file Реализация протокола M4 (основные методы)
 /// @copyright HypeRRu 2024
+/// @see m4protocol_api.cpp
 
 #include <logika/protocols/m4/m4protocol.h>
 
@@ -8,6 +9,7 @@
 #include <logika/protocols/comm_exception.h>
 #include <logika/protocols/m4/opcodes.h>
 #include <logika/protocols/m4/tag_write_data.h>
+#include <logika/connections/iconnection.h>
 #include <logika/connections/utils/types_converter.h>
 #include <logika/connections/serial/serial_connection.h>
 #include <logika/meters/logika4/logika4.h>
@@ -158,6 +160,21 @@ void M4Protocol::ResetBusActiveState()
 } // ResetBusActiveState
 
 
+std::shared_ptr< meters::Meter > M4Protocol::GetMeterType( const ByteType* srcNt,
+    const ByteType* dstNt, LocString& extraData )
+{
+    Packet handshakePacket = DoHandshake( dstNt, 0, false );
+    if ( handshakePacket.data.size() == 3 )
+    {
+        extraData = ToLocString( std::to_string( handshakePacket.data.at( 2 ) ) );
+    }
+    return meters::Logika4::DetermineMeter(
+        handshakePacket.data.at( 0 ), handshakePacket.data.at( 1 ), handshakePacket.data.at( 2 ),
+        sKeeper_.GetStorage< LocString, meters::Meter >()
+    );
+} // GetMeterType
+
+
 void M4Protocol::SendAttention( bool slowWake )
 {
     constexpr TimeType slowWakeTimeout = 20; /// 20 мс между отправками
@@ -183,7 +200,7 @@ void M4Protocol::SendAttention( bool slowWake )
 
 
 void M4Protocol::SelectDeviceAndChannel( std::shared_ptr< meters::Logika4 > meter,
-    ByteType* zNt, MeterChannel::Type tv )
+    const ByteType* zNt, MeterChannel::Type tv )
 {
     if ( !connection_ )
     {
@@ -282,7 +299,7 @@ void M4Protocol::SelectDeviceAndChannel( std::shared_ptr< meters::Logika4 > mete
 } // SelectDeviceAndChannel
 
 
-ByteVector M4Protocol::GenerateRawHandshake( ByteType* dstNt )
+ByteVector M4Protocol::GenerateRawHandshake( const ByteType* dstNt )
 {
     static const ByteVector hsArgs{ 0, 0, 0, 0 };
     ByteVector packet;
@@ -362,7 +379,7 @@ TimeType M4Protocol::RestrictTime( TimeType date )
 } // RestrictTime
 
 
-Packet M4Protocol::RecvPacket( ByteType* excpectedNt, Opcode::Type* expectedOpcode, ByteType* expectedId,
+Packet M4Protocol::RecvPacket( const ByteType* excpectedNt, Opcode::Type* expectedOpcode, const ByteType* expectedId,
     uint32_t expectedDataLength, RecvFlags::Type flags )
 {
     ByteVector buffer;
@@ -556,7 +573,7 @@ Packet M4Protocol::RecvPacket( ByteType* excpectedNt, Opcode::Type* expectedOpco
 } // RecvPacket
 
 
-void M4Protocol::SendLegacyPacket( ByteType* nt, Opcode::Type func, const ByteVector& data )
+void M4Protocol::SendLegacyPacket( const ByteType* nt, Opcode::Type func, const ByteVector& data )
 {
     if ( !connection_ )
     {
@@ -587,7 +604,7 @@ void M4Protocol::SendLegacyPacket( ByteType* nt, Opcode::Type func, const ByteVe
 } // SendLegacyPacket
 
 
-void M4Protocol::SendExtendedPacket( ByteType* nt, ByteType packetId, Opcode::Type opcode, const ByteVector& data )
+void M4Protocol::SendExtendedPacket( const ByteType* nt, ByteType packetId, Opcode::Type opcode, const ByteVector& data )
 {
     constexpr uint32_t headerLen    = 8;
     constexpr uint32_t crcLen       = 2;
@@ -634,7 +651,7 @@ void M4Protocol::SendExtendedPacket( ByteType* nt, ByteType packetId, Opcode::Ty
 } // SendExtendedPacket
 
 
-Packet M4Protocol::DoLegacyRequest( ByteType* nt, Opcode::Type requestOpcode, const ByteVector& data,
+Packet M4Protocol::DoLegacyRequest( const ByteType* nt, Opcode::Type requestOpcode, const ByteVector& data,
     uint32_t expectedDataLength, RecvFlags::Type flags )
 {
     SendLegacyPacket( nt, requestOpcode, data );
@@ -642,8 +659,8 @@ Packet M4Protocol::DoLegacyRequest( ByteType* nt, Opcode::Type requestOpcode, co
 } // DoLegacyRequest
 
 
-Packet M4Protocol::DoM4Request( ByteType* nt, Opcode::Type requestOpcode, const ByteVector& data,
-    ByteType* packetId, RecvFlags::Type flags )
+Packet M4Protocol::DoM4Request( const ByteType* nt, Opcode::Type requestOpcode, const ByteVector& data,
+    const ByteType* packetId, RecvFlags::Type flags )
 {
     ByteType identifier;
     if ( nt )
@@ -659,7 +676,7 @@ Packet M4Protocol::DoM4Request( ByteType* nt, Opcode::Type requestOpcode, const 
 } // DoM4Request
 
 
-Packet M4Protocol::DoHandshake( ByteType* nt, ByteType channel, bool slowWake )
+Packet M4Protocol::DoHandshake( const ByteType* nt, ByteType channel, bool slowWake )
 {
     if ( !connection_ )
     {
@@ -680,7 +697,7 @@ Packet M4Protocol::DoHandshake( ByteType* nt, ByteType channel, bool slowWake )
 } // DoHandshake
 
 
-bool M4Protocol::SetBusSpeed( std::shared_ptr< meters::Logika4 > meter, ByteType* nt,
+bool M4Protocol::SetBusSpeed( std::shared_ptr< meters::Logika4 > meter, const ByteType* nt,
     connections::BaudRate::Type baudRate, MeterChannel::Type tv )
 {
     static const std::array< connections::BaudRate::Type, 7 > m4BaudRates{
@@ -764,8 +781,8 @@ bool M4Protocol::SetBusSpeed( std::shared_ptr< meters::Logika4 > meter, ByteType
 } // SetBusSpeed
 
 
-Rc::Type M4Protocol::WriteParameterL4( std::shared_ptr< meters::Logika4L > meter, ByteType* nt,
-    ByteType channel, uint32_t paramNum, LocString value, bool operFlag )
+Rc::Type M4Protocol::WriteParameterL4( std::shared_ptr< meters::Logika4L > meter, const ByteType* nt,
+    ByteType channel, uint32_t paramNum, const LocString& value, bool operFlag )
 {
     const auto devStorage = sKeeper_.GetStorage< LocString, meters::Meter >();
     std::shared_ptr< meters::Meter >  baseSpg741    = nullptr;
@@ -852,7 +869,7 @@ Rc::Type M4Protocol::WriteParameterL4( std::shared_ptr< meters::Logika4L > meter
 } // WriteParameterL4
 
 
-ByteVector M4Protocol::ReadRamL4( std::shared_ptr< meters::Logika4L > meter, ByteType* nt,
+ByteVector M4Protocol::ReadRamL4( std::shared_ptr< meters::Logika4L > meter, const ByteType* nt,
     MeterAddressType startAddr, MeterAddressType numBytes )
 {
     if ( numBytes > M4Protocol::MAX_RAM_REQUEST )
@@ -871,7 +888,7 @@ ByteVector M4Protocol::ReadRamL4( std::shared_ptr< meters::Logika4L > meter, Byt
 } // ReadRamL4
 
 
-ByteVector M4Protocol::ReadFlashPagesL4( std::shared_ptr< meters::Logika4L > meter, ByteType* nt,
+ByteVector M4Protocol::ReadFlashPagesL4( std::shared_ptr< meters::Logika4L > meter, const ByteType* nt,
     uint32_t startPage, uint32_t pageCount )
 {
     if ( pageCount == 0 )
@@ -935,7 +952,7 @@ ByteVector M4Protocol::ReadFlashPagesL4( std::shared_ptr< meters::Logika4L > met
 } // ReadFlashPagesL4
 
 
-ByteVector M4Protocol::ReadFlashBytesL4( std::shared_ptr< meters::Logika4L > meter, ByteType* nt,
+ByteVector M4Protocol::ReadFlashBytesL4( std::shared_ptr< meters::Logika4L > meter, const ByteType* nt,
     MeterAddressType startAddr, MeterAddressType length )
 {
     if ( length == 0 )
@@ -956,7 +973,7 @@ ByteVector M4Protocol::ReadFlashBytesL4( std::shared_ptr< meters::Logika4L > met
 
 
 std::vector< meters::Logika4M::Tag4MRecordType > M4Protocol::ReadTags4M( std::shared_ptr< meters::Logika4M > meter,
-    ByteType* nt, const std::vector< int32_t >& channels,
+    const ByteType* nt, const std::vector< int32_t >& channels,
     const std::vector< int32_t >& ordinals, std::vector< bool >& opFlags )
 {
     SelectDeviceAndChannel( meter, nt );
@@ -1011,7 +1028,7 @@ std::vector< meters::Logika4M::Tag4MRecordType > M4Protocol::ReadTags4M( std::sh
 } // ReadTags4M
 
 
-std::vector< Rc::Type > M4Protocol::WriteParams4M( std::shared_ptr< meters::Logika4M > meter, ByteType* nt,
+std::vector< Rc::Type > M4Protocol::WriteParams4M( std::shared_ptr< meters::Logika4M > meter, const ByteType* nt,
     const std::vector< TagWriteData >& data )
 {
     SelectDeviceAndChannel( meter, nt );
@@ -1118,7 +1135,7 @@ std::vector< Rc::Type > M4Protocol::WriteParams4M( std::shared_ptr< meters::Logi
 } // WriteParams4M
 
 
-void M4Protocol::CloseCommSessionImpl( ByteType* srcNt, ByteType* dstNt )
+void M4Protocol::CloseCommSessionImpl( const ByteType* srcNt, const ByteType* dstNt )
 {
     (void) srcNt;
     DoLegacyRequest( dstNt, Opcode::SessionClose, ByteVector( 4, 0x0 ), 0, RecvFlags::DontThrowOnErrorReply );
@@ -1156,11 +1173,32 @@ void M4Protocol::OnRecoverableError()
 } // OnRecoverableError
 
 
-ByteType M4Protocol::GetSpg741Sp( ByteType* nt )
+ByteType M4Protocol::GetSpg741Sp( const ByteType* nt )
 {
     /// @todo Реализовать
     return 0;
 } // GetSpg741Sp
+
+
+void M4Protocol::AppendDateTag( ByteVector& buffer, TimeType date, bool useMonthYearOnly )
+{
+    uint16_t millis = 0;
+    struct tm timeStruct = GetTimeStruct( date, &millis );
+
+    buffer.push_back( static_cast< ByteType >( meters::TagId4M::Timestamp ) ); // datetime tag
+    buffer.push_back( static_cast< ByteType >( useMonthYearOnly ? 2 : 8 ) );
+    buffer.push_back( static_cast< ByteType >( timeStruct.tm_year - 100 ) );
+    buffer.push_back( static_cast< ByteType >( timeStruct.tm_mon ) );
+    if ( !useMonthYearOnly )
+    {
+        buffer.push_back( static_cast< ByteType >( timeStruct.tm_mday ) );
+        buffer.push_back( static_cast< ByteType >( timeStruct.tm_hour ) );
+        buffer.push_back( static_cast< ByteType >( timeStruct.tm_min ) );
+        buffer.push_back( static_cast< ByteType >( timeStruct.tm_sec ) );
+        buffer.push_back( static_cast< ByteType >( millis & 0xFF ) );
+        buffer.push_back( static_cast< ByteType >( ( millis >> 8 ) & 0xFF ) );
+    }
+} // AppendDateTag
 
 } // namespace M4
 
