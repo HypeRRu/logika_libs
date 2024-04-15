@@ -8,6 +8,7 @@
 #include <cstring>
 #include <chrono>
 #include <algorithm>
+#include <iomanip>
 
 #include <ctime>
 #include <cctype>
@@ -99,6 +100,14 @@ struct tm GetTimeStruct( TimeType timestamp, uint16_t* millis )
 } // GetTimeStruct
 
 
+bool GetTimeFromString( const LocString& time, const std::string& format, struct tm& timeStruct )
+{
+    LocStringStream str{ time };
+    str >> std::get_time< LocChar >( &timeStruct, ToLocString( format ).c_str() );
+    return str.fail();
+} // GetTimeFromString
+
+
 LocString GetTimeString( TimeType timestamp )
 {
     uint16_t millis = 0;
@@ -115,15 +124,15 @@ LocString GetTimeString( TimeType timestamp )
 
 
 LocString GetFormatTime( const struct tm& timeStruct,
-    const char* format, size_t bufSize )
+    const std::string& format, size_t bufSize )
 {
-    if ( !format )
+    if ( format.empty() )
     {
         return LOCALIZED( "" );
     }
 
     char* buffer = new char[ bufSize ]{ 0 };
-    std::strftime( buffer, bufSize, format, &timeStruct );
+    std::strftime( buffer, bufSize, format.c_str(), &timeStruct );
     LocString result = ToLocString( buffer );
     delete [] buffer;
 

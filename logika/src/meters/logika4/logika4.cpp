@@ -227,6 +227,23 @@ std::shared_ptr< Meter > Logika4::DetermineMeter(
 } // DetermineMeter
 
 
+TimeType Logika4::CombineDateTime( const LocString& date, const LocString& time )
+{
+    struct tm dateTm;
+    struct tm timeTm;
+    const bool dateParsed = GetTimeFromString( date, "%d-%m-%Y", dateTm ) || GetTimeFromString( date, "%d.%m.%Y", dateTm );
+    const bool timeParsed = GetTimeFromString( time, "%H-%M-%S", timeTm ) || GetTimeFromString( time, "%H:%M:%S", timeTm );
+    if ( !dateParsed || !timeParsed )
+    {
+        return 0;
+    }
+    dateTm.tm_hour = timeTm.tm_hour;
+    dateTm.tm_min  = timeTm.tm_min;
+    dateTm.tm_sec  = timeTm.tm_sec;
+    return std::mktime( &dateTm ) * 1000;
+} // CombineDateTime
+
+
 ByteType Logika4::CheckSum8( const ByteVector& buffer, uint32_t start, uint32_t length )
 {
     uint8_t cs = 0xFF;

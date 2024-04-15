@@ -44,6 +44,14 @@ LOGIKA_COMMON_EXPORT TimeType GetCurrentTimestamp();
 /// @return Структура со временем
 LOGIKA_COMMON_EXPORT struct tm GetTimeStruct( TimeType timestamp = 0, uint16_t* millis = nullptr );
 
+/// @brief Получение структуры со временем из строки
+/// @param[in] time Конвертируемое время
+/// @param[in] format Формат времени
+/// @param[out] timeStruct Полученное время
+/// @return Удалось ли конвертировать
+LOGIKA_COMMON_EXPORT bool GetTimeFromString( const LocString& time,
+    const std::string& format, struct tm& timeStruct );
+
 /// @brief Получение строки со временем в формате dd.MM.yy HH:mm:ss
 /// @param[in] timestamp Конвертируемая метка времени (мс). При значении 0 берется текущее время
 /// @return Строка со временем
@@ -55,7 +63,7 @@ LOGIKA_COMMON_EXPORT LocString GetTimeString( TimeType timestamp = 0 );
 /// @param[in] bufSize Максимальный размер буфера для строки
 /// @return Строка со временем
 LOGIKA_COMMON_EXPORT LocString GetFormatTime( const struct tm& timeStruct,
-    const char* format, size_t bufSize );
+    const std::string& format, size_t bufSize );
 
 /// @brief Сравнение строк на равенство без учета регистра
 /// @param[in] lhs Первая строка

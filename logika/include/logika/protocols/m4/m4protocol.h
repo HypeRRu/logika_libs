@@ -356,9 +356,17 @@ public:
         /// @return Протокол
         const M4Protocol* GetBus() const;
 
+        /// @brief Получение протокола
+        /// @return Протокол
+        M4Protocol* GetBus();
+
         /// @brief Получение прибора
         /// @return Прибора
         const std::shared_ptr< meters::Logika4 > GetMeter() const;
+
+        /// @brief Получение прибора
+        /// @return Прибора
+        std::shared_ptr< meters::Logika4 > GetMeter();
         
         /// @brief Получение NT прибора
         /// @return NT прибора
@@ -401,6 +409,7 @@ public:
         std::shared_ptr< meters::Logika4 > meter_;      ///< Прибор
         const ByteType nt_;                             ///< NT прибора
         mutable LocString model_;                       ///< Модель прибора (использует ленивую загрузку)
+        mutable bool modelSet_;                         ///< Была ли установлена модель прибора (т.к. модель может быть пустой)
         ByteType sp_;                                   ///< СП (для трансляции параметров СПГ741)
         mutable MeterAddressType rd_;                   ///< Адрес суточного архива (использует ленивую загрузку)
         mutable MeterAddressType rh_;                   ///< Адрес часового архива (использует ленивую загрузку)
@@ -408,6 +417,7 @@ public:
             LocString, LocString
         > euDict_;                                      ///< Таблица конвертации имен единиц измерения
         mutable TimeType deviceClockDiff_;              ///< Разница во времени между часами прибора и программы (использует ленивую загрузку)
+        mutable bool clockDiffSet_;                     ///< Была ли установлена разница часов прибора и программы (т.к. у прибора может не быть часов)
         ByteVector flash_;                              ///< Образ флэш памяти (только для параметров)
         std::vector< bool > flashPageMap_;              ///< Список занятых страниц флэш памяти
         mutable std::unordered_map<

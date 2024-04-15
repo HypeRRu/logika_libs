@@ -112,6 +112,12 @@ public:
         ByteType id0, ByteType id1, ByteType version,
         std::shared_ptr< storage::Storage< LocString, Meter > > meterStorage
     );
+
+    /// @brief Получение Timestamp (мс) из строковых представлений даты и времени
+    /// @param[in] date Дата
+    /// @param[in] time Время
+    /// @return Метка времени (мс)
+    static TimeType CombineDateTime( const LocString& date, const LocString& time );
     
     /// @brief Расчет контрольной суммы (8 бит)
     /// @param[in] buffer Данные, для которых рассчитывается контрольная сумма

@@ -553,8 +553,10 @@ int main()
         LOG_WRITE( LOG_INFO, LOCALIZED( "struct B created" ) );
     }
 #endif // if 0
-
-    std::wcerr << static_cast< int8_t >( 0xFF ) << std::endl;
+    struct A anyRealVal;
+    struct B anyCastVal;
+    logika::Any anyVal( anyRealVal );
+    anyVal.TryCast< struct A >( anyCastVal );
 
 #if defined( _WIN32 ) || defined( _WIN64 )
     WSACleanup();

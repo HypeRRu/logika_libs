@@ -37,6 +37,13 @@ public:
     template < typename T >
     T GetValue() const;
 
+    /// @brief Попытка получения данных тэга
+    /// @tparam T Тип данных тэга
+    /// @return Данные тэга
+    /// @return false если указан неверный тип данных, true - если удалось получить данные
+    template < typename T >
+    bool TryGetValue( T& value ) const;
+
     /// @brief Запись данных тэга
     /// @tparam Тип данных тэга
     /// @param[in] value Данные тэга

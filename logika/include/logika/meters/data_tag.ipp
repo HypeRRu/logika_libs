@@ -22,6 +22,13 @@ T DataTag::GetValue() const
 
 
 template < typename T >
+bool DataTag::TryGetValue( T& value ) const
+{
+    return value_.TryCast< T >( value );
+} // TryGetValue
+
+
+template < typename T >
 void DataTag::SetValue( const T& value )
 {
     value_ = value;

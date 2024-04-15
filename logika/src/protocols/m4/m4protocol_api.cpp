@@ -30,11 +30,13 @@ M4Protocol::MeterCache::MeterCache( M4Protocol* owner, std::shared_ptr< meters::
     , meter_{ meter }
     , nt_{ nt }
     , model_{}
+    , modelSet_{ false }
     , sp_{ 0 }
     , rd_{ static_cast< MeterAddressType >( -1 ) }
     , rh_{ static_cast< MeterAddressType >( -1 ) }
     , euDict_{}
     , deviceClockDiff_{ static_cast< TimeType >( -1 ) }
+    , clockDiffSet_{ false }
     , flash_{}
     , flashPageMap_{}
     , vipTags_{}
@@ -81,10 +83,22 @@ M4Protocol::MeterCache::MeterCache( M4Protocol* owner, std::shared_ptr< meters::
 const M4Protocol* M4Protocol::MeterCache::GetBus() const
 {
     return bus_;
+} // GetBus const
+
+
+M4Protocol* M4Protocol::MeterCache::GetBus()
+{
+    return bus_;
 } // GetBus
 
 
 const std::shared_ptr< meters::Logika4 > M4Protocol::MeterCache::GetMeter() const
+{
+    return meter_;
+} // GetMeter const
+
+
+std::shared_ptr< meters::Logika4 > M4Protocol::MeterCache::GetMeter()
 {
     return meter_;
 } // GetMeter
@@ -98,11 +112,19 @@ ByteType M4Protocol::MeterCache::GetNt() const
 
 LocString M4Protocol::MeterCache::GetModel() const
 {
-    if ( !model_.empty() )
+    if ( !model_.empty() || modelSet_ )
     {
         return model_;
     }
-    /// @todo Реализовать
+    modelSet_ = true;
+    if ( bus_ && vipTags_.count( meters::ImportantTag::Model ) )
+    {
+        bus_->UpdateTagsImpl( &nt_, vipTags_[ meters::ImportantTag::Model ], TagsUpdateFlags::DontGetEus );
+        if ( !vipTags_[ meters::ImportantTag::Model ].empty() )
+        {
+            vipTags_[ meters::ImportantTag::Model ].at( 0 )->TryGetValue< LocString >( model_ );
+        }
+    }
     return model_;
 } // GetModel
 
@@ -143,7 +165,39 @@ MeterAddressType M4Protocol::MeterCache::GetRh() const
 
 void M4Protocol::MeterCache::LoadRdRh() const
 {
-    /// @todo Реализовать
+    if ( !bus_
+        || vipTags_.count( meters::ImportantTag::RDay )
+        || vipTags_.at( meters::ImportantTag::RDay ).empty()
+        || vipTags_.count( meters::ImportantTag::RHour )
+        || vipTags_.at( meters::ImportantTag::RHour ).empty() )
+    {
+        return;
+    }
+    std::vector< std::shared_ptr< meters::DataTag > > tags{
+          vipTags_[ meters::ImportantTag::RDay  ][ 0 ]
+        , vipTags_[ meters::ImportantTag::RHour ][ 0 ]
+    };
+    bus_->UpdateTagsImpl( &nt_, tags, TagsUpdateFlags::DontGetEus );
+
+    try
+    {
+        LocString rdValue = tags[ 0 ]->GetValue< LocString >();
+        rd_ = static_cast< MeterAddressType >( std::stoull( rdValue, nullptr, 10 ) );
+    }
+    catch ( const std::exception& )
+    {
+        LOG_WRITE( LOG_WARNING, LOCALIZED( "Could not convert RDay value" ) );
+    }
+
+    try
+    {
+        LocString rhValue = tags[ 1 ]->GetValue< LocString >();
+        rh_ = static_cast< MeterAddressType >( std::stoull( rhValue, nullptr, 10 ) );
+    }
+    catch ( const std::exception& )
+    {
+        LOG_WRITE( LOG_WARNING, LOCALIZED( "Could not convert RHour value" ) );
+    }
 } // LoadRdRh
 
 
@@ -153,7 +207,37 @@ TimeType M4Protocol::MeterCache::GetCurrentDeviceTime() const
     {
         return GetCurrentTimestamp() - deviceClockDiff_;
     }
-    /// @todo Реализовать
+    if ( clockDiffSet_ )
+    {
+        return 0;
+    }
+
+    clockDiffSet_ = true;
+    if ( !bus_ || !meter_ || !meter_->GetTagsVault() )
+    {
+        return 0;
+    }
+    auto tagsVault = meter_->GetTagsVault();
+    std::shared_ptr< meters::DataTagDef > tagTime = tagsVault->Find( LOCALIZED( "ОБЩ" ), LOCALIZED( "T" ) );
+    std::shared_ptr< meters::DataTagDef > tagDate = tagsVault->Find( LOCALIZED( "ОБЩ" ), LOCALIZED( "Д" ) );
+    if ( !tagTime || !tagDate )
+    {
+        /// Устройство без часов (например ЛГК410)
+        return 0;
+    }
+    std::vector< std::shared_ptr< meters::DataTag > > tags{
+          std::make_shared< meters::DataTag >( tagDate, 0 )
+        , std::make_shared< meters::DataTag >( tagTime, 0 )
+    };
+    bus_->UpdateTagsImpl( &nt_, tags, TagsUpdateFlags::DontGetEus );
+    LocString dateValue{};
+    LocString timeValue{};
+    tags.at( 0 )->TryGetValue< LocString >( dateValue );
+    tags.at( 1 )->TryGetValue< LocString >( timeValue );
+    
+    TimeType currentTime    = GetCurrentTimestamp();
+    TimeType devType        = meters::Logika4::CombineDateTime( dateValue, timeValue );
+    deviceClockDiff_        = currentTime - devType;
     return GetCurrentTimestamp() - deviceClockDiff_;
 } // GetCurrentDeviceTime
 
@@ -171,7 +255,6 @@ const std::unordered_map< LocString, LocString >& M4Protocol::MeterCache::GetEuD
     }
     return euDict_;
 } // GetEuDict
-
 
 /// -----------------------------------
 

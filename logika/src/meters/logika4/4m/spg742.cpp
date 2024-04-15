@@ -100,6 +100,7 @@ std::unordered_map< LocString, LocString > Spg742::BuildEuDict(
         }
         try
         {
+            /// @todo Заменить на TryGetValue
             const LocString tagVal = euTag->GetValue< LocString >();
             uint64_t euInt = std::stoull( tagVal );
             euDict[ euTag->GetName() ] = GetGasPressureUnits( static_cast< uint8_t >( euInt ) );
