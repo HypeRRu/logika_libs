@@ -13,6 +13,7 @@ var hierarchy =
       [ "logika::meters::ArchiveDef6Settings", "df/dd7/structlogika_1_1meters_1_1ArchiveDef6Settings.html", null ],
       [ "logika::meters::MultipartArchiveDef6Settings", "d7/d3d/structlogika_1_1meters_1_1MultipartArchiveDef6Settings.html", null ]
     ] ],
+    [ "logika::protocols::M4::ArchiveRequestState4L", "db/d8b/structlogika_1_1protocols_1_1M4_1_1ArchiveRequestState4L.html", null ],
     [ "logika::meters::converters::ArchiveTypeConverter", "d9/dbc/classlogika_1_1meters_1_1converters_1_1ArchiveTypeConverter.html", null ],
     [ "logika::protocols::M4::M4Protocol::BusActiveState", "d9/d1e/structlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1BusActiveState.html", null ],
     [ "logika::meters::converters::ChannelConverter", "d7/de8/classlogika_1_1meters_1_1converters_1_1ChannelConverter.html", null ],
@@ -95,7 +96,8 @@ var hierarchy =
         [ "logika::meters::DataTag6Container", "db/d12/classlogika_1_1meters_1_1DataTag6Container.html", null ]
       ] ],
       [ "logika::meters::VQT", "d1/d18/structlogika_1_1meters_1_1VQT.html", null ],
-      [ "logika::protocols::M4::ArchiveRecord", "d1/d10/structlogika_1_1protocols_1_1M4_1_1ArchiveRecord.html", null ]
+      [ "logika::protocols::M4::ArchiveRecord", "d1/d10/structlogika_1_1protocols_1_1M4_1_1ArchiveRecord.html", null ],
+      [ "logika::protocols::M4::FrbIndex", "d9/d2a/structlogika_1_1protocols_1_1M4_1_1FrbIndex.html", null ]
     ] ],
     [ "logika::storage::IStorage", "d2/d94/classlogika_1_1storage_1_1IStorage.html", [
       [ "logika::storage::Storage< IdType, StoredType >", "da/d9d/classlogika_1_1storage_1_1Storage.html", null ]
@@ -173,5 +175,6 @@ var hierarchy =
       ] ]
     ] ],
     [ "logika::protocols::M4::TagWriteData", "db/dd8/structlogika_1_1protocols_1_1M4_1_1TagWriteData.html", null ],
+    [ "logika::protocols::M4::TvReadState4L", "d3/d00/structlogika_1_1protocols_1_1M4_1_1TvReadState4L.html", null ],
     [ "logika::meters::VitalInfo", "d3/d26/structlogika_1_1meters_1_1VitalInfo.html", null ]
 ];

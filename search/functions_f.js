@@ -42,7 +42,8 @@ var searchData=
   ['spt943_39',['Spt943',['../dd/d9e/classlogika_1_1meters_1_1Spt943.html#aadaeed33acd4d7e9ad588fb5a48e09da',1,'logika::meters::Spt943']]],
   ['spt943rev3_40',['Spt943rev3',['../da/d78/classlogika_1_1meters_1_1Spt943rev3.html#a5561337001c7e66d2ed75dc45d2e4d84',1,'logika::meters::Spt943rev3']]],
   ['spt944_41',['Spt944',['../d2/dc9/classlogika_1_1meters_1_1Spt944.html#a2242a3622b6da75fcb93c53c6b6f8ab9',1,'logika::meters::Spt944']]],
-  ['stopbitstostring_42',['StopBitsToString',['../df/da9/namespacelogika_1_1connections.html#ad54bb3220d0b8761657e1887a114e094',1,'logika::connections']]],
-  ['strcaseeq_43',['StrCaseEq',['../d7/d43/namespacelogika.html#acfbaf10116b98ced17273d06014ce6d3',1,'logika']]],
-  ['syncheadertodatetime_44',['SyncHeaderToDateTime',['../d7/d1b/classlogika_1_1meters_1_1Logika4L.html#a203528579161e7baff48a4f2a3813d2c',1,'logika::meters::Logika4L']]]
+  ['startpage_42',['StartPage',['../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a9763802e587a429865d33ba98d38154b',1,'logika::protocols::M4::FlashArray']]],
+  ['stopbitstostring_43',['StopBitsToString',['../df/da9/namespacelogika_1_1connections.html#ad54bb3220d0b8761657e1887a114e094',1,'logika::connections']]],
+  ['strcaseeq_44',['StrCaseEq',['../d7/d43/namespacelogika.html#acfbaf10116b98ced17273d06014ce6d3',1,'logika']]],
+  ['syncheadertodatetime_45',['SyncHeaderToDateTime',['../d7/d1b/classlogika_1_1meters_1_1Logika4L.html#a203528579161e7baff48a4f2a3813d2c',1,'logika::meters::Logika4L']]]
 ];

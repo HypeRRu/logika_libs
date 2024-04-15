@@ -10,10 +10,11 @@ var searchData=
   ['recordsaddr_5f_7',['recordsAddr_',['../d5/dce/classlogika_1_1meters_1_1ArchiveDef4L.html#a4061fe8aa0a1e720028c11a0bbe3f2ae',1,'logika::meters::ArchiveDef4L']]],
   ['recordsize_8',['recordSize',['../d3/db0/structlogika_1_1meters_1_1ArchiveDef4LSettings.html#a7fa811e24a588ffdec9d570459a60be9',1,'logika::meters::ArchiveDef4LSettings']]],
   ['recordsize_5f_9',['recordSize_',['../d5/dce/classlogika_1_1meters_1_1ArchiveDef4L.html#a894f21d54f78fb84ad613fff2526717f',1,'logika::meters::ArchiveDef4L']]],
-  ['rh_10',['rh',['../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a909d60164cf9e972b4473535b646fd02',1,'logika::meters::VitalInfo']]],
-  ['rxbytescount_5f_11',['rxBytesCount_',['../db/da7/classlogika_1_1connections_1_1Connection.html#aa9d5ecb02903e3033bcd3df547949cf3',1,'logika::connections::Connection']]],
-  ['rxcrc_5f_12',['rxCrc_',['../da/d50/classlogika_1_1protocols_1_1Protocol.html#af9bb62bd6d16033de2260f744705c547',1,'logika::protocols::Protocol']]],
-  ['rxgeneral_5f_13',['rxGeneral_',['../da/d50/classlogika_1_1protocols_1_1Protocol.html#a82a380bad318a55d8c9ed98757765e65',1,'logika::protocols::Protocol']]],
-  ['rxlatepacket_5f_14',['rxLatePacket_',['../da/d50/classlogika_1_1protocols_1_1Protocol.html#ac0b97e0571f4b0cab2c1bcd370297283',1,'logika::protocols::Protocol']]],
-  ['rxtimeout_5f_15',['rxTimeout_',['../da/d50/classlogika_1_1protocols_1_1Protocol.html#a42faad59e66c98eb235d2beaee31e05e',1,'logika::protocols::Protocol']]]
+  ['restartpoint_10',['restartPoint',['../d3/d00/structlogika_1_1protocols_1_1M4_1_1TvReadState4L.html#a1d392da2ce15d77d386dbf541e556bdf',1,'logika::protocols::M4::TvReadState4L']]],
+  ['rh_11',['rh',['../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a909d60164cf9e972b4473535b646fd02',1,'logika::meters::VitalInfo']]],
+  ['rxbytescount_5f_12',['rxBytesCount_',['../db/da7/classlogika_1_1connections_1_1Connection.html#aa9d5ecb02903e3033bcd3df547949cf3',1,'logika::connections::Connection']]],
+  ['rxcrc_5f_13',['rxCrc_',['../da/d50/classlogika_1_1protocols_1_1Protocol.html#af9bb62bd6d16033de2260f744705c547',1,'logika::protocols::Protocol']]],
+  ['rxgeneral_5f_14',['rxGeneral_',['../da/d50/classlogika_1_1protocols_1_1Protocol.html#a82a380bad318a55d8c9ed98757765e65',1,'logika::protocols::Protocol']]],
+  ['rxlatepacket_5f_15',['rxLatePacket_',['../da/d50/classlogika_1_1protocols_1_1Protocol.html#ac0b97e0571f4b0cab2c1bcd370297283',1,'logika::protocols::Protocol']]],
+  ['rxtimeout_5f_16',['rxTimeout_',['../da/d50/classlogika_1_1protocols_1_1Protocol.html#a42faad59e66c98eb235d2beaee31e05e',1,'logika::protocols::Protocol']]]
 ];

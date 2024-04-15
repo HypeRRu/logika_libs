@@ -10,5 +10,6 @@ var searchData=
   ['tagdef4settings_7',['TagDef4Settings',['../dc/d32/structlogika_1_1meters_1_1TagDef4Settings.html',1,'logika::meters']]],
   ['tagdefsettings_8',['TagDefSettings',['../d0/de8/structlogika_1_1meters_1_1TagDefSettings.html',1,'logika::meters']]],
   ['tagwritedata_9',['TagWriteData',['../db/dd8/structlogika_1_1protocols_1_1M4_1_1TagWriteData.html',1,'logika::protocols::M4']]],
-  ['tcpconnection_10',['TcpConnection',['../de/dcd/classlogika_1_1connections_1_1TcpConnection.html',1,'logika::connections']]]
+  ['tcpconnection_10',['TcpConnection',['../de/dcd/classlogika_1_1connections_1_1TcpConnection.html',1,'logika::connections']]],
+  ['tvreadstate4l_11',['TvReadState4L',['../d3/d00/structlogika_1_1protocols_1_1M4_1_1TvReadState4L.html',1,'logika::protocols::M4']]]
 ];

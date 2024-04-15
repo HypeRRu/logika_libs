@@ -14,6 +14,8 @@ var searchData=
   ['description_5f_11',['description_',['../da/dc9/classlogika_1_1meters_1_1ItemDefBase.html#a4572e05ff3a237fab48898df8e495d2f',1,'logika::meters::ItemDefBase::description_'],['../d3/d77/classlogika_1_1meters_1_1Meter.html#abad93f4641525e5f98b92692b14a12ef',1,'logika::meters::Meter::description_']]],
   ['descriptionex_12',['descriptionEx',['../d1/dd1/structlogika_1_1meters_1_1DataTagDefSettings.html#aa640a5e5494d4a22e47a78fbcfb4f2a5',1,'logika::meters::DataTagDefSettings']]],
   ['descriptionex_5f_13',['descriptionEx_',['../da/dcc/classlogika_1_1meters_1_1DataTagDef.html#a38134a2680203769a1ebca63344a3264',1,'logika::meters::DataTagDef']]],
-  ['displayformat_14',['displayFormat',['../d0/de8/structlogika_1_1meters_1_1TagDefSettings.html#af1f1df9f1320e1a408438fca7935603a',1,'logika::meters::TagDefSettings']]],
-  ['displayformat_5f_15',['displayFormat_',['../d5/dfb/classlogika_1_1meters_1_1TagDef.html#a667c176fb6ff4c107fe57807b7a7bd83',1,'logika::meters::TagDef']]]
+  ['dirtyindices_14',['dirtyIndices',['../d3/d00/structlogika_1_1protocols_1_1M4_1_1TvReadState4L.html#acce5377296f6bc85f5944aa6c86774ce',1,'logika::protocols::M4::TvReadState4L']]],
+  ['dirtyinitialcount_15',['dirtyInitialCount',['../d3/d00/structlogika_1_1protocols_1_1M4_1_1TvReadState4L.html#ab8f425bda2e65f537f85b7b4b028d548',1,'logika::protocols::M4::TvReadState4L']]],
+  ['displayformat_16',['displayFormat',['../d0/de8/structlogika_1_1meters_1_1TagDefSettings.html#af1f1df9f1320e1a408438fca7935603a',1,'logika::meters::TagDefSettings']]],
+  ['displayformat_5f_17',['displayFormat_',['../d5/dfb/classlogika_1_1meters_1_1TagDef.html#a667c176fb6ff4c107fe57807b7a7bd83',1,'logika::meters::TagDef']]]
 ];

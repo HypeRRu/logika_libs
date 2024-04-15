@@ -1,25 +1,25 @@
 <map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
 <area shape="rect" id="Node000000" href="$d0/de8/structlogika_1_1meters_1_1TagDefSettings.html" title="Параметры для создания базового тэга" alt="" coords="5,157,203,183"/>
 <area shape="rect" id="Node000001" href="$de/dcf/structlogika_1_1meters_1_1ArchiveFieldDefSettings.html" title="Параметры описания поля архива" alt="" coords="251,84,430,125"/>
-<area shape="poly" id="edge70_Node000000_Node000001" title=" " alt="" coords="167,150,263,123,265,128,168,155"/>
+<area shape="poly" id="edge71_Node000000_Node000001" title=" " alt="" coords="167,150,263,123,265,128,168,155"/>
 <area shape="rect" id="Node000006" href="$d0/d69/structlogika_1_1meters_1_1CalcFieldDefSettings.html" title="Параметры расчетного тэга" alt="" coords="260,149,421,190"/>
-<area shape="poly" id="edge75_Node000000_Node000006" title=" " alt="" coords="218,167,259,167,259,172,218,172"/>
+<area shape="poly" id="edge76_Node000000_Node000006" title=" " alt="" coords="218,167,259,167,259,172,218,172"/>
 <area shape="rect" id="Node000007" href="$d1/dd1/structlogika_1_1meters_1_1DataTagDefSettings.html" title="Параметры для создания тэга с данными" alt="" coords="252,215,429,255"/>
-<area shape="poly" id="edge76_Node000000_Node000007" title=" " alt="" coords="168,185,265,211,263,217,167,190"/>
+<area shape="poly" id="edge77_Node000000_Node000007" title=" " alt="" coords="168,185,265,211,263,217,167,190"/>
 <area shape="rect" id="Node000002" href="$dd/dc4/structlogika_1_1meters_1_1ArchiveFieldDef4Settings.html" title="Параметры описания поля архива Logika4." alt="" coords="491,37,670,78"/>
-<area shape="poly" id="edge71_Node000001_Node000002" title=" " alt="" coords="445,81,490,73,491,78,446,87"/>
+<area shape="poly" id="edge72_Node000001_Node000002" title=" " alt="" coords="445,81,490,73,491,78,446,87"/>
 <area shape="rect" id="Node000005" href="$db/d1d/structlogika_1_1meters_1_1ArchiveFieldDef6Settings.html" title="Параметры описания поля архива Logika6." alt="" coords="491,103,670,143"/>
-<area shape="poly" id="edge74_Node000001_Node000005" title=" " alt="" coords="446,110,490,113,490,119,446,115"/>
+<area shape="poly" id="edge75_Node000001_Node000005" title=" " alt="" coords="446,110,490,113,490,119,446,115"/>
 <area shape="rect" id="Node000003" href="$d3/dbb/structlogika_1_1meters_1_1ArchiveFieldDef4LSettings.html" title="Параметры описания поля архива Logika4L." alt="" coords="748,5,928,46"/>
-<area shape="poly" id="edge72_Node000002_Node000003" title=" " alt="" coords="685,42,748,34,748,39,686,47"/>
+<area shape="poly" id="edge73_Node000002_Node000003" title=" " alt="" coords="685,42,748,34,748,39,686,47"/>
 <area shape="rect" id="Node000004" href="$d6/d41/structlogika_1_1meters_1_1ArchiveFieldDef4MSettings.html" title="Параметры описания поля архива Logika4L." alt="" coords="748,71,928,111"/>
-<area shape="poly" id="edge73_Node000002_Node000004" title=" " alt="" coords="686,69,748,77,748,82,685,74"/>
+<area shape="poly" id="edge74_Node000002_Node000004" title=" " alt="" coords="686,69,748,77,748,82,685,74"/>
 <area shape="rect" id="Node000008" href="$d5/d2d/structlogika_1_1meters_1_1DataTagDef6Settings.html" title="Параметры для создания тэга Logika6." alt="" coords="489,185,672,226"/>
-<area shape="poly" id="edge77_Node000007_Node000008" title=" " alt="" coords="444,220,488,214,488,220,444,225"/>
+<area shape="poly" id="edge78_Node000007_Node000008" title=" " alt="" coords="444,220,488,214,488,220,444,225"/>
 <area shape="rect" id="Node000009" href="$dc/d32/structlogika_1_1meters_1_1TagDef4Settings.html" title="Параметры для создания тэга Logika4." alt="" coords="478,250,682,276"/>
-<area shape="poly" id="edge78_Node000007_Node000009" title=" " alt="" coords="444,244,478,248,477,254,444,250"/>
+<area shape="poly" id="edge79_Node000007_Node000009" title=" " alt="" coords="444,244,478,248,477,254,444,250"/>
 <area shape="rect" id="Node000010" href="$d9/d4c/structlogika_1_1meters_1_1TagDef4LSettings.html" title="Параметры для создания тэга Logika4L." alt="" coords="732,225,944,251"/>
-<area shape="poly" id="edge79_Node000009_Node000010" title=" " alt="" coords="698,249,731,245,732,251,698,254"/>
+<area shape="poly" id="edge80_Node000009_Node000010" title=" " alt="" coords="698,249,731,245,732,251,698,254"/>
 <area shape="rect" id="Node000011" href="$d8/df6/structlogika_1_1meters_1_1TagDef4MSettings.html" title="Параметры для создания тэга Logika4M." alt="" coords="730,274,946,300"/>
-<area shape="poly" id="edge80_Node000009_Node000011" title=" " alt="" coords="698,271,730,274,729,280,697,277"/>
+<area shape="poly" id="edge81_Node000009_Node000011" title=" " alt="" coords="698,271,730,274,729,280,697,277"/>
 </map>

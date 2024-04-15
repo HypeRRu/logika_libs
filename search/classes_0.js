@@ -25,6 +25,7 @@ var searchData=
   ['archivefielddef6settings_22',['ArchiveFieldDef6Settings',['../db/d1d/structlogika_1_1meters_1_1ArchiveFieldDef6Settings.html',1,'logika::meters']]],
   ['archivefielddefsettings_23',['ArchiveFieldDefSettings',['../de/dcf/structlogika_1_1meters_1_1ArchiveFieldDefSettings.html',1,'logika::meters']]],
   ['archiverecord_24',['ArchiveRecord',['../d1/d10/structlogika_1_1protocols_1_1M4_1_1ArchiveRecord.html',1,'logika::protocols::M4']]],
-  ['archivetype_25',['ArchiveType',['../d2/d02/classlogika_1_1meters_1_1ArchiveType.html',1,'logika::meters']]],
-  ['archivetypeconverter_26',['ArchiveTypeConverter',['../d9/dbc/classlogika_1_1meters_1_1converters_1_1ArchiveTypeConverter.html',1,'logika::meters::converters']]]
+  ['archiverequeststate4l_25',['ArchiveRequestState4L',['../db/d8b/structlogika_1_1protocols_1_1M4_1_1ArchiveRequestState4L.html',1,'logika::protocols::M4']]],
+  ['archivetype_26',['ArchiveType',['../d2/d02/classlogika_1_1meters_1_1ArchiveType.html',1,'logika::meters']]],
+  ['archivetypeconverter_27',['ArchiveTypeConverter',['../d9/dbc/classlogika_1_1meters_1_1converters_1_1ArchiveTypeConverter.html',1,'logika::meters::converters']]]
 ];

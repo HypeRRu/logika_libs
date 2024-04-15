@@ -13,6 +13,7 @@ var classlogika_1_1meters_1_1DataTag =
     [ "SetTimestamp", "d9/d53/classlogika_1_1meters_1_1DataTag.html#a65fa0350e812beacffdce16968606521", null ],
     [ "SetValue", "d9/d53/classlogika_1_1meters_1_1DataTag.html#abe4d70f6e82ce9167c17c98408e8dc3d", null ],
     [ "ToString", "d9/d53/classlogika_1_1meters_1_1DataTag.html#a0a9e3c6a946e0dd8820a325552ece87c", null ],
+    [ "TryGetValue", "d9/d53/classlogika_1_1meters_1_1DataTag.html#a82c9d48d8e24e8b5f4d46d8a43e76bf0", null ],
     [ "dataTagDef_", "d9/d53/classlogika_1_1meters_1_1DataTag.html#ada68087a58d878934694e3fe36c5148d", null ],
     [ "errDesc_", "d9/d53/classlogika_1_1meters_1_1DataTag.html#ae6045c72b74b032625b16d1b17346346", null ],
     [ "oper_", "d9/d53/classlogika_1_1meters_1_1DataTag.html#a742be4ae5f6ba0a3e59099d9ba2d4439", null ],

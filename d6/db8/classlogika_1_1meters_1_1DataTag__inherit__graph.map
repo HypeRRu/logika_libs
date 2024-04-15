@@ -1,5 +1,5 @@
 <map id="logika::meters::DataTag" name="logika::meters::DataTag">
-<area shape="rect" id="Node000001" title="Тэг с данными" alt="" coords="12,668,209,1215"/>
+<area shape="rect" id="Node000001" title="Тэг с данными" alt="" coords="12,668,209,1249"/>
 <area shape="rect" id="Node000002" href="$d1/d29/classlogika_1_1meters_1_1Tag.html" title="Тэг" alt="" coords="5,168,216,620"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,635,113,668,108,668,108,635"/>
 <area shape="rect" id="Node000003" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="26,5,195,120"/>

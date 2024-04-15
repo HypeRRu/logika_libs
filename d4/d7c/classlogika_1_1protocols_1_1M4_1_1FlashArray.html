@@ -93,14 +93,17 @@ $(function(){initNavTree('d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.ht
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
 <a href="#pub-static-attribs">Статические открытые данные</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="#pro-static-methods">Защищенные статические члены</a> &#124;
 <a href="#pro-attribs">Защищенные данные</a> &#124;
 <a href="../../db/d72/classlogika_1_1protocols_1_1M4_1_1FlashArray-members.html">Полный список членов класса</a>  </div>
   <div class="headertitle"><div class="title">Класс logika::protocols::M4::FlashArray</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Массив Flash.  
+<p>Массив flash.  
  <a href="#details">Подробнее...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../df/da9/flash__ring__buffer_8h_source.html">flash_ring_buffer.h</a>&gt;</code></p>
@@ -109,18 +112,69 @@ $(function(){initNavTree('d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.ht
 <div class="dyncontent">
 <div class="center"><img src="../../d8/d6b/classlogika_1_1protocols_1_1M4_1_1FlashArray__coll__graph.png" border="0" usemap="#alogika_1_1protocols_1_1M4_1_1FlashArray_coll__map" alt="Collaboration graph"/></div>
 <map name="alogika_1_1protocols_1_1M4_1_1FlashArray_coll__map" id="alogika_1_1protocols_1_1M4_1_1FlashArray_coll__map">
-<area shape="rect" title="Массив Flash." alt="" coords="5,5,220,333"/>
+<area shape="rect" title="Массив flash." alt="" coords="5,5,241,868"/>
 </map>
 </div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a40aa1efeef5d2d4c6d79d8a70367fe83" id="r_a40aa1efeef5d2d4c6d79d8a70367fe83"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40aa1efeef5d2d4c6d79d8a70367fe83">FlashArray</a> (std::shared_ptr&lt; <a class="el" href="../../d7/d0a/classlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache.html">M4Protocol::MeterCache</a> &gt; meterInstance, <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a> dataAddr, uint32_t elementsCount, <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a> elementSize)</td></tr>
+<tr class="memdesc:a40aa1efeef5d2d4c6d79d8a70367fe83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор массива flash.  <br /></td></tr>
+<tr class="separator:a40aa1efeef5d2d4c6d79d8a70367fe83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47e1384218339cb16faea3630f2673f6" id="r_a47e1384218339cb16faea3630f2673f6"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47e1384218339cb16faea3630f2673f6">GetElementsCount</a> () const</td></tr>
+<tr class="memdesc:a47e1384218339cb16faea3630f2673f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение количества элементов  <br /></td></tr>
+<tr class="separator:a47e1384218339cb16faea3630f2673f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98919fdcb505ab0c8d9a1e5ffe5be609" id="r_a98919fdcb505ab0c8d9a1e5ffe5be609"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98919fdcb505ab0c8d9a1e5ffe5be609">GetElementSize</a> () const</td></tr>
+<tr class="memdesc:a98919fdcb505ab0c8d9a1e5ffe5be609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение размера элемента  <br /></td></tr>
+<tr class="separator:a98919fdcb505ab0c8d9a1e5ffe5be609"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ead36054d7f1cdd95c8f39dc6646ad1" id="r_a0ead36054d7f1cdd95c8f39dc6646ad1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ead36054d7f1cdd95c8f39dc6646ad1">GetElement</a> (uint32_t index, <a class="el" href="../../d7/d43/namespacelogika.html#a69c638914202f69eb544a992e2361a1c">ByteVector</a> &amp;buffer, <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a> &amp;offset)</td></tr>
+<tr class="memdesc:a0ead36054d7f1cdd95c8f39dc6646ad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение элемента  <br /></td></tr>
+<tr class="separator:a0ead36054d7f1cdd95c8f39dc6646ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb0f2109b5d4f90169225e21d8855b57" id="r_aeb0f2109b5d4f90169225e21d8855b57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb0f2109b5d4f90169225e21d8855b57">UpdateElements</a> (std::vector&lt; <a class="el" href="../../d9/d2a/structlogika_1_1protocols_1_1M4_1_1FrbIndex.html">FrbIndex</a> &gt; &amp;indices)</td></tr>
+<tr class="memdesc:aeb0f2109b5d4f90169225e21d8855b57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновление массива элементов  <br /></td></tr>
+<tr class="separator:aeb0f2109b5d4f90169225e21d8855b57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5052f342137000947dd12dfcdc813cc" id="r_ad5052f342137000947dd12dfcdc813cc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5052f342137000947dd12dfcdc813cc">Reset</a> ()</td></tr>
+<tr class="memdesc:ad5052f342137000947dd12dfcdc813cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сброс образа флэщ памяти  <br /></td></tr>
+<tr class="separator:ad5052f342137000947dd12dfcdc813cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Статические открытые данные</h2></td></tr>
-<tr class="memitem:aa8c35f56c655f398026b73b9b7d44b9a" id="r_aa8c35f56c655f398026b73b9b7d44b9a"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8c35f56c655f398026b73b9b7d44b9a">PAGE_SIZE</a></td></tr>
+<tr class="memitem:aa8c35f56c655f398026b73b9b7d44b9a" id="r_aa8c35f56c655f398026b73b9b7d44b9a"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8c35f56c655f398026b73b9b7d44b9a">PAGE_SIZE</a> = <a class="el" href="../../d7/d1b/classlogika_1_1meters_1_1Logika4L.html#a1cdabd2dcdf081e659a442c892b253bf">meters::Logika4L::FLASH_PAGE_SIZE</a></td></tr>
 <tr class="memdesc:aa8c35f56c655f398026b73b9b7d44b9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Размер страницы Flash-памяти  <br /></td></tr>
 <tr class="separator:aa8c35f56c655f398026b73b9b7d44b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:a9763802e587a429865d33ba98d38154b" id="r_a9763802e587a429865d33ba98d38154b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9763802e587a429865d33ba98d38154b">StartPage</a> (uint32_t elementIndex)</td></tr>
+<tr class="memdesc:a9763802e587a429865d33ba98d38154b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение номера первой страницы, включающей элемент  <br /></td></tr>
+<tr class="separator:a9763802e587a429865d33ba98d38154b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a406b6cf107450fa7ddd3c76c63e39429" id="r_a406b6cf107450fa7ddd3c76c63e39429"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a406b6cf107450fa7ddd3c76c63e39429">EndPage</a> (uint32_t elementIndex)</td></tr>
+<tr class="memdesc:a406b6cf107450fa7ddd3c76c63e39429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение номера последней страницы, включающей элемент  <br /></td></tr>
+<tr class="separator:a406b6cf107450fa7ddd3c76c63e39429"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7269c353abf7adf7fe3dea04ea20a99" id="r_ab7269c353abf7adf7fe3dea04ea20a99"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7269c353abf7adf7fe3dea04ea20a99">ElementAvailable</a> (uint32_t index)</td></tr>
+<tr class="memdesc:ab7269c353abf7adf7fe3dea04ea20a99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверка доступности элемента  <br /></td></tr>
+<tr class="separator:ab7269c353abf7adf7fe3dea04ea20a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a907e0f6600029a9c4d858241e0ff8596" id="r_a907e0f6600029a9c4d858241e0ff8596"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a907e0f6600029a9c4d858241e0ff8596">UpdatePages</a> (uint32_t startPage, uint32_t endPage)</td></tr>
+<tr class="memdesc:a907e0f6600029a9c4d858241e0ff8596"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновление страниц  <br /></td></tr>
+<tr class="separator:a907e0f6600029a9c4d858241e0ff8596"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a070b9ad73269b5b32b46001bbe753e04" id="r_a070b9ad73269b5b32b46001bbe753e04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a070b9ad73269b5b32b46001bbe753e04">UpdateElementExplicit</a> (uint32_t index)</td></tr>
+<tr class="memdesc:a070b9ad73269b5b32b46001bbe753e04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновление элемента  <br /></td></tr>
+<tr class="separator:a070b9ad73269b5b32b46001bbe753e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a386b59f05346825cb1d14833fdca0e9b" id="r_a386b59f05346825cb1d14833fdca0e9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a386b59f05346825cb1d14833fdca0e9b">InvalidateElement</a> (uint32_t index)</td></tr>
+<tr class="memdesc:a386b59f05346825cb1d14833fdca0e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инвалидация элемента  <br /></td></tr>
+<tr class="separator:a386b59f05346825cb1d14833fdca0e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Защищенные статические члены</h2></td></tr>
+<tr class="memitem:aa9c9d89ae4c5b9c3cf549aa34d2e322f" id="r_aa9c9d89ae4c5b9c3cf549aa34d2e322f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9c9d89ae4c5b9c3cf549aa34d2e322f">ExtendPageRange</a> (uint32_t page, int64_t &amp;startPage, int64_t &amp;endPage)</td></tr>
+<tr class="memdesc:aa9c9d89ae4c5b9c3cf549aa34d2e322f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Расширение диапазона страниц  <br /></td></tr>
+<tr class="separator:aa9c9d89ae4c5b9c3cf549aa34d2e322f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Защищенные данные</h2></td></tr>
+<tr class="memitem:ac26d131bec45cb9df7db5677b935a0bf" id="r_ac26d131bec45cb9df7db5677b935a0bf"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; <a class="el" href="../../d7/d0a/classlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache.html">M4Protocol::MeterCache</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac26d131bec45cb9df7db5677b935a0bf">mtrInstance_</a></td></tr>
+<tr class="memdesc:ac26d131bec45cb9df7db5677b935a0bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Кэш прибора  <br /></td></tr>
+<tr class="separator:ac26d131bec45cb9df7db5677b935a0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d14ad6f039605fecd45123259988062" id="r_a5d14ad6f039605fecd45123259988062"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d43/namespacelogika.html#a69c638914202f69eb544a992e2361a1c">ByteVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d14ad6f039605fecd45123259988062">flash_</a></td></tr>
 <tr class="memdesc:a5d14ad6f039605fecd45123259988062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Буфер флэш памяти  <br /></td></tr>
 <tr class="separator:a5d14ad6f039605fecd45123259988062"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,21 +187,456 @@ $(function(){initNavTree('d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.ht
 <tr class="memitem:a3896ced5a4a060851628372225ae7ce1" id="r_a3896ced5a4a060851628372225ae7ce1"><td class="memItemLeft" align="right" valign="top">const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3896ced5a4a060851628372225ae7ce1">elementsCount_</a></td></tr>
 <tr class="memdesc:a3896ced5a4a060851628372225ae7ce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Количество записей  <br /></td></tr>
 <tr class="separator:a3896ced5a4a060851628372225ae7ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71ad32eb44bff14c5cfb507147cde898" id="r_a71ad32eb44bff14c5cfb507147cde898"><td class="memItemLeft" align="right" valign="top">const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71ad32eb44bff14c5cfb507147cde898">elementSize_</a></td></tr>
-<tr class="memdesc:a71ad32eb44bff14c5cfb507147cde898"><td class="mdescLeft">&#160;</td><td class="mdescRight">Размер записи  <br /></td></tr>
-<tr class="separator:a71ad32eb44bff14c5cfb507147cde898"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9317921ee1af6db09090454cc740ebe5" id="r_a9317921ee1af6db09090454cc740ebe5"><td class="memItemLeft" align="right" valign="top">const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9317921ee1af6db09090454cc740ebe5">zeroPageNumber_</a></td></tr>
-<tr class="memdesc:a9317921ee1af6db09090454cc740ebe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Номер нулевой страницы  <br /></td></tr>
-<tr class="separator:a9317921ee1af6db09090454cc740ebe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78e9f11fa9c216759169e466823f4da9" id="r_a78e9f11fa9c216759169e466823f4da9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78e9f11fa9c216759169e466823f4da9">firstElementOffset_</a></td></tr>
-<tr class="memdesc:a78e9f11fa9c216759169e466823f4da9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отступ первого элемента  <br /></td></tr>
-<tr class="separator:a78e9f11fa9c216759169e466823f4da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac26d131bec45cb9df7db5677b935a0bf" id="r_ac26d131bec45cb9df7db5677b935a0bf"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; <a class="el" href="../../d7/d0a/classlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache.html">M4Protocol::MeterCache</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac26d131bec45cb9df7db5677b935a0bf">mtrInstance_</a></td></tr>
-<tr class="separator:ac26d131bec45cb9df7db5677b935a0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a473ace35c74cefd5269ad5d9d6fb7798" id="r_a473ace35c74cefd5269ad5d9d6fb7798"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a473ace35c74cefd5269ad5d9d6fb7798">elementSize_</a></td></tr>
+<tr class="memdesc:a473ace35c74cefd5269ad5d9d6fb7798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Размер записи  <br /></td></tr>
+<tr class="separator:a473ace35c74cefd5269ad5d9d6fb7798"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90a083f44077c934ec3158afd2e29a2a" id="r_a90a083f44077c934ec3158afd2e29a2a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90a083f44077c934ec3158afd2e29a2a">zeroPageNumber_</a></td></tr>
+<tr class="memdesc:a90a083f44077c934ec3158afd2e29a2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Номер нулевой страницы  <br /></td></tr>
+<tr class="separator:a90a083f44077c934ec3158afd2e29a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4658effe6c5629d05eef15d6db11da9" id="r_aa4658effe6c5629d05eef15d6db11da9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4658effe6c5629d05eef15d6db11da9">firstElementOffset_</a></td></tr>
+<tr class="memdesc:aa4658effe6c5629d05eef15d6db11da9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отступ первого элемента  <br /></td></tr>
+<tr class="separator:aa4658effe6c5629d05eef15d6db11da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Массив Flash. </p>
-</div><h2 class="groupheader">Данные класса</h2>
+<div class="textblock"><p>Массив flash. </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a40aa1efeef5d2d4c6d79d8a70367fe83" name="a40aa1efeef5d2d4c6d79d8a70367fe83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40aa1efeef5d2d4c6d79d8a70367fe83">&#9670;&#160;</a></span>FlashArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">logika::protocols::M4::FlashArray::FlashArray </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="../../d7/d0a/classlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache.html">M4Protocol::MeterCache</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>meterInstance</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a></td>          <td class="paramname"><span class="paramname"><em>dataAddr</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>elementsCount</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a></td>          <td class="paramname"><span class="paramname"><em>elementSize</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор массива flash. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">meterInstance</td><td>Кэш прибора </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dataAddr</td><td>Адрес начала данных </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elementsCount</td><td>Количество элементов </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elementSize</td><td>Размер элемента </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="ab7269c353abf7adf7fe3dea04ea20a99" name="ab7269c353abf7adf7fe3dea04ea20a99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7269c353abf7adf7fe3dea04ea20a99">&#9670;&#160;</a></span>ElementAvailable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool logika::protocols::M4::FlashArray::ElementAvailable </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверка доступности элемента </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Номер элемента </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Доступен ли элемент </dd></dl>
+
+<p class="reference">Используется в <a class="el" href="#a0ead36054d7f1cdd95c8f39dc6646ad1">GetElement()</a>.</p>
+
+</div>
+</div>
+<a id="a406b6cf107450fa7ddd3c76c63e39429" name="a406b6cf107450fa7ddd3c76c63e39429"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a406b6cf107450fa7ddd3c76c63e39429">&#9670;&#160;</a></span>EndPage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t logika::protocols::M4::FlashArray::EndPage </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>elementIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получение номера последней страницы, включающей элемент </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">elementIndex</td><td>Номер элемента </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Номер последней страницы, включающей элемент </dd></dl>
+
+<p class="reference">Используется в <a class="el" href="#ab7269c353abf7adf7fe3dea04ea20a99">ElementAvailable()</a>, <a class="el" href="#a40aa1efeef5d2d4c6d79d8a70367fe83">FlashArray()</a>, <a class="el" href="#a386b59f05346825cb1d14833fdca0e9b">InvalidateElement()</a>, <a class="el" href="#a070b9ad73269b5b32b46001bbe753e04">UpdateElementExplicit()</a> и <a class="el" href="#aeb0f2109b5d4f90169225e21d8855b57">UpdateElements()</a>.</p>
+
+</div>
+</div>
+<a id="aa9c9d89ae4c5b9c3cf549aa34d2e322f" name="aa9c9d89ae4c5b9c3cf549aa34d2e322f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9c9d89ae4c5b9c3cf549aa34d2e322f">&#9670;&#160;</a></span>ExtendPageRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool logika::protocols::M4::FlashArray::ExtendPageRange </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>page</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t &amp;</td>          <td class="paramname"><span class="paramname"><em>startPage</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t &amp;</td>          <td class="paramname"><span class="paramname"><em>endPage</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Расширение диапазона страниц </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">page</td><td>Номер страницы </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">startPage</td><td>Номер первой страницы </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">endPage</td><td>Номер последней страницы </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Удалось ли расширить диапазон страниц </dd></dl>
+
+<p class="reference">Используется в <a class="el" href="#aeb0f2109b5d4f90169225e21d8855b57">UpdateElements()</a>.</p>
+
+</div>
+</div>
+<a id="a0ead36054d7f1cdd95c8f39dc6646ad1" name="a0ead36054d7f1cdd95c8f39dc6646ad1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ead36054d7f1cdd95c8f39dc6646ad1">&#9670;&#160;</a></span>GetElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void logika::protocols::M4::FlashArray::GetElement </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>index</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d43/namespacelogika.html#a69c638914202f69eb544a992e2361a1c">ByteVector</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>offset</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение элемента </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Номер элемента </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">buffer</td><td>Образ флэш памяти </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">offset</td><td>Отступ до элемента </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a47e1384218339cb16faea3630f2673f6" name="a47e1384218339cb16faea3630f2673f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47e1384218339cb16faea3630f2673f6">&#9670;&#160;</a></span>GetElementsCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t logika::protocols::M4::FlashArray::GetElementsCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение количества элементов </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Количество элементов </dd></dl>
+
+</div>
+</div>
+<a id="a98919fdcb505ab0c8d9a1e5ffe5be609" name="a98919fdcb505ab0c8d9a1e5ffe5be609"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98919fdcb505ab0c8d9a1e5ffe5be609">&#9670;&#160;</a></span>GetElementSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a> logika::protocols::M4::FlashArray::GetElementSize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение размера элемента </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Размер элемента </dd></dl>
+
+</div>
+</div>
+<a id="a386b59f05346825cb1d14833fdca0e9b" name="a386b59f05346825cb1d14833fdca0e9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a386b59f05346825cb1d14833fdca0e9b">&#9670;&#160;</a></span>InvalidateElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void logika::protocols::M4::FlashArray::InvalidateElement </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Инвалидация элемента </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Номер элемента </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad5052f342137000947dd12dfcdc813cc" name="ad5052f342137000947dd12dfcdc813cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5052f342137000947dd12dfcdc813cc">&#9670;&#160;</a></span>Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void logika::protocols::M4::FlashArray::Reset </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сброс образа флэщ памяти </p>
+
+</div>
+</div>
+<a id="a9763802e587a429865d33ba98d38154b" name="a9763802e587a429865d33ba98d38154b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9763802e587a429865d33ba98d38154b">&#9670;&#160;</a></span>StartPage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t logika::protocols::M4::FlashArray::StartPage </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>elementIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получение номера первой страницы, включающей элемент </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">elementIndex</td><td>Номер элемента </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Номер первой страницы, включающей элемент </dd></dl>
+
+<p class="reference">Используется в <a class="el" href="#ab7269c353abf7adf7fe3dea04ea20a99">ElementAvailable()</a>, <a class="el" href="#a40aa1efeef5d2d4c6d79d8a70367fe83">FlashArray()</a>, <a class="el" href="#a386b59f05346825cb1d14833fdca0e9b">InvalidateElement()</a>, <a class="el" href="#a070b9ad73269b5b32b46001bbe753e04">UpdateElementExplicit()</a> и <a class="el" href="#aeb0f2109b5d4f90169225e21d8855b57">UpdateElements()</a>.</p>
+
+</div>
+</div>
+<a id="a070b9ad73269b5b32b46001bbe753e04" name="a070b9ad73269b5b32b46001bbe753e04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a070b9ad73269b5b32b46001bbe753e04">&#9670;&#160;</a></span>UpdateElementExplicit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void logika::protocols::M4::FlashArray::UpdateElementExplicit </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обновление элемента </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Номер элемента </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="#a0ead36054d7f1cdd95c8f39dc6646ad1">GetElement()</a>.</p>
+
+</div>
+</div>
+<a id="aeb0f2109b5d4f90169225e21d8855b57" name="aeb0f2109b5d4f90169225e21d8855b57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb0f2109b5d4f90169225e21d8855b57">&#9670;&#160;</a></span>UpdateElements()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void logika::protocols::M4::FlashArray::UpdateElements </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="../../d9/d2a/structlogika_1_1protocols_1_1M4_1_1FrbIndex.html">FrbIndex</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>indices</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обновление массива элементов </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">indices</td><td>Номера элементов </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>element start page</p>
+<p>element end page</p>
+
+</div>
+</div>
+<a id="a907e0f6600029a9c4d858241e0ff8596" name="a907e0f6600029a9c4d858241e0ff8596"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a907e0f6600029a9c4d858241e0ff8596">&#9670;&#160;</a></span>UpdatePages()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void logika::protocols::M4::FlashArray::UpdatePages </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>startPage</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>endPage</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обновление страниц </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">startPage</td><td>Номер первой обновляемой страницы </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">endPage</td><td>Номер последней обновляемой страницы </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="#a070b9ad73269b5b32b46001bbe753e04">UpdateElementExplicit()</a> и <a class="el" href="#aeb0f2109b5d4f90169225e21d8855b57">UpdateElements()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
 <a id="a7dd7d33f3e5676b13b1c8ab192a22128" name="a7dd7d33f3e5676b13b1c8ab192a22128"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7dd7d33f3e5676b13b1c8ab192a22128">&#9670;&#160;</a></span>dataAddress_</h2>
 
@@ -169,6 +658,8 @@ $(function(){initNavTree('d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.ht
 </div><div class="memdoc">
 
 <p>Адрес начала данных </p>
+
+<p class="reference">Используется в <a class="el" href="#a406b6cf107450fa7ddd3c76c63e39429">EndPage()</a>, <a class="el" href="#a40aa1efeef5d2d4c6d79d8a70367fe83">FlashArray()</a> и <a class="el" href="#a9763802e587a429865d33ba98d38154b">StartPage()</a>.</p>
 
 </div>
 </div>
@@ -194,10 +685,12 @@ $(function(){initNavTree('d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.ht
 
 <p>Количество записей </p>
 
+<p class="reference">Используется в <a class="el" href="#a40aa1efeef5d2d4c6d79d8a70367fe83">FlashArray()</a> и <a class="el" href="#a47e1384218339cb16faea3630f2673f6">GetElementsCount()</a>.</p>
+
 </div>
 </div>
-<a id="a71ad32eb44bff14c5cfb507147cde898" name="a71ad32eb44bff14c5cfb507147cde898"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71ad32eb44bff14c5cfb507147cde898">&#9670;&#160;</a></span>elementSize_</h2>
+<a id="a473ace35c74cefd5269ad5d9d6fb7798" name="a473ace35c74cefd5269ad5d9d6fb7798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a473ace35c74cefd5269ad5d9d6fb7798">&#9670;&#160;</a></span>elementSize_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,7 +699,7 @@ $(function(){initNavTree('d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.ht
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint32_t logika::protocols::M4::FlashArray::elementSize_</td>
+          <td class="memname">const <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a> logika::protocols::M4::FlashArray::elementSize_</td>
         </tr>
       </table>
   </td>
@@ -218,10 +711,12 @@ $(function(){initNavTree('d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.ht
 
 <p>Размер записи </p>
 
+<p class="reference">Используется в <a class="el" href="#a406b6cf107450fa7ddd3c76c63e39429">EndPage()</a>, <a class="el" href="#a0ead36054d7f1cdd95c8f39dc6646ad1">GetElement()</a>, <a class="el" href="#a98919fdcb505ab0c8d9a1e5ffe5be609">GetElementSize()</a> и <a class="el" href="#a9763802e587a429865d33ba98d38154b">StartPage()</a>.</p>
+
 </div>
 </div>
-<a id="a78e9f11fa9c216759169e466823f4da9" name="a78e9f11fa9c216759169e466823f4da9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78e9f11fa9c216759169e466823f4da9">&#9670;&#160;</a></span>firstElementOffset_</h2>
+<a id="aa4658effe6c5629d05eef15d6db11da9" name="aa4658effe6c5629d05eef15d6db11da9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4658effe6c5629d05eef15d6db11da9">&#9670;&#160;</a></span>firstElementOffset_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,7 +725,7 @@ $(function(){initNavTree('d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.ht
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a> logika::protocols::M4::FlashArray::firstElementOffset_</td>
+          <td class="memname"><a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a> logika::protocols::M4::FlashArray::firstElementOffset_</td>
         </tr>
       </table>
   </td>
@@ -241,6 +736,8 @@ $(function(){initNavTree('d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.ht
 </div><div class="memdoc">
 
 <p>Отступ первого элемента </p>
+
+<p class="reference">Используется в <a class="el" href="#a40aa1efeef5d2d4c6d79d8a70367fe83">FlashArray()</a> и <a class="el" href="#a0ead36054d7f1cdd95c8f39dc6646ad1">GetElement()</a>.</p>
 
 </div>
 </div>
@@ -266,6 +763,8 @@ $(function(){initNavTree('d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.ht
 
 <p>Буфер флэш памяти </p>
 
+<p class="reference">Используется в <a class="el" href="#a40aa1efeef5d2d4c6d79d8a70367fe83">FlashArray()</a>, <a class="el" href="#a0ead36054d7f1cdd95c8f39dc6646ad1">GetElement()</a> и <a class="el" href="#a907e0f6600029a9c4d858241e0ff8596">UpdatePages()</a>.</p>
+
 </div>
 </div>
 <a id="ac26d131bec45cb9df7db5677b935a0bf" name="ac26d131bec45cb9df7db5677b935a0bf"></a>
@@ -288,6 +787,10 @@ $(function(){initNavTree('d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.ht
 </table>
 </div><div class="memdoc">
 
+<p>Кэш прибора </p>
+
+<p class="reference">Используется в <a class="el" href="#a907e0f6600029a9c4d858241e0ff8596">UpdatePages()</a>.</p>
+
 </div>
 </div>
 <a id="aa8c35f56c655f398026b73b9b7d44b9a" name="aa8c35f56c655f398026b73b9b7d44b9a"></a>
@@ -300,7 +803,7 @@ $(function(){initNavTree('d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.ht
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a> logika::protocols::M4::FlashArray::PAGE_SIZE</td>
+          <td class="memname">const <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a> logika::protocols::M4::FlashArray::PAGE_SIZE = <a class="el" href="../../d7/d1b/classlogika_1_1meters_1_1Logika4L.html#a1cdabd2dcdf081e659a442c892b253bf">meters::Logika4L::FLASH_PAGE_SIZE</a></td>
         </tr>
       </table>
   </td>
@@ -311,6 +814,8 @@ $(function(){initNavTree('d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.ht
 </div><div class="memdoc">
 
 <p>Размер страницы Flash-памяти </p>
+
+<p class="reference">Используется в <a class="el" href="#a406b6cf107450fa7ddd3c76c63e39429">EndPage()</a>, <a class="el" href="#a40aa1efeef5d2d4c6d79d8a70367fe83">FlashArray()</a>, <a class="el" href="#a9763802e587a429865d33ba98d38154b">StartPage()</a> и <a class="el" href="#a907e0f6600029a9c4d858241e0ff8596">UpdatePages()</a>.</p>
 
 </div>
 </div>
@@ -336,10 +841,12 @@ $(function(){initNavTree('d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.ht
 
 <p>Использованные страницы </p>
 
+<p class="reference">Используется в <a class="el" href="#ab7269c353abf7adf7fe3dea04ea20a99">ElementAvailable()</a>, <a class="el" href="#a40aa1efeef5d2d4c6d79d8a70367fe83">FlashArray()</a>, <a class="el" href="#a386b59f05346825cb1d14833fdca0e9b">InvalidateElement()</a>, <a class="el" href="#ad5052f342137000947dd12dfcdc813cc">Reset()</a>, <a class="el" href="#aeb0f2109b5d4f90169225e21d8855b57">UpdateElements()</a> и <a class="el" href="#a907e0f6600029a9c4d858241e0ff8596">UpdatePages()</a>.</p>
+
 </div>
 </div>
-<a id="a9317921ee1af6db09090454cc740ebe5" name="a9317921ee1af6db09090454cc740ebe5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9317921ee1af6db09090454cc740ebe5">&#9670;&#160;</a></span>zeroPageNumber_</h2>
+<a id="a90a083f44077c934ec3158afd2e29a2a" name="a90a083f44077c934ec3158afd2e29a2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90a083f44077c934ec3158afd2e29a2a">&#9670;&#160;</a></span>zeroPageNumber_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -348,7 +855,7 @@ $(function(){initNavTree('d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.ht
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint32_t logika::protocols::M4::FlashArray::zeroPageNumber_</td>
+          <td class="memname">uint32_t logika::protocols::M4::FlashArray::zeroPageNumber_</td>
         </tr>
       </table>
   </td>
@@ -360,10 +867,13 @@ $(function(){initNavTree('d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.ht
 
 <p>Номер нулевой страницы </p>
 
+<p class="reference">Используется в <a class="el" href="#ab7269c353abf7adf7fe3dea04ea20a99">ElementAvailable()</a>, <a class="el" href="#a40aa1efeef5d2d4c6d79d8a70367fe83">FlashArray()</a>, <a class="el" href="#a386b59f05346825cb1d14833fdca0e9b">InvalidateElement()</a>, <a class="el" href="#aeb0f2109b5d4f90169225e21d8855b57">UpdateElements()</a> и <a class="el" href="#a907e0f6600029a9c4d858241e0ff8596">UpdatePages()</a>.</p>
+
 </div>
 </div>
-<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
 <li>logika/include/logika/protocols/m4/<a class="el" href="../../df/da9/flash__ring__buffer_8h_source.html">flash_ring_buffer.h</a></li>
+<li>logika/src/protocols/m4/<a class="el" href="../../d1/de8/flash__ring__buffer_8cpp.html">flash_ring_buffer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

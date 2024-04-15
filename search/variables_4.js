@@ -1,7 +1,7 @@
 var searchData=
 [
   ['elementscount_5f_0',['elementsCount_',['../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a3896ced5a4a060851628372225ae7ce1',1,'logika::protocols::M4::FlashArray']]],
-  ['elementsize_5f_1',['elementSize_',['../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a71ad32eb44bff14c5cfb507147cde898',1,'logika::protocols::M4::FlashArray']]],
+  ['elementsize_5f_1',['elementSize_',['../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a473ace35c74cefd5269ad5d9d6fb7798',1,'logika::protocols::M4::FlashArray']]],
   ['errdesc_5f_2',['errDesc_',['../d9/d53/classlogika_1_1meters_1_1DataTag.html#ae6045c72b74b032625b16d1b17346346',1,'logika::meters::DataTag']]],
   ['eu_3',['eu',['../d0/d69/structlogika_1_1meters_1_1CalcFieldDefSettings.html#aa8a08fa128b58cd131a7da7adfadfee4',1,'logika::meters::CalcFieldDefSettings']]],
   ['eu_5f_4',['eu_',['../d8/d13/classlogika_1_1meters_1_1CalcFieldDef.html#a2095c918fa4be33756b005aa17071858',1,'logika::meters::CalcFieldDef::eu_'],['../d1/d29/classlogika_1_1meters_1_1Tag.html#aa21fe5d45e7ac77ff1754a1279a7fe59',1,'logika::meters::Tag::eu_']]],
