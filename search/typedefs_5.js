@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['meteraddresstype_0',['MeterAddressType',['../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4',1,'logika']]],
-  ['meterstoragetype_1',['MeterStorageType',['../db/dec/classlogika_1_1meters_1_1converters_1_1L4ArchiveConverter.html#abd0d9bf00d4a8e8b8e21de1cb56473e2',1,'logika::meters::converters::L4ArchiveConverter::MeterStorageType'],['../dd/dde/classlogika_1_1meters_1_1converters_1_1L4ArchiveFieldConverter.html#abaf9b3e6d83f49b254b4142e402be770',1,'logika::meters::converters::L4ArchiveFieldConverter::MeterStorageType'],['../dd/d57/classlogika_1_1meters_1_1converters_1_1L4TagConverter.html#a4ae5f95cfaabca93c2f08cf05d8c9c9f',1,'logika::meters::converters::L4TagConverter::MeterStorageType'],['../d4/dcd/classlogika_1_1meters_1_1converters_1_1M4ArchiveConverter.html#a4630216c32930cfefcbb8ac8e8377211',1,'logika::meters::converters::M4ArchiveConverter::MeterStorageType'],['../de/d13/classlogika_1_1meters_1_1converters_1_1M4ArchiveFieldConverter.html#acb0a7dc7cb7d4b7554154ad168914c41',1,'logika::meters::converters::M4ArchiveFieldConverter::MeterStorageType'],['../d8/d94/classlogika_1_1meters_1_1converters_1_1M4TagConverter.html#ae2f840b9e55bf1e25caf08604ecfff23',1,'logika::meters::converters::M4TagConverter::MeterStorageType']]]
+  ['locchar_0',['LocChar',['../d7/d43/namespacelogika.html#a7410545902902d64afafcc8c1897748e',1,'logika']]],
+  ['locconverter_1',['LocConverter',['../d7/d43/namespacelogika.html#aa893e169d6b86a2b61adb50823e66a0e',1,'logika']]],
+  ['locstring_2',['LocString',['../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081',1,'logika']]],
+  ['locstringstream_3',['LocStringStream',['../d7/d43/namespacelogika.html#a3c7aec47911a89044d44a2f0b901698c',1,'logika']]]
 ];

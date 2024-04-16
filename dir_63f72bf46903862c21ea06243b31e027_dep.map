@@ -1,7 +1,7 @@
 <map id="logika/src" name="logika/src">
 <area shape="rect" id="node1" href="dir_f1284c587673ddc2d78b9c445c5062b8.html" title="include" alt="" coords="720,158,782,184"/>
 <area shape="poly" id="edge2" href="dir_000039_000014.html" alt="" coords="1409,111,1400,129,1384,144,1349,154,1290,161,1123,170,797,173,797,167,1123,164,1289,156,1348,149,1381,140,1396,125,1405,108"/>
-<area shape="rect" id="edge2-headlabel" href="dir_000039_000014.html" title="253" alt="" coords="790,171,811,186"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000039_000014.html" title="261" alt="" coords="790,171,811,186"/>
 <area shape="rect" id="node19" href="dir_0fc3f8f3ef96ce2d45d66d6e29832317.html" title="resources" alt="" coords="1462,158,1541,184"/>
 <area shape="poly" id="edge1" href="dir_000039_000035.html" alt="" coords="1427,108,1476,146,1472,150,1424,112"/>
 <area shape="rect" id="edge1-headlabel" href="dir_000039_000035.html" title="1" alt="" coords="1473,132,1480,147"/>
@@ -26,7 +26,7 @@
 <area shape="poly" id="edge9" href="dir_000018_000014.html" alt="" coords="158,109,166,126,180,140,209,148,262,155,410,163,704,167,704,172,410,169,261,160,208,153,177,144,162,129,153,112"/>
 <area shape="rect" id="edge9-headlabel" href="dir_000018_000014.html" title="2" alt="" coords="697,154,704,169"/>
 <area shape="poly" id="edge10" href="dir_000029_000014.html" alt="" coords="937,111,922,129,901,144,849,163,798,171,797,166,848,158,899,140,918,125,933,108"/>
-<area shape="rect" id="edge10-headlabel" href="dir_000029_000014.html" title="142" alt="" coords="790,169,811,184"/>
+<area shape="rect" id="edge10-headlabel" href="dir_000029_000014.html" title="143" alt="" coords="790,169,811,184"/>
 <area shape="rect" id="node11" href="dir_7afa35275d4a7805299bc2537819a1f0.html" title="converters" alt="" coords="806,84,888,110"/>
 <area shape="poly" id="edge11" href="dir_000011_000014.html" alt="" coords="835,112,795,144,785,151,781,147,792,140,831,108"/>
 <area shape="rect" id="edge11-headlabel" href="dir_000011_000014.html" title="41" alt="" coords="783,147,797,162"/>
@@ -45,10 +45,10 @@
 <area shape="poly" id="edge16" href="dir_000045_000014.html" alt="" coords="683,109,710,140,719,147,715,151,706,144,679,112"/>
 <area shape="rect" id="edge16-headlabel" href="dir_000045_000014.html" title="1" alt="" coords="715,133,722,148"/>
 <area shape="poly" id="edge17" href="dir_000034_000014.html" alt="" coords="1322,112,1305,129,1281,144,1252,151,1203,156,1068,164,798,171,797,166,1068,159,1203,151,1251,146,1279,140,1302,125,1319,108"/>
-<area shape="rect" id="edge17-headlabel" href="dir_000034_000014.html" title="37" alt="" coords="794,170,808,185"/>
+<area shape="rect" id="edge17-headlabel" href="dir_000034_000014.html" title="44" alt="" coords="794,170,808,185"/>
 <area shape="rect" id="node18" href="dir_76be9dc3b52cf1418158a4c3283d2976.html" title="m4" alt="" coords="1228,84,1268,110"/>
 <area shape="poly" id="edge18" href="dir_000027_000014.html" alt="" coords="1241,112,1225,130,1202,144,1138,155,1026,163,797,171,797,166,1026,157,1138,150,1200,140,1221,126,1237,109"/>
-<area shape="rect" id="edge18-headlabel" href="dir_000027_000014.html" title="27" alt="" coords="794,169,808,184"/>
+<area shape="rect" id="edge18-headlabel" href="dir_000027_000014.html" title="34" alt="" coords="794,169,808,184"/>
 <area shape="rect" id="clust6" href="dir_93f4fffb0fe1e4e17c89d75202b56440.html" alt="" coords="1217,74,1377,121"/>
 <area shape="rect" id="clust5" href="dir_fd23da0f184bb59353ed0dabc4122198.html" alt="" coords="987,74,1196,121"/>
 <area shape="rect" id="clust4" href="dir_13efb6abce8f26014fba2c1dc4cf3c76.html" alt="" coords="640,63,1207,131"/>

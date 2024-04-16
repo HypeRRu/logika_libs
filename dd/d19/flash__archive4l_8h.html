@@ -101,17 +101,153 @@ $(function(){initNavTree('dd/d19/flash__archive4l_8h.html','../../'); initResiza
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="../../d7/d37/protocols_2defs_8h_source.html">logika/protocols/defs.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d2/d4b/meters_2defs_8h_source.html">logika/meters/defs.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d5/d7b/common_2types_8h_source.html">logika/common/types.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../df/da9/flash__ring__buffer_8h_source.html">logika/protocols/m4/flash_ring_buffer.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Граф включаемых заголовочных файлов для flash_archive4l.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d9/d72/flash__archive4l_8h__incl.png" border="0" usemap="#alogika_2include_2logika_2protocols_2m4_2flash__archive4l_8h" alt=""/></div>
 <map name="alogika_2include_2logika_2protocols_2m4_2flash__archive4l_8h" id="alogika_2include_2logika_2protocols_2m4_2flash__archive4l_8h">
-<area shape="rect" title=" " alt="" coords="69,5,269,46"/>
-<area shape="rect" href="../../d7/d37/protocols_2defs_8h.html" title=" " alt="" coords="5,94,157,120"/>
-<area shape="poly" title=" " alt="" coords="149,48,108,85,104,81,145,44"/>
-<area shape="rect" href="../../d5/d7b/common_2types_8h.html" title=" " alt="" coords="181,94,336,120"/>
-<area shape="poly" title=" " alt="" coords="193,44,235,82,232,86,189,48"/>
+<area shape="rect" title=" " alt="" coords="1072,5,1272,46"/>
+<area shape="rect" href="../../d7/d37/protocols_2defs_8h.html" title=" " alt="" coords="2226,545,2377,571"/>
+<area shape="poly" title=" " alt="" coords="1273,30,1548,48,1715,63,1884,82,2041,105,2170,132,2220,147,2258,163,2283,181,2292,201,2292,382,2295,462,2301,529,2296,530,2290,463,2287,382,2287,202,2279,185,2256,168,2218,152,2168,137,2040,110,1884,87,1715,68,1547,54,1272,35"/>
+<area shape="rect" href="../../d2/d4b/meters_2defs_8h.html" title=" " alt="" coords="535,1032,673,1058"/>
+<area shape="poly" title=" " alt="" coords="1072,35,797,54,630,68,461,87,305,110,177,137,127,152,90,168,66,185,59,202,59,293,61,333,67,367,84,424,101,481,107,515,109,556,109,876,113,910,125,934,146,954,175,974,201,986,236,997,327,1015,428,1028,520,1036,519,1041,427,1033,326,1020,235,1003,199,991,172,979,142,958,121,937,108,911,104,876,104,556,102,516,96,482,79,425,61,368,56,334,53,293,53,201,62,181,87,163,125,147,175,132,305,105,461,82,629,63,797,48,1071,30"/>
+<area shape="rect" href="../../d5/d7b/common_2types_8h.html" title=" " alt="" coords="1274,1113,1428,1139"/>
+<area shape="poly" title=" " alt="" coords="1071,31,865,35,610,46,366,66,265,80,190,97,123,112,64,125,41,136,23,150,12,172,8,202,8,957,11,982,18,1001,31,1016,47,1027,89,1045,139,1062,206,1076,320,1087,637,1105,985,1115,1258,1121,1258,1126,985,1121,637,1110,320,1093,205,1081,138,1068,87,1050,44,1032,27,1020,14,1004,6,983,3,957,3,201,7,170,19,147,38,131,63,120,122,107,189,91,265,74,365,60,610,41,865,30,1071,25"/>
+<area shape="rect" href="../../df/da9/flash__ring__buffer_8h.html" title=" " alt="" coords="2326,94,2461,135"/>
+<area shape="poly" title=" " alt="" coords="1273,25,1465,29,1723,39,2014,59,2163,73,2308,91,2311,92,2310,97,2308,97,2162,79,2014,64,1723,44,1465,34,1273,30"/>
+<area shape="poly" title=" " alt="" coords="2388,136,2367,204,2358,247,2355,290,2355,382,2351,424,2341,465,2316,532,2311,530,2336,463,2345,423,2349,382,2349,290,2353,246,2362,202,2383,134"/>
+<area shape="poly" title=" " alt="" coords="2409,134,2427,163,2447,201,2462,244,2468,290,2468,957,2466,985,2459,1008,2449,1026,2435,1039,2419,1049,2399,1056,2353,1062,2242,1061,2183,1061,2123,1068,1935,1096,1747,1114,1577,1123,1443,1127,1443,1121,1577,1118,1746,1109,1934,1091,2122,1062,2182,1056,2242,1055,2353,1057,2398,1051,2416,1045,2432,1035,2445,1022,2455,1006,2461,984,2463,957,2463,291,2457,246,2442,203,2423,165,2405,136"/>
+<area shape="rect" href="../../da/d08/iserializable_8h.html" title=" " alt="" coords="897,1032,1087,1058"/>
+<area shape="poly" title=" " alt="" coords="2400,135,2411,203,2417,290,2417,470,2412,532,2396,580,2371,617,2338,644,2297,662,2251,673,2199,680,2143,683,2022,686,1897,696,1834,708,1773,726,1715,753,1660,790,1639,813,1625,836,1613,885,1608,910,1599,934,1584,957,1560,979,1524,995,1476,1007,1360,1018,1241,1022,1150,1027,1103,1033,1102,1027,1149,1022,1241,1017,1360,1013,1475,1001,1522,990,1557,974,1580,954,1595,932,1603,908,1608,884,1621,834,1634,810,1657,786,1713,749,1772,721,1833,702,1896,690,2022,680,2143,677,2198,674,2250,668,2296,657,2335,639,2367,614,2391,578,2407,531,2412,470,2412,290,2406,204,2395,135"/>
+<area shape="rect" href="../../db/d8d/m4protocol_8h.html" title=" " alt="" coords="1470,183,1605,223"/>
+<area shape="poly" title=" " alt="" coords="2326,125,1620,196,1620,191,2326,120"/>
+<area shape="poly" title=" " alt="" coords="1048,1055,1281,1107,1280,1112,1047,1061"/>
+<area shape="poly" title=" " alt="" coords="1605,206,1710,214,1833,227,1948,245,1994,256,2029,269,2075,295,2117,328,2156,363,2192,401,2250,474,2288,530,2284,533,2246,477,2188,404,2153,367,2114,332,2072,300,2027,274,1993,261,1947,250,1833,232,1710,219,1605,211"/>
+<area shape="poly" title=" " alt="" coords="1470,208,1148,219,933,231,710,247,500,270,324,299,256,316,204,336,171,357,163,368,160,379,160,876,165,910,179,935,203,954,235,974,285,994,359,1010,520,1033,519,1038,358,1015,284,999,232,979,200,958,175,938,160,912,155,876,155,379,158,366,167,353,201,331,254,311,323,294,499,264,709,242,933,225,1148,214,1470,203"/>
+<area shape="poly" title=" " alt="" coords="1470,208,1195,215,820,228,471,247,345,260,271,274,220,295,176,319,139,345,110,376,87,412,71,453,62,501,59,556,59,957,64,971,91,995,154,1026,267,1062,354,1079,468,1092,747,1110,1033,1119,1258,1122,1258,1127,1033,1124,747,1115,468,1097,353,1084,266,1068,152,1031,88,1000,60,975,53,958,53,556,56,500,66,452,82,410,105,373,135,341,173,314,217,290,270,269,344,254,471,242,820,222,1194,210,1470,203"/>
+<area shape="rect" href="../../d2/d5e/protocol_8h.html" title=" " alt="" coords="1451,368,1624,393"/>
+<area shape="poly" title=" " alt="" coords="1540,224,1540,352,1535,352,1535,224"/>
+<area shape="rect" href="../../d9/d7d/connections_2serial_2types_8h.html" title=" " alt="" coords="1243,449,1373,489"/>
+<area shape="poly" title=" " alt="" coords="1522,225,1337,439,1333,435,1518,222"/>
+<area shape="rect" href="../../d3/de6/opcodes_8h.html" title=" " alt="" coords="2017,537,2151,578"/>
+<area shape="poly" title=" " alt="" coords="1573,221,1735,315,1943,446,2050,525,2046,530,1940,451,1732,320,1571,226"/>
+<area shape="rect" href="../../d3/d76/packet_8h.html" title=" " alt="" coords="2017,449,2151,489"/>
+<area shape="poly" title=" " alt="" coords="1605,204,1704,210,1818,221,1923,241,1964,253,1994,269,2012,286,2029,305,2054,349,2071,394,2081,433,2076,434,2066,395,2049,351,2024,308,2009,290,1990,274,1962,258,1921,246,1817,227,1704,215,1605,209"/>
+<area shape="rect" href="../../d6/dfc/logika4m_8h.html" title=" " alt="" coords="944,271,1088,312"/>
+<area shape="poly" title=" " alt="" coords="1470,218,1104,279,1103,273,1469,213"/>
+<area shape="poly" title=" " alt="" coords="1624,382,1757,390,1913,402,2059,421,2119,433,2164,446,2212,480,2277,533,2273,537,2208,485,2161,451,2117,438,2058,426,1913,408,1757,395,1624,388"/>
+<area shape="poly" title=" " alt="" coords="1544,392,1563,435,1590,488,1649,572,1715,650,1752,687,1784,714,1813,743,1842,787,1866,837,1877,881,1875,925,1858,977,1843,1009,1826,1032,1804,1050,1773,1067,1713,1087,1627,1102,1444,1121,1443,1116,1626,1097,1712,1082,1771,1063,1801,1046,1822,1028,1839,1007,1854,975,1870,924,1872,881,1861,839,1838,790,1809,747,1780,718,1748,691,1711,653,1644,575,1586,491,1558,438,1539,394"/>
+<area shape="rect" href="../../d7/de4/iprotocol_8h.html" title=" " alt="" coords="1600,456,1776,482"/>
+<area shape="poly" title=" " alt="" coords="1560,391,1655,446,1652,450,1557,396"/>
+<area shape="rect" href="../../d3/d5a/connections_2types_8h.html" title=" " alt="" coords="1799,449,1929,489"/>
+<area shape="poly" title=" " alt="" coords="1584,391,1785,444,1784,449,1583,396"/>
+<area shape="poly" title=" " alt="" coords="1506,396,1375,445,1373,440,1504,391"/>
+<area shape="rect" href="../../dc/d3d/meters_2types_8h.html" title=" " alt="" coords="1021,943,1166,969"/>
+<area shape="poly" title=" " alt="" coords="1530,395,1114,932,1110,929,1526,392"/>
+<area shape="rect" href="../../d3/de2/meter_8h.html" title=" " alt="" coords="1024,788,1171,814"/>
+<area shape="poly" title=" " alt="" coords="1521,396,1444,451,1343,539,1249,632,1172,717,1119,778,1115,774,1168,713,1245,629,1339,535,1441,447,1518,392"/>
+<area shape="rect" href="../../da/d07/storage_8hpp.html" title=" " alt="" coords="1341,943,1515,969"/>
+<area shape="poly" title=" " alt="" coords="1538,394,1436,928,1431,927,1532,393"/>
+<area shape="poly" title=" " alt="" coords="1749,480,1788,487,1975,512,2163,535,2210,541,2210,546,2162,540,1975,518,1788,492,1748,485"/>
+<area shape="poly" title=" " alt="" coords="1681,484,1649,532,1607,608,1587,652,1570,700,1559,750,1555,800,1555,876,1555,933,1548,956,1528,979,1192,1005,689,1040,689,1035,1191,1000,1525,974,1543,953,1550,932,1549,876,1549,800,1554,749,1565,699,1582,650,1602,605,1644,529,1677,481"/>
+<area shape="poly" title=" " alt="" coords="1688,482,1684,526,1686,552,1693,577,1714,615,1738,643,1765,664,1794,681,1822,699,1850,720,1876,748,1898,787,1907,814,1912,851,1917,939,1913,1021,1909,1050,1902,1067,1879,1079,1837,1089,1717,1106,1574,1117,1444,1124,1444,1118,1573,1112,1716,1100,1836,1084,1877,1074,1898,1063,1904,1049,1908,1020,1912,939,1907,852,1901,816,1894,789,1872,752,1847,724,1819,703,1791,686,1762,668,1735,647,1710,618,1688,579,1681,553,1679,526,1683,482"/>
+<area shape="rect" href="../../da/db4/protocols_2rc_8h.html" title=" " alt="" coords="1855,545,1993,571"/>
+<area shape="poly" title=" " alt="" coords="1722,480,1878,537,1876,542,1720,485"/>
+<area shape="rect" href="../../d1/d90/connections_2defs_8h.html" title=" " alt="" coords="1702,537,1831,578"/>
+<area shape="poly" title=" " alt="" coords="1701,480,1741,524,1737,528,1697,484"/>
+<area shape="rect" href="../../d0/d6b/common_2rc_8h.html" title=" " alt="" coords="1857,626,1991,652"/>
+<area shape="poly" title=" " alt="" coords="1927,571,1927,610,1921,610,1921,571"/>
+<area shape="poly" title=" " alt="" coords="1025,972,688,1031,687,1026,1024,967"/>
+<area shape="poly" title=" " alt="" coords="1099,968,1116,1015,1131,1041,1151,1063,1176,1080,1203,1093,1259,1111,1258,1116,1201,1098,1173,1084,1148,1067,1127,1044,1111,1017,1094,970"/>
+<area shape="poly" title=" " alt="" coords="1081,971,1019,1024,1015,1020,1078,967"/>
+<area shape="rect" href="../../de/d23/shared__constructible_8hpp.html" title=" " alt="" coords="1161,1024,1314,1065"/>
+<area shape="poly" title=" " alt="" coords="1115,967,1193,1014,1191,1019,1112,972"/>
+<area shape="rect" href="../../dd/da1/common_2defs_8h.html" title=" " alt="" coords="1582,1032,1730,1058"/>
+<area shape="poly" title=" " alt="" coords="1166,963,1350,987,1570,1022,1590,1026,1589,1031,1569,1027,1349,992,1165,968"/>
+<area shape="poly" title=" " alt="" coords="1024,814,942,832,899,846,859,864,819,891,793,918,767,947,730,978,687,1005,645,1027,643,1022,684,1001,726,974,763,943,789,914,816,887,856,860,897,841,941,827,1023,809"/>
+<area shape="poly" title=" " alt="" coords="1107,813,1180,934,1222,1010,1217,1012,1175,937,1102,816"/>
+<area shape="rect" href="../../d8/dd2/imeter_8h.html" title=" " alt="" coords="869,862,1019,888"/>
+<area shape="poly" title=" " alt="" coords="1072,817,985,858,983,853,1070,812"/>
+<area shape="poly" title=" " alt="" coords="929,890,863,938,801,979,732,1008,666,1030,665,1025,730,1003,799,974,860,934,926,886"/>
+<area shape="poly" title=" " alt="" coords="936,890,910,923,884,970,875,995,872,1019,875,1042,887,1063,904,1072,936,1081,1033,1097,1258,1116,1257,1122,1032,1102,935,1086,902,1077,883,1067,870,1044,866,1019,870,993,879,967,906,920,931,886"/>
+<area shape="poly" title=" " alt="" coords="950,887,987,1016,982,1017,945,889"/>
+<area shape="poly" title=" " alt="" coords="968,886,1058,933,1056,938,965,890"/>
+<area shape="poly" title=" " alt="" coords="1019,886,1339,938,1338,943,1018,891"/>
+<area shape="rect" href="../../d7/d61/storage_8ipp.html" title=" " alt="" coords="1389,1032,1558,1058"/>
+<area shape="poly" title=" " alt="" coords="1437,968,1462,1017,1458,1019,1432,971"/>
+<area shape="poly" title=" " alt="" coords="2095,578,2120,648,2134,696,2144,751,2150,808,2149,867,2137,924,2114,978,2098,1001,2082,1019,2046,1040,2004,1053,1951,1068,1853,1087,1717,1103,1443,1123,1443,1117,1716,1098,1852,1082,1950,1062,2002,1048,2044,1036,2079,1014,2094,998,2110,975,2132,923,2143,866,2145,809,2139,752,2128,698,2115,649,2090,580"/>
+<area shape="poly" title=" " alt="" coords="2134,487,2258,536,2256,541,2132,492"/>
+<area shape="poly" title=" " alt="" coords="2117,488,2142,509,2165,536,2179,562,2187,584,2191,637,2191,958,2184,985,2167,1010,2139,1031,2103,1049,2060,1065,2011,1079,1898,1100,1775,1114,1652,1123,1444,1128,1443,1123,1652,1117,1775,1109,1897,1095,2009,1074,2058,1060,2101,1045,2137,1026,2163,1006,2180,983,2185,957,2185,638,2182,585,2174,564,2160,539,2139,513,2113,492"/>
+<area shape="poly" title=" " alt="" coords="2087,490,2087,522,2081,522,2081,490"/>
+<area shape="poly" title=" " alt="" coords="944,302,797,320,711,334,627,352,550,374,487,401,463,416,444,432,433,449,429,468,429,876,433,902,442,925,457,947,475,967,518,999,561,1023,559,1027,515,1004,472,970,453,950,438,928,428,903,424,876,424,467,428,447,440,429,459,412,484,396,548,369,626,347,710,328,796,314,943,296"/>
+<area shape="poly" title=" " alt="" coords="943,296,745,303,624,313,502,328,389,350,339,364,296,380,260,398,233,419,217,442,211,468,211,958,208,966,200,973,179,980,157,983,148,985,157,990,200,1003,425,1062,497,1076,592,1088,823,1105,1064,1115,1258,1120,1258,1126,1064,1120,823,1110,591,1093,496,1081,423,1068,198,1008,155,994,143,984,156,978,177,974,197,968,203,963,205,957,205,467,212,440,230,415,257,394,294,375,338,359,388,345,501,323,623,308,744,298,943,291"/>
+<area shape="poly" title=" " alt="" coords="1046,311,1102,358,1132,393,1152,424,1171,454,1202,487,1234,511,1269,527,1337,548,1367,559,1391,575,1408,601,1413,637,1413,802,1418,870,1426,928,1420,928,1412,871,1408,803,1408,638,1403,602,1387,579,1365,564,1336,553,1267,532,1231,516,1198,491,1167,457,1147,427,1128,397,1098,362,1042,315"/>
+<area shape="rect" href="../../d3/d53/logika4_8h.html" title=" " alt="" coords="944,360,1088,401"/>
+<area shape="poly" title=" " alt="" coords="1019,313,1019,344,1013,344,1013,313"/>
+<area shape="rect" href="../../d0/df2/ads__tag__block_8h.html" title=" " alt="" coords="245,936,390,976"/>
+<area shape="poly" title=" " alt="" coords="944,296,812,299,655,308,579,317,509,328,451,343,409,362,381,384,362,406,352,432,349,468,349,803,343,866,330,921,325,920,338,865,344,802,344,468,347,431,358,403,377,380,407,358,449,338,508,323,578,311,655,303,812,293,944,290"/>
+<area shape="rect" href="../../d2/d62/any_8hpp.html" title=" " alt="" coords="1671,788,1828,814"/>
+<area shape="poly" title=" " alt="" coords="1090,309,1134,329,1175,358,1189,375,1197,392,1203,426,1210,457,1218,472,1232,487,1257,504,1281,513,1326,516,1375,517,1402,523,1431,535,1468,559,1497,583,1540,632,1581,683,1607,710,1642,738,1711,779,1708,784,1638,743,1604,714,1577,687,1536,635,1494,587,1465,563,1428,540,1400,528,1374,522,1326,521,1279,518,1255,509,1229,491,1214,476,1205,459,1198,427,1192,394,1184,378,1171,362,1132,333,1087,314"/>
+<area shape="poly" title=" " alt="" coords="944,392,809,413,732,428,656,446,587,468,531,494,509,509,493,524,483,540,480,557,480,876,483,899,490,921,514,961,545,995,575,1021,572,1025,541,999,509,964,485,923,477,900,475,876,475,556,478,538,489,520,506,505,528,490,585,463,654,441,731,422,808,407,943,387"/>
+<area shape="poly" title=" " alt="" coords="1030,400,1084,493,1164,643,1252,827,1293,925,1328,1024,1348,1097,1342,1098,1323,1025,1288,927,1247,829,1160,645,1079,495,1025,402"/>
+<area shape="poly" title=" " alt="" coords="1083,399,1229,442,1227,447,1082,404"/>
+<area shape="poly" title=" " alt="" coords="944,387,903,393,860,405,819,423,785,451,745,499,733,523,725,547,722,571,725,596,734,623,749,650,767,669,795,688,872,724,960,756,1040,781,1038,786,959,762,870,729,792,692,763,673,745,653,729,625,719,598,716,571,719,546,728,521,741,496,781,447,817,419,858,400,902,388,943,381"/>
+<area shape="poly" title=" " alt="" coords="1040,399,1139,492,1198,556,1254,624,1300,694,1330,752,1357,812,1394,886,1417,928,1412,931,1390,889,1352,814,1325,754,1296,697,1250,628,1194,559,1135,495,1037,403"/>
+<area shape="rect" href="../../de/dd1/tag__def4_8h.html" title=" " alt="" coords="795,449,939,489"/>
+<area shape="poly" title=" " alt="" coords="983,403,915,443,912,438,981,399"/>
+<area shape="poly" title=" " alt="" coords="795,491,711,521,667,542,625,568,588,598,558,633,538,673,531,719,531,876,536,917,550,955,569,990,587,1018,583,1021,564,993,546,958,531,918,525,876,525,718,533,672,553,630,584,594,622,564,665,538,709,516,793,486"/>
+<area shape="rect" href="../../d6/d96/tag__def_8h.html" title=" " alt="" coords="759,626,916,652"/>
+<area shape="poly" title=" " alt="" coords="888,488,902,507,914,530,921,554,916,579,899,602,878,619,874,615,895,598,911,577,915,554,909,532,898,510,883,491"/>
+<area shape="rect" href="../../d4/db4/data__tag__def_8h.html" title=" " alt="" coords="773,537,902,578"/>
+<area shape="poly" title=" " alt="" coords="863,491,851,523,846,522,857,489"/>
+<area shape="poly" title=" " alt="" coords="760,651,704,669,679,683,657,701,640,724,633,746,632,800,632,876,625,953,613,1017,608,1016,620,952,627,876,627,800,628,745,635,722,653,698,676,678,702,664,758,646"/>
+<area shape="poly" title=" " alt="" coords="916,647,985,662,1059,688,1095,706,1129,729,1160,755,1185,786,1197,796,1214,802,1233,808,1248,817,1254,836,1247,866,1224,912,1179,978,1164,995,1145,1010,1103,1029,1101,1024,1142,1005,1160,991,1175,975,1219,909,1242,864,1249,836,1244,821,1230,812,1213,807,1194,801,1181,790,1156,759,1126,733,1093,711,1057,693,983,667,915,652"/>
+<area shape="rect" href="../../d7/dbc/item__def__base_8h.html" title=" " alt="" coords="667,700,795,740"/>
+<area shape="poly" title=" " alt="" coords="823,654,770,693,767,688,820,650"/>
+<area shape="poly" title=" " alt="" coords="726,741,708,789,692,842,683,884,671,926,650,978,625,1021,620,1018,646,975,666,924,677,883,687,841,703,787,721,740"/>
+<area shape="poly" title=" " alt="" coords="794,738,947,794,1018,827,1045,844,1065,860,1084,893,1093,927,1088,929,1079,895,1061,864,1042,848,1015,832,945,799,792,743"/>
+<area shape="rect" href="../../d5/d7b/channel_8h.html" title=" " alt="" coords="717,788,875,814"/>
+<area shape="poly" title=" " alt="" coords="749,739,778,774,774,778,745,742"/>
+<area shape="poly" title=" " alt="" coords="792,816,701,978,672,1005,641,1026,638,1021,668,1000,697,975,787,813"/>
+<area shape="poly" title=" " alt="" coords="806,813,859,886,973,1019,969,1022,855,889,802,816"/>
+<area shape="poly" title=" " alt="" coords="876,806,955,823,995,839,1032,860,1049,875,1064,893,1085,928,1080,931,1060,896,1046,879,1029,864,993,843,953,828,875,811"/>
+<area shape="poly" title=" " alt="" coords="822,812,906,852,904,857,820,817"/>
+<area shape="poly" title=" " alt="" coords="788,581,724,609,656,644,602,683,587,701,581,719,581,876,588,952,600,1016,595,1017,583,953,576,876,576,718,582,699,599,679,653,640,721,604,786,576"/>
+<area shape="poly" title=" " alt="" coords="840,578,840,610,835,610,835,578"/>
+<area shape="poly" title=" " alt="" coords="384,974,550,1024,548,1029,382,980"/>
+<area shape="poly" title=" " alt="" coords="346,974,424,1021,473,1044,523,1062,586,1076,669,1087,872,1104,1084,1114,1258,1120,1258,1125,1083,1120,871,1109,668,1092,585,1081,522,1068,470,1049,421,1025,344,979"/>
+<area shape="poly" title=" " alt="" coords="1730,816,1704,836,1682,863,1667,902,1659,944,1656,1016,1651,1016,1654,943,1662,901,1678,861,1701,832,1727,812"/>
+<area shape="rect" href="../../de/d59/any_8ipp.html" title=" " alt="" coords="1691,862,1845,888"/>
+<area shape="poly" title=" " alt="" coords="1748,814,1755,847,1750,848,1743,815"/>
+<area shape="poly" title=" " alt="" coords="1769,862,1762,829,1767,828,1774,861"/>
+<area shape="rect" href="../../d4/d08/misc_8h.html" title=" " alt="" coords="1692,943,1844,969"/>
+<area shape="poly" title=" " alt="" coords="1771,888,1771,927,1765,927,1765,888"/>
+<area shape="rect" href="../../d8/db0/defines_8h.html" title=" " alt="" coords="1969,943,2100,969"/>
+<area shape="poly" title=" " alt="" coords="1810,886,1980,936,1978,941,1808,891"/>
+<area shape="poly" title=" " alt="" coords="1772,970,1769,1017,1761,1044,1745,1067,1723,1081,1693,1092,1616,1109,1527,1119,1444,1125,1443,1119,1527,1114,1615,1104,1692,1087,1721,1076,1741,1063,1756,1042,1764,1016,1766,969"/>
+<area shape="poly" title=" " alt="" coords="1754,971,1685,1024,1682,1020,1751,967"/>
+<area shape="rect" href="../../d1/d8c/logger_8h.html" title=" " alt="" coords="2503,1032,2628,1058"/>
+<area shape="poly" title=" " alt="" coords="2101,965,2488,1028,2487,1033,2100,971"/>
+<area shape="poly" title=" " alt="" coords="2521,1061,2484,1068,2337,1086,2187,1100,1893,1118,1634,1126,1444,1128,1444,1123,1634,1121,1893,1113,2187,1095,2337,1081,2484,1062,2520,1055"/>
+<area shape="rect" href="../../d6/d8e/log_2defs_8h.html" title=" " alt="" coords="2578,1113,2694,1139"/>
+<area shape="poly" title=" " alt="" coords="2578,1056,2617,1099,2613,1103,2574,1060"/>
+<area shape="rect" href="../../dd/dd4/log_2types_8h.html" title=" " alt="" coords="2433,1113,2554,1139"/>
+<area shape="poly" title=" " alt="" coords="2556,1060,2516,1103,2512,1100,2552,1056"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Граф файлов, в которые включается этот файл:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/d4c/flash__archive4l_8h__dep__incl.png" border="0" usemap="#alogika_2include_2logika_2protocols_2m4_2flash__archive4l_8hdep" alt=""/></div>
+<map name="alogika_2include_2logika_2protocols_2m4_2flash__archive4l_8hdep" id="alogika_2include_2logika_2protocols_2m4_2flash__archive4l_8hdep">
+<area shape="rect" title=" " alt="" coords="76,5,276,46"/>
+<area shape="rect" href="../../de/d72/flash__archive4l_8cpp.html" title=" " alt="" coords="5,94,163,135"/>
+<area shape="poly" title=" " alt="" coords="146,59,107,96,103,92,142,55"/>
+<area shape="rect" href="../../d1/de8/flash__ring__buffer_8cpp.html" title=" " alt="" coords="187,94,352,135"/>
+<area shape="poly" title=" " alt="" coords="210,55,250,92,246,96,206,59"/>
 </map>
 </div>
 </div>
@@ -125,10 +261,21 @@ $(function(){initNavTree('dd/d19/flash__archive4l_8h.html','../../'); initResiza
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d8b/structlogika_1_1protocols_1_1M4_1_1ArchiveRequestState4L.html">logika::protocols::M4::ArchiveRequestState4L</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Состояние запроса архива Logika4L.  <a href="../../db/d8b/structlogika_1_1protocols_1_1M4_1_1ArchiveRequestState4L.html#details">Подробнее...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html">logika::protocols::M4::FlashArchive4</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Класс флэш архива Logika4L.  <a href="../../d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dd9/classlogika_1_1protocols_1_1M4_1_1SyncFlashArchive4.html">logika::protocols::M4::SyncFlashArchive4</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Синхронный (интервальный) архив Logika4L.  <a href="../../d7/dd9/classlogika_1_1protocols_1_1M4_1_1SyncFlashArchive4.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/db8/classlogika_1_1protocols_1_1M4_1_1AsyncFlashArchive4.html">logika::protocols::M4::AsyncFlashArchive4</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Асинхронный архив Logika4L.  <a href="../../df/db8/classlogika_1_1protocols_1_1M4_1_1AsyncFlashArchive4.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Пространства имен</h2></td></tr>
 <tr class="memitem:d7/d43/namespacelogika" id="r_d7/d43/namespacelogika"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d43/namespacelogika.html">logika</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:dc/df7/namespacelogika_1_1meters" id="r_dc/df7/namespacelogika_1_1meters"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/df7/namespacelogika_1_1meters.html">logika::meters</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:da/d59/namespacelogika_1_1protocols" id="r_da/d59/namespacelogika_1_1protocols"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d59/namespacelogika_1_1protocols.html">logika::protocols</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,8 +289,14 @@ $(function(){initNavTree('dd/d19/flash__archive4l_8h.html','../../'); initResiza
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Переменные</h2></td></tr>
-<tr class="memitem:a2efc24611ddcea3a1077c1fade869a2a" id="r_a2efc24611ddcea3a1077c1fade869a2a"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="../../d7/d37/protocols_2defs_8h.html#a2fff68526ade400ed17ca4a140c3ba9e">LOGIKA_PROTOCOLS_EXPORT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d62/namespacelogika_1_1protocols_1_1M4.html#a2efc24611ddcea3a1077c1fade869a2a">logika::protocols::M4::FrbIndex</a></td></tr>
-<tr class="separator:a2efc24611ddcea3a1077c1fade869a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb2c1342c52c1a279d6752c309e24f47" id="r_acb2c1342c52c1a279d6752c309e24f47"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="../../d2/d4b/meters_2defs_8h.html#a5c59f5e14c7104e97cc4bc2a0820d322">LOGIKA_METERS_EXPORT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#acb2c1342c52c1a279d6752c309e24f47">logika::meters::ArchiveDef4L</a></td></tr>
+<tr class="separator:acb2c1342c52c1a279d6752c309e24f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1beb14ea0cf63fe4541e050896e8233d" id="r_a1beb14ea0cf63fe4541e050896e8233d"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="../../d2/d4b/meters_2defs_8h.html#a5c59f5e14c7104e97cc4bc2a0820d322">LOGIKA_METERS_EXPORT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#a1beb14ea0cf63fe4541e050896e8233d">logika::meters::ArchiveFieldDef4L</a></td></tr>
+<tr class="separator:a1beb14ea0cf63fe4541e050896e8233d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a803e8fb2f446c48d3fb81544f9a2cbe4" id="r_a803e8fb2f446c48d3fb81544f9a2cbe4"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="../../d2/d4b/meters_2defs_8h.html#a5c59f5e14c7104e97cc4bc2a0820d322">LOGIKA_METERS_EXPORT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#a803e8fb2f446c48d3fb81544f9a2cbe4">logika::meters::Logika4L</a></td></tr>
+<tr class="separator:a803e8fb2f446c48d3fb81544f9a2cbe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ac4a73e6c541c66304de5b62ac9f170" id="r_a6ac4a73e6c541c66304de5b62ac9f170"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="../../d2/d4b/meters_2defs_8h.html#a5c59f5e14c7104e97cc4bc2a0820d322">LOGIKA_METERS_EXPORT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#a6ac4a73e6c541c66304de5b62ac9f170">logika::meters::VQT</a></td></tr>
+<tr class="separator:a6ac4a73e6c541c66304de5b62ac9f170"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c135fe4f3c994c41ad8da95ce3460a0" id="r_a7c135fe4f3c994c41ad8da95ce3460a0"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="../../d7/d37/protocols_2defs_8h.html#a2fff68526ade400ed17ca4a140c3ba9e">LOGIKA_PROTOCOLS_EXPORT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d62/namespacelogika_1_1protocols_1_1M4.html#a7c135fe4f3c994c41ad8da95ce3460a0">logika::protocols::M4::FlashArchive4</a></td></tr>
 <tr class="separator:a7c135fe4f3c994c41ad8da95ce3460a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>

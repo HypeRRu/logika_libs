@@ -45,5 +45,6 @@ var searchData=
   ['startpage_42',['StartPage',['../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a9763802e587a429865d33ba98d38154b',1,'logika::protocols::M4::FlashArray']]],
   ['stopbitstostring_43',['StopBitsToString',['../df/da9/namespacelogika_1_1connections.html#ad54bb3220d0b8761657e1887a114e094',1,'logika::connections']]],
   ['strcaseeq_44',['StrCaseEq',['../d7/d43/namespacelogika.html#acfbaf10116b98ced17273d06014ce6d3',1,'logika']]],
-  ['syncheadertodatetime_45',['SyncHeaderToDateTime',['../d7/d1b/classlogika_1_1meters_1_1Logika4L.html#a203528579161e7baff48a4f2a3813d2c',1,'logika::meters::Logika4L']]]
+  ['syncflasharchive4_45',['SyncFlashArchive4',['../d7/dd9/classlogika_1_1protocols_1_1M4_1_1SyncFlashArchive4.html#a19af87482b467f3c56e41528b1df91d4',1,'logika::protocols::M4::SyncFlashArchive4']]],
+  ['syncheadertodatetime_46',['SyncHeaderToDateTime',['../d7/d1b/classlogika_1_1meters_1_1Logika4L.html#a203528579161e7baff48a4f2a3813d2c',1,'logika::meters::Logika4L']]]
 ];

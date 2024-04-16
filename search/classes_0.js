@@ -27,5 +27,6 @@ var searchData=
   ['archiverecord_24',['ArchiveRecord',['../d1/d10/structlogika_1_1protocols_1_1M4_1_1ArchiveRecord.html',1,'logika::protocols::M4']]],
   ['archiverequeststate4l_25',['ArchiveRequestState4L',['../db/d8b/structlogika_1_1protocols_1_1M4_1_1ArchiveRequestState4L.html',1,'logika::protocols::M4']]],
   ['archivetype_26',['ArchiveType',['../d2/d02/classlogika_1_1meters_1_1ArchiveType.html',1,'logika::meters']]],
-  ['archivetypeconverter_27',['ArchiveTypeConverter',['../d9/dbc/classlogika_1_1meters_1_1converters_1_1ArchiveTypeConverter.html',1,'logika::meters::converters']]]
+  ['archivetypeconverter_27',['ArchiveTypeConverter',['../d9/dbc/classlogika_1_1meters_1_1converters_1_1ArchiveTypeConverter.html',1,'logika::meters::converters']]],
+  ['asyncflasharchive4_28',['AsyncFlashArchive4',['../df/db8/classlogika_1_1protocols_1_1M4_1_1AsyncFlashArchive4.html',1,'logika::protocols::M4']]]
 ];

@@ -22,7 +22,7 @@
 <area shape="poly" id="edge48_Node000000_Node000054" title=" " alt="" coords="397,491,507,518,506,523,396,496"/>
 <area shape="rect" id="Node000055" href="$d1/d10/structlogika_1_1protocols_1_1M4_1_1ArchiveRecord.html" title="Структура записи архива в протоколе M4." alt="" coords="498,571,628,612"/>
 <area shape="poly" id="edge49_Node000000_Node000055" title=" " alt="" coords="360,496,408,527,464,557,498,570,496,575,462,562,405,532,357,501"/>
-<area shape="rect" id="Node000056" href="$d9/d2a/structlogika_1_1protocols_1_1M4_1_1FrbIndex.html" title="Кольцевой буфер flash." alt="" coords="503,243,623,284"/>
+<area shape="rect" id="Node000056" href="$d9/d2a/structlogika_1_1protocols_1_1M4_1_1FrbIndex.html" title="Индекс элемента Flash Ring Buffer." alt="" coords="503,243,623,284"/>
 <area shape="poly" id="edge50_Node000000_Node000056" title=" " alt="" coords="338,449,358,414,385,372,420,330,462,293,501,274,503,279,464,298,424,334,390,375,362,417,342,452"/>
 <area shape="rect" id="Node000002" href="$d5/dce/classlogika_1_1meters_1_1ArchiveDef4L.html" title="Описание архива Logika4L." alt="" coords="720,120,907,146"/>
 <area shape="poly" id="edge8_Node000001_Node000002" title=" " alt="" coords="638,90,755,117,753,122,637,95"/>

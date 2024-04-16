@@ -1,21 +1,25 @@
 <map id="logika/include/logika/protocols/protocol.h" name="logika/include/logika/protocols/protocol.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="567,5,705,46"/>
-<area shape="rect" id="Node000002" href="$db/d8d/m4protocol_8h.html" title=" " alt="" coords="484,94,663,135"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="615,60,590,95,585,92,611,57"/>
-<area shape="rect" id="Node000009" href="$d4/d25/protocol_8cpp.html" title=" " alt="" coords="840,190,974,231"/>
-<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="679,53,879,187,876,192,676,57"/>
-<area shape="rect" id="Node000003" href="$df/da9/flash__ring__buffer_8h.html" title=" " alt="" coords="72,183,232,238"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="469,138,251,185,233,190,231,185,250,180,468,133"/>
-<area shape="rect" id="Node000005" href="$d1/de8/flash__ring__buffer_8cpp.html" title=" " alt="" coords="187,286,352,327"/>
-<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="469,132,366,153,324,168,297,185,281,208,273,235,270,286,265,286,268,234,276,206,293,181,321,163,364,148,468,126"/>
-<area shape="rect" id="Node000006" href="$d6/d61/m4protocol__api_8cpp.html" title=" " alt="" coords="307,190,466,231"/>
-<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="522,145,427,192,425,187,519,140"/>
-<area shape="rect" id="Node000007" href="$d9/d14/m4protocol__impl_8cpp.html" title=" " alt="" coords="490,190,657,231"/>
-<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="576,150,576,190,571,190,571,150"/>
-<area shape="rect" id="Node000008" href="$d3/dae/packet_8cpp.html" title=" " alt="" coords="681,190,815,231"/>
-<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="624,140,713,187,710,192,622,145"/>
-<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="668,136,827,180,850,187,848,192,826,185,666,142"/>
-<area shape="rect" id="Node000004" href="$de/d72/flash__archive4l_8cpp.html" title=" " alt="" coords="5,286,163,327"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="126,253,100,288,96,284,121,250"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="199,246,246,284,243,288,196,250"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="662,5,800,46"/>
+<area shape="rect" id="Node000002" href="$db/d8d/m4protocol_8h.html" title=" " alt="" coords="579,94,757,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="710,60,684,95,680,92,706,57"/>
+<area shape="rect" id="Node000010" href="$d4/d25/protocol_8cpp.html" title=" " alt="" coords="934,190,1069,231"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="774,53,974,187,971,192,771,57"/>
+<area shape="rect" id="Node000003" href="$df/da9/flash__ring__buffer_8h.html" title=" " alt="" coords="132,183,292,238"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="564,140,293,195,292,190,563,134"/>
+<area shape="rect" id="Node000006" href="$d1/de8/flash__ring__buffer_8cpp.html" title=" " alt="" coords="231,375,396,416"/>
+<area shape="poly" id="edge8_Node000002_Node000006" title=" " alt="" coords="564,133,461,155,419,169,391,185,372,206,356,230,334,283,322,335,317,375,312,375,317,334,329,282,351,227,368,202,388,181,417,164,460,150,562,128"/>
+<area shape="rect" id="Node000007" href="$d6/d61/m4protocol__api_8cpp.html" title=" " alt="" coords="402,190,561,231"/>
+<area shape="poly" id="edge9_Node000002_Node000007" title=" " alt="" coords="616,145,522,192,519,187,614,140"/>
+<area shape="rect" id="Node000008" href="$d9/d14/m4protocol__impl_8cpp.html" title=" " alt="" coords="585,190,751,231"/>
+<area shape="poly" id="edge10_Node000002_Node000008" title=" " alt="" coords="671,150,671,190,665,190,665,150"/>
+<area shape="rect" id="Node000009" href="$d3/dae/packet_8cpp.html" title=" " alt="" coords="776,190,910,231"/>
+<area shape="poly" id="edge11_Node000002_Node000009" title=" " alt="" coords="719,140,807,187,805,192,717,145"/>
+<area shape="poly" id="edge12_Node000002_Node000010" title=" " alt="" coords="762,136,922,180,945,187,943,192,921,185,761,142"/>
+<area shape="rect" id="Node000004" href="$dd/d19/flash__archive4l_8h.html" title=" " alt="" coords="76,286,276,327"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="199,254,186,287,181,285,194,252"/>
+<area shape="rect" id="Node000005" href="$de/d72/flash__archive4l_8cpp.html" title=" " alt="" coords="5,375,163,416"/>
+<area shape="poly" id="edge6_Node000003_Node000005" title=" " alt="" coords="120,242,90,262,66,288,59,309,60,332,75,374,70,376,55,333,54,308,62,285,86,257,117,238"/>
+<area shape="poly" id="edge7_Node000003_Node000006" title=" " alt="" coords="261,248,290,285,308,332,315,374,309,375,303,333,286,288,256,251"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="146,340,107,377,103,373,142,336"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="221,333,284,372,281,377,219,338"/>
 </map>

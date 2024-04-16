@@ -127,8 +127,9 @@ var searchData=
   ['supportedbyprolog4_5f_124',['supportedByProlog4_',['../d3/d77/classlogika_1_1meters_1_1Meter.html#aef0b3f5ed2d8dd01179b5416e736aa57',1,'logika::meters::Meter']]],
   ['supportfastsessioninit_5f_125',['supportFastSessionInit_',['../d6/df4/classlogika_1_1meters_1_1Logika4.html#af81c926e52ae050fea8d3fbb69300736',1,'logika::meters::Logika4']]],
   ['supportflz_5f_126',['supportFlz_',['../dd/d0e/classlogika_1_1meters_1_1Logika4M.html#a86a88c32fda4e956f7a427979d8f8baa',1,'logika::meters::Logika4M']]],
-  ['syncheadertodatetime_127',['SyncHeaderToDateTime',['../d7/d1b/classlogika_1_1meters_1_1Logika4L.html#a203528579161e7baff48a4f2a3813d2c',1,'logika::meters::Logika4L']]],
-  ['synchronous_128',['Synchronous',['../dc/df7/namespacelogika_1_1meters.html#a5dc3ac0486d84a28a12cec0c0be9bd85a2fe4167817733fec8e6ba1afddf78f1b',1,'logika::meters']]],
-  ['sys_129',['Sys',['../d2/d11/namespacelogika_1_1protocols_1_1M4_1_1MeterChannel.html#a6d71b3125f63e9ccce43328ac5c6ecd9af0665370fa92251d13d8dda8dafba2ef',1,'logika::protocols::M4::MeterChannel']]],
-  ['systemerror_130',['SystemError',['../da/d59/namespacelogika_1_1protocols.html#aa64881855fc9daae34694be31193b840ab932b91f686c2aa588adfd9a407155ca',1,'logika::protocols']]]
+  ['syncflasharchive4_127',['SyncFlashArchive4',['../d7/dd9/classlogika_1_1protocols_1_1M4_1_1SyncFlashArchive4.html',1,'logika::protocols::M4::SyncFlashArchive4'],['../d7/dd9/classlogika_1_1protocols_1_1M4_1_1SyncFlashArchive4.html#a19af87482b467f3c56e41528b1df91d4',1,'logika::protocols::M4::SyncFlashArchive4::SyncFlashArchive4()']]],
+  ['syncheadertodatetime_128',['SyncHeaderToDateTime',['../d7/d1b/classlogika_1_1meters_1_1Logika4L.html#a203528579161e7baff48a4f2a3813d2c',1,'logika::meters::Logika4L']]],
+  ['synchronous_129',['Synchronous',['../dc/df7/namespacelogika_1_1meters.html#a5dc3ac0486d84a28a12cec0c0be9bd85a2fe4167817733fec8e6ba1afddf78f1b',1,'logika::meters']]],
+  ['sys_130',['Sys',['../d2/d11/namespacelogika_1_1protocols_1_1M4_1_1MeterChannel.html#a6d71b3125f63e9ccce43328ac5c6ecd9af0665370fa92251d13d8dda8dafba2ef',1,'logika::protocols::M4::MeterChannel']]],
+  ['systemerror_131',['SystemError',['../da/d59/namespacelogika_1_1protocols.html#aa64881855fc9daae34694be31193b840ab932b91f686c2aa588adfd9a407155ca',1,'logika::protocols']]]
 ];

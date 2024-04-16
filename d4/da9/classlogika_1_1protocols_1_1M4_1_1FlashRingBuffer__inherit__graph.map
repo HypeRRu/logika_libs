@@ -1,0 +1,5 @@
+<map id="logika::protocols::M4::FlashRingBuffer" name="logika::protocols::M4::FlashRingBuffer">
+<area shape="rect" id="Node000001" title="Кольцевой буфер flash." alt="" coords="5,951,311,1519"/>
+<area shape="rect" id="Node000002" href="$d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html" title="Массив flash." alt="" coords="40,5,276,903"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,917,161,951,155,951,155,917"/>
+</map>

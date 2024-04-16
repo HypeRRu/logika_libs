@@ -153,12 +153,15 @@ var namespacelogika_1_1meters =
     [ "DbTypeToString", "dc/df7/namespacelogika_1_1meters.html#ad7d6c2cfba017c8df878d1831b58cd50", null ],
     [ "TagKindToString", "dc/df7/namespacelogika_1_1meters.html#a18ee8a19ad5378496b05d3c75d6be0df", null ],
     [ "ArchiveDef", "dc/df7/namespacelogika_1_1meters.html#a24c5d6f0cc86ea8083b0c463b0992b3d", null ],
+    [ "ArchiveDef4L", "dc/df7/namespacelogika_1_1meters.html#acb2c1342c52c1a279d6752c309e24f47", null ],
     [ "ArchiveFieldDef", "dc/df7/namespacelogika_1_1meters.html#a9db2b94b1977c35818c8ad2ef48c61eb", null ],
+    [ "ArchiveFieldDef4L", "dc/df7/namespacelogika_1_1meters.html#a1beb14ea0cf63fe4541e050896e8233d", null ],
     [ "ChannelDef", "dc/df7/namespacelogika_1_1meters.html#adca70441f410a4ca65374f77921c4943", null ],
     [ "DataTag", "dc/df7/namespacelogika_1_1meters.html#a47bb51a40b7092685b7ebef95780a676", null ],
     [ "DataTagDefVault", "dc/df7/namespacelogika_1_1meters.html#a774ce986b0735e0e5ac5f7cf77bd102a", null ],
     [ "Logika4", "dc/df7/namespacelogika_1_1meters.html#a46017f1bda94273b11b9841a32c4c5c8", null ],
     [ "Logika4L", "dc/df7/namespacelogika_1_1meters.html#a803e8fb2f446c48d3fb81544f9a2cbe4", null ],
     [ "Meter", "dc/df7/namespacelogika_1_1meters.html#a74aeaa4e413cc7a339bac9f55b6d6b41", null ],
-    [ "TagDef", "dc/df7/namespacelogika_1_1meters.html#a783dcfcc1b344f5e0a1ce2e96f88c815", null ]
+    [ "TagDef", "dc/df7/namespacelogika_1_1meters.html#a783dcfcc1b344f5e0a1ce2e96f88c815", null ],
+    [ "VQT", "dc/df7/namespacelogika_1_1meters.html#a6ac4a73e6c541c66304de5b62ac9f170", null ]
 ];

@@ -12,7 +12,7 @@ var searchData=
   ['meter_9',['meter',['../d3/dce/structlogika_1_1meters_1_1ChannelDef.html#adc15f3b8551ee3864f4c29f9e9552825',1,'logika::meters::ChannelDef::meter'],['../d9/d1e/structlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1BusActiveState.html#af31a5e4d2797ee1c65d382913296da18',1,'logika::protocols::M4::M4Protocol::BusActiveState::meter']]],
   ['meter_10',['Meter',['../dc/df7/namespacelogika_1_1meters.html#a74aeaa4e413cc7a339bac9f55b6d6b41',1,'logika::meters']]],
   ['meter_5f_11',['meter_',['../da/d89/classlogika_1_1meters_1_1Archive.html#a676c6f7149e6456edb460a250d2c9872',1,'logika::meters::Archive']]],
-  ['mtrinstance_5f_12',['mtrInstance_',['../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#ac26d131bec45cb9df7db5677b935a0bf',1,'logika::protocols::M4::FlashArray']]],
+  ['mtrinstance_5f_12',['mtrInstance_',['../d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html#aa67b4ffe67f2714cf7a798bd5a862a28',1,'logika::protocols::M4::FlashArchive4::mtrInstance_'],['../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a4b9f28117ebbac11cfbb0a6c09a0a712',1,'logika::protocols::M4::FlashArray::mtrInstance_']]],
   ['mtrparamshash_13',['mtrParamsHash',['../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#acfff11f35c0dea1e1bdcff1c14216b3a',1,'logika::meters::VitalInfo']]],
   ['mtx_5f_14',['mtx_',['../d9/d0f/classlogika_1_1log_1_1Logger.html#aaa08a694b3acef457ffadf2fdd77898d',1,'logika::log::Logger']]]
 ];

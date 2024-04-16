@@ -20,7 +20,13 @@ var hierarchy =
     [ "logika::meters::DataTable", "d3/dca/classlogika_1_1meters_1_1DataTable.html", null ],
     [ "logika::meters::DataTagDefVault", "d3/d03/classlogika_1_1meters_1_1DataTagDefVault.html", null ],
     [ "logika::meters::converters::DeviceConverter", "d8/d9f/classlogika_1_1meters_1_1converters_1_1DeviceConverter.html", null ],
-    [ "logika::protocols::M4::FlashArray", "d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html", null ],
+    [ "logika::protocols::M4::FlashArchive4", "d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html", [
+      [ "logika::protocols::M4::AsyncFlashArchive4", "df/db8/classlogika_1_1protocols_1_1M4_1_1AsyncFlashArchive4.html", null ],
+      [ "logika::protocols::M4::SyncFlashArchive4", "d7/dd9/classlogika_1_1protocols_1_1M4_1_1SyncFlashArchive4.html", null ]
+    ] ],
+    [ "logika::protocols::M4::FlashArray", "d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html", [
+      [ "logika::protocols::M4::FlashRingBuffer", "d8/d6e/classlogika_1_1protocols_1_1M4_1_1FlashRingBuffer.html", null ]
+    ] ],
     [ "logika::meters::HistoricalSeries", "db/d35/structlogika_1_1meters_1_1HistoricalSeries.html", null ],
     [ "logika::connections::IConnection", "df/ddb/classlogika_1_1connections_1_1IConnection.html", [
       [ "logika::connections::Connection", "db/da7/classlogika_1_1connections_1_1Connection.html", [

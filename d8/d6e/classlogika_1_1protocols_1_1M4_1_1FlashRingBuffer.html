@@ -1,0 +1,576 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Logika Libs: Класс logika::protocols::M4::FlashRingBuffer</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Logika Libs
+   </div>
+   <div id="projectbrief">Библиотеки для работы с приборами НПФ &quot;Логика&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d8/d6e/classlogika_1_1protocols_1_1M4_1_1FlashRingBuffer.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="../../d7/dec/classlogika_1_1protocols_1_1M4_1_1FlashRingBuffer-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс logika::protocols::M4::FlashRingBuffer</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Кольцевой буфер flash.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../df/da9/flash__ring__buffer_8h_source.html">flash_ring_buffer.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:logika::protocols::M4::FlashRingBuffer:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/da9/classlogika_1_1protocols_1_1M4_1_1FlashRingBuffer__inherit__graph.png" border="0" usemap="#alogika_1_1protocols_1_1M4_1_1FlashRingBuffer_inherit__map" alt="Inheritance graph"/></div>
+<map name="alogika_1_1protocols_1_1M4_1_1FlashRingBuffer_inherit__map" id="alogika_1_1protocols_1_1M4_1_1FlashRingBuffer_inherit__map">
+<area shape="rect" title="Кольцевой буфер flash." alt="" coords="5,951,311,1519"/>
+<area shape="rect" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html" title="Массив flash." alt="" coords="40,5,276,903"/>
+<area shape="poly" title=" " alt="" coords="161,917,161,951,155,951,155,917"/>
+</map>
+</div>
+<div class="dynheader">
+Граф связей класса logika::protocols::M4::FlashRingBuffer:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/de8/classlogika_1_1protocols_1_1M4_1_1FlashRingBuffer__coll__graph.png" border="0" usemap="#alogika_1_1protocols_1_1M4_1_1FlashRingBuffer_coll__map" alt="Collaboration graph"/></div>
+<map name="alogika_1_1protocols_1_1M4_1_1FlashRingBuffer_coll__map" id="alogika_1_1protocols_1_1M4_1_1FlashRingBuffer_coll__map">
+<area shape="rect" title="Кольцевой буфер flash." alt="" coords="5,951,311,1519"/>
+<area shape="rect" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html" title="Массив flash." alt="" coords="40,5,276,903"/>
+<area shape="poly" title=" " alt="" coords="161,917,161,951,155,951,155,917"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:adb5b1c656eba9f154f394bbf895d57b2" id="r_adb5b1c656eba9f154f394bbf895d57b2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:adb5b1c656eba9f154f394bbf895d57b2"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#adb5b1c656eba9f154f394bbf895d57b2">GetObjectF</a> = std::function&lt; T( <a class="el" href="../../d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html">FlashArchive4</a>*, const <a class="el" href="../../d7/d43/namespacelogika.html#a69c638914202f69eb544a992e2361a1c">ByteVector</a>&amp;, <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a> ) &gt;</td></tr>
+<tr class="separator:adb5b1c656eba9f154f394bbf895d57b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a350b40c1df618a3f567d885809bbd407" id="r_a350b40c1df618a3f567d885809bbd407"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a350b40c1df618a3f567d885809bbd407">FlashRingBuffer</a> (<a class="el" href="../../d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html">FlashArchive4</a> *parent, <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a> indexAddress, <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a> dataAddress, uint32_t elementsCount, <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a> elementSize, std::shared_ptr&lt; <a class="el" href="#adb5b1c656eba9f154f394bbf895d57b2">GetObjectF</a>&lt; <a class="el" href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a> &gt; &gt; headerTimeGetter, std::shared_ptr&lt; <a class="el" href="#adb5b1c656eba9f154f394bbf895d57b2">GetObjectF</a>&lt; <a class="el" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> &gt; &gt; headerValueGetter)</td></tr>
+<tr class="memdesc:a350b40c1df618a3f567d885809bbd407"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор флэш архива Logika4L.  <br /></td></tr>
+<tr class="separator:a350b40c1df618a3f567d885809bbd407"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f4639878151f2eda63b661dd3b5f063" id="r_a0f4639878151f2eda63b661dd3b5f063"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f4639878151f2eda63b661dd3b5f063">Reset</a> () override</td></tr>
+<tr class="memdesc:a0f4639878151f2eda63b661dd3b5f063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сброс образа флэщ памяти    <br /></td></tr>
+<tr class="separator:a0f4639878151f2eda63b661dd3b5f063"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b4f029b40d6a789c89e9ecc740e8f50" id="r_a2b4f029b40d6a789c89e9ecc740e8f50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b4f029b40d6a789c89e9ecc740e8f50">GetIndexAddress</a> () const</td></tr>
+<tr class="memdesc:a2b4f029b40d6a789c89e9ecc740e8f50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение адреса индекса  <br /></td></tr>
+<tr class="separator:a2b4f029b40d6a789c89e9ecc740e8f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab19ffa7f344d62d16cc7047d213ab76d" id="r_ab19ffa7f344d62d16cc7047d213ab76d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab19ffa7f344d62d16cc7047d213ab76d">GetTimeElement</a> (uint32_t index)</td></tr>
+<tr class="memdesc:ab19ffa7f344d62d16cc7047d213ab76d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение времени из заголовка элемента  <br /></td></tr>
+<tr class="separator:ab19ffa7f344d62d16cc7047d213ab76d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af43106f7748b7b8a996114bac78fde62" id="r_af43106f7748b7b8a996114bac78fde62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af43106f7748b7b8a996114bac78fde62">GetValueElement</a> (uint32_t index)</td></tr>
+<tr class="memdesc:af43106f7748b7b8a996114bac78fde62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение данные из заголовка элемента  <br /></td></tr>
+<tr class="separator:af43106f7748b7b8a996114bac78fde62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0445e647f4f21271afc66b68eeec8703" id="r_a0445e647f4f21271afc66b68eeec8703"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0445e647f4f21271afc66b68eeec8703">TimeGetterSet</a> () const</td></tr>
+<tr class="memdesc:a0445e647f4f21271afc66b68eeec8703"><td class="mdescLeft">&#160;</td><td class="mdescRight">Был ли задан геттер времени из заголовка  <br /></td></tr>
+<tr class="separator:a0445e647f4f21271afc66b68eeec8703"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9da2f49414d3dd7189d008637c4f4e1f" id="r_a9da2f49414d3dd7189d008637c4f4e1f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9da2f49414d3dd7189d008637c4f4e1f">ValueGetterSet</a> () const</td></tr>
+<tr class="memdesc:a9da2f49414d3dd7189d008637c4f4e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Был ли задан геттер данных из заголовка  <br /></td></tr>
+<tr class="separator:a9da2f49414d3dd7189d008637c4f4e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af812977716a644be55d0822c4d039517" id="r_af812977716a644be55d0822c4d039517"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af812977716a644be55d0822c4d039517">GetElementIndicesInRange</a> (<a class="el" href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a> startTime, <a class="el" href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a> endTime, uint32_t lastWrittenIndex, int64_t &amp;restartPoint, std::vector&lt; <a class="el" href="../../d9/d2a/structlogika_1_1protocols_1_1M4_1_1FrbIndex.html">FrbIndex</a> &gt; &amp;indices, double &amp;percentCompleted)</td></tr>
+<tr class="memdesc:af812977716a644be55d0822c4d039517"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение индексов элементов из заданного диапазона  <br /></td></tr>
+<tr class="separator:af812977716a644be55d0822c4d039517"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad157cbc56060f8cf77e775d03de98ecc" id="r_ad157cbc56060f8cf77e775d03de98ecc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad157cbc56060f8cf77e775d03de98ecc">ManageOutdatedElements</a> (bool useIndexCache, std::vector&lt; uint32_t &gt; &amp;newIndices, uint32_t &amp;currentIndex)</td></tr>
+<tr class="memdesc:ad157cbc56060f8cf77e775d03de98ecc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновление массива индексов  <br /></td></tr>
+<tr class="separator:ad157cbc56060f8cf77e775d03de98ecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray')"><img src="../../closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html">logika::protocols::M4::FlashArray</a></td></tr>
+<tr class="memitem:a40aa1efeef5d2d4c6d79d8a70367fe83 inherit pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_a40aa1efeef5d2d4c6d79d8a70367fe83"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a40aa1efeef5d2d4c6d79d8a70367fe83">FlashArray</a> (std::shared_ptr&lt; <a class="el" href="../../d7/d0a/classlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache.html">M4Protocol::MeterCache</a> &gt; meterInstance, <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a> dataAddr, uint32_t elementsCount, <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a> elementSize)</td></tr>
+<tr class="memdesc:a40aa1efeef5d2d4c6d79d8a70367fe83 inherit pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор массива flash.  <br /></td></tr>
+<tr class="separator:a40aa1efeef5d2d4c6d79d8a70367fe83 inherit pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad298df742a500b8bf058eb043f9bf813 inherit pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_ad298df742a500b8bf058eb043f9bf813"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="../../d7/d0a/classlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache.html">M4Protocol::MeterCache</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#ad298df742a500b8bf058eb043f9bf813">GetMeterInstance</a> () const</td></tr>
+<tr class="memdesc:ad298df742a500b8bf058eb043f9bf813 inherit pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение кэша прибора  <br /></td></tr>
+<tr class="separator:ad298df742a500b8bf058eb043f9bf813 inherit pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47e1384218339cb16faea3630f2673f6 inherit pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_a47e1384218339cb16faea3630f2673f6"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a47e1384218339cb16faea3630f2673f6">GetElementsCount</a> () const</td></tr>
+<tr class="memdesc:a47e1384218339cb16faea3630f2673f6 inherit pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение количества элементов  <br /></td></tr>
+<tr class="separator:a47e1384218339cb16faea3630f2673f6 inherit pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98919fdcb505ab0c8d9a1e5ffe5be609 inherit pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_a98919fdcb505ab0c8d9a1e5ffe5be609"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a98919fdcb505ab0c8d9a1e5ffe5be609">GetElementSize</a> () const</td></tr>
+<tr class="memdesc:a98919fdcb505ab0c8d9a1e5ffe5be609 inherit pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение размера элемента  <br /></td></tr>
+<tr class="separator:a98919fdcb505ab0c8d9a1e5ffe5be609 inherit pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ead36054d7f1cdd95c8f39dc6646ad1 inherit pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_a0ead36054d7f1cdd95c8f39dc6646ad1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a0ead36054d7f1cdd95c8f39dc6646ad1">GetElement</a> (uint32_t index, <a class="el" href="../../d7/d43/namespacelogika.html#a69c638914202f69eb544a992e2361a1c">ByteVector</a> &amp;buffer, <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a> &amp;offset)</td></tr>
+<tr class="memdesc:a0ead36054d7f1cdd95c8f39dc6646ad1 inherit pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение элемента  <br /></td></tr>
+<tr class="separator:a0ead36054d7f1cdd95c8f39dc6646ad1 inherit pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb0f2109b5d4f90169225e21d8855b57 inherit pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_aeb0f2109b5d4f90169225e21d8855b57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#aeb0f2109b5d4f90169225e21d8855b57">UpdateElements</a> (std::vector&lt; <a class="el" href="../../d9/d2a/structlogika_1_1protocols_1_1M4_1_1FrbIndex.html">FrbIndex</a> &gt; &amp;indices)</td></tr>
+<tr class="memdesc:aeb0f2109b5d4f90169225e21d8855b57 inherit pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновление массива элементов  <br /></td></tr>
+<tr class="separator:aeb0f2109b5d4f90169225e21d8855b57 inherit pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a386b59f05346825cb1d14833fdca0e9b inherit pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_a386b59f05346825cb1d14833fdca0e9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a386b59f05346825cb1d14833fdca0e9b">InvalidateElement</a> (uint32_t index)</td></tr>
+<tr class="memdesc:a386b59f05346825cb1d14833fdca0e9b inherit pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инвалидация элемента  <br /></td></tr>
+<tr class="separator:a386b59f05346825cb1d14833fdca0e9b inherit pub_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Дополнительные унаследованные члены</h2></td></tr>
+<tr class="inherit_header pub_static_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray')"><img src="../../closed.png" alt="-"/>&#160;Статические открытые данные унаследованные от <a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html">logika::protocols::M4::FlashArray</a></td></tr>
+<tr class="memitem:aa8c35f56c655f398026b73b9b7d44b9a inherit pub_static_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_aa8c35f56c655f398026b73b9b7d44b9a"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#aa8c35f56c655f398026b73b9b7d44b9a">PAGE_SIZE</a> = <a class="el" href="../../d7/d1b/classlogika_1_1meters_1_1Logika4L.html#a1cdabd2dcdf081e659a442c892b253bf">meters::Logika4L::FLASH_PAGE_SIZE</a></td></tr>
+<tr class="memdesc:aa8c35f56c655f398026b73b9b7d44b9a inherit pub_static_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Размер страницы Flash-памяти  <br /></td></tr>
+<tr class="separator:aa8c35f56c655f398026b73b9b7d44b9a inherit pub_static_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray')"><img src="../../closed.png" alt="-"/>&#160;Защищенные члены унаследованные от <a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html">logika::protocols::M4::FlashArray</a></td></tr>
+<tr class="memitem:a9763802e587a429865d33ba98d38154b inherit pro_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_a9763802e587a429865d33ba98d38154b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a9763802e587a429865d33ba98d38154b">StartPage</a> (uint32_t elementIndex)</td></tr>
+<tr class="memdesc:a9763802e587a429865d33ba98d38154b inherit pro_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение номера первой страницы, включающей элемент  <br /></td></tr>
+<tr class="separator:a9763802e587a429865d33ba98d38154b inherit pro_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a406b6cf107450fa7ddd3c76c63e39429 inherit pro_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_a406b6cf107450fa7ddd3c76c63e39429"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a406b6cf107450fa7ddd3c76c63e39429">EndPage</a> (uint32_t elementIndex)</td></tr>
+<tr class="memdesc:a406b6cf107450fa7ddd3c76c63e39429 inherit pro_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение номера последней страницы, включающей элемент  <br /></td></tr>
+<tr class="separator:a406b6cf107450fa7ddd3c76c63e39429 inherit pro_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7269c353abf7adf7fe3dea04ea20a99 inherit pro_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_ab7269c353abf7adf7fe3dea04ea20a99"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#ab7269c353abf7adf7fe3dea04ea20a99">ElementAvailable</a> (uint32_t index)</td></tr>
+<tr class="memdesc:ab7269c353abf7adf7fe3dea04ea20a99 inherit pro_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверка доступности элемента  <br /></td></tr>
+<tr class="separator:ab7269c353abf7adf7fe3dea04ea20a99 inherit pro_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a907e0f6600029a9c4d858241e0ff8596 inherit pro_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_a907e0f6600029a9c4d858241e0ff8596"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a907e0f6600029a9c4d858241e0ff8596">UpdatePages</a> (uint32_t startPage, uint32_t endPage)</td></tr>
+<tr class="memdesc:a907e0f6600029a9c4d858241e0ff8596 inherit pro_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновление страниц  <br /></td></tr>
+<tr class="separator:a907e0f6600029a9c4d858241e0ff8596 inherit pro_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a070b9ad73269b5b32b46001bbe753e04 inherit pro_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_a070b9ad73269b5b32b46001bbe753e04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a070b9ad73269b5b32b46001bbe753e04">UpdateElementExplicit</a> (uint32_t index)</td></tr>
+<tr class="memdesc:a070b9ad73269b5b32b46001bbe753e04 inherit pro_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновление элемента  <br /></td></tr>
+<tr class="separator:a070b9ad73269b5b32b46001bbe753e04 inherit pro_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_static_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_static_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray')"><img src="../../closed.png" alt="-"/>&#160;Защищенные статические члены унаследованные от <a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html">logika::protocols::M4::FlashArray</a></td></tr>
+<tr class="memitem:aa9c9d89ae4c5b9c3cf549aa34d2e322f inherit pro_static_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_aa9c9d89ae4c5b9c3cf549aa34d2e322f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#aa9c9d89ae4c5b9c3cf549aa34d2e322f">ExtendPageRange</a> (uint32_t page, int64_t &amp;startPage, int64_t &amp;endPage)</td></tr>
+<tr class="memdesc:aa9c9d89ae4c5b9c3cf549aa34d2e322f inherit pro_static_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Расширение диапазона страниц  <br /></td></tr>
+<tr class="separator:aa9c9d89ae4c5b9c3cf549aa34d2e322f inherit pro_static_methods_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray')"><img src="../../closed.png" alt="-"/>&#160;Защищенные данные унаследованные от <a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html">logika::protocols::M4::FlashArray</a></td></tr>
+<tr class="memitem:a4b9f28117ebbac11cfbb0a6c09a0a712 inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_a4b9f28117ebbac11cfbb0a6c09a0a712"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="../../d7/d0a/classlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache.html">M4Protocol::MeterCache</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a4b9f28117ebbac11cfbb0a6c09a0a712">mtrInstance_</a></td></tr>
+<tr class="memdesc:a4b9f28117ebbac11cfbb0a6c09a0a712 inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Кэш прибора  <br /></td></tr>
+<tr class="separator:a4b9f28117ebbac11cfbb0a6c09a0a712 inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d14ad6f039605fecd45123259988062 inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_a5d14ad6f039605fecd45123259988062"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d43/namespacelogika.html#a69c638914202f69eb544a992e2361a1c">ByteVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a5d14ad6f039605fecd45123259988062">flash_</a></td></tr>
+<tr class="memdesc:a5d14ad6f039605fecd45123259988062 inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Буфер флэш памяти  <br /></td></tr>
+<tr class="separator:a5d14ad6f039605fecd45123259988062 inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a8237ca48c981b8b898a2411a777a13 inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_a3a8237ca48c981b8b898a2411a777a13"><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a3a8237ca48c981b8b898a2411a777a13">pageMap_</a></td></tr>
+<tr class="memdesc:a3a8237ca48c981b8b898a2411a777a13 inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Использованные страницы  <br /></td></tr>
+<tr class="separator:a3a8237ca48c981b8b898a2411a777a13 inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dd7d33f3e5676b13b1c8ab192a22128 inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_a7dd7d33f3e5676b13b1c8ab192a22128"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a7dd7d33f3e5676b13b1c8ab192a22128">dataAddress_</a></td></tr>
+<tr class="memdesc:a7dd7d33f3e5676b13b1c8ab192a22128 inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Адрес начала данных  <br /></td></tr>
+<tr class="separator:a7dd7d33f3e5676b13b1c8ab192a22128 inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3896ced5a4a060851628372225ae7ce1 inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_a3896ced5a4a060851628372225ae7ce1"><td class="memItemLeft" align="right" valign="top">const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a3896ced5a4a060851628372225ae7ce1">elementsCount_</a></td></tr>
+<tr class="memdesc:a3896ced5a4a060851628372225ae7ce1 inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Количество записей  <br /></td></tr>
+<tr class="separator:a3896ced5a4a060851628372225ae7ce1 inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a473ace35c74cefd5269ad5d9d6fb7798 inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_a473ace35c74cefd5269ad5d9d6fb7798"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a473ace35c74cefd5269ad5d9d6fb7798">elementSize_</a></td></tr>
+<tr class="memdesc:a473ace35c74cefd5269ad5d9d6fb7798 inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Размер записи  <br /></td></tr>
+<tr class="separator:a473ace35c74cefd5269ad5d9d6fb7798 inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90a083f44077c934ec3158afd2e29a2a inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_a90a083f44077c934ec3158afd2e29a2a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a90a083f44077c934ec3158afd2e29a2a">zeroPageNumber_</a></td></tr>
+<tr class="memdesc:a90a083f44077c934ec3158afd2e29a2a inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Номер нулевой страницы  <br /></td></tr>
+<tr class="separator:a90a083f44077c934ec3158afd2e29a2a inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4658effe6c5629d05eef15d6db11da9 inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray" id="r_aa4658effe6c5629d05eef15d6db11da9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#aa4658effe6c5629d05eef15d6db11da9">firstElementOffset_</a></td></tr>
+<tr class="memdesc:aa4658effe6c5629d05eef15d6db11da9 inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отступ первого элемента  <br /></td></tr>
+<tr class="separator:aa4658effe6c5629d05eef15d6db11da9 inherit pro_attribs_classlogika_1_1protocols_1_1M4_1_1FlashArray"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Кольцевой буфер flash. </p>
+</div><h2 class="groupheader">Определения типов</h2>
+<a id="adb5b1c656eba9f154f394bbf895d57b2" name="adb5b1c656eba9f154f394bbf895d57b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb5b1c656eba9f154f394bbf895d57b2">&#9670;&#160;</a></span>GetObjectF</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#adb5b1c656eba9f154f394bbf895d57b2">logika::protocols::M4::FlashRingBuffer::GetObjectF</a> = std::function&lt; T( <a class="el" href="../../d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html">FlashArchive4</a>*, const <a class="el" href="../../d7/d43/namespacelogika.html#a69c638914202f69eb544a992e2361a1c">ByteVector</a>&amp;, <a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a> ) &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a350b40c1df618a3f567d885809bbd407" name="a350b40c1df618a3f567d885809bbd407"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a350b40c1df618a3f567d885809bbd407">&#9670;&#160;</a></span>FlashRingBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">logika::protocols::M4::FlashRingBuffer::FlashRingBuffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html">FlashArchive4</a> *</td>          <td class="paramname"><span class="paramname"><em>parent</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a></td>          <td class="paramname"><span class="paramname"><em>indexAddress</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a></td>          <td class="paramname"><span class="paramname"><em>dataAddress</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>elementsCount</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a></td>          <td class="paramname"><span class="paramname"><em>elementSize</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="#adb5b1c656eba9f154f394bbf895d57b2">GetObjectF</a>&lt; <a class="el" href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a> &gt; &gt;</td>          <td class="paramname"><span class="paramname"><em>headerTimeGetter</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="#adb5b1c656eba9f154f394bbf895d57b2">GetObjectF</a>&lt; <a class="el" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> &gt; &gt;</td>          <td class="paramname"><span class="paramname"><em>headerValueGetter</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор флэш архива Logika4L. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">parent</td><td>Флэш архив </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">indexAddress</td><td>Адрес индекса </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dataAddress</td><td>Адрес данных </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elementsCount</td><td>Количество элементов </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elementSize</td><td>Размер элемента </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">headerTimeGetter</td><td>Функция для получения времени из заголовка </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">headerValueGetter</td><td>Функция для получения значения из заголовка </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="af812977716a644be55d0822c4d039517" name="af812977716a644be55d0822c4d039517"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af812977716a644be55d0822c4d039517">&#9670;&#160;</a></span>GetElementIndicesInRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool logika::protocols::M4::FlashRingBuffer::GetElementIndicesInRange </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a></td>          <td class="paramname"><span class="paramname"><em>startTime</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a></td>          <td class="paramname"><span class="paramname"><em>endTime</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>lastWrittenIndex</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t &amp;</td>          <td class="paramname"><span class="paramname"><em>restartPoint</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="../../d9/d2a/structlogika_1_1protocols_1_1M4_1_1FrbIndex.html">FrbIndex</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>indices</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;</td>          <td class="paramname"><span class="paramname"><em>percentCompleted</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение индексов элементов из заданного диапазона </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">startTime</td><td>Начало диапазона </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">endTime</td><td>Конец диапазона </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lastWrittenIndex</td><td>Номер последнего записанного элемента </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">restartPoint</td><td>Точка перезапуска </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">indices</td><td>Номера элементов из диапазона </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">percentCompleted</td><td>Процент завершения </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Завершена ли обработка </dd></dl>
+<p>Проход по всем (максимальному количеству) элементов в буфере</p>
+<p>В СПГ741(как минимум) забавный глюк - последний эл-т часовых индексов не пишется (==0x00000000)</p>
+<p>Поэтому не заканчиваем обработку если пустой индекс находится на границе буфера.</p>
+<p>Достигнут не инициализированный/очищенный элемент (достигнуто начало кольцевого буфера)</p>
+<p>Дальнейшая обработка не требуется</p>
+<p>Пропуск элементов с невалидными метками времени</p>
+<p>cache miss - scan for update elements from [ci to endIndex]</p>
+
+</div>
+</div>
+<a id="a2b4f029b40d6a789c89e9ecc740e8f50" name="a2b4f029b40d6a789c89e9ecc740e8f50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b4f029b40d6a789c89e9ecc740e8f50">&#9670;&#160;</a></span>GetIndexAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d43/namespacelogika.html#a0837aef6487629ca790dc775a3b294b4">MeterAddressType</a> logika::protocols::M4::FlashRingBuffer::GetIndexAddress </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение адреса индекса </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Адрес индекса </dd></dl>
+
+</div>
+</div>
+<a id="ab19ffa7f344d62d16cc7047d213ab76d" name="ab19ffa7f344d62d16cc7047d213ab76d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab19ffa7f344d62d16cc7047d213ab76d">&#9670;&#160;</a></span>GetTimeElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d43/namespacelogika.html#ae27d6ea049a1b4b142dc128ced8f4df2">TimeType</a> logika::protocols::M4::FlashRingBuffer::GetTimeElement </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение времени из заголовка элемента </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Номер элемента </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Время из заголовка </dd></dl>
+
+<p class="reference">Используется в <a class="el" href="#af812977716a644be55d0822c4d039517">GetElementIndicesInRange()</a> и <a class="el" href="#ad157cbc56060f8cf77e775d03de98ecc">ManageOutdatedElements()</a>.</p>
+
+</div>
+</div>
+<a id="af43106f7748b7b8a996114bac78fde62" name="af43106f7748b7b8a996114bac78fde62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af43106f7748b7b8a996114bac78fde62">&#9670;&#160;</a></span>GetValueElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> logika::protocols::M4::FlashRingBuffer::GetValueElement </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получение данные из заголовка элемента </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Номер элемента </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Данных из заголовка </dd></dl>
+
+</div>
+</div>
+<a id="ad157cbc56060f8cf77e775d03de98ecc" name="ad157cbc56060f8cf77e775d03de98ecc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad157cbc56060f8cf77e775d03de98ecc">&#9670;&#160;</a></span>ManageOutdatedElements()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void logika::protocols::M4::FlashRingBuffer::ManageOutdatedElements </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>useIndexCache</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uint32_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>newIndices</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t &amp;</td>          <td class="paramname"><span class="paramname"><em>currentIndex</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обновление массива индексов </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">useIndexCache</td><td>Нужно ли использовать кэш индексов </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">newIndices</td><td>Обновленный массив индексов </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">currentIndex</td><td>Номер текущего элемента </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; Погрешность</p>
+<p>Чтение без кэша</p>
+
+</div>
+</div>
+<a id="a0f4639878151f2eda63b661dd3b5f063" name="a0f4639878151f2eda63b661dd3b5f063"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f4639878151f2eda63b661dd3b5f063">&#9670;&#160;</a></span>Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void logika::protocols::M4::FlashRingBuffer::Reset </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сброс образа флэщ памяти   </p>
+
+<p>Переопределяет метод предка <a class="el" href="../../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#ad5052f342137000947dd12dfcdc813cc">logika::protocols::M4::FlashArray</a>.</p>
+
+</div>
+</div>
+<a id="a0445e647f4f21271afc66b68eeec8703" name="a0445e647f4f21271afc66b68eeec8703"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0445e647f4f21271afc66b68eeec8703">&#9670;&#160;</a></span>TimeGetterSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool logika::protocols::M4::FlashRingBuffer::TimeGetterSet </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Был ли задан геттер времени из заголовка </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Задан ли геттер времени из заголовка </dd></dl>
+
+</div>
+</div>
+<a id="a9da2f49414d3dd7189d008637c4f4e1f" name="a9da2f49414d3dd7189d008637c4f4e1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9da2f49414d3dd7189d008637c4f4e1f">&#9670;&#160;</a></span>ValueGetterSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool logika::protocols::M4::FlashRingBuffer::ValueGetterSet </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Был ли задан геттер данных из заголовка </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Задан ли геттер данных из заголовка </dd></dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>logika/include/logika/protocols/m4/<a class="el" href="../../df/da9/flash__ring__buffer_8h_source.html">flash_ring_buffer.h</a></li>
+<li>logika/src/protocols/m4/<a class="el" href="../../d1/de8/flash__ring__buffer_8cpp.html">flash_ring_buffer.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/d43/namespacelogika.html">logika</a></li><li class="navelem"><a class="el" href="../../da/d59/namespacelogika_1_1protocols.html">protocols</a></li><li class="navelem"><a class="el" href="../../de/d62/namespacelogika_1_1protocols_1_1M4.html">M4</a></li><li class="navelem"><a class="el" href="../../d8/d6e/classlogika_1_1protocols_1_1M4_1_1FlashRingBuffer.html">FlashRingBuffer</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

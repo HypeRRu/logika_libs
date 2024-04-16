@@ -170,6 +170,7 @@ var menudata={children:[
 {text:"b",url:"functions_type.html#index_b"},
 {text:"c",url:"functions_type.html#index_c"},
 {text:"f",url:"functions_type.html#index_f"},
+{text:"g",url:"functions_type.html#index_g"},
 {text:"m",url:"functions_type.html#index_m"},
 {text:"r",url:"functions_type.html#index_r"},
 {text:"s",url:"functions_type.html#index_s"},

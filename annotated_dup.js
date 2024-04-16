@@ -100,10 +100,14 @@ var annotated_dup =
         [ "M4", "de/d62/namespacelogika_1_1protocols_1_1M4.html", [
           [ "ArchiveRecord", "d1/d10/structlogika_1_1protocols_1_1M4_1_1ArchiveRecord.html", "d1/d10/structlogika_1_1protocols_1_1M4_1_1ArchiveRecord" ],
           [ "ArchiveRequestState4L", "db/d8b/structlogika_1_1protocols_1_1M4_1_1ArchiveRequestState4L.html", "db/d8b/structlogika_1_1protocols_1_1M4_1_1ArchiveRequestState4L" ],
+          [ "AsyncFlashArchive4", "df/db8/classlogika_1_1protocols_1_1M4_1_1AsyncFlashArchive4.html", "df/db8/classlogika_1_1protocols_1_1M4_1_1AsyncFlashArchive4" ],
+          [ "FlashArchive4", "d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html", "d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4" ],
           [ "FlashArray", "d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html", "d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray" ],
+          [ "FlashRingBuffer", "d8/d6e/classlogika_1_1protocols_1_1M4_1_1FlashRingBuffer.html", "d8/d6e/classlogika_1_1protocols_1_1M4_1_1FlashRingBuffer" ],
           [ "FrbIndex", "d9/d2a/structlogika_1_1protocols_1_1M4_1_1FrbIndex.html", "d9/d2a/structlogika_1_1protocols_1_1M4_1_1FrbIndex" ],
           [ "M4Protocol", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol" ],
           [ "Packet", "d4/d9a/structlogika_1_1protocols_1_1M4_1_1Packet.html", "d4/d9a/structlogika_1_1protocols_1_1M4_1_1Packet" ],
+          [ "SyncFlashArchive4", "d7/dd9/classlogika_1_1protocols_1_1M4_1_1SyncFlashArchive4.html", "d7/dd9/classlogika_1_1protocols_1_1M4_1_1SyncFlashArchive4" ],
           [ "TagWriteData", "db/dd8/structlogika_1_1protocols_1_1M4_1_1TagWriteData.html", "db/dd8/structlogika_1_1protocols_1_1M4_1_1TagWriteData" ],
           [ "TvReadState4L", "d3/d00/structlogika_1_1protocols_1_1M4_1_1TvReadState4L.html", "d3/d00/structlogika_1_1protocols_1_1M4_1_1TvReadState4L" ]
         ] ],

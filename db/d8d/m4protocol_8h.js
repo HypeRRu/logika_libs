@@ -11,6 +11,5 @@ var m4protocol_8h =
       [ "DontGetEus", "db/d8d/m4protocol_8h.html#a30af9d1e6648a98e8e95275c7aefdac7a6a472019f50ff3b88423f5e0ea612b96", null ]
     ] ],
     [ "Logika4", "db/d8d/m4protocol_8h.html#a46017f1bda94273b11b9841a32c4c5c8", null ],
-    [ "Logika4L", "db/d8d/m4protocol_8h.html#a803e8fb2f446c48d3fb81544f9a2cbe4", null ],
     [ "TagWriteData", "db/d8d/m4protocol_8h.html#addd02ccf48e322c4fdb4e6d01737bb7f", null ]
 ];

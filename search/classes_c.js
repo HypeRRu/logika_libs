@@ -28,5 +28,6 @@ var searchData=
   ['spt943rev3_25',['Spt943rev3',['../da/d78/classlogika_1_1meters_1_1Spt943rev3.html',1,'logika::meters']]],
   ['spt944_26',['Spt944',['../d2/dc9/classlogika_1_1meters_1_1Spt944.html',1,'logika::meters']]],
   ['storage_27',['Storage',['../da/d9d/classlogika_1_1storage_1_1Storage.html',1,'logika::storage']]],
-  ['storagekeeper_28',['StorageKeeper',['../d5/d47/classlogika_1_1storage_1_1StorageKeeper.html',1,'logika::storage']]]
+  ['storagekeeper_28',['StorageKeeper',['../d5/d47/classlogika_1_1storage_1_1StorageKeeper.html',1,'logika::storage']]],
+  ['syncflasharchive4_29',['SyncFlashArchive4',['../d7/dd9/classlogika_1_1protocols_1_1M4_1_1SyncFlashArchive4.html',1,'logika::protocols::M4']]]
 ];

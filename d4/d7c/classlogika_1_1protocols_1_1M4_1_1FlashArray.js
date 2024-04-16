@@ -6,6 +6,7 @@ var classlogika_1_1protocols_1_1M4_1_1FlashArray =
     [ "GetElement", "d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a0ead36054d7f1cdd95c8f39dc6646ad1", null ],
     [ "GetElementsCount", "d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a47e1384218339cb16faea3630f2673f6", null ],
     [ "GetElementSize", "d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a98919fdcb505ab0c8d9a1e5ffe5be609", null ],
+    [ "GetMeterInstance", "d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#ad298df742a500b8bf058eb043f9bf813", null ],
     [ "InvalidateElement", "d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a386b59f05346825cb1d14833fdca0e9b", null ],
     [ "Reset", "d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#ad5052f342137000947dd12dfcdc813cc", null ],
     [ "StartPage", "d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a9763802e587a429865d33ba98d38154b", null ],
@@ -17,7 +18,7 @@ var classlogika_1_1protocols_1_1M4_1_1FlashArray =
     [ "elementSize_", "d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a473ace35c74cefd5269ad5d9d6fb7798", null ],
     [ "firstElementOffset_", "d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#aa4658effe6c5629d05eef15d6db11da9", null ],
     [ "flash_", "d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a5d14ad6f039605fecd45123259988062", null ],
-    [ "mtrInstance_", "d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#ac26d131bec45cb9df7db5677b935a0bf", null ],
+    [ "mtrInstance_", "d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a4b9f28117ebbac11cfbb0a6c09a0a712", null ],
     [ "pageMap_", "d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a3a8237ca48c981b8b898a2411a777a13", null ],
     [ "zeroPageNumber_", "d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a90a083f44077c934ec3158afd2e29a2a", null ]
 ];

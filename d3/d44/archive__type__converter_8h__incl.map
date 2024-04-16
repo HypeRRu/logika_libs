@@ -1,18 +1,20 @@
 <map id="logika/include/logika/meters/converters/archive_type_converter.h" name="logika/include/logika/meters/converters/archive_type_converter.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="178,5,354,61"/>
-<area shape="rect" id="Node000002" href="$da/da6/meters_2converters_2defs_8h.html" title=" " alt="" coords="5,109,170,150"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,64,140,104,137,99,213,59"/>
-<area shape="rect" id="Node000003" href="$dc/d3d/meters_2types_8h.html" title=" " alt="" coords="194,117,338,142"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="269,62,269,101,264,101,264,62"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="362,109,525,150"/>
-<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="319,59,394,99,392,104,316,64"/>
-<area shape="rect" id="Node000004" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="25,286,179,312"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="221,145,124,174,84,188,64,199,58,217,61,236,70,255,83,273,78,276,66,258,56,238,53,216,60,196,82,183,122,169,219,140"/>
-<area shape="rect" id="Node000005" href="$da/d08/iserializable_8h.html" title=" " alt="" coords="74,205,264,231"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="254,145,195,197,192,193,251,141"/>
-<area shape="rect" id="Node000006" href="$de/d23/shared__constructible_8hpp.html" title=" " alt="" coords="289,198,441,238"/>
-<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="282,141,333,185,329,189,278,145"/>
-<area shape="rect" id="Node000007" href="$d2/d4b/meters_2defs_8h.html" title=" " alt="" coords="465,205,603,231"/>
-<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="305,140,483,197,481,203,303,145"/>
-<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="161,233,124,276,120,273,157,230"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="257,5,433,61"/>
+<area shape="rect" id="Node000002" href="$da/da6/meters_2converters_2defs_8h.html" title=" " alt="" coords="84,109,249,150"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="295,64,219,104,216,99,292,59"/>
+<area shape="rect" id="Node000003" href="$dc/d3d/meters_2types_8h.html" title=" " alt="" coords="273,117,417,142"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="348,62,348,101,343,101,343,62"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="441,109,604,150"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="398,59,473,99,471,104,395,64"/>
+<area shape="rect" id="Node000004" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="5,286,160,312"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="292,145,262,152,227,157,195,158,139,155,114,157,90,163,67,176,45,199,38,217,41,236,50,255,63,273,59,276,46,258,36,238,32,216,40,196,64,172,88,158,113,151,139,150,195,153,226,152,261,147,291,140"/>
+<area shape="rect" id="Node000005" href="$da/d08/iserializable_8h.html" title=" " alt="" coords="54,205,244,231"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="319,145,191,201,189,196,316,140"/>
+<area shape="rect" id="Node000006" href="$de/d23/shared__constructible_8hpp.html" title=" " alt="" coords="269,198,421,238"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="348,143,348,183,343,183,343,143"/>
+<area shape="rect" id="Node000007" href="$d2/d4b/meters_2defs_8h.html" title=" " alt="" coords="445,205,584,231"/>
+<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="370,140,478,195,476,200,368,145"/>
+<area shape="rect" id="Node000008" href="$dd/da1/common_2defs_8h.html" title=" " alt="" coords="608,205,757,231"/>
+<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="393,140,621,198,620,203,392,145"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="141,233,104,276,100,273,137,230"/>
 </map>

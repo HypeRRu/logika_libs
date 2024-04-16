@@ -6,7 +6,7 @@ var indexSectionsWithContent =
   3: "abcdefilmnoprstuvwx",
   4: "abcdefghilmnoprstuvwx~",
   5: "abcdefghiklmnopqrstuvwz",
-  6: "abcflmrstw",
+  6: "abcfglmrstw",
   7: "abcdeimst",
   8: "abcdefghilmnoprstuvwy",
   9: "s",
