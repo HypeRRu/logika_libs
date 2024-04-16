@@ -178,11 +178,12 @@ float Logika4L::ConvertMFloat( const ByteVector& buffer, MeterAddressType offset
 TimeType Logika4L::SyncHeaderToDateTime( std::shared_ptr< ArchiveType > arType
     , ByteType rd, ByteType rh, const ByteVector& buffer, MeterAddressType offset )
 {
+    constexpr TimeType invalidTime = static_cast< TimeType >( -1 );
     constexpr size_t headerSize = 4;
     const LocString arTypeName = arType ? arType->GetName() : LOCALIZED( "?" );
     if ( offset >= buffer.size() || buffer.size() - offset < headerSize )
     {
-        return 0;
+        return invalidTime;
     }
 
     uint8_t year    = static_cast< uint8_t >( buffer.at( offset + 0 ) );
@@ -192,7 +193,7 @@ TimeType Logika4L::SyncHeaderToDateTime( std::shared_ptr< ArchiveType > arType
 
     if ( mon == 0 || mon > 12 || day == 0 || day > 31 || hour > 23 )
     {
-        return 0;
+        return invalidTime;
     }
 
     struct tm timeStruct = GetTimeStruct();
@@ -495,6 +496,8 @@ ByteType Logika4L::GetModelCharValue( const ByteVector& buffer, MeterAddressType
 
 TimeType Logika4L::GetSRTimestampValue( const ByteVector& buffer, MeterAddressType offset, bool& oper )
 {
+    constexpr TimeType invalidTime = static_cast< TimeType >( -1 );
+
     if ( offset >= buffer.size() || buffer.size() - offset < SizeOfType( BinaryType4L::ServiceRecordTimestamp ) )
     {
         throw std::out_of_range{ "Data out of range" };
@@ -503,7 +506,7 @@ TimeType Logika4L::GetSRTimestampValue( const ByteVector& buffer, MeterAddressTy
 
     if ( buffer.at( offset ) != 0x10 )
     {
-        return 0;
+        return invalidTime;
     }
 
     struct tm timeStruct = GetTimeStruct();
@@ -520,7 +523,7 @@ TimeType Logika4L::GetSRTimestampValue( const ByteVector& buffer, MeterAddressTy
         || timeStruct.tm_mday == 0 || timeStruct.tm_mday > 31
         || timeStruct.tm_hour > 23 || timeStruct.tm_min  > 59 )
     {
-        return 0;
+        return invalidTime;
     }
 
     return std::mktime( &timeStruct ) * 1000;

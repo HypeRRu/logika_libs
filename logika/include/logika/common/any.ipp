@@ -52,14 +52,14 @@ namespace logika
 
 template < typename T >
 Any::Any( const T& t )
-    : holder_{ new Holder< T >( t ) }
+    : holder_{ std::make_unique< Holder< T > >( t ) }
 {} // Any( const T& t )
 
 
 template < typename T >
 Any& Any::operator= ( const T& value )
 {
-    holder_ = new Holder< T >( value );
+    holder_ = std::make_unique< Holder< T > >( value );
     return *this;
 } // operator= ( const T& value )
 
@@ -67,7 +67,7 @@ Any& Any::operator= ( const T& value )
 template < typename T >
 Any& Any::operator= ( T&& value )
 {
-    holder_ = new Holder< T >( value );
+    holder_ = std::make_unique< Holder< T > >( value );
     return *this;
 } // operator= ( T&& value )
 

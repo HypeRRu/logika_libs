@@ -11,6 +11,7 @@
 #include <logika/common/shared_constructible.hpp>
 
 #include <logika/meters/defs.h>
+#include <logika/common/defs.h>
 
 /// @cond
 #include <string>
@@ -23,6 +24,8 @@
 
 namespace logika
 {
+
+class LOGIKA_COMMON_EXPORT Any;
 
 namespace meters
 {
@@ -207,15 +210,15 @@ public:
     /// @param[in] v Метрика
     /// @param[in] q Значение метрики
     /// @param[in] t Метка времени (мс)
-    VQT( ISerializable* v, int32_t q, TimeType t );
+    VQT( std::shared_ptr< logika::Any > v, int32_t q, TimeType t );
 
     /// @copydoc ISerializable::ToString()
     virtual LocString ToString() const override;
 
 public:
-    ISerializable* value;   ///< Метрика
-    int32_t quality;        ///< Значение метрики
-    TimeType timestamp;     ///< Метка времени (мс)
+    std::shared_ptr< logika::Any > value;   ///< Метрика
+    int32_t quality;                        ///< Значение метрики
+    TimeType timestamp;                     ///< Метка времени (мс)
 
 }; // struct VQT
 

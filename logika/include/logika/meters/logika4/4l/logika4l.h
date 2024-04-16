@@ -56,6 +56,11 @@ public:
     static float ConvertMFloat( const ByteVector& buffer, MeterAddressType offset );
 
     /// @brief Извлечение даты из заголовка
+    /// @param[in] arType Тип архива
+    /// @param[in] rd Суточный архив
+    /// @param[in] rh Часовой архив
+    /// @param[in] buffer Буфер с данными
+    /// @param[in] offset Отступ в буфере до данных
     /// @return 0, если заголовок битый или пустой, иначе метку времени (мс)
     static TimeType SyncHeaderToDateTime( std::shared_ptr< ArchiveType > arType
         , ByteType rd, ByteType rh, const ByteVector& buffer, MeterAddressType offset );

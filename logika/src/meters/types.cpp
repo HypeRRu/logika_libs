@@ -4,6 +4,7 @@
 #include <logika/meters/types.h>
 
 #include <logika/common/misc.h>
+#include <logika/common/any.hpp>
 
 namespace logika
 {
@@ -79,7 +80,7 @@ VQT::VQT()
 {} // VQT()
 
 
-VQT::VQT( ISerializable* v, int32_t q, TimeType t )
+VQT::VQT( std::shared_ptr< logika::Any > v, int32_t q, TimeType t )
     : value{ v }
     , quality{ q }
     , timestamp{ t }
@@ -89,7 +90,7 @@ VQT::VQT( ISerializable* v, int32_t q, TimeType t )
 LocString VQT::ToString() const
 {
     return GetTimeString( timestamp ) + LOCALIZED( " - " )
-        + ( value ? value->ToString() : LOCALIZED( "[null]" ) )
+        + ( value ? LOCALIZED( "[with value]" ) : LOCALIZED( "[null]" ) )
         + LOCALIZED( ": " ) + ToLocString( std::to_string( quality ) );
 } // ToString
 
