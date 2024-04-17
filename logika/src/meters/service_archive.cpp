@@ -27,7 +27,7 @@ LocString ServiceRecord::ToString() const
 
 /// Сервисный архив
 
-ServiceArchive::ServiceArchive( std::shared_ptr< IMeter > meter, std::shared_ptr< ArchiveType > archiveType )
+ServiceArchive::ServiceArchive( std::shared_ptr< Meter > meter, std::shared_ptr< ArchiveType > archiveType )
     : Archive( meter, archiveType )
     , records_{}
 {

@@ -50,6 +50,10 @@ public:
     template < typename T >
     void SetValue( const T& value );
 
+    /// @brief Запись данных тэга
+    /// @param[in] value Новое значение тэга
+    void ReplaceValue( std::shared_ptr< logika::Any > value );
+
     /// @brief Содержит ли тэг данные
     /// @return Наличие данных в тэге
     bool HasValue() const;
@@ -90,7 +94,7 @@ public:
     virtual LocString ToString() const override;
 
 protected:
-    logika::Any value_;                         ///< Данные тэга
+    std::shared_ptr< logika::Any > value_;      ///< Данные тэга
     TimeType timestamp_;                        ///< Метка времени (мс)
     bool oper_;                                 ///< Флаг операции
     LocString errDesc_;                         ///< Описание ошибки

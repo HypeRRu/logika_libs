@@ -69,12 +69,19 @@ enum : Type
 
 } // namespace RecvFlags
 
-/// @brief Флаги обновления тэгов
-enum class TagsUpdateFlags
+namespace TagsUpdateFlags
 {
-    None,       ///< Стандартное поведение
-    DontGetEus  ///< Не обновлять единицы измерения
-}; // enum class TagsUpdateFlags
+
+using Type = uint8_t;
+
+/// @brief Флаги обновления тэгов
+enum : Type
+{
+    None        = 0,    ///< Стандартное поведение
+    DontGetEus  = 1     ///< Не обновлять единицы измерения
+}; // anonymous enum
+
+} // namespace TagsUpdateFlags
 
 /// @brief Протокол M4
 class LOGIKA_PROTOCOLS_EXPORT M4Protocol: public Protocol
@@ -333,7 +340,33 @@ protected:
     /// @param[out] tags Обновляемые тэги
     /// @param[in] flags Флаги обновения
     void UpdateTagsImpl( const ByteType* nt, std::vector< std::shared_ptr< meters::DataTag > >& tags,
-        TagsUpdateFlags flags );
+        TagsUpdateFlags::Type flags );
+
+    /// @brief Обновление значений тэгов Logika4L
+    /// @param[in] nt NT прибора
+    /// @param[in] tags Обновляемые тэги
+    /// @param[in] meterInstance Кэш прибора
+    /// @param[in] flags Флаги обновления
+    void UpdateTagsValues4L( const ByteType* nt, const std::vector< std::shared_ptr< meters::DataTag > >& tags,
+        std::shared_ptr< MeterCache > meterInstance, TagsUpdateFlags::Type flags );
+
+    /// @brief Инвалидация тэгов в кэше прибора
+    /// @param[in] nt NT прибора
+    /// @param[in] tags Обновляемые тэги
+    void InvalidateFlashCache4L( const ByteType* nt, const std::vector< std::shared_ptr< meters::DataTag > >& tags );
+
+    /// @brief Обновление значений тэгов Logika4M
+    /// @param[in] nt NT прибора
+    /// @param[in] tags Обновляемые тэги
+    /// @param[in] meterInstance Кэш прибора
+    /// @param[in] flags Флаги обновления
+    void UpdateTags4M( const ByteType* nt, const std::vector< std::shared_ptr< meters::DataTag > >& tags,
+        std::shared_ptr< MeterCache > meterInstance, TagsUpdateFlags::Type flags );
+
+protected:
+    /// @brief Пост обработка значения тэга
+    /// @param[inout] tag Тэг
+    static void PostProcessValue( std::shared_ptr< meters::DataTag > tag );
 
 private:
     connections::BaudRate::Type initialBaudRate_;   ///< Начальное значение BaudRate для соединений с автоподнятием скорости

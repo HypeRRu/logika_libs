@@ -23,14 +23,14 @@ public:
     /// @brief Конструктор интервального архива
     /// @param[in] meter Прибор
     /// @param[in] archiveType Тип архива
-    IntervalArchive( std::shared_ptr< IMeter > meter, std::shared_ptr< ArchiveType > archiveType );
+    IntervalArchive( std::shared_ptr< Meter > meter, std::shared_ptr< ArchiveType > archiveType );
     
     /// @brief Конструктор интервального архива
     /// @param[in] meter Прибор
     /// @param[in] archiveType Тип архива
     /// @param[in] tableTemplate Схема таблицы данных
-    IntervalArchive( std::shared_ptr< IMeter > meter
-        , std::shared_ptr< ArchiveType > archiveType, std::shared_ptr< DataTable > tableTemplate );
+    IntervalArchive( std::shared_ptr< Meter > meter, std::shared_ptr< ArchiveType > archiveType,
+        std::shared_ptr< DataTable > tableTemplate );
 
     /// @brief Получение данных архива
     /// @return Данные архива

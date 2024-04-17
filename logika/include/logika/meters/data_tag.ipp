@@ -17,21 +17,30 @@ namespace meters
 template < typename T >
 T DataTag::GetValue() const
 {
-    return value_.Cast< T >();
+    if ( !value_ )
+    {
+        throw std::runtime_error{ "Value not set" };
+    }
+    return value_->Cast< T >();
 } // GetValue
 
 
 template < typename T >
 bool DataTag::TryGetValue( T& value ) const
 {
-    return value_.TryCast< T >( value );
+    return value_ && value_->TryCast< T >( value );
 } // TryGetValue
 
 
 template < typename T >
 void DataTag::SetValue( const T& value )
 {
-    value_ = value;
+    if ( !value_ )
+    {
+        value_ = std::make_shared< logika::Any >( value );
+        return;
+    }
+    *value_ = value;
 } // SetValue
 
 } // namespace meters

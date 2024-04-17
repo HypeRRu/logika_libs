@@ -45,7 +45,7 @@ public:
 
     /// @brief Получение прибора
     /// @return Прибор
-    const std::shared_ptr< IMeter > GetMeter() const;
+    const std::shared_ptr< Meter > GetMeter() const;
 
     /// @brief Получение порядкового номера
     /// @return Порядковый номер

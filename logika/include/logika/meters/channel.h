@@ -7,7 +7,6 @@
 #define LOGIKA_METERS_CHANNEL_H
 
 #include <logika/meters/defs.h>
-#include <logika/meters/imeter.h>
 #include <logika/meters/types.h>
 
 #include <logika/common/iserializable.h>
@@ -25,6 +24,8 @@ namespace logika
 namespace meters
 {
 
+class LOGIKA_METERS_EXPORT Meter;
+
 /// @brief Структура описание канала
 struct LOGIKA_METERS_EXPORT ChannelDef: public ISerializable
 {
@@ -35,14 +36,14 @@ public:
     /// @param[in] s Начало
     /// @param[in] c Количество
     /// @param[in] d Описание канала
-    ChannelDef( std::shared_ptr< IMeter > m, const LocString& p
+    ChannelDef( std::shared_ptr< Meter > m, const LocString& p
         , int32_t s , uint32_t c, const LocString& d );
 
     /// @copydoc ISerializable::ToString()
     virtual LocString ToString() const override;
 
 public:
-    const std::shared_ptr< IMeter > meter;  ///< Прибор
+    const std::shared_ptr< Meter > meter;   ///< Прибор
     const ChannelKind kind;                 ///< Тип канала
     const LocString prefix;                 ///< Префикс канала
     const int32_t start;                    ///< Начало

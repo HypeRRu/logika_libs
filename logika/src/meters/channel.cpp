@@ -3,7 +3,7 @@
 
 #include <logika/meters/channel.h>
 
-#include <logika/meters/imeter.h>
+#include <logika/meters/meter.h>
 #include <logika/common/misc.h>
 
 namespace logika
@@ -14,7 +14,7 @@ namespace meters
 
 /// Структура описание канала
 
-ChannelDef::ChannelDef( std::shared_ptr< IMeter > m, const LocString& p, int32_t s
+ChannelDef::ChannelDef( std::shared_ptr< Meter > m, const LocString& p, int32_t s
     , uint32_t c, const LocString& d )
     : meter{ m }
     , kind{ m ? m->GetChannelKind( s, c, p ) : ChannelKind::Undefined }

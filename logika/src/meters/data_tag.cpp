@@ -37,8 +37,14 @@ DataTag::DataTag( std::shared_ptr< DataTagDef > def, int32_t channelNo )
 
 bool DataTag::HasValue() const
 {
-    return !value_.Empty();
+    return value_ && !value_->Empty();
 } // HasValue
+
+
+void DataTag::ReplaceValue( std::shared_ptr< logika::Any > value )
+{
+    value_ = value;
+} // ReplaceValue
 
 
 int32_t DataTag::GetIndex() const
@@ -109,7 +115,7 @@ LocString DataTag::ToString() const
     return channel_.name + LOCALIZED( "." ) + ordinalStr.str()
         + idxStr.str() + LOCALIZED( "(" )
         + ( dataTagDef_ ? dataTagDef_->GetName() : LOCALIZED( "" ) ) + LOCALIZED( ") " )
-        + ( value_.Empty() ? LOCALIZED( "without" ) : LOCALIZED( "with" ) )
+        + ( !HasValue() ? LOCALIZED( "without" ) : LOCALIZED( "with" ) )
         + LOCALIZED( " value " ) + euStr;
 } // ToString
 

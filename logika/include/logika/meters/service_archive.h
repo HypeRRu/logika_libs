@@ -40,7 +40,7 @@ public:
     /// @brief Конструктор архива
     /// @param[in] meter Прибор
     /// @param[in] archiveType Тип архива
-    ServiceArchive( std::shared_ptr< IMeter > meter, std::shared_ptr< ArchiveType > archiveType );
+    ServiceArchive( std::shared_ptr< Meter > meter, std::shared_ptr< ArchiveType > archiveType );
 
     /// @brief Получение списка записей
     /// @return Список записей архива

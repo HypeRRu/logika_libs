@@ -16,7 +16,7 @@ namespace logika
 namespace meters
 {
 
-IntervalArchive::IntervalArchive( std::shared_ptr< IMeter > meter, std::shared_ptr< ArchiveType > archiveType )
+IntervalArchive::IntervalArchive( std::shared_ptr< Meter > meter, std::shared_ptr< ArchiveType > archiveType )
     : Archive( meter, archiveType )
     , dataTable_{ std::make_shared< DataTable >() }
 {
@@ -32,10 +32,10 @@ IntervalArchive::IntervalArchive( std::shared_ptr< IMeter > meter, std::shared_p
     {
         throw std::runtime_error{ "Can't add default columns" };
     }
-} // IntervalArchive( std::shared_ptr< IMeter >, std::shared_ptr< ArchiveType > )
+} // IntervalArchive( std::shared_ptr< Meter >, std::shared_ptr< ArchiveType > )
 
 
-IntervalArchive::IntervalArchive( std::shared_ptr< IMeter > meter
+IntervalArchive::IntervalArchive( std::shared_ptr< Meter > meter
     , std::shared_ptr< ArchiveType > archiveType, std::shared_ptr< DataTable > tableTemplate )
     : IntervalArchive( meter, archiveType )
 {
@@ -52,7 +52,7 @@ IntervalArchive::IntervalArchive( std::shared_ptr< IMeter > meter
         }
         dataTable_->AddColumn( field );
     }
-} // IntervalArchive( std::shared_ptr< IMeter >, std::shared_ptr< ArchiveType >, std::shared_ptr< DataTable > )
+} // IntervalArchive( std::shared_ptr< Meter >, std::shared_ptr< ArchiveType >, std::shared_ptr< DataTable > )
 
 
 bool IntervalArchive::AddDefaultColumns()

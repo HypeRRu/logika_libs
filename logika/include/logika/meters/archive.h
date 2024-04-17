@@ -23,18 +23,18 @@ public:
     /// @brief Конструктор архива
     /// @param[in] meter Прибор
     /// @param[in] archiveType Тип архива
-    Archive( std::shared_ptr< IMeter > meter, std::shared_ptr< ArchiveType > archiveType );
+    Archive( std::shared_ptr< Meter > meter, std::shared_ptr< ArchiveType > archiveType );
 
     /// @brief Получение прибора
     /// @return Прибор
-    std::shared_ptr< IMeter > GetMeter() const;
+    std::shared_ptr< Meter > GetMeter() const;
 
     /// @brief Получение типа архива
     /// @return Тип архива
     std::shared_ptr< ArchiveType > GetArchiveType() const;
 
 protected:
-    std::shared_ptr< IMeter > meter_;               ///< Прибор
+    std::shared_ptr< Meter > meter_;                ///< Прибор
     std::shared_ptr< ArchiveType > archiveType_;    ///< Тип архива
 
 }; // class Archive

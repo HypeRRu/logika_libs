@@ -9,13 +9,13 @@ namespace logika
 namespace meters
 {
 
-Archive::Archive( std::shared_ptr< IMeter > meter, std::shared_ptr< ArchiveType > archiveType )
+Archive::Archive( std::shared_ptr< Meter > meter, std::shared_ptr< ArchiveType > archiveType )
     : meter_{ meter }
     , archiveType_{ archiveType }
 {} // Archive
 
 
-std::shared_ptr< IMeter > Archive::GetMeter() const
+std::shared_ptr< Meter > Archive::GetMeter() const
 {
     return meter_;
 } // GetMeter

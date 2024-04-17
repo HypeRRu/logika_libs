@@ -1182,7 +1182,7 @@ ByteType M4Protocol::GetSpg741Sp( const ByteType* nt )
         throw std::runtime_error{ "Can't get meter storage" };
     }
     std::shared_ptr< meters::Meter > mtr = nullptr;
-    mtrStorage->GetItem( LOCALIZED( "СПГ741" ), mtr );
+    mtrStorage->GetItem( LOCALIZED( "SPG741" ), mtr );
     std::shared_ptr< meters::Spg741 > spg741 = std::dynamic_pointer_cast< meters::Spg741 >( mtr );
     if ( !spg741 )
     {
