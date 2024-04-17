@@ -105,7 +105,7 @@ std::unordered_map< LocString, LocString > Spg742::BuildEuDict(
             uint64_t euInt = std::stoull( tagVal );
             euDict[ euTag->GetName() ] = GetGasPressureUnits( static_cast< uint8_t >( euInt ) );
         }
-        catch ( const std::exception& e )
+        catch ( const std::exception& )
         {
             euDict[ euTag->GetName() ] = LOCALIZED( "" );
         }

@@ -205,7 +205,7 @@ std::unordered_map< LocString, LocString > Spg741::BuildEuDict(
             /// @note битовая маска обязательна, тк в старших битах встречается что угодно (!)
             euDict[ euTag->GetName() ] = GetGasPressureUnits( static_cast< uint8_t >( euInt & 0x03 ) );
         }
-        catch ( const std::exception& e )
+        catch ( const std::exception& )
         {
             euDict[ euTag->GetName() ] = LOCALIZED( "" );
         }

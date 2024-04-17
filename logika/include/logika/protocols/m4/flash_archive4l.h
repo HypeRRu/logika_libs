@@ -22,10 +22,10 @@ namespace logika
 namespace meters
 {
 
-class LOGIKA_METERS_EXPORT ArchiveDef4L;
-class LOGIKA_METERS_EXPORT ArchiveFieldDef4L;
-class LOGIKA_METERS_EXPORT Logika4L;
-class LOGIKA_METERS_EXPORT VQT;
+class  LOGIKA_METERS_EXPORT ArchiveDef4L;
+class  LOGIKA_METERS_EXPORT ArchiveFieldDef4L;
+class  LOGIKA_METERS_EXPORT Logika4L;
+struct LOGIKA_METERS_EXPORT VQT;
 
 } // namespace meters
 

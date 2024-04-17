@@ -543,7 +543,7 @@ LocString Logika4L::GetNsRecordValue( const ByteVector& buffer, MeterAddressType
 
     /// Номер нештатной ситуации и "+/-"
     return LOCALIZED( "НС" ) + numFormat.str() + 
-        ( ( buffer.at( offset + 7 ) & 0x01 > 0 ) ? LOCALIZED( "+" ) : LOCALIZED( "-" ) );
+        ( ( ( buffer.at( offset + 7 ) & 0x01 ) > 0 ) ? LOCALIZED( "+" ) : LOCALIZED( "-" ) );
 } // GetNsRecordValue
 
 
