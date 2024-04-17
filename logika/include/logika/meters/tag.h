@@ -63,6 +63,10 @@ public:
     /// @param[in] eu Единицы измерения
     void SetEu( const LocString& eu );
 
+    /// @brief Получение канала
+    /// @return Канал
+    const Channel& GetChannel() const;
+
     /// @copydoc ISerializable::ToString()
     virtual LocString ToString() const override;
 

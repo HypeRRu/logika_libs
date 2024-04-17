@@ -81,6 +81,7 @@ class LOGIKA_PROTOCOLS_EXPORT M4Protocol: public Protocol
 {
 public:
     struct BusActiveState;
+    class  MeterCache;
 
     static const ByteType FRAME_START;              ///< Начало кадра
     static const ByteType FRAME_END;                ///< Конец кадра
@@ -252,8 +253,31 @@ public:
     std::vector< Rc::Type > WriteParams4M( std::shared_ptr< meters::Logika4M > meter, const ByteType* nt,
         const std::vector< TagWriteData >& data );
 
-    /// @todo ReadArchive4M
+    /// @todo ReadArchive4M (M4Protocol.cs)
     /// @todo ParseArchivePacket4M
+
+    /// @brief Получение кэша прибора
+    /// @details Возвращает уже созданный или создает новый кэш прибора
+    /// @param[in] meter Прибор
+    /// @param[in] nt NT прибора
+    /// @return Кэш прибора
+    std::shared_ptr< MeterCache > GetMeterInstance( std::shared_ptr< meters::Logika4 > meter, const ByteType* nt );
+
+    /// @brief Загрузка страниц флэш памяти в кэш прибора
+    /// @param[in] meter Прибор
+    /// @param[in] nt NT прибора
+    /// @param[in] startPage Номер первой страницы
+    /// @param[in] count Количество страниц
+    /// @param[inout] meterInstance Кэш прибора
+    void GetFlashPagesToCache( std::shared_ptr< meters::Logika4L > meter, const ByteType* nt,
+        uint32_t startPage, uint32_t count, std::shared_ptr< MeterCache > meterInstance );
+
+    /// @brief Получение реального адреса тэга Logika4L
+    /// @param[in] meterInstance Кэш прибора
+    /// @param[in] tag Тэг
+    /// @return Реальный адрес тэга
+    MeterAddressType GetRealAddress4L( std::shared_ptr< MeterCache > meterInstance,
+        std::shared_ptr< meters::DataTag > tag );
 
 public:
     /// @brief Генерация сырого пакет (набора байтов) рукопожатия
@@ -316,6 +340,9 @@ private:
     connections::BaudRate::Type suggestedBaudRate_; ///< Текущее значение BaudRate
     std::shared_ptr< BusActiveState > activeDev_;   ///< Внутреннее состояние шины
     static uint32_t packetId_;                      ///< Автоинкрементный идентификатор пакета
+    std::unordered_map<
+        ByteType, std::shared_ptr< MeterCache >
+    > metadataCache_;                               ///< Кэш приборов
 
 public:
     /// @brief Внутреннее состояние шины
@@ -405,6 +432,8 @@ public:
         void LoadRdRh() const;
 
     private:
+        friend class M4Protocol;
+
         M4Protocol* bus_;                               ///< Протокол
         std::shared_ptr< meters::Logika4 > meter_;      ///< Прибор
         const ByteType nt_;                             ///< NT прибора

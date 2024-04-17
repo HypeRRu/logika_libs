@@ -26,12 +26,12 @@ namespace logika
 namespace meters
 {
 
-class LOGIKA_METERS_EXPORT TagDef;
-class LOGIKA_METERS_EXPORT DataTagDefVault;
-class LOGIKA_METERS_EXPORT ArchiveDef;
-class LOGIKA_METERS_EXPORT ArchiveFieldDef;
-class LOGIKA_METERS_EXPORT ChannelDef;
-class LOGIKA_METERS_EXPORT DataTag;
+class  LOGIKA_METERS_EXPORT TagDef;
+class  LOGIKA_METERS_EXPORT DataTagDefVault;
+class  LOGIKA_METERS_EXPORT ArchiveDef;
+class  LOGIKA_METERS_EXPORT ArchiveFieldDef;
+struct LOGIKA_METERS_EXPORT ChannelDef;
+class  LOGIKA_METERS_EXPORT DataTag;
 
 /// @brief Интерфейс прибора
 class LOGIKA_METERS_EXPORT IMeter: public ISerializable

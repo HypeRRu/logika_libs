@@ -138,6 +138,7 @@ M4Protocol::M4Protocol( const storage::StorageKeeper& sKeeper,
     , initialBaudRate_{ connections::BaudRate::NotSupported }
     , suggestedBaudRate_{ targetBaudRate }
     , activeDev_{ nullptr }
+    , metadataCache_{}
 {} // M4Protocol
 
 
@@ -1175,8 +1176,35 @@ void M4Protocol::OnRecoverableError()
 
 ByteType M4Protocol::GetSpg741Sp( const ByteType* nt )
 {
-    /// @todo Реализовать
-    return 0;
+    const auto mtrStorage = sKeeper_.GetStorage< LocString, meters::Meter >();
+    if ( !mtrStorage )
+    {
+        throw std::runtime_error{ "Can't get meter storage" };
+    }
+    std::shared_ptr< meters::Meter > mtr = nullptr;
+    mtrStorage->GetItem( LOCALIZED( "СПГ741" ), mtr );
+    std::shared_ptr< meters::Spg741 > spg741 = std::dynamic_pointer_cast< meters::Spg741 >( mtr );
+    if ( !spg741 )
+    {
+        throw std::runtime_error{ "Can't get SPG741 meter from storage" };
+    }
+    std::shared_ptr< MeterCache > mtrInstance = GetMeterInstance( spg741, nt );
+    if ( static_cast< ByteType >( -1 ) == mtrInstance->sp_ )
+    {
+        constexpr MeterAddressType SP_741_ADDR = 0x200;
+        GetFlashPagesToCache( spg741, nt, SP_741_ADDR / meters::Logika4L::FLASH_PAGE_SIZE, 1, mtrInstance );
+        bool oper = false;
+        LocString spVal = meters::Logika4L::GetDbEntryValue( mtrInstance->flash_, SP_741_ADDR, oper );
+        try
+        {
+            mtrInstance->sp_ = static_cast< ByteType >( std::stoull( spVal ) );
+        }
+        catch ( const std::exception& )
+        {
+            mtrInstance->sp_ = 0;
+        }
+    }
+    return static_cast< ByteType >( -1 ) != mtrInstance->sp_ ? mtrInstance->sp_ : 0;
 } // GetSpg741Sp
 
 

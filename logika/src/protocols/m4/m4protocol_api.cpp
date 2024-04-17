@@ -7,6 +7,7 @@
 #include <logika/log/defines.h>
 #include <logika/meters/logika4/logika4.h>
 #include <logika/meters/logika4/4l/logika4l.h>
+#include <logika/meters/logika4/4l/spg741.h>
 #include <logika/meters/logika4/4l/tag_def4l.h>
 #include <logika/meters/data_tag.h>
 #include <logika/common/misc.h>
@@ -31,7 +32,7 @@ M4Protocol::MeterCache::MeterCache( M4Protocol* owner, std::shared_ptr< meters::
     , nt_{ nt }
     , model_{}
     , modelSet_{ false }
-    , sp_{ 0 }
+    , sp_{ static_cast< ByteType >( -1 ) }
     , rd_{ static_cast< MeterAddressType >( -1 ) }
     , rh_{ static_cast< MeterAddressType >( -1 ) }
     , euDict_{}
@@ -275,6 +276,97 @@ void M4Protocol::UpdateTagsImpl( const ByteType* nt, std::vector< std::shared_pt
 {
     /// @todo Реализовать
 } // UpdateTagsImpl
+
+
+std::shared_ptr< M4Protocol::MeterCache > M4Protocol::GetMeterInstance(
+    std::shared_ptr< meters::Logika4 > meter,const ByteType* nt )
+{
+    ByteType effNt = nt ? *nt : M4Protocol::BROADCAST_NT;
+
+    if ( 0 == metadataCache_.count( effNt ) )
+    {
+        metadataCache_[ effNt ] = std::make_shared< M4Protocol::MeterCache >(
+            this, meter, effNt
+        );
+    }
+    return metadataCache_[ effNt ];
+} // GetMeterInstance
+
+
+void M4Protocol::GetFlashPagesToCache( std::shared_ptr< meters::Logika4L > meter, const ByteType* nt,
+    uint32_t startPage, uint32_t count, std::shared_ptr< M4Protocol::MeterCache > meterInstance )
+{
+    if ( !meter || !meterInstance || 0 == count )
+    {
+        throw std::invalid_argument{ "Invalid arguments passed" };
+    }
+    int64_t rangeStart = -1;
+    uint32_t rangeSize =  0;
+
+    for ( uint32_t i = 0; i < count; ++i )
+    {
+        uint32_t page = startPage + i;
+        /// @bug rangeSize ведь отражает количество подряд идущих страниц,
+        /// а разрывы в flashPageMap_ в теории могут быть не подряд
+        /// @note Будет чтение именно подряд идущих сегментов
+        if ( !meterInstance->flashPageMap_.at( page ) ) /// Страницы нет в кэше
+        {
+            if ( rangeStart < 0 )
+            {
+                rangeStart = page;
+            }
+            ++rangeSize;
+            if ( i != count - 1 )
+            {
+                continue;
+            }
+        }
+        else if ( rangeStart < 0 )
+        {
+            continue; /// Нет подряд идущих незагруженных страниц
+        }
+        /// Загрузка подряд идущих незагруженных страниц
+        LOG_WRITE( LOG_INFO, LOCALIZED( "Load to cache flash pages " ) << rangeStart
+            << LOCALIZED( ".." ) << ( rangeStart + rangeSize ) );
+        ByteVector pages = ReadFlashPagesL4( meter, nt, rangeStart, rangeSize );
+        constexpr MeterAddressType pageSize = meters::Logika4L::FLASH_PAGE_SIZE;
+        for ( uint32_t rp = 0; rp < rangeSize; ++rp )
+        {
+            MeterAddressType pageOffset  = pageSize * rp;
+            MeterAddressType flashOffset = ( rp + rangeStart ) * pageSize;
+            for ( MeterAddressType addr = 0; addr < pageSize; ++addr )
+            {
+                meterInstance->flash_[ flashOffset + addr ] = pages[ pageOffset + addr ];
+            }
+            meterInstance->flashPageMap_[ rangeStart + rp ] = true;
+        }
+        rangeStart = -1;
+        rangeSize  = 0;
+    }
+} // GetFlashPagesToCache
+
+
+MeterAddressType M4Protocol::GetRealAddress4L( std::shared_ptr< M4Protocol::MeterCache > meterInstance,
+    std::shared_ptr< meters::DataTag > tag )
+{
+    std::shared_ptr< meters::TagDef4L > def = std::dynamic_pointer_cast< meters::TagDef4L >( tag->GetDef() );
+    if ( !meterInstance || !meterInstance->GetMeter() || !def )
+    {
+        return 0;
+    }
+    std::shared_ptr< meters::Logika4 > meter = meterInstance->GetMeter();
+    ByteType nt = meterInstance->GetNt();
+    if ( meter->GetCaption() == LOCALIZED( "СПГ741" )
+        && def->GetOrdinal() >= 200 && def->GetOrdinal() <= 300 )
+    {
+        return meters::Spg741::GetMappedDbParamAddress( def->GetKey(), GetSpg741Sp( &nt ) );
+    }
+    else
+    {
+        MeterAddressType channelOff = def->GetChannelOffset();
+        return def->GetAddress() + ( ( channelOff && tag->GetChannel().no == 2 ) ? channelOff : 0 );
+    }
+} // GetRealAddress4L
 
 } // namespace M4
 

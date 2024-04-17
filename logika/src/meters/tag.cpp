@@ -90,6 +90,12 @@ void Tag::SetEu( const LocString& eu )
 } // SetEu
 
 
+const Channel& Tag::GetChannel() const
+{
+    return channel_;
+} // GetChannel
+
+
 LocString Tag::ToString() const
 {
     return channel_.name + LOCALIZED( "." )
