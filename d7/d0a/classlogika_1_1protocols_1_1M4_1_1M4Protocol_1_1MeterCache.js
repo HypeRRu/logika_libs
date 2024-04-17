@@ -12,5 +12,6 @@ var classlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache =
     [ "GetRd", "d7/d0a/classlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache.html#a4a2bbd8031d2af85ccdcd7810583b6b4", null ],
     [ "GetRh", "d7/d0a/classlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache.html#ae6868b6a9861f0a2ec5367a4183763f6", null ],
     [ "GetSp", "d7/d0a/classlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache.html#a6a99bf468f620caf9fed4ce74663323c", null ],
-    [ "SetSp", "d7/d0a/classlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache.html#a2384fa46a5eac6368c93471b9ee5ab2a", null ]
+    [ "SetSp", "d7/d0a/classlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache.html#a2384fa46a5eac6368c93471b9ee5ab2a", null ],
+    [ "M4Protocol", "d7/d0a/classlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache.html#a2751b0788b11308dd7845ef1759f4759", null ]
 ];

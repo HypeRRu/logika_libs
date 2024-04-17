@@ -2,6 +2,7 @@ var classlogika_1_1meters_1_1Tag =
 [
     [ "Tag", "d1/d29/classlogika_1_1meters_1_1Tag.html#a1577670f882769daf11e605fb5462d13", null ],
     [ "GetAddress", "d1/d29/classlogika_1_1meters_1_1Tag.html#a856b3f360a4c15c8ba7cf364684d52c0", null ],
+    [ "GetChannel", "d1/d29/classlogika_1_1meters_1_1Tag.html#a7ba647fa3ad227f7bff014ce4da46f2c", null ],
     [ "GetDef", "d1/d29/classlogika_1_1meters_1_1Tag.html#a55924a5ec268cfd0994363dd16f8ed27", null ],
     [ "GetDescription", "d1/d29/classlogika_1_1meters_1_1Tag.html#a69b1cd7832c35979388adf90414c0e37", null ],
     [ "GetEu", "d1/d29/classlogika_1_1meters_1_1Tag.html#aaa3ecb540a32b95f047dab616604a001", null ],

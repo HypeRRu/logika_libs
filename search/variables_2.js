@@ -8,7 +8,7 @@ var searchData=
   ['channel_5',['channel',['../db/dd8/structlogika_1_1protocols_1_1M4_1_1TagWriteData.html#ae0cafdfd06fe17a44720c4f20cd42be3',1,'logika::protocols::M4::TagWriteData']]],
   ['channel_5f_6',['channel_',['../d1/d29/classlogika_1_1meters_1_1Tag.html#a251fb4e3b964ef031f891038f6c5ef31',1,'logika::meters::Tag']]],
   ['channel_5fnbase_7',['CHANNEL_NBASE',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#ad1c04622dab293c7e52bc61afb32fe69',1,'logika::protocols::M4::M4Protocol']]],
-  ['channeldef_8',['ChannelDef',['../dc/df7/namespacelogika_1_1meters.html#adca70441f410a4ca65374f77921c4943',1,'logika::meters']]],
+  ['channeldef_8',['ChannelDef',['../dc/df7/namespacelogika_1_1meters.html#af1d57d8dd7bb60b98f3f967c0c0ba611',1,'logika::meters']]],
   ['channeldef_5f_9',['channelDef_',['../da/dc9/classlogika_1_1meters_1_1ItemDefBase.html#a007b032e209c4d7a21f660acfcf0a2c9',1,'logika::meters::ItemDefBase']]],
   ['channelno_10',['channelNo',['../d0/d69/structlogika_1_1meters_1_1CalcFieldDefSettings.html#ab540ba11d3297820e558d0236b05a0be',1,'logika::meters::CalcFieldDefSettings']]],
   ['channelno_5f_11',['channelNo_',['../d8/d13/classlogika_1_1meters_1_1CalcFieldDef.html#a908f553fe9af465254f0f044dcfda635',1,'logika::meters::CalcFieldDef']]],

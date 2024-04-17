@@ -102,7 +102,7 @@ $(function(){initNavTree('dd/da0/todo.html','../../'); initResizable(); });
 <p class="enddd">Убрать лишние проверки в Read/Write  </p>
 </dd>
 <dt>Class <a class="el" href="../../d0/d78/classlogika_1_1Any.html">logika::Any</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000001"></a>Можно сделать разделение с помощью trivially_copyable и сохранять не тривиально копируемый в shared_ptr </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000002"></a>Можно сделать разделение с помощью trivially_copyable и сохранять не тривиально копируемый в shared_ptr </p>
 <p class="interdd"></p>
 <p class="enddd">Возможно стоит ограничить поддержку только базовыми типами и сохранять информацию о типе в виде enum? Это позволит добавить поддержу ToString  </p>
 </dd>
@@ -112,18 +112,18 @@ $(function(){initNavTree('dd/da0/todo.html','../../'); initResizable(); });
 <p class="enddd">move ctor?  </p>
 </dd>
 <dt>Член <a class="el" href="../../db/da7/classlogika_1_1connections_1_1Connection.html#a4ac2ce67ddecede2c9e315e641e59234">logika::connections::Connection::Connection</a>  (const std::string &amp;address, uint32_t readTimeout=0)</dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000004"></a>change readTimeout type to TimeType <br  />
- </p>
-<p class="enddd"><a class="anchor" id="_todo000020"></a>Заменить ToLocString( address_ ) на locAddress_  </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000020"></a>Заменить ToLocString( address_ ) на locAddress_ </p>
+<p class="enddd"><a class="anchor" id="_todo000004"></a>change readTimeout type to TimeType <br  />
+  </p>
 </dd>
 <dt>Член <a class="el" href="../../df/ddb/classlogika_1_1connections_1_1IConnection.html#a5f64e099c04ab6f76b21d741ace9d092">logika::connections::IConnection::ResetStatistics</a>  ()=0</dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000006"></a>IsConflictsWith? </p>
-<p class="enddd"><a class="anchor" id="_todo000005"></a>OnConnectionRequired?  </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000005"></a>OnConnectionRequired? </p>
+<p class="enddd"><a class="anchor" id="_todo000006"></a>IsConflictsWith?  </p>
 </dd>
 <dt>Член <a class="el" href="../../d7/d97/classlogika_1_1meters_1_1ArchiveFieldDef4M.html#a9dab61ac38f16597fcf049c66b9f22cf">logika::meters::ArchiveFieldDef4M::ArchiveFieldDef4M</a>  (const <a class="el" href="../../d3/dce/structlogika_1_1meters_1_1ChannelDef.html" title="Структура описание канала">ChannelDef</a> &amp;cdef, const <a class="el" href="../../d6/d41/structlogika_1_1meters_1_1ArchiveFieldDef4MSettings.html" title="Параметры описания поля архива Logika4L.">ArchiveFieldDef4MSettings</a> &amp;settings)</dt>
 <dd><a class="anchor" id="_todo000028"></a>Нужен ли здесь ordinal ?  </dd>
 <dt>Член <a class="el" href="../../d8/d9f/classlogika_1_1meters_1_1converters_1_1DeviceConverter.html#acce7f71e3937b9197ced33063cfa890f">logika::meters::converters::DeviceConverter::Convert</a>  (const FromType &amp;from)</dt>
-<dd><a class="anchor" id="_todo000024"></a>Создание инстансов сразу нужных типов (Logika6)  </dd>
+<dd><a class="anchor" id="_todo000022"></a>Создание инстансов сразу нужных типов (Logika6)  </dd>
 <dt>Член <a class="el" href="../../dd/d57/classlogika_1_1meters_1_1converters_1_1L4TagConverter.html#a99042536dcf0b16d3bcf1bbc53e5c09b">logika::meters::converters::L4TagConverter::ConvertDevice</a>  (const LocString &amp;devName, MeterStorageType meterStorage)</dt>
 <dd><a class="anchor" id="_todo000008"></a>Использовать общий для всех конвертеров метод (не дублировать здесь)  </dd>
 <dt>Class <a class="el" href="../../d3/dca/classlogika_1_1meters_1_1DataTable.html">logika::meters::DataTable</a>  </dt>
@@ -144,7 +144,7 @@ $(function(){initNavTree('dd/da0/todo.html','../../'); initResizable(); });
 <dt>Член <a class="el" href="../../d7/d1b/classlogika_1_1meters_1_1Logika4L.html#a76133a524fed998a97d9aab720514615">logika::meters::Logika4L::GetValue</a>  (<a class="el" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#aead2be909773cd60590f689c076fac21">BinaryType4L::Type</a> binType, const ByteVector &amp;buffer, MeterAddressType offset, bool &amp;oper)</dt>
 <dd><a class="anchor" id="_todo000012"></a>Флаг операции?  </dd>
 <dt>Член <a class="el" href="../../dd/d0e/classlogika_1_1meters_1_1Logika4M.html#ae8a0f4b441610aef3484ac7e5152b88b">logika::meters::Logika4M::GetTagLength</a>  (const ByteVector &amp;buffer, MeterAddressType idx, MeterAddressType &amp;length)</dt>
-<dd><a class="anchor" id="_todo000030"></a>Проверить границы  </dd>
+<dd><a class="anchor" id="_todo000029"></a>Проверить границы  </dd>
 <dt>Член <a class="el" href="../../dd/d0e/classlogika_1_1meters_1_1Logika4M.html#af014af8a3e00f3386c513e6bb9437ca6">logika::meters::Logika4M::ParseIa5StringTag</a>  (const ByteVector &amp;buffer, MeterAddressType payloadStart, MeterAddressType payloadLen)</dt>
 <dd><a class="anchor" id="_todo000031"></a>Исправить кодировку  </dd>
 <dt>Член <a class="el" href="../../d3/d77/classlogika_1_1meters_1_1Meter.html#a478848a30e9192419f24035da49ed4db">logika::meters::Meter::measureKind_</a>  </dt>
@@ -153,23 +153,21 @@ $(function(){initNavTree('dd/da0/todo.html','../../'); initResizable(); });
 <p class="enddd">get typed meters  </p>
 </dd>
 <dt>Член <a class="el" href="../../de/d48/classlogika_1_1meters_1_1Spg742.html#aa23a3a4cc179ce27a92f7d6b05242ff9">logika::meters::Spg742::BuildEuDict</a>  (const std::vector&lt; std::shared_ptr&lt; DataTag &gt; &gt; &amp;euTags) const override</dt>
-<dd><a class="anchor" id="_todo000029"></a>Заменить на TryGetValue  </dd>
+<dd><a class="anchor" id="_todo000030"></a>Заменить на TryGetValue  </dd>
 <dt>Член <a class="el" href="../../d6/d6a/classlogika_1_1meters_1_1Spt942.html#aba52e2590d45f9024e73eb338aa701b1">logika::meters::Spt942::Init</a>  (const <a class="el" href="../../d5/d47/classlogika_1_1storage_1_1StorageKeeper.html" title="Объект для работы со всеми хранилищами ресурсов">storage::StorageKeeper</a> &amp;sKeeper) override</dt>
 <dd><a class="anchor" id="_todo000027"></a>warning if not found  </dd>
 <dt>Член <a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#ad1c04622dab293c7e52bc61afb32fe69">logika::protocols::M4::M4Protocol::CHANNEL_NBASE</a>  </dt>
 <dd><a class="anchor" id="_todo000017"></a>Что это  </dd>
-<dt>Член <a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#adc19fc4570413f7516a6fc146cfebef0">logika::protocols::M4::M4Protocol::GenerateRawHandshake</a>  (const ByteType *dstNt)</dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000019"></a>ReadArchive4M </p>
+<dt>Член <a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#aaadd8a5927b99dcbbdbb60e77db6daf6">logika::protocols::M4::M4Protocol::GetMeterInstance</a>  (std::shared_ptr&lt; meters::Logika4 &gt; meter, const ByteType *nt)</dt>
+<dd><p class="startdd"><a class="anchor" id="_todo000019"></a>ReadArchive4M (M4Protocol.cs) </p>
 <p class="interdd"></p>
 <p class="enddd">ParseArchivePacket4M  </p>
 </dd>
-<dt>Член <a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a24bd05130755fe6316a8ec3c4732cc5f">logika::protocols::M4::M4Protocol::GetSpg741Sp</a>  (const ByteType *nt)</dt>
-<dd><a class="anchor" id="_todo000040"></a>Реализовать  </dd>
 <dt>Член <a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a775aed132e0f6493641674d5afa1a03c">logika::protocols::M4::M4Protocol::UpdateTagsImpl</a>  (const ByteType *nt, std::vector&lt; std::shared_ptr&lt; meters::DataTag &gt; &gt; &amp;tags, TagsUpdateFlags flags)</dt>
 <dd><a class="anchor" id="_todo000035"></a>Реализовать  </dd>
 <dt>Член <a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a26ef36961575c721af1e17e480b0d893">logika::protocols::M4::M4Protocol::WriteParams4M</a>  (std::shared_ptr&lt; meters::Logika4M &gt; meter, const ByteType *nt, const std::vector&lt; TagWriteData &gt; &amp;data)</dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000038"></a>Проверить правильность заполнения </p>
-<p class="enddd"><a class="anchor" id="_todo000039"></a>Проверить правильность заполнения  </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000039"></a>Проверить правильность заполнения </p>
+<p class="enddd"><a class="anchor" id="_todo000038"></a>Проверить правильность заполнения  </p>
 </dd>
 <dt>Член <a class="el" href="../../da/d50/classlogika_1_1protocols_1_1Protocol.html#a4b0b378431bddae2bc9cbb75ad71c4a7">logika::protocols::Protocol::AutodectSpt</a>  (std::shared_ptr&lt; connections::IConnection &gt; connection, const <a class="el" href="../../d5/d47/classlogika_1_1storage_1_1StorageKeeper.html" title="Объект для работы со всеми хранилищами ресурсов">storage::StorageKeeper</a> &amp;sKeeper, connections::BaudRate::Type fixedBaudRate, uint32_t waitTimeout, bool tryM4, bool trySpBus, bool tryMek, const ByteType *srcAddr, const ByteType *dstAddr, ByteVector &amp;dump, connections::BaudRate::Type &amp;deviceBaudRate, LocString &amp;model)</dt>
 <dd><a class="anchor" id="_todo000037"></a>реализовать  </dd>
@@ -187,7 +185,7 @@ $(function(){initNavTree('dd/da0/todo.html','../../'); initResizable(); });
 <dt>Член <a class="el" href="../../da/d50/classlogika_1_1protocols_1_1Protocol.html#a4ba9768eb16ca12ba7579efc41b9638d">logika::protocols::Protocol::RegisterEvent</a>  (<a class="el" href="../../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a1f3c68a5f356ea9b076385a57c27fddb">Rc::Type</a> event) override</dt>
 <dd><a class="anchor" id="_todo000034"></a>monitor event  </dd>
 <dt>Член <a class="el" href="../../d4/d0b/logika_2src_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>  ()</dt>
-<dd><a class="anchor" id="_todo000023"></a>GetName() -&gt; GetArchiveType()-&gt;GetName() </dd>
+<dd><a class="anchor" id="_todo000024"></a>GetName() -&gt; GetArchiveType()-&gt;GetName() </dd>
 </dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

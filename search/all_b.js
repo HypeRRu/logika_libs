@@ -18,7 +18,7 @@ var searchData=
   ['m4_5ftags_5fh_15',['M4_TAGS_H',['../d9/db7/m4__tags_8h.html#af4ef374cc4470059245551e942d36acd',1,'m4_tags.h']]],
   ['m4archiveconverter_16',['M4ArchiveConverter',['../d4/dcd/classlogika_1_1meters_1_1converters_1_1M4ArchiveConverter.html',1,'logika::meters::converters']]],
   ['m4archivefieldconverter_17',['M4ArchiveFieldConverter',['../de/d13/classlogika_1_1meters_1_1converters_1_1M4ArchiveFieldConverter.html',1,'logika::meters::converters']]],
-  ['m4protocol_18',['M4Protocol',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html',1,'logika::protocols::M4::M4Protocol'],['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a5def721e02eaddcee277ced35613ba30',1,'logika::protocols::M4::M4Protocol::M4Protocol()'],['../de/d62/namespacelogika_1_1protocols_1_1M4.html#af6e1c3ae95e291dbbb25f199ccbaa214',1,'logika::protocols::M4::M4Protocol']]],
+  ['m4protocol_18',['M4Protocol',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html',1,'logika::protocols::M4::M4Protocol'],['../d7/d0a/classlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache.html#a2751b0788b11308dd7845ef1759f4759',1,'logika::protocols::M4::M4Protocol::MeterCache::M4Protocol'],['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a5def721e02eaddcee277ced35613ba30',1,'logika::protocols::M4::M4Protocol::M4Protocol()'],['../de/d62/namespacelogika_1_1protocols_1_1M4.html#af6e1c3ae95e291dbbb25f199ccbaa214',1,'logika::protocols::M4::M4Protocol']]],
   ['m4protocol_2eh_19',['m4protocol.h',['../db/d8d/m4protocol_8h.html',1,'']]],
   ['m4protocol_5fapi_2ecpp_20',['m4protocol_api.cpp',['../d6/d61/m4protocol__api_8cpp.html',1,'']]],
   ['m4protocol_5fimpl_2ecpp_21',['m4protocol_impl.cpp',['../d9/d14/m4protocol__impl_8cpp.html',1,'']]],

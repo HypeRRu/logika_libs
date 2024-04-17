@@ -1,10 +1,10 @@
 <map id="logika::meters::Tag" name="logika::meters::Tag">
-<area shape="rect" id="Node000001" title="Тэг" alt="" coords="5,676,216,1108"/>
+<area shape="rect" id="Node000001" title="Тэг" alt="" coords="5,676,216,1143"/>
 <area shape="rect" id="Node000002" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="21,5,190,120"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,135,112,677,107,677,103,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,134,112,676,107,676,103,135"/>
 <area shape="rect" id="Node000004" href="$d3/dce/structlogika_1_1meters_1_1ChannelDef.html" title="Структура описание канала" alt="" coords="127,169,331,429"/>
 <area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="144,132,164,168,159,171,139,134"/>
 <area shape="rect" id="Node000003" href="$dd/def/structlogika_1_1meters_1_1Channel.html" title="Структура канала" alt="" coords="133,479,309,613"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="203,614,188,661,182,659,198,612"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="204,614,189,661,184,659,199,612"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="227,444,226,479,221,479,222,444"/>
 </map>

@@ -8,6 +8,6 @@ var searchData=
   ['int32_5',['Int32',['../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefac06129f6e6e15c09328365e553f1dc31',1,'logika::meters']]],
   ['int32array_6',['Int32Array',['../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefabfe39fc9f161e24f5cb31f40b98af4d3',1,'logika::meters']]],
   ['int64_7',['Int64',['../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefafbde23b11d7e59af7828e81144c8b487',1,'logika::meters']]],
-  ['invalidargerror_8',['InvalidArgError',['../df/dea/namespacelogika_1_1connections_1_1Rc.html#ad077f3dcd802ffc6a350f1a97877a4c6ae9a410cdeffb191c13288484dfc21061',1,'logika::connections::Rc::InvalidArgError'],['../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a9c9824ecce08cb2f89a2a702938c2c10ab52eb51e5fb3eb79e380837514c34815',1,'logika::protocols::Rc::InvalidArgError']]],
+  ['invalidargerror_8',['InvalidArgError',['../df/dea/namespacelogika_1_1connections_1_1Rc.html#ad077f3dcd802ffc6a350f1a97877a4c6ae9a410cdeffb191c13288484dfc21061',1,'logika::connections::Rc::InvalidArgError'],['../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#ae7d7b0f88e6cebaaac662958573da295ab52eb51e5fb3eb79e380837514c34815',1,'logika::protocols::Rc::InvalidArgError']]],
   ['izmrecord_9',['IzmRecord',['../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a1fc77359f08e186549ebbf09449af9f7',1,'logika::meters::BinaryType4L']]]
 ];

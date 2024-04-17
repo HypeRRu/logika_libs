@@ -1,14 +1,14 @@
 <map id="logika::meters::DataTag" name="logika::meters::DataTag">
-<area shape="rect" id="Node000001" title="Тэг с данными" alt="" coords="123,1171,320,1733"/>
-<area shape="rect" id="Node000002" href="$d1/d29/classlogika_1_1meters_1_1Tag.html" title="Тэг" alt="" coords="5,676,216,1108"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,1122,169,1171,163,1172,154,1123"/>
+<area shape="rect" id="Node000001" title="Тэг с данными" alt="" coords="123,1206,320,1767"/>
+<area shape="rect" id="Node000002" href="$d1/d29/classlogika_1_1meters_1_1Tag.html" title="Тэг" alt="" coords="5,676,216,1143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,1157,170,1206,165,1207,156,1158"/>
 <area shape="rect" id="Node000003" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="21,5,190,120"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="108,135,112,677,107,677,103,135"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="108,134,112,676,107,676,103,135"/>
 <area shape="rect" id="Node000005" href="$d3/dce/structlogika_1_1meters_1_1ChannelDef.html" title="Структура описание канала" alt="" coords="127,169,331,429"/>
 <area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="144,132,164,168,159,171,139,134"/>
 <area shape="rect" id="Node000004" href="$dd/def/structlogika_1_1meters_1_1Channel.html" title="Структура канала" alt="" coords="133,479,309,613"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="203,614,188,661,182,659,198,612"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="204,614,189,661,184,659,199,612"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="227,444,226,479,221,479,222,444"/>
-<area shape="rect" id="Node000006" href="$d0/d78/classlogika_1_1Any.html" title="Объект переменного типа" alt="" coords="240,738,424,1047"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="304,1047,283,1156,277,1154,299,1046"/>
+<area shape="rect" id="Node000006" href="$d0/d78/classlogika_1_1Any.html" title="Объект переменного типа" alt="" coords="240,755,424,1064"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="305,1065,281,1190,276,1189,300,1064"/>
 </map>
