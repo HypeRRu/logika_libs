@@ -14,6 +14,7 @@ var classlogika_1_1protocols_1_1M4_1_1M4Protocol =
     [ "GetMeterType", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a110da30c7edb20f1fa3154966f26827a", null ],
     [ "GetRealAddress4L", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a9cd8f160ffcb0fecc337e25f576c0354", null ],
     [ "GetSpg741Sp", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a24bd05130755fe6316a8ec3c4732cc5f", null ],
+    [ "InvalidateFlashCache4L", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#aa86a3e5a7576196fbb57c1da52d8b93f", null ],
     [ "OnRecoverableError", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#afbb1b307f441831717685bfa5b549464", null ],
     [ "ReadFlashBytesL4", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#ad3df70d29503bdb77459d1aed87f2181", null ],
     [ "ReadFlashPagesL4", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a971c092ca39aa03a58680c6a8a7c1b3e", null ],
@@ -28,7 +29,9 @@ var classlogika_1_1protocols_1_1M4_1_1M4Protocol =
     [ "SerialSpeedFallback", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#ab71738e8b840135b7f5edc7505d427c5", null ],
     [ "SetBusSpeed", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a927658b46fbff950c3c0ef30379feece", null ],
     [ "UpdateTags", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a0e85cc86d290b42c45401f66340b94d7", null ],
-    [ "UpdateTagsImpl", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a775aed132e0f6493641674d5afa1a03c", null ],
+    [ "UpdateTags4M", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a2e764213b7a264d7fd5c0abcd17872ba", null ],
+    [ "UpdateTagsImpl", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a1d5e64fa0c4205db74442a38cba3fe77", null ],
+    [ "UpdateTagsValues4L", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a80bfd2bc396f9287f514c6382fe4f91e", null ],
     [ "WriteParameterL4", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a3d461b48aa9ac749593a95675644bacb", null ],
     [ "WriteParams4M", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a26ef36961575c721af1e17e480b0d893", null ]
 ];

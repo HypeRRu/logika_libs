@@ -1,27 +1,27 @@
 <map id="logika::meters::TagDef" name="logika::meters::TagDef">
-<area shape="rect" id="Node000001" title="Базовое описание тэга" alt="" coords="364,585,569,879"/>
-<area shape="rect" id="Node000003" href="$df/df9/classlogika_1_1meters_1_1ArchiveFieldDef.html" title="Описание поля архива" alt="" coords="146,1041,337,1305"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="371,893,352,928,298,1042,293,1040,347,925,366,890"/>
-<area shape="rect" id="Node000008" href="$d8/d13/classlogika_1_1meters_1_1CalcFieldDef.html" title="Расчетный тэг" alt="" coords="361,1033,572,1312"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="469,893,469,1034,464,1034,464,893"/>
-<area shape="rect" id="Node000009" href="$da/dcc/classlogika_1_1meters_1_1DataTagDef.html" title="Описание тэга с данными" alt="" coords="596,927,836,1419"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="566,890,586,925,599,947,594,950,582,928,561,893"/>
-<area shape="rect" id="Node000002" href="$da/dc9/classlogika_1_1meters_1_1ItemDefBase.html" title="Базовый элемент" alt="" coords="345,5,589,537"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="469,552,469,585,464,585,464,552"/>
-<area shape="rect" id="Node000004" href="$db/d33/classlogika_1_1meters_1_1ArchiveFieldDef4.html" title="Описание поля архива Logika4." alt="" coords="40,1467,237,1731"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="209,1320,173,1468,168,1466,204,1319"/>
-<area shape="rect" id="Node000007" href="$d1/d26/classlogika_1_1meters_1_1ArchiveFieldDef6.html" title="Описание поля архива Logika6." alt="" coords="261,1516,459,1681"/>
-<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="285,1318,340,1516,335,1517,279,1320"/>
-<area shape="rect" id="Node000005" href="$d3/d70/classlogika_1_1meters_1_1ArchiveFieldDef4L.html" title="Описание поля архива Logika4L." alt="" coords="5,1880,221,2109"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="132,1746,123,1881,118,1880,127,1745"/>
-<area shape="rect" id="Node000006" href="$d7/d97/classlogika_1_1meters_1_1ArchiveFieldDef4M.html" title="Описание поля архива Logika4M." alt="" coords="246,1915,466,2075"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="220,1743,315,1914,310,1916,216,1745"/>
-<area shape="rect" id="Node000010" href="$d1/dcb/classlogika_1_1meters_1_1DataTagDef6.html" title="Тэг с данными Logika6." alt="" coords="546,1489,758,1708"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="679,1434,671,1490,666,1489,674,1433"/>
-<area shape="rect" id="Node000011" href="$d8/d42/classlogika_1_1meters_1_1TagDef4.html" title="Базовый тэг Logika4." alt="" coords="783,1517,983,1681"/>
-<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="820,1431,853,1516,848,1518,815,1433"/>
-<area shape="rect" id="Node000012" href="$db/d67/classlogika_1_1meters_1_1TagDef4L.html" title="Тэг с данными Logika4L." alt="" coords="598,1779,823,2211"/>
-<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="844,1696,807,1780,802,1778,839,1693"/>
-<area shape="rect" id="Node000013" href="$dc/dc3/classlogika_1_1meters_1_1TagDef4M.html" title="Тэг с данными Logika4M." alt="" coords="848,1947,1059,2042"/>
-<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="902,1695,948,1947,943,1948,897,1696"/>
+<area shape="rect" id="Node000001" title="Базовое описание тэга" alt="" coords="364,571,569,864"/>
+<area shape="rect" id="Node000003" href="$df/df9/classlogika_1_1meters_1_1ArchiveFieldDef.html" title="Описание поля архива" alt="" coords="146,1026,337,1290"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="371,878,352,913,298,1027,293,1025,347,911,366,876"/>
+<area shape="rect" id="Node000008" href="$d8/d13/classlogika_1_1meters_1_1CalcFieldDef.html" title="Расчетный тэг" alt="" coords="361,1019,572,1297"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="469,879,469,1019,464,1019,464,879"/>
+<area shape="rect" id="Node000009" href="$da/dcc/classlogika_1_1meters_1_1DataTagDef.html" title="Описание тэга с данными" alt="" coords="596,912,836,1404"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="566,875,586,911,599,932,594,935,582,913,561,878"/>
+<area shape="rect" id="Node000002" href="$da/dc9/classlogika_1_1meters_1_1ItemDefBase.html" title="Базовый элемент" alt="" coords="345,5,589,523"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="469,537,469,571,464,571,464,537"/>
+<area shape="rect" id="Node000004" href="$db/d33/classlogika_1_1meters_1_1ArchiveFieldDef4.html" title="Описание поля архива Logika4." alt="" coords="40,1452,237,1716"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="209,1305,173,1453,168,1452,204,1304"/>
+<area shape="rect" id="Node000007" href="$d1/d26/classlogika_1_1meters_1_1ArchiveFieldDef6.html" title="Описание поля архива Logika6." alt="" coords="261,1501,459,1667"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="285,1303,340,1501,335,1503,279,1305"/>
+<area shape="rect" id="Node000005" href="$d3/d70/classlogika_1_1meters_1_1ArchiveFieldDef4L.html" title="Описание поля архива Logika4L." alt="" coords="5,1865,221,2095"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="132,1731,123,1866,118,1866,127,1731"/>
+<area shape="rect" id="Node000006" href="$d7/d97/classlogika_1_1meters_1_1ArchiveFieldDef4M.html" title="Описание поля архива Logika4M." alt="" coords="246,1900,466,2060"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="220,1728,315,1899,310,1901,216,1730"/>
+<area shape="rect" id="Node000010" href="$d1/dcb/classlogika_1_1meters_1_1DataTagDef6.html" title="Тэг с данными Logika6." alt="" coords="546,1475,758,1693"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="679,1419,671,1475,666,1474,674,1418"/>
+<area shape="rect" id="Node000011" href="$d8/d42/classlogika_1_1meters_1_1TagDef4.html" title="Базовый тэг Logika4." alt="" coords="783,1502,983,1666"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="820,1417,853,1501,848,1503,815,1419"/>
+<area shape="rect" id="Node000012" href="$db/d67/classlogika_1_1meters_1_1TagDef4L.html" title="Тэг с данными Logika4L." alt="" coords="598,1764,823,2196"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="844,1681,807,1765,802,1763,839,1679"/>
+<area shape="rect" id="Node000013" href="$dc/dc3/classlogika_1_1meters_1_1TagDef4M.html" title="Тэг с данными Logika4M." alt="" coords="848,1933,1059,2027"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="902,1680,948,1933,943,1934,897,1681"/>
 </map>

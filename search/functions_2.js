@@ -4,7 +4,7 @@ var searchData=
   ['cancelwait_1',['CancelWait',['../da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a50f891e3d2ea88debdc04ac86a03ac92',1,'logika::protocols::IProtocol::CancelWait()'],['../da/d50/classlogika_1_1protocols_1_1Protocol.html#a6285d415e8860d76152430648dca3a2d',1,'logika::protocols::Protocol::CancelWait()']]],
   ['cast_2',['Cast',['../d0/d78/classlogika_1_1Any.html#aee2fa9adcea7064e7177a2c2721be91b',1,'logika::Any']]],
   ['channel_3',['Channel',['../dd/def/structlogika_1_1meters_1_1Channel.html#a3ab72afe9957cfff62e8d381f820b4a3',1,'logika::meters::Channel']]],
-  ['channeldef_4',['ChannelDef',['../d3/dce/structlogika_1_1meters_1_1ChannelDef.html#a2eba2481302368fcecc7c605d4a73319',1,'logika::meters::ChannelDef']]],
+  ['channeldef_4',['ChannelDef',['../d3/dce/structlogika_1_1meters_1_1ChannelDef.html#a05f51445f1bd4f147856d1f919a34025',1,'logika::meters::ChannelDef']]],
   ['checksum8_5',['CheckSum8',['../d6/df4/classlogika_1_1meters_1_1Logika4.html#ac07930f162fb26efa471c9514ed9bdb2',1,'logika::meters::Logika4']]],
   ['close_6',['Close',['../db/da7/classlogika_1_1connections_1_1Connection.html#ae036e9fb2edf878a3ce5ad27f59b7683',1,'logika::connections::Connection::Close()'],['../df/ddb/classlogika_1_1connections_1_1IConnection.html#a149967bb6c0d82bab191fb3e95bb4bf8',1,'logika::connections::IConnection::Close()']]],
   ['closecommsession_7',['CloseCommSession',['../da/dd0/classlogika_1_1protocols_1_1IProtocol.html#a50dd0b85150af1a44599bb92cef9eefb',1,'logika::protocols::IProtocol::CloseCommSession()'],['../da/d50/classlogika_1_1protocols_1_1Protocol.html#a471747c62762203f240dd1ec4eb4ee50',1,'logika::protocols::Protocol::CloseCommSession()']]],

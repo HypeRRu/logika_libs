@@ -1,7 +1,7 @@
 <map id="logika::meters::CalcFieldDef" name="logika::meters::CalcFieldDef">
-<area shape="rect" id="Node000001" title="Расчетный тэг" alt="" coords="22,927,233,1205"/>
-<area shape="rect" id="Node000002" href="$d5/dfb/classlogika_1_1meters_1_1TagDef.html" title="Базовое описание тэга" alt="" coords="25,585,230,879"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,894,130,927,125,927,125,894"/>
-<area shape="rect" id="Node000003" href="$da/dc9/classlogika_1_1meters_1_1ItemDefBase.html" title="Базовый элемент" alt="" coords="5,5,249,537"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="130,552,130,585,125,585,125,552"/>
+<area shape="rect" id="Node000001" title="Расчетный тэг" alt="" coords="22,912,233,1191"/>
+<area shape="rect" id="Node000002" href="$d5/dfb/classlogika_1_1meters_1_1TagDef.html" title="Базовое описание тэга" alt="" coords="25,571,230,864"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,879,130,912,125,912,125,879"/>
+<area shape="rect" id="Node000003" href="$da/dc9/classlogika_1_1meters_1_1ItemDefBase.html" title="Базовый элемент" alt="" coords="5,5,249,523"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="130,537,130,571,125,571,125,537"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="logika::meters::Archive" name="logika::meters::Archive">
-<area shape="rect" id="Node000001" title="Базовый класс архива" alt="" coords="149,5,344,249"/>
-<area shape="rect" id="Node000002" href="$d2/dd3/classlogika_1_1meters_1_1IntervalArchive.html" title="Интервальный архив" alt="" coords="5,329,221,633"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,264,173,331,168,329,193,262"/>
-<area shape="rect" id="Node000003" href="$d5/dde/classlogika_1_1meters_1_1ServiceArchive.html" title="Сервисный архив" alt="" coords="246,297,514,665"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="300,262,313,297,308,298,295,264"/>
+<area shape="rect" id="Node000001" title="Базовый класс архива" alt="" coords="133,5,328,249"/>
+<area shape="rect" id="Node000002" href="$d2/dd3/classlogika_1_1meters_1_1IntervalArchive.html" title="Интервальный архив" alt="" coords="5,329,200,633"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,264,160,331,155,329,179,262"/>
+<area shape="rect" id="Node000003" href="$d5/dde/classlogika_1_1meters_1_1ServiceArchive.html" title="Сервисный архив" alt="" coords="225,297,493,665"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="282,262,295,297,290,298,277,264"/>
 </map>

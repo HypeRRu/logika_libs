@@ -22,7 +22,7 @@ var searchData=
   ['any_2eipp_19',['any.ipp',['../de/d59/any_8ipp.html',1,'']]],
   ['appenddatetag_20',['AppendDateTag',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a86ceeff905b079d1594cd9e5a0668058',1,'logika::protocols::M4::M4Protocol']]],
   ['appendparamnum_21',['AppendParamNum',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a7680b5095a6c2b6f37b2b4352aad7cc1',1,'logika::protocols::M4::M4Protocol']]],
-  ['archive_22',['Archive',['../da/d89/classlogika_1_1meters_1_1Archive.html',1,'logika::meters::Archive'],['../da/d89/classlogika_1_1meters_1_1Archive.html#a182e095831314d45c68a2645f925c975',1,'logika::meters::Archive::Archive()']]],
+  ['archive_22',['Archive',['../da/d89/classlogika_1_1meters_1_1Archive.html',1,'logika::meters::Archive'],['../da/d89/classlogika_1_1meters_1_1Archive.html#a433ddce143d2f9d921c485f4dd833732',1,'logika::meters::Archive::Archive()']]],
   ['archive_23',['archive',['../dd/dc4/structlogika_1_1meters_1_1ArchiveFieldDef4Settings.html#affead3d74711f5d7c9bc68d6afa69e9e',1,'logika::meters::ArchiveFieldDef4Settings']]],
   ['archive_2ecpp_24',['archive.cpp',['../d7/d05/archive_8cpp.html',1,'']]],
   ['archive_2eh_25',['archive.h',['../d9/d28/archive_8h.html',1,'']]],

@@ -8,6 +8,7 @@ var classlogika_1_1meters_1_1DataTag =
     [ "GetTimestamp", "d9/d53/classlogika_1_1meters_1_1DataTag.html#a75c9ed8679598d66a7d09bdd97f1a073", null ],
     [ "GetValue", "d9/d53/classlogika_1_1meters_1_1DataTag.html#a903ab477a5fbe50423123b18e45fc53c", null ],
     [ "HasValue", "d9/d53/classlogika_1_1meters_1_1DataTag.html#ae3d72ebf492bc883833b3982fe74c2ac", null ],
+    [ "ReplaceValue", "d9/d53/classlogika_1_1meters_1_1DataTag.html#a5b38cf02a6b59e06135051baac9cd118", null ],
     [ "SetErrorDescription", "d9/d53/classlogika_1_1meters_1_1DataTag.html#a154186d8cadc237015ab4eab64c1c4da", null ],
     [ "SetOper", "d9/d53/classlogika_1_1meters_1_1DataTag.html#ab8c67f466df5051b340ba8dc2493f283", null ],
     [ "SetTimestamp", "d9/d53/classlogika_1_1meters_1_1DataTag.html#a65fa0350e812beacffdce16968606521", null ],
@@ -18,5 +19,5 @@ var classlogika_1_1meters_1_1DataTag =
     [ "errDesc_", "d9/d53/classlogika_1_1meters_1_1DataTag.html#ae6045c72b74b032625b16d1b17346346", null ],
     [ "oper_", "d9/d53/classlogika_1_1meters_1_1DataTag.html#a742be4ae5f6ba0a3e59099d9ba2d4439", null ],
     [ "timestamp_", "d9/d53/classlogika_1_1meters_1_1DataTag.html#a86d6f695ac2c37250e06ad382d42fa45", null ],
-    [ "value_", "d9/d53/classlogika_1_1meters_1_1DataTag.html#a7db5a2c1fc0fe0e7abf581b37cc6d227", null ]
+    [ "value_", "d9/d53/classlogika_1_1meters_1_1DataTag.html#aabcfeb56d780b15be80b14e1fd94b973", null ]
 ];

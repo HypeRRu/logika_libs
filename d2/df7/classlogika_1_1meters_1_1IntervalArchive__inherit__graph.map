@@ -1,5 +1,5 @@
 <map id="logika::meters::IntervalArchive" name="logika::meters::IntervalArchive">
-<area shape="rect" id="Node000001" title="Интервальный архив" alt="" coords="5,297,221,601"/>
-<area shape="rect" id="Node000002" href="$da/d89/classlogika_1_1meters_1_1Archive.html" title="Базовый класс архива" alt="" coords="16,5,211,249"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,264,116,298,111,298,111,264"/>
+<area shape="rect" id="Node000001" title="Интервальный архив" alt="" coords="5,297,200,601"/>
+<area shape="rect" id="Node000002" href="$da/d89/classlogika_1_1meters_1_1Archive.html" title="Базовый класс архива" alt="" coords="5,5,200,249"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,264,105,298,100,298,100,264"/>
 </map>
