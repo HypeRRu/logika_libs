@@ -163,5 +163,5 @@ var namespacelogika_1_1meters =
     [ "Logika4L", "dc/df7/namespacelogika_1_1meters.html#a803e8fb2f446c48d3fb81544f9a2cbe4", null ],
     [ "Meter", "dc/df7/namespacelogika_1_1meters.html#a74aeaa4e413cc7a339bac9f55b6d6b41", null ],
     [ "TagDef", "dc/df7/namespacelogika_1_1meters.html#a783dcfcc1b344f5e0a1ce2e96f88c815", null ],
-    [ "VQT", "dc/df7/namespacelogika_1_1meters.html#a6ac4a73e6c541c66304de5b62ac9f170", null ]
+    [ "VQT", "dc/df7/namespacelogika_1_1meters.html#af6306e885a3cd78507dbadd4b06721b1", null ]
 ];

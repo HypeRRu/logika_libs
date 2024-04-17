@@ -9,5 +9,5 @@ var searchData=
   ['connecting_6',['Connecting',['../df/da9/namespacelogika_1_1connections.html#aac9f3568307bb7171e2a5874a167121eae321c53b354930ba96f0243e652df458',1,'logika::connections']]],
   ['connectionnotseterror_7',['ConnectionNotSetError',['../df/dea/namespacelogika_1_1connections_1_1Rc.html#ad077f3dcd802ffc6a350f1a97877a4c6a44042facb7c52c68a54f2b1b6288f66b',1,'logika::connections::Rc']]],
   ['connectionrc_8',['ConnectionRc',['../df/dea/namespacelogika_1_1connections_1_1Rc.html#ad077f3dcd802ffc6a350f1a97877a4c6a739eb5be528e706f951ff37198e8c370',1,'logika::connections::Rc']]],
-  ['count_9',['Count',['../d3/dc8/namespacelogika_1_1log_1_1LogLevel.html#a95bb2436ad8f48fcb2649ec313ec5c9ca328fcb75c42117987d047e34c4899f3b',1,'logika::log::LogLevel']]]
+  ['count_9',['Count',['../d3/dc8/namespacelogika_1_1log_1_1LogLevel.html#a4256178fa0e117c2ded53917d9a1ed1ca328fcb75c42117987d047e34c4899f3b',1,'logika::log::LogLevel']]]
 ];
