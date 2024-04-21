@@ -120,6 +120,17 @@ bool Any::TryCast( T& result ) const
 
 
 template < typename T >
+bool Any::CheckType() const
+{
+    if ( Empty() )
+    {
+        return true;
+    }
+    return typeid( T ) == holder_->TypeInfo();
+} // CheckType
+
+
+template < typename T >
 Any::Holder< T >::Holder( const T& t )
     : value{ t }
 {} // Holder( const T& t )

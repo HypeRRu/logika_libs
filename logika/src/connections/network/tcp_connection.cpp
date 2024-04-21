@@ -11,7 +11,7 @@ namespace logika
 namespace connections
 {
 
-TcpConnection::TcpConnection( const std::string& serverHostName, uint16_t serverPort, uint32_t readTimeout )
+TcpConnection::TcpConnection( const std::string& serverHostName, uint16_t serverPort, TimeType readTimeout )
     : NetConnection( serverHostName, serverPort, readTimeout )
     , socket_{ LOGIKA_SOCKET_INVALID }
 {

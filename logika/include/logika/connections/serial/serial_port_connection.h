@@ -22,14 +22,14 @@ public:
     /// @brief Конструктор соединения по последовательному порту
     /// @param[in] portName Имя последовательного порта
     /// @param[in] readTimeout Время ожидания данных для чтения, мс. По умолчанию 0 - не ограничено.
-    SerialPortConnection( const std::string& portName, uint32_t readTimeout = 0 );
+    SerialPortConnection( const std::string& portName, TimeType readTimeout = 0 );
 
     /// @brief Конструктор соединения по последовательному порту
     /// @param[in] portName Имя последовательного порта
     /// @param[in] readTimeout Время ожидания данных для чтения, мс. По умолчанию 0 - не ограничено.
     SerialPortConnection( const std::string& portName, BaudRate::Type baudRate
         , StopBits::Type stopBits, DataBits::Type dataBits
-        , Parity::Type parity, uint32_t readTimeout = 0 );
+        , Parity::Type parity, TimeType readTimeout = 0 );
 
     /// @brief Деструктор соединения
     ~SerialPortConnection();

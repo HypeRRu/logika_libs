@@ -13,6 +13,7 @@ set(
 	${SRC_DIR}/protocols/m4/packet.cpp
 	${SRC_DIR}/protocols/m4/m4protocol_impl.cpp
 	${SRC_DIR}/protocols/m4/m4protocol_api.cpp
+	${SRC_DIR}/protocols/x6/spbusprotocol.cpp
 )
 
 add_library(${LIB_NAME} SHARED ${${LIB_NAME}_SOURCES_LIST})

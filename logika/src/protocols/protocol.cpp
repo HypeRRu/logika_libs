@@ -4,6 +4,8 @@
 #include <logika/protocols/protocol.h>
 
 #include <logika/connections/iconnection.h>
+#include <logika/connections/serial/serial_connection.h>
+#include <logika/connections/utils/types_converter.h>
 #include <logika/log/defines.h>
 
 #include <logika/protocols/m4/m4protocol.h>
@@ -17,6 +19,7 @@
 
 /// @cond
 #include <chrono>
+#include <array>
 /// @endcond
 
 namespace logika
@@ -227,7 +230,6 @@ bool Protocol::ReadIntervalArchive( std::shared_ptr< meters::Meter > meter, cons
     (void) end;
     (void) state;
     (void) progress;
-    /// @todo throw not implemented?
     return false;
 } // ReadIntervalArchive
 
@@ -244,7 +246,6 @@ bool Protocol::ReadServiceArchive( std::shared_ptr< meters::Meter > meter, const
     (void) end;
     (void) state;
     (void) progress;
-    /// @todo throw not implemented?
     return false;
 } // ReadServiceArchive
 
@@ -313,21 +314,102 @@ std::shared_ptr< meters::Meter > Protocol::DetectX6( std::shared_ptr< X6::SPBusP
 } // DetectX6
 
 
-std::shared_ptr< meters::Meter > Protocol::DetectResponse( std::shared_ptr< connections::IConnection > connection,
-    const storage::StorageKeeper& sKeeper, ByteVector& dump, LocString& model, bool& rxDetected )
-{
-    /// @todo реализовать
-    return nullptr;
-} // DetectResponse
-
-
 std::shared_ptr< meters::Meter > Protocol::AutodectSpt( std::shared_ptr< connections::IConnection > connection,
     const storage::StorageKeeper& sKeeper, connections::BaudRate::Type fixedBaudRate,
     uint32_t waitTimeout, bool tryM4, bool trySpBus, bool tryMek,
     const ByteType* srcAddr, const ByteType* dstAddr, ByteVector& dump,
     connections::BaudRate::Type& deviceBaudRate, LocString& model )
 {
-    /// @todo реализовать
+    if ( !connection )
+    {
+        LOG_WRITE_MSG( LOG_WARNING, LOCALIZED( "Connection not set" ) );
+        return nullptr;
+    }
+
+    std::shared_ptr< meters::Meter > meter = nullptr;
+    model = LOCALIZED( "" );
+
+    std::shared_ptr< M4::M4Protocol > bus4 = std::make_shared< M4::M4Protocol >( sKeeper );
+    bus4->SetConnection( connection );
+    std::shared_ptr< X6::SPBusProtocol > bus6 = std::make_shared< X6::SPBusProtocol >( sKeeper, true );
+    bus6->SetConnection( connection );
+
+    constexpr std::array< connections::BaudRate::Type, 7 > baudRatesAvailable{
+          connections::BaudRate::Rate2400, connections::BaudRate::Rate57600
+        , connections::BaudRate::Rate4800, connections::BaudRate::Rate19200
+        , connections::BaudRate::Rate9600, connections::BaudRate::Rate38400
+        , connections::BaudRate::Rate115200
+    };
+    bool canChangeBaudRate = ( connection->GetConnectionType() & connections::ConnectionType::Serial );
+    connections::BaudRate::Type detectedBaudRate = connections::BaudRate::NotSupported;
+    TimeType savedTimeout = connection->GetReadTimeout();
+    connection->SetReadTimeout( 500 );
+
+    try
+    {
+        std::vector< connections::BaudRate::Type > baudRates{ fixedBaudRate };
+        if ( canChangeBaudRate && fixedBaudRate == connections::BaudRate::NotSupported )
+        {
+            baudRates = std::vector< connections::BaudRate::Type >(
+                baudRatesAvailable.cbegin(), baudRatesAvailable.cend() );
+        }
+
+        for ( connections::BaudRate::Type br: baudRates )
+        {
+            if ( canChangeBaudRate )
+            {
+                std::shared_ptr< connections::SerialConnection > serialConnection
+                    = std::dynamic_pointer_cast< connections::SerialConnection >( connection );
+                if ( !serialConnection )
+                {
+                    throw std::runtime_error{ "Invalid connection type: need to be serial" };
+                }
+                detectedBaudRate = br;
+                serialConnection->SetBaudRate( br );
+                serialConnection->SetDataBits( connections::DataBits::DataBits8 );
+                serialConnection->SetStopBits( connections::StopBits::StopBitOne );
+                serialConnection->SetParity(   connections::Parity::ParityNone );
+                LOG_WRITE( LOG_DEBUG, LOCALIZED( "Trying speed " )
+                    << ToLocString( connections::BaudRateToString( br ) ) );
+            }
+
+            if ( tryM4 )
+            {
+                try
+                {
+                    meter = DetectM4( bus4, sKeeper, dump, model );
+                    deviceBaudRate = detectedBaudRate;
+                    return meter;
+                }
+                catch ( ... )
+                {}
+            }
+
+            if ( trySpBus )
+            {
+                try
+                {
+                    meter = DetectX6( bus6, sKeeper, dump, model );
+                    deviceBaudRate = detectedBaudRate;
+                    return meter;
+                }
+                catch ( ... )
+                {}
+            }
+        }
+
+        if ( tryMek && trySpBus && canChangeBaudRate )
+        {
+            /// @note not implemented
+        }
+    }
+    catch ( ... )
+    {}
+
+    LOG_WRITE_MSG( LOG_INFO, LOCALIZED( "Device not recognized" ) );
+    connection->SetReadTimeout( savedTimeout );
+    deviceBaudRate = connections::BaudRate::NotSupported;
+    dump = ByteVector{};
     return nullptr;
 } // AutodectSpt
 

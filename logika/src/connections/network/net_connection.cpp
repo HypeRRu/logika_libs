@@ -13,7 +13,7 @@ namespace logika
 namespace connections
 {
 
-NetConnection::NetConnection( const std::string& serverHostName, uint16_t serverPort, uint32_t readTimeout )
+NetConnection::NetConnection( const std::string& serverHostName, uint16_t serverPort, TimeType readTimeout )
     : Connection( serverHostName + ":" + std::to_string( serverPort ), readTimeout )
     , serverHostName_{ serverHostName }
     , serverPort_{ serverPort }

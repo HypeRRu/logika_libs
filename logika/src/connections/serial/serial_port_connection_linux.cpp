@@ -75,14 +75,14 @@ bool SerialPortConnection::OpenImpl()
         return false;
     }
 
-    LOG_WRITE( LOG_INFO, LOCALIZED( "Connected successfully to " ) << ToLocString( address_ ) );
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Connected successfully to " ) << locAddress_ );
     return true;
 } // OpenImpl
 
 
 void SerialPortConnection::CloseImpl()
 {
-    LOG_WRITE( LOG_INFO, LOCALIZED( "Closing connection to device " ) << ToLocString( address_ ) );
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Closing connection to device " ) << locAddress_ );
     if ( LOGIKA_FILE_HANDLE_INVALID != handle_ )
     {
         close( handle_ );

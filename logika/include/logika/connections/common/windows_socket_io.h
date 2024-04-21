@@ -38,7 +38,7 @@ namespace windows_io
 /// @return Количество прочитанных байтов
 /// @note После первого чтения возвращает количество прочитанных байтов
 LOGIKA_CONNECTIONS_EXPORT uint32_t ReadBuffer( SocketType sock, ByteVector& buffer
-    , uint32_t start, uint32_t needed, uint32_t timeout = 0, Rc::Type* rc = nullptr );
+    , uint32_t start, uint32_t needed, TimeType timeout = 0, Rc::Type* rc = nullptr );
 
 /// @brief Запись в дескриптор содержимого буфера
 /// @param[in] sock Сокет

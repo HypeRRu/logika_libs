@@ -13,9 +13,7 @@ ArchiveFieldDef4M::ArchiveFieldDef4M( const ChannelDef& cdef
     , const ArchiveFieldDef4MSettings& settings )
     : ArchiveFieldDef4( cdef, settings )
     , fieldIndex_{ settings.fieldIndex }
-{
-    /// @todo Нужен ли здесь ordinal ?
-} // ArchiveFieldDef4M
+{} // ArchiveFieldDef4M
 
 
 uint32_t ArchiveFieldDef4M::GetFieldIndex() const

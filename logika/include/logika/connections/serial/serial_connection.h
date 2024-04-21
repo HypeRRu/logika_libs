@@ -23,7 +23,7 @@ public:
     /// @brief Конструктор соединения по последовательному порту
     /// @param[in] portName Имя последовательного порта
     /// @param[in] readTimeout Время ожидания данных для чтения, мс. По умолчанию 0 - не ограничено.
-    SerialConnection( const std::string& portName, uint32_t readTimeout = 0 );
+    SerialConnection( const std::string& portName, TimeType readTimeout = 0 );
 
     /// @brief Получение скорости работы, бит/c
     /// @return Скорость работы

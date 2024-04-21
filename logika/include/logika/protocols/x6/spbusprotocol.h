@@ -7,6 +7,7 @@
 #define LOGIKA_PROTOCOLS_SPBUS_SPBUSPROTOCOL_H
 
 #include <logika/protocols/defs.h>
+#include <logika/protocols/protocol.h>
 
 #include <logika/common/types.h>
 
@@ -20,11 +21,18 @@ namespace X6
 {
 
 /// @brief Протокол SPBus
-class LOGIKA_PROTOCOLS_EXPORT SPBusProtocol
+class LOGIKA_PROTOCOLS_EXPORT SPBusProtocol: public Protocol
 {
 public:
+    /// @brief Конструктор протокола SPBus
+    /// @param[in] sKeeper Хранилище приложения
+    /// @param[in] broadcast Использовать широковещательный режим
+    SPBusProtocol( const storage::StorageKeeper& sKeeper, bool broadcast );
 
-}; // struct SPBusProtocol
+protected:
+    bool broadcastMode_;    ///< Использовать широковещательный режим
+
+}; // class SPBusProtocol
 
 } // namespace X6
 

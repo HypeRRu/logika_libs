@@ -13,10 +13,9 @@ namespace logika
 namespace connections
 {
 
-/// @todo Заменить ToLocString( address_ ) на locAddress_
-
-Connection::Connection( const std::string& address, uint32_t readTimeout )
+Connection::Connection( const std::string& address, TimeType readTimeout )
     : address_{ address }
+    , locAddress_{ ToLocString( address_ ) }
     , readTimeout_{ readTimeout }
     , type_{ ConnectionType::Offline }
     , state_{ ConnectionState::NotConnected }
@@ -39,15 +38,15 @@ bool Connection::Open()
     if ( ConnectionState::Connected == state_ )
     {
         LOG_WRITE( LOG_WARNING, LOCALIZED( "Found active connection to " )
-            << ToLocString( address_ ) << LOCALIZED( ". Closing" ) );
+            << locAddress_ << LOCALIZED( ". Closing" ) );
         Close();
     }
-    LOG_WRITE( LOG_INFO, LOCALIZED( "Connecting to " ) << ToLocString( address_ )
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Connecting to " ) << locAddress_
         << LOCALIZED( " (" ) << ToLocString( ConnectionTypeToString( type_ ) ) << LOCALIZED( ")" ) );
     state_ = ConnectionState::Connecting;
     if ( OpenImpl() )
     {
-        LOG_WRITE( LOG_INFO, LOCALIZED( "Successfully connected to " ) << ToLocString( address_ ) );
+        LOG_WRITE( LOG_INFO, LOCALIZED( "Successfully connected to " ) << locAddress_ );
         state_ = ConnectionState::Connected;
         if ( onAfterConnect_ )
         {
@@ -57,7 +56,7 @@ bool Connection::Open()
     }
     else
     {
-        LOG_WRITE( LOG_ERROR, LOCALIZED( "Failed to connect to " ) << ToLocString( address_ ) );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Failed to connect to " ) << locAddress_ );
         state_ = ConnectionState::NotConnected;
         return false;
     }
@@ -69,7 +68,7 @@ void Connection::Close()
     if (   ConnectionState::Connected  == state_
         || ConnectionState::Connecting == state_ )
     {
-        LOG_WRITE( LOG_INFO, LOCALIZED( "Disconnecting from " ) << ToLocString( address_ ) );
+        LOG_WRITE( LOG_INFO, LOCALIZED( "Disconnecting from " ) << locAddress_ );
         state_ = ConnectionState::Disconnecting;
         if ( onBeforeDisonnect_ )
         {
@@ -87,10 +86,16 @@ const std::string& Connection::GetAddress() const
 } // GetAddress
 
 
-uint32_t Connection::GetReadTimeout() const
+TimeType Connection::GetReadTimeout() const
 {
     return readTimeout_;
 } // GetReadTimeout
+
+
+void Connection::SetReadTimeout( TimeType timeout )
+{
+    readTimeout_ = timeout;
+} // SetReadTimeout
 
 
 ConnectionType::Type Connection::GetConnectionType() const

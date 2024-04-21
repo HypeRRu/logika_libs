@@ -70,7 +70,7 @@ public:
     virtual uint32_t GetRxGeneralErrors() const override;
 
     /// @copydoc IProtocol::GetGeneralErrors()
-    virtual uint32_t GetGeneralErrors() const = 0;
+    virtual uint32_t GetGeneralErrors() const override;
 
     /// @copydoc IProtocol::GetRxGeneralErrors()
     virtual void RegisterEvent( Rc::Type event ) override;
@@ -136,16 +136,6 @@ public:
     /// @brief Определение модели прибора
     /// @param[in] connection Соединение с прибором
     /// @param[in] sKeeper Хранилище приложения
-    /// @param[out] dump Дамп ответа от прибора
-    /// @param[out] model Модификация прибора
-    /// @param[out] rxDetected Обнаружено чтение
-    /// @return Модель прибора. nullptr, если не распознан
-    static std::shared_ptr< meters::Meter > DetectResponse( std::shared_ptr< connections::IConnection > connection,
-        const storage::StorageKeeper& sKeeper, ByteVector& dump, LocString& model, bool& rxDetected );
-
-    /// @brief Определение модели прибора
-    /// @param[in] connection Соединение с прибором
-    /// @param[in] sKeeper Хранилище приложения
     /// @param[in] fixedBaudRate Фиксированное значение BaudRate
     /// @param[in] waitTimeout Время ожидания ответа
     /// @param[in] tryM4 Проверка приборов на шине M4
@@ -156,6 +146,7 @@ public:
     /// @param[out] dump Дамп ответа от прибора
     /// @param[out] deviceBaudRate Детектированное значение BaudRate
     /// @param[out] model Модификация прибора
+    /// @return Модель прибора. nullptr, если не распознан
     static std::shared_ptr< meters::Meter > AutodectSpt( std::shared_ptr< connections::IConnection > connection,
         const storage::StorageKeeper& sKeeper, connections::BaudRate::Type fixedBaudRate,
         uint32_t waitTimeout, bool tryM4, bool trySpBus, bool tryMek,

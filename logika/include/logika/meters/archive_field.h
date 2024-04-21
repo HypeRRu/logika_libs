@@ -49,6 +49,10 @@ public:
     /// @return Формат отображения
     LocString GetDisplayFormat() const;
 
+    /// @brief Получение типа элемента
+    /// @return Тип элемента
+    DbType GetElementType() const;
+
     /// @copydoc ISerializable::ToString()
     virtual LocString ToString() const override;
 

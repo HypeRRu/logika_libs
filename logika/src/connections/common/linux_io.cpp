@@ -23,7 +23,7 @@ namespace linux_io
 {
 
 uint32_t ReadBuffer( ReadFunction readfn, FileHandleType handle, ByteVector& buffer
-    , uint32_t start, uint32_t needed, uint32_t timeout, Rc::Type* rc )
+    , uint32_t start, uint32_t needed, TimeType timeout, Rc::Type* rc )
 {
     if ( LOGIKA_FILE_HANDLE_INVALID == handle )
     {

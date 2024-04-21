@@ -23,7 +23,7 @@ namespace windows_io
 {
 
 uint32_t ReadBuffer( SocketType sock, ByteVector& buffer
-    , uint32_t start, uint32_t needed, uint32_t timeout, Rc::Type* rc )
+    , uint32_t start, uint32_t needed, TimeType timeout, Rc::Type* rc )
 {
     if ( LOGIKA_SOCKET_INVALID == sock )
     {

@@ -112,9 +112,6 @@ public:
     /// @copydoc ISerializable::ToString()
     virtual LocString ToString() const override;
 
-    /// @todo hash code?
-    /// @todo get typed meters
-
 protected:
     MeasureKind measureKind_;                       ///< Тип измерения
     LocString caption_;                             ///< Название прибора
@@ -138,7 +135,6 @@ protected:
         ImportantTag, std::vector< LocString >
     > commonTagDefs_;                               ///< Описание стандартных тэгов
     uint16_t ident_;                                ///< Идентификатор прибора
-    /// @todo mutex?
 
 }; // class Meter
 

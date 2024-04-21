@@ -59,7 +59,7 @@ bool TcpConnection::OpenImpl()
                 LOG_WRITE( LOG_WARNING, LOCALIZED( "Unable to set non-blocking mode: " )
                     << ToLocString( SafeStrError( errno ) ) );
             }
-            LOG_WRITE( LOG_INFO, LOCALIZED( "Connected to " ) << ToLocString( address_ ) );
+            LOG_WRITE( LOG_INFO, LOCALIZED( "Connected to " ) << locAddress_ );
             freeaddrinfo( info ); /// Больше не используется
             return true;
         }
@@ -67,14 +67,14 @@ bool TcpConnection::OpenImpl()
         close( socket_ );
         socket_ = LOGIKA_SOCKET_INVALID;
     }
-    LOG_WRITE( LOG_ERROR, LOCALIZED( "Can't open connection with " ) << ToLocString( address_ ) );
+    LOG_WRITE( LOG_ERROR, LOCALIZED( "Can't open connection with " ) << locAddress_ );
     return false;
 } // OpenImpl
 
 
 void TcpConnection::CloseImpl()
 {
-    LOG_WRITE( LOG_INFO, LOCALIZED( "Closing connection with " ) << ToLocString( address_ ) );  
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Closing connection with " ) << locAddress_ );  
     if ( LOGIKA_SOCKET_INVALID != socket_ )
     {
         shutdown( socket_, SHUT_RDWR );

@@ -346,7 +346,6 @@ int main()
                     }
                     else
                     {
-                        /// @todo GetName() -> GetArchiveType()->GetName()
                         logika::LocString label = archive->GetMeter()->GetCaption() + LOCALIZED( "." ) + archive->GetArchiveType()->GetName();
                         LOG_WRITE( LOG_INFO, LOCALIZED( "Add L4Archive '" ) << label << LOCALIZED( "' to storage: " )
                             << ( l4aStorage->AddItem( label, archive ) ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );

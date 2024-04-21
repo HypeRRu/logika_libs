@@ -14,7 +14,7 @@
 - [x] Protocol
 - [x] M4
 - [ ] SPBus
-- [ ] Features (autodetect, ...)
+- [x] Features (autodetect, ...)
 
 ### Meters
 - [x] Types

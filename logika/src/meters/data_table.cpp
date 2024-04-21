@@ -3,6 +3,8 @@
 
 #include <logika/meters/data_table.hpp>
 
+#include <logika/log/defines.h>
+
 /// @cond
 #include <stdexcept>
 #include <algorithm>
@@ -119,7 +121,132 @@ bool DataTable::InsertRecord( DataTable::RecordType record, size_t index )
 
 bool DataTable::ValidateRecord( DataTable::RecordType record )
 {
-    /// @todo реализовать
+    if ( !record )
+    {
+        LOG_WRITE_MSG( LOG_DEBUG, LOCALIZED( "Adding empty record" ) );
+        return true;
+    }
+    if ( record->size() != fieldList_.size() )
+    {
+        LOG_WRITE( LOG_WARNING, LOCALIZED( "Record fields count not match table columns count: " )
+            << record->size() << LOCALIZED( " vs " ) << fieldList_.size() );
+        return false;
+    }
+    for ( size_t i = 0; i < fieldList_.size(); ++i )
+    {
+        FieldType field = fieldList_.at( i );
+        std::shared_ptr< logika::Any > value = record->at( i );
+        if ( !field || !value || value->Empty() )
+        {
+            continue;
+        }
+        /// @todo Сделать проверку жесткой после валидации программы
+        switch ( field->GetElementType() )
+        {
+            case DbType::Byte:
+            {
+                if ( !value->CheckType< ByteType >() )
+                {
+                    LOG_WRITE( LOG_WARNING, LOCALIZED( "Record field " ) << i
+                        << LOCALIZED( " type does not match to byte type" ) );
+                    // return false;
+                }
+                break;
+            }
+            case DbType::Int32:
+            {
+                if ( !value->CheckType< uint32_t >() && !value->CheckType< int32_t >() )
+                {
+                    LOG_WRITE( LOG_WARNING, LOCALIZED( "Record field " ) << i
+                        << LOCALIZED( " type does not match to int32 type" ) );
+                    // return false;
+                }
+                break;
+            }
+            case DbType::Int64:
+            {
+                if ( !value->CheckType< uint64_t >() && !value->CheckType< int64_t >() )
+                {
+                    LOG_WRITE( LOG_WARNING, LOCALIZED( "Record field " ) << i
+                        << LOCALIZED( " type does not match to int64 type" ) );
+                    // return false;
+                }
+                break;
+            }
+            case DbType::Single:
+            {
+                if ( !value->CheckType< float >() )
+                {
+                    LOG_WRITE( LOG_WARNING, LOCALIZED( "Record field " ) << i
+                        << LOCALIZED( " type does not match to single type" ) );
+                    // return false;
+                }
+                break;
+            }
+            case DbType::Double:
+            {
+                if ( !value->CheckType< double >() )
+                {
+                    LOG_WRITE( LOG_WARNING, LOCALIZED( "Record field " ) << i
+                        << LOCALIZED( " type does not match to double type" ) );
+                    // return false;
+                }
+                break;
+            }
+            case DbType::String:
+            {
+                if ( !value->CheckType< LocString >() )
+                {
+                    LOG_WRITE( LOG_WARNING, LOCALIZED( "Record field " ) << i
+                        << LOCALIZED( " type does not match to string type" ) );
+                    // return false;
+                }
+                break;
+            }
+            case DbType::ByteArray:
+            {
+                if ( !value->CheckType< ByteVector >() )
+                {
+                    LOG_WRITE( LOG_WARNING, LOCALIZED( "Record field " ) << i
+                        << LOCALIZED( " type does not match to byte array type" ) );
+                    // return false;
+                }
+                break;
+            }
+            case DbType::Int32Array:
+            {
+                if ( !value->CheckType< std::vector< uint32_t > >() && !value->CheckType< std::vector< int32_t > >() )
+                {
+                    LOG_WRITE( LOG_WARNING, LOCALIZED( "Record field " ) << i
+                        << LOCALIZED( " type does not match to int32[] type" ) );
+                    // return false;
+                }
+                break;
+            }
+            case DbType::StringArray:
+            {
+                if ( !value->CheckType< std::vector< LocString > >() )
+                {
+                    LOG_WRITE( LOG_WARNING, LOCALIZED( "Record field " ) << i
+                        << LOCALIZED( " type does not match to string[] type" ) );
+                    // return false;
+                }
+                break;
+            }
+            case DbType::ObjectArray:
+            {
+                if ( !value->CheckType< std::vector< std::shared_ptr< logika::Any > > >() )
+                {
+                    LOG_WRITE( LOG_WARNING, LOCALIZED( "Record field " ) << i
+                        << LOCALIZED( " type does not match to object[] type" ) );
+                    // return false;
+                }
+                break;
+            }
+            default:
+                continue;
+        }
+    }
     return true;
 } // ValidateRecord
 
@@ -127,8 +254,15 @@ bool DataTable::ValidateRecord( DataTable::RecordType record )
 
 bool DataTable::ValidateField( DataTable::FieldType field )
 {
-    /// @todo реализовать
-    return true;
+    if ( !field )
+    {
+        return false;
+    }
+    const auto iter = std::find_if( fieldList_.cbegin(), fieldList_.cend(), [ field ](
+        const DataTable::FieldType& f ){
+        return f && f->GetName() == field->GetName();
+    } );
+    return fieldList_.cend() == iter;
 } // ValidateField
 
 

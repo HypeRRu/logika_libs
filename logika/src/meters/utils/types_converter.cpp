@@ -17,20 +17,22 @@ namespace meters
 LocString DbTypeToString( DbType type )
 {
     static const std::unordered_map< DbType, LocString > mapToString{
-          { DbType::Byte,   LOCALIZED( "tinyint" ) }
-        , { DbType::Int32,  LOCALIZED( "int" ) }
-        , { DbType::Int64,  LOCALIZED( "bigint" ) }
-        , { DbType::Single, LOCALIZED( "real" ) }
-        , { DbType::Double, LOCALIZED( "float" ) }
-        , { DbType::String, LOCALIZED( "varchar(128)" )}
-        /// @todo Массивы
+          { DbType::Byte,        LOCALIZED( "tinyint" ) }
+        , { DbType::Int32,       LOCALIZED( "int" ) }
+        , { DbType::Int64,       LOCALIZED( "bigint" ) }
+        , { DbType::Single,      LOCALIZED( "real" ) }
+        , { DbType::Double,      LOCALIZED( "float" ) }
+        , { DbType::String,      LOCALIZED( "varchar(128)" ) }
+        , { DbType::ByteArray,   LOCALIZED( "byte[]" ) }
+        , { DbType::Int32Array,  LOCALIZED( "int32[]" ) }
+        , { DbType::StringArray, LOCALIZED( "string[]" ) }
+        , { DbType::ObjectArray, LOCALIZED( "object[]" ) }
     };
     auto converted = mapToString.find( type );
     if ( converted != mapToString.cend() )
     {
         return converted->second;
     }
-    /// @todo Стоит ли использовать exception?
     return LOCALIZED( "" );
 } // DbTypeToString
 

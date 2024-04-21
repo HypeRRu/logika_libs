@@ -36,7 +36,7 @@ bool SerialPortConnection::OpenImpl()
         , FILE_ATTRIBUTE_NORMAL, 0 );
     if ( LOGIKA_FILE_HANDLE_INVALID == handle_ )
     {
-        LOG_WRITE( LOG_ERROR, LOCALIZED( "Can't open device " ) << ToLocString( address_ )
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Can't open device " ) << locAddress_
                               << LOCALIZED( ": " ) << GetLastError() );
         return false;
     }
@@ -47,7 +47,7 @@ bool SerialPortConnection::OpenImpl()
     /// Получение текущих настроек устройства
     if ( !GetCommState( handle_, &options ) )
     {
-        LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to get device options for " ) << ToLocString( address_ ) );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to get device options for " ) << locAddress_ );
         CloseImpl();
         return false;
     }
@@ -65,7 +65,7 @@ bool SerialPortConnection::OpenImpl()
     /// Применение конфигурации
     if ( !SetCommState( handle_, &options ) )
     {
-        LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to set device options for " ) << ToLocString( address_ ) );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to set device options for " ) << locAddress_ );
         CloseImpl();
         return false;
     }
@@ -80,19 +80,19 @@ bool SerialPortConnection::OpenImpl()
 
     if ( !SetCommTimeouts( handle_, &timeouts ) )
     {
-        LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to set RW timeouts for " ) << ToLocString( address_ ) );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to set RW timeouts for " ) << locAddress_ );
         CloseImpl();
         return false;
     }
 
-    LOG_WRITE( LOG_INFO, LOCALIZED( "Connected successfully to " ) << ToLocString( address_ ) );
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Connected successfully to " ) << locAddress_ );
     return true;
 } // OpenImpl
 
 
 void SerialPortConnection::CloseImpl()
 {
-    LOG_WRITE( LOG_INFO, LOCALIZED( "Closing connection to device " ) << ToLocString( address_ ) );  
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Closing connection to device " ) << locAddress_ );  
     if ( LOGIKA_FILE_HANDLE_INVALID == handle_ )
     {
         CloseHandle( handle_ );

@@ -24,7 +24,6 @@ namespace meters
 {
 
 /// @brief Таблица данных
-/// @todo Поиск по имени/caption столбца
 class LOGIKA_METERS_EXPORT DataTable
 {
 public:
@@ -37,7 +36,6 @@ public:
 
     DataTable( const DataTable& ) = delete;
     DataTable& operator= ( const DataTable& ) = delete;
-    /// @todo Сделать move-able
 
     /// @brief Получение количества записей в таблице
     /// @return Количество записей в таблице

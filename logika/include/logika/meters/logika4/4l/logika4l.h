@@ -77,7 +77,7 @@ public:
     /// @param[in] binType Тип данных
     /// @param[in] buffer Буфер
     /// @param[in] offset Отступ в буфере
-    /// @param[out] oper @todo Флаг операции?
+    /// @param[out] oper Флаг оперативности тэга
     /// @return Указатель на считанное значение (инкапсулированное в Any)
     /// @throws std::out_of_range Если offset + sizeof выходит за границу данных
     static std::shared_ptr< logika::Any > GetValue( BinaryType4L::Type binType,
@@ -272,7 +272,6 @@ public:
     /// @param[in] all Получение полной карты
     /// @param[in] model Название модели прибора
     /// @return Карта ADS
-    /// @todo Уточнить
     virtual std::vector< Logika4L::AdsFlashRun > GetAdsFileLayout( bool all, const LocString& model ) const;
 
 }; // class Logika4L

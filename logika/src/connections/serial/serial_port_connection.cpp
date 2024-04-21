@@ -14,18 +14,18 @@ namespace logika
 namespace connections
 {
 
-SerialPortConnection::SerialPortConnection( const std::string& portName, uint32_t readTimeout )
+SerialPortConnection::SerialPortConnection( const std::string& portName, TimeType readTimeout )
     : SerialConnection( portName, readTimeout )
     , handle_{ LOGIKA_FILE_HANDLE_INVALID }
 {
     type_ = ConnectionType::ComPort;
-} // SerialPortConnection( const std::string& portName, uint32_t readTimeout )
+} // SerialPortConnection( const std::string& portName, TimeType readTimeout )
 
 
 SerialPortConnection::SerialPortConnection(
       const std::string& portName, BaudRate::Type baudRate
     , StopBits::Type stopBits, DataBits::Type dataBits
-    , Parity::Type parity, uint32_t readTimeout )
+    , Parity::Type parity, TimeType readTimeout )
     : SerialConnection( portName, readTimeout )
     , handle_{ LOGIKA_FILE_HANDLE_INVALID }
 {

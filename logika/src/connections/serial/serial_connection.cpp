@@ -14,7 +14,7 @@ namespace logika
 namespace connections
 {
 
-SerialConnection::SerialConnection( const std::string& portName, uint32_t readTimeout )
+SerialConnection::SerialConnection( const std::string& portName, TimeType readTimeout )
     : Connection( portName, readTimeout )
     , baudRate_{ BaudRate::NotSupported }
     , stopBits_{ StopBits::NotSupported }
@@ -33,7 +33,7 @@ BaudRate::Type SerialConnection::GetBaudRate() const
 
 bool SerialConnection::SetBaudRate( BaudRate::Type rate )
 {
-    LOG_WRITE( LOG_INFO, LOCALIZED( "Set port " ) << ToLocString( address_ )
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Set port " ) << locAddress_
         << LOCALIZED( " baud rate to " ) << ToLocString( BaudRateToString( rate ) ) );
     if ( !IsValidBaudRate( rate ) )
     {
@@ -46,7 +46,7 @@ bool SerialConnection::SetBaudRate( BaudRate::Type rate )
     baudRate_ = rate;
     if ( IsConnected() )
     {
-        LOG_WRITE( LOG_INFO, LOCALIZED( "Port " ) << ToLocString( address_ )
+        LOG_WRITE( LOG_INFO, LOCALIZED( "Port " ) << locAddress_
             << LOCALIZED( " settings changed when connection is opened. Reopenning connection" ) )
         Open(); /// Переподключение после изменения настроек
     }
@@ -62,7 +62,7 @@ StopBits::Type SerialConnection::GetStopBits() const
 
 bool SerialConnection::SetStopBits( StopBits::Type bits )
 {
-    LOG_WRITE( LOG_INFO, LOCALIZED( "Set port " ) << ToLocString( address_ )
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Set port " ) << locAddress_
         << LOCALIZED( " stop bits to " ) << ToLocString( StopBitsToString( bits ) ) );
     if ( !IsValidStopBits( bits ) )
     {
@@ -75,7 +75,7 @@ bool SerialConnection::SetStopBits( StopBits::Type bits )
     stopBits_ = bits;
     if ( IsConnected() )
     {
-        LOG_WRITE( LOG_INFO, LOCALIZED( "Port " ) << ToLocString( address_ )
+        LOG_WRITE( LOG_INFO, LOCALIZED( "Port " ) << locAddress_
             << LOCALIZED( " settings changed when connection is opened. Reopenning connection" ) )
         Open(); /// Переподключение после изменения настроек
     }
@@ -92,7 +92,7 @@ DataBits::Type SerialConnection::GetDataBits() const
 
 bool SerialConnection::SetDataBits( DataBits::Type bits )
 {
-    LOG_WRITE( LOG_INFO, LOCALIZED( "Set port " ) << ToLocString( address_ )
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Set port " ) << locAddress_
         << LOCALIZED( " data bits to " ) << ToLocString( DataBitsToString( bits ) ) );
     if ( !IsValidDataBits( bits ) )
     {
@@ -105,7 +105,7 @@ bool SerialConnection::SetDataBits( DataBits::Type bits )
     dataBits_ = bits;
     if ( IsConnected() )
     {
-        LOG_WRITE( LOG_INFO, LOCALIZED( "Port " ) << ToLocString( address_ )
+        LOG_WRITE( LOG_INFO, LOCALIZED( "Port " ) << locAddress_
             << LOCALIZED( " settings changed when connection is opened. Reopenning connection" ) )
         Open(); /// Переподключение после изменения настроек
     }
@@ -121,7 +121,7 @@ Parity::Type SerialConnection::GetParity() const
 
 bool SerialConnection::SetParity( Parity::Type parity )
 {
-    LOG_WRITE( LOG_INFO, LOCALIZED( "Set port " ) << ToLocString( address_ )
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Set port " ) << locAddress_
         << LOCALIZED( " parity to " ) << ToLocString( ParityToString( parity ) ) );
     if ( !IsValidParity( parity ) )
     {
@@ -134,7 +134,7 @@ bool SerialConnection::SetParity( Parity::Type parity )
     parity_ = parity;
     if ( IsConnected() )
     {
-        LOG_WRITE( LOG_INFO, LOCALIZED( "Port " ) << ToLocString( address_ )
+        LOG_WRITE( LOG_INFO, LOCALIZED( "Port " ) << locAddress_
             << LOCALIZED( " settings changed when connection is opened. Reopenning connection" ) )
         Open(); /// Переподключение после изменения настроек
     }

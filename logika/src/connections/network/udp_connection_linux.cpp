@@ -51,7 +51,7 @@ bool UdpConnection::OpenImpl()
         if ( -1 != connect( socket_, info->ai_addr, info->ai_addrlen ) )
         {
             struct sockaddr_in* ai = reinterpret_cast< struct sockaddr_in* >( info->ai_addr );
-            LOG_WRITE( LOG_INFO, LOCALIZED( "Connected to " ) << ToLocString( address_ ) );
+            LOG_WRITE( LOG_INFO, LOCALIZED( "Connected to " ) << locAddress_ );
             freeaddrinfo( info ); /// Больше не используется
             return true;
         }
@@ -59,14 +59,14 @@ bool UdpConnection::OpenImpl()
         close( socket_ );
         socket_ = LOGIKA_SOCKET_INVALID;
     }
-    LOG_WRITE( LOG_ERROR, LOCALIZED( "Can't open connection with " ) << ToLocString( address_ ) );
+    LOG_WRITE( LOG_ERROR, LOCALIZED( "Can't open connection with " ) << locAddress_ );
     return false;
 } // OpenImpl
 
 
 void UdpConnection::CloseImpl()
 {
-    LOG_WRITE( LOG_INFO, LOCALIZED( "Closing connection with " ) << ToLocString( address_ ) );  
+    LOG_WRITE( LOG_INFO, LOCALIZED( "Closing connection with " ) << locAddress_ );  
     if ( LOGIKA_SOCKET_INVALID != socket_ )
     {
         shutdown( socket_, SHUT_RDWR );

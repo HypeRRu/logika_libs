@@ -23,7 +23,7 @@ public:
     /// @param[in] serverHostName Адрес сервера
     /// @param[in] serverPort Порт сервера
     /// @param[in] readTimeout Время ожидания данных для чтения, мс. По умолчанию 0 - не ограничено.
-    TcpConnection( const std::string& serverHostName, uint16_t serverPort, uint32_t readTimeout = 0 );
+    TcpConnection( const std::string& serverHostName, uint16_t serverPort, TimeType readTimeout = 0 );
     
     /// @brief Деструктор TCP-соединения
     ~TcpConnection();

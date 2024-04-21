@@ -538,7 +538,7 @@ std::shared_ptr< meters::IntervalArchive > M4Protocol::ReadIntervalArchiveDef( s
     {
         throw std::runtime_error{ "Invalid Logika4 Meter" };
     }
-    /// @todo Реализовать
+
     return archive;
 } // ReadIntervalArchiveDef
 

@@ -18,10 +18,6 @@ namespace logika
 
 /// @brief Объект переменного типа
 /// @note Тип сохраняемого объекта должен быть copy-constructible
-/// @todo Можно сделать разделение с помощью trivially_copyable
-/// и сохранять не тривиально копируемый в shared_ptr
-/// @todo Возможно стоит ограничить поддержку только базовыми типами
-/// и сохранять информацию о типе в виде enum? Это позволит добавить поддержу ToString
 class LOGIKA_COMMON_EXPORT Any
 {
 public:
@@ -61,18 +57,24 @@ public:
     void Erase();
 
     /// @brief Получение значения объекта
-    /// @tparam Тип получаемого объекта
+    /// @tparam T Тип получаемого объекта
     /// @return Хранимый объект
     /// @throws std::runtime_error Если значение не установлено или типы не совпадают
     template < typename T >
     T Cast() const;
 
     /// @brief Попытка получения значения объекта
-    /// @tparam Тип получаемого объекта
+    /// @tparam T Тип получаемого объекта
     /// @param[out] result Хранимый объект
     /// @return true - если удалось извлечь хранимый объект, false - иначе
     template < typename T >
     bool TryCast( T& result ) const;
+
+    /// @brief Проверка типа переменной
+    /// @tparam T Проверяемый тип
+    /// @return Совпадает ли тип T с типом сохраненного значения
+    template < typename T >
+    bool CheckType() const;
 
 private:
     /// @brief Базовая вспомогательная структура для хранения значения

@@ -41,7 +41,11 @@ public:
 
     /// @brief Получение времени ожидания данных для чтения
     /// @return Время ожидания данных для чтения, мс
-    virtual uint32_t GetReadTimeout() const = 0;
+    virtual TimeType GetReadTimeout() const = 0;
+
+    /// @brief Установка времени ожидания чтения
+    /// @param[in] timeout Время ожидания данных для чтения, мс
+    virtual void SetReadTimeout( TimeType timeout ) = 0;
 
     /// @brief Получение типа соединения
     /// @return Тип соединения
@@ -78,10 +82,6 @@ public:
     /// @brief Установка обработчика события "Соединение будет разорвано"
     /// @param[in] hook Обработчик события
     virtual void SetOnBeforeDisonnect( const std::function< void() >& hook ) = 0;
-
-    /// @todo OnConnectionRequired?
-
-    /// @todo IsConflictsWith?
 
     /// @brief Сброс статистики по полученным/переданным байтам
     virtual void ResetStatistics() = 0;

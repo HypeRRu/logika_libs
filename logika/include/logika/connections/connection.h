@@ -18,16 +18,13 @@ namespace connections
 {
 
 /// @brief Базовый класс для работы с соединением
-/// @todo Добавить блокировки?
-/// @todo move ctor?
 class LOGIKA_CONNECTIONS_EXPORT Connection: public IConnection
 {
 public:
     /// @brief Конструктор соединения
     /// @param[in] address Адрес соединения
     /// @param[in] readTimeout Время ожидания данных для чтения, мс. По умолчанию 0 - не ограничено.
-    /// @todo change readTimeout type to TimeType 
-    Connection( const std::string& address, uint32_t readTimeout = 0 );
+    Connection( const std::string& address, TimeType readTimeout = 0 );
 
     /// @brief Деструктор соединения
     ~Connection();
@@ -45,7 +42,10 @@ public:
     virtual const std::string& GetAddress() const override;
 
     /// @copydoc IConnection::GetReadTimeout()
-    virtual uint32_t GetReadTimeout() const override;
+    virtual TimeType GetReadTimeout() const override;
+
+    /// @copydoc IConnection::SetReadTimeout()
+    virtual void SetReadTimeout( TimeType timeout ) override;
 
     /// @copydoc IConnection::GetConnectionType()
     virtual ConnectionType::Type GetConnectionType() const override;
@@ -114,7 +114,8 @@ protected:
 
 protected:
     const std::string address_;                 ///< Адрес соединения
-    uint32_t readTimeout_;                      ///< Время ожидания данных для чтения, мс
+    const LocString locAddress_;                ///< Локализованный адрес соединения (для логирования)
+    TimeType readTimeout_;                      ///< Время ожидания данных для чтения, мс
 
     ConnectionType::Type type_;                 ///< Тип соединения
     ConnectionState state_;                     ///< Состояние соединения

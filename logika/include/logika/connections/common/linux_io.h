@@ -42,7 +42,7 @@ using WriteFunction = std::function< ssize_t( FileHandleType, const void*, size_
 /// @return Количество прочитанных байтов
 /// @note После первого чтения возвращает количество прочитанных байтов
 LOGIKA_CONNECTIONS_EXPORT uint32_t ReadBuffer( ReadFunction readfn, FileHandleType handle, ByteVector& buffer
-    , uint32_t start, uint32_t needed, uint32_t timeout = 0, Rc::Type* rc = nullptr );
+    , uint32_t start, uint32_t needed, TimeType timeout = 0, Rc::Type* rc = nullptr );
 
 /// @brief Запись в дескриптор содержимого буфера
 /// @param[in] writefn Функция записи

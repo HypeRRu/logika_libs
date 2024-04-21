@@ -43,8 +43,6 @@ public:
     /// @details Загрузка описаний тэгов, архивов и полей архивов из хранилища
     /// @param[in] sKeeper Хранилище параметров
     /// @note Должен вызываться после загрузки в хранилище всех параметров
-    /// @todo Возможно, сделать Lazy Load
-    /// @todo Сделать static загрузку?
     virtual void Init( const storage::StorageKeeper& sKeeper ) = 0;
 
     /// @brief Получение типа измерения
