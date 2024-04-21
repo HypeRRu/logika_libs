@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Logika Libs: Файл logika/include/logika/protocols/m4/archive4m.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Logika Libs
+   </div>
+   <div id="projectbrief">Библиотеки для работы с приборами НПФ &quot;Логика&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d7/dc8/archive4m_8h.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#namespaces">Пространства имен</a> &#124;
+<a href="#define-members">Макросы</a> &#124;
+<a href="#typedef-members">Определения типов</a> &#124;
+<a href="#enum-members">Перечисления</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle"><div class="title">Файл archive4m.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="../../d7/d37/protocols_2defs_8h_source.html">logika/protocols/defs.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d5/d7b/common_2types_8h_source.html">logika/common/types.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d2/d4b/meters_2defs_8h_source.html">logika/meters/defs.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для archive4m.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/de3/archive4m_8h__incl.png" border="0" usemap="#alogika_2include_2logika_2protocols_2m4_2archive4m_8h" alt=""/></div>
+<map name="alogika_2include_2logika_2protocols_2m4_2archive4m_8h" id="alogika_2include_2logika_2protocols_2m4_2archive4m_8h">
+<area shape="rect" title=" " alt="" coords="171,5,346,46"/>
+<area shape="rect" href="../../d7/d37/protocols_2defs_8h.html" title=" " alt="" coords="5,94,157,120"/>
+<area shape="poly" title=" " alt="" coords="215,49,123,90,121,85,213,44"/>
+<area shape="rect" href="../../d5/d7b/common_2types_8h.html" title=" " alt="" coords="181,94,336,120"/>
+<area shape="poly" title=" " alt="" coords="261,46,261,78,256,78,256,46"/>
+<area shape="rect" href="../../d2/d4b/meters_2defs_8h.html" title=" " alt="" coords="360,94,498,120"/>
+<area shape="poly" title=" " alt="" coords="302,44,390,85,388,90,300,49"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Граф файлов, в которые включается этот файл:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/df3/archive4m_8h__dep__incl.png" border="0" usemap="#alogika_2include_2logika_2protocols_2m4_2archive4m_8hdep" alt=""/></div>
+<map name="alogika_2include_2logika_2protocols_2m4_2archive4m_8hdep" id="alogika_2include_2logika_2protocols_2m4_2archive4m_8hdep">
+<area shape="rect" title=" " alt="" coords="572,5,746,46"/>
+<area shape="rect" href="../../db/d8d/m4protocol_8h.html" title=" " alt="" coords="395,94,573,135"/>
+<area shape="poly" title=" " alt="" coords="607,56,525,96,522,91,604,51"/>
+<area shape="rect" href="../../d9/d14/m4protocol__impl_8cpp.html" title=" " alt="" coords="625,190,791,231"/>
+<area shape="poly" title=" " alt="" coords="669,61,687,134,704,189,699,190,681,135,663,62"/>
+<area shape="rect" href="../../dc/d77/archive4m_8cpp.html" title=" " alt="" coords="696,94,830,135"/>
+<area shape="poly" title=" " alt="" coords="695,54,741,92,737,96,692,58"/>
+<area shape="rect" href="../../df/da9/flash__ring__buffer_8h.html" title=" " alt="" coords="75,183,234,238"/>
+<area shape="poly" title=" " alt="" coords="401,142,247,185,236,189,234,183,246,180,399,137"/>
+<area shape="rect" href="../../d1/de8/flash__ring__buffer_8cpp.html" title=" " alt="" coords="5,375,171,416"/>
+<area shape="poly" title=" " alt="" coords="379,120,289,125,195,137,114,156,85,169,65,184,51,206,45,231,44,257,47,284,62,335,80,374,75,376,57,337,42,285,38,257,39,230,46,204,61,181,82,164,112,151,194,131,288,120,379,115"/>
+<area shape="rect" href="../../d6/d61/m4protocol__api_8cpp.html" title=" " alt="" coords="464,375,624,416"/>
+<area shape="poly" title=" " alt="" coords="533,142,551,160,565,181,574,207,578,235,577,289,566,338,554,376,549,374,561,337,571,288,573,235,569,209,560,184,547,163,529,146"/>
+<area shape="poly" title=" " alt="" coords="546,139,662,187,660,192,544,144"/>
+<area shape="rect" href="../../d3/dae/packet_8cpp.html" title=" " alt="" coords="258,190,393,231"/>
+<area shape="poly" title=" " alt="" coords="439,145,360,192,357,187,436,141"/>
+<area shape="rect" href="../../d4/d25/protocol_8cpp.html" title=" " alt="" coords="417,190,551,231"/>
+<area shape="poly" title=" " alt="" coords="487,150,487,190,481,190,481,150"/>
+<area shape="rect" href="../../dd/d19/flash__archive4l_8h.html" title=" " alt="" coords="125,286,326,327"/>
+<area shape="poly" title=" " alt="" coords="186,249,213,284,209,288,182,253"/>
+<area shape="rect" href="../../de/d72/flash__archive4l_8cpp.html" title=" " alt="" coords="239,375,396,416"/>
+<area shape="poly" title=" " alt="" coords="250,237,305,259,326,272,340,285,348,308,347,332,340,356,331,375,326,373,335,354,342,331,343,309,335,288,323,276,302,264,248,242"/>
+<area shape="poly" title=" " alt="" coords="132,253,116,287,102,334,94,375,88,374,97,333,111,285,127,251"/>
+<area shape="poly" title=" " alt="" coords="259,336,298,373,295,377,255,340"/>
+<area shape="poly" title=" " alt="" coords="183,338,120,377,118,372,180,333"/>
+<area shape="poly" title=" " alt="" coords="313,329,472,372,471,377,312,334"/>
+</map>
+</div>
+</div>
+<p><a href="../../d7/dc8/archive4m_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d8a/structlogika_1_1protocols_1_1ArchiveRequestState4M.html">logika::protocols::ArchiveRequestState4M</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Структура состояния запроса архива Logika4M.  <a href="../../d5/d8a/structlogika_1_1protocols_1_1ArchiveRequestState4M.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d57/classlogika_1_1protocols_1_1FastLzImpl.html">logika::protocols::FastLzImpl</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Порт реализации FastLZ.  <a href="../../df/d57/classlogika_1_1protocols_1_1FastLzImpl.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Пространства имен</h2></td></tr>
+<tr class="memitem:d7/d43/namespacelogika" id="r_d7/d43/namespacelogika"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d43/namespacelogika.html">logika</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:dc/df7/namespacelogika_1_1meters" id="r_dc/df7/namespacelogika_1_1meters"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/df7/namespacelogika_1_1meters.html">logika::meters</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:da/d59/namespacelogika_1_1protocols" id="r_da/d59/namespacelogika_1_1protocols"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d59/namespacelogika_1_1protocols.html">logika::protocols</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M" id="r_d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M.html">logika::protocols::ArchiveId4M</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:de/d3c/namespacelogika_1_1protocols_1_1CompressionType" id="r_de/d3c/namespacelogika_1_1protocols_1_1CompressionType"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d3c/namespacelogika_1_1protocols_1_1CompressionType.html">logika::protocols::CompressionType</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Макросы</h2></td></tr>
+<tr class="memitem:a664bd0af4604de0dd3cc7ef65ab3ccf1" id="r_a664bd0af4604de0dd3cc7ef65ab3ccf1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a664bd0af4604de0dd3cc7ef65ab3ccf1">LOGIKA_PROTOCOLS_M4_ARCHIVE_4M_H</a></td></tr>
+<tr class="separator:a664bd0af4604de0dd3cc7ef65ab3ccf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Определения типов</h2></td></tr>
+<tr class="memitem:aa4ca65c40a8fb895132e111b61848d68" id="r_aa4ca65c40a8fb895132e111b61848d68"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M.html#aa4ca65c40a8fb895132e111b61848d68">logika::protocols::ArchiveId4M::Type</a> = <a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a></td></tr>
+<tr class="separator:aa4ca65c40a8fb895132e111b61848d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa92e68b7c6216f6555f96cc06a60e2a5" id="r_aa92e68b7c6216f6555f96cc06a60e2a5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d3c/namespacelogika_1_1protocols_1_1CompressionType.html#aa92e68b7c6216f6555f96cc06a60e2a5">logika::protocols::CompressionType::Type</a> = <a class="el" href="../../d7/d43/namespacelogika.html#a8c808fe368963682034c99faed301260">ByteType</a></td></tr>
+<tr class="separator:aa92e68b7c6216f6555f96cc06a60e2a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Перечисления</h2></td></tr>
+<tr class="memitem:a70edf9ca3c6dfc4da84a613738f0e3e8" id="r_a70edf9ca3c6dfc4da84a613738f0e3e8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">: Type { <br />
+&#160;&#160;<a class="el" href="../../d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M.html#a70edf9ca3c6dfc4da84a613738f0e3e8a2a8b25e2427bda5843319ea4202a6cb5">logika::protocols::ArchiveId4M::Undefined</a> = static_cast&lt; Type &gt;( -1 )
+, <a class="el" href="../../d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M.html#a70edf9ca3c6dfc4da84a613738f0e3e8a6c842b58a1c6779b7f41b0583daf793c">logika::protocols::ArchiveId4M::Hour</a> = 0
+, <a class="el" href="../../d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M.html#a70edf9ca3c6dfc4da84a613738f0e3e8a42201e3da0ed0f55918f3965a9ea6c23">logika::protocols::ArchiveId4M::Day</a> = 1
+, <a class="el" href="../../d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M.html#a70edf9ca3c6dfc4da84a613738f0e3e8aeed91d9f20795ca458d0496492da9aab">logika::protocols::ArchiveId4M::Dec</a> = 2
+, <br />
+&#160;&#160;<a class="el" href="../../d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M.html#a70edf9ca3c6dfc4da84a613738f0e3e8ae2218f34b039fce1cbd3d75f488a38ca">logika::protocols::ArchiveId4M::Mon</a> = 3
+, <a class="el" href="../../d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M.html#a70edf9ca3c6dfc4da84a613738f0e3e8a1def1cbf8b653316c632b2ad111b383c">logika::protocols::ArchiveId4M::ParamsLog</a> = 4
+, <a class="el" href="../../d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M.html#a70edf9ca3c6dfc4da84a613738f0e3e8ae46a83b1cdd0c2ed32810b640136cfb2">logika::protocols::ArchiveId4M::PowerLog</a> = 5
+, <a class="el" href="../../d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M.html#a70edf9ca3c6dfc4da84a613738f0e3e8a809f2649c58fbdae9add53b6529c6472">logika::protocols::ArchiveId4M::NsLog</a> = 6
+, <br />
+&#160;&#160;<a class="el" href="../../d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M.html#a70edf9ca3c6dfc4da84a613738f0e3e8ade0f6716bfbcba6bdc51442eeab35e7f">logika::protocols::ArchiveId4M::Ctrl</a> = 7
+<br />
+ }</td></tr>
+<tr class="memdesc:a70edf9ca3c6dfc4da84a613738f0e3e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Идентификатор архива Logika4M.  <a href="../../d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M.html#a70edf9ca3c6dfc4da84a613738f0e3e8">Подробнее...</a><br /></td></tr>
+<tr class="separator:a70edf9ca3c6dfc4da84a613738f0e3e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a18facaf3dac44cc2f06a2fec9b4437" id="r_a6a18facaf3dac44cc2f06a2fec9b4437"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">: Type { <a class="el" href="../../de/d3c/namespacelogika_1_1protocols_1_1CompressionType.html#a6a18facaf3dac44cc2f06a2fec9b4437a41ee7fbe5b8cc311c86e621c69cce751">logika::protocols::CompressionType::None</a> = 0x00
+, <a class="el" href="../../de/d3c/namespacelogika_1_1protocols_1_1CompressionType.html#a6a18facaf3dac44cc2f06a2fec9b4437a2b24738722c86b771878e8ec082253b5">logika::protocols::CompressionType::FlzLimitedLength</a> = 0x10
+, <a class="el" href="../../de/d3c/namespacelogika_1_1protocols_1_1CompressionType.html#a6a18facaf3dac44cc2f06a2fec9b4437ab1af6374978e74557e214bff7c5b5f5a">logika::protocols::CompressionType::Flz</a> = 0x20
+ }</td></tr>
+<tr class="memdesc:a6a18facaf3dac44cc2f06a2fec9b4437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Тип сжатия данных  <a href="../../de/d3c/namespacelogika_1_1protocols_1_1CompressionType.html#a6a18facaf3dac44cc2f06a2fec9b4437">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6a18facaf3dac44cc2f06a2fec9b4437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:ae1bc8fa90801d12e636e781bd575cd5d" id="r_ae1bc8fa90801d12e636e781bd575cd5d"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="../../d2/d4b/meters_2defs_8h.html#a5c59f5e14c7104e97cc4bc2a0820d322">LOGIKA_METERS_EXPORT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#ae1bc8fa90801d12e636e781bd575cd5d">logika::meters::ArchiveDef4M</a></td></tr>
+<tr class="separator:ae1bc8fa90801d12e636e781bd575cd5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26786578955e300a43cd949f9bae2026" id="r_a26786578955e300a43cd949f9bae2026"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="../../d2/d4b/meters_2defs_8h.html#a5c59f5e14c7104e97cc4bc2a0820d322">LOGIKA_METERS_EXPORT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/df7/namespacelogika_1_1meters.html#a26786578955e300a43cd949f9bae2026">logika::meters::ArchiveFieldDef4M</a></td></tr>
+<tr class="separator:a26786578955e300a43cd949f9bae2026"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Макросы</h2>
+<a id="a664bd0af4604de0dd3cc7ef65ab3ccf1" name="a664bd0af4604de0dd3cc7ef65ab3ccf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a664bd0af4604de0dd3cc7ef65ab3ccf1">&#9670;&#160;</a></span>LOGIKA_PROTOCOLS_M4_ARCHIVE_4M_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOGIKA_PROTOCOLS_M4_ARCHIVE_4M_H</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_84c4dbe6e1a79f99accf514d2173f793.html">logika</a></li><li class="navelem"><a class="el" href="../../dir_f1284c587673ddc2d78b9c445c5062b8.html">include</a></li><li class="navelem"><a class="el" href="../../dir_536f92a6556bef0406895bf0fd73acd4.html">logika</a></li><li class="navelem"><a class="el" href="../../dir_42cb901e50ce833ed144c9fb04bddde6.html">protocols</a></li><li class="navelem"><a class="el" href="../../dir_ac5b2ea78bfc66d847a8e95f1b3ea8f4.html">m4</a></li><li class="navelem"><a class="el" href="../../d7/dc8/archive4m_8h.html">archive4m.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

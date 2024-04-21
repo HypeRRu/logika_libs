@@ -1,7 +1,7 @@
 <map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
-<area shape="rect" id="Node000000" href="$d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html" title="Класс флэш архива Logika4L." alt="" coords="5,39,134,79"/>
-<area shape="rect" id="Node000001" href="$df/db8/classlogika_1_1protocols_1_1M4_1_1AsyncFlashArchive4.html" title="Асинхронный архив Logika4L." alt="" coords="182,5,346,46"/>
-<area shape="poly" id="edge84_Node000000_Node000001" title=" " alt="" coords="148,43,181,37,182,42,149,48"/>
-<area shape="rect" id="Node000002" href="$d7/dd9/classlogika_1_1protocols_1_1M4_1_1SyncFlashArchive4.html" title="Синхронный (интервальный) архив Logika4L." alt="" coords="185,71,343,111"/>
-<area shape="poly" id="edge85_Node000000_Node000002" title=" " alt="" coords="150,69,185,75,184,81,149,75"/>
+<area shape="rect" id="Node000000" href="$da/dd0/classlogika_1_1protocols_1_1IProtocol.html" title="Интерфейс класса для работы с протоколами" alt="" coords="5,5,126,46"/>
+<area shape="rect" id="Node000001" href="$da/d50/classlogika_1_1protocols_1_1Protocol.html" title="Базовый класс для работы с протоколами" alt="" coords="174,5,294,46"/>
+<area shape="poly" id="edge82_Node000000_Node000001" title=" " alt="" coords="141,23,173,23,173,28,141,28"/>
+<area shape="rect" id="Node000002" href="$d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html" title="Протокол M4." alt="" coords="342,5,462,46"/>
+<area shape="poly" id="edge83_Node000001_Node000002" title=" " alt="" coords="310,23,341,23,341,28,310,28"/>
 </map>

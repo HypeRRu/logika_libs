@@ -14,12 +14,14 @@ var hierarchy =
       [ "logika::meters::MultipartArchiveDef6Settings", "d7/d3d/structlogika_1_1meters_1_1MultipartArchiveDef6Settings.html", null ]
     ] ],
     [ "logika::protocols::M4::ArchiveRequestState4L", "db/d8b/structlogika_1_1protocols_1_1M4_1_1ArchiveRequestState4L.html", null ],
+    [ "logika::protocols::ArchiveRequestState4M", "d5/d8a/structlogika_1_1protocols_1_1ArchiveRequestState4M.html", null ],
     [ "logika::meters::converters::ArchiveTypeConverter", "d9/dbc/classlogika_1_1meters_1_1converters_1_1ArchiveTypeConverter.html", null ],
     [ "logika::protocols::M4::M4Protocol::BusActiveState", "d9/d1e/structlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1BusActiveState.html", null ],
     [ "logika::meters::converters::ChannelConverter", "d7/de8/classlogika_1_1meters_1_1converters_1_1ChannelConverter.html", null ],
     [ "logika::meters::DataTable", "d3/dca/classlogika_1_1meters_1_1DataTable.html", null ],
     [ "logika::meters::DataTagDefVault", "d3/d03/classlogika_1_1meters_1_1DataTagDefVault.html", null ],
     [ "logika::meters::converters::DeviceConverter", "d8/d9f/classlogika_1_1meters_1_1converters_1_1DeviceConverter.html", null ],
+    [ "logika::protocols::FastLzImpl", "df/d57/classlogika_1_1protocols_1_1FastLzImpl.html", null ],
     [ "logika::protocols::M4::FlashArchive4", "d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html", [
       [ "logika::protocols::M4::AsyncFlashArchive4", "df/db8/classlogika_1_1protocols_1_1M4_1_1AsyncFlashArchive4.html", null ],
       [ "logika::protocols::M4::SyncFlashArchive4", "d7/dd9/classlogika_1_1protocols_1_1M4_1_1SyncFlashArchive4.html", null ]

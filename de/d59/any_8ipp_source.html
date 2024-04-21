@@ -149,7 +149,7 @@ $(function(){initNavTree('de/d59/any_8ipp_source.html','../../'); initResizable(
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">template</span> &lt; <span class="keyword">typename</span> T &gt;</div>
 <div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../d0/d78/classlogika_1_1Any.html#a5db4a7ec3ac6b3065e2a49984420a888">   54</a></span><a class="code hl_function" href="../../d0/d78/classlogika_1_1Any.html#aea9c976248cfb593c3d7a6fe6922a98b">Any::Any</a>( <span class="keyword">const</span> T&amp; t )</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    : holder_{ std::make_unique&lt; Holder&lt; T &gt; &gt;( t ) }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    : holder_{ new Holder&lt; T &gt;( t ) }</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>{} <span class="comment">// Any( const T&amp; t )</span></div>
 </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
@@ -158,7 +158,7 @@ $(function(){initNavTree('de/d59/any_8ipp_source.html','../../'); initResizable(
 <div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="../../d0/d78/classlogika_1_1Any.html#a48fe808323c2a4c15d3ebd01ae9a0250">   60</a></span><a class="code hl_class" href="../../d0/d78/classlogika_1_1Any.html">Any</a>&amp; <a class="code hl_function" href="../../d0/d78/classlogika_1_1Any.html#ad71860c67c77559a50615679816d8764">Any::operator= </a>( <span class="keyword">const</span> T&amp; value )</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    holder_ = std::make_unique&lt; Holder&lt; T &gt; &gt;( value );</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    holder_ = std::unique_ptr&lt; Holder&lt; T &gt; &gt;( <span class="keyword">new</span> Holder&lt; T &gt;( value ) );</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>} <span class="comment">// operator= ( const T&amp; value )</span></div>
 </div>
@@ -168,7 +168,7 @@ $(function(){initNavTree('de/d59/any_8ipp_source.html','../../'); initResizable(
 <div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="../../d0/d78/classlogika_1_1Any.html#a6695d17be38c8c9bb42e83c6c3275fcf">   68</a></span><a class="code hl_class" href="../../d0/d78/classlogika_1_1Any.html">Any</a>&amp; <a class="code hl_function" href="../../d0/d78/classlogika_1_1Any.html#ad71860c67c77559a50615679816d8764">Any::operator= </a>( T&amp;&amp; value )</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>{</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    holder_ = std::make_unique&lt; Holder&lt; T &gt; &gt;( value );</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    holder_ = std::unique_ptr&lt; Holder&lt; T &gt; &gt;( <span class="keyword">new</span> Holder&lt; T &gt;( value ) );</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>} <span class="comment">// operator= ( T&amp;&amp; value )</span></div>
 </div>

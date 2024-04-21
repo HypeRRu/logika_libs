@@ -3,6 +3,7 @@ var classlogika_1_1protocols_1_1M4_1_1FlashArchive4 =
     [ "FlashArchive4", "d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html#ae1eedf6fbfc0bced290e07d6e1cde548", null ],
     [ "GetArchiveType", "d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html#afe7371c4875818d5b1937d722343dd54", null ],
     [ "GetDataPoint", "d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html#ac8e31f61ba9214a74fe68da015b55c02", null ],
+    [ "GetHeaders", "d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html#a16e72be9375b79dc8f8134d27c6e827f", null ],
     [ "GetMeter", "d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html#ac6564a924dd8d4bec4bf9639df4f95e6", null ],
     [ "GetMeterInstance", "d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html#a20ff257d72155b810414077f49dd549f", null ],
     [ "InvalidateData", "d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html#a93419218216ee1e2fcc587cc23f3b4f6", null ],

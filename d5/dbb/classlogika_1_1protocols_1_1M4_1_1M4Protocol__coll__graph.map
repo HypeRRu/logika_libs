@@ -1,9 +1,9 @@
 <map id="logika::protocols::M4::M4Protocol" name="logika::protocols::M4::M4Protocol">
-<area shape="rect" id="Node000001" title="Протокол M4." alt="" coords="86,2639,361,5763"/>
-<area shape="rect" id="Node000002" href="$da/d50/classlogika_1_1protocols_1_1Protocol.html" title="Базовый класс для работы с протоколами" alt="" coords="53,852,394,2590"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,2605,226,2639,221,2639,221,2605"/>
-<area shape="rect" id="Node000003" href="$da/dd0/classlogika_1_1protocols_1_1IProtocol.html" title="Интерфейс класса для работы с протоколами" alt="" coords="5,5,212,789"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="147,804,151,852,145,853,141,805"/>
-<area shape="rect" id="Node000004" href="$d5/d47/classlogika_1_1storage_1_1StorageKeeper.html" title="Объект для работы со всеми хранилищами ресурсов" alt="" coords="237,291,439,504"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="332,504,303,836,297,835,326,504"/>
+<area shape="rect" id="Node000001" title="Протокол M4." alt="" coords="120,3610,409,8370"/>
+<area shape="rect" id="Node000002" href="$da/d50/classlogika_1_1protocols_1_1Protocol.html" title="Базовый класс для работы с протоколами" alt="" coords="94,1338,435,3560"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="267,3575,267,3610,262,3610,262,3575"/>
+<area shape="rect" id="Node000003" href="$da/dd0/classlogika_1_1protocols_1_1IProtocol.html" title="Интерфейс класса для работы с протоколами" alt="" coords="5,5,268,1275"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="185,1289,189,1338,183,1338,180,1290"/>
+<area shape="rect" id="Node000004" href="$d5/d47/classlogika_1_1storage_1_1StorageKeeper.html" title="Объект для работы со всеми хранилищами ресурсов" alt="" coords="293,533,495,747"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="389,746,348,1321,343,1321,384,746"/>
 </map>

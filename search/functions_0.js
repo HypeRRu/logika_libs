@@ -19,9 +19,10 @@ var searchData=
   ['archivefielddef4l_16',['ArchiveFieldDef4L',['../d3/d70/classlogika_1_1meters_1_1ArchiveFieldDef4L.html#a8739ecf805c4be4a9f22a4156b497b16',1,'logika::meters::ArchiveFieldDef4L']]],
   ['archivefielddef4m_17',['ArchiveFieldDef4M',['../d7/d97/classlogika_1_1meters_1_1ArchiveFieldDef4M.html#a9dab61ac38f16597fcf049c66b9f22cf',1,'logika::meters::ArchiveFieldDef4M']]],
   ['archivefielddef6_18',['ArchiveFieldDef6',['../d1/d26/classlogika_1_1meters_1_1ArchiveFieldDef6.html#ab5763b54c7fcb4150f0f70b22532e20a',1,'logika::meters::ArchiveFieldDef6']]],
-  ['archiverecord_19',['ArchiveRecord',['../d1/d10/structlogika_1_1protocols_1_1M4_1_1ArchiveRecord.html#aa460612b144b1b53658476e157b79dc6',1,'logika::protocols::M4::ArchiveRecord::ArchiveRecord()'],['../d1/d10/structlogika_1_1protocols_1_1M4_1_1ArchiveRecord.html#aa1bdc3f37bcfdbe9571f19826cb1628a',1,'logika::protocols::M4::ArchiveRecord::ArchiveRecord(TimeType sinceStart, TimeType full, const std::vector&lt; ISerializable * &gt; &amp;vals)']]],
-  ['archivetype_20',['ArchiveType',['../d2/d02/classlogika_1_1meters_1_1ArchiveType.html#a2273671cdd097046abb7cb93784b2fc5',1,'logika::meters::ArchiveType']]],
-  ['archivetypefromstring_21',['ArchiveTypeFromString',['../dd/dfb/namespacelogika__migration_1_1EnumsStringToPb.html#a6cd2403ebf8b61a8f64789e71b0d685e',1,'logika_migration::EnumsStringToPb']]],
-  ['asyncflasharchive4_22',['AsyncFlashArchive4',['../df/db8/classlogika_1_1protocols_1_1M4_1_1AsyncFlashArchive4.html#afe1215402f1c44762cee2f6dd4abda40',1,'logika::protocols::M4::AsyncFlashArchive4']]],
-  ['autodectspt_23',['AutodectSpt',['../da/d50/classlogika_1_1protocols_1_1Protocol.html#a4b0b378431bddae2bc9cbb75ad71c4a7',1,'logika::protocols::Protocol']]]
+  ['archiverecord_19',['ArchiveRecord',['../d1/d10/structlogika_1_1protocols_1_1M4_1_1ArchiveRecord.html#aa460612b144b1b53658476e157b79dc6',1,'logika::protocols::M4::ArchiveRecord::ArchiveRecord()'],['../d1/d10/structlogika_1_1protocols_1_1M4_1_1ArchiveRecord.html#a82989d861fc774c94ed27995ff365583',1,'logika::protocols::M4::ArchiveRecord::ArchiveRecord(TimeType sinceStart, TimeType full, const std::vector&lt; std::shared_ptr&lt; logika::Any &gt; &gt; &amp;vals)']]],
+  ['archiverecordtoservice_20',['ArchiveRecordToService',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#ab9b605ef0a9bfa6a58a0735e7e5a2312',1,'logika::protocols::M4::M4Protocol']]],
+  ['archivetype_21',['ArchiveType',['../d2/d02/classlogika_1_1meters_1_1ArchiveType.html#a2273671cdd097046abb7cb93784b2fc5',1,'logika::meters::ArchiveType']]],
+  ['archivetypefromstring_22',['ArchiveTypeFromString',['../dd/dfb/namespacelogika__migration_1_1EnumsStringToPb.html#a6cd2403ebf8b61a8f64789e71b0d685e',1,'logika_migration::EnumsStringToPb']]],
+  ['asyncflasharchive4_23',['AsyncFlashArchive4',['../df/db8/classlogika_1_1protocols_1_1M4_1_1AsyncFlashArchive4.html#afe1215402f1c44762cee2f6dd4abda40',1,'logika::protocols::M4::AsyncFlashArchive4']]],
+  ['autodectspt_24',['AutodectSpt',['../da/d50/classlogika_1_1protocols_1_1Protocol.html#a4b0b378431bddae2bc9cbb75ad71c4a7',1,'logika::protocols::Protocol']]]
 ];

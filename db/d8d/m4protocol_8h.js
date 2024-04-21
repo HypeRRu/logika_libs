@@ -7,6 +7,9 @@ var m4protocol_8h =
     [ "Type", "db/d8d/m4protocol_8h.html#ae34ff058f07f1d9067c05ea6b1d8fb66", null ],
     [ "Type", "db/d8d/m4protocol_8h.html#a9bc9304a5bac676091c4f33282aacad6", null ],
     [ "Type", "db/d8d/m4protocol_8h.html#af320b64e516efab5067a37585e8cded4", null ],
+    [ "Archive", "db/d8d/m4protocol_8h.html#aed97773c8acd69365a78dd7d35b29d29", null ],
+    [ "ArchiveRequestState4L", "db/d8d/m4protocol_8h.html#aa911ed9d74a7305736f677b658be916a", null ],
     [ "Logika4", "db/d8d/m4protocol_8h.html#a46017f1bda94273b11b9841a32c4c5c8", null ],
+    [ "ServiceRecord", "db/d8d/m4protocol_8h.html#a8f2387ad5444fdbec5b125df531feb9c", null ],
     [ "TagWriteData", "db/d8d/m4protocol_8h.html#addd02ccf48e322c4fdb4e6d01737bb7f", null ]
 ];

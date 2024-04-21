@@ -15,10 +15,11 @@ var searchData=
   ['insertafter_12',['insertAfter',['../d0/d69/structlogika_1_1meters_1_1CalcFieldDefSettings.html#ac587f3b1962adfa2dabcd21f45ff1b18',1,'logika::meters::CalcFieldDefSettings']]],
   ['insertafter_5f_13',['insertAfter_',['../d8/d13/classlogika_1_1meters_1_1CalcFieldDef.html#ac825cb624aefa3eed00f8725dcaa113f',1,'logika::meters::CalcFieldDef']]],
   ['internaltype_5f_14',['internalType_',['../d3/d70/classlogika_1_1meters_1_1ArchiveFieldDef4L.html#a65b59123871e547ee1d01b654d36f5fb',1,'logika::meters::ArchiveFieldDef4L::internalType_'],['../db/d67/classlogika_1_1meters_1_1TagDef4L.html#af3165848ba383a6df777cb7ba48ea571',1,'logika::meters::TagDef4L::internalType_']]],
-  ['intfconfig_15',['intfConfig',['../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a0222d286e7de883235031370ee954848',1,'logika::meters::VitalInfo']]],
-  ['inttype_16',['intType',['../d9/d4c/structlogika_1_1meters_1_1TagDef4LSettings.html#abd86f863692c16038d11bd58c6943bac',1,'logika::meters::TagDef4LSettings']]],
-  ['isbasicparam_17',['isBasicParam',['../d1/dd1/structlogika_1_1meters_1_1DataTagDefSettings.html#a4c854aa66c60857896f4becc1e8e9bab',1,'logika::meters::DataTagDefSettings']]],
-  ['isbasicparam_5f_18',['isBasicParam_',['../da/dcc/classlogika_1_1meters_1_1DataTagDef.html#ae64e896ea883622b1bfbe25ebebb977c',1,'logika::meters::DataTagDef']]],
-  ['istiny42_19',['isTiny42',['../d3/db0/structlogika_1_1meters_1_1ArchiveDef4LSettings.html#a068622243e84a204f6bb92b4bfabdfdb',1,'logika::meters::ArchiveDef4LSettings']]],
-  ['istiny42_5f_20',['isTiny42_',['../d5/dce/classlogika_1_1meters_1_1ArchiveDef4L.html#a526781accf87fb8828f5199a2432ace6',1,'logika::meters::ArchiveDef4L']]]
+  ['intervalarchive_15',['IntervalArchive',['../dc/df7/namespacelogika_1_1meters.html#a1f4c42347a29e1d61dc48f3a576f8a34',1,'logika::meters']]],
+  ['intfconfig_16',['intfConfig',['../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a0222d286e7de883235031370ee954848',1,'logika::meters::VitalInfo']]],
+  ['inttype_17',['intType',['../d9/d4c/structlogika_1_1meters_1_1TagDef4LSettings.html#abd86f863692c16038d11bd58c6943bac',1,'logika::meters::TagDef4LSettings']]],
+  ['isbasicparam_18',['isBasicParam',['../d1/dd1/structlogika_1_1meters_1_1DataTagDefSettings.html#a4c854aa66c60857896f4becc1e8e9bab',1,'logika::meters::DataTagDefSettings']]],
+  ['isbasicparam_5f_19',['isBasicParam_',['../da/dcc/classlogika_1_1meters_1_1DataTagDef.html#ae64e896ea883622b1bfbe25ebebb977c',1,'logika::meters::DataTagDef']]],
+  ['istiny42_20',['isTiny42',['../d3/db0/structlogika_1_1meters_1_1ArchiveDef4LSettings.html#a068622243e84a204f6bb92b4bfabdfdb',1,'logika::meters::ArchiveDef4LSettings']]],
+  ['istiny42_5f_21',['isTiny42_',['../d5/dce/classlogika_1_1meters_1_1ArchiveDef4L.html#a526781accf87fb8828f5199a2432ace6',1,'logika::meters::ArchiveDef4L']]]
 ];

@@ -1,5 +1,7 @@
 <map id="logika/include/logika/meters/service_archive.h" name="logika/include/logika/meters/service_archive.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,176,46"/>
-<area shape="rect" id="Node000002" href="$df/da7/service__archive_8cpp.html" title=" " alt="" coords="7,94,174,135"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,62,93,94,88,94,88,62"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="97,5,268,46"/>
+<area shape="rect" id="Node000002" href="$df/da7/service__archive_8cpp.html" title=" " alt="" coords="5,94,173,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,59,112,96,108,92,148,55"/>
+<area shape="rect" id="Node000003" href="$d6/d61/m4protocol__api_8cpp.html" title=" " alt="" coords="197,94,357,135"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="217,55,257,92,254,96,213,59"/>
 </map>

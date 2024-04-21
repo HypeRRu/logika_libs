@@ -1,3 +1,5 @@
 <map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
-<area shape="rect" id="Node000000" href="$d7/d0a/classlogika_1_1protocols_1_1M4_1_1M4Protocol_1_1MeterCache.html" title="Структура записи кэша прибора" alt="" coords="5,5,193,46"/>
+<area shape="rect" id="Node000000" href="$d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html" title="Массив flash." alt="" coords="5,5,126,46"/>
+<area shape="rect" id="Node000001" href="$d8/d6e/classlogika_1_1protocols_1_1M4_1_1FlashRingBuffer.html" title="Кольцевой буфер flash." alt="" coords="174,5,311,46"/>
+<area shape="poly" id="edge86_Node000000_Node000001" title=" " alt="" coords="142,23,173,23,173,28,142,28"/>
 </map>

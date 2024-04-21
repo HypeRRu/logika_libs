@@ -21,5 +21,6 @@ var searchData=
   ['commontagdefs_5f_18',['commonTagDefs_',['../d3/d77/classlogika_1_1meters_1_1Meter.html#a2f697f97b24a3e34580514135da55ada',1,'logika::meters::Meter']]],
   ['connection_5f_19',['connection_',['../da/d50/classlogika_1_1protocols_1_1Protocol.html#a94550cb0218f69ab62c80c68d5e0ab9b',1,'logika::protocols::Protocol']]],
   ['count_20',['count',['../d3/dce/structlogika_1_1meters_1_1ChannelDef.html#a355d7a86311c58add72d1ec439d4969b',1,'logika::meters::ChannelDef::count'],['../d5/d2d/structlogika_1_1meters_1_1DataTagDef6Settings.html#a725b41182c5e72defcc1a38123fc36cd',1,'logika::meters::DataTagDef6Settings::count']]],
-  ['count_5f_21',['count_',['../d1/dcb/classlogika_1_1meters_1_1DataTagDef6.html#a391823e463f9c9ccddad19461c7a4951',1,'logika::meters::DataTagDef6']]]
+  ['count_5f_21',['count_',['../d1/dcb/classlogika_1_1meters_1_1DataTagDef6.html#a391823e463f9c9ccddad19461c7a4951',1,'logika::meters::DataTagDef6']]],
+  ['currentchannel_22',['currentChannel',['../d5/d8a/structlogika_1_1protocols_1_1ArchiveRequestState4M.html#ae73b2135bd60ff8865e60e5e0cfda288',1,'logika::protocols::ArchiveRequestState4M']]]
 ];

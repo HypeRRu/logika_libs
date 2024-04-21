@@ -24,6 +24,7 @@ var namespacelogika_1_1protocols_1_1M4 =
     [ "SyncFlashArchive4", "d7/dd9/classlogika_1_1protocols_1_1M4_1_1SyncFlashArchive4.html", "d7/dd9/classlogika_1_1protocols_1_1M4_1_1SyncFlashArchive4" ],
     [ "TagWriteData", "db/dd8/structlogika_1_1protocols_1_1M4_1_1TagWriteData.html", "db/dd8/structlogika_1_1protocols_1_1M4_1_1TagWriteData" ],
     [ "TvReadState4L", "d3/d00/structlogika_1_1protocols_1_1M4_1_1TvReadState4L.html", "d3/d00/structlogika_1_1protocols_1_1M4_1_1TvReadState4L" ],
+    [ "ArchiveRequestState4L", "de/d62/namespacelogika_1_1protocols_1_1M4.html#aa911ed9d74a7305736f677b658be916a", null ],
     [ "FlashArchive4", "de/d62/namespacelogika_1_1protocols_1_1M4.html#a7c135fe4f3c994c41ad8da95ce3460a0", null ],
     [ "FrbIndex", "de/d62/namespacelogika_1_1protocols_1_1M4.html#a2efc24611ddcea3a1077c1fade869a2a", null ],
     [ "M4Protocol", "de/d62/namespacelogika_1_1protocols_1_1M4.html#af6e1c3ae95e291dbbb25f199ccbaa214", null ],

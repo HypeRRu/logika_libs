@@ -20,10 +20,10 @@
 <area shape="poly" id="edge38_Node000001_Node000039" title=" " alt="" coords="2297,71,2400,84,2511,104,2608,131,2645,147,2671,166,2702,203,2729,243,2750,287,2767,332,2790,427,2800,520,2795,521,2784,428,2762,334,2745,289,2724,246,2698,206,2668,170,2642,152,2606,136,2509,109,2399,89,2297,76"/>
 <area shape="rect" id="Node000043" href="$d1/d18/structlogika_1_1meters_1_1VQT.html" title="Тип, состояший из метрики, ее значения и метки времени" alt="" coords="2917,661,3086,865"/>
 <area shape="poly" id="edge42_Node000001_Node000043" title=" " alt="" coords="2297,62,2454,68,2635,84,2722,97,2799,115,2862,138,2887,151,2906,166,2949,219,2981,280,3004,345,3018,413,3025,481,3027,547,3020,662,3015,661,3021,546,3020,481,3013,414,2999,346,2977,282,2945,222,2902,170,2884,155,2860,142,2798,120,2721,103,2634,89,2454,73,2297,67"/>
-<area shape="rect" id="Node000044" href="$d1/d10/structlogika_1_1protocols_1_1M4_1_1ArchiveRecord.html" title="Структура записи архива в протоколе M4." alt="" coords="3110,646,3279,881"/>
-<area shape="poly" id="edge43_Node000001_Node000044" title=" " alt="" coords="2297,66,2508,79,2760,100,2879,113,2981,128,3058,146,3084,156,3100,166,3143,217,3175,274,3197,337,3212,402,3220,468,3222,532,3216,646,3210,646,3217,532,3214,468,3207,403,3192,338,3170,276,3139,220,3097,170,3082,160,3056,151,2980,134,2878,118,2759,105,2508,84,2297,71"/>
-<area shape="rect" id="Node000045" href="$d9/d2a/structlogika_1_1protocols_1_1M4_1_1FrbIndex.html" title="Индекс элемента Flash Ring Buffer." alt="" coords="3303,664,3473,863"/>
-<area shape="poly" id="edge44_Node000001_Node000045" title=" " alt="" coords="2297,64,2551,74,2864,92,3013,106,3143,122,3240,142,3273,153,3294,166,3339,219,3371,279,3394,345,3408,413,3415,482,3416,549,3407,665,3402,664,3410,548,3409,482,3403,414,3389,346,3367,281,3334,222,3290,170,3271,158,3238,147,3142,127,3013,111,2863,98,2550,79,2297,69"/>
+<area shape="rect" id="Node000044" href="$d1/d10/structlogika_1_1protocols_1_1M4_1_1ArchiveRecord.html" title="Структура записи архива в протоколе M4." alt="" coords="3111,639,3292,888"/>
+<area shape="poly" id="edge43_Node000001_Node000044" title=" " alt="" coords="2297,66,2508,79,2760,100,2879,113,2981,129,3058,146,3084,156,3100,166,3143,215,3175,272,3198,333,3213,397,3222,461,3226,525,3222,639,3216,639,3220,525,3217,462,3208,398,3193,335,3170,274,3138,219,3097,170,3081,160,3056,151,2980,134,2878,118,2759,105,2507,84,2297,71"/>
+<area shape="rect" id="Node000045" href="$d9/d2a/structlogika_1_1protocols_1_1M4_1_1FrbIndex.html" title="Индекс элемента Flash Ring Buffer." alt="" coords="3317,639,3486,887"/>
+<area shape="poly" id="edge44_Node000001_Node000045" title=" " alt="" coords="2297,64,2553,73,2870,92,3022,105,3153,122,3251,142,3285,153,3306,166,3348,215,3380,272,3403,333,3418,397,3426,462,3429,525,3423,640,3418,640,3423,525,3421,462,3413,398,3398,334,3376,274,3344,218,3302,170,3282,158,3250,147,3152,127,3021,111,2870,97,2553,79,2297,69"/>
 <area shape="rect" id="Node000003" href="$d5/dce/classlogika_1_1meters_1_1ArchiveDef4L.html" title="Описание архива Logika4L." alt="" coords="5,2069,221,2596"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="499,901,431,1007,359,1131,291,1267,261,1337,236,1408,211,1490,190,1576,157,1749,136,1917,124,2070,118,2069,131,1916,152,1748,185,1574,206,1489,231,1406,256,1335,286,1265,354,1129,426,1004,494,898"/>
 <area shape="rect" id="Node000004" href="$d2/d2d/classlogika_1_1meters_1_1ArchiveDef4M.html" title="Описание архива Logika4M." alt="" coords="245,2285,464,2380"/>
@@ -56,7 +56,7 @@
 <area shape="poly" id="edge22_Node000022_Node000023" title=" " alt="" coords="2334,3274,2334,3307,2329,3307,2329,3274"/>
 <area shape="rect" id="Node000024" href="$d7/d1b/classlogika_1_1meters_1_1Logika4L.html" title="Класс прибора Logika4L." alt="" coords="1518,4624,1794,6553"/>
 <area shape="poly" id="edge23_Node000023_Node000024" title=" " alt="" coords="2193,4555,2185,4577,2143,4684,2096,4791,1995,5001,1892,5196,1796,5364,1791,5361,1887,5193,1990,4999,2092,4789,2138,4682,2180,4575,2188,4554"/>
-<area shape="rect" id="Node000030" href="$dd/d0e/classlogika_1_1meters_1_1Logika4M.html" title="Класс прибора Logika4M." alt="" coords="3021,4860,3297,6317"/>
+<area shape="rect" id="Node000030" href="$dd/d0e/classlogika_1_1meters_1_1Logika4M.html" title="Класс прибора Logika4M." alt="" coords="3021,4825,3297,6352"/>
 <area shape="poly" id="edge29_Node000023_Node000030" title=" " alt="" coords="2480,4230,3023,5311,3018,5314,2476,4232"/>
 <area shape="rect" id="Node000025" href="$d3/de1/classlogika_1_1meters_1_1Spg741.html" title="Класс прибора SPG741." alt="" coords="633,6601,898,7224"/>
 <area shape="poly" id="edge24_Node000024_Node000025" title=" " alt="" coords="1511,5769,1376,5939,1221,6144,1061,6370,985,6486,913,6603,900,6625,895,6622,908,6600,980,6484,1057,6367,1217,6141,1372,5935,1507,5766"/>
@@ -73,9 +73,9 @@
 <area shape="rect" id="Node000032" href="$df/d55/classlogika_1_1meters_1_1Spg740.html" title="Класс прибора SPG740." alt="" coords="2589,6748,2854,7077"/>
 <area shape="poly" id="edge31_Node000030_Node000032" title=" " alt="" coords="3019,6022,2778,6749,2773,6747,3013,6020"/>
 <area shape="rect" id="Node000033" href="$de/d48/classlogika_1_1meters_1_1Spg742.html" title="Класс прибора SPG742." alt="" coords="2878,6748,3143,7077"/>
-<area shape="poly" id="edge32_Node000030_Node000033" title=" " alt="" coords="3078,6332,3032,6748,3026,6748,3073,6332"/>
+<area shape="poly" id="edge32_Node000030_Node000033" title=" " alt="" coords="3074,6367,3032,6749,3026,6748,3069,6367"/>
 <area shape="rect" id="Node000034" href="$df/d52/classlogika_1_1meters_1_1Spt940.html" title="Класс прибора SPT940." alt="" coords="3167,6748,3449,7077"/>
-<area shape="poly" id="edge33_Node000030_Node000034" title=" " alt="" coords="3245,6332,3292,6748,3287,6748,3240,6332"/>
+<area shape="poly" id="edge33_Node000030_Node000034" title=" " alt="" coords="3249,6367,3292,6748,3287,6749,3244,6367"/>
 <area shape="rect" id="Node000035" href="$d1/d0c/classlogika_1_1meters_1_1Spt941__20.html" title="Класс прибора SPT941_20." alt="" coords="3473,6715,3807,7110"/>
 <area shape="poly" id="edge34_Node000030_Node000035" title=" " alt="" coords="3304,5982,3571,6715,3566,6716,3299,5984"/>
 <area shape="rect" id="Node000036" href="$da/d78/classlogika_1_1meters_1_1Spt943rev3.html" title="Класс прибора SPT943rev3." alt="" coords="3831,6715,4113,7110"/>
