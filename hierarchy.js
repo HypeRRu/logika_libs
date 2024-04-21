@@ -132,11 +132,6 @@ var hierarchy =
       [ "logika::protocols::ECommException", "d2/d02/classlogika_1_1protocols_1_1ECommException.html", null ]
     ] ],
     [ "logika::SharedConstructible< Type >", "dd/d10/classlogika_1_1SharedConstructible.html", null ],
-    [ "logika::SharedConstructible< A >", "dd/d10/classlogika_1_1SharedConstructible.html", [
-      [ "A", "d4/dc4/structA.html", [
-        [ "B", "d9/db3/structB.html", null ]
-      ] ]
-    ] ],
     [ "logika::SharedConstructible< ArchiveDef4L >", "dd/d10/classlogika_1_1SharedConstructible.html", [
       [ "logika::meters::ArchiveDef4L", "d5/dce/classlogika_1_1meters_1_1ArchiveDef4L.html", null ]
     ] ],

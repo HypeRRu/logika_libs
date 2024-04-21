@@ -132,7 +132,5 @@ var annotated_dup =
       [ "Any", "d0/d78/classlogika_1_1Any.html", "d0/d78/classlogika_1_1Any" ],
       [ "ISerializable", "dd/dbc/classlogika_1_1ISerializable.html", "dd/dbc/classlogika_1_1ISerializable" ],
       [ "SharedConstructible", "dd/d10/classlogika_1_1SharedConstructible.html", "dd/d10/classlogika_1_1SharedConstructible" ]
-    ] ],
-    [ "A", "d4/dc4/structA.html", null ],
-    [ "B", "d9/db3/structB.html", null ]
+    ] ]
 ];

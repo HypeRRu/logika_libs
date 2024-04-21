@@ -14,6 +14,6 @@ var searchData=
   ['tv_11',['TV',['../dc/df7/namespacelogika_1_1meters.html#a5dfbf075f197444da7e5af115bbeb50fa271ddf829afeece44d8732757fba1a66',1,'logika::meters']]],
   ['tv1_12',['Tv1',['../d2/d11/namespacelogika_1_1protocols_1_1M4_1_1MeterChannel.html#a3797b7a0fa3da2ff6eba13d3cec1f4e7a973f8d8fd91f8ddb80569467a05bd604',1,'logika::protocols::M4::MeterChannel']]],
   ['tv2_13',['Tv2',['../d2/d11/namespacelogika_1_1protocols_1_1M4_1_1MeterChannel.html#a3797b7a0fa3da2ff6eba13d3cec1f4e7a3427e89975a3eba9b4c3336ba111693d',1,'logika::protocols::M4::MeterChannel']]],
-  ['tx_14',['Tx',['../d0/d3a/namespacelogika_1_1connections_1_1PurgeFlags.html#a19987ee5393cb2b31fe4ef6b997482b5aa8b66a0bbe61e9315b38c47261853486',1,'logika::connections::PurgeFlags']]],
-  ['txrx_15',['TxRx',['../d0/d3a/namespacelogika_1_1connections_1_1PurgeFlags.html#a19987ee5393cb2b31fe4ef6b997482b5a87b25923aac4a7dae8fa550d03fd6f75',1,'logika::connections::PurgeFlags']]]
+  ['tx_14',['Tx',['../d0/d3a/namespacelogika_1_1connections_1_1PurgeFlags.html#a112b2860a870647b1aa90be88b78c6efaa8b66a0bbe61e9315b38c47261853486',1,'logika::connections::PurgeFlags']]],
+  ['txrx_15',['TxRx',['../d0/d3a/namespacelogika_1_1connections_1_1PurgeFlags.html#a112b2860a870647b1aa90be88b78c6efa87b25923aac4a7dae8fa550d03fd6f75',1,'logika::connections::PurgeFlags']]]
 ];
