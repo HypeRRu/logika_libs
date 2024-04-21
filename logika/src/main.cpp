@@ -30,6 +30,11 @@
 #include <logika/meters/meter.h>
 #include <logika/meters/logika4/4l/logika4l.h>
 
+#include <logika/meters/service_archive.h>
+#include <logika/meters/interval_archive.h>
+#include <logika/protocols/m4/m4protocol.h>
+#include <logika/protocols/m4/tag_write_data.h>
+
 #include <logika/common/misc.h>
 
 /// @cond
@@ -39,11 +44,6 @@
 #include <windows.h>
 #endif
 /// @endcond
-
-
-struct A: public logika::SharedConstructible< A > {};
-
-struct B: public A {};
 
 int main()
 {
@@ -129,17 +129,18 @@ int main()
         if ( resource )
         {
             auto types = logika::meters::converters::ArchiveTypeConverter::Convert( *resource );
-            LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << types.size() << LOCALIZED( " ArchiveType instances" ) );
+            // LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << types.size() << LOCALIZED( " ArchiveType instances" ) );
             for ( auto type: types )
             {
                 if ( type )
                 {
-                    LOG_WRITE( LOG_INFO, LOCALIZED( "Add ArchiveType '" ) << type->GetName() << LOCALIZED( "' to storage: " )
-                        << ( atStorage->AddItem( type->GetName(), type ) ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
+                    bool res = atStorage->AddItem( type->GetName(), type );
+                    // LOG_WRITE( LOG_INFO, LOCALIZED( "Add ArchiveType '" ) << type->GetName() << LOCALIZED( "' to storage: " )
+                    //     << ( res ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
                     std::shared_ptr< logika::meters::ArchiveType > item;
                     atStorage->GetItem( type->GetName(), item );
-                    std::wcout << item->GetDescription() << std::endl;
-                    std::wcout << item->GetAcronym() << std::endl;
+                    // std::wcout << item->GetDescription() << std::endl;
+                    // std::wcout << item->GetAcronym() << std::endl;
                 }
             }
         }
@@ -157,18 +158,19 @@ int main()
         if ( resource )
         {
             auto devices = logika::meters::converters::DeviceConverter::Convert( *resource );
-            LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << devices.size() << LOCALIZED( " Device instances" ) );
+            // LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << devices.size() << LOCALIZED( " Device instances" ) );
             for ( auto device: devices )
             {
                 if ( device )
                 {
-                    LOG_WRITE( LOG_INFO, LOCALIZED( "Add Device '" ) << device->GetCaption() << LOCALIZED( "' to storage: " )
-                        << ( mStorage->AddItem( device->GetCaption(), device ) ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
+                    bool res = mStorage->AddItem( device->GetCaption(), device );
+                    // LOG_WRITE( LOG_INFO, LOCALIZED( "Add Device '" ) << device->GetCaption() << LOCALIZED( "' to storage: " )
+                    //     << ( res ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
                     std::shared_ptr< logika::meters::Meter > item;
                     mStorage->GetItem( device->GetCaption(), item );
-                    std::wcout << item->GetDescription() << LOCALIZED( " | " )
-                        << LOCALIZED( "0x" ) << std::setfill( LOCALIZED( '0' ) )
-                        << std::setw( 4 ) << std::hex << item->GetIdent() << std::endl;
+                    // std::wcout << item->GetDescription() << LOCALIZED( " | " )
+                    //     << LOCALIZED( "0x" ) << std::setfill( LOCALIZED( '0' ) )
+                    //     << std::setw( 4 ) << std::hex << item->GetIdent() << std::endl;
                 }
             }
         }
@@ -186,7 +188,7 @@ int main()
         if ( resource )
         {
             auto channels = logika::meters::converters::ChannelConverter::Convert( *resource, mStorage );
-            LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << channels.size() << LOCALIZED( " Channel instances" ) );
+            // LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << channels.size() << LOCALIZED( " Channel instances" ) );
             for ( auto channel: channels )
             {
                 if ( channel )
@@ -199,8 +201,9 @@ int main()
                     else
                     {
                         logika::LocString label = channel->meter->GetCaption() + LOCALIZED( "." ) + channel->prefix;
-                        LOG_WRITE( LOG_INFO, LOCALIZED( "Add Channel '" ) << label << LOCALIZED( "' to storage: " )
-                            << ( cdStorage->AddItem( label, channel ) ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
+                        bool res = cdStorage->AddItem( label, channel );
+                        // LOG_WRITE( LOG_INFO, LOCALIZED( "Add Channel '" ) << label << LOCALIZED( "' to storage: " )
+                        //     << ( res ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
                         std::shared_ptr< logika::meters::ChannelDef > item;
                         cdStorage->GetItem( label, item );
                     }
@@ -221,7 +224,7 @@ int main()
         if ( resource )
         {
             auto m4tags = logika::meters::converters::M4TagConverter::Convert( *resource, mStorage, cdStorage );
-            LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << m4tags.size() << LOCALIZED( " M4Tags instances" ) );
+            // LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << m4tags.size() << LOCALIZED( " M4Tags instances" ) );
             for ( auto tag: m4tags )
             {
                 if ( tag )
@@ -233,8 +236,9 @@ int main()
                     else
                     {
                         logika::LocString label = tag->GetMeter()->GetCaption() + LOCALIZED( "." ) + tag->GetName();
-                        LOG_WRITE( LOG_INFO, LOCALIZED( "Add M4Tag '" ) << label << LOCALIZED( "' to storage: " )
-                            << ( m4tStorage->AddItem( label, tag ) ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
+                        bool res = m4tStorage->AddItem( label, tag );
+                        // LOG_WRITE( LOG_INFO, LOCALIZED( "Add M4Tag '" ) << label << LOCALIZED( "' to storage: " )
+                        //     << ( res ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
                         std::shared_ptr< logika::meters::TagDef4M > item;
                         m4tStorage->GetItem( label, item );
                     }
@@ -259,7 +263,7 @@ int main()
         if ( resource )
         {
             auto l4tags = logika::meters::converters::L4TagConverter::Convert( *resource, mStorage, cdStorage );
-            LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << l4tags.size() << LOCALIZED( " L4Tags instances" ) );
+            // LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << l4tags.size() << LOCALIZED( " L4Tags instances" ) );
             for ( auto tag: l4tags )
             {
                 if ( tag )
@@ -271,8 +275,9 @@ int main()
                     else
                     {
                         logika::LocString label = tag->GetMeter()->GetCaption() + LOCALIZED( "." ) + tag->GetName();
-                        LOG_WRITE( LOG_INFO, LOCALIZED( "Add L4Tag '" ) << label << LOCALIZED( "' to storage: " )
-                            << ( l4tStorage->AddItem( label, tag ) ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
+                        bool res = l4tStorage->AddItem( label, tag );
+                        // LOG_WRITE( LOG_INFO, LOCALIZED( "Add L4Tag '" ) << label << LOCALIZED( "' to storage: " )
+                        //     << ( res ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
                         std::shared_ptr< logika::meters::TagDef4L > item;
                         l4tStorage->GetItem( label, item );
                     }
@@ -297,7 +302,7 @@ int main()
         if ( resource )
         {
             auto m4archives = logika::meters::converters::M4ArchiveConverter::Convert( *resource, mStorage, cdStorage, atStorage );
-            LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << m4archives.size() << LOCALIZED( " M4Archive instances" ) );
+            // LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << m4archives.size() << LOCALIZED( " M4Archive instances" ) );
             for ( auto archive: m4archives )
             {
                 if ( archive )
@@ -309,8 +314,9 @@ int main()
                     else
                     {
                         logika::LocString label = archive->GetMeter()->GetCaption() + LOCALIZED( "." ) + archive->GetArchiveType()->GetName();
-                        LOG_WRITE( LOG_INFO, LOCALIZED( "Add M4Archive '" ) << label << LOCALIZED( "' to storage: " )
-                            << ( m4aStorage->AddItem( label, archive ) ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
+                        bool res = m4aStorage->AddItem( label, archive );
+                        // LOG_WRITE( LOG_INFO, LOCALIZED( "Add M4Archive '" ) << label << LOCALIZED( "' to storage: " )
+                        //     << ( res ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
                         std::shared_ptr< logika::meters::ArchiveDef4M > item;
                         m4aStorage->GetItem( label, item );
                     }
@@ -335,7 +341,7 @@ int main()
         if ( resource )
         {
             auto l4archives = logika::meters::converters::L4ArchiveConverter::Convert( *resource, mStorage, cdStorage, atStorage );
-            LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << l4archives.size() << LOCALIZED( " L4Archive instances" ) );
+            // LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << l4archives.size() << LOCALIZED( " L4Archive instances" ) );
             for ( auto archive: l4archives )
             {
                 if ( archive )
@@ -347,8 +353,9 @@ int main()
                     else
                     {
                         logika::LocString label = archive->GetMeter()->GetCaption() + LOCALIZED( "." ) + archive->GetArchiveType()->GetName();
-                        LOG_WRITE( LOG_INFO, LOCALIZED( "Add L4Archive '" ) << label << LOCALIZED( "' to storage: " )
-                            << ( l4aStorage->AddItem( label, archive ) ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
+                        bool res = l4aStorage->AddItem( label, archive );
+                        // LOG_WRITE( LOG_INFO, LOCALIZED( "Add L4Archive '" ) << label << LOCALIZED( "' to storage: " )
+                        //     << ( res ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
                         std::shared_ptr< logika::meters::ArchiveDef4L > item;
                         l4aStorage->GetItem( label, item );
                     }
@@ -374,7 +381,7 @@ int main()
         {
             auto m4afs = logika::meters::converters::M4ArchiveFieldConverter::Convert(
                 *resource, mStorage, m4aStorage, atStorage );
-            LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << m4afs.size() << LOCALIZED( " M4ArchiveField instances" ) );
+            // LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << m4afs.size() << LOCALIZED( " M4ArchiveField instances" ) );
             for ( auto field: m4afs )
             {
                 if ( field )
@@ -388,8 +395,9 @@ int main()
                         logika::LocString label = field->GetMeter()->GetCaption()
                             + LOCALIZED( "." ) + field->GetArchiveType()->GetName()
                             + LOCALIZED( "." ) + field->GetName();
-                        LOG_WRITE( LOG_INFO, LOCALIZED( "Add M4ArchiveField '" ) << label << LOCALIZED( "' to storage: " )
-                            << ( m4afStorage->AddItem( label, field ) ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
+                        bool res = m4afStorage->AddItem( label, field );
+                        // LOG_WRITE( LOG_INFO, LOCALIZED( "Add M4ArchiveField '" ) << label << LOCALIZED( "' to storage: " )
+                        //     << ( res ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
                         std::shared_ptr< logika::meters::ArchiveFieldDef4M > item;
                         m4afStorage->GetItem( label, item );
                     }
@@ -415,7 +423,7 @@ int main()
         {
             auto l4afs = logika::meters::converters::L4ArchiveFieldConverter::Convert(
                 *resource, mStorage, l4aStorage, atStorage );
-            LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << l4afs.size() << LOCALIZED( " L4ArchiveField instances" ) );
+            // LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << l4afs.size() << LOCALIZED( " L4ArchiveField instances" ) );
             for ( auto field: l4afs )
             {
                 if ( field )
@@ -429,8 +437,9 @@ int main()
                         logika::LocString label = field->GetMeter()->GetCaption()
                             + LOCALIZED( "." ) + field->GetArchiveType()->GetName()
                             + LOCALIZED( "." ) + field->GetName();
-                        LOG_WRITE( LOG_INFO, LOCALIZED( "Add L4ArchiveField '" ) << label << LOCALIZED( "' to storage: " )
-                            << ( l4afStorage->AddItem( label, field ) ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
+                        bool res = l4afStorage->AddItem( label, field );
+                        // LOG_WRITE( LOG_INFO, LOCALIZED( "Add L4ArchiveField '" ) << label << LOCALIZED( "' to storage: " )
+                        //     << ( res ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
                         std::shared_ptr< logika::meters::ArchiveFieldDef4L > item;
                         l4afStorage->GetItem( label, item );
                     }
@@ -447,11 +456,11 @@ int main()
         }
     }
 
-    auto cdKeys = cdStorage->GetKeys();
-    for ( auto key: cdKeys )
-    {
-        LOG_WRITE( LOG_INFO, LOCALIZED( "ChannelDef key '" ) << key << LOCALIZED( "'" ) );
-    }
+    // auto cdKeys = cdStorage->GetKeys();
+    // for ( auto key: cdKeys )
+    // {
+    //     LOG_WRITE( LOG_INFO, LOCALIZED( "ChannelDef key '" ) << key << LOCALIZED( "'" ) );
+    // }
 
     auto mKeys = mStorage->GetKeys();
     for ( auto key: mKeys )
@@ -542,20 +551,113 @@ int main()
         LOG_WRITE( LOG_INFO, LOCALIZED( "Logika4L created" ) );
         LOG_WRITE( LOG_INFO, meter->GetCaption() << LOCALIZED( "(" ) << meter->GetDescription() << LOCALIZED( ")" ) );
     }
-    auto strA = A::Create< B >();
-    if ( !strA )
-    {
-        LOG_WRITE( LOG_INFO, LOCALIZED( "Unable to create struct B" ) );
-    }
-    else
-    {
-        LOG_WRITE( LOG_INFO, LOCALIZED( "struct B created" ) );
-    }
 #endif // if 0
-    struct A anyRealVal;
-    struct B anyCastVal;
-    logika::Any anyVal( anyRealVal );
-    anyVal.TryCast< struct A >( anyCastVal );
+    
+    const std::string ipAddress{ "91.209.59.238" };
+    const uint16_t addressPort = 8002;
+    std::shared_ptr< logika::protocols::M4::M4Protocol > bus4
+        = std::make_shared< logika::protocols::M4::M4Protocol >( sKeeper );
+    std::shared_ptr< logika::connections::TcpConnection > tcpBusConn
+        = std::make_shared< logika::connections::TcpConnection >( ipAddress, addressPort, 500 );
+    tcpBusConn->Open();
+    bus4->SetConnection( tcpBusConn );
+
+    try
+    {
+        logika::ByteVector meterDump{};
+        logika::LocString meterModel{};
+        std::shared_ptr< logika::meters::Meter > detectedMeter = logika::protocols::Protocol::DetectM4(
+            bus4, sKeeper, meterDump, meterModel );
+        if ( !detectedMeter )
+        {
+            LOG_WRITE_MSG( LOG_WARNING, LOCALIZED( "Meter detection failed" ) );
+        }
+        else
+        {
+            LOG_WRITE( LOG_INFO, LOCALIZED( "Detected meter is " ) << detectedMeter->GetCaption() );
+        }
+
+        if ( detectedMeter )
+        {
+            std::shared_ptr< logika::Any > state = nullptr;
+            
+        }
+        if ( detectedMeter )
+        {
+            std::shared_ptr< logika::Any > state = nullptr;
+            std::shared_ptr< logika::meters::ArchiveType > hourArchiveType = nullptr;
+            atStorage->GetItem( LOCALIZED( "Hour" ), hourArchiveType );
+            std::shared_ptr< logika::meters::IntervalArchive > intArchive
+                = bus4->ReadIntervalArchiveDef( detectedMeter, nullptr, nullptr, hourArchiveType, state );
+
+            double progress = 0.0;
+            while ( bus4->ReadIntervalArchive( detectedMeter, nullptr, nullptr, intArchive,
+                logika::GetCurrentTimestamp() - 1000 * 60 * 60 * 24 * 5,
+                logika::GetCurrentTimestamp(), state, progress ) )
+            {
+                LOG_WRITE( LOG_INFO, LOCALIZED( "Read interval archive progress is " ) << progress << LOCALIZED( "%" ) );
+            }
+        }
+        if ( detectedMeter )
+        {
+            std::shared_ptr< logika::meters::ArchiveType > errorsArchiveType = nullptr;
+            atStorage->GetItem( LOCALIZED( "ErrorsLog" ), errorsArchiveType );
+            std::shared_ptr< logika::meters::ServiceArchive > servArchive
+                = std::make_shared< logika::meters::ServiceArchive >( detectedMeter, errorsArchiveType );
+
+            std::shared_ptr< logika::Any > state = nullptr;
+            double progress = 0.0;
+            
+            while ( bus4->ReadServiceArchive( detectedMeter, nullptr, nullptr, servArchive,
+                logika::GetCurrentTimestamp() - 1000 * 60 * 60 * 24 * 5,
+                logika::GetCurrentTimestamp(), state, progress ) )
+            {
+                LOG_WRITE( LOG_INFO, LOCALIZED( "Read service archive progress is " ) << progress << LOCALIZED( "%" ) );
+            }
+        }
+        if ( detectedMeter )
+        {
+            logika::TimeType devClock = bus4->GetDeviceClock( detectedMeter, nullptr, nullptr );
+            LOG_WRITE( LOG_INFO, LOCALIZED( "Device time: " ) << logika::GetTimeString( devClock ) );
+        }
+        if ( detectedMeter )
+        {
+            std::shared_ptr< logika::meters::Logika4L > dm4l
+                = std::dynamic_pointer_cast< logika::meters::Logika4L >( detectedMeter );
+            if ( dm4l )
+            {
+                LOG_WRITE_MSG( LOG_INFO, LOCALIZED( "Detected meter is Logika4L" ) );
+                LOG_WRITE( LOG_INFO, LOCALIZED( "Write Logika4L parameter 0 RC: " )
+                    << bus4->WriteParameterL4( dm4l, nullptr, 0, 0, LOCALIZED( "Test value" ), false ) );
+            }
+        }
+        if ( detectedMeter )
+        {
+            std::shared_ptr< logika::meters::Logika4M > dm4m
+                = std::dynamic_pointer_cast< logika::meters::Logika4M >( detectedMeter );
+            if ( dm4m )
+            {
+                LOG_WRITE_MSG( LOG_INFO, LOCALIZED( "Detected meter is Logika4M" ) );
+                std::vector< logika::protocols::M4::TagWriteData > tagsData;
+                tagsData.emplace_back();
+                tagsData.back().channel = 0;
+                tagsData.back().ordinal = 0;
+                tagsData.back().value   = std::make_shared< logika::Any >( logika::LocString{ LOCALIZED( "test" ) } );
+                tagsData.back().oper    = false;
+
+                auto rcs = bus4->WriteParams4M( dm4m, nullptr, tagsData );
+                for ( size_t i = 0; i < rcs.size(); ++i )
+                {
+                    LOG_WRITE( LOG_INFO, LOCALIZED( "Write Logika4M parameter ") << i
+                        << LOCALIZED(" RC: " ) << rcs.at( i ) );
+                }
+            }
+        }
+    }
+    catch( const std::exception& e )
+    {
+        LOG_WRITE( LOG_WARNING, LOCALIZED( "An error occured: " ) << logika::ToLocString( e.what() ) );
+    }
 
 #if defined( _WIN32 ) || defined( _WIN64 )
     WSACleanup();

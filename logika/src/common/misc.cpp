@@ -70,7 +70,8 @@ LocString SafeStrError( int error )
 
 TimeType GetCurrentTimestamp()
 {
-    return std::chrono::system_clock::to_time_t( std::chrono::system_clock::now() ) * 1000;
+    return std::chrono::duration_cast< std::chrono::milliseconds >(
+        std::chrono::system_clock::now().time_since_epoch() ).count();
 } // GetCurrentTimestamp
 
 

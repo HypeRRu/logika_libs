@@ -50,6 +50,7 @@ bool TcpConnection::OpenImpl()
         {
             continue; /// Не удалось открыть сокет с данными параметрами
         }
+        /// @todo Сделать неблокирующим раньше
         if ( -1 != connect( socket_, info->ai_addr, info->ai_addrlen ) )
         {
             /// Делаем сокет неблокирующим

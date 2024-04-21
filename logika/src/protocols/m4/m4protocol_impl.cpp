@@ -505,7 +505,7 @@ Packet M4Protocol::RecvPacket( const ByteType* excpectedNt, Opcode::Type* expect
     uint32_t payloadLen = 0;
 
     Packet packet{};
-    if ( !connection_ )
+    if ( !connection_ || !connection_->IsConnected() )
     {
         LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "Connection not established" ) );
         return packet;
