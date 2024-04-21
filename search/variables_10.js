@@ -3,7 +3,7 @@ var searchData=
   ['range_0',['range',['../d1/dd1/structlogika_1_1meters_1_1DataTagDefSettings.html#ac95a8e08c9f0d71ebe9943b0bb3d928e',1,'logika::meters::DataTagDefSettings']]],
   ['range_5f_1',['range_',['../da/dcc/classlogika_1_1meters_1_1DataTagDef.html#af58ff359fab567a7aaa33fe606f832c8',1,'logika::meters::DataTagDef']]],
   ['rd_2',['rd',['../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a63082a7cacc62647eeb6bed2336670eb',1,'logika::meters::VitalInfo']]],
-  ['readtimeout_5f_3',['readTimeout_',['../db/da7/classlogika_1_1connections_1_1Connection.html#a4730db9bbe28b3db93335b1bedc7187d',1,'logika::connections::Connection']]],
+  ['readtimeout_5f_3',['readTimeout_',['../db/da7/classlogika_1_1connections_1_1Connection.html#a0b7dcb570b932697e8b83b69ac79629d',1,'logika::connections::Connection']]],
   ['recordsaddr_4',['recordsAddr',['../d3/db0/structlogika_1_1meters_1_1ArchiveDef4LSettings.html#a3b5084b863aec092a6f8b24b77923a26',1,'logika::meters::ArchiveDef4LSettings']]],
   ['recordsaddr2_5',['recordsAddr2',['../d3/db0/structlogika_1_1meters_1_1ArchiveDef4LSettings.html#af9c9f29dd366cb3add74fded65dce311',1,'logika::meters::ArchiveDef4LSettings']]],
   ['recordsaddr2_5f_6',['recordsAddr2_',['../d5/dce/classlogika_1_1meters_1_1ArchiveDef4L.html#af85633953b42fed0e53250a7277efe9c',1,'logika::meters::ArchiveDef4L']]],

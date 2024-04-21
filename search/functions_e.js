@@ -2,7 +2,7 @@ var searchData=
 [
   ['read_0',['Read',['../db/da7/classlogika_1_1connections_1_1Connection.html#a04cb9c650e0340edab4d84f7b9c834af',1,'logika::connections::Connection::Read()'],['../df/ddb/classlogika_1_1connections_1_1IConnection.html#a92ae69052fd7fb89ce3b2964af8570a0',1,'logika::connections::IConnection::Read()']]],
   ['readarchive4m_1',['ReadArchive4M',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a3b656ef948b82e36bdf6556f6e4e5095',1,'logika::protocols::M4::M4Protocol']]],
-  ['readbuffer_2',['ReadBuffer',['../d5/d15/namespacelogika_1_1connections_1_1linux__io.html#ae8bac9ed90f7ca0fe42352460d6f3241',1,'logika::connections::linux_io::ReadBuffer()'],['../dc/d3d/namespacelogika_1_1connections_1_1windows__io.html#a6789119b8982211156c5dee023f97daf',1,'logika::connections::windows_io::ReadBuffer()']]],
+  ['readbuffer_2',['ReadBuffer',['../d5/d15/namespacelogika_1_1connections_1_1linux__io.html#ac7c0de184c9d512090c922abbb68120d',1,'logika::connections::linux_io::ReadBuffer()'],['../dc/d3d/namespacelogika_1_1connections_1_1windows__io.html#aa0e89c20ebc138c949e790598f60a04c',1,'logika::connections::windows_io::ReadBuffer()']]],
   ['readflasharchive4l_3',['ReadFlashArchive4L',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#aa893e04195b06e3effbd346b30ba983d',1,'logika::protocols::M4::M4Protocol']]],
   ['readflashbytesl4_4',['ReadFlashBytesL4',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#ad3df70d29503bdb77459d1aed87f2181',1,'logika::protocols::M4::M4Protocol']]],
   ['readflashpagesl4_5',['ReadFlashPagesL4',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a971c092ca39aa03a58680c6a8a7c1b3e',1,'logika::protocols::M4::M4Protocol']]],

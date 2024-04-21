@@ -1,7 +1,7 @@
 <map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
 <area shape="rect" id="Node000000" href="$d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html" title="Класс флэш архива Logika4L." alt="" coords="5,39,134,79"/>
 <area shape="rect" id="Node000001" href="$df/db8/classlogika_1_1protocols_1_1M4_1_1AsyncFlashArchive4.html" title="Асинхронный архив Logika4L." alt="" coords="182,5,346,46"/>
-<area shape="poly" id="edge84_Node000000_Node000001" title=" " alt="" coords="148,43,181,37,182,42,149,48"/>
+<area shape="poly" id="edge85_Node000000_Node000001" title=" " alt="" coords="148,43,181,37,182,42,149,48"/>
 <area shape="rect" id="Node000002" href="$d7/dd9/classlogika_1_1protocols_1_1M4_1_1SyncFlashArchive4.html" title="Синхронный (интервальный) архив Logika4L." alt="" coords="185,71,343,111"/>
-<area shape="poly" id="edge85_Node000000_Node000002" title=" " alt="" coords="150,69,185,75,184,81,149,75"/>
+<area shape="poly" id="edge86_Node000000_Node000002" title=" " alt="" coords="150,69,185,75,184,81,149,75"/>
 </map>

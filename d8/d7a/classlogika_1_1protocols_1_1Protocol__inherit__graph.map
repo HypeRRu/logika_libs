@@ -1,7 +1,9 @@
 <map id="logika::protocols::Protocol" name="logika::protocols::Protocol">
-<area shape="rect" id="Node000001" title="Базовый класс для работы с протоколами" alt="" coords="5,1323,347,3580"/>
-<area shape="rect" id="Node000003" href="$d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html" title="Протокол M4." alt="" coords="31,3628,321,8388"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="179,3595,179,3628,173,3628,173,3595"/>
-<area shape="rect" id="Node000002" href="$da/dd0/classlogika_1_1protocols_1_1IProtocol.html" title="Интерфейс класса для работы с протоколами" alt="" coords="45,5,307,1275"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,1290,179,1323,173,1323,173,1290"/>
+<area shape="rect" id="Node000001" title="Базовый класс для работы с протоколами" alt="" coords="109,1323,450,3455"/>
+<area shape="rect" id="Node000003" href="$d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html" title="Протокол M4." alt="" coords="5,3503,295,8263"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="242,3469,241,3503,235,3503,237,3469"/>
+<area shape="rect" id="Node000004" href="$d0/dc3/classlogika_1_1protocols_1_1X6_1_1SPBusProtocol.html" title="Протокол SPBus." alt="" coords="319,5828,498,5937"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="322,3469,409,5828,404,5828,317,3470"/>
+<area shape="rect" id="Node000002" href="$da/dd0/classlogika_1_1protocols_1_1IProtocol.html" title="Интерфейс класса для работы с протоколами" alt="" coords="148,5,411,1275"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="282,1289,282,1323,277,1323,277,1289"/>
 </map>

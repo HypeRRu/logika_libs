@@ -1,6 +1,6 @@
 var classlogika_1_1connections_1_1SerialConnection =
 [
-    [ "SerialConnection", "d4/d4f/classlogika_1_1connections_1_1SerialConnection.html#a9bd35bbb3c9c0f0cb02ef584b16f09c7", null ],
+    [ "SerialConnection", "d4/d4f/classlogika_1_1connections_1_1SerialConnection.html#ac17862474cb15ffb745daa7078f6682f", null ],
     [ "GetBaudRate", "d4/d4f/classlogika_1_1connections_1_1SerialConnection.html#a36e8d24b27af1914997f5bc0aadae4ea", null ],
     [ "GetDataBits", "d4/d4f/classlogika_1_1connections_1_1SerialConnection.html#a3ab91459d65824ea61860a7782492e52", null ],
     [ "GetParity", "d4/d4f/classlogika_1_1connections_1_1SerialConnection.html#a8c852ee45fba97dd4b1010582fbb4d35", null ],

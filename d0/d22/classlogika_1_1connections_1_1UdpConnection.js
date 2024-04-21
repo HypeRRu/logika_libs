@@ -1,6 +1,6 @@
 var classlogika_1_1connections_1_1UdpConnection =
 [
-    [ "UdpConnection", "d0/d22/classlogika_1_1connections_1_1UdpConnection.html#aaa6fced0bb3d9897318734ef2ead7cca", null ],
+    [ "UdpConnection", "d0/d22/classlogika_1_1connections_1_1UdpConnection.html#a4306e01ba119742da706490be1fdc4d2", null ],
     [ "~UdpConnection", "d0/d22/classlogika_1_1connections_1_1UdpConnection.html#a22ca56df31cc0ce24ea4e1ffee686efe", null ],
     [ "CloseImpl", "d0/d22/classlogika_1_1connections_1_1UdpConnection.html#a33e416301e23c3a40f74b4824a580ae1", null ],
     [ "OpenImpl", "d0/d22/classlogika_1_1connections_1_1UdpConnection.html#ab43118a414b7173ce0d21db6b4e6052d", null ],

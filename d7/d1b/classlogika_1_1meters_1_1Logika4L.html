@@ -455,6 +455,7 @@ $(function(){initNavTree('d7/d1b/classlogika_1_1meters_1_1Logika4L.html','../../
 <tr class="memdesc:a2f697f97b24a3e34580514135da55ada inherit pro_attribs_classlogika_1_1meters_1_1Meter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Описание стандартных тэгов  <br /></td></tr>
 <tr class="separator:a2f697f97b24a3e34580514135da55ada inherit pro_attribs_classlogika_1_1meters_1_1Meter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43c2d4755133ac61fd5200d06ebbeba7 inherit pro_attribs_classlogika_1_1meters_1_1Meter" id="r_a43c2d4755133ac61fd5200d06ebbeba7"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d77/classlogika_1_1meters_1_1Meter.html#a43c2d4755133ac61fd5200d06ebbeba7">ident_</a></td></tr>
+<tr class="memdesc:a43c2d4755133ac61fd5200d06ebbeba7 inherit pro_attribs_classlogika_1_1meters_1_1Meter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Идентификатор прибора  <br /></td></tr>
 <tr class="separator:a43c2d4755133ac61fd5200d06ebbeba7 inherit pro_attribs_classlogika_1_1meters_1_1Meter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
@@ -602,7 +603,6 @@ $(function(){initNavTree('d7/d1b/classlogika_1_1meters_1_1Logika4L.html','../../
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Карта ADS </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000013">Необходимо сделать</a></b></dt><dd>Уточнить </dd></dl>
 
 <p>Переопределяется в <a class="el" href="../../d3/de1/classlogika_1_1meters_1_1Spg741.html#af684c25e28935aabb07c1edc6f5fdd5d">logika::meters::Spg741</a>, <a class="el" href="../../d4/db6/classlogika_1_1meters_1_1Spt941.html#af4ffbd3c2172c096a540e16f8a797d6c">logika::meters::Spt941</a>, <a class="el" href="../../de/d88/classlogika_1_1meters_1_1Spt941__10.html#a5aa22955a119b9cb6ad53f0dd04316c0">logika::meters::Spt941_10</a>, <a class="el" href="../../d6/d6a/classlogika_1_1meters_1_1Spt942.html#a2d983f637e2eaf21602d412d67cc7f7f">logika::meters::Spt942</a> и <a class="el" href="../../dd/d9e/classlogika_1_1meters_1_1Spt943.html#a23852abb90228119ec96e48851ff3d09">logika::meters::Spt943</a>.</p>
 
@@ -1719,11 +1719,10 @@ $(function(){initNavTree('d7/d1b/classlogika_1_1meters_1_1Logika4L.html','../../
     <tr><td class="paramdir">[in]</td><td class="paramname">binType</td><td>Тип данных </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>Буфер </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">offset</td><td>Отступ в буфере </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">oper</td><td></td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">oper</td><td>Флаг оперативности тэга </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000012">Необходимо сделать</a></b></dt><dd>Флаг операции? </dd></dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Указатель на считанное значение (инкапсулированное в <a class="el" href="../../d0/d78/classlogika_1_1Any.html" title="Объект переменного типа">Any</a>) </dd></dl>
 <dl class="exception"><dt>Исключения</dt><dd>
   <table class="exception">
@@ -1766,10 +1765,7 @@ $(function(){initNavTree('d7/d1b/classlogika_1_1meters_1_1Logika4L.html','../../
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Заметки</dt><dd>Должен вызываться после загрузки в хранилище всех параметров </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000011">Необходимо сделать</a></b></dt><dd><p class="startdd">Возможно, сделать Lazy Load </p>
-<p class="enddd">Сделать static загрузку? </p>
-</dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Должен вызываться после загрузки в хранилище всех параметров   </dd></dl>
 
 <p>Переопределяет метод предка <a class="el" href="../../d3/d77/classlogika_1_1meters_1_1Meter.html#a36909a4c14a14d4399e208de073241f6">logika::meters::Meter</a>.</p>
 

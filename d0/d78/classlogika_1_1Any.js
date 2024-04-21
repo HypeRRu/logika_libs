@@ -5,6 +5,7 @@ var classlogika_1_1Any =
     [ "~Any", "d0/d78/classlogika_1_1Any.html#a15017da6aca78eb42c378784910689cf", null ],
     [ "Any", "d0/d78/classlogika_1_1Any.html#a60a25db5f14ec8ddac662faf20dce314", null ],
     [ "Cast", "d0/d78/classlogika_1_1Any.html#aee2fa9adcea7064e7177a2c2721be91b", null ],
+    [ "CheckType", "d0/d78/classlogika_1_1Any.html#ab5be2e16432736453dbd5091287199d6", null ],
     [ "Empty", "d0/d78/classlogika_1_1Any.html#adfaf3a96af21f35de5f9f3f772bb7705", null ],
     [ "Erase", "d0/d78/classlogika_1_1Any.html#ae46d411749f81bf15f4035ed80642895", null ],
     [ "operator=", "d0/d78/classlogika_1_1Any.html#ad71860c67c77559a50615679816d8764", null ],

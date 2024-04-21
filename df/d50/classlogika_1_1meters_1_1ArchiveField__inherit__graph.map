@@ -1,5 +1,5 @@
 <map id="logika::meters::ArchiveField" name="logika::meters::ArchiveField">
-<area shape="rect" id="Node000001" title="Поле архива" alt="" coords="17,703,205,1075"/>
+<area shape="rect" id="Node000001" title="Поле архива" alt="" coords="17,703,205,1109"/>
 <area shape="rect" id="Node000002" href="$d1/d29/classlogika_1_1meters_1_1Tag.html" title="Тэг" alt="" coords="5,168,216,655"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,670,113,703,108,703,108,670"/>
 <area shape="rect" id="Node000003" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="26,5,195,120"/>

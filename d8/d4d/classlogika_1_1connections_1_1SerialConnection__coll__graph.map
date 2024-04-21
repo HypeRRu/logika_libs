@@ -1,7 +1,7 @@
 <map id="logika::connections::SerialConnection" name="logika::connections::SerialConnection">
-<area shape="rect" id="Node000001" title="Базовый класс для работы с соединением по последовательному порту" alt="" coords="8,2089,204,2536"/>
-<area shape="rect" id="Node000002" href="$db/da7/classlogika_1_1connections_1_1Connection.html" title="Базовый класс для работы с соединением" alt="" coords="5,747,207,2041"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,2056,109,2089,103,2089,103,2056"/>
-<area shape="rect" id="Node000003" href="$df/ddb/classlogika_1_1connections_1_1IConnection.html" title="Интерфейс класса для работы с соединением" alt="" coords="5,5,207,699"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="109,713,109,747,103,747,103,713"/>
+<area shape="rect" id="Node000001" title="Базовый класс для работы с соединением по последовательному порту" alt="" coords="8,2179,204,2625"/>
+<area shape="rect" id="Node000002" href="$db/da7/classlogika_1_1connections_1_1Connection.html" title="Базовый класс для работы с соединением" alt="" coords="5,781,207,2131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,2145,109,2179,103,2179,103,2145"/>
+<area shape="rect" id="Node000003" href="$df/ddb/classlogika_1_1connections_1_1IConnection.html" title="Интерфейс класса для работы с соединением" alt="" coords="5,5,207,733"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="109,748,109,782,103,782,103,748"/>
 </map>

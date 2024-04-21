@@ -6,7 +6,7 @@ var classlogika_1_1protocols_1_1Protocol =
     [ "CloseCommSessionImpl", "da/d50/classlogika_1_1protocols_1_1Protocol.html#add939297c128e125b926cc0367ce90d8", null ],
     [ "GetConnection", "da/d50/classlogika_1_1protocols_1_1Protocol.html#aff0c2780d37fb971bf67e875e79a38c4", null ],
     [ "GetDeviceClock", "da/d50/classlogika_1_1protocols_1_1Protocol.html#a38963edc0cab788c2215256bc731caa5", null ],
-    [ "GetGeneralErrors", "da/d50/classlogika_1_1protocols_1_1Protocol.html#a87ae3180e0af206b6899f880bfda8711", null ],
+    [ "GetGeneralErrors", "da/d50/classlogika_1_1protocols_1_1Protocol.html#a478a5eff64985899796e7c36c030776a", null ],
     [ "GetMeterType", "da/d50/classlogika_1_1protocols_1_1Protocol.html#ac272770508d56f3e2ca75b27af23dfcf", null ],
     [ "GetPacketsReceived", "da/d50/classlogika_1_1protocols_1_1Protocol.html#a4df266ffbf2a4930967ee81b5c4f17b8", null ],
     [ "GetPacketsSent", "da/d50/classlogika_1_1protocols_1_1Protocol.html#a8e4df92786011bc675efb39124b59fc5", null ],

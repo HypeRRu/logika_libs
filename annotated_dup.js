@@ -112,7 +112,7 @@ var annotated_dup =
           [ "TvReadState4L", "d3/d00/structlogika_1_1protocols_1_1M4_1_1TvReadState4L.html", "d3/d00/structlogika_1_1protocols_1_1M4_1_1TvReadState4L" ]
         ] ],
         [ "X6", "d1/df0/namespacelogika_1_1protocols_1_1X6.html", [
-          [ "SPBusProtocol", "d0/dc3/classlogika_1_1protocols_1_1X6_1_1SPBusProtocol.html", null ]
+          [ "SPBusProtocol", "d0/dc3/classlogika_1_1protocols_1_1X6_1_1SPBusProtocol.html", "d0/dc3/classlogika_1_1protocols_1_1X6_1_1SPBusProtocol" ]
         ] ],
         [ "ArchiveRequestState4M", "d5/d8a/structlogika_1_1protocols_1_1ArchiveRequestState4M.html", "d5/d8a/structlogika_1_1protocols_1_1ArchiveRequestState4M" ],
         [ "ECommException", "d2/d02/classlogika_1_1protocols_1_1ECommException.html", "d2/d02/classlogika_1_1protocols_1_1ECommException" ],

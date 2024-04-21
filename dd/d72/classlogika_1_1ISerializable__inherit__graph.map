@@ -82,8 +82,8 @@
 <area shape="poly" id="edge35_Node000030_Node000036" title=" " alt="" coords="3307,5797,3555,6167,3691,6382,3821,6600,3882,6714,3877,6717,3816,6603,3687,6385,3550,6169,3303,5800"/>
 <area shape="rect" id="Node000037" href="$d2/dc9/classlogika_1_1meters_1_1Spt944.html" title="Класс прибора SPT944." alt="" coords="4137,6748,4418,7077"/>
 <area shape="poly" id="edge36_Node000030_Node000037" title=" " alt="" coords="3309,5717,3489,5882,3702,6094,3814,6213,3924,6338,4030,6468,4128,6600,4172,6672,4211,6747,4207,6750,4168,6675,4123,6603,4026,6471,3920,6342,3810,6217,3699,6098,3485,5886,3306,5721"/>
-<area shape="rect" id="Node000040" href="$de/d9a/classlogika_1_1meters_1_1ArchiveField.html" title="Поле архива" alt="" coords="2491,2147,2679,2519"/>
-<area shape="poly" id="edge39_Node000039_Node000040" title=" " alt="" coords="2750,1022,2695,1407,2646,1803,2608,2147,2602,2147,2641,1803,2689,1406,2744,1021"/>
+<area shape="rect" id="Node000040" href="$de/d9a/classlogika_1_1meters_1_1ArchiveField.html" title="Поле архива" alt="" coords="2491,2129,2679,2536"/>
+<area shape="poly" id="edge39_Node000039_Node000040" title=" " alt="" coords="2750,1022,2695,1407,2647,1791,2609,2130,2604,2129,2642,1791,2689,1406,2744,1021"/>
 <area shape="rect" id="Node000041" href="$d9/d53/classlogika_1_1meters_1_1DataTag.html" title="Тэг с данными" alt="" coords="2704,2010,2901,2655"/>
 <area shape="poly" id="edge40_Node000039_Node000041" title=" " alt="" coords="2792,1022,2802,2010,2797,2010,2787,1022"/>
 <area shape="rect" id="Node000042" href="$db/d12/classlogika_1_1meters_1_1DataTag6Container.html" title="Контейнер тэгов с данными Logika6." alt="" coords="2925,2179,3125,2487"/>

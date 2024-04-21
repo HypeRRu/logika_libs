@@ -1,7 +1,7 @@
 <map id="logika::meters::Tag" name="logika::meters::Tag">
 <area shape="rect" id="Node000001" title="Тэг" alt="" coords="211,168,422,655"/>
-<area shape="rect" id="Node000003" href="$de/d9a/classlogika_1_1meters_1_1ArchiveField.html" title="Поле архива" alt="" coords="5,839,193,1211"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="221,669,209,704,162,840,156,839,203,702,216,668"/>
+<area shape="rect" id="Node000003" href="$de/d9a/classlogika_1_1meters_1_1ArchiveField.html" title="Поле архива" alt="" coords="5,822,193,1229"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="221,669,209,704,167,823,162,821,203,702,216,668"/>
 <area shape="rect" id="Node000004" href="$d9/d53/classlogika_1_1meters_1_1DataTag.html" title="Тэг с данными" alt="" coords="218,703,415,1348"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="319,669,319,703,314,703,314,669"/>
 <area shape="rect" id="Node000005" href="$db/d12/classlogika_1_1meters_1_1DataTag6Container.html" title="Контейнер тэгов с данными Logika6." alt="" coords="439,871,639,1179"/>

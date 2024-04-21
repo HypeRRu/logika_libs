@@ -108,7 +108,7 @@ $(function(){initNavTree('d0/d78/classlogika_1_1Any.html','../../'); initResizab
 <div class="dyncontent">
 <div class="center"><img src="../../db/d5a/classlogika_1_1Any__coll__graph.png" border="0" usemap="#alogika_1_1Any_coll__map" alt="Collaboration graph"/></div>
 <map name="alogika_1_1Any_coll__map" id="alogika_1_1Any_coll__map">
-<area shape="rect" title="Объект переменного типа" alt="" coords="5,5,189,315"/>
+<area shape="rect" title="Объект переменного типа" alt="" coords="5,5,189,335"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -150,13 +150,14 @@ $(function(){initNavTree('d0/d78/classlogika_1_1Any.html','../../'); initResizab
 <tr class="memitem:a2f611c26351ba4afd5443cc1de59c6c4"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a2f611c26351ba4afd5443cc1de59c6c4">TryCast</a> (T &amp;result) const</td></tr>
 <tr class="memdesc:a2f611c26351ba4afd5443cc1de59c6c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Попытка получения значения объекта  <br /></td></tr>
 <tr class="separator:a2f611c26351ba4afd5443cc1de59c6c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5be2e16432736453dbd5091287199d6" id="r_ab5be2e16432736453dbd5091287199d6"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ab5be2e16432736453dbd5091287199d6"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ab5be2e16432736453dbd5091287199d6">CheckType</a> () const</td></tr>
+<tr class="memdesc:ab5be2e16432736453dbd5091287199d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверка типа переменной  <br /></td></tr>
+<tr class="separator:ab5be2e16432736453dbd5091287199d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Объект переменного типа </p>
 <dl class="section note"><dt>Заметки</dt><dd>Тип сохраняемого объекта должен быть copy-constructible </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000002">Необходимо сделать</a></b></dt><dd><p class="startdd">Можно сделать разделение с помощью trivially_copyable и сохранять не тривиально копируемый в shared_ptr </p>
-<p class="enddd">Возможно стоит ограничить поддержку только базовыми типами и сохранять информацию о типе в виде enum? Это позволит добавить поддержу ToString </p>
-</dd></dl>
 </div><h2 class="groupheader">Конструктор(ы)</h2>
 <a id="a5db4a7ec3ac6b3065e2a49984420a888" name="a5db4a7ec3ac6b3065e2a49984420a888"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5db4a7ec3ac6b3065e2a49984420a888">&#9670;&#160;</a></span>Any() <span class="overload">[1/3]</span></h2>
@@ -281,7 +282,7 @@ template&lt;typename T &gt; </div>
 <p>Получение значения объекта </p>
 <dl class="tparams"><dt>Параметры шаблона</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Тип</td><td>получаемого объекта </td></tr>
+    <tr><td class="paramname">T</td><td>Тип получаемого объекта </td></tr>
   </table>
   </dd>
 </dl>
@@ -292,6 +293,34 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ab5be2e16432736453dbd5091287199d6" name="ab5be2e16432736453dbd5091287199d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5be2e16432736453dbd5091287199d6">&#9670;&#160;</a></span>CheckType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool logika::Any::CheckType </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Проверка типа переменной </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Проверяемый тип </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Совпадает ли тип T с типом сохраненного значения </dd></dl>
 
 </div>
 </div>
@@ -313,7 +342,7 @@ template&lt;typename T &gt; </div>
 <p>Задано ли значение объекта </p>
 <dl class="section return"><dt>Возвращает</dt><dd>Было ли установлено значение объекта </dd></dl>
 
-<p class="reference">Используется в <a class="el" href="#aee2fa9adcea7064e7177a2c2721be91b">Cast()</a> и <a class="el" href="#a2f611c26351ba4afd5443cc1de59c6c4">TryCast()</a>.</p>
+<p class="reference">Используется в <a class="el" href="#aee2fa9adcea7064e7177a2c2721be91b">Cast()</a>, <a class="el" href="#ab5be2e16432736453dbd5091287199d6">CheckType()</a> и <a class="el" href="#a2f611c26351ba4afd5443cc1de59c6c4">TryCast()</a>.</p>
 
 </div>
 </div>
@@ -447,7 +476,7 @@ template&lt;typename T &gt; </div>
 <p>Попытка получения значения объекта </p>
 <dl class="tparams"><dt>Параметры шаблона</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Тип</td><td>получаемого объекта </td></tr>
+    <tr><td class="paramname">T</td><td>Тип получаемого объекта </td></tr>
   </table>
   </dd>
 </dl>

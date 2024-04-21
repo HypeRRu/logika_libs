@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['udpconnection_0',['UdpConnection',['../d0/d22/classlogika_1_1connections_1_1UdpConnection.html#aaa6fced0bb3d9897318734ef2ead7cca',1,'logika::connections::UdpConnection']]],
+  ['udpconnection_0',['UdpConnection',['../d0/d22/classlogika_1_1connections_1_1UdpConnection.html#a4306e01ba119742da706490be1fdc4d2',1,'logika::connections::UdpConnection']]],
   ['updatedata_1',['UpdateData',['../d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html#af6ead8c673860a901fb7c4f1780495df',1,'logika::protocols::M4::FlashArchive4::UpdateData()'],['../d7/dd9/classlogika_1_1protocols_1_1M4_1_1SyncFlashArchive4.html#a63a090ab3b41825ec6c17093e3498976',1,'logika::protocols::M4::SyncFlashArchive4::UpdateData()'],['../df/db8/classlogika_1_1protocols_1_1M4_1_1AsyncFlashArchive4.html#a737313f07e5c76fb4ee7d54aca74c2b4',1,'logika::protocols::M4::AsyncFlashArchive4::UpdateData()']]],
   ['updateelementexplicit_2',['UpdateElementExplicit',['../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a070b9ad73269b5b32b46001bbe753e04',1,'logika::protocols::M4::FlashArray']]],
   ['updateelements_3',['UpdateElements',['../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#aeb0f2109b5d4f90169225e21d8855b57',1,'logika::protocols::M4::FlashArray']]],

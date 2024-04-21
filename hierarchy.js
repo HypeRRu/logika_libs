@@ -46,7 +46,8 @@ var hierarchy =
     ] ],
     [ "logika::protocols::IProtocol", "da/dd0/classlogika_1_1protocols_1_1IProtocol.html", [
       [ "logika::protocols::Protocol", "da/d50/classlogika_1_1protocols_1_1Protocol.html", [
-        [ "logika::protocols::M4::M4Protocol", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html", null ]
+        [ "logika::protocols::M4::M4Protocol", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html", null ],
+        [ "logika::protocols::X6::SPBusProtocol", "d0/dc3/classlogika_1_1protocols_1_1X6_1_1SPBusProtocol.html", null ]
       ] ]
     ] ],
     [ "logika::ISerializable", "dd/dbc/classlogika_1_1ISerializable.html", [
@@ -163,7 +164,6 @@ var hierarchy =
     [ "logika::SharedConstructible< TagDef4M >", "dd/d10/classlogika_1_1SharedConstructible.html", [
       [ "logika::meters::TagDef4M", "dc/dc3/classlogika_1_1meters_1_1TagDef4M.html", null ]
     ] ],
-    [ "logika::protocols::X6::SPBusProtocol", "d0/dc3/classlogika_1_1protocols_1_1X6_1_1SPBusProtocol.html", null ],
     [ "logika::storage::StorageKeeper", "d5/d47/classlogika_1_1storage_1_1StorageKeeper.html", null ],
     [ "logika::meters::TagDefSettings", "d0/de8/structlogika_1_1meters_1_1TagDefSettings.html", [
       [ "logika::meters::ArchiveFieldDefSettings", "de/dcf/structlogika_1_1meters_1_1ArchiveFieldDefSettings.html", [

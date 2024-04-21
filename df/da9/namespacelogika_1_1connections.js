@@ -9,7 +9,7 @@ var namespacelogika_1_1connections =
       [ "ReadFunction", "d5/d15/namespacelogika_1_1connections_1_1linux__io.html#a4fc0acd697ceb265bd79906f0a2b52b1", null ],
       [ "WriteFunction", "d5/d15/namespacelogika_1_1connections_1_1linux__io.html#ab10fd15365d2f8eca240a736b851892e", null ],
       [ "BytesAvailable", "d5/d15/namespacelogika_1_1connections_1_1linux__io.html#a39452c6892e2cf72faabc0321916800b", null ],
-      [ "ReadBuffer", "d5/d15/namespacelogika_1_1connections_1_1linux__io.html#ae8bac9ed90f7ca0fe42352460d6f3241", null ],
+      [ "ReadBuffer", "d5/d15/namespacelogika_1_1connections_1_1linux__io.html#ac7c0de184c9d512090c922abbb68120d", null ],
       [ "WriteBuffer", "d5/d15/namespacelogika_1_1connections_1_1linux__io.html#a1896d9d667c41740a8fee23e50b0830f", null ]
     ] ],
     [ "Parity", "de/dcb/namespacelogika_1_1connections_1_1Parity.html", null ],
@@ -22,7 +22,7 @@ var namespacelogika_1_1connections =
     [ "StopBits", "dd/d62/namespacelogika_1_1connections_1_1StopBits.html", null ],
     [ "windows_io", "dc/d3d/namespacelogika_1_1connections_1_1windows__io.html", [
       [ "BytesAvailable", "dc/d3d/namespacelogika_1_1connections_1_1windows__io.html#adf246c648ccedf6c513c079218b76834", null ],
-      [ "ReadBuffer", "dc/d3d/namespacelogika_1_1connections_1_1windows__io.html#a6789119b8982211156c5dee023f97daf", null ],
+      [ "ReadBuffer", "dc/d3d/namespacelogika_1_1connections_1_1windows__io.html#aa0e89c20ebc138c949e790598f60a04c", null ],
       [ "WriteBuffer", "dc/d3d/namespacelogika_1_1connections_1_1windows__io.html#a374faf9aed9e38e96107be6a1cfc156b", null ]
     ] ],
     [ "Connection", "db/da7/classlogika_1_1connections_1_1Connection.html", "db/da7/classlogika_1_1connections_1_1Connection" ],
