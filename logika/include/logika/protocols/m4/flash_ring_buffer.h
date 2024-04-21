@@ -220,6 +220,12 @@ public:
     /// @return Отрицательное значение, если rhs > lhs, положительное, если rhs < lhs, 0 - если равны
     static int32_t CompareByIdx( const FrbIndex& lhs, const FrbIndex& rhs );
 
+    /// @brief Сравнение индексов
+    /// @param[in] lhs Левое сравниваемое значение
+    /// @param[in] rhs Правое сравниваемое значение
+    /// @return true - lhs < rhs, false - иначе
+    static bool LessByIdx( const FrbIndex& lhs, const FrbIndex& rhs );
+
 public:
     uint32_t index; ///< Индекс элемента
     TimeType time;  ///< Метка времени (мс)

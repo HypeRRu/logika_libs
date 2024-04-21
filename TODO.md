@@ -11,8 +11,8 @@
 - [x] ResultCodes
 
 ### Protocols
-- [-] Protocol
-- [-] M4
+- [x] Protocol
+- [x] M4
 - [ ] SPBus
 - [ ] Features (autodetect, ...)
 

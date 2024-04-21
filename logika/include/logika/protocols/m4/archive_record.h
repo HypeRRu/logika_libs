@@ -10,9 +10,11 @@
 
 #include <logika/common/iserializable.h>
 #include <logika/common/types.h>
+#include <logika/common/any.hpp>
 
 /// @cond
 #include <vector>
+#include <memory>
 /// @endcond
 
 namespace logika
@@ -35,7 +37,8 @@ public:
     /// @param[in] sinceStart Метка времени (мс) с момента запуска
     /// @param[in] full Метка времени (мс) без учета момента запуска
     /// @param[in] vals Элементы записи архива
-    ArchiveRecord( TimeType sinceStart, TimeType full, const std::vector< ISerializable* >& vals );
+    ArchiveRecord( TimeType sinceStart, TimeType full,
+        const std::vector< std::shared_ptr< logika::Any > >& vals );
 
     /// @copydoc ISerializable::ToString()
     virtual LocString ToString() const override;
@@ -43,7 +46,9 @@ public:
 public:
     TimeType timeSinceStart;                ///< Метка времени (мс) с момента запуска
     TimeType fullTime;                      ///< Метка времени (мс) без учета момента запуска
-    std::vector< ISerializable* > values;   ///< Элементы записи архива
+    std::vector<
+        std::shared_ptr< logika::Any >
+    > values;                               ///< Элементы записи архива
 
 }; // struct ArchiveRecord
 

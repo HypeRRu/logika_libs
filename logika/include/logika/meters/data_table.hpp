@@ -29,7 +29,7 @@ class LOGIKA_METERS_EXPORT DataTable
 {
 public:
     using FieldType     = std::shared_ptr< ArchiveField >;
-    using RecordType    = std::shared_ptr< std::vector< logika::Any > >;
+    using RecordType    = std::shared_ptr< std::vector< std::shared_ptr< logika::Any > > >;
 
     /// @brief Конструктор таблицы данных
     /// @param[in] fieldList Список полей таблицы
@@ -54,6 +54,10 @@ public:
     /// @brief Получение списка записей в таблице
     /// @return Список записей в таблице
     const std::vector< RecordType >& GetRecordsList() const;
+
+    /// @brief Получение списка записей в таблице
+    /// @return Список записей в таблице
+    std::vector< RecordType >& GetRecordsList();
 
     /// @brief Получение записи
     /// @param[in] index Номер записи
@@ -137,6 +141,25 @@ public:
     /// @param[in] fieldIndex Номер удаляемого столбца
     /// @return Удалось ли удалить столбец
     bool RemoveColumn( size_t fieldIndex );
+
+    /// @brief Получение индекса столбца
+    /// @param[in] field Столбец
+    /// @param[out] index Номер столбца
+    /// @return Найден ли столбец
+    bool GetColumnIndex( FieldType field, size_t& index );
+
+    /// @brief Получение столбца таблицы
+    /// @param[in] field Столбец
+    /// @return Содержимое столбца таблицы
+    std::vector< std::shared_ptr< logika::Any > > GetColumn( FieldType field );
+
+    /// @brief Получение столбца таблицы
+    /// @param[in] fieldIndex Номер столбца
+    /// @return Содержимое столбца таблицы
+    std::vector< std::shared_ptr< logika::Any > > GetColumn( size_t fieldIndex );
+
+    /// @brief Удаление всех записей таблицы
+    void Clear();
 
 private:
     /// @brief Проверка, что запись содержит верные поля

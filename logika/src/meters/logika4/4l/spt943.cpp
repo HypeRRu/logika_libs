@@ -86,7 +86,7 @@ Spt943::Spt943(
     cfDefSettings1.expression       = LOCALIZED( "ТВ2_t1-ТВ2_t2" );
 
     std::shared_ptr< ChannelDef > cTv = nullptr;
-    auto cDefIter = std::find_if( channels_.begin(), channels_.end(), []( const auto& def ){
+    auto cDefIter = std::find_if( channels_.begin(), channels_.end(), []( const std::shared_ptr< ChannelDef >& def ) {
         return def && def->kind == ChannelKind::TV && def->start == 1;
     } );
 

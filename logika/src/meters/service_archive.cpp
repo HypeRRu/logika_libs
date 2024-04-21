@@ -143,6 +143,12 @@ bool ServiceArchive::RemoveRecordByTimestamp( logika::TimeType timestamp )
     return true;
 } // RemoveRecordByTimestamp
 
+
+void ServiceArchive::Clear()
+{
+    records_.clear();
+} // Clear
+
 } // namespace meters
 
 } // namespace logika

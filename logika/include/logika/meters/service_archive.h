@@ -76,6 +76,9 @@ public:
     /// @return Была ли удалена запись
     bool RemoveRecordByTimestamp( TimeType timestamp );
 
+    /// @brief Удаление всех записей
+    void Clear();
+
 private:
     std::vector< RecordType > records_; ///< Записи сервисного архива
 

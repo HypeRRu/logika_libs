@@ -68,6 +68,12 @@ std::shared_ptr< meters::ArchiveType > FlashArchive4::GetArchiveType() const
 } // GetArchiveType
 
 
+std::shared_ptr< FlashRingBuffer > FlashArchive4::GetHeaders() const
+{
+    return headers_;
+} // GetHeaders
+
+
 void FlashArchive4::Reset()
 {
     if ( headers_ )

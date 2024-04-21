@@ -523,6 +523,12 @@ int32_t FrbIndex::CompareByIdx( const FrbIndex& lhs, const FrbIndex& rhs )
     return lhs.index - rhs.index;
 } // CompareByIdx
 
+
+bool FrbIndex::LessByIdx( const FrbIndex& lhs, const FrbIndex& rhs )
+{
+    return CompareByIdx( lhs, rhs ) < 0;
+} // LessByIdx
+
 } // namespace M4
 
 } // namespace protocols

@@ -1,5 +1,7 @@
 set(LIB_NAME ${CMAKE_PROJECT_NAME}_resource_converters)
 
+set(CMAKE_CXX_STANDARD 17)
+
 set(
     ${LIB_NAME}_SOURCES_LIST
     ${SRC_DIR}/meters/converters/archive_type_converter.cpp

@@ -59,7 +59,7 @@ bool DataTable::AddColumn( DataTable::FieldType field, const T& value )
     {
         if ( record )
         {
-            record->back() = logika::Any( value );
+            record->back() = std::make_shared< logika::Any >( value );
         }
     }
     return true;
@@ -77,7 +77,7 @@ bool DataTable::InsertColumn( DataTable::FieldType field, size_t index, const T&
     {
         if ( record )
         {
-            record[ index ] = logika::Any( value );
+            record[ index ] = std::make_shared< logika::Any >( value );
         }
     }
     return true;

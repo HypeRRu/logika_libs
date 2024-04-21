@@ -13,6 +13,7 @@
 #include <logika/meters/logika4/logika4.h>
 #include <logika/meters/logika4/4l/logika4l.h>
 #include <logika/meters/data_tag.h>
+#include <logika/meters/interval_archive.h>
 
 /// @cond
 #include <chrono>
@@ -199,6 +200,63 @@ void Protocol::UpdateTags( const ByteType* srcNt, const ByteType* dstNt,
     (void) dstNt;
     (void) tags;
 } // UpdateTags
+
+
+std::shared_ptr< meters::IntervalArchive > Protocol::ReadIntervalArchiveDef( std::shared_ptr< meters::Meter > meter,
+    const ByteType* srcNt, const ByteType* dstNt, std::shared_ptr< meters::ArchiveType > archiveType,
+    std::shared_ptr< logika::Any >& state )
+{
+    (void) meter;
+    (void) srcNt;
+    (void) dstNt;
+    (void) archiveType;
+    (void) state;
+    return nullptr;
+} // ReadIntervalArchiveDef
+
+
+bool Protocol::ReadIntervalArchive( std::shared_ptr< meters::Meter > meter, const ByteType* srcNt,
+    const ByteType* dstNt, std::shared_ptr< meters::IntervalArchive > archive, TimeType start, TimeType end,
+    std::shared_ptr< logika::Any >& state, double& progress )
+{
+    (void) meter;
+    (void) srcNt;
+    (void) dstNt;
+    (void) archive;
+    (void) start;
+    (void) end;
+    (void) state;
+    (void) progress;
+    /// @todo throw not implemented?
+    return false;
+} // ReadIntervalArchive
+
+
+bool Protocol::ReadServiceArchive( std::shared_ptr< meters::Meter > meter, const ByteType* srcNt,
+    const ByteType* dstNt, std::shared_ptr< meters::ServiceArchive > archive, TimeType start, TimeType end,
+    std::shared_ptr< logika::Any >& state, double& progress )
+{
+    (void) meter;
+    (void) srcNt;
+    (void) dstNt;
+    (void) archive;
+    (void) start;
+    (void) end;
+    (void) state;
+    (void) progress;
+    /// @todo throw not implemented?
+    return false;
+} // ReadServiceArchive
+
+
+TimeType Protocol::GetDeviceClock( std::shared_ptr< meters::Meter > meter,
+    const ByteType* srcNt, const ByteType* dstNt )
+{
+    (void) meter;
+    (void) srcNt;
+    (void) dstNt;
+    return 0;
+} // GetDeviceClock
 
 
 std::shared_ptr< meters::Meter > Protocol::DetectM4( std::shared_ptr< M4::M4Protocol > bus,

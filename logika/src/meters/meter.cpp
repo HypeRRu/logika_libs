@@ -225,7 +225,8 @@ std::vector< std::shared_ptr< DataTag > > Meter::LookupCommonTags( const std::ve
             /// Тэги Logika6
             tagName = tagDef;
             chNo = 0;
-            const auto chIter = std::find_if( channels_.cbegin(), channels_.cend(), []( const auto& channel ){
+            const auto chIter = std::find_if( channels_.cbegin(), channels_.cend(), [](
+                const std::shared_ptr< ChannelDef >& channel ) {
                 return channel && channel->start == 0 && channel->count == 1;
             } );
             if ( channels_.cend() != chIter )

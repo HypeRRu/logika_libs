@@ -36,6 +36,8 @@ namespace logika
 namespace meters
 {
 
+const LocString Logika4M::ND_STR = LOCALIZED( "#н/д" );
+
 Logika4M::Logika4M(
       MeasureKind measureKind
     , const LocString& caption
@@ -103,6 +105,18 @@ void Logika4M::Init( const storage::StorageKeeper& sKeeper )
         }
     }
 } // Init
+
+
+bool Logika4M::GetSupportFlz() const
+{
+    return supportFlz_;
+} // GetSupportFlz
+
+
+bool Logika4M::GetSupportArchivePartitions() const
+{
+    return supportArchivePartitions_;
+} // GetSupportArchivePartitions
 
 
 std::vector< AdsTagBlock > Logika4M::GetAdsTagBlocks() const

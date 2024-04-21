@@ -63,7 +63,7 @@ bool IntervalArchive::AddDefaultColumns()
     }
 
     const auto& fields = dataTable_->GetFieldsList();
-    auto tmIter = std::find_if( fields.cbegin(), fields.cend(), []( const auto& field ){
+    auto tmIter = std::find_if( fields.cbegin(), fields.cend(), []( const DataTable::FieldType& field ) {
         if ( !field )
         {
             return false;

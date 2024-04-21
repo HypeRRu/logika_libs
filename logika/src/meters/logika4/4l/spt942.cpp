@@ -111,7 +111,7 @@ Spt942::Spt942(
     cfDefSettings1.expression       = LOCALIZED( "ТВ2_t1-ТВ2_t2" );
 
     std::shared_ptr< ChannelDef > cTv = nullptr;
-    auto cDefIter = std::find_if( channels_.begin(), channels_.end(), []( const auto& def ){
+    auto cDefIter = std::find_if( channels_.begin(), channels_.end(), []( const std::shared_ptr< ChannelDef >& def ) {
         return def && def->kind == ChannelKind::TV && def->start == 1;
     } );
 
@@ -153,13 +153,16 @@ void Spt942::Init( const storage::StorageKeeper& sKeeper )
         throw std::runtime_error{ "Archive type Hour, Day or Month not found" };
     }
 
-    auto hourIter = std::find_if( archives_.begin(), archives_.end(), [ arcTypeHour ]( const auto& arc ){
+    auto hourIter = std::find_if( archives_.begin(), archives_.end(), [ arcTypeHour ](
+        const std::shared_ptr< ArchiveDef >& arc ) {
         return arc && arc->GetArchiveType() == arcTypeHour;
     } );
-    auto dayIter = std::find_if( archives_.begin(), archives_.end(), [ arcTypeDay ]( const auto& arc ){
+    auto dayIter = std::find_if( archives_.begin(), archives_.end(), [ arcTypeDay ](
+        const std::shared_ptr< ArchiveDef >& arc ) {
         return arc && arc->GetArchiveType() == arcTypeDay;
     } );
-    auto monthIter = std::find_if( archives_.begin(), archives_.end(), [ arcTypeMonth ]( const auto& arc ){
+    auto monthIter = std::find_if( archives_.begin(), archives_.end(), [ arcTypeMonth ](
+        const std::shared_ptr< ArchiveDef >& arc ) {
         return arc && arc->GetArchiveType() == arcTypeMonth;
     } );
 
@@ -177,7 +180,8 @@ void Spt942::Init( const storage::StorageKeeper& sKeeper )
         throw std::runtime_error{ "Archive Hour, Day or Month is invalid" };
     }
 
-    auto tv2ChanIter = std::find_if( channels_.begin(), channels_.end(), []( const auto& channel ){
+    auto tv2ChanIter = std::find_if( channels_.begin(), channels_.end(), [](
+        const std::shared_ptr< ChannelDef >& channel ) {
         return channel && channel->start == 1 && channel->count == 1;
     } );
     std::shared_ptr< ChannelDef > m46tv2 = nullptr;

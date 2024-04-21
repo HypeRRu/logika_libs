@@ -12,6 +12,7 @@
 #include <logika/common/types.h>
 #include <logika/connections/defs.h>
 #include <logika/meters/defs.h>
+#include <logika/common/any.hpp>
 
 /// @cond
 #include <memory>
@@ -28,8 +29,13 @@ namespace connections
 
 namespace meters
 {
-    class LOGIKA_METERS_EXPORT Meter;
-    class LOGIKA_METERS_EXPORT DataTag;
+
+class LOGIKA_METERS_EXPORT Meter;
+class LOGIKA_METERS_EXPORT DataTag;
+class LOGIKA_METERS_EXPORT ArchiveType;
+class LOGIKA_METERS_EXPORT IntervalArchive;
+class LOGIKA_METERS_EXPORT ServiceArchive;
+
 } // namespace meters
 
 
@@ -113,6 +119,53 @@ public:
     /// @param[inout] tags Обновляемые тэги
     virtual void UpdateTags( const ByteType* srcNt, const ByteType* dstNt,
         std::vector< std::shared_ptr< meters::DataTag > >& tags ) = 0;
+
+    /// @brief Чтение описания интервального архива
+    /// @param[in] meter Прибор
+    /// @param[in] srcNt NT источника
+    /// @param[in] dstNt NT назначения
+    /// @param[in] archiveType Тип архива
+    /// @param[out] state Состояние запроса на чтение
+    /// @return Описание интервального архива
+    virtual std::shared_ptr< meters::IntervalArchive > ReadIntervalArchiveDef( std::shared_ptr< meters::Meter > meter,
+        const ByteType* srcNt, const ByteType* dstNt, std::shared_ptr< meters::ArchiveType > archiveType,
+        std::shared_ptr< logika::Any >& state ) = 0;
+
+    /// @brief Чтение интервального архива
+    /// @param[in] meter Прибор
+    /// @param[in] srcNt NT источника
+    /// @param[in] dstNt NT назначения
+    /// @param[out] archive Считываемый архив
+    /// @param[in] start Начало интервала
+    /// @param[in] end Конец интервала
+    /// @param[out] state Состояние запроса на чтение
+    /// @param[out] progress Прогресс чтения (0-100)
+    /// @return true - остались непрочитанные данные, false - иначе
+    virtual bool ReadIntervalArchive( std::shared_ptr< meters::Meter > meter, const ByteType* srcNt,
+        const ByteType* dstNt, std::shared_ptr< meters::IntervalArchive > archive, TimeType start, TimeType end,
+        std::shared_ptr< logika::Any >& state, double& progress ) = 0;
+
+    /// @brief Чтение сервисного архива
+    /// @param[in] meter Прибор
+    /// @param[in] srcNt NT источника
+    /// @param[in] dstNt NT назначения
+    /// @param[out] archive Считываемый архив
+    /// @param[in] start Начало интервала
+    /// @param[in] end Конец интервала
+    /// @param[out] state Состояние запроса на чтение
+    /// @param[out] progress Прогресс чтения (0-100)
+    /// @return true - остались непрочитанные данные, false - иначе
+    virtual bool ReadServiceArchive( std::shared_ptr< meters::Meter > meter, const ByteType* srcNt,
+        const ByteType* dstNt, std::shared_ptr< meters::ServiceArchive > archive, TimeType start, TimeType end,
+        std::shared_ptr< logika::Any >& state, double& progress ) = 0;
+
+    /// @brief Получене времени прибора
+    /// @param[in] meter Прибор
+    /// @param[in] srcNt NT источника
+    /// @param[in] dstNt NT назначения
+    /// @return Время прибора
+    virtual TimeType GetDeviceClock( std::shared_ptr< meters::Meter > meter,
+        const ByteType* srcNt, const ByteType* dstNt ) = 0;
 
 }; // class IProtocol
 

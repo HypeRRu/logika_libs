@@ -9,6 +9,7 @@
 #include <logika/protocols/comm_exception.h>
 #include <logika/protocols/m4/opcodes.h>
 #include <logika/protocols/m4/tag_write_data.h>
+#include <logika/protocols/m4/archive4m.h>
 #include <logika/connections/iconnection.h>
 #include <logika/connections/utils/types_converter.h>
 #include <logika/connections/serial/serial_connection.h>
@@ -139,6 +140,7 @@ M4Protocol::M4Protocol( const storage::StorageKeeper& sKeeper,
     , suggestedBaudRate_{ targetBaudRate }
     , activeDev_{ nullptr }
     , metadataCache_{}
+    , archivePartition_{ M4Protocol::PARTITION_CURRENT }
 {} // M4Protocol
 
 
@@ -378,6 +380,120 @@ TimeType M4Protocol::RestrictTime( TimeType date )
     constexpr TimeType restrictTimestamp = 8993721600000; /// 01-01-2025 00:00:00
     return date < restrictTimestamp ? date : restrictTimestamp;
 } // RestrictTime
+
+
+std::vector< std::shared_ptr< ArchiveRecord > > M4Protocol::ParseArchivePacket4M(
+    const Packet& packet, TimeType& nextRecord )
+{
+    if ( !packet.extended || packet.funcOpcode != Opcode::ReadArchive )
+    {
+        throw std::invalid_argument{ "Invalid packet" };
+    }
+    std::vector< std::shared_ptr< ArchiveRecord > > records;
+    nextRecord = 0;
+
+    MeterAddressType readLen = 0;
+    /// Can be 0x49 (datetime stamp) or 0x04 (FLZ compressed records)
+    meters::Logika4M::Tag4MRecordType firstTag = meters::Logika4M::ParseTag( packet.data, 0, readLen );
+    ByteVector decompressedData{};
+    if ( meters::TagId4M::ByteArray == firstTag.first )
+    {
+        MeterAddressType tailLength = packet.data.size() - readLen;
+        ByteVector buffer{};
+        if ( firstTag.second )
+        {
+            firstTag.second->TryCast< ByteVector >( buffer );
+        }
+        decompressedData = FastLzImpl::Decompress( buffer, 0, buffer.size() );
+        /// Копирование оставшихся данных
+        for ( size_t i = readLen; i < packet.data.size(); ++i )
+        {
+            decompressedData.push_back( packet.data.at( i ) );
+        }
+    }
+    else
+    {
+        decompressedData = packet.data;
+    }
+
+    MeterAddressType tp = 0;
+    while ( tp < decompressedData.size() )
+    {
+        /// 0x49 tag (sync archives: shortened datetime, async archives: full datetime)
+        readLen = 0;
+        meters::Logika4M::Tag4MRecordType tagTime = meters::Logika4M::ParseTag(
+            decompressedData, tp, readLen );
+        TimeType timeFromTag = 0;
+        tagTime.second->TryCast< TimeType >( timeFromTag );
+        if ( !tagTime.first == meters::TagId4M::Timestamp )
+        {
+            throw std::runtime_error{ "Wrong tag type" };
+        }
+        tp += readLen;
+        MeterAddressType recordLen = 0;
+        MeterAddressType offset = meters::Logika4M::GetTagLength( decompressedData, tp + 1, recordLen );
+        if ( 0 == recordLen )
+        {
+            nextRecord = timeFromTag;
+            break;
+        }
+
+        std::shared_ptr< ArchiveRecord > record = std::make_shared< ArchiveRecord >();
+        record->timeSinceStart = timeFromTag;
+        if ( decompressedData.at( tp ) == static_cast< ByteType >( 0x30 ) )
+        {
+            /// Синхронный архив
+            tp += 1 + offset;
+            MeterAddressType start = tp;
+            std::vector< meters::Logika4M::Tag4MRecordType > archiveContent{};
+            while ( ( tp - start ) < recordLen )
+            {
+                archiveContent.emplace_back(
+                    meters::Logika4M::ParseTag( decompressedData, tp, readLen )
+                );
+                tp += readLen;
+            }
+            LocString time = LOCALIZED( "" );
+            LocString date = LOCALIZED( "" );
+            if ( archiveContent.size() < 2
+                || !archiveContent.at( 0 ).second->TryCast< LocString >( time )
+                || !archiveContent.at( 1 ).second->TryCast< LocString >( date )
+                || time.length() != 8
+                || date.length() != 8 )
+            {
+                record->fullTime = meters::Logika4::CombineDateTime( date, time );
+                archiveContent.erase( archiveContent.begin(), archiveContent.begin() + 2 );
+            }
+            else
+            {
+                record->fullTime = 0;
+            }
+            record->values.clear();
+            record->values.reserve( archiveContent.size() );
+            for ( const auto& value: archiveContent )
+            {
+                record->values.emplace_back( value.second );
+            }
+        }
+        else
+        {
+            /// Асинхронный архив
+            record->fullTime = record->timeSinceStart;
+            record->values.clear();
+            record->values.emplace_back( meters::Logika4M::ParseTag(
+                decompressedData, tp, readLen ).second );
+            tp += readLen;
+        }
+        records.emplace_back( record );
+    }
+
+    if ( nextRecord != 0 && records.size() > 0 && nextRecord <= records.back()->fullTime )
+    {
+        throw ECommException( ExceptionSeverity::Stop, CommunicationError::Unspecified, "Archive dates cycling detected" );
+    }
+
+    return records;
+} // ParseArchivePacket4M
 
 
 Packet M4Protocol::RecvPacket( const ByteType* excpectedNt, Opcode::Type* expectedOpcode, const ByteType* expectedId,
@@ -801,7 +917,8 @@ Rc::Type M4Protocol::WriteParameterL4( std::shared_ptr< meters::Logika4L > meter
             return Rc::Success;
         }
         const auto tags = tagsVault->All();
-        const auto tagDefIter = std::find_if( tags.cbegin(), tags.cend(), [ paramNum ]( const auto& tag ){
+        const auto tagDefIter = std::find_if( tags.cbegin(), tags.cend(), [ paramNum ](
+            const std::shared_ptr< meters::DataTagDef >& tag ) {
             return tag && tag->GetOrdinal() == paramNum;
         } );
         if ( tags.cend() == tagDefIter )
@@ -1134,6 +1251,73 @@ std::vector< Rc::Type > M4Protocol::WriteParams4M( std::shared_ptr< meters::Logi
 
     return errors;
 } // WriteParams4M
+
+
+Packet M4Protocol::ReadArchive4M( std::shared_ptr< meters::Logika4M > meter, const ByteType* nt, const ByteType* packetId,
+    uint16_t partition, const ByteType channel, ArchiveId4M::Type archiveKind, TimeType from, TimeType to,
+    uint32_t nValues, std::vector< std::shared_ptr< ArchiveRecord > >& result, TimeType& nextRecord )
+{
+    SelectDeviceAndChannel( meter, nt );
+    Packet packet;
+    if ( !meter )
+    {
+        return packet;
+    }
+
+    from    = RestrictTime( from );
+    to      = RestrictTime( to );
+    if ( 0 != to && from > to )
+    {
+        LOG_WRITE( LOG_WARNING, LOCALIZED( "Протокол M4 не поддерживает чтение в обратном порядке, запрос[" )
+            << from << LOCALIZED( " .. " ) << to << LOCALIZED( "]" ) );
+        result.clear();
+        nextRecord = 0;
+        return packet;
+    }
+
+    ByteVector bytes;
+    bytes.push_back( static_cast< ByteType >( 0x04 ) );
+    bytes.push_back( static_cast< ByteType >( 0x05 ) );
+    bytes.push_back( static_cast< ByteType >( partition & 0xFF ) );             /// Раздел(отсчет) L 
+    bytes.push_back( static_cast< ByteType >( ( partition >> 8 ) & 0xFF ) );    /// Раздел(отсчет) H 
+    bytes.push_back( channel );
+
+    ByteType compressionFlags = static_cast< ByteType >( archiveKind );
+    if ( meter->GetSupportFlz() )
+    {
+        compressionFlags |= static_cast< ByteType >( CompressionType::FlzLimitedLength );
+    }
+
+    bytes.push_back( compressionFlags ); /// Опции сжатия и код архива
+    if ( nValues > 0xFF )
+    {
+        nValues = 0xFF;
+    }
+    bytes.push_back( static_cast< ByteType >( nValues ) ); /// Максимальное количество записей в ответе
+
+    /// @note Обход ошибки в СПТ943r3, из за которой может
+    /// не выдаваться запись при указании даты в запросе месячного архива
+    bool need943MHack = meter->GetCaption() == LOCALIZED( "SPT943rev3" ) && archiveKind == ArchiveId4M::Mon;
+    AppendDateTag( bytes, from, need943MHack );
+    if ( 0 != to )
+    {
+        AppendDateTag( bytes, to, need943MHack );
+    }
+    LOG_WRITE( LOG_DEBUG, LOCALIZED( "M4 archive request: " )
+        << LOCALIZED( "part=" ) << partition
+        << LOCALIZED( ", archive=" ) << archiveKind
+        << LOCALIZED( ", channel=" ) << channel
+        << LOCALIZED( ", from=" ) << from
+        << LOCALIZED( ", to=" ) << ToLocString( 0 != to ? std::to_string( to ) : "[null]" )
+        << LOCALIZED( ", maxCnt=" ) << nValues );
+    packet = DoM4Request( nt, Opcode::ReadArchive, bytes, packetId );
+    result = M4Protocol::ParseArchivePacket4M( packet, nextRecord );
+    LOG_WRITE( LOG_DEBUG, LOCALIZED( "M4 answer: " )
+        << result.size() << LOCALIZED( " records" )
+        << LOCALIZED( ", next date pointer" ) << nextRecord );
+
+    return packet;
+} // ReadArchive4M
 
 
 void M4Protocol::CloseCommSessionImpl( const ByteType* srcNt, const ByteType* dstNt )

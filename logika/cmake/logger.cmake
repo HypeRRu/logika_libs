@@ -1,5 +1,7 @@
 set(LIB_NAME ${CMAKE_PROJECT_NAME}_logger)
 
+set(CMAKE_CXX_STANDARD 11)
+
 set(
     ${LIB_NAME}_SOURCES_LIST
     ${SRC_DIR}/log/logger.cpp

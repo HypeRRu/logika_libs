@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
 
 project(logika LANGUAGES CXX VERSION 1.0)
-set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(BUILD_SHARED_LIBS ON)
 
@@ -19,6 +18,7 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/meters.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/resource_converters.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/protocols.cmake)
 
+set(CMAKE_CXX_STANDARD 17)
 add_executable(
 	test_main
 	${SRC_DIR}/main.cpp

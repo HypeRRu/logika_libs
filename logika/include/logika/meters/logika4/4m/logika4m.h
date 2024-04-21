@@ -86,8 +86,16 @@ public:
     /// @return Список тэгов ADS
     virtual std::vector< AdsTagBlock > GetAdsTagBlocks() const;
 
+    /// @brief Получение флага поддержки FLZ
+    /// @return Флаг поддержки FLZ
+    bool GetSupportFlz() const;
+
+    /// @brief Получение флага поддержки разделов архивов
+    /// @return Флаг поддержки разделов архивов
+    bool GetSupportArchivePartitions() const;
+
 public:
-    static constexpr LocChar ND_STR[] = LOCALIZED( "#н/д" );    ///< Строка "Нет данных"
+    static const LocString ND_STR;  ///< Строка "Нет данных"
 
 public:
     /// @brief Получение размера данных тэга
@@ -233,7 +241,7 @@ public:
 
 protected:
     bool supportFlz_;               ///< Наличие поддержки FLZ
-    bool supportArchivePartitions_; ///< Наличие поддержки "разделов", врзникающих при пуске прибора
+    bool supportArchivePartitions_; ///< Наличие поддержки "разделов", возникающих при пуске прибора
 
 }; // class Logika4M
 

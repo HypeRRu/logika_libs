@@ -1,5 +1,7 @@
 set(LIB_NAME ${CMAKE_PROJECT_NAME}_protocols)
 
+set(CMAKE_CXX_STANDARD 11)
+
 set(
     ${LIB_NAME}_SOURCES_LIST
 	${SRC_DIR}/protocols/protocol.cpp
@@ -7,6 +9,7 @@ set(
 	${SRC_DIR}/protocols/m4/archive_record.cpp
 	${SRC_DIR}/protocols/m4/flash_ring_buffer.cpp
 	${SRC_DIR}/protocols/m4/flash_archive4l.cpp
+	${SRC_DIR}/protocols/m4/archive4m.cpp
 	${SRC_DIR}/protocols/m4/packet.cpp
 	${SRC_DIR}/protocols/m4/m4protocol_impl.cpp
 	${SRC_DIR}/protocols/m4/m4protocol_api.cpp

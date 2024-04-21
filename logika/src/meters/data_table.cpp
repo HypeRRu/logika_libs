@@ -44,6 +44,12 @@ const std::vector< DataTable::RecordType >& DataTable::GetRecordsList() const
 } // GetRecordsList
 
 
+std::vector< DataTable::RecordType >& DataTable::GetRecordsList()
+{
+    return data_;
+} // GetRecordsList
+
+
 const DataTable::RecordType DataTable::GetRecord( size_t index ) const
 {
     if ( index >= data_.size() )
@@ -138,7 +144,7 @@ bool DataTable::AddColumn( DataTable::FieldType field )
     {
         if ( record )
         {
-            record->push_back( logika::Any{} );
+            record->push_back( std::make_shared< logika::Any >() );
         }
     }
     return true;
@@ -157,7 +163,7 @@ bool DataTable::InsertColumn( DataTable::FieldType field, size_t index )
     {
         if ( record )
         {
-            record->insert( record->begin() + index, logika::Any{} );
+            record->insert( record->begin() + index, std::make_shared< logika::Any >() );
         }
     }
 
@@ -167,12 +173,12 @@ bool DataTable::InsertColumn( DataTable::FieldType field, size_t index )
 
 bool DataTable::RemoveColumn( DataTable::FieldType field )
 {
-    auto iter = std::find( fieldList_.cbegin(), fieldList_.cend(), field );
-    if ( fieldList_.cend() == iter )
+    size_t index = 0;
+    if ( !GetColumnIndex( field, index ) )
     {
-        return false;
+        return {};
     }
-    return RemoveColumn( iter - fieldList_.cbegin() );
+    return RemoveColumn( index );
 } // RemoveColumn
 
 
@@ -192,6 +198,55 @@ bool DataTable::RemoveColumn( size_t fieldIndex )
     }
     return true;
 } // RemoveColumn
+
+
+bool DataTable::GetColumnIndex( FieldType field, size_t& index )
+{
+    auto iter = std::find( fieldList_.cbegin(), fieldList_.cend(), field );
+    if ( fieldList_.cend() == iter )
+    {
+        return false;
+    }
+    index = iter - fieldList_.cbegin();
+    return true;
+} // GetColumnIndex
+
+
+std::vector< std::shared_ptr< logika::Any > > DataTable::GetColumn( FieldType field )
+{
+    size_t index = 0;
+    if ( !GetColumnIndex( field, index ) )
+    {
+        return {};
+    }
+    return GetColumn( index );
+} // GetColumn( FieldType )
+
+
+std::vector< std::shared_ptr< logika::Any > > DataTable::GetColumn( size_t fieldIndex )
+{
+    if ( fieldIndex >= fieldList_.size() )
+    {
+        return {};
+    }
+    std::vector< std::shared_ptr< logika::Any > > column{};
+    column.reserve( data_.size() );
+    for ( auto record: data_ )
+    {
+        if ( !record )
+        {
+            continue;
+        }
+        column.emplace_back( record->at( fieldIndex ) );
+    }
+    return column;
+} // GetColumn( size_t )
+
+
+void DataTable::Clear()
+{
+    data_.clear();
+} // Clear
 
 } // namespace meters
 

@@ -56,7 +56,7 @@ public:
 struct LOGIKA_PROTOCOLS_EXPORT ArchiveRequestState4L
 {
 public:
-    std::vector< TvReadState4L > tvReadStates_{}; ///< Состояние чтения каналов
+    std::vector< TvReadState4L > tvReadStates;  ///< Состояние чтения каналов
 
 }; // struct ArchiveRequestState4L
 
@@ -88,6 +88,10 @@ public:
     /// @brief Получение типа архива
     /// @return Тип архива
     std::shared_ptr< meters::ArchiveType > GetArchiveType() const;
+
+    /// @brief Получение заголовков архива
+    /// @return Заголовки архива
+    std::shared_ptr< FlashRingBuffer > GetHeaders() const;
 
     /// @brief Сброс заголовков
     void Reset();

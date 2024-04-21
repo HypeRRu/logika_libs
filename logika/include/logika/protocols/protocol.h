@@ -95,10 +95,24 @@ public:
     virtual void UpdateTags( const ByteType* srcNt, const ByteType* dstNt,
         std::vector< std::shared_ptr< meters::DataTag > >& tags ) override;
 
-    /// @todo GetDeviceClock
-    /// @todo ReadIntervalArchiveDef
-    /// @todo ReadIntervalArchive
-    /// @todo ReadServiceArchive
+    /// @copydoc IProtocol::ReadIntervalArchiveDef()
+    virtual std::shared_ptr< meters::IntervalArchive > ReadIntervalArchiveDef( std::shared_ptr< meters::Meter > meter,
+        const ByteType* srcNt, const ByteType* dstNt, std::shared_ptr< meters::ArchiveType > archiveType,
+        std::shared_ptr< logika::Any >& state ) override;
+
+    /// @copydoc IProtocol::ReadIntervalArchive()
+    virtual bool ReadIntervalArchive( std::shared_ptr< meters::Meter > meter, const ByteType* srcNt,
+        const ByteType* dstNt, std::shared_ptr< meters::IntervalArchive > archive, TimeType start, TimeType end,
+        std::shared_ptr< logika::Any >& state, double& progress ) override;
+
+    /// @copydoc IProtocol::ReadServiceArchive()
+    virtual bool ReadServiceArchive( std::shared_ptr< meters::Meter > meter, const ByteType* srcNt,
+        const ByteType* dstNt, std::shared_ptr< meters::ServiceArchive > archive, TimeType start, TimeType end,
+        std::shared_ptr< logika::Any >& state, double& progress ) override;
+
+    /// @copydoc IProtocol::GetDeviceClock()
+    virtual TimeType GetDeviceClock( std::shared_ptr< meters::Meter > meter,
+        const ByteType* srcNt, const ByteType* dstNt ) override;
 
 public:
     /// @brief Определение модели прибора на шине M4

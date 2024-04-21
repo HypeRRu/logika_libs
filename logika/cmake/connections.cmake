@@ -3,6 +3,8 @@ set(LIB_NAME ${CMAKE_PROJECT_NAME}_connections)
 # @todo Еще более мелкое разбиение на модули
 # @todo Выделить tcp/udp и com
 
+set(CMAKE_CXX_STANDARD 11)
+
 set(
     ${LIB_NAME}_SOURCES_LIST
     ${SRC_DIR}/connections/connection.cpp

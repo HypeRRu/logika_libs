@@ -25,11 +25,12 @@ ArchiveRecord::ArchiveRecord()
 {} // ArchiveRecord()
 
 
-ArchiveRecord::ArchiveRecord( TimeType sinceStart, TimeType full, const std::vector< ISerializable* >& vals )
+ArchiveRecord::ArchiveRecord( TimeType sinceStart, TimeType full,
+    const std::vector< std::shared_ptr< logika::Any > >& vals )
     : timeSinceStart{ sinceStart }
     , fullTime{ full }
     , values{ vals }
-{} // ArchiveRecord( TimeType sinceStart, TimeType full, const std::vector< ISerializable* >& vals )
+{} // ArchiveRecord( TimeType, TimeType, const std::vector< std::shared_ptr< logika::Any > >& )
 
 
 LocString ArchiveRecord::ToString() const
@@ -40,11 +41,11 @@ LocString ArchiveRecord::ToString() const
     if ( !values.empty() )
     {
         stream << LOCALIZED( "{" );
-        stream << ( values[ 0 ] ? values[ 0 ]->ToString() : LOCALIZED( "null" ) );
+        stream << ( values[ 0 ] ? LOCALIZED( "not null" ) : LOCALIZED( "null" ) );
     }
     for ( size_t i = 1; i < values.size(); ++i )
     {
-        stream << LOCALIZED( ", " ) << ( values[ i ] ? values[ i ]->ToString() : LOCALIZED( "null" ) );
+        stream << LOCALIZED( ", " ) << ( values[ i ] ? LOCALIZED( "not null" ) : LOCALIZED( "null" ) );
     }
     if ( !values.empty() )
     {

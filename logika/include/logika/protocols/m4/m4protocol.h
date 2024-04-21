@@ -10,6 +10,8 @@
 #include <logika/protocols/protocol.h>
 #include <logika/protocols/m4/opcodes.h>
 #include <logika/protocols/m4/packet.h>
+#include <logika/protocols/m4/archive4m.h>
+#include <logika/protocols/m4/archive_record.h>
 
 #include <logika/common/types.h>
 #include <logika/connections/serial/types.h>
@@ -27,8 +29,10 @@ namespace meters
 {
 
 /// forward declaration
-class LOGIKA_METERS_EXPORT Logika4;
-class LOGIKA_METERS_EXPORT Logika4L;
+class  LOGIKA_METERS_EXPORT Logika4;
+class  LOGIKA_METERS_EXPORT Logika4L;
+class  LOGIKA_METERS_EXPORT Archive;
+struct LOGIKA_METERS_EXPORT ServiceRecord;
 
 } // namespace meters
 
@@ -39,6 +43,7 @@ namespace M4
 {
 
 struct LOGIKA_PROTOCOLS_EXPORT TagWriteData;
+class  LOGIKA_PROTOCOLS_EXPORT ArchiveRequestState4L;
 
 namespace MeterChannel
 {
@@ -260,8 +265,22 @@ public:
     std::vector< Rc::Type > WriteParams4M( std::shared_ptr< meters::Logika4M > meter, const ByteType* nt,
         const std::vector< TagWriteData >& data );
 
-    /// @todo ReadArchive4M (M4Protocol.cs)
-    /// @todo ParseArchivePacket4M
+    /// @brief Чтение архива Logika4M
+    /// @param[in] meter Прибор
+    /// @param[in] nt NT прибора
+    /// @param[in] packetId Идентификатор пакета
+    /// @param[in] partition Раздел
+    /// @param[in] channel Номер канала
+    /// @param[in] archiveKind Тип архива
+    /// @param[in] from Начало интервала
+    /// @param[in] to Конец интервала
+    /// @param[in] nValues Количество записей
+    /// @param[out] result Записи архива
+    /// @param[out] nextRecord Метка времени следующей записи
+    /// @return Пакет с данными
+    Packet ReadArchive4M( std::shared_ptr< meters::Logika4M > meter, const ByteType* nt, const ByteType* packetId,
+        uint16_t partition, const ByteType channel, ArchiveId4M::Type archiveKind, TimeType from, TimeType to,
+        uint32_t nValues, std::vector< std::shared_ptr< ArchiveRecord > >& result, TimeType& nextRecord );
 
     /// @brief Получение кэша прибора
     /// @details Возвращает уже созданный или создает новый кэш прибора
@@ -285,6 +304,25 @@ public:
     /// @return Реальный адрес тэга
     MeterAddressType GetRealAddress4L( std::shared_ptr< MeterCache > meterInstance,
         std::shared_ptr< meters::DataTag > tag );
+
+    /// @copydoc IProtocol::ReadIntervalArchiveDef()
+    virtual std::shared_ptr< meters::IntervalArchive > ReadIntervalArchiveDef( std::shared_ptr< meters::Meter > meter,
+        const ByteType* srcNt, const ByteType* dstNt, std::shared_ptr< meters::ArchiveType > archiveType,
+        std::shared_ptr< logika::Any >& state ) override;
+
+    /// @copydoc IProtocol::ReadIntervalArchive()
+    virtual bool ReadIntervalArchive( std::shared_ptr< meters::Meter > meter, const ByteType* srcNt,
+        const ByteType* dstNt, std::shared_ptr< meters::IntervalArchive > archive, TimeType start, TimeType end,
+        std::shared_ptr< logika::Any >& state, double& progress ) override;
+
+    /// @copydoc IProtocol::ReadServiceArchive()
+    virtual bool ReadServiceArchive( std::shared_ptr< meters::Meter > meter, const ByteType* srcNt,
+        const ByteType* dstNt, std::shared_ptr< meters::ServiceArchive > archive, TimeType start, TimeType end,
+        std::shared_ptr< logika::Any >& state, double& progress ) override;
+
+    /// @copydoc IProtocol::GetDeviceClock()
+    virtual TimeType GetDeviceClock( std::shared_ptr< meters::Meter > meter,
+        const ByteType* srcNt, const ByteType* dstNt ) override;
 
 public:
     /// @brief Генерация сырого пакет (набора байтов) рукопожатия
@@ -310,6 +348,22 @@ public:
     /// @param[in] date Время
     /// @return Время с ограничением
     static TimeType RestrictTime( TimeType date );
+
+    /// @brief Разбор записей архива Logika4M
+    /// @param[in] packet Пакет
+    /// @param[out] nextRecord Метка времени следующей записи
+    /// @return Записи архива
+    static std::vector< std::shared_ptr< ArchiveRecord > > ParseArchivePacket4M(
+        const Packet& packet, TimeType& nextRecord );
+
+    /// @brief Формирование записи сервисного архива
+    /// @param[in] meter Прибор
+    /// @param[in] archiveType Тип архива
+    /// @param[in] channel Номер канала
+    /// @param[in] record Запись
+    static std::shared_ptr< meters::ServiceRecord > ArchiveRecordToService( std::shared_ptr< meters::Logika4M > meter,
+        std::shared_ptr< meters::ArchiveType > archiveType, int32_t channel,
+        std::shared_ptr< ArchiveRecord > record );
 
 protected:
     /// @copydoc Protocol::CloseCommSessionImpl()
@@ -363,10 +417,82 @@ protected:
     void UpdateTags4M( const ByteType* nt, const std::vector< std::shared_ptr< meters::DataTag > >& tags,
         std::shared_ptr< MeterCache > meterInstance, TagsUpdateFlags::Type flags );
 
+    /// @brief Чтение архива Logika4L
+    /// @param[in] meter Прибор
+    /// @param[in] nt NT прибора
+    /// @param[inout] archive Считываемый архив
+    /// @param[in] start Начало интервала
+    /// @param[in] end Конец интервала
+    /// @param[inout] state Состояние запроса на чтение
+    /// @param[out] progress Прогресс чтения (0-100)
+    /// @return true - остались непрочитанные данные, false - иначе
+    bool ReadFlashArchive4L( std::shared_ptr< meters::Logika4L > meter, const ByteType* nt,
+        std::shared_ptr< meters::Archive > archive, TimeType start, TimeType end,
+        std::shared_ptr< logika::Any >& state, double& progress );
+
+    /// @brief Чтение интервального архива Logika4M
+    /// @param[in] meter Прибор
+    /// @param[in] nt NT прибора
+    /// @param[inout] archive Считываемый архив
+    /// @param[in] start Начало интервала
+    /// @param[in] end Конец интервала
+    /// @param[inout] state Состояние запроса на чтение
+    /// @param[out] progress Прогресс чтения (0-100)
+    /// @return true - остались непрочитанные данные, false - иначе
+    bool ReadIntervalArchive4M( std::shared_ptr< meters::Logika4M > meter, const ByteType* nt,
+        std::shared_ptr< meters::IntervalArchive > archive, TimeType start, TimeType end,
+        std::shared_ptr< logika::Any >& state, double& progress );
+
+    /// @brief Чтение сервисного архива Logika4M
+    /// @param[in] meter Прибор
+    /// @param[in] nt NT прибора
+    /// @param[inout] archive Считываемый архив
+    /// @param[in] start Начало интервала
+    /// @param[in] end Конец интервала
+    /// @param[inout] state Состояние запроса на чтение
+    /// @param[out] progress Прогресс чтения (0-100)
+    /// @return true - остались непрочитанные данные, false - иначе
+    bool ReadServiceArchive4M( std::shared_ptr< meters::Logika4M > meter, const ByteType* nt,
+        std::shared_ptr< meters::ServiceArchive > archive, TimeType start, TimeType end,
+        std::shared_ptr< logika::Any >& state, double& progress );
+
+    /// @brief Инициализация состояния чтения сервисного архива Logika4L
+    /// @param[in] meter Прибор
+    /// @param[in] nt NT прибора
+    /// @param[in] archiveType Тип архива
+    /// @return Состояние чтения сервисного архива Logika4L
+    std::shared_ptr< ArchiveRequestState4L > InitServiceArchiveReadState4L(
+        std::shared_ptr< meters::Logika4L > meter, const ByteType* nt,
+        std::shared_ptr< meters::ArchiveType > archiveType );
+
+    /// @brief Обработка данных интервального архива Logika4L
+    /// @param[in] state Состояние чтения архива
+    /// @param[inout] archive Интервальный архив
+    void ProcessIntervalData4L( std::shared_ptr< ArchiveRequestState4L > state,
+        std::shared_ptr< meters::IntervalArchive > archive );
+
+    /// @brief Обработка данных сервисного архива Logika4L
+    /// @param[in] state Состояние чтения архива
+    /// @param[inout] archive Сервисный архив
+    void ProcessServiceData4L( std::shared_ptr< ArchiveRequestState4L > state,
+        std::shared_ptr< meters::ServiceArchive > archive );
+
 protected:
     /// @brief Пост обработка значения тэга
     /// @param[inout] tag Тэг
     static void PostProcessValue( std::shared_ptr< meters::DataTag > tag );
+
+    /// @brief Получение идентификатора архива
+    /// @param[in] archiveType Тип архива
+    /// @return Идентификатор архива
+    static ArchiveId4M::Type GetArchiveCode( std::shared_ptr< meters::ArchiveType > archiveType );
+
+    /// @brief Формирование полного времени по времени прибора, если первое не задано
+    /// @param[inout] record Запись архива
+    /// @param[in] archiveType Тип архива
+    /// @param[in] mtrInstance Кэш прибора
+    static void FixIntervalTimestamp( std::shared_ptr< ArchiveRecord > record,
+        std::shared_ptr< meters::ArchiveType > archiveType, std::shared_ptr< M4Protocol::MeterCache > mtrInstance );
 
 private:
     connections::BaudRate::Type initialBaudRate_;   ///< Начальное значение BaudRate для соединений с автоподнятием скорости
@@ -376,6 +502,7 @@ private:
     std::unordered_map<
         ByteType, std::shared_ptr< MeterCache >
     > metadataCache_;                               ///< Кэш приборов
+    uint16_t archivePartition_;                     ///< Раздел архива
 
 public:
     /// @brief Внутреннее состояние шины
@@ -403,6 +530,7 @@ public:
 
 public:
     /// @brief Структура записи кэша прибора
+    /// @todo Переименовать в MeterState состояние прибора
     class MeterCache
     {
     public:

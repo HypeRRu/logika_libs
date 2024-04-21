@@ -25,6 +25,8 @@ public:
     /// @param[in] archiveType Тип архива
     Archive( std::shared_ptr< Meter > meter, std::shared_ptr< ArchiveType > archiveType );
 
+    virtual ~Archive() = default;
+
     /// @brief Получение прибора
     /// @return Прибор
     std::shared_ptr< Meter > GetMeter() const;
