@@ -153,7 +153,7 @@ public:
     /// @param[in] expectedDataLength Ожидаемая длина данных
     /// @param[in] flags Флаги получения
     /// @return Полученный пакет
-    Packet RecvPacket( const ByteType* excpectedNt, Opcode::Type* expectedOpcode, const ByteType* expectedId,
+    Packet RecvPacket( const ByteType* expectedNt, Opcode::Type* expectedOpcode, const ByteType* expectedId,
         uint32_t expectedDataLength, RecvFlags::Type flags = RecvFlags::NotSet );
 
     /// @brief Отправка пакета (legacy)

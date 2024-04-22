@@ -55,7 +55,7 @@ void Logika4L::Init( const storage::StorageKeeper& sKeeper )
         {
             std::shared_ptr< TagDef4L > item;
             tagsStorage->GetItem( key, item );
-            if ( item )
+            if ( item && item->GetMeter()->GetCaption() == GetCaption() )
             {
                 tags.push_back( item );
             }
@@ -70,7 +70,7 @@ void Logika4L::Init( const storage::StorageKeeper& sKeeper )
         {
             std::shared_ptr< ArchiveDef4L > item;
             archiveStorage->GetItem( key, item );
-            if ( item )
+            if ( item && item->GetMeter()->GetCaption() == GetCaption() )
             {
                 archives_.push_back( item );
             }
@@ -84,7 +84,7 @@ void Logika4L::Init( const storage::StorageKeeper& sKeeper )
         {
             std::shared_ptr< ArchiveFieldDef4L > item;
             archiveFieldStorage->GetItem( key, item );
-            if ( item )
+            if ( item && item->GetMeter()->GetCaption() == GetCaption() )
             {
                 archiveFields_.push_back( item );
             }

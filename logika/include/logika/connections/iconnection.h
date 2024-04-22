@@ -88,10 +88,11 @@ public:
 
     /// @brief Чтение данных
     /// @param[out] buffer Буфер для записи данных
+    /// @param[in] start Начиная с какого байта записывать в буфер
     /// @param[in] needed Желаемое количество байтов
     /// @return Количество прочитанных байтов
     /// @note Количество прочитанных байтов может быть меньше желаемого количества, если соединение было закрыто
-    virtual uint32_t Read( ByteVector& buffer, uint32_t needed ) = 0;
+    virtual uint32_t Read( ByteVector& buffer, uint32_t start, uint32_t needed ) = 0;
 
     /// @brief Запись данных
     /// @param[in] buffer Буфер, содержащий данные для записи

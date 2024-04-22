@@ -35,7 +35,7 @@ std::shared_ptr< logika::connections::SerialConnection > ConnectionAsSerial(
     std::shared_ptr< logika::connections::IConnection > connection )
 {
     if ( !connection
-        || ( connection->GetConnectionType() & logika::connections::ConnectionType::Serial ) )
+        || !( connection->GetConnectionType() & logika::connections::ConnectionType::Serial ) )
     {
         return nullptr;
     }
@@ -74,7 +74,7 @@ uint32_t UintToLe( uint32_t number )
 {
     volatile uint32_t i = 0x01234567;
     // return false for big endian, true for little endian.
-    if ( ( *reinterpret_cast< uint8_t* >( i ) ) == 0x67 )
+    if ( ( *reinterpret_cast< volatile uint8_t* >( &i ) ) == 0x67 )
     {
         return number;
     }
@@ -398,6 +398,7 @@ std::vector< std::shared_ptr< ArchiveRecord > > M4Protocol::ParseArchivePacket4M
     ByteVector decompressedData{};
     if ( meters::TagId4M::ByteArray == firstTag.first )
     {
+        LOG_WRITE_MSG( LOG_DEBUG, LOCALIZED( "Compressed data" ) );
         MeterAddressType tailLength = packet.data.size() - readLen;
         ByteVector buffer{};
         if ( firstTag.second )
@@ -413,8 +414,10 @@ std::vector< std::shared_ptr< ArchiveRecord > > M4Protocol::ParseArchivePacket4M
     }
     else
     {
+        LOG_WRITE_MSG( LOG_DEBUG, LOCALIZED( "Not compressed data" ) );
         decompressedData = packet.data;
     }
+    LOG_WRITE( LOG_DEBUG, LOCALIZED( "Data size: " ) << decompressedData.size() << LOCALIZED( " bytes" ) );
 
     MeterAddressType tp = 0;
     while ( tp < decompressedData.size() )
@@ -425,7 +428,7 @@ std::vector< std::shared_ptr< ArchiveRecord > > M4Protocol::ParseArchivePacket4M
             decompressedData, tp, readLen );
         TimeType timeFromTag = 0;
         tagTime.second->TryCast< TimeType >( timeFromTag );
-        if ( !tagTime.first == meters::TagId4M::Timestamp )
+        if ( tagTime.first != meters::TagId4M::Timestamp )
         {
             throw std::runtime_error{ "Wrong tag type" };
         }
@@ -496,7 +499,7 @@ std::vector< std::shared_ptr< ArchiveRecord > > M4Protocol::ParseArchivePacket4M
 } // ParseArchivePacket4M
 
 
-Packet M4Protocol::RecvPacket( const ByteType* excpectedNt, Opcode::Type* expectedOpcode, const ByteType* expectedId,
+Packet M4Protocol::RecvPacket( const ByteType* expectedNt, Opcode::Type* expectedOpcode, const ByteType* expectedId,
     uint32_t expectedDataLength, RecvFlags::Type flags )
 {
     ByteVector buffer;
@@ -519,7 +522,7 @@ Packet M4Protocol::RecvPacket( const ByteType* excpectedNt, Opcode::Type* expect
             while ( true ) /// Чтение пока не будет обнаружено начало фрейма или не исчеет таймаут
             {
                 buffer.clear();
-                readed = connection_->Read( buffer, 1 );
+                readed = connection_->Read( buffer, 0, 1 );
                 if ( readed == 1 && buffer.at( 0 ) == M4Protocol::FRAME_START )
                 {
                     break; // Считано начало фрейма
@@ -533,7 +536,7 @@ Packet M4Protocol::RecvPacket( const ByteType* excpectedNt, Opcode::Type* expect
                 }
             }
             /// Чтение NT и кода операции
-            readed = connection_->Read( buffer, 2 );
+            readed = connection_->Read( buffer, 1, 2 );
             if ( readed < 2 )
             {
                 OnRecoverableError();
@@ -545,7 +548,7 @@ Packet M4Protocol::RecvPacket( const ByteType* excpectedNt, Opcode::Type* expect
             packet.data         = ByteVector{};
             /// Это может быть как ответ другого прибора (очень маловероятно),
             /// так и случайная синхронизация по 0x10 в потоке данных
-            if ( excpectedNt && packet.nt != *excpectedNt )
+            if ( expectedNt && packet.nt != *expectedNt )
             {
                 continue; /// Чтение следующего пакета
             }
@@ -572,7 +575,7 @@ Packet M4Protocol::RecvPacket( const ByteType* excpectedNt, Opcode::Type* expect
             {
                 /// Extended протокол
                 packet.extended = true;
-                readed = connection_->Read( buffer, 5 );
+                readed = connection_->Read( buffer, 3, 5 );
                 if ( readed < 5 )
                 {
                     OnRecoverableError();
@@ -585,8 +588,12 @@ Packet M4Protocol::RecvPacket( const ByteType* excpectedNt, Opcode::Type* expect
                 /// payload = opcode + data
                 payloadLen          = buffer.at( 5 ) + ( buffer.at( 6 ) << 8 ) - 1;
                 packet.funcOpcode   = static_cast< Opcode::Type >( buffer.at( 7 ) );
-                if ( expectedOpcode && packet.funcOpcode != *expectedOpcode )
+                if ( expectedOpcode && packet.funcOpcode != *expectedOpcode
+                    && static_cast< Opcode::Type >( packet.funcOpcode ) != Opcode::Error )
                 {
+                    LOG_WRITE( LOG_DEBUG, LOCALIZED( "Unmatched opcode: " )
+                        << std::hex << static_cast< uint8_t >( packet.funcOpcode ) << LOCALIZED( " (packet) vs " )
+                        << std::hex << static_cast< uint8_t >( *expectedOpcode ) << LOCALIZED( " (expected)" ) );
                     continue; /// Чтение следующего пакета
                 }
                 if ( expectedId && packet.id != *expectedId )
@@ -609,9 +616,10 @@ Packet M4Protocol::RecvPacket( const ByteType* excpectedNt, Opcode::Type* expect
                 {
                     payloadLen = expectedDataLength;
                 }
+                LOG_WRITE( LOG_DEBUG, LOCALIZED( "Payload length: " ) << payloadLen );
             }
             /// data + CSUM + frame end
-            readed = connection_->Read( packet.data, payloadLen );
+            readed = connection_->Read( packet.data, 0, payloadLen );
             if ( readed < payloadLen )
             {
                 OnRecoverableError();
@@ -620,7 +628,7 @@ Packet M4Protocol::RecvPacket( const ByteType* excpectedNt, Opcode::Type* expect
                     CommunicationError::SystemError, "General read error" );
             }
             /// legacy: checksum8 + frame end, M4: CRC16
-            readed = connection_->Read( check, 2 );
+            readed = connection_->Read( check, 0, 2 );
             if ( readed < 2 )
             {
                 OnRecoverableError();
@@ -631,7 +639,8 @@ Packet M4Protocol::RecvPacket( const ByteType* excpectedNt, Opcode::Type* expect
             if ( packet.extended )
             {
                 /// MSB first
-                packet.checkSum = ( static_cast< uint16_t >( check.at( 0 ) ) << 8 ) | check.at( 1 );
+                packet.checkSum = check.at( 1 ) & 0xFF;
+                packet.checkSum |= check.at( 0 ) << 8;
             }
             else
             {
@@ -654,35 +663,42 @@ Packet M4Protocol::RecvPacket( const ByteType* excpectedNt, Opcode::Type* expect
     uint16_t calculatedChecksum = 0;
     if ( packet.extended )
     {
+        LOG_WRITE_MSG( LOG_DEBUG, LOCALIZED( "Extended packet" ) );
         /// Расчет CRC16
         calculatedChecksum = Protocol::Crc16( calculatedChecksum, buffer, 1, 7 );
         calculatedChecksum = Protocol::Crc16( calculatedChecksum, packet.data, 0, packet.data.size() );
     }
     else
     {
+        LOG_WRITE_MSG( LOG_DEBUG, LOCALIZED( "Legacy packet" ) );
         /// Расчет Checksum8
         calculatedChecksum = 0x1600; /// END_OF_FRAME << 8
         /// header + data
-        calculatedChecksum |= static_cast< ByteType >(
+        calculatedChecksum |= ~static_cast< ByteType >(
             ~meters::Logika4::CheckSum8( buffer, 1, 2 ) +
             ~meters::Logika4::CheckSum8( packet.data, 0, packet.data.size() )
         );
-        if ( packet.checkSum != calculatedChecksum )
+    }
+    if ( packet.checkSum != calculatedChecksum )
+    {
+        /// Несовпадение контрольной суммы
+        RegisterEvent( Rc::RxCrcError );
+        LOG_WRITE( LOG_ERROR, LOCALIZED( "Checksum not matched: " ) <<
+            std::hex << packet.checkSum << LOCALIZED( "(packet) vs " ) <<
+            std::hex << calculatedChecksum << LOCALIZED( "(calculated)" ) );
+        throw ECommException( ExceptionSeverity::Error, CommunicationError::Checksum );
+    }
+    RegisterEvent( Rc::PacketReceived );
+    if ( static_cast< Opcode::Type >( packet.funcOpcode ) == Opcode::Error )
+    {
+        Rc::Type errorCode = static_cast< Rc::Type >( packet.data.at( 0 ) );
+        RegisterEvent( Rc::RxGeneralError );
+        if ( ( flags & RecvFlags::DontThrowOnErrorReply ) == 0 )
         {
-            /// Несовпадение контрольной суммы
-            RegisterEvent( Rc::RxCrcError );
-            throw ECommException( ExceptionSeverity::Error, CommunicationError::Checksum );
-        }
-        RegisterEvent( Rc::PacketReceived );
-        if ( static_cast< Opcode::Type >( packet.funcOpcode ) == Opcode::Error )
-        {
-            Rc::Type errorCode = static_cast< Rc::Type >( packet.data.at( 0 ) );
-            RegisterEvent( Rc::RxGeneralError );
-            if ( ( flags & RecvFlags::DontThrowOnErrorReply ) == 0 )
-            {
-                throw ECommException( ExceptionSeverity::Error, CommunicationError::Unspecified,
-                    "", LOCALIZED( "Device returned error: " ) + ToLocString( std::to_string( errorCode ) ) );
-            }
+            throw ECommException( ExceptionSeverity::Error, CommunicationError::Unspecified,
+                "Error code: " + std::to_string( errorCode ),
+                LOCALIZED( "Device returned error: " )
+                    + ToLocString( std::to_string( errorCode ) ) );
         }
     }
 
@@ -1305,8 +1321,8 @@ Packet M4Protocol::ReadArchive4M( std::shared_ptr< meters::Logika4M > meter, con
     }
     LOG_WRITE( LOG_DEBUG, LOCALIZED( "M4 archive request: " )
         << LOCALIZED( "part=" ) << partition
-        << LOCALIZED( ", archive=" ) << archiveKind
-        << LOCALIZED( ", channel=" ) << channel
+        << LOCALIZED( ", archive=" ) << static_cast< uint32_t >( archiveKind )
+        << LOCALIZED( ", channel=" ) << static_cast< uint32_t >( channel )
         << LOCALIZED( ", from=" ) << from
         << LOCALIZED( ", to=" ) << ToLocString( 0 != to ? std::to_string( to ) : "[null]" )
         << LOCALIZED( ", maxCnt=" ) << nValues );
@@ -1314,7 +1330,7 @@ Packet M4Protocol::ReadArchive4M( std::shared_ptr< meters::Logika4M > meter, con
     result = M4Protocol::ParseArchivePacket4M( packet, nextRecord );
     LOG_WRITE( LOG_DEBUG, LOCALIZED( "M4 answer: " )
         << result.size() << LOCALIZED( " records" )
-        << LOCALIZED( ", next date pointer" ) << nextRecord );
+        << LOCALIZED( ", next date pointer " ) << nextRecord );
 
     return packet;
 } // ReadArchive4M
@@ -1400,7 +1416,7 @@ void M4Protocol::AppendDateTag( ByteVector& buffer, TimeType date, bool useMonth
     buffer.push_back( static_cast< ByteType >( meters::TagId4M::Timestamp ) ); // datetime tag
     buffer.push_back( static_cast< ByteType >( useMonthYearOnly ? 2 : 8 ) );
     buffer.push_back( static_cast< ByteType >( timeStruct.tm_year - 100 ) );
-    buffer.push_back( static_cast< ByteType >( timeStruct.tm_mon ) );
+    buffer.push_back( static_cast< ByteType >( timeStruct.tm_mon + 1 ) );
     if ( !useMonthYearOnly )
     {
         buffer.push_back( static_cast< ByteType >( timeStruct.tm_mday ) );

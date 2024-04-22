@@ -5,6 +5,7 @@
 
 #include <logika/meters/utils/types_converter.h>
 #include <logika/common/misc.h>
+#include <logika/log/defines.h>
 
 #include <logika/meters/tag_def.h>
 
@@ -145,6 +146,17 @@ bool Logika4::GetNtFromTag( const LocString& value, ByteType& out ) const
 } // GetNtFromTag
 
 
+bool Logika4::IdentMatch( ByteType id0, ByteType id1, ByteType version ) const
+{
+    uint16_t deviceId = static_cast< uint16_t >( ( static_cast< uint16_t >( id0 ) << 8 ) | id1 );
+    LOG_WRITE( LOG_DEBUG, LOCALIZED( "Checking Logika4 ident: " ) <<
+        std::hex << deviceId << LOCALIZED( " (device) vs " ) <<
+        std::hex << ident_ << LOCALIZED( " (") <<
+        GetCaption() << LOCALIZED(")" ) );
+    return deviceId == ident_;
+} // IdentMatch
+
+
 LocString Logika4::GetEu( const std::unordered_map< LocString, LocString >& euDict,
     const LocString& euDef )
 {
@@ -211,6 +223,7 @@ std::shared_ptr< Meter > Logika4::DetermineMeter(
 {
     if ( !meterStorage )
     {
+        LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "Invalid meter storage" ) );
         return nullptr;
     }
     const auto meterKeys = meterStorage->GetKeys();
@@ -223,6 +236,7 @@ std::shared_ptr< Meter > Logika4::DetermineMeter(
             return meter;
         }
     }
+    LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "Ident not matched" ) );
     return nullptr;
 } // DetermineMeter
 

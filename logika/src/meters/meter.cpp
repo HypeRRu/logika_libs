@@ -69,14 +69,9 @@ void Meter::Init( const storage::StorageKeeper& sKeeper )
         std::vector< std::shared_ptr< ChannelDef > > tags;
         for ( const LocString& key: keys )
         {
-            if ( LocString::npos == key.find( caption_ ) )
-            {
-                ///< Канал не относится к данному прибору
-                continue;
-            }
             std::shared_ptr< ChannelDef > item;
             channelsStorage->GetItem( key, item );
-            if ( item )
+            if ( item && item->meter->GetCaption() == GetCaption() )
             {
                 channels_.push_back( item );
             }

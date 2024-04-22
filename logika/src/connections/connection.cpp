@@ -170,15 +170,16 @@ void Connection::ResetStatistics()
 } // ResetStatistics
 
 
-uint32_t Connection::Read( ByteVector& buffer, uint32_t needed )
+uint32_t Connection::Read( ByteVector& buffer, uint32_t start, uint32_t needed )
 {
     uint32_t readed = 0;
     Rc::Type rc = Rc::Success;
 
-    if ( buffer.size() < needed )
+    if ( buffer.size() < start + needed )
     {
-        LOG_WRITE( LOG_DEBUG, LOCALIZED( "Resizing buffer. New size: " ) << needed );
-        buffer.resize( needed );
+        LOG_WRITE( LOG_DEBUG, LOCALIZED( "Resizing buffer. Old size: " ) << buffer.size()
+            << LOCALIZED( ". New size: " ) << ( start + needed ) );
+        buffer.resize( start + needed );
     }
 
     while ( readed < needed )
@@ -189,7 +190,7 @@ uint32_t Connection::Read( ByteVector& buffer, uint32_t needed )
                 << readed << LOCALIZED( " bytes" ) );
             break;
         }
-        const uint32_t readCurrent = ReadImpl( buffer, readed, needed - readed, &rc );
+        const uint32_t readCurrent = ReadImpl( buffer, start + readed, needed - readed, &rc );
         if ( 0 == readCurrent )
         {
             LOG_WRITE( LOG_ERROR, LOCALIZED( "Read error. Readed " ) << readed << LOCALIZED( " bytes. Rc: " ) << rc );

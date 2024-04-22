@@ -65,6 +65,9 @@ public:
     /// @copydoc IMeter::GetNtFromTag()
     virtual bool GetNtFromTag( const LocString& value, ByteType& out ) const override;
 
+    /// @copydoc IMeter::IdentMatch()
+    virtual bool IdentMatch( ByteType id0, ByteType id1, ByteType version ) const override;
+
     /// @brief Получение флага наличия поддержки смены BaudRate
     /// @return Наличие поддержки смены BaudRate
     bool GetSupportBaudRateChange() const;

@@ -78,7 +78,7 @@ public:
     virtual void ResetStatistics() override;
 
     /// @copydoc IConnection::Read()
-    virtual uint32_t Read( ByteVector& buffer, uint32_t needed ) override;
+    virtual uint32_t Read( ByteVector& buffer, uint32_t start, uint32_t needed ) override;
 
     /// @copydoc IConnection::Write()
     virtual uint32_t Write( const ByteVector& buffer ) override;

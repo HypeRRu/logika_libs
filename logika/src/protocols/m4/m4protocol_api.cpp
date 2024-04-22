@@ -947,14 +947,15 @@ bool M4Protocol::ReadIntervalArchive4M( std::shared_ptr< meters::Logika4M > mete
         requestState->currentChannel        = channelStart;
         requestState->nChannelRecordsRead   = 0;
     }
-
+    
     /// @note По разным каналам прибор может вернуть разное количество записей (при одинаковом интервале в запросе)
     /// поэтому каналы читаем по очереди
     TimeType timeStart = ( 0 != requestState->timePointer ) ? requestState->timePointer : start;
     
     std::vector< std::shared_ptr< ArchiveRecord > > data{};
     TimeType nextPointer = 0;
-    ReadArchive4M( meter, nt, 0, archivePartition_, static_cast< ByteType >( requestState->currentChannel ),
+    ByteType packetId = 0;
+    ReadArchive4M( meter, nt, &packetId, archivePartition_, static_cast< ByteType >( requestState->currentChannel ),
         archiveCode, timeStart, end, readRecordsCount, data, nextPointer );
 
     std::vector< meters::DataTable::RecordType >& records = archive->GetDataTable()->GetRecordsList();
@@ -1081,13 +1082,14 @@ bool M4Protocol::ReadServiceArchive4M( std::shared_ptr< meters::Logika4M > meter
     TimeType startTime = 0 != timePointer ? timePointer : start;
     std::vector< meters::ServiceArchive::RecordType > recordsList{};
 
+    ByteType packetId = 0;
     for ( int32_t channel = channelStart; channel <= channelEnd; ++channel )
     {
         std::vector< std::shared_ptr< ArchiveRecord > > data{};
         TimeType nextPointer = 0;
-        ReadArchive4M( meter, nt, 0, archivePartition_, static_cast< ByteType >( channel ),
+        ReadArchive4M( meter, nt, &packetId, archivePartition_, static_cast< ByteType >( channel ),
             archiveCode, startTime, end, readRecordsCount, data, nextPointer );
-    
+
         for ( std::shared_ptr< ArchiveRecord > record: data  )
         {
             recordsList.emplace_back( ArchiveRecordToService( meter, archive->GetArchiveType(), channel, record ) );

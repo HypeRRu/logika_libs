@@ -278,12 +278,14 @@ std::shared_ptr< meters::Meter > Protocol::DetectM4( std::shared_ptr< M4::M4Prot
     dump = reply.GetDump();
     if ( reply.data.size() < 3 )
     {
+        LOG_WRITE( LOG_WARNING, LOCALIZED( "Payload length is invalid: " << reply.data.size() ) );
         return nullptr;
     }
     std::shared_ptr< meters::Meter > meter = meters::Logika4::DetermineMeter(
         reply.data[ 0 ], reply.data[ 1 ], reply.data[ 2 ], meterStorage );
     if ( !meter )
     {
+        LOG_WRITE_MSG( LOG_WARNING, LOCALIZED( "Can't determine meter" ) );
         return nullptr;
     }
 
@@ -451,7 +453,7 @@ uint16_t Protocol::Crc16( uint16_t crc, const ByteVector& buffer, uint32_t offse
     uint16_t cSum = crc;
     for ( uint32_t current = offset; current < offset + length; ++current )
     {
-        cSum ^= static_cast< uint16_t >( buffer.at( current ) << 8 );
+        cSum ^= static_cast< uint16_t >( buffer.at( current ) ) << 8;
         for ( uint32_t iteration = 0; iteration < 8; ++iteration )
         {
             if ( ( cSum & 0x8000 ) != 0 )
