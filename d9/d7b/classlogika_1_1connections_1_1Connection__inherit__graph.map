@@ -1,15 +1,15 @@
 <map id="logika::connections::Connection" name="logika::connections::Connection">
-<area shape="rect" id="Node000001" title="Базовый класс для работы с соединением" alt="" coords="339,781,541,2131"/>
-<area shape="rect" id="Node000003" href="$d7/d70/classlogika_1_1connections_1_1NetConnection.html" title="Базовый класс для работы с соединением по сети" alt="" coords="229,2329,429,2475"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="362,2146,340,2330,335,2329,357,2145"/>
-<area shape="rect" id="Node000006" href="$d4/d4f/classlogika_1_1connections_1_1SerialConnection.html" title="Базовый класс для работы с соединением по последовательному порту" alt="" coords="459,2179,655,2625"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="528,2145,532,2179,527,2179,523,2146"/>
-<area shape="rect" id="Node000002" href="$df/ddb/classlogika_1_1connections_1_1IConnection.html" title="Интерфейс класса для работы с соединением" alt="" coords="339,5,541,733"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="443,748,443,782,437,782,437,748"/>
-<area shape="rect" id="Node000004" href="$de/dcd/classlogika_1_1connections_1_1TcpConnection.html" title="Класс для работы с соединением по TCP." alt="" coords="5,2740,205,3091"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="295,2489,184,2741,179,2739,290,2487"/>
-<area shape="rect" id="Node000005" href="$d0/d22/classlogika_1_1connections_1_1UdpConnection.html" title="Класс для работы с соединением по UDP." alt="" coords="229,2740,429,3091"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="332,2489,332,2740,327,2740,327,2489"/>
-<area shape="rect" id="Node000007" href="$de/d68/classlogika_1_1connections_1_1SerialPortConnection.html" title="Класс для работы с соединением COM&#45;порту" alt="" coords="454,2673,674,3157"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="563,2640,564,2673,558,2673,558,2640"/>
+<area shape="rect" id="Node000001" title="Базовый класс для работы с соединением" alt="" coords="339,797,541,2163"/>
+<area shape="rect" id="Node000003" href="$d7/d70/classlogika_1_1connections_1_1NetConnection.html" title="Базовый класс для работы с соединением по сети" alt="" coords="229,2361,429,2507"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="362,2178,340,2362,335,2361,356,2177"/>
+<area shape="rect" id="Node000006" href="$d4/d4f/classlogika_1_1connections_1_1SerialConnection.html" title="Базовый класс для работы с соединением по последовательному порту" alt="" coords="459,2211,655,2657"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="529,2177,533,2211,527,2211,523,2178"/>
+<area shape="rect" id="Node000002" href="$df/ddb/classlogika_1_1connections_1_1IConnection.html" title="Интерфейс класса для работы с соединением" alt="" coords="339,5,541,749"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="443,764,443,797,437,797,437,764"/>
+<area shape="rect" id="Node000004" href="$de/dcd/classlogika_1_1connections_1_1TcpConnection.html" title="Класс для работы с соединением по TCP." alt="" coords="5,2772,205,3123"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="295,2521,184,2773,179,2771,290,2519"/>
+<area shape="rect" id="Node000005" href="$d0/d22/classlogika_1_1connections_1_1UdpConnection.html" title="Класс для работы с соединением по UDP." alt="" coords="229,2772,429,3123"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="332,2521,332,2772,327,2772,327,2521"/>
+<area shape="rect" id="Node000007" href="$de/d68/classlogika_1_1connections_1_1SerialPortConnection.html" title="Класс для работы с соединением COM&#45;порту" alt="" coords="454,2705,674,3189"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="563,2672,564,2705,558,2705,558,2672"/>
 </map>

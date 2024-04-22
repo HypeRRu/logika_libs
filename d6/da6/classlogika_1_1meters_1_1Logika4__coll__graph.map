@@ -1,5 +1,5 @@
 <map id="logika::meters::Logika4" name="logika::meters::Logika4">
-<area shape="rect" id="Node000001" title="Класс прибора Logika4." alt="" coords="105,3354,381,4623"/>
+<area shape="rect" id="Node000001" title="Класс прибора Logika4." alt="" coords="105,3354,381,4688"/>
 <area shape="rect" id="Node000002" href="$d3/d77/classlogika_1_1meters_1_1Meter.html" title="Базовый класс прибора" alt="" coords="105,1452,381,3304"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,3319,245,3354,240,3354,240,3319"/>
 <area shape="rect" id="Node000003" href="$d9/d2a/classlogika_1_1meters_1_1IMeter.html" title="Интерфейс прибора" alt="" coords="5,212,245,1403"/>

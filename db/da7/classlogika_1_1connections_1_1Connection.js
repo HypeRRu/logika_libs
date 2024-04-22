@@ -18,7 +18,7 @@ var classlogika_1_1connections_1_1Connection =
     [ "operator=", "db/da7/classlogika_1_1connections_1_1Connection.html#a16cb85056d13ff10c7331df83b6331b7", null ],
     [ "Purge", "db/da7/classlogika_1_1connections_1_1Connection.html#afebb4ecf6c11ef891e5aaa9a753ec9a9", null ],
     [ "PurgeImpl", "db/da7/classlogika_1_1connections_1_1Connection.html#a16ba6883d669a1ee7342fe886a257042", null ],
-    [ "Read", "db/da7/classlogika_1_1connections_1_1Connection.html#a04cb9c650e0340edab4d84f7b9c834af", null ],
+    [ "Read", "db/da7/classlogika_1_1connections_1_1Connection.html#a98f74c759e7778eb5e4ca2b8908c99ac", null ],
     [ "ReadImpl", "db/da7/classlogika_1_1connections_1_1Connection.html#a1262aafaa3f523f55eda598739f5e922", null ],
     [ "ResetStatistics", "db/da7/classlogika_1_1connections_1_1Connection.html#a2151ab25399878c5516b46f81daa5c7c", null ],
     [ "SetOnAfterConnect", "db/da7/classlogika_1_1connections_1_1Connection.html#a9ee65031e6562593b7f44c95cbca5ef6", null ],

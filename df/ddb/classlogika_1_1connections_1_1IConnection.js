@@ -12,7 +12,7 @@ var classlogika_1_1connections_1_1IConnection =
     [ "IsConnected", "df/ddb/classlogika_1_1connections_1_1IConnection.html#a16bb40cd9c0eab8af1755b243bd6764f", null ],
     [ "Open", "df/ddb/classlogika_1_1connections_1_1IConnection.html#acbe1e81aae23ad34cd44e237f1cd93a7", null ],
     [ "Purge", "df/ddb/classlogika_1_1connections_1_1IConnection.html#a812bda6ce96732f59cc3adbc7ff88858", null ],
-    [ "Read", "df/ddb/classlogika_1_1connections_1_1IConnection.html#a92ae69052fd7fb89ce3b2964af8570a0", null ],
+    [ "Read", "df/ddb/classlogika_1_1connections_1_1IConnection.html#a176c7e46b4900e00efe883d33d86f177", null ],
     [ "ResetStatistics", "df/ddb/classlogika_1_1connections_1_1IConnection.html#a5f64e099c04ab6f76b21d741ace9d092", null ],
     [ "SetOnAfterConnect", "df/ddb/classlogika_1_1connections_1_1IConnection.html#ae0e4a6c1eb180828eaa234dba134b6bb", null ],
     [ "SetOnBeforeDisonnect", "df/ddb/classlogika_1_1connections_1_1IConnection.html#aa94a4063278c8f14003c683fc4019160", null ],

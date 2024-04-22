@@ -10,7 +10,7 @@ var searchData=
   ['headers_5f_7',['headers_',['../d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html#a881d4033c9fd7f847522ca8f4a4fb152',1,'logika::protocols::M4::FlashArchive4']]],
   ['headersread_8',['headersRead',['../d3/d00/structlogika_1_1protocols_1_1M4_1_1TvReadState4L.html#a40173d191f6b28277cec3dd51bd05637',1,'logika::protocols::M4::TvReadState4L']]],
   ['historicalseries_9',['HistoricalSeries',['../db/d35/structlogika_1_1meters_1_1HistoricalSeries.html',1,'logika::meters']]],
-  ['hour_10',['Hour',['../d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M.html#ab88190bc350c526dc4f31d42cbffdb09a6c842b58a1c6779b7f41b0583daf793c',1,'logika::protocols::ArchiveId4M']]],
+  ['hour_10',['Hour',['../d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M.html#a70edf9ca3c6dfc4da84a613738f0e3e8a6c842b58a1c6779b7f41b0583daf793c',1,'logika::protocols::ArchiveId4M']]],
   ['hwrev_11',['hwRev',['../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a096911c408851a82ebcd539d54afd95b',1,'logika::meters::VitalInfo']]],
   ['hwserial_12',['hwSerial',['../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#a2c6e203191546e95fdacec17f2a2a7e2',1,'logika::meters::VitalInfo']]]
 ];

@@ -1,21 +1,21 @@
 <map id="logika::meters::Logika4M" name="logika::meters::Logika4M">
-<area shape="rect" id="Node000001" title="Класс прибора Logika4M." alt="" coords="876,4672,1152,6199"/>
-<area shape="rect" id="Node000008" href="$d4/d4e/classlogika_1_1meters_1_1Lgk410.html" title="Класс прибора LGK410." alt="" coords="5,6281,271,6610"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="868,5593,591,5893,435,6070,284,6250,258,6283,254,6280,280,6247,431,6067,588,5890,864,5590"/>
-<area shape="rect" id="Node000009" href="$df/d55/classlogika_1_1meters_1_1Spg740.html" title="Класс прибора SPG740." alt="" coords="295,6281,560,6610"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="871,5688,525,6283,520,6280,866,5686"/>
-<area shape="rect" id="Node000010" href="$de/d48/classlogika_1_1meters_1_1Spg742.html" title="Класс прибора SPG742." alt="" coords="584,6281,849,6610"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="874,5920,767,6282,762,6281,869,5918"/>
-<area shape="rect" id="Node000011" href="$df/d52/classlogika_1_1meters_1_1Spt940.html" title="Класс прибора SPT940." alt="" coords="873,6281,1155,6610"/>
-<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="1017,6214,1017,6281,1011,6281,1011,6214"/>
-<area shape="rect" id="Node000012" href="$d1/d0c/classlogika_1_1meters_1_1Spt941__20.html" title="Класс прибора SPT941_20." alt="" coords="1179,6248,1513,6643"/>
-<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="1159,5869,1284,6248,1279,6249,1154,5871"/>
-<area shape="rect" id="Node000013" href="$da/d78/classlogika_1_1meters_1_1Spt943rev3.html" title="Класс прибора SPT943rev3." alt="" coords="1537,6248,1819,6643"/>
-<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="1162,5657,1551,6247,1547,6250,1158,5660"/>
-<area shape="rect" id="Node000014" href="$d2/dc9/classlogika_1_1meters_1_1Spt944.html" title="Класс прибора SPT944." alt="" coords="1843,6281,2124,6610"/>
-<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="1165,5572,1309,5708,1479,5874,1659,6058,1833,6247,1862,6280,1858,6283,1829,6250,1655,6062,1475,5878,1305,5712,1161,5575"/>
-<area shape="rect" id="Node000002" href="$d6/df4/classlogika_1_1meters_1_1Logika4.html" title="Класс прибора Logika4." alt="" coords="876,3354,1152,4623"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1017,4638,1017,4672,1011,4672,1011,4638"/>
+<area shape="rect" id="Node000001" title="Класс прибора Logika4M." alt="" coords="876,4738,1152,6264"/>
+<area shape="rect" id="Node000008" href="$d4/d4e/classlogika_1_1meters_1_1Lgk410.html" title="Класс прибора LGK410." alt="" coords="5,6346,271,6676"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="868,5659,591,5958,435,6136,284,6315,258,6348,254,6345,280,6312,431,6132,588,5955,864,5655"/>
+<area shape="rect" id="Node000009" href="$df/d55/classlogika_1_1meters_1_1Spg740.html" title="Класс прибора SPG740." alt="" coords="295,6346,560,6676"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="871,5754,525,6348,520,6345,866,5751"/>
+<area shape="rect" id="Node000010" href="$de/d48/classlogika_1_1meters_1_1Spg742.html" title="Класс прибора SPG742." alt="" coords="584,6346,849,6676"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="874,5985,767,6347,762,6346,869,5983"/>
+<area shape="rect" id="Node000011" href="$df/d52/classlogika_1_1meters_1_1Spt940.html" title="Класс прибора SPT940." alt="" coords="873,6346,1155,6676"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="1017,6279,1017,6346,1011,6346,1011,6279"/>
+<area shape="rect" id="Node000012" href="$d1/d0c/classlogika_1_1meters_1_1Spt941__20.html" title="Класс прибора SPT941_20." alt="" coords="1179,6314,1513,6708"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="1159,5934,1284,6313,1279,6315,1154,5936"/>
+<area shape="rect" id="Node000013" href="$da/d78/classlogika_1_1meters_1_1Spt943rev3.html" title="Класс прибора SPT943rev3." alt="" coords="1537,6314,1819,6708"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="1162,5723,1551,6312,1547,6315,1158,5726"/>
+<area shape="rect" id="Node000014" href="$d2/dc9/classlogika_1_1meters_1_1Spt944.html" title="Класс прибора SPT944." alt="" coords="1843,6346,2124,6676"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="1165,5637,1309,5774,1479,5940,1659,6123,1833,6312,1862,6345,1858,6349,1829,6315,1655,6127,1475,5943,1305,5777,1161,5641"/>
+<area shape="rect" id="Node000002" href="$d6/df4/classlogika_1_1meters_1_1Logika4.html" title="Класс прибора Logika4." alt="" coords="876,3354,1152,4688"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1017,4703,1017,4738,1011,4738,1011,4703"/>
 <area shape="rect" id="Node000003" href="$d3/d77/classlogika_1_1meters_1_1Meter.html" title="Базовый класс прибора" alt="" coords="876,1452,1152,3304"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1017,3319,1017,3354,1011,3354,1011,3319"/>
 <area shape="rect" id="Node000004" href="$d9/d2a/classlogika_1_1meters_1_1IMeter.html" title="Интерфейс прибора" alt="" coords="777,212,1017,1403"/>

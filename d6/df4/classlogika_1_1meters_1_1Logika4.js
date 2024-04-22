@@ -13,6 +13,7 @@ var classlogika_1_1meters_1_1Logika4 =
     [ "GetSessionTimeout", "d6/df4/classlogika_1_1meters_1_1Logika4.html#affccea42e8040e751d25ce09a5618a67", null ],
     [ "GetSupportBaudRateChange", "d6/df4/classlogika_1_1meters_1_1Logika4.html#a8601dbadb0325b139fceac3dd0298c9f", null ],
     [ "GetSupportFastSessionInit", "d6/df4/classlogika_1_1meters_1_1Logika4.html#a4575598e04b147cb3f4269b3e65b89ec", null ],
+    [ "IdentMatch", "d6/df4/classlogika_1_1meters_1_1Logika4.html#a54ef49839cb2b86e755289da15f74337", null ],
     [ "calcFields_", "d6/df4/classlogika_1_1meters_1_1Logika4.html#acbeb252065102e73c1aceec714cfe0a2", null ],
     [ "maxBaudRate_", "d6/df4/classlogika_1_1meters_1_1Logika4.html#aaf6a2ae26d890c6d52e5a68183833654", null ],
     [ "nsDescriptions_", "d6/df4/classlogika_1_1meters_1_1Logika4.html#a30bb335416b5a7ae2cb42596366ac900", null ],

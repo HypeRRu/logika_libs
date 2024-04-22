@@ -31,7 +31,7 @@ var classlogika_1_1protocols_1_1M4_1_1M4Protocol =
     [ "ReadServiceArchive", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#aa255d1bffec03d96f32405bb64eeae60", null ],
     [ "ReadServiceArchive4M", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a747b356733b59e4cbd6500463a1e8578", null ],
     [ "ReadTags4M", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a950564bc548ed83587093e357bafd3ee", null ],
-    [ "RecvPacket", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a8e19dff01d11c3abf7c77e5403f8d6aa", null ],
+    [ "RecvPacket", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#ac2db2d212d4eee083ceffef383f54a45", null ],
     [ "ResetBusActiveState", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#af6a3d1884a753121524d4499d9fa4d6f", null ],
     [ "SelectDeviceAndChannel", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a24b933724fdcbc690c21d79d3fc91f96", null ],
     [ "SendAttention", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#afad95025b61dea08d8ddfb0a5dc69438", null ],
