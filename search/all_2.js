@@ -89,6 +89,6 @@ var searchData=
   ['crc16_86',['Crc16',['../da/d50/classlogika_1_1protocols_1_1Protocol.html#a453a78fa2e56bb630bf22beef76857ea',1,'logika::protocols::Protocol']]],
   ['create_87',['Create',['../dd/d10/classlogika_1_1SharedConstructible.html#a7a34563d8123ec2aef92c8c0efb1ecc9',1,'logika::SharedConstructible']]],
   ['createstorage_88',['CreateStorage',['../d5/d47/classlogika_1_1storage_1_1StorageKeeper.html#ab19970dc1bc1a351e387b2fb01d62131',1,'logika::storage::StorageKeeper']]],
-  ['ctrl_89',['Ctrl',['../d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M.html#a70edf9ca3c6dfc4da84a613738f0e3e8ade0f6716bfbcba6bdc51442eeab35e7f',1,'logika::protocols::ArchiveId4M']]],
+  ['ctrl_89',['Ctrl',['../d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M.html#ab88190bc350c526dc4f31d42cbffdb09ade0f6716bfbcba6bdc51442eeab35e7f',1,'logika::protocols::ArchiveId4M']]],
   ['currentchannel_90',['currentChannel',['../d5/d8a/structlogika_1_1protocols_1_1ArchiveRequestState4M.html#ae73b2135bd60ff8865e60e5e0cfda288',1,'logika::protocols::ArchiveRequestState4M']]]
 ];
