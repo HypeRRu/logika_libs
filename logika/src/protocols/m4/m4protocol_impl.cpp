@@ -1121,7 +1121,7 @@ std::vector< meters::Logika4M::Tag4MRecordType > M4Protocol::ReadTags4M( std::sh
         ByteType channel = static_cast< ByteType >(
             ordinals.at( i ) < M4Protocol::CHANNEL_NBASE
             ? channels.at( i )
-            : channels.at( i ) / M4Protocol::CHANNEL_NBASE
+            : ordinals.at( i ) / M4Protocol::CHANNEL_NBASE
         );
         uint16_t ordinal = static_cast< uint16_t >( ordinals.at( i ) % M4Protocol::CHANNEL_NBASE );
         AppendParamNum( requestData, channel, ordinal );
@@ -1167,9 +1167,17 @@ std::vector< Rc::Type > M4Protocol::WriteParams4M( std::shared_ptr< meters::Logi
 {
     SelectDeviceAndChannel( meter, nt );
 
-    ByteVector requestData;
+    ByteVector requestData{};
     for ( const TagWriteData& tagData: data )
     {
+        ByteType channel = static_cast< ByteType >(
+            tagData.ordinal < M4Protocol::CHANNEL_NBASE
+            ? tagData.channel
+            : tagData.ordinal / M4Protocol::CHANNEL_NBASE
+        );
+        uint16_t ordinal = static_cast< uint16_t >( tagData.ordinal % M4Protocol::CHANNEL_NBASE );
+        AppendParamNum( requestData, channel, ordinal );
+
         std::shared_ptr< logika::Any > value = tagData.value;
         bool found = false;
         LocString sValue;
@@ -1242,7 +1250,7 @@ std::vector< Rc::Type > M4Protocol::WriteParams4M( std::shared_ptr< meters::Logi
     }
 
     Packet packet = DoM4Request( nt, Opcode::WriteTags, requestData );
-    std::vector< Rc::Type > errors;
+    std::vector< Rc::Type > errors( data.size(), 0 );
 
     MeterAddressType tagPos = 0x0;
     for ( size_t i = 0; i < data.size(); ++i )

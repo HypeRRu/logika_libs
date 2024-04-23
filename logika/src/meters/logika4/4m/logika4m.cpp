@@ -307,9 +307,8 @@ LocString Logika4M::ParseIa5StringTag(
     const ByteVector& buffer, MeterAddressType payloadStart, MeterAddressType payloadLen )
 {
     CheckBounds( buffer, payloadStart, payloadLen );
-    /// @todo Исправить кодировку
-    const LocChar* data = reinterpret_cast< const LocChar* >( buffer.data() );
-    return LocString( data, payloadLen / sizeof( LocChar ) );
+    std::string value( buffer.data(), std::min( static_cast< size_t >( payloadLen ), buffer.size() ) );
+    return ToLocString( value );
 } // ParseIa5StringTag
 
 
@@ -360,9 +359,12 @@ LocString Logika4M::ParseTimeTag(
     CheckBounds( buffer, payloadStart, std::max( payloadLen, static_cast< MeterAddressType >( 4 ) ) );
 
     LocStringStream format;
-    format << std::setw( 2 ) << std::setfill( LOCALIZED( '0' ) ) << buffer.at( payloadStart + 3 ) << LOCALIZED( "-" );
-    format << std::setw( 2 ) << std::setfill( LOCALIZED( '0' ) ) << buffer.at( payloadStart + 2 ) << LOCALIZED( "-" );
-    format << std::setw( 2 ) << std::setfill( LOCALIZED( '0' ) ) << buffer.at( payloadStart + 1 );
+    format << std::setw( 2 ) << std::setfill( LOCALIZED( '0' ) )
+        << static_cast< uint32_t >( buffer.at( payloadStart + 3 ) ) << LOCALIZED( "-" );
+    format << std::setw( 2 ) << std::setfill( LOCALIZED( '0' ) )
+        << static_cast< uint32_t >( buffer.at( payloadStart + 2 ) ) << LOCALIZED( "-" );
+    format << std::setw( 2 ) << std::setfill( LOCALIZED( '0' ) )
+        << static_cast< uint32_t >( buffer.at( payloadStart + 1 ) );
     return format.str();
 } // ParseTimeTag
 
@@ -373,9 +375,12 @@ LocString Logika4M::ParseDateTag(
     CheckBounds( buffer, payloadStart, std::max( payloadLen, static_cast< MeterAddressType >( 4 ) ) );
 
     LocStringStream format;
-    format << std::setw( 2 ) << std::setfill( LOCALIZED( '0' ) ) << buffer.at( payloadStart + 0 ) << LOCALIZED( "-" );
-    format << std::setw( 2 ) << std::setfill( LOCALIZED( '0' ) ) << buffer.at( payloadStart + 1 ) << LOCALIZED( "-" );
-    format << std::setw( 2 ) << std::setfill( LOCALIZED( '0' ) ) << buffer.at( payloadStart + 2 );
+    format << std::setw( 2 ) << std::setfill( LOCALIZED( '0' ) )
+        << static_cast< uint32_t >( buffer.at( payloadStart + 0 ) ) << LOCALIZED( "-" );
+    format << std::setw( 2 ) << std::setfill( LOCALIZED( '0' ) )
+        << static_cast< uint32_t >( buffer.at( payloadStart + 1 ) ) << LOCALIZED( "-" );
+    format << std::setw( 2 ) << std::setfill( LOCALIZED( '0' ) )
+        << static_cast< uint32_t >( buffer.at( payloadStart + 2 ) );
     return format.str();
 } // ParseDateTag
 
@@ -430,6 +435,7 @@ std::vector< size_t > Logika4M::ParseNsRecordTag(
     CheckBounds( buffer, payloadStart, static_cast< MeterAddressType >( payloadLen ) );
     if ( payloadLen <= 16 )
     {
+        /// @todo Check correctness
         return BitNumbers( buffer, payloadStart * 8, payloadLen * 8 );
     }
     throw std::runtime_error{ "FLAGS tag length unsupported" };
