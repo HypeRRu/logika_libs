@@ -1,4 +1,4 @@
-/// @file Объявления библиотеки connections
+/// @file Объявления библиотеки connections_common
 /// @copyright HypeRRu 2024
 
 #pragma once
@@ -7,11 +7,11 @@
 #define LOGIKA_CONNECTIONS_DEFS_H
 
 #if defined ( WIN32 ) && defined ( BUILD_SHARED_LIBS )
-#   if defined( logika_connections_EXPORT )
+#   if defined( logika_connections_common_EXPORT )
 #       define LOGIKA_CONNECTIONS_EXPORT __declspec( dllexport )
 #   else
 #       define LOGIKA_CONNECTIONS_EXPORT __declspec( dllimport )
-#   endif // defined( logika_connections_EXPORT )
+#   endif // defined( logika_connections_common_EXPORT )
 #else
 #   define LOGIKA_CONNECTIONS_EXPORT
 #endif // defined ( WIN32 ) && defined ( BUILD_SHARED_LIBS )

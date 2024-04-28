@@ -40,10 +40,17 @@ endif()
 add_library(${LIB_NAME} SHARED ${${LIB_NAME}_SOURCES_LIST})
 target_include_directories(${LIB_NAME} PUBLIC ${INCLUDE_DIR})
 target_link_libraries(${LIB_NAME} PUBLIC ${CMAKE_PROJECT_NAME}_common)
-target_link_libraries(${LIB_NAME} PUBLIC ${CMAKE_PROJECT_NAME}_connections)
+target_link_libraries(${LIB_NAME} PUBLIC ${CMAKE_PROJECT_NAME}_connections_common)
 
 if (BUILD_LOGGER)
 	target_link_libraries(${LIB_NAME} PUBLIC ${CMAKE_PROJECT_NAME}_logger)
+endif()
+
+if (BUILD_SERIAL_CONN)
+	target_link_libraries(${LIB_NAME} PUBLIC ${CMAKE_PROJECT_NAME}_connections_serial)
+endif()
+if (BUILD_NETWORK_CONN)
+	target_link_libraries(${LIB_NAME} PUBLIC ${CMAKE_PROJECT_NAME}_connections_network)
 endif()
 
 if (BUILD_LOGIKA4L OR BUILD_LOGIKA4M)

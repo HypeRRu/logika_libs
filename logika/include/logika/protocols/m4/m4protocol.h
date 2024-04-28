@@ -129,11 +129,13 @@ public:
     M4Protocol( const storage::StorageKeeper& sKeeper,
         connections::BaudRate::Type targetBaudRate = connections::BaudRate::NotSupported );
 
+#if defined( LOGIKA_USE_CONNECTIONS_SERIAL )
     /// @brief Получение текущей скорости работы прибора
     /// @return Текущая скорость работы прибора (если прибор Serial), иначе NotSupported
     /// @throws std::logical_error если тип соединения указан как serial,
     /// но при этом соединение не является SerialConnection
     connections::BaudRate::Type GetCurrentBaudRate() const;
+#endif // defined( LOGIKA_USE_CONNECTIONS_SERIAL )
 
     /// @copydoc Protocol::ResetBusActiveState()
     virtual void ResetBusActiveState() override;
@@ -389,10 +391,12 @@ protected:
     /// @copydoc Protocol::CloseCommSessionImpl()
     virtual void CloseCommSessionImpl( const ByteType* srcNt, const ByteType* dstNt ) override;
 
+#if defined( LOGIKA_USE_CONNECTIONS_SERIAL )
     /// @brief Сброс скорости работы прибора до начального значения
     /// @throws std::logical_error если тип соединения указан как serial,
     /// но при этом соединение не является SerialConnection
     void SerialSpeedFallback();
+#endif // defined( LOGIKA_USE_CONNECTIONS_SERIAL )
 
     /// @brief Обработчик ошибки ввода/вывода
     /// @details Устанавливает флаг ошибки ввода вывода во внутреннем состоянии

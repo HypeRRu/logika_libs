@@ -32,4 +32,4 @@
 
 ## Global
 - [x] Fix C++ standard version (use c++14 or even c++11)
-- [ ] Split libraries in more modules, use macro to define which modules is available 
+- [x] Split libraries in more modules, use macro to define which modules is available

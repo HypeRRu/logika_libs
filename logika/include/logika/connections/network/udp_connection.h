@@ -6,7 +6,7 @@
 #ifndef LOGIKA_CONNECTIONS_NETWORK_UDP_CONNECTION_H
 #define LOGIKA_CONNECTIONS_NETWORK_UDP_CONNECTION_H
 
-#include <logika/connections/defs.h>
+#include <logika/connections/network/defs.h>
 #include <logika/connections/network/net_connection.h>
 
 namespace logika
@@ -16,7 +16,7 @@ namespace connections
 {
 
 /// @brief Класс для работы с соединением по UDP
-class LOGIKA_CONNECTIONS_EXPORT UdpConnection: public NetConnection
+class LOGIKA_CONNECTIONS_NETWORK_EXPORT UdpConnection: public NetConnection
 {
 public:
     /// @brief Конструктор UDP-соединения

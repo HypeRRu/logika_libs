@@ -6,7 +6,7 @@
 #ifndef LOGIKA_CONNECTIONS_SERIAL_SERIAL_PORT_CONNECTION_H
 #define LOGIKA_CONNECTIONS_SERIAL_SERIAL_PORT_CONNECTION_H
 
-#include <logika/connections/defs.h>
+#include <logika/connections/serial/defs.h>
 #include <logika/connections/serial/serial_connection.h>
 
 namespace logika
@@ -16,7 +16,7 @@ namespace connections
 {
 
 /// @brief Класс для работы с соединением COM-порту
-class LOGIKA_CONNECTIONS_EXPORT SerialPortConnection final: public SerialConnection 
+class LOGIKA_CONNECTIONS_SERIAL_EXPORT SerialPortConnection final: public SerialConnection
 {
 public:
     /// @brief Конструктор соединения по последовательному порту

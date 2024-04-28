@@ -20,25 +20,36 @@ add_executable(
 )
 target_include_directories(test_main PRIVATE ${INCLUDE_DIR})
 
-# @todo Опции для выбора модулей для сборки
+
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/common.cmake)
 target_link_libraries(test_main PRIVATE ${CMAKE_PROJECT_NAME}_common)
 target_include_directories(test_main PRIVATE ${CMAKE_PROJECT_NAME}_common)
 
-option(BUILD_LOGGER "Build logger library" ON)
 if (BUILD_LOGGER)
 	include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/logger.cmake)
 	target_link_libraries(test_main PRIVATE ${CMAKE_PROJECT_NAME}_logger)
 	target_include_directories(test_main PRIVATE ${CMAKE_PROJECT_NAME}_logger)
 endif()
 
-include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/connections.cmake)
-target_link_libraries(test_main PRIVATE ${CMAKE_PROJECT_NAME}_connections)
-target_include_directories(test_main PRIVATE ${CMAKE_PROJECT_NAME}_connections)
+if ((NOT BUILD_SERIAL_CONN) AND (NOT BUILD_NETWORK_CONN))
+	message( FATAL_ERROR "You must specify at least one type of connections." )
+endif()
 
-option(BUILD_LOGIKA4L "Build Logika4L meters library" ON)
-option(BUILD_LOGIKA4M "Build Logika4M meters library" ON)
-option(BUILD_LOGIKA6  "Build Logika6 meters library" OFF)
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/connections_common.cmake)
+target_link_libraries(test_main PRIVATE ${CMAKE_PROJECT_NAME}_connections_common)
+target_include_directories(test_main PRIVATE ${CMAKE_PROJECT_NAME}_connections_common)
+
+if (BUILD_SERIAL_CONN)
+	include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/connections_serial.cmake)
+	target_link_libraries(test_main PRIVATE ${CMAKE_PROJECT_NAME}_connections_serial)
+	target_include_directories(test_main PRIVATE ${CMAKE_PROJECT_NAME}_connections_serial)
+endif()
+
+if (BUILD_NETWORK_CONN)
+	include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/connections_network.cmake)
+	target_link_libraries(test_main PRIVATE ${CMAKE_PROJECT_NAME}_connections_network)
+	target_include_directories(test_main PRIVATE ${CMAKE_PROJECT_NAME}_connections_network)
+endif()
 
 if ((NOT BUILD_LOGIKA4L) AND (NOT BUILD_LOGIKA4M) AND (NOT BUILD_LOGIKA6))
 	message( FATAL_ERROR "You must specify at least one type of meters." )
@@ -73,14 +84,7 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/protocols.cmake)
 target_link_libraries(test_main PRIVATE ${CMAKE_PROJECT_NAME}_protocols)
 target_include_directories(test_main PRIVATE ${CMAKE_PROJECT_NAME}_protocols)
 
-cmake_dependent_option(
-	BUILD_RESOURCES_CONVERTER
-	"Build resources converter library"
-	ON
-	"BUILD_RESOURCES"
-	OFF
-)
-if (BUILD_RESOURCES_CONVERTER)
+if (BUILD_RESOURCE_CONVERTERS)
 	include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/resource_converters.cmake)
 	target_link_libraries(test_main PRIVATE ${CMAKE_PROJECT_NAME}_resource_converters)
 	target_include_directories(test_main PRIVATE ${CMAKE_PROJECT_NAME}_resource_converters)

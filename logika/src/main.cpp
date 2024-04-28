@@ -1,16 +1,31 @@
-#include <logika/connections/serial/serial_port_connection.h>
-#include <logika/connections/network/udp_connection.h>
-#include <logika/connections/network/tcp_connection.h>
 #include <logika/log/logger.h>
 #include <logika/log/defines.h>
 
-#include <logika/meters/types.h>
-
+#include <logika/common/misc.h>
 #include <logika/common/any.hpp>
-#include <logika/meters/archive_field_def.h>
 
 #include <logika/storage/storage.hpp>
-#include <logika/resources/loader.hpp>
+#if defined( LOGIKA_USE_RESOURCE_CONVERTERS )
+#   include <logika/resources/loader.hpp>
+#endif // defined( LOGIKA_USE_RESOURCE_CONVERTERS )
+
+#include <logika/meters/types.h>
+#include <logika/meters/archive_field_def.h>
+#include <logika/meters/data_table.hpp>
+#include <logika/meters/interval_archive.h>
+#include <logika/meters/meter.h>
+#include <logika/meters/data_tag.h>
+#include <logika/meters/service_archive.h>
+#include <logika/meters/interval_archive.h>
+
+#if defined( LOGIKA_USE_CONNECTIONS_SERIAL )
+#   include <logika/connections/serial/serial_port_connection.h>
+#endif // defined( LOGIKA_USE_CONNECTIONS_SERIAL )
+
+#if defined( LOGIKA_USE_CONNECTIONS_NETWORK )
+#   include <logika/connections/network/udp_connection.h>
+#   include <logika/connections/network/tcp_connection.h>
+#endif // defined( LOGIKA_USE_CONNECTIONS_NETWORK )
 
 #if defined( LOGIKA_USE_RESOURCE_CONVERTERS )
 #   include <logika/meters/converters/archive_type_converter.h>
@@ -32,22 +47,11 @@
 #   include <logika/meters/logika4/4l/logika4l.h>
 #endif // defined( LOGIKA_USE_METERS4L )
 
-#include <logika/meters/data_table.hpp>
-#include <logika/meters/interval_archive.h>
-
-#include <logika/meters/meter.h>
-#include <logika/meters/data_tag.h>
-
-#include <logika/meters/service_archive.h>
-#include <logika/meters/interval_archive.h>
-
 #if defined( LOGIKA_USE_PROTOCOL_M4 )
 #   include <logika/protocols/m4/m4protocol.h>
 #   include <logika/protocols/m4/tag_write_data.h>
 #   include <logika/protocols/m4/packet.h>
 #endif // defined( LOGIKA_USE_PROTOCOL_M4 )
-
-#include <logika/common/misc.h>
 
 /// @cond
 #include <iostream>
@@ -78,6 +82,7 @@ int main()
 
 #if 0
     logika::ByteVector buffer{ 'b', 'u', 'f', 'f', 'e', 'r', '\n', '\0' };
+#if defined( LOGIKA_USE_CONNECTIONS_SERIAL )
 #if defined( __linux__ ) || defined( __APPLE__ )
     logika::connections::SerialPortConnection con{ "/tmp/ttyV0", 1000 };
 #endif
@@ -99,7 +104,9 @@ int main()
     LOG_WRITE( LOG_INFO, LOCALIZED( "Read from " ) << logika::ToLocString( con.GetAddress() )
         << LOCALIZED( ": " ) << comRd );
     LOG_WRITE_MSG( LOG_INFO, LOCALIZED( "" ) );
+#endif // defined( LOGIKA_USE_CONNECTIONS_SERIAL )
 
+#if defined( LOGIKA_USE_CONNECTIONS_NETWORK )
     logika::connections::UdpConnection udpCon{ "127.0.0.1", 8083, 30000 };
     udpCon.Open();
     udpCon.Write( buffer );
@@ -126,6 +133,7 @@ int main()
     LOG_WRITE( LOG_INFO, LOCALIZED( "Read from " ) << logika::ToLocString( tcpCon.GetAddress() )
         << LOCALIZED( ": " ) << tcpRd );
     LOG_WRITE( LOG_INFO, LOCALIZED( "" ) );
+#endif // defined( LOGIKA_USE_CONNECTIONS_NETWORK )
 #endif // if 0
 
     logika::meters::VitalInfo vi{ LOCALIZED( "0x11" ), LOCALIZED( "rev" ), LOCALIZED( "serial" )
@@ -214,7 +222,7 @@ int main()
     }
 #endif // if 1
 
-#if defined( LOGIKA_USE_PROTOCOL_M4 )
+#if defined( LOGIKA_USE_PROTOCOL_M4 ) && defined( LOGIKA_USE_CONNECTIONS_NETWORK )
     const std::string ipAddress{ "91.209.59.238" };
     const uint16_t addressPort = 8002;
     std::shared_ptr< logika::protocols::M4::M4Protocol > bus4
@@ -594,7 +602,7 @@ int main()
     // {
     //     LOG_WRITE( LOG_WARNING, LOCALIZED( "An error occured: " ) << logika::ToLocString( e.what() ) );
     // }
-#endif // defined( LOGIKA_USE_PROTOCOL_M4 )
+#endif // defined( LOGIKA_USE_PROTOCOL_M4 ) && defined( LOGIKA_USE_CONNECTIONS_NETWORK )
 
 #if defined( _WIN32 ) || defined( _WIN64 )
     WSACleanup();

@@ -4,7 +4,11 @@
 #include <logika/protocols/protocol.h>
 
 #include <logika/connections/iconnection.h>
-#include <logika/connections/serial/serial_connection.h>
+
+#if defined( LOGIKA_USE_CONNECTIONS_SERIAL )
+#   include <logika/connections/serial/serial_connection.h>
+#endif // defined( LOGIKA_USE_CONNECTIONS_SERIAL )
+
 #include <logika/connections/utils/types_converter.h>
 #include <logika/log/defines.h>
 
@@ -363,6 +367,7 @@ std::shared_ptr< meters::Meter > Protocol::AutodectSpt( std::shared_ptr< connect
     bus6->SetConnection( connection );
 #endif // defined( LOGIKA_USE_PROTOCOL_X6 )
 
+#if defined( LOGIKA_USE_CONNECTIONS_SERIAL )
     constexpr std::array< connections::BaudRate::Type, 7 > baudRatesAvailable{
           connections::BaudRate::Rate2400, connections::BaudRate::Rate57600
         , connections::BaudRate::Rate4800, connections::BaudRate::Rate19200
@@ -370,6 +375,8 @@ std::shared_ptr< meters::Meter > Protocol::AutodectSpt( std::shared_ptr< connect
         , connections::BaudRate::Rate115200
     };
     bool canChangeBaudRate = ( connection->GetConnectionType() & connections::ConnectionType::Serial );
+#endif // defined( LOGIKA_USE_CONNECTIONS_SERIAL )
+
     connections::BaudRate::Type detectedBaudRate = connections::BaudRate::NotSupported;
     TimeType savedTimeout = connection->GetReadTimeout();
     connection->SetReadTimeout( 500 );
@@ -377,14 +384,17 @@ std::shared_ptr< meters::Meter > Protocol::AutodectSpt( std::shared_ptr< connect
     try
     {
         std::vector< connections::BaudRate::Type > baudRates{ fixedBaudRate };
+#if defined( LOGIKA_USE_CONNECTIONS_SERIAL )
         if ( canChangeBaudRate && fixedBaudRate == connections::BaudRate::NotSupported )
         {
             baudRates = std::vector< connections::BaudRate::Type >(
                 baudRatesAvailable.cbegin(), baudRatesAvailable.cend() );
         }
+#endif // defined( LOGIKA_USE_CONNECTIONS_SERIAL )
 
         for ( connections::BaudRate::Type br: baudRates )
         {
+#if defined( LOGIKA_USE_CONNECTIONS_SERIAL )
             if ( canChangeBaudRate )
             {
                 std::shared_ptr< connections::SerialConnection > serialConnection
@@ -401,6 +411,7 @@ std::shared_ptr< meters::Meter > Protocol::AutodectSpt( std::shared_ptr< connect
                 LOG_WRITE( LOG_DEBUG, LOCALIZED( "Trying speed " )
                     << ToLocString( connections::BaudRateToString( br ) ) );
             }
+#endif // defined( LOGIKA_USE_CONNECTIONS_SERIAL )
 
 #if defined( LOGIKA_USE_PROTOCOL_M4 )
             if ( tryM4 )

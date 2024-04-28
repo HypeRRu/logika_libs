@@ -11,8 +11,11 @@
 #include <logika/protocols/m4/tag_write_data.h>
 #include <logika/connections/iconnection.h>
 #include <logika/connections/utils/types_converter.h>
-#include <logika/connections/serial/serial_connection.h>
 #include <logika/meters/logika4/logika4.h>
+
+#if defined( LOGIKA_USE_CONNECTIONS_SERIAL )
+#   include <logika/connections/serial/serial_connection.h>
+#endif // defined( LOGIKA_USE_CONNECTIONS_SERIAL )
 
 #if defined( LOGIKA_USE_METERS4M )
 #   include <logika/protocols/m4/archive4m.h>
@@ -33,6 +36,7 @@
 namespace // anonymous
 {
 
+#if defined( LOGIKA_USE_CONNECTIONS_SERIAL )
 /// @brief Попытка приведения соединения к SerialConnection
 /// @param[in] connection Соединение
 /// @return Указатель на соединение, если оно Serial. nullptr иначе
@@ -54,6 +58,7 @@ std::shared_ptr< logika::connections::SerialConnection > ConnectionAsSerial(
     }
     return serialConnection;
 } // ConnectionAsSerial
+#endif // defined( LOGIKA_USE_CONNECTIONS_SERIAL )
 
 
 /// @brief Конвертация номера ошибки в код
@@ -151,6 +156,7 @@ M4Protocol::M4Protocol( const storage::StorageKeeper& sKeeper,
 {} // M4Protocol
 
 
+#if defined( LOGIKA_USE_CONNECTIONS_SERIAL )
 connections::BaudRate::Type M4Protocol::GetCurrentBaudRate() const
 {
     std::shared_ptr< connections::SerialConnection > serialConnection = ConnectionAsSerial( connection_ );
@@ -160,12 +166,15 @@ connections::BaudRate::Type M4Protocol::GetCurrentBaudRate() const
     }
     return serialConnection->GetBaudRate();
 } // GetCurrentBaudRate
+#endif // defined( LOGIKA_USE_CONNECTIONS_SERIAL )
 
 
 void M4Protocol::ResetBusActiveState()
 {
     activeDev_.reset();
+#if defined( LOGIKA_USE_CONNECTIONS_SERIAL )
     SerialSpeedFallback();
+#endif // defined( LOGIKA_USE_CONNECTIONS_SERIAL )
     LOG_WRITE_MSG( LOG_DEBUG, LOCALIZED( "M4 bus state is reset" ) );
 } // ResetBusActiveState
 
@@ -231,6 +240,8 @@ void M4Protocol::SelectDeviceAndChannel( std::shared_ptr< meters::Logika4 > mete
     {
         ResetBusActiveState();
     }
+
+#if defined( LOGIKA_USE_CONNECTIONS_SERIAL )
     std::shared_ptr< connections::SerialConnection > serialConnection = ConnectionAsSerial( connection_ );
     if ( serialConnection )
     {
@@ -246,70 +257,75 @@ void M4Protocol::SelectDeviceAndChannel( std::shared_ptr< meters::Logika4 > mete
         {
             SerialSpeedFallback();
         }
-        /// Если внутреннее состояние не задано или не совпадает с ожидаемым,
-        /// или произошла ошибка ввода/вывода, то нужно его переинициализровать
-        bool needReselect = !activeDev_ || activeDev_->nt != nt
-            || activeDev_->tv != tv || activeDev_->hasIoError;
-        if ( needReselect )
+    }
+#endif // defined( LOGIKA_USE_CONNECTIONS_SERIAL )
+
+    /// Если внутреннее состояние не задано или не совпадает с ожидаемым,
+    /// или произошла ошибка ввода/вывода, то нужно его переинициализровать
+    bool needReselect = !activeDev_ || activeDev_->nt != nt
+        || activeDev_->tv != tv || activeDev_->hasIoError;
+    if ( needReselect )
+    {
+        if ( activeDev_ )
         {
-            if ( activeDev_ )
-            {
-                activeDev_->hasIoError = false;
-            }
-            bool alreadyAwake = activeDev_ && activeDev_->nt == nt;
-            /// Выдерживаем паузы между FFами и после них, только если устройство этого требует
-            bool slowWake = !meter->GetSupportFastSessionInit() && !alreadyAwake;
-            try
-            {
-                Packet handshakePacket = DoHandshake( &nt, static_cast< ByteType >( tv ), slowWake );
-                /// @note connection_ не nullptr, проверено выше, поэтому Packet не пуст
-                std::shared_ptr< meters::Meter > detectedMtr = meters::Logika4::DetermineMeter(
-                    handshakePacket.data.at( 0 ), handshakePacket.data.at( 1 ), handshakePacket.data.at( 2 ),
-                    sKeeper_.GetStorage< LocString, meters::Meter >()
-                );
-                if ( detectedMtr != meter )
-                {
-                    ResetBusActiveState();
-                    throw std::runtime_error{ "Invalid meter type detected" };
-                }
-                activeDev_ = std::make_shared< BusActiveState >( meter, nt, tv );
-                activeDev_->lastIo = GetCurrentTimestamp();
-            }
-            catch ( const std::exception& )
-            {
-                LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "An error occured due handshake and meter check" ) );
-                activeDev_->hasIoError = true;
-                throw;
-            }
+            activeDev_->hasIoError = false;
         }
-        /// Обновление скорости работы прибора
-        while ( true )
+        bool alreadyAwake = activeDev_ && activeDev_->nt == nt;
+        /// Выдерживаем паузы между FFами и после них, только если устройство этого требует
+        bool slowWake = !meter->GetSupportFastSessionInit() && !alreadyAwake;
+        try
         {
-            if ( serialConnection
-                && suggestedBaudRate_ != connections::BaudRate::NotSupported
-                && GetCurrentBaudRate() != suggestedBaudRate_ )
+            Packet handshakePacket = DoHandshake( &nt, static_cast< ByteType >( tv ), slowWake );
+            /// @note connection_ не nullptr, проверено выше, поэтому Packet не пуст
+            std::shared_ptr< meters::Meter > detectedMtr = meters::Logika4::DetermineMeter(
+                handshakePacket.data.at( 0 ), handshakePacket.data.at( 1 ), handshakePacket.data.at( 2 ),
+                sKeeper_.GetStorage< LocString, meters::Meter >()
+            );
+            if ( detectedMtr != meter )
             {
-                bool updatedSpeed = SetBusSpeed( activeDev_->meter, &nt, suggestedBaudRate_, tv );
-                if ( !updatedSpeed )
-                {
-#if defined( LOGIKA_USE_METERS4M )
-                    /// У некоторых M4 приборов (941.20, 944, 742? прочие?) встречается несовместимость,
-                    /// не позволяющая нормально работать на максимальной скорости 57600 через АПС71
-                    std::shared_ptr< meters::Logika4M > meter4M =
-                        std::dynamic_pointer_cast< meters::Logika4M >( meter );
-                    if ( meter4M && suggestedBaudRate_ >= connections::BaudRate::Rate57600 )
-                    {
-                        suggestedBaudRate_ = connections::BaudRate::Rate38400;
-                        continue;
-                    }
-#endif // defined( LOGIKA_USE_METERS4M )
-                    /// Также, 942 поддерживает 9600 только на оптическом интерфейсе, на проводном - только 2400
-                    suggestedBaudRate_ = connections::BaudRate::NotSupported;
-                }
+                ResetBusActiveState();
+                throw std::runtime_error{ "Invalid meter type detected" };
             }
-            break;
+            activeDev_ = std::make_shared< BusActiveState >( meter, nt, tv );
+            activeDev_->lastIo = GetCurrentTimestamp();
+        }
+        catch ( const std::exception& )
+        {
+            LOG_WRITE_MSG( LOG_ERROR, LOCALIZED( "An error occured due handshake and meter check" ) );
+            activeDev_->hasIoError = true;
+            throw;
         }
     }
+
+#if defined( LOGIKA_USE_CONNECTIONS_SERIAL )
+    /// Обновление скорости работы прибора
+    while ( true )
+    {
+        if ( serialConnection
+            && suggestedBaudRate_ != connections::BaudRate::NotSupported
+            && GetCurrentBaudRate() != suggestedBaudRate_ )
+        {
+            bool updatedSpeed = SetBusSpeed( activeDev_->meter, &nt, suggestedBaudRate_, tv );
+            if ( !updatedSpeed )
+            {
+#if defined( LOGIKA_USE_METERS4M )
+                /// У некоторых M4 приборов (941.20, 944, 742? прочие?) встречается несовместимость,
+                /// не позволяющая нормально работать на максимальной скорости 57600 через АПС71
+                std::shared_ptr< meters::Logika4M > meter4M =
+                    std::dynamic_pointer_cast< meters::Logika4M >( meter );
+                if ( meter4M && suggestedBaudRate_ >= connections::BaudRate::Rate57600 )
+                {
+                    suggestedBaudRate_ = connections::BaudRate::Rate38400;
+                    continue;
+                }
+#endif // defined( LOGIKA_USE_METERS4M )
+                /// Также, 942 поддерживает 9600 только на оптическом интерфейсе, на проводном - только 2400
+                suggestedBaudRate_ = connections::BaudRate::NotSupported;
+            }
+        }
+        break;
+    }
+#endif // defined( LOGIKA_USE_CONNECTIONS_SERIAL )
 } // SelectDeviceAndChannel
 
 
@@ -844,6 +860,7 @@ Packet M4Protocol::DoHandshake( const ByteType* nt, ByteType channel, bool slowW
 } // DoHandshake
 
 
+#if defined( LOGIKA_USE_CONNECTIONS_SERIAL )
 bool M4Protocol::SetBusSpeed( std::shared_ptr< meters::Logika4 > meter, const ByteType* nt,
     connections::BaudRate::Type baudRate, MeterChannel::Type tv )
 {
@@ -928,6 +945,7 @@ bool M4Protocol::SetBusSpeed( std::shared_ptr< meters::Logika4 > meter, const By
     }
     return changedOk;
 } // SetBusSpeed
+#endif // defined( LOGIKA_USE_CONNECTIONS_SERIAL )
 
 
 #if defined( LOGIKA_USE_METERS4L )
@@ -1371,6 +1389,7 @@ void M4Protocol::CloseCommSessionImpl( const ByteType* srcNt, const ByteType* ds
 } // CloseCommSessionImpl
 
 
+#if defined( LOGIKA_USE_CONNECTIONS_SERIAL )
 void M4Protocol::SerialSpeedFallback()
 {
     if ( initialBaudRate_ == connections::BaudRate::NotSupported )
@@ -1391,6 +1410,7 @@ void M4Protocol::SerialSpeedFallback()
     LOG_WRITE( LOG_DEBUG, LOCALIZED( "Restored default baud rate: " )
         << ToLocString( connections::BaudRateToString( initialBaudRate_ ) ) );
 } // SerialSpeedFallback
+#endif // defined( LOGIKA_USE_CONNECTIONS_SERIAL )
 
 
 void M4Protocol::OnRecoverableError()
