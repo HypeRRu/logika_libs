@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['badrequesterror_0',['BadRequestError',['../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#a481bf96742509dbd4ff8fe8f255b2e1fa0889d5a278a237904c2c3e1f1ef1a269',1,'logika::protocols::Rc']]],
-  ['basetypeshift_1',['BaseTypeShift',['../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#a4a8329efb416b5853518060e074f29bbaeeed4eea4022b0f10b30cb63fae5c21a',1,'logika::connections::ConnectionType']]],
+  ['badrequesterror_0',['BadRequestError',['../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#ae7d7b0f88e6cebaaac662958573da295a0889d5a278a237904c2c3e1f1ef1a269',1,'logika::protocols::Rc']]],
+  ['basetypeshift_1',['BaseTypeShift',['../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#abe81c108fc01c4af64263dd66a3b89d0aeeed4eea4022b0f10b30cb63fae5c21a',1,'logika::connections::ConnectionType']]],
   ['bitarray16_2',['BitArray16',['../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a45a19cdb33b268a4c02d31077a53c939',1,'logika::meters::BinaryType4L']]],
   ['bitarray24_3',['BitArray24',['../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90aed13434546e016aed0d4f10da669b9a5',1,'logika::meters::BinaryType4L']]],
   ['bitarray32_4',['BitArray32',['../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a7f45e2a04c07b5a7bd47dd4a8c6d127d',1,'logika::meters::BinaryType4L']]],
