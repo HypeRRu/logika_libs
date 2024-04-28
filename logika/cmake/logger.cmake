@@ -7,6 +7,7 @@ set(
     ${SRC_DIR}/log/logger.cpp
 )
 
+add_compile_definitions(LOGIKA_USE_LOGGER=)
 add_library(${LIB_NAME} SHARED ${${LIB_NAME}_SOURCES_LIST})
 target_include_directories(${LIB_NAME} PUBLIC ${INCLUDE_DIR})
 target_link_libraries(${LIB_NAME} PUBLIC ${CMAKE_PROJECT_NAME}_common)

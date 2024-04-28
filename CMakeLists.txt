@@ -1,8 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
 
 project(logika LANGUAGES CXX)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
-# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g3")
+include(CMakeDependentOption)
 
 # suppress MSVC warnings
 if(MSVC)
@@ -11,6 +10,21 @@ if(MSVC)
 	add_definitions("/wd4996")
 endif()
 
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/resources)
+option(BUILD_RESOURCES "Build resources library" ON)
+cmake_dependent_option(
+	BUILD_MIGRATION_TOOL
+	"Build resources generation tool"
+	ON
+	"BUILD_RESOURCES"
+	OFF
+)
+
+if (BUILD_RESOURCES)
+	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/resources)
+endif()
+
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/logika)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/migration)
+
+if (BUILD_MIGRATION_TOOL)
+	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/migration)
+endif()

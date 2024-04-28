@@ -5,6 +5,7 @@
 
 #include <logika/meters/utils/types_converter.h>
 #include <logika/common/misc.h>
+#include <logika/common/types.h>
 
 #include <logika/meters/logika4/4m/tag_def4m.h>
 #include <logika/meters/logika4/4m/archive_def4m.h>

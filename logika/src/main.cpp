@@ -50,9 +50,11 @@ void LoadResources( const std::string& pathTo, logika::storage::StorageKeeper& s
 
 int main()
 {
+#if defined( LOGIKA_USE_LOGGER )
     logika::log::Logger& logger = logika::log::Logger::Instance();
     logger.SetLogType( logika::log::LogType::LogConsole );
     logger.SetLogLevel( logika::log::LogLevel::LogAll );
+#endif
 
 #if defined( _WIN32 ) || defined( _WIN64 )
     WSADATA wsaData;

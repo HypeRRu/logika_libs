@@ -11,6 +11,7 @@
 #include <string>
 #include <locale>
 #include <codecvt>
+#include <sstream>
 
 #include <cstdint>
 
@@ -41,7 +42,6 @@ using LocChar           = wchar_t;
 using LocString         = std::basic_string< LocChar >;
 using LocConverter      = std::wstring_convert< std::codecvt_utf8< LocChar >, LocChar >;
 using LocStringStream   = std::basic_stringstream< LocChar >;
-/// @todo Макрос LOCALIZED( x ) Lx
 
 #if defined( __linux__ ) || defined( __APPLE__ )
 using FileHandleType = int;

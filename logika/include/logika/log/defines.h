@@ -21,19 +21,24 @@ namespace logika
 #define LOG_INFO logika::log::LogLevel::LogInfo
 #define LOG_DEBUG logika::log::LogLevel::LogDebug
 
+#if defined( LOGIKA_USE_LOGGER )
 /// @brief Запись в лог с использованием потока
 #define LOG_WRITE( level, message ) \
-do { \
-    logika::LocStringStream logstr; \
-    logstr << message; \
-    logika::log::Logger::Instance().Write( level, logstr.str(), __FUNCTION__ ); \
-} while ( false );
+    do { \
+        logika::LocStringStream logstr; \
+        logstr << message; \
+        logika::log::Logger::Instance().Write( level, logstr.str(), __FUNCTION__ ); \
+    } while ( false );
 
 /// @brief Запись в лог заданного сообщения
 #define LOG_WRITE_MSG( level, message ) \
-do { \
-    logika::log::Logger::Instance().Write( level, message, __FUNCTION__ ); \
-} while ( false );
+    do { \
+        logika::log::Logger::Instance().Write( level, message, __FUNCTION__ ); \
+    } while ( false );
+#else // !defined( LOGIKA_USE_LOGGER )
+#   define LOG_WRITE( level, message )
+#   define LOG_WRITE_MSG( level, message )
+#endif // defined( LOGIKA_USE_LOGGER )
 
 } // namespace logika
 
