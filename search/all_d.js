@@ -1,7 +1,7 @@
 var searchData=
 [
   ['objectarray_0',['ObjectArray',['../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefaee219de6a043fc9d26cb89af7a20d4a1',1,'logika::meters']]],
-  ['offline_1',['Offline',['../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#abe81c108fc01c4af64263dd66a3b89d0a886a39306e508769b37f1475c303a24a',1,'logika::connections::ConnectionType']]],
+  ['offline_1',['Offline',['../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#a4a8329efb416b5853518060e074f29bba886a39306e508769b37f1475c303a24a',1,'logika::connections::ConnectionType']]],
   ['onafterconnect_5f_2',['onAfterConnect_',['../db/da7/classlogika_1_1connections_1_1Connection.html#a4db4c0a9ff4c8358863563b7a0be8e15',1,'logika::connections::Connection']]],
   ['onbeforedisonnect_5f_3',['onBeforeDisonnect_',['../db/da7/classlogika_1_1connections_1_1Connection.html#ae78983613e204755f6b170b2dd24b950',1,'logika::connections::Connection']]],
   ['onrecoverableerror_4',['OnRecoverableError',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#afbb1b307f441831717685bfa5b549464',1,'logika::protocols::M4::M4Protocol']]],

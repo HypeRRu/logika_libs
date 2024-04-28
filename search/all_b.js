@@ -53,7 +53,7 @@ var searchData=
   ['mmhhtime_50',['MmHhTime',['../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a4c87d371ad826a8f2bd5158db32fd1b6',1,'logika::meters::BinaryType4L']]],
   ['model_51',['Model',['../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357daa559b87068921eec05086ce5485e9784',1,'logika::meters']]],
   ['modelchar_52',['ModelChar',['../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#ae46513347c4ea0ea5563977484872d90a2ec2aa71639c74aeddc7075f2f2c4e64',1,'logika::meters::BinaryType4L']]],
-  ['modem_53',['Modem',['../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#abe81c108fc01c4af64263dd66a3b89d0a58f95a1e5cb66a14537ad9ad25f91d95',1,'logika::connections::ConnectionType']]],
+  ['modem_53',['Modem',['../d6/dec/namespacelogika_1_1connections_1_1ConnectionType.html#a4a8329efb416b5853518060e074f29bba58f95a1e5cb66a14537ad9ad25f91d95',1,'logika::connections::ConnectionType']]],
   ['mon_54',['Mon',['../d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M.html#a70edf9ca3c6dfc4da84a613738f0e3e8ae2218f34b039fce1cbd3d75f488a38ca',1,'logika::protocols::ArchiveId4M']]],
   ['mtrinstance_5f_55',['mtrInstance_',['../d7/d11/classlogika_1_1protocols_1_1M4_1_1FlashArchive4.html#aa67b4ffe67f2714cf7a798bd5a862a28',1,'logika::protocols::M4::FlashArchive4::mtrInstance_'],['../d4/d7c/classlogika_1_1protocols_1_1M4_1_1FlashArray.html#a4b9f28117ebbac11cfbb0a6c09a0a712',1,'logika::protocols::M4::FlashArray::mtrInstance_']]],
   ['mtrparamshash_56',['mtrParamsHash',['../d3/d26/structlogika_1_1meters_1_1VitalInfo.html#acfff11f35c0dea1e1bdcff1c14216b3a',1,'logika::meters::VitalInfo']]],
