@@ -3,6 +3,7 @@
 
 #include <logika/protocols/m4/flash_ring_buffer.h>
 
+#include <logika/meters/logika4/logika4.h>
 #include <logika/meters/logika4/4l/logika4l.h>
 #include <logika/protocols/m4/m4protocol.h>
 #include <logika/protocols/m4/flash_archive4l.h>

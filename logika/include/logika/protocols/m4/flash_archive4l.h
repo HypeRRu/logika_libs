@@ -9,6 +9,7 @@
 #include <logika/protocols/defs.h>
 
 #include <logika/meters/defs.h>
+#include <logika/meters/logika4/4l/defs.h>
 #include <logika/common/types.h>
 #include <logika/protocols/m4/flash_ring_buffer.h>
 
@@ -22,9 +23,9 @@ namespace logika
 namespace meters
 {
 
-class  LOGIKA_METERS_EXPORT ArchiveDef4L;
-class  LOGIKA_METERS_EXPORT ArchiveFieldDef4L;
-class  LOGIKA_METERS_EXPORT Logika4L;
+class  LOGIKA_METERS_4L_EXPORT ArchiveDef4L;
+class  LOGIKA_METERS_4L_EXPORT ArchiveFieldDef4L;
+class  LOGIKA_METERS_4L_EXPORT Logika4L;
 struct LOGIKA_METERS_EXPORT VQT;
 
 } // namespace meters

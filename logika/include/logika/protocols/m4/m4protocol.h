@@ -10,13 +10,23 @@
 #include <logika/protocols/protocol.h>
 #include <logika/protocols/m4/opcodes.h>
 #include <logika/protocols/m4/packet.h>
-#include <logika/protocols/m4/archive4m.h>
 #include <logika/protocols/m4/archive_record.h>
 
 #include <logika/common/types.h>
 #include <logika/connections/serial/types.h>
 #include <logika/meters/defs.h>
+
+#include <logika/meters/logika4/logika4.h>
+
+#if defined( LOGIKA_USE_METERS4L )
+#include <logika/meters/logika4/4l/defs.h>
+#endif // defined( LOGIKA_USE_METERS4L )
+
+#if defined( LOGIKA_USE_METERS4M )
+#include <logika/meters/logika4/4m/defs.h>
+#include <logika/protocols/m4/archive4m.h>
 #include <logika/meters/logika4/4m/logika4m.h>
+#endif // defined( LOGIKA_USE_METERS4M )
 
 /// @cond
 #include <unordered_map>
@@ -29,10 +39,11 @@ namespace meters
 {
 
 /// forward declaration
-class  LOGIKA_METERS_EXPORT Logika4;
-class  LOGIKA_METERS_EXPORT Logika4L;
 class  LOGIKA_METERS_EXPORT Archive;
 struct LOGIKA_METERS_EXPORT ServiceRecord;
+#if defined( LOGIKA_USE_METERS4L )
+class  LOGIKA_METERS_4L_EXPORT Logika4L;
+#endif // defined( LOGIKA_USE_METERS4L )
 
 } // namespace meters
 
@@ -43,7 +54,10 @@ namespace M4
 {
 
 struct LOGIKA_PROTOCOLS_EXPORT TagWriteData;
+
+#if defined( LOGIKA_USE_METERS4L )
 class  LOGIKA_PROTOCOLS_EXPORT ArchiveRequestState4L;
+#endif // defined( LOGIKA_USE_METERS4L )
 
 namespace MeterChannel
 {
@@ -207,6 +221,7 @@ public:
     bool SetBusSpeed( std::shared_ptr< meters::Logika4 > meter, const ByteType* nt,
         connections::BaudRate::Type baudRate, MeterChannel::Type tv = MeterChannel::Sys );
 
+#if defined( LOGIKA_USE_METERS4L )
     /// @brief Запись параметра в прибор Logika4L
     /// @param[in] meter Прибор
     /// @param[in] nt NT назначения
@@ -246,7 +261,25 @@ public:
     /// @return Считанный блок данных из флэш-памяти
     ByteVector ReadFlashBytesL4( std::shared_ptr< meters::Logika4L > meter, const ByteType* nt,
         MeterAddressType startAddr, MeterAddressType length );
-    
+
+    /// @brief Получение реального адреса тэга Logika4L
+    /// @param[in] meterInstance Кэш прибора
+    /// @param[in] tag Тэг
+    /// @return Реальный адрес тэга
+    MeterAddressType GetRealAddress4L( std::shared_ptr< MeterCache > meterInstance,
+        std::shared_ptr< meters::DataTag > tag );
+
+    /// @brief Загрузка страниц флэш памяти в кэш прибора
+    /// @param[in] meter Прибор
+    /// @param[in] nt NT прибора
+    /// @param[in] startPage Номер первой страницы
+    /// @param[in] count Количество страниц
+    /// @param[inout] meterInstance Кэш прибора
+    void GetFlashPagesToCache( std::shared_ptr< meters::Logika4L > meter, const ByteType* nt,
+        uint32_t startPage, uint32_t count, std::shared_ptr< MeterCache > meterInstance );
+#endif // defined( LOGIKA_USE_METERS4L )
+
+#if defined( LOGIKA_USE_METERS4M )
     /// @brief Чтение тэгов прибора Logika4M
     /// @param[in] meter Прибор
     /// @param[in] nt NT назначения
@@ -281,6 +314,7 @@ public:
     Packet ReadArchive4M( std::shared_ptr< meters::Logika4M > meter, const ByteType* nt, const ByteType* packetId,
         uint16_t partition, const ByteType channel, ArchiveId4M::Type archiveKind, TimeType from, TimeType to,
         uint32_t nValues, std::vector< std::shared_ptr< ArchiveRecord > >& result, TimeType& nextRecord );
+#endif // defined( LOGIKA_USE_METERS4M )
 
     /// @brief Получение кэша прибора
     /// @details Возвращает уже созданный или создает новый кэш прибора
@@ -288,22 +322,6 @@ public:
     /// @param[in] nt NT прибора
     /// @return Кэш прибора
     std::shared_ptr< MeterCache > GetMeterInstance( std::shared_ptr< meters::Logika4 > meter, const ByteType* nt );
-
-    /// @brief Загрузка страниц флэш памяти в кэш прибора
-    /// @param[in] meter Прибор
-    /// @param[in] nt NT прибора
-    /// @param[in] startPage Номер первой страницы
-    /// @param[in] count Количество страниц
-    /// @param[inout] meterInstance Кэш прибора
-    void GetFlashPagesToCache( std::shared_ptr< meters::Logika4L > meter, const ByteType* nt,
-        uint32_t startPage, uint32_t count, std::shared_ptr< MeterCache > meterInstance );
-
-    /// @brief Получение реального адреса тэга Logika4L
-    /// @param[in] meterInstance Кэш прибора
-    /// @param[in] tag Тэг
-    /// @return Реальный адрес тэга
-    MeterAddressType GetRealAddress4L( std::shared_ptr< MeterCache > meterInstance,
-        std::shared_ptr< meters::DataTag > tag );
 
     /// @copydoc IProtocol::ReadIntervalArchiveDef()
     virtual std::shared_ptr< meters::IntervalArchive > ReadIntervalArchiveDef( std::shared_ptr< meters::Meter > meter,
@@ -336,18 +354,12 @@ public:
     /// @param[in] ordinal Порядковый номер
     static void AppendParamNum( ByteVector& buffer, ByteType channel, uint16_t ordinal );
 
+#if defined( LOGIKA_USE_METERS4M )
     /// @brief Разбора пакета для чтения тэгов прибора Logika4M
     /// @param[in] packet Пакет
     /// @param[out] opFlags Флаги оперативности
     static std::vector< meters::Logika4M::Tag4MRecordType > ParseM4TagsPacket( const Packet& packet,
         std::vector< bool >& opFlags );
-
-    /// @brief Ограничение времени
-    /// @details Если год в указанной дате превышает 2255, то выставляется 2255 год,
-    /// т.к. год указывается одним байтом (с 2000)
-    /// @param[in] date Время
-    /// @return Время с ограничением
-    static TimeType RestrictTime( TimeType date );
 
     /// @brief Разбор записей архива Logika4M
     /// @param[in] packet Пакет
@@ -364,6 +376,14 @@ public:
     static std::shared_ptr< meters::ServiceRecord > ArchiveRecordToService( std::shared_ptr< meters::Logika4M > meter,
         std::shared_ptr< meters::ArchiveType > archiveType, int32_t channel,
         std::shared_ptr< ArchiveRecord > record );
+#endif // defined( LOGIKA_USE_METERS4M )
+
+    /// @brief Ограничение времени
+    /// @details Если год в указанной дате превышает 2255, то выставляется 2255 год,
+    /// т.к. год указывается одним байтом (с 2000)
+    /// @param[in] date Время
+    /// @return Время с ограничением
+    static TimeType RestrictTime( TimeType date );
 
 protected:
     /// @copydoc Protocol::CloseCommSessionImpl()
@@ -378,16 +398,20 @@ protected:
     /// @details Устанавливает флаг ошибки ввода вывода во внутреннем состоянии
     void OnRecoverableError();
 
+#if defined( LOGIKA_USE_METERS4L )
     /// @brief Получение СП для СПГ741
     /// @param[in] nt NT назначения
     /// @return СП
     ByteType GetSpg741Sp( const ByteType* nt );
+#endif // defined( LOGIKA_USE_METERS4L )
 
+#if defined( LOGIKA_USE_METERS4M )
     /// @brief Заполнение даты в тэге
     /// @param[in] buffer Буфер
     /// @param[in] date Дата
     /// @param[in] useMonthYearOnly Записывать только месяц и год
     void AppendDateTag( ByteVector& buffer, TimeType date, bool useMonthYearOnly = false );
+#endif // defined( LOGIKA_USE_METERS4M )
 
     /// @brief Реализация обновления значений тэгов
     /// @param[in] nt NT прибора
@@ -396,6 +420,7 @@ protected:
     void UpdateTagsImpl( const ByteType* nt, std::vector< std::shared_ptr< meters::DataTag > >& tags,
         TagsUpdateFlags::Type flags );
 
+#if defined( LOGIKA_USE_METERS4L )
     /// @brief Обновление значений тэгов Logika4L
     /// @param[in] nt NT прибора
     /// @param[in] tags Обновляемые тэги
@@ -409,14 +434,6 @@ protected:
     /// @param[in] tags Обновляемые тэги
     void InvalidateFlashCache4L( const ByteType* nt, const std::vector< std::shared_ptr< meters::DataTag > >& tags );
 
-    /// @brief Обновление значений тэгов Logika4M
-    /// @param[in] nt NT прибора
-    /// @param[in] tags Обновляемые тэги
-    /// @param[in] meterInstance Кэш прибора
-    /// @param[in] flags Флаги обновления
-    void UpdateTags4M( const ByteType* nt, const std::vector< std::shared_ptr< meters::DataTag > >& tags,
-        std::shared_ptr< MeterCache > meterInstance, TagsUpdateFlags::Type flags );
-
     /// @brief Чтение архива Logika4L
     /// @param[in] meter Прибор
     /// @param[in] nt NT прибора
@@ -429,6 +446,37 @@ protected:
     bool ReadFlashArchive4L( std::shared_ptr< meters::Logika4L > meter, const ByteType* nt,
         std::shared_ptr< meters::Archive > archive, TimeType start, TimeType end,
         std::shared_ptr< logika::Any >& state, double& progress );
+
+    /// @brief Инициализация состояния чтения сервисного архива Logika4L
+    /// @param[in] meter Прибор
+    /// @param[in] nt NT прибора
+    /// @param[in] archiveType Тип архива
+    /// @return Состояние чтения сервисного архива Logika4L
+    std::shared_ptr< ArchiveRequestState4L > InitServiceArchiveReadState4L(
+        std::shared_ptr< meters::Logika4L > meter, const ByteType* nt,
+        std::shared_ptr< meters::ArchiveType > archiveType );
+
+    /// @brief Обработка данных интервального архива Logika4L
+    /// @param[in] state Состояние чтения архива
+    /// @param[inout] archive Интервальный архив
+    void ProcessIntervalData4L( std::shared_ptr< ArchiveRequestState4L > state,
+        std::shared_ptr< meters::IntervalArchive > archive );
+
+    /// @brief Обработка данных сервисного архива Logika4L
+    /// @param[in] state Состояние чтения архива
+    /// @param[inout] archive Сервисный архив
+    void ProcessServiceData4L( std::shared_ptr< ArchiveRequestState4L > state,
+        std::shared_ptr< meters::ServiceArchive > archive );
+#endif // defined( LOGIKA_USE_METERS4L )
+
+#if defined( LOGIKA_USE_METERS4M )
+    /// @brief Обновление значений тэгов Logika4M
+    /// @param[in] nt NT прибора
+    /// @param[in] tags Обновляемые тэги
+    /// @param[in] meterInstance Кэш прибора
+    /// @param[in] flags Флаги обновления
+    void UpdateTags4M( const ByteType* nt, const std::vector< std::shared_ptr< meters::DataTag > >& tags,
+        std::shared_ptr< MeterCache > meterInstance, TagsUpdateFlags::Type flags );
 
     /// @brief Чтение интервального архива Logika4M
     /// @param[in] meter Прибор
@@ -455,37 +503,19 @@ protected:
     bool ReadServiceArchive4M( std::shared_ptr< meters::Logika4M > meter, const ByteType* nt,
         std::shared_ptr< meters::ServiceArchive > archive, TimeType start, TimeType end,
         std::shared_ptr< logika::Any >& state, double& progress );
-
-    /// @brief Инициализация состояния чтения сервисного архива Logika4L
-    /// @param[in] meter Прибор
-    /// @param[in] nt NT прибора
-    /// @param[in] archiveType Тип архива
-    /// @return Состояние чтения сервисного архива Logika4L
-    std::shared_ptr< ArchiveRequestState4L > InitServiceArchiveReadState4L(
-        std::shared_ptr< meters::Logika4L > meter, const ByteType* nt,
-        std::shared_ptr< meters::ArchiveType > archiveType );
-
-    /// @brief Обработка данных интервального архива Logika4L
-    /// @param[in] state Состояние чтения архива
-    /// @param[inout] archive Интервальный архив
-    void ProcessIntervalData4L( std::shared_ptr< ArchiveRequestState4L > state,
-        std::shared_ptr< meters::IntervalArchive > archive );
-
-    /// @brief Обработка данных сервисного архива Logika4L
-    /// @param[in] state Состояние чтения архива
-    /// @param[inout] archive Сервисный архив
-    void ProcessServiceData4L( std::shared_ptr< ArchiveRequestState4L > state,
-        std::shared_ptr< meters::ServiceArchive > archive );
+#endif // defined( LOGIKA_USE_METERS4M )
 
 protected:
     /// @brief Пост обработка значения тэга
     /// @param[inout] tag Тэг
     static void PostProcessValue( std::shared_ptr< meters::DataTag > tag );
 
+#if defined( LOGIKA_USE_METERS4M )
     /// @brief Получение идентификатора архива
     /// @param[in] archiveType Тип архива
     /// @return Идентификатор архива
     static ArchiveId4M::Type GetArchiveCode( std::shared_ptr< meters::ArchiveType > archiveType );
+#endif // defined( LOGIKA_USE_METERS4M )
 
     /// @brief Формирование полного времени по времени прибора, если первое не задано
     /// @param[inout] record Запись архива

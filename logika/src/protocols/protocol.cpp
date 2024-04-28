@@ -8,12 +8,20 @@
 #include <logika/connections/utils/types_converter.h>
 #include <logika/log/defines.h>
 
-#include <logika/protocols/m4/m4protocol.h>
-#include <logika/protocols/x6/spbusprotocol.h>
-#include <logika/protocols/m4/packet.h>
+#if defined( LOGIKA_USE_PROTOCOL_M4 )
+#   include <logika/meters/logika4/logika4.h>
+#   include <logika/protocols/m4/m4protocol.h>
+#   include <logika/protocols/m4/packet.h>
 
-#include <logika/meters/logika4/logika4.h>
-#include <logika/meters/logika4/4l/logika4l.h>
+#   if defined( LOGIKA_USE_METERS4L )
+#       include <logika/meters/logika4/4l/logika4l.h>
+#   endif // defined( LOGIKA_USE_METERS4L )
+#endif // defined( LOGIKA_USE_PROTOCOL_M4 )
+
+#if defined( LOGIKA_USE_PROTOCOL_X6 )
+#   include <logika/protocols/x6/spbusprotocol.h>
+#endif // defined( LOGIKA_USE_PROTOCOL_X6 )
+
 #include <logika/meters/data_tag.h>
 #include <logika/meters/interval_archive.h>
 
@@ -259,7 +267,7 @@ TimeType Protocol::GetDeviceClock( std::shared_ptr< meters::Meter > meter,
     return 0;
 } // GetDeviceClock
 
-
+#if defined( LOGIKA_USE_PROTOCOL_M4 )
 std::shared_ptr< meters::Meter > Protocol::DetectM4( std::shared_ptr< M4::M4Protocol > bus,
     const storage::StorageKeeper& sKeeper, ByteVector& dump, LocString& model )
 {
@@ -270,8 +278,6 @@ std::shared_ptr< meters::Meter > Protocol::DetectM4( std::shared_ptr< M4::M4Prot
     {
         return nullptr;
     }
-    std::shared_ptr< meters::Meter > spt942 = nullptr;
-    meterStorage->GetItem( LOCALIZED( "SPT942" ), spt942 );
 
     ByteType nt = M4::M4Protocol::BROADCAST_NT;
     M4::Packet reply = bus->DoHandshake( &nt, 0, false );
@@ -289,6 +295,10 @@ std::shared_ptr< meters::Meter > Protocol::DetectM4( std::shared_ptr< M4::M4Prot
         return nullptr;
     }
 
+#if defined( LOGIKA_USE_LOGIKA4L )
+    std::shared_ptr< meters::Meter > spt942 = nullptr;
+    meterStorage->GetItem( LOCALIZED( "SPT942" ), spt942 );
+
     if ( meter == spt942 )
     {
         std::shared_ptr< meters::Logika4L > meter4l = std::dynamic_pointer_cast< meters::Logika4L >( meter );
@@ -304,11 +314,14 @@ std::shared_ptr< meters::Meter > Protocol::DetectM4( std::shared_ptr< M4::M4Prot
             model = LocString( static_cast< LocChar >( modelBytes.at( 0 ) ), 1 );
         }
     }
+#endif // defined( LOGIKA_USE_LOGIKA4L )
     
     return meter;
 } // DetectM4
+#endif // defined( LOGIKA_USE_PROTOCOL_M4 )
     
 
+#if defined( LOGIKA_USE_PROTOCOL_X6 )
 std::shared_ptr< meters::Meter > Protocol::DetectX6( std::shared_ptr< X6::SPBusProtocol > bus,
     const storage::StorageKeeper& sKeeper, ByteVector& dump, LocString& model )
 {
@@ -318,6 +331,7 @@ std::shared_ptr< meters::Meter > Protocol::DetectX6( std::shared_ptr< X6::SPBusP
     (void) model;
     throw std::runtime_error{ "Not implemented" };
 } // DetectX6
+#endif // defined( LOGIKA_USE_PROTOCOL_X6 )
 
 
 std::shared_ptr< meters::Meter > Protocol::AutodectSpt( std::shared_ptr< connections::IConnection > connection,
@@ -340,10 +354,14 @@ std::shared_ptr< meters::Meter > Protocol::AutodectSpt( std::shared_ptr< connect
     std::shared_ptr< meters::Meter > meter = nullptr;
     model = LOCALIZED( "" );
 
+#if defined( LOGIKA_USE_PROTOCOL_M4 )
     std::shared_ptr< M4::M4Protocol > bus4 = std::make_shared< M4::M4Protocol >( sKeeper );
     bus4->SetConnection( connection );
+#endif // #if defined( LOGIKA_USE_PROTOCOL_M4 )
+#if defined( LOGIKA_USE_PROTOCOL_X6 )
     std::shared_ptr< X6::SPBusProtocol > bus6 = std::make_shared< X6::SPBusProtocol >( sKeeper, true );
     bus6->SetConnection( connection );
+#endif // defined( LOGIKA_USE_PROTOCOL_X6 )
 
     constexpr std::array< connections::BaudRate::Type, 7 > baudRatesAvailable{
           connections::BaudRate::Rate2400, connections::BaudRate::Rate57600
@@ -384,6 +402,7 @@ std::shared_ptr< meters::Meter > Protocol::AutodectSpt( std::shared_ptr< connect
                     << ToLocString( connections::BaudRateToString( br ) ) );
             }
 
+#if defined( LOGIKA_USE_PROTOCOL_M4 )
             if ( tryM4 )
             {
                 try
@@ -395,7 +414,9 @@ std::shared_ptr< meters::Meter > Protocol::AutodectSpt( std::shared_ptr< connect
                 catch ( ... )
                 {}
             }
+#endif // defined( LOGIKA_USE_PROTOCOL_M4 )
 
+#if defined( LOGIKA_USE_PROTOCOL_X6 )
             if ( trySpBus )
             {
                 try
@@ -407,12 +428,15 @@ std::shared_ptr< meters::Meter > Protocol::AutodectSpt( std::shared_ptr< connect
                 catch ( ... )
                 {}
             }
+#endif // defined( LOGIKA_USE_PROTOCOL_X6 )
         }
 
+#if defined( LOGIKA_USE_PROTOCOL_X6 )
         if ( tryMek && trySpBus && canChangeBaudRate )
         {
             /// @note not implemented
         }
+#endif // defined( LOGIKA_USE_PROTOCOL_X6 )
     }
     catch ( ... )
     {}

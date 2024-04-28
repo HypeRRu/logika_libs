@@ -6,7 +6,7 @@
 #ifndef LOGIKA_METERS_LOGIKA4_4M_LOGIKA4M_H
 #define LOGIKA_METERS_LOGIKA4_4M_LOGIKA4M_H
 
-#include <logika/meters/defs.h>
+#include <logika/meters/logika4/4m/defs.h>
 #include <logika/meters/logika4/logika4.h>
 #include <logika/meters/logika4/4m/ads_tag_block.h>
 
@@ -63,7 +63,7 @@ enum : Type
 
 
 /// @brief Класс прибора Logika4M
-class LOGIKA_METERS_EXPORT Logika4M: public Logika4
+class LOGIKA_METERS_4M_EXPORT Logika4M: public Logika4
 {
 public:
     using Tag4MRecordType = std::pair< TagId4M::Type, std::shared_ptr< logika::Any > >;

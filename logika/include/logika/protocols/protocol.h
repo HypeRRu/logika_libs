@@ -27,15 +27,19 @@ namespace logika
 namespace protocols
 {
 
+#if defined( LOGIKA_USE_PROTOCOL_M4 )
 namespace M4
 {
 class LOGIKA_PROTOCOLS_EXPORT M4Protocol;
 } // namespace M4
+#endif // defined( LOGIKA_USE_PROTOCOL_M4 )
 
+#if defined( LOGIKA_USE_PROTOCOL_X6 )
 namespace X6
 {
 class LOGIKA_PROTOCOLS_EXPORT SPBusProtocol;
 } // namespace X6
+#endif // defined( LOGIKA_USE_PROTOCOL_X6 )
 
 /// @brief Базовый класс для работы с протоколами
 class LOGIKA_PROTOCOLS_EXPORT Protocol: public IProtocol
@@ -115,6 +119,8 @@ public:
         const ByteType* srcNt, const ByteType* dstNt ) override;
 
 public:
+
+#if defined( LOGIKA_USE_PROTOCOL_M4 )
     /// @brief Определение модели прибора на шине M4
     /// @param[in] bus Шина
     /// @param[in] sKeeper Хранилище приложения
@@ -123,7 +129,9 @@ public:
     /// @return Модель прибора. nullptr, если не распознан
     static std::shared_ptr< meters::Meter > DetectM4( std::shared_ptr< M4::M4Protocol > bus,
         const storage::StorageKeeper& sKeeper, ByteVector& dump, LocString& model );
-    
+#endif // defined( LOGIKA_USE_PROTOCOL_M4 )
+
+#if defined( LOGIKA_USE_PROTOCOL_X6 )
     /// @brief Определение модели прибора на шине SPBus
     /// @param[in] bus Шина
     /// @param[in] sKeeper Хранилище приложения
@@ -132,6 +140,7 @@ public:
     /// @return Модель прибора. nullptr, если не распознан
     static std::shared_ptr< meters::Meter > DetectX6( std::shared_ptr< X6::SPBusProtocol > bus,
         const storage::StorageKeeper& sKeeper, ByteVector& dump, LocString& model );
+#endif // defined( LOGIKA_USE_PROTOCOL_X6 )
 
     /// @brief Определение модели прибора
     /// @param[in] connection Соединение с прибором

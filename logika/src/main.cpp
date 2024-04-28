@@ -5,36 +5,47 @@
 #include <logika/log/defines.h>
 
 #include <logika/meters/types.h>
-#include <logika/protocols/m4/packet.h>
 
 #include <logika/common/any.hpp>
 #include <logika/meters/archive_field_def.h>
 
-#include <logika/resources/loader.hpp>
-#include <logika/resources/l4_archive_fields.pb.h>
-
 #include <logika/storage/storage.hpp>
-#include <logika/meters/converters/archive_type_converter.h>
-#include <logika/meters/converters/device_converter.h>
-#include <logika/meters/converters/channel_converter.h>
-#include <logika/meters/converters/m4_tag_converter.h>
-#include <logika/meters/converters/m4_archive_converter.h>
-#include <logika/meters/converters/m4_archive_field_converter.h>
-#include <logika/meters/converters/l4_tag_converter.h>
-#include <logika/meters/converters/l4_archive_converter.h>
-#include <logika/meters/converters/l4_archive_field_converter.h>
+#include <logika/resources/loader.hpp>
+
+#if defined( LOGIKA_USE_RESOURCE_CONVERTERS )
+#   include <logika/meters/converters/archive_type_converter.h>
+#   include <logika/meters/converters/device_converter.h>
+#   include <logika/meters/converters/channel_converter.h>
+#   if defined( LOGIKA_USE_METERS4M )
+#       include <logika/meters/converters/m4_tag_converter.h>
+#       include <logika/meters/converters/m4_archive_converter.h>
+#       include <logika/meters/converters/m4_archive_field_converter.h>
+#   endif // defined( LOGIKA_USE_METERS4M )
+#   if defined( LOGIKA_USE_METERS4L )
+#       include <logika/meters/converters/l4_tag_converter.h>
+#       include <logika/meters/converters/l4_archive_converter.h>
+#       include <logika/meters/converters/l4_archive_field_converter.h>
+#   endif // defined( LOGIKA_USE_METERS4L )
+#endif // defined( LOGIKA_USE_RESOURCE_CONVERTERS )
+
+#if defined( LOGIKA_USE_METERS4L )
+#   include <logika/meters/logika4/4l/logika4l.h>
+#endif // defined( LOGIKA_USE_METERS4L )
 
 #include <logika/meters/data_table.hpp>
 #include <logika/meters/interval_archive.h>
 
 #include <logika/meters/meter.h>
-#include <logika/meters/logika4/4l/logika4l.h>
 #include <logika/meters/data_tag.h>
 
 #include <logika/meters/service_archive.h>
 #include <logika/meters/interval_archive.h>
-#include <logika/protocols/m4/m4protocol.h>
-#include <logika/protocols/m4/tag_write_data.h>
+
+#if defined( LOGIKA_USE_PROTOCOL_M4 )
+#   include <logika/protocols/m4/m4protocol.h>
+#   include <logika/protocols/m4/tag_write_data.h>
+#   include <logika/protocols/m4/packet.h>
+#endif // defined( LOGIKA_USE_PROTOCOL_M4 )
 
 #include <logika/common/misc.h>
 
@@ -130,12 +141,6 @@ int main()
     auto atStorage = sKeeper.GetStorage< logika::LocString, logika::meters::ArchiveType >();
     auto mStorage = sKeeper.GetStorage< logika::LocString, logika::meters::Meter >();
 
-    // auto cdKeys = cdStorage->GetKeys();
-    // for ( auto key: cdKeys )
-    // {
-    //     LOG_WRITE( LOG_INFO, LOCALIZED( "ChannelDef key '" ) << key << LOCALIZED( "'" ) );
-    // }
-
     auto mKeys = mStorage->GetKeys();
     for ( auto key: mKeys )
     {
@@ -207,26 +212,9 @@ int main()
             LOG_WRITE( LOG_INFO, LOCALIZED( "DataTable column '" ) << field->GetName() << LOCALIZED( "'" ) );
         }
     }
+#endif // if 1
 
-    auto meter = logika::meters::Meter::Create< logika::meters::Logika4L >(
-        logika::meters::MeasureKind::Undefined,
-        LOCALIZED( "DEV0" ),
-        LOCALIZED( "Some device" ),
-        1,
-        1,
-        logika::meters::BusProtocolType::RSBus
-    );
-    if ( !meter )
-    {
-        LOG_WRITE( LOG_INFO, LOCALIZED( "Unable to create Logika4L" ) );
-    }
-    else
-    {
-        LOG_WRITE( LOG_INFO, LOCALIZED( "Logika4L created" ) );
-        LOG_WRITE( LOG_INFO, meter->GetCaption() << LOCALIZED( "(" ) << meter->GetDescription() << LOCALIZED( ")" ) );
-    }
-#endif // if 0
-    
+#if defined( LOGIKA_USE_PROTOCOL_M4 )
     const std::string ipAddress{ "91.209.59.238" };
     const uint16_t addressPort = 8002;
     std::shared_ptr< logika::protocols::M4::M4Protocol > bus4
@@ -321,6 +309,7 @@ int main()
                 LOG_WRITE( LOG_ERROR, LOCALIZED( "Exception: " ) << logika::ToLocString( e.what() ) );
             }
         }
+#if defined( LOGIKA_USE_METERS4L )
         if ( detectedMeter )
         {
             try
@@ -339,6 +328,7 @@ int main()
                 LOG_WRITE( LOG_ERROR, LOCALIZED( "Exception: " ) << logika::ToLocString( e.what() ) );
             }
         }
+#endif // defined( LOGIKA_USE_METERS4L )
         // if ( detectedMeter )
         // {
         //     try
@@ -490,6 +480,7 @@ int main()
         //     }
         // }
 
+#if defined( LOGIKA_USE_METERS4M )
         if ( detectedMeter )
         {
             try
@@ -597,11 +588,13 @@ int main()
                 LOG_WRITE( LOG_ERROR, LOCALIZED( "Exception: " ) << logika::ToLocString( e.what() ) );
             }
         }
+#endif // defined( LOGIKA_USE_METERS4M )
     }
     // catch( const std::exception& e )
     // {
     //     LOG_WRITE( LOG_WARNING, LOCALIZED( "An error occured: " ) << logika::ToLocString( e.what() ) );
     // }
+#endif // defined( LOGIKA_USE_PROTOCOL_M4 )
 
 #if defined( _WIN32 ) || defined( _WIN64 )
     WSACleanup();
@@ -610,6 +603,7 @@ int main()
 }
 
 
+#if defined( LOGIKA_USE_RESOURCE_CONVERTERS )
 void LoadResources( const std::string& pathTo, logika::storage::StorageKeeper& sKeeper, bool silent )
 {
     sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveType >();
@@ -723,52 +717,7 @@ void LoadResources( const std::string& pathTo, logika::storage::StorageKeeper& s
         }
     }
 
-    sKeeper.CreateStorage< logika::LocString, logika::meters::TagDef4M >();
-    auto m4tStorage = sKeeper.GetStorage< logika::LocString, logika::meters::TagDef4M >();
-    {
-        logika::resources::Loader< logika::resources::M4TagList > loader;
-        auto resource = loader.Load( pathTo + "/M4Tags.dat" );
-        if ( resource )
-        {
-            auto m4tags = logika::meters::converters::M4TagConverter::Convert( *resource, mStorage, cdStorage );
-            if ( !silent )
-            {
-                LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << m4tags.size() << LOCALIZED( " M4Tags instances" ) );
-            }
-            for ( auto tag: m4tags )
-            {
-                if ( tag )
-                {
-                    if ( !tag->GetMeter() )
-                    {
-                        LOG_WRITE( LOG_ERROR, LOCALIZED( "No meter instance found for " ) << tag->GetName() );
-                    }
-                    else
-                    {
-                        logika::LocString label = tag->GetMeter()->GetCaption() + LOCALIZED( "." ) + tag->GetName();
-                        bool res = m4tStorage->AddItem( label, tag );
-                        if ( !silent )
-                        {
-                            LOG_WRITE( LOG_INFO, LOCALIZED( "Add M4Tag '" )
-                                << label << LOCALIZED( "' to storage: " )
-                                << ( res ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
-                        }
-                        std::shared_ptr< logika::meters::TagDef4M > item;
-                        m4tStorage->GetItem( label, item );
-                    }
-                }
-                else
-                {
-                    LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to convert M4Tag" ) );
-                }
-            }
-        }
-        else
-        {
-            LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to load M4Tags" ) );
-        }
-    }
-
+#if defined( LOGIKA_USE_LOGIKA4L )
     sKeeper.CreateStorage< logika::LocString, logika::meters::TagDef4L >();
     auto l4tStorage = sKeeper.GetStorage< logika::LocString, logika::meters::TagDef4L >();
     {
@@ -815,52 +764,6 @@ void LoadResources( const std::string& pathTo, logika::storage::StorageKeeper& s
         }
     }
 
-    sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveDef4M >();
-    auto m4aStorage = sKeeper.GetStorage< logika::LocString, logika::meters::ArchiveDef4M >();
-    {
-        logika::resources::Loader< logika::resources::M4ArchiveList > loader;
-        auto resource = loader.Load( pathTo + "/M4Archives.dat" );
-        if ( resource )
-        {
-            auto m4archives = logika::meters::converters::M4ArchiveConverter::Convert( *resource, mStorage, cdStorage, atStorage );
-            if ( !silent )
-            {
-                LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << m4archives.size() << LOCALIZED( " M4Archive instances" ) );
-            }
-            for ( auto archive: m4archives )
-            {
-                if ( archive )
-                {
-                    if ( !archive->GetMeter() )
-                    {
-                        LOG_WRITE( LOG_ERROR, LOCALIZED( "No meter instance found for " ) << archive->GetName() );
-                    }
-                    else
-                    {
-                        logika::LocString label = archive->GetMeter()->GetCaption() + LOCALIZED( "." ) + archive->GetArchiveType()->GetName();
-                        bool res = m4aStorage->AddItem( label, archive );
-                        if ( !silent )
-                        {
-                            LOG_WRITE( LOG_INFO, LOCALIZED( "Add M4Archive '" )
-                                << label << LOCALIZED( "' to storage: " )
-                                << ( res ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
-                        }
-                        std::shared_ptr< logika::meters::ArchiveDef4M > item;
-                        m4aStorage->GetItem( label, item );
-                    }
-                }
-                else
-                {
-                    LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to convert M4Archive" ) );
-                }
-            }
-        }
-        else
-        {
-            LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to load M4Archives" ) );
-        }
-    }
-
     sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveDef4L >();
     auto l4aStorage = sKeeper.GetStorage< logika::LocString, logika::meters::ArchiveDef4L >();
     {
@@ -904,55 +807,6 @@ void LoadResources( const std::string& pathTo, logika::storage::StorageKeeper& s
         else
         {
             LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to load L4Archives" ) );
-        }
-    }
-
-    sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveFieldDef4M >();
-    auto m4afStorage = sKeeper.GetStorage< logika::LocString, logika::meters::ArchiveFieldDef4M >();
-    {
-        logika::resources::Loader< logika::resources::M4ArchiveFieldList > loader;
-        auto resource = loader.Load( pathTo + "/M4ArchiveFields.dat" );
-        if ( resource )
-        {
-            auto m4afs = logika::meters::converters::M4ArchiveFieldConverter::Convert(
-                *resource, mStorage, m4aStorage, atStorage );
-            if ( !silent )
-            {
-                LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << m4afs.size() << LOCALIZED( " M4ArchiveField instances" ) );
-            }
-            for ( auto field: m4afs )
-            {
-                if ( field )
-                {
-                    if ( !field->GetMeter() )
-                    {
-                        LOG_WRITE( LOG_ERROR, LOCALIZED( "No meter instance found for " ) << field->GetName() );
-                    }
-                    else
-                    {
-                        logika::LocString label = field->GetMeter()->GetCaption()
-                            + LOCALIZED( "." ) + field->GetArchiveType()->GetName()
-                            + LOCALIZED( "." ) + field->GetName();
-                        bool res = m4afStorage->AddItem( label, field );
-                        if ( !silent )
-                        {
-                            LOG_WRITE( LOG_INFO, LOCALIZED( "Add M4ArchiveField '" )
-                                << label << LOCALIZED( "' to storage: " )
-                                << ( res ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
-                        }
-                        std::shared_ptr< logika::meters::ArchiveFieldDef4M > item;
-                        m4afStorage->GetItem( label, item );
-                    }
-                }
-                else
-                {
-                    LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to convert M4ArchiveField" ) );
-                }
-            }
-        }
-        else
-        {
-            LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to load M4ArchiveFields" ) );
         }
     }
 
@@ -1004,4 +858,168 @@ void LoadResources( const std::string& pathTo, logika::storage::StorageKeeper& s
             LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to load L4ArchiveFields" ) );
         }
     }
+#endif // defined( LOGIKA_USE_LOGIKA4L )
+
+#if defined( LOGIKA_USE_LOGIKA4M )
+    sKeeper.CreateStorage< logika::LocString, logika::meters::TagDef4M >();
+    auto m4tStorage = sKeeper.GetStorage< logika::LocString, logika::meters::TagDef4M >();
+    {
+        logika::resources::Loader< logika::resources::M4TagList > loader;
+        auto resource = loader.Load( pathTo + "/M4Tags.dat" );
+        if ( resource )
+        {
+            auto m4tags = logika::meters::converters::M4TagConverter::Convert( *resource, mStorage, cdStorage );
+            if ( !silent )
+            {
+                LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << m4tags.size() << LOCALIZED( " M4Tags instances" ) );
+            }
+            for ( auto tag: m4tags )
+            {
+                if ( tag )
+                {
+                    if ( !tag->GetMeter() )
+                    {
+                        LOG_WRITE( LOG_ERROR, LOCALIZED( "No meter instance found for " ) << tag->GetName() );
+                    }
+                    else
+                    {
+                        logika::LocString label = tag->GetMeter()->GetCaption() + LOCALIZED( "." ) + tag->GetName();
+                        bool res = m4tStorage->AddItem( label, tag );
+                        if ( !silent )
+                        {
+                            LOG_WRITE( LOG_INFO, LOCALIZED( "Add M4Tag '" )
+                                << label << LOCALIZED( "' to storage: " )
+                                << ( res ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
+                        }
+                        std::shared_ptr< logika::meters::TagDef4M > item;
+                        m4tStorage->GetItem( label, item );
+                    }
+                }
+                else
+                {
+                    LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to convert M4Tag" ) );
+                }
+            }
+        }
+        else
+        {
+            LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to load M4Tags" ) );
+        }
+    }
+
+    sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveDef4M >();
+    auto m4aStorage = sKeeper.GetStorage< logika::LocString, logika::meters::ArchiveDef4M >();
+    {
+        logika::resources::Loader< logika::resources::M4ArchiveList > loader;
+        auto resource = loader.Load( pathTo + "/M4Archives.dat" );
+        if ( resource )
+        {
+            auto m4archives = logika::meters::converters::M4ArchiveConverter::Convert( *resource, mStorage, cdStorage, atStorage );
+            if ( !silent )
+            {
+                LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << m4archives.size() << LOCALIZED( " M4Archive instances" ) );
+            }
+            for ( auto archive: m4archives )
+            {
+                if ( archive )
+                {
+                    if ( !archive->GetMeter() )
+                    {
+                        LOG_WRITE( LOG_ERROR, LOCALIZED( "No meter instance found for " ) << archive->GetName() );
+                    }
+                    else
+                    {
+                        logika::LocString label = archive->GetMeter()->GetCaption() + LOCALIZED( "." ) + archive->GetArchiveType()->GetName();
+                        bool res = m4aStorage->AddItem( label, archive );
+                        if ( !silent )
+                        {
+                            LOG_WRITE( LOG_INFO, LOCALIZED( "Add M4Archive '" )
+                                << label << LOCALIZED( "' to storage: " )
+                                << ( res ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
+                        }
+                        std::shared_ptr< logika::meters::ArchiveDef4M > item;
+                        m4aStorage->GetItem( label, item );
+                    }
+                }
+                else
+                {
+                    LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to convert M4Archive" ) );
+                }
+            }
+        }
+        else
+        {
+            LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to load M4Archives" ) );
+        }
+    }
+
+    sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveFieldDef4M >();
+    auto m4afStorage = sKeeper.GetStorage< logika::LocString, logika::meters::ArchiveFieldDef4M >();
+    {
+        logika::resources::Loader< logika::resources::M4ArchiveFieldList > loader;
+        auto resource = loader.Load( pathTo + "/M4ArchiveFields.dat" );
+        if ( resource )
+        {
+            auto m4afs = logika::meters::converters::M4ArchiveFieldConverter::Convert(
+                *resource, mStorage, m4aStorage, atStorage );
+            if ( !silent )
+            {
+                LOG_WRITE( LOG_INFO, LOCALIZED( "Converted " ) << m4afs.size() << LOCALIZED( " M4ArchiveField instances" ) );
+            }
+            for ( auto field: m4afs )
+            {
+                if ( field )
+                {
+                    if ( !field->GetMeter() )
+                    {
+                        LOG_WRITE( LOG_ERROR, LOCALIZED( "No meter instance found for " ) << field->GetName() );
+                    }
+                    else
+                    {
+                        logika::LocString label = field->GetMeter()->GetCaption()
+                            + LOCALIZED( "." ) + field->GetArchiveType()->GetName()
+                            + LOCALIZED( "." ) + field->GetName();
+                        bool res = m4afStorage->AddItem( label, field );
+                        if ( !silent )
+                        {
+                            LOG_WRITE( LOG_INFO, LOCALIZED( "Add M4ArchiveField '" )
+                                << label << LOCALIZED( "' to storage: " )
+                                << ( res ? LOCALIZED( "Success" ) : LOCALIZED( "Failed" ) ) );
+                        }
+                        std::shared_ptr< logika::meters::ArchiveFieldDef4M > item;
+                        m4afStorage->GetItem( label, item );
+                    }
+                }
+                else
+                {
+                    LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to convert M4ArchiveField" ) );
+                }
+            }
+        }
+        else
+        {
+            LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to load M4ArchiveFields" ) );
+        }
+    }
+#endif // defined( LOGIKA_USE_LOGIKA4M )
 } // LoadResources
+#else // !defined( LOGIKA_USE_PROTOCOL_M4 )
+void LoadResources( const std::string& pathTo, logika::storage::StorageKeeper& sKeeper, bool silent )
+{
+    (void) pathTo;
+    (void) silent;
+    sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveType >();
+    sKeeper.CreateStorage< logika::LocString, logika::meters::Meter >();
+    sKeeper.CreateStorage< logika::LocString, logika::meters::ChannelDef >();
+#if defined( LOGIKA_USE_LOGIKA4L )
+    sKeeper.CreateStorage< logika::LocString, logika::meters::TagDef4L >();
+    sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveDef4L >();
+    sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveFieldDef4L >();
+#endif // defined( LOGIKA_USE_LOGIKA4L )
+#if defined( LOGIKA_USE_LOGIKA4M )
+    sKeeper.CreateStorage< logika::LocString, logika::meters::TagDef4M >();
+    sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveDef4M >();
+    sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveFieldDef4M >();
+#endif // defined( LOGIKA_USE_LOGIKA4M )
+}
+#endif // defined( LOGIKA_USE_PROTOCOL_M4 )

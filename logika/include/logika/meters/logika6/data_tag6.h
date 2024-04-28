@@ -6,7 +6,7 @@
 #ifndef LOGIKA_METERS_LOGIKA6_DATA_TAG6_H
 #define LOGIKA_METERS_LOGIKA6_DATA_TAG6_H
 
-#include <logika/meters/defs.h>
+#include <logika/meters/logika6/defs.h>
 #include <logika/meters/logika6/data_tag_def6.h>
 #include <logika/meters/tag.h>
 #include <logika/meters/data_tag.h>
@@ -22,7 +22,7 @@ namespace meters
 {
 
 /// @brief Контейнер тэгов с данными Logika6
-class LOGIKA_METERS_EXPORT DataTag6Container: public Tag
+class LOGIKA_METERS_6_EXPORT DataTag6Container: public Tag
 {
 public:
     /// @brief Конструктор контейнера тэгов

@@ -6,7 +6,7 @@
 #ifndef LOGIKA_METERS_LOGIKA4_4L_LOGIKA4L_H
 #define LOGIKA_METERS_LOGIKA4_4L_LOGIKA4L_H
 
-#include <logika/meters/defs.h>
+#include <logika/meters/logika4/4l/defs.h>
 #include <logika/meters/logika4/logika4.h>
 
 #include <logika/meters/logika4/4l/types.h>
@@ -21,7 +21,7 @@ namespace meters
 {
 
 /// @brief Класс прибора Logika4L
-class LOGIKA_METERS_EXPORT Logika4L: public Logika4
+class LOGIKA_METERS_4L_EXPORT Logika4L: public Logika4
 {
 public:
     /// @details Конструктор прибора Logika4L

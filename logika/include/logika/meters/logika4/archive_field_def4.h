@@ -6,7 +6,7 @@
 #ifndef LOGIKA_METERS_LOGIKA4_ARCHIVE_FIELD_DEF4_H
 #define LOGIKA_METERS_LOGIKA4_ARCHIVE_FIELD_DEF4_H
 
-#include <logika/meters/defs.h>
+#include <logika/meters/logika4/defs.h>
 #include <logika/meters/archive_field_def.h>
 #include <logika/meters/archive_def.h>
 
@@ -17,7 +17,7 @@ namespace meters
 {
 
 /// @brief Параметры описания поля архива Logika4
-struct LOGIKA_METERS_EXPORT ArchiveFieldDef4Settings: public ArchiveFieldDefSettings
+struct LOGIKA_METERS_4_EXPORT ArchiveFieldDef4Settings: public ArchiveFieldDefSettings
 {
 public:
     std::shared_ptr< ArchiveDef > archive = nullptr;    ///< Описание архива
@@ -27,7 +27,7 @@ public:
 
 
 /// @brief Описание поля архива Logika4
-class LOGIKA_METERS_EXPORT ArchiveFieldDef4: public ArchiveFieldDef
+class LOGIKA_METERS_4_EXPORT ArchiveFieldDef4: public ArchiveFieldDef
 {
 public:
     /// @brief Конструктор описания поля архива Logika4

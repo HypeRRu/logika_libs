@@ -6,7 +6,7 @@
 #ifndef LOGIKA_METERS_LOGIKA6_DATA_TAG_DEF6_H
 #define LOGIKA_METERS_LOGIKA6_DATA_TAG_DEF6_H
 
-#include <logika/meters/defs.h>
+#include <logika/meters/logika6/defs.h>
 #include <logika/meters/data_tag_def.h>
 
 #include <logika/common/shared_constructible.hpp>
@@ -27,7 +27,7 @@ enum class Tag6NodeType
 
 
 /// @brief Параметры для создания тэга Logika6
-struct LOGIKA_METERS_EXPORT DataTagDef6Settings: public DataTagDefSettings
+struct LOGIKA_METERS_6_EXPORT DataTagDef6Settings: public DataTagDefSettings
 {
 public:
     Tag6NodeType nodeType = Tag6NodeType::Tag;  ///< Тип элемента
@@ -38,7 +38,7 @@ public:
 
 
 /// @brief Тэг с данными Logika6
-class LOGIKA_METERS_EXPORT DataTagDef6: public DataTagDef, public SharedConstructible< DataTagDef6 >
+class LOGIKA_METERS_6_EXPORT DataTagDef6: public DataTagDef, public SharedConstructible< DataTagDef6 >
 {
 public:
     /// @brief Конструктор тэга с данными Logika6

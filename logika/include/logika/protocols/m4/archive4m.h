@@ -10,6 +10,7 @@
 
 #include <logika/common/types.h>
 #include <logika/meters/defs.h>
+#include <logika/meters/logika4/4m/defs.h>
 
 /// @cond
 #include <vector>
@@ -22,8 +23,8 @@ namespace logika
 namespace meters
 {
 
-class LOGIKA_METERS_EXPORT ArchiveDef4M;
-class LOGIKA_METERS_EXPORT ArchiveFieldDef4M;
+class LOGIKA_METERS_4M_EXPORT ArchiveDef4M;
+class LOGIKA_METERS_4M_EXPORT ArchiveFieldDef4M;
 
 } // namespace meters
 

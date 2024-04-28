@@ -4,6 +4,7 @@
 #include <logika/protocols/m4/packet.h>
 
 #include <logika/protocols/m4/m4protocol.h>
+#include <logika/meters/logika4/logika4.h>
 
 namespace logika
 {

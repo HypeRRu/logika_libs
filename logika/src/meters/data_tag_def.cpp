@@ -112,6 +112,12 @@ const std::vector< std::shared_ptr< DataTagDef > >& DataTagDefVault::All() const
 } // All() const
 
 
+void DataTagDefVault::Clear()
+{
+    dataTags_.clear();
+} // Clear
+
+
 LocString DataTagDefVault::CreateKey( const LocString& channelPrefix, const LocString& name )
 {
     return channelPrefix + LOCALIZED( "." ) + name;

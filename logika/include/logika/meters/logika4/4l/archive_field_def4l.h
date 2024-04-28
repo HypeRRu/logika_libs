@@ -6,7 +6,7 @@
 #ifndef LOGIKA_METERS_LOGIKA4_4L_ARCHIVE_FIELD_DEF4L_H
 #define LOGIKA_METERS_LOGIKA4_4L_ARCHIVE_FIELD_DEF4L_H
 
-#include <logika/meters/defs.h>
+#include <logika/meters/logika4/4l/defs.h>
 #include <logika/meters/logika4/archive_field_def4.h>
 #include <logika/meters/logika4/4l/types.h>
 
@@ -19,7 +19,7 @@ namespace meters
 {
 
 /// @brief Параметры описания поля архива Logika4L
-struct LOGIKA_METERS_EXPORT ArchiveFieldDef4LSettings: public ArchiveFieldDef4Settings
+struct LOGIKA_METERS_4L_EXPORT ArchiveFieldDef4LSettings: public ArchiveFieldDef4Settings
 {
 public:
     BinaryType4L::Type binType   = BinaryType4L::Undefined; ///< Бинарный тип поля
@@ -29,7 +29,7 @@ public:
 
 
 /// @brief Описание поля архива Logika4L
-class LOGIKA_METERS_EXPORT ArchiveFieldDef4L: public ArchiveFieldDef4, public SharedConstructible< ArchiveFieldDef4L >
+class LOGIKA_METERS_4L_EXPORT ArchiveFieldDef4L: public ArchiveFieldDef4, public SharedConstructible< ArchiveFieldDef4L >
 {
 public:
     /// @brief Конструктор описания поля архива Logika4L

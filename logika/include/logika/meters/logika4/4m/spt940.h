@@ -6,7 +6,7 @@
 #ifndef LOGIKA_METERS_LOGIKA4_4M_SPT940_H
 #define LOGIKA_METERS_LOGIKA4_4M_SPT940_H
 
-#include <logika/meters/defs.h>
+#include <logika/meters/logika4/4m/defs.h>
 #include <logika/meters/logika4/4m/logika4m.h>
 
 
@@ -17,7 +17,7 @@ namespace meters
 {
 
 /// @brief Класс прибора SPT940
-class LOGIKA_METERS_EXPORT Spt940: public Logika4M
+class LOGIKA_METERS_4M_EXPORT Spt940: public Logika4M
 {
 public:
     /// @details Конструктор прибора Spt940

@@ -108,6 +108,9 @@ public:
     /// @return Список описаний тэгов
     const std::vector< std::shared_ptr< DataTagDef > >& All() const;
 
+    /// @brief Очистка спписка описаний тэгов
+    void Clear();
+
 private:
     /// @brief Формирование ключа таблицы
     /// @param[in] channelPrefix Префикс канала

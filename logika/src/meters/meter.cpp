@@ -61,6 +61,8 @@ bool Meter::operator !=( const Meter& other ) const
 
 void Meter::Init( const storage::StorageKeeper& sKeeper )
 {
+    channels_.clear();
+
     auto channelsStorage = sKeeper.GetStorage< LocString, ChannelDef >();
 
     if ( channelsStorage && !tagsVault_ )

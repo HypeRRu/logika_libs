@@ -5,6 +5,7 @@
 
 #include <logika/protocols/m4/flash_ring_buffer.h>
 #include <logika/meters/types.h>
+#include <logika/meters/logika4/logika4.h>
 #include <logika/meters/logika4/4l/logika4l.h>
 #include <logika/meters/logika4/4l/archive_def4l.h>
 #include <logika/meters/logika4/4l/archive_field_def4l.h>

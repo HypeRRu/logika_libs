@@ -58,6 +58,15 @@ Logika4M::Logika4M(
 
 void Logika4M::Init( const storage::StorageKeeper& sKeeper )
 {
+    Logika4::Init( sKeeper );
+
+    if ( tagsVault_ )
+    {
+        tagsVault_->Clear();
+    }
+    archives_.clear();
+    archiveFields_.clear();
+
     auto tagsStorage            = sKeeper.GetStorage< LocString, TagDef4M >();
     auto archiveStorage         = sKeeper.GetStorage< LocString, ArchiveDef4M >();
     auto archiveFieldStorage    = sKeeper.GetStorage< LocString, ArchiveFieldDef4M >();

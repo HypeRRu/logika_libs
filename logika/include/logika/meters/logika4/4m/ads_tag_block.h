@@ -6,7 +6,7 @@
 #ifndef LOGIKA_METERS_LOGIKA4_4M_ADS_TAG_BLOCK_H
 #define LOGIKA_METERS_LOGIKA4_4M_ADS_TAG_BLOCK_H
 
-#include <logika/meters/defs.h>
+#include <logika/meters/logika4/4m/defs.h>
 
 #include <logika/common/types.h>
 
@@ -18,7 +18,7 @@ namespace meters
 
 
 /// @brief Тэг ADS
-class LOGIKA_METERS_EXPORT AdsTagBlock
+class LOGIKA_METERS_4M_EXPORT AdsTagBlock
 {
 public:
     /// @brief Конструктор тэга ADS

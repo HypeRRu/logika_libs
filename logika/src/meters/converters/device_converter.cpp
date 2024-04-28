@@ -6,12 +6,22 @@
 #include <logika/common/types.h>
 #include <logika/common/misc.h>
 
+#if defined( LOGIKA_USE_METERS_4L )
 #include <logika/meters/logika4/4l/logika4l.h>
 #include <logika/meters/logika4/4l/spg741.h>
 #include <logika/meters/logika4/4l/spt941.h>
 #include <logika/meters/logika4/4l/spt941_10.h>
 #include <logika/meters/logika4/4l/spt942.h>
 #include <logika/meters/logika4/4l/spt943.h>
+#else // !defined( LOGIKA_USE_METERS_4L )
+#define Spg741      Meter
+#define Spt941_10   Meter
+#define Spt941      Meter
+#define Spt942      Meter
+#define Spt943      Meter
+#endif // defined( LOGIKA_USE_METERS_4L )
+
+#if defined( LOGIKA_USE_METERS_4M )
 #include <logika/meters/logika4/4m/logika4m.h>
 #include <logika/meters/logika4/4m/lgk410.h>
 #include <logika/meters/logika4/4m/spg740.h>
@@ -20,6 +30,16 @@
 #include <logika/meters/logika4/4m/spt941_20.h>
 #include <logika/meters/logika4/4m/spt943rev3.h>
 #include <logika/meters/logika4/4m/spt944.h>
+#else // !defined( LOGIKA_USE_METERS_4M )
+#define Lgk410      Meter
+#define Spg740      Meter
+#define Spg742      Meter
+#define Spt940      Meter
+#define Spt941_20   Meter
+#define Spt943rev3  Meter
+#define Spt944      Meter
+#endif // defined( LOGIKA_USE_METERS_4M )
+/// @todo logika6 support
 
 /// @cond
 #include <unordered_map>

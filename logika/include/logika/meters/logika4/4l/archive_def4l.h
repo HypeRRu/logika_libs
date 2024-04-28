@@ -6,7 +6,7 @@
 #ifndef LOGIKA_METERS_LOGIKA4_4L_ARCHIVE_DEF4L_H
 #define LOGIKA_METERS_LOGIKA4_4L_ARCHIVE_DEF4L_H
 
-#include <logika/meters/defs.h>
+#include <logika/meters/logika4/4l/defs.h>
 #include <logika/meters/archive_def.h>
 
 #include <logika/common/shared_constructible.hpp>
@@ -18,7 +18,7 @@ namespace meters
 {
 
 /// @brief Параметры для создания описания архива Logika4L
-struct LOGIKA_METERS_EXPORT ArchiveDef4LSettings: public ArchiveDefSettings
+struct LOGIKA_METERS_4L_EXPORT ArchiveDef4LSettings: public ArchiveDefSettings
 {
 public:
     uint32_t recordSize             = 0;        ///< Размер записи
@@ -34,7 +34,7 @@ public:
 
 
 /// @brief Описание архива Logika4L
-class LOGIKA_METERS_EXPORT ArchiveDef4L: public ArchiveDef, public SharedConstructible< ArchiveDef4L >
+class LOGIKA_METERS_4L_EXPORT ArchiveDef4L: public ArchiveDef, public SharedConstructible< ArchiveDef4L >
 {
 public:
     /// @brief Конструктор описания архива Logika4L

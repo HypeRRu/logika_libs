@@ -9,13 +9,20 @@
 #include <logika/protocols/comm_exception.h>
 #include <logika/protocols/m4/opcodes.h>
 #include <logika/protocols/m4/tag_write_data.h>
-#include <logika/protocols/m4/archive4m.h>
 #include <logika/connections/iconnection.h>
 #include <logika/connections/utils/types_converter.h>
 #include <logika/connections/serial/serial_connection.h>
 #include <logika/meters/logika4/logika4.h>
-#include <logika/meters/logika4/4l/logika4l.h>
-#include <logika/meters/logika4/4l/spg741.h>
+
+#if defined( LOGIKA_USE_METERS4M )
+#   include <logika/protocols/m4/archive4m.h>
+#endif // defined( LOGIKA_USE_METERS4M )
+
+#if defined( LOGIKA_USE_METERS4L )
+#   include <logika/meters/logika4/4l/logika4l.h>
+#   include <logika/meters/logika4/4l/spg741.h>
+#endif // defined( LOGIKA_USE_METERS4L )
+
 #include <logika/common/misc.h>
 
 /// @cond
@@ -285,6 +292,7 @@ void M4Protocol::SelectDeviceAndChannel( std::shared_ptr< meters::Logika4 > mete
                 bool updatedSpeed = SetBusSpeed( activeDev_->meter, &nt, suggestedBaudRate_, tv );
                 if ( !updatedSpeed )
                 {
+#if defined( LOGIKA_USE_METERS4M )
                     /// У некоторых M4 приборов (941.20, 944, 742? прочие?) встречается несовместимость,
                     /// не позволяющая нормально работать на максимальной скорости 57600 через АПС71
                     std::shared_ptr< meters::Logika4M > meter4M =
@@ -294,6 +302,7 @@ void M4Protocol::SelectDeviceAndChannel( std::shared_ptr< meters::Logika4 > mete
                         suggestedBaudRate_ = connections::BaudRate::Rate38400;
                         continue;
                     }
+#endif // defined( LOGIKA_USE_METERS4M )
                     /// Также, 942 поддерживает 9600 только на оптическом интерфейсе, на проводном - только 2400
                     suggestedBaudRate_ = connections::BaudRate::NotSupported;
                 }
@@ -333,6 +342,7 @@ void M4Protocol::AppendParamNum( ByteVector& buffer, ByteType channel, uint16_t 
 } // AppendParamNum
 
 
+#if defined( LOGIKA_USE_METERS4M )
 std::vector< meters::Logika4M::Tag4MRecordType > M4Protocol::ParseM4TagsPacket( const Packet& packet,
     std::vector< bool >& opFlags )
 {
@@ -375,13 +385,6 @@ std::vector< meters::Logika4M::Tag4MRecordType > M4Protocol::ParseM4TagsPacket( 
     }
     return tags;
 } // ParseM4TagsPacket
-
-
-TimeType M4Protocol::RestrictTime( TimeType date )
-{
-    constexpr TimeType restrictTimestamp = 8993721600000; /// 01-01-2025 00:00:00
-    return date < restrictTimestamp ? date : restrictTimestamp;
-} // RestrictTime
 
 
 std::vector< std::shared_ptr< ArchiveRecord > > M4Protocol::ParseArchivePacket4M(
@@ -498,6 +501,14 @@ std::vector< std::shared_ptr< ArchiveRecord > > M4Protocol::ParseArchivePacket4M
 
     return records;
 } // ParseArchivePacket4M
+#endif // defined( LOGIKA_USE_METERS4M )
+
+
+TimeType M4Protocol::RestrictTime( TimeType date )
+{
+    constexpr TimeType restrictTimestamp = 8993721600000; /// 01-01-2025 00:00:00
+    return date < restrictTimestamp ? date : restrictTimestamp;
+} // RestrictTime
 
 
 Packet M4Protocol::RecvPacket( const ByteType* expectedNt, Opcode::Type* expectedOpcode, const ByteType* expectedId,
@@ -919,6 +930,7 @@ bool M4Protocol::SetBusSpeed( std::shared_ptr< meters::Logika4 > meter, const By
 } // SetBusSpeed
 
 
+#if defined( LOGIKA_USE_METERS4L )
 Rc::Type M4Protocol::WriteParameterL4( std::shared_ptr< meters::Logika4L > meter, const ByteType* nt,
     ByteType channel, uint32_t paramNum, const LocString& value, bool operFlag )
 {
@@ -1109,8 +1121,10 @@ ByteVector M4Protocol::ReadFlashBytesL4( std::shared_ptr< meters::Logika4L > met
     memory.resize( length );
     return memory;
 } // ReadFlashBytesL4
+#endif // defined( LOGIKA_USE_METERS4L )
 
 
+#if defined( LOGIKA_USE_METERS4M )
 std::vector< meters::Logika4M::Tag4MRecordType > M4Protocol::ReadTags4M( std::shared_ptr< meters::Logika4M > meter,
     const ByteType* nt, const std::vector< int32_t >& channels,
     const std::vector< int32_t >& ordinals, std::vector< bool >& opFlags )
@@ -1347,6 +1361,7 @@ Packet M4Protocol::ReadArchive4M( std::shared_ptr< meters::Logika4M > meter, con
 
     return packet;
 } // ReadArchive4M
+#endif // defined( LOGIKA_USE_METERS4M )
 
 
 void M4Protocol::CloseCommSessionImpl( const ByteType* srcNt, const ByteType* dstNt )
@@ -1387,6 +1402,7 @@ void M4Protocol::OnRecoverableError()
 } // OnRecoverableError
 
 
+#if defined( LOGIKA_USE_METERS4L )
 ByteType M4Protocol::GetSpg741Sp( const ByteType* nt )
 {
     const auto mtrStorage = sKeeper_.GetStorage< LocString, meters::Meter >();
@@ -1419,8 +1435,10 @@ ByteType M4Protocol::GetSpg741Sp( const ByteType* nt )
     }
     return static_cast< ByteType >( -1 ) != mtrInstance->sp_ ? mtrInstance->sp_ : 0;
 } // GetSpg741Sp
+#endif // defined( LOGIKA_USE_METERS4L )
 
 
+#if defined( LOGIKA_USE_METERS4M )
 void M4Protocol::AppendDateTag( ByteVector& buffer, TimeType date, bool useMonthYearOnly )
 {
     uint16_t millis = 0;
@@ -1440,6 +1458,7 @@ void M4Protocol::AppendDateTag( ByteVector& buffer, TimeType date, bool useMonth
         buffer.push_back( static_cast< ByteType >( ( millis >> 8 ) & 0xFF ) );
     }
 } // AppendDateTag
+#endif // defined( LOGIKA_USE_METERS4M )
 
 } // namespace M4
 
