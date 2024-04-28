@@ -136,18 +136,16 @@ $(function(){initNavTree('de/d8e/spt941_8h_source.html','../../'); initResizable
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">static</span> std::vector&lt; float &gt; ExpandHourRecord( <span class="keyword">const</span> <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#a69c638914202f69eb544a992e2361a1c">ByteVector</a>&amp; hourRec );</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">virtual</span> <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a> GetModelFromImage( <span class="keyword">const</span> <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#a69c638914202f69eb544a992e2361a1c">ByteVector</a>&amp; flashImage ) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">virtual</span> std::vector&lt; Logika4L::AdsFlashRun &gt; GetAdsFileLayout( <span class="keywordtype">bool</span> all, <span class="keyword">const</span> <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a>&amp; model ) <span class="keyword">const override</span>;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">virtual</span> std::vector&lt; Logika4L::AdsFlashRun &gt; GetAdsFileLayout( <span class="keywordtype">bool</span> all, <span class="keyword">const</span> <a class="code hl_typedef" href="../../d7/d43/namespacelogika.html#afcb9cc5f17bbcec128f49f126f45c081">LocString</a>&amp; model ) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}; <span class="comment">// class Spt941</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}; <span class="comment">// class Spt941</span></div>
 </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>} <span class="comment">// namespace meters</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>} <span class="comment">// namespace logika</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif </span><span class="comment">// LOGIKA_METERS_LOGIKA4_4L_SPT941_H</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>} <span class="comment">// namespace meters</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>} <span class="comment">// namespace logika</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#endif </span><span class="comment">// LOGIKA_METERS_LOGIKA4_4L_SPT941_H</span></div>
 <div class="ttc" id="aclasslogika_1_1meters_1_1Logika4L_html"><div class="ttname"><a href="../../d7/d1b/classlogika_1_1meters_1_1Logika4L.html">logika::meters::Logika4L</a></div><div class="ttdoc">Класс прибора Logika4L.</div><div class="ttdef"><b>Definition</b> logika4l.h:25</div></div>
 <div class="ttc" id="aclasslogika_1_1meters_1_1Spt941_html"><div class="ttname"><a href="../../d4/db6/classlogika_1_1meters_1_1Spt941.html">logika::meters::Spt941</a></div><div class="ttdoc">Класс прибора SPT941.</div><div class="ttdef"><b>Definition</b> spt941.h:20</div></div>
 <div class="ttc" id="acommon_2types_8h_html_a450c34cdc4d85a2a7fa797a85914af92"><div class="ttname"><a href="../../d5/d7b/common_2types_8h.html#a450c34cdc4d85a2a7fa797a85914af92">LOCALIZED</a></div><div class="ttdeci">#define LOCALIZED(x)</div><div class="ttdef"><b>Definition</b> types.h:30</div></div>

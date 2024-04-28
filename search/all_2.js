@@ -18,7 +18,7 @@ var searchData=
   ['channel_5f_15',['channel_',['../d1/d29/classlogika_1_1meters_1_1Tag.html#a251fb4e3b964ef031f891038f6c5ef31',1,'logika::meters::Tag']]],
   ['channel_5fconverter_2ecpp_16',['channel_converter.cpp',['../d4/d42/channel__converter_8cpp.html',1,'']]],
   ['channel_5fconverter_2eh_17',['channel_converter.h',['../d7/d40/channel__converter_8h.html',1,'']]],
-  ['channel_5fnbase_18',['CHANNEL_NBASE',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#ad1c04622dab293c7e52bc61afb32fe69',1,'logika::protocols::M4::M4Protocol']]],
+  ['channel_5fnbase_18',['CHANNEL_NBASE',['../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a7bb6a49d5cdc492728189b32a01c4fc9',1,'logika::protocols::M4::M4Protocol']]],
   ['channelconverter_19',['ChannelConverter',['../d7/de8/classlogika_1_1meters_1_1converters_1_1ChannelConverter.html',1,'logika::meters::converters']]],
   ['channeldef_20',['ChannelDef',['../d3/dce/structlogika_1_1meters_1_1ChannelDef.html',1,'logika::meters::ChannelDef'],['../d3/dce/structlogika_1_1meters_1_1ChannelDef.html#a05f51445f1bd4f147856d1f919a34025',1,'logika::meters::ChannelDef::ChannelDef()'],['../dc/df7/namespacelogika_1_1meters.html#af1d57d8dd7bb60b98f3f967c0c0ba611',1,'logika::meters::ChannelDef']]],
   ['channeldef_5f_21',['channelDef_',['../da/dc9/classlogika_1_1meters_1_1ItemDefBase.html#a007b032e209c4d7a21f660acfcf0a2c9',1,'logika::meters::ItemDefBase']]],
@@ -89,6 +89,6 @@ var searchData=
   ['crc16_86',['Crc16',['../da/d50/classlogika_1_1protocols_1_1Protocol.html#a453a78fa2e56bb630bf22beef76857ea',1,'logika::protocols::Protocol']]],
   ['create_87',['Create',['../dd/d10/classlogika_1_1SharedConstructible.html#a7a34563d8123ec2aef92c8c0efb1ecc9',1,'logika::SharedConstructible']]],
   ['createstorage_88',['CreateStorage',['../d5/d47/classlogika_1_1storage_1_1StorageKeeper.html#ab19970dc1bc1a351e387b2fb01d62131',1,'logika::storage::StorageKeeper']]],
-  ['ctrl_89',['Ctrl',['../d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M.html#ab88190bc350c526dc4f31d42cbffdb09ade0f6716bfbcba6bdc51442eeab35e7f',1,'logika::protocols::ArchiveId4M']]],
+  ['ctrl_89',['Ctrl',['../d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M.html#a70edf9ca3c6dfc4da84a613738f0e3e8ade0f6716bfbcba6bdc51442eeab35e7f',1,'logika::protocols::ArchiveId4M']]],
   ['currentchannel_90',['currentChannel',['../d5/d8a/structlogika_1_1protocols_1_1ArchiveRequestState4M.html#ae73b2135bd60ff8865e60e5e0cfda288',1,'logika::protocols::ArchiveRequestState4M']]]
 ];

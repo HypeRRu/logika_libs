@@ -10,5 +10,5 @@ var searchData=
   ['connectionnotseterror_7',['ConnectionNotSetError',['../df/dea/namespacelogika_1_1connections_1_1Rc.html#ad077f3dcd802ffc6a350f1a97877a4c6a44042facb7c52c68a54f2b1b6288f66b',1,'logika::connections::Rc']]],
   ['connectionrc_8',['ConnectionRc',['../df/dea/namespacelogika_1_1connections_1_1Rc.html#ad077f3dcd802ffc6a350f1a97877a4c6a739eb5be528e706f951ff37198e8c370',1,'logika::connections::Rc']]],
   ['count_9',['Count',['../d3/dc8/namespacelogika_1_1log_1_1LogLevel.html#a95bb2436ad8f48fcb2649ec313ec5c9ca328fcb75c42117987d047e34c4899f3b',1,'logika::log::LogLevel']]],
-  ['ctrl_10',['Ctrl',['../d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M.html#ab88190bc350c526dc4f31d42cbffdb09ade0f6716bfbcba6bdc51442eeab35e7f',1,'logika::protocols::ArchiveId4M']]]
+  ['ctrl_10',['Ctrl',['../d7/d3a/namespacelogika_1_1protocols_1_1ArchiveId4M.html#a70edf9ca3c6dfc4da84a613738f0e3e8ade0f6716bfbcba6bdc51442eeab35e7f',1,'logika::protocols::ArchiveId4M']]]
 ];

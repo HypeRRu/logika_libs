@@ -1,5 +1,5 @@
 <map id="logika::meters::Spt941" name="logika::meters::Spt941">
-<area shape="rect" id="Node000001" title="Класс прибора SPT941." alt="" coords="65,6716,420,7175"/>
+<area shape="rect" id="Node000001" title="Класс прибора SPT941." alt="" coords="65,6716,420,7126"/>
 <area shape="rect" id="Node000002" href="$d7/d1b/classlogika_1_1meters_1_1Logika4L.html" title="Класс прибора Logika4L." alt="" coords="105,4738,381,6667"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,6682,245,6717,240,6717,240,6682"/>
 <area shape="rect" id="Node000003" href="$d6/df4/classlogika_1_1meters_1_1Logika4.html" title="Класс прибора Logika4." alt="" coords="105,3354,381,4688"/>

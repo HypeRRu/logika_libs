@@ -67,15 +67,15 @@ var NAVTREEINDEX =
 "d1/dcb/classlogika_1_1meters_1_1DataTagDef6.html#a391823e463f9c9ccddad19461c7a4951",
 "d3/d03/classlogika_1_1meters_1_1DataTagDefVault.html#aeb9792dd7bbd07dcf22a70b76199f194",
 "d3/dcf/archive__field_8h.html#ac0466771a77a8cdb2e996c200fc0bd99",
-"d5/d2d/structlogika_1_1meters_1_1DataTagDef6Settings.html#a8c46bc299c18c35ae2d19f381b178a89",
-"d6/df4/classlogika_1_1meters_1_1Logika4.html#adc180281fe657a1d0a307d64aa5d3521",
-"d8/d13/classlogika_1_1meters_1_1CalcFieldDef.html#a8bab9401916d5af8489782e60742898b",
-"d9/d53/classlogika_1_1meters_1_1DataTag.html",
-"da/dc9/classlogika_1_1meters_1_1ItemDefBase.html#ae51f8197f5fb1dab1beb39c004783d2c",
-"db/da7/classlogika_1_1connections_1_1Connection.html#ae78983613e204755f6b170b2dd24b950",
-"dd/d02/types__checker_8inl.html#aac64ba8d91183dc0e50f0f884fa25e69",
-"de/d68/classlogika_1_1connections_1_1SerialPortConnection.html#ae21d00cf45dbdec5176e96142b8b61fd",
-"dir_9b6ccfd5de2aec179c5ebd1cac44a5c4.html"
+"d5/d47/classlogika_1_1storage_1_1StorageKeeper.html#a98c329262aa207bc7a18481b2c44708f",
+"d6/df4/classlogika_1_1meters_1_1Logika4.html#af81c926e52ae050fea8d3fbb69300736",
+"d8/d13/classlogika_1_1meters_1_1CalcFieldDef.html#ac825cb624aefa3eed00f8725dcaa113f",
+"d9/d53/classlogika_1_1meters_1_1DataTag.html#a154186d8cadc237015ab4eab64c1c4da",
+"da/dcc/classlogika_1_1meters_1_1DataTagDef.html#a0399fc682fb709e6e40918da8695aff2",
+"db/da7/classlogika_1_1connections_1_1Connection.html#afafe3827e6a5c3aa1d4e1d297c2ea914",
+"dd/d09/data__tag6_8cpp.html",
+"de/d6a/meters_2utils_2types__converter_8h.html",
+"dir_cd068dae2eb21d8395a58e1c92d391b7.html"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';
