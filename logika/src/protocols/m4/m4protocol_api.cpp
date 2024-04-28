@@ -1202,7 +1202,7 @@ void M4Protocol::ProcessIntervalData4L( std::shared_ptr< ArchiveRequestState4L >
         TvReadState4L& trs = state->tvReadStates[ tv ];
         for ( size_t i = 0; i < trs.indices.size(); ++i )
         {
-            if ( trs.fArchive )
+            if ( !trs.fArchive )
             {
                 continue;
             }
@@ -1264,7 +1264,7 @@ void M4Protocol::ProcessServiceData4L( std::shared_ptr< ArchiveRequestState4L > 
         TvReadState4L& trs = state->tvReadStates[ tv ];
         for ( size_t i = 0; i < trs.indices.size(); ++i )
         {
-            if ( trs.fArchive )
+            if ( !trs.fArchive )
             {
                 continue;
             }

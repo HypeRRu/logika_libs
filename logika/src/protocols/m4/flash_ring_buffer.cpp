@@ -101,7 +101,7 @@ void FlashArray::GetElement( uint32_t index, ByteVector& buffer, MeterAddressTyp
 
 void FlashArray::UpdatePages( uint32_t startPage, uint32_t endPage )
 {
-    if ( mtrInstance_ || mtrInstance_->GetBus() || endPage < startPage )
+    if ( !mtrInstance_ || !mtrInstance_->GetBus() || endPage < startPage )
     {
         return;
     }
