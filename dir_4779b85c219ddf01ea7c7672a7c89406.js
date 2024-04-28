@@ -3,6 +3,7 @@ var dir_4779b85c219ddf01ea7c7672a7c89406 =
     [ "ads_tag_block.h", "d0/df2/ads__tag__block_8h.html", "d0/df2/ads__tag__block_8h" ],
     [ "archive_def4m.h", "da/da8/archive__def4m_8h.html", "da/da8/archive__def4m_8h" ],
     [ "archive_field_def4m.h", "d0/d5f/archive__field__def4m_8h.html", "d0/d5f/archive__field__def4m_8h" ],
+    [ "defs.h", "d8/d23/meters_2logika4_24m_2defs_8h.html", "d8/d23/meters_2logika4_24m_2defs_8h" ],
     [ "lgk410.h", "d5/d67/lgk410_8h.html", "d5/d67/lgk410_8h" ],
     [ "logika4m.h", "d6/dfc/logika4m_8h.html", "d6/dfc/logika4m_8h" ],
     [ "spg740.h", "d6/d1c/spg740_8h.html", "d6/d1c/spg740_8h" ],

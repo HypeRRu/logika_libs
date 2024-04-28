@@ -1,7 +1,7 @@
 <map id="logika::protocols::X6::SPBusProtocol" name="logika::protocols::X6::SPBusProtocol">
-<area shape="rect" id="Node000001" title="Протокол SPBus." alt="" coords="87,3503,265,3612"/>
-<area shape="rect" id="Node000002" href="$da/d50/classlogika_1_1protocols_1_1Protocol.html" title="Базовый класс для работы с протоколами" alt="" coords="5,1323,347,3455"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,3470,179,3503,173,3503,173,3470"/>
+<area shape="rect" id="Node000001" title="Протокол SPBus." alt="" coords="87,3313,265,3423"/>
+<area shape="rect" id="Node000002" href="$da/d50/classlogika_1_1protocols_1_1Protocol.html" title="Базовый класс для работы с протоколами" alt="" coords="5,1323,347,3265"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,3280,179,3314,173,3314,173,3280"/>
 <area shape="rect" id="Node000003" href="$da/dd0/classlogika_1_1protocols_1_1IProtocol.html" title="Интерфейс класса для работы с протоколами" alt="" coords="45,5,307,1275"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="179,1289,179,1323,173,1323,173,1289"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="179,1290,179,1323,173,1323,173,1290"/>
 </map>

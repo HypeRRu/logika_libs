@@ -99,9 +99,9 @@ $(function(){initNavTree('de/da5/bug.html','../../'); initResizable(); });
 <dt>Член <a class="el" href="../../db/d33/classlogika_1_1meters_1_1ArchiveFieldDef4.html#a87375c85559a7bc83641836cccad9456">logika::meters::ArchiveFieldDef4::ArchiveFieldDef4</a>  (const <a class="el" href="../../d3/dce/structlogika_1_1meters_1_1ChannelDef.html" title="Структура описание канала">ChannelDef</a> &amp;cdef, const <a class="el" href="../../dd/dc4/structlogika_1_1meters_1_1ArchiveFieldDef4Settings.html" title="Параметры описания поля архива Logika4.">ArchiveFieldDef4Settings</a> &amp;settings)</dt>
 <dd><a class="anchor" id="_bug000006"></a>А в чем смысл?  </dd>
 <dt>Член <a class="el" href="../../d4/dcd/classlogika_1_1meters_1_1converters_1_1M4ArchiveConverter.html#ac8d72493c06c91ae3727cd096ef0daa5">logika::meters::converters::M4ArchiveConverter::Convert</a>  (const FromType &amp;from, MeterStorageType meterStorage, ChannelStorageType channelStorage, ArchiveTypeStorageType archiveTypeStorage)</dt>
-<dd><a class="anchor" id="_bug000001"></a>Как задавать  </dd>
+<dd><a class="anchor" id="_bug000002"></a>Как задавать  </dd>
 <dt>Член <a class="el" href="../../de/d13/classlogika_1_1meters_1_1converters_1_1M4ArchiveFieldConverter.html#aeb01b4268dfca6123182d4ab3f916c02">logika::meters::converters::M4ArchiveFieldConverter::Convert</a>  (const FromType &amp;from, MeterStorageType meterStorage, ArchiveStorageType archiveStorage, ArchiveTypeStorageType archiveTypeStorage)</dt>
-<dd><a class="anchor" id="_bug000002"></a>Как заполнять  </dd>
+<dd><a class="anchor" id="_bug000001"></a>Как заполнять  </dd>
 <dt>Член <a class="el" href="../../d9/d53/classlogika_1_1meters_1_1DataTag.html#a743bca0f354373ecf263b03292c62213">logika::meters::DataTag::DataTag</a>  (std::shared_ptr&lt; DataTagDef &gt; def, int32_t channelNo)</dt>
 <dd><a class="anchor" id="_bug000003"></a>Будет ли все правильно работать?  </dd>
 <dt>Член <a class="el" href="../../d6/df4/classlogika_1_1meters_1_1Logika4.html#acd92decaf0986a2b987ea698c4eb1bb1">logika::meters::Logika4::GetNsDescription</a>  (const LocString &amp;ns) const</dt>
@@ -110,12 +110,10 @@ $(function(){initNavTree('de/da5/bug.html','../../'); initResizable(); });
 <dd><a class="anchor" id="_bug000005"></a>Нужно здесь проверять размер на 12 или 16?  </dd>
 <dt>Член <a class="el" href="../../d7/d1b/classlogika_1_1meters_1_1Logika4L.html#abe4bd940445a864980831d126e0ac98b">logika::meters::Logika4L::SizeOfType</a>  (<a class="el" href="../../d6/d1f/namespacelogika_1_1meters_1_1BinaryType4L.html#aead2be909773cd60590f689c076fac21">BinaryType4L::Type</a> dataType)</dt>
 <dd><a class="anchor" id="_bug000004"></a>ArchiveStruct отсутствует?  </dd>
-<dt>Член <a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#ac74da43372279bb0b29de14c39a53aae">logika::protocols::M4::M4Protocol::GetFlashPagesToCache</a>  (std::shared_ptr&lt; meters::Logika4L &gt; meter, const ByteType *nt, uint32_t startPage, uint32_t count, std::shared_ptr&lt; MeterCache &gt; meterInstance)</dt>
-<dd><a class="anchor" id="_bug000008"></a>rangeSize ведь отражает количество подряд идущих страниц, а разрывы в flashPageMap_ в теории могут быть не подряд  </dd>
 <dt>Член <a class="el" href="../../d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#ac2db2d212d4eee083ceffef383f54a45">logika::protocols::M4::M4Protocol::RecvPacket</a>  (const ByteType *expectedNt, <a class="el" href="../../d8/d96/namespacelogika_1_1protocols_1_1M4_1_1Opcode.html#ad2f32ef715c031cee496f205f15960e4">Opcode::Type</a> *expectedOpcode, const ByteType *expectedId, uint32_t expectedDataLength, <a class="el" href="../../d8/db6/namespacelogika_1_1protocols_1_1M4_1_1RecvFlags.html#a9bc9304a5bac676091c4f33282aacad6">RecvFlags::Type</a> flags=<a class="el" href="../../d8/db6/namespacelogika_1_1protocols_1_1M4_1_1RecvFlags.html#a51e53bca5dbaf18164e50d4bdd29833ba7ba3b2996c8296674f9553c6a0959025" title="Флаги не заданы">RecvFlags::NotSet</a>)</dt>
-<dd><p class="startdd"><a class="anchor" id="_bug000009"></a>Сделать повторное чтение? </p>
-<p class="interdd"><a class="anchor" id="_bug000010"></a>Сделать повторное чтение? </p>
-<p class="enddd"><a class="anchor" id="_bug000011"></a>Сделать повторное чтение? </p>
+<dd><p class="startdd"><a class="anchor" id="_bug000008"></a>Сделать повторное чтение? </p>
+<p class="interdd"><a class="anchor" id="_bug000009"></a>Сделать повторное чтение? </p>
+<p class="enddd"><a class="anchor" id="_bug000010"></a>Сделать повторное чтение? </p>
 </dd>
 </dl>
 </div></div><!-- contents -->

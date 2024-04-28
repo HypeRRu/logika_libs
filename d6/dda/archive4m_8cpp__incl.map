@@ -1,11 +1,13 @@
 <map id="logika/src/protocols/m4/archive4m.cpp" name="logika/src/protocols/m4/archive4m.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="191,5,326,46"/>
-<area shape="rect" id="Node000002" href="$d7/dc8/archive4m_8h.html" title=" " alt="" coords="191,94,326,135"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="261,47,261,78,256,78,256,47"/>
-<area shape="rect" id="Node000003" href="$d7/d37/protocols_2defs_8h.html" title=" " alt="" coords="5,183,157,208"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="215,138,123,178,121,174,213,133"/>
-<area shape="rect" id="Node000004" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="181,183,336,208"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="261,135,261,167,256,167,256,135"/>
-<area shape="rect" id="Node000005" href="$d2/d4b/meters_2defs_8h.html" title=" " alt="" coords="360,183,498,208"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="302,133,390,173,388,178,300,138"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="277,5,411,46"/>
+<area shape="rect" id="Node000002" href="$d7/dc8/archive4m_8h.html" title=" " alt="" coords="277,94,411,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="346,47,346,78,341,78,341,47"/>
+<area shape="rect" id="Node000003" href="$d7/d37/protocols_2defs_8h.html" title=" " alt="" coords="5,190,157,216"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="285,138,133,187,132,182,283,133"/>
+<area shape="rect" id="Node000004" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="181,190,336,216"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="326,137,283,181,279,177,322,133"/>
+<area shape="rect" id="Node000005" href="$d2/d4b/meters_2defs_8h.html" title=" " alt="" coords="360,190,498,216"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="365,133,408,177,405,181,361,137"/>
+<area shape="rect" id="Node000006" href="$d8/d23/meters_2logika4_24m_2defs_8h.html" title=" " alt="" coords="522,183,667,223"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="401,133,524,175,522,180,400,138"/>
 </map>

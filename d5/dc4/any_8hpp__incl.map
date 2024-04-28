@@ -1,22 +1,13 @@
 <map id="logika/include/logika/common/any.hpp" name="logika/include/logika/common/any.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="122,5,261,46"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="125,5,263,46"/>
 <area shape="rect" id="Node000002" href="$dd/da1/common_2defs_8h.html" title=" " alt="" coords="5,241,154,267"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,49,127,69,104,95,90,128,83,163,80,226,75,226,77,163,85,127,100,93,123,65,152,44"/>
-<area shape="rect" id="Node000003" href="$de/d59/any_8ipp.html" title=" " alt="" coords="115,94,268,120"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,46,186,78,180,78,181,46"/>
-<area shape="poly" id="edge3_Node000003_Node000001" title=" " alt="" coords="196,93,198,62,203,62,201,94"/>
-<area shape="rect" id="Node000004" href="$d4/d08/misc_8h.html" title=" " alt="" coords="115,168,266,193"/>
-<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="194,120,193,152,188,152,189,120"/>
-<area shape="rect" id="Node000006" href="$d8/db0/defines_8h.html" title=" " alt="" coords="290,168,421,193"/>
-<area shape="poly" id="edge7_Node000003_Node000006" title=" " alt="" coords="220,118,315,159,313,164,218,123"/>
-<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="173,196,112,235,109,230,170,192"/>
-<area shape="rect" id="Node000005" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="117,315,271,341"/>
-<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="193,194,196,300,191,300,188,194"/>
-<area shape="rect" id="Node000007" href="$d1/d8c/logger_8h.html" title=" " alt="" coords="292,241,417,267"/>
-<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="358,194,357,226,352,225,353,194"/>
-<area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="328,270,236,311,234,306,326,265"/>
-<area shape="rect" id="Node000008" href="$d6/d8e/log_2defs_8h.html" title=" " alt="" coords="297,315,412,341"/>
-<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="357,267,357,299,352,299,352,267"/>
-<area shape="rect" id="Node000009" href="$dd/dd4/log_2types_8h.html" title=" " alt="" coords="436,315,558,341"/>
-<area shape="poly" id="edge11_Node000007_Node000009" title=" " alt="" coords="380,265,460,305,458,310,377,270"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,49,130,69,107,95,93,128,84,163,81,226,75,226,79,163,88,126,103,93,126,65,154,44"/>
+<area shape="rect" id="Node000003" href="$de/d59/any_8ipp.html" title=" " alt="" coords="118,94,271,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,46,188,78,183,78,184,46"/>
+<area shape="poly" id="edge3_Node000003_Node000001" title=" " alt="" coords="198,93,200,62,206,62,204,94"/>
+<area shape="rect" id="Node000004" href="$d4/d08/misc_8h.html" title=" " alt="" coords="119,168,270,193"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="197,120,197,152,192,152,192,120"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="176,196,113,235,111,230,173,192"/>
+<area shape="rect" id="Node000005" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="178,241,333,267"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="206,192,237,228,233,231,202,195"/>
 </map>
