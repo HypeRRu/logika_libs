@@ -68,7 +68,6 @@ void Meter::Init( const storage::StorageKeeper& sKeeper )
     if ( channelsStorage && !tagsVault_ )
     {
         const auto keys = channelsStorage->GetKeys();
-        std::vector< std::shared_ptr< ChannelDef > > tags;
         for ( const LocString& key: keys )
         {
             std::shared_ptr< ChannelDef > item;
@@ -246,10 +245,9 @@ std::vector< std::shared_ptr< DataTag > > Meter::LookupCommonTags( const std::ve
             chNo = 0;
             if ( typeStr.cend() != typeIdIter )
             {
-                uint64_t chan;
                 try
                 {
-                    chan = std::stoull( LocString( typeIdIter + 1, typeStr.cend() ) );
+                    uint64_t chan = std::stoull( LocString( typeIdIter + 1, typeStr.cend() ) );
                     chNo = static_cast< int32_t >( chan );
                 }
                 catch ( const std::exception& )

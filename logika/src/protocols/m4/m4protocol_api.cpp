@@ -747,7 +747,7 @@ bool M4Protocol::ReadFlashArchive4L( std::shared_ptr< meters::Logika4L > meter, 
     std::shared_ptr< meters::Archive > archive, TimeType start, TimeType end,
     std::shared_ptr< logika::Any >& state, double& progress )
 {
-    std::shared_ptr< M4Protocol::MeterCache > mtrInstance = GetMeterInstance( meter, nt );
+    (void) GetMeterInstance( meter, nt );
     std::shared_ptr< ArchiveRequestState4L > requestState = nullptr;
     if ( !meter || !archive || !archive->GetArchiveType() )
     {
@@ -796,9 +796,9 @@ bool M4Protocol::ReadFlashArchive4L( std::shared_ptr< meters::Logika4L > meter, 
             flashArchive->GetHeaders()->ManageOutdatedElements( true, newHeaders, index );
             tvReadState.index = index;
         }
-        double headersCompleted = 0.0;
         if ( !tvReadState.headersRead )
         {
+            double headersCompleted = 0.0;
             if ( flashArchive->GetHeaders()->GetElementIndicesInRange( start, end, tvReadState.index,
                 tvReadState.restartPoint, tvReadState.indices, headersCompleted ) )
             {
@@ -963,9 +963,9 @@ void M4Protocol::ProcessIntervalData4L( std::shared_ptr< ArchiveRequestState4L >
                 row = *iter;
             }
             const size_t tvRecIdx = 1 + tv * values.size(); // Индекс начала полей для данного ТВ
-            for ( size_t i = 0; i < values.size(); ++i )
+            for ( size_t j = 0; j < values.size(); ++j )
             {
-                ( *row )[ i + tvRecIdx ] = values.at( i );
+                ( *row )[ j + tvRecIdx ] = values.at( j );
             }
         }
     }
@@ -1181,11 +1181,11 @@ bool M4Protocol::ReadIntervalArchive4M( std::shared_ptr< meters::Logika4M > mete
         if ( records.end() == iter || !( *iter ) )
         {
             const size_t recordSize = archive->GetDataTable()->FieldCount();
-            meters::DataTable::RecordType record =
+            meters::DataTable::RecordType rec =
                 std::make_shared< std::vector< std::shared_ptr< logika::Any > > >( recordSize, nullptr );
-            ( *record )[ 0 ] = std::make_shared< logika::Any >( time );
-            row = record;
-            archive->GetDataTable()->PushRecord( record );
+            ( *rec )[ 0 ] = std::make_shared< logika::Any >( time );
+            row = rec;
+            archive->GetDataTable()->PushRecord( rec );
         }
         else
         {

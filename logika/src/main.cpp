@@ -198,28 +198,6 @@ int main()
         std::make_shared< logika::meters::ArchiveField >( afd2, 5 )
     );
     std::shared_ptr< logika::meters::DataTable > table = std::make_shared< logika::meters::DataTable >( fields );
-
-    std::shared_ptr< logika::meters::ArchiveType > monthArchive;
-    std::shared_ptr< logika::meters::Meter > lgk410meter;
-    atStorage->GetItem( logika::LocString{ LOCALIZED( "Month" ) }, monthArchive );
-    if ( lgk410meter )
-    {
-        lgk410meter->Init( sKeeper );
-    }
-    logika::meters::IntervalArchive intervalArchive{
-        lgk410meter,
-        monthArchive,
-        table
-    };
-
-    auto dt = intervalArchive.GetDataTable();
-    for ( auto field: dt->GetFieldsList() )
-    {
-        if ( field )
-        {
-            LOG_WRITE( LOG_INFO, LOCALIZED( "DataTable column '" ) << field->GetName() << LOCALIZED( "'" ) );
-        }
-    }
 #endif // if 1
 
 #if defined( LOGIKA_USE_PROTOCOL_M4 ) && defined( LOGIKA_USE_CONNECTIONS_NETWORK )

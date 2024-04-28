@@ -532,8 +532,6 @@ Packet M4Protocol::RecvPacket( const ByteType* expectedNt, Opcode::Type* expecte
 {
     ByteVector buffer;
     ByteVector check;
-    uint32_t readed     = 0;
-    uint32_t payloadLen = 0;
 
     Packet packet{};
     if ( !connection_ || !connection_->IsConnected() )
@@ -546,7 +544,9 @@ Packet M4Protocol::RecvPacket( const ByteType* expectedNt, Opcode::Type* expecte
     {
         while ( true ) // Чтение пакетов
         {
-            TimeType readStart = GetCurrentTimestamp();
+            uint32_t readed     = 0;
+            uint32_t payloadLen = 0;
+            TimeType readStart  = GetCurrentTimestamp();
             while ( true ) /// Чтение пока не будет обнаружено начало фрейма или не исчеет таймаут
             {
                 buffer.clear();
