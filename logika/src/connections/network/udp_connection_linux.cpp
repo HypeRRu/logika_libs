@@ -50,7 +50,6 @@ bool UdpConnection::OpenImpl()
         }
         if ( -1 != connect( socket_, info->ai_addr, info->ai_addrlen ) )
         {
-            struct sockaddr_in* ai = reinterpret_cast< struct sockaddr_in* >( info->ai_addr );
             LOG_WRITE( LOG_INFO, LOCALIZED( "Connected to " ) << locAddress_ );
             freeaddrinfo( info ); /// Больше не используется
             return true;

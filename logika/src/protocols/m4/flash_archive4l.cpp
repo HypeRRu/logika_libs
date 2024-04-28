@@ -156,7 +156,6 @@ SyncFlashArchive4::SyncFlashArchive4( std::shared_ptr< M4Protocol::MeterCache > 
             fields_.push_back( std::dynamic_pointer_cast< meters::ArchiveFieldDef4L >( field ) );
         }
     }
-    fields_;
 } // SyncFlashArchive4
 
 
@@ -257,6 +256,8 @@ void AsyncFlashArchive4::UpdateData( std::vector< FrbIndex >& indicesToRead )
 TimeType AsyncFlashArchive4::GetAsyncRecordTime( FlashArchive4* flashArchive,
     const ByteVector& buffer, MeterAddressType offset )
 {
+    (void) flashArchive;
+
     bool oper = false;
     return meters::Logika4L::GetSRTimestampValue( buffer, offset, oper );
 } // GetAsyncRecordTime

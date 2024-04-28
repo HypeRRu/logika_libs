@@ -112,6 +112,9 @@ uint32_t Meter::GetMaxGroups() const
 
 ChannelKind Meter::GetChannelKind( int32_t cStart, uint32_t cCount, const LocString& cName ) const
 {
+    (void) cStart;
+    (void) cCount;
+    (void) cName;
     return ChannelKind::Undefined;
 } // GetChannelKind
 

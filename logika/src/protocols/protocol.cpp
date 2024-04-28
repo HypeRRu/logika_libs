@@ -312,6 +312,10 @@ std::shared_ptr< meters::Meter > Protocol::DetectM4( std::shared_ptr< M4::M4Prot
 std::shared_ptr< meters::Meter > Protocol::DetectX6( std::shared_ptr< X6::SPBusProtocol > bus,
     const storage::StorageKeeper& sKeeper, ByteVector& dump, LocString& model )
 {
+    (void) bus;
+    (void) sKeeper;
+    (void) dump;
+    (void) model;
     throw std::runtime_error{ "Not implemented" };
 } // DetectX6
 
@@ -322,6 +326,11 @@ std::shared_ptr< meters::Meter > Protocol::AutodectSpt( std::shared_ptr< connect
     const ByteType* srcAddr, const ByteType* dstAddr, ByteVector& dump,
     connections::BaudRate::Type& deviceBaudRate, LocString& model )
 {
+    /// @todo Realise fast version (this version is _Stable)
+    (void) waitTimeout;
+    (void) srcAddr;
+    (void) dstAddr;
+
     if ( !connection )
     {
         LOG_WRITE_MSG( LOG_WARNING, LOCALIZED( "Connection not set" ) );

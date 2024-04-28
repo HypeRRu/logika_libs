@@ -44,6 +44,7 @@ std::unordered_map< LocString, LocString > Lgk410::BuildEuDict(
     const std::vector< std::shared_ptr< DataTag > >& euTags ) const
 {
     /// У 410 фиксированные единицы измерений -> возвращаем пустой словарь
+    (void) euTags;
     return {};
 } // BuildEuDict
 

@@ -43,7 +43,6 @@ IntervalArchive::IntervalArchive( std::shared_ptr< Meter > meter
     {
         throw std::runtime_error{ "Invalid data table template" };
     }
-    const size_t fCount = tableTemplate->FieldCount();
     for ( auto field: tableTemplate->GetFieldsList() )
     {
         if ( !field || StrCaseEq( field->GetName(), LOCALIZED( "tm" ) ) )

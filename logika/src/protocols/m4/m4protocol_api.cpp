@@ -505,7 +505,7 @@ std::shared_ptr< meters::IntervalArchive > M4Protocol::ReadIntervalArchiveDef( s
         {
             throw std::runtime_error{ "Invalid archive def" };
         }
-        for ( int32_t i = 0; i < archiveDef->GetChannelDef().count; ++i )
+        for ( uint32_t i = 0; i < archiveDef->GetChannelDef().count; ++i )
         {
             tvStates.emplace_back();
             tvStates.back().headersRead = false;

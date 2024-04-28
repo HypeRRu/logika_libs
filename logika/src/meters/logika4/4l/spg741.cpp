@@ -214,12 +214,6 @@ std::unordered_map< LocString, LocString > Spg741::BuildEuDict(
 } // BuildEuDict
 
 
-LocString Spg741::GetModelFromImage( const ByteVector& flashImage ) const
-{
-    return LOCALIZED( "" );
-} // GetModelFromImage
-
-
 std::vector< Logika4L::AdsFlashRun > Spg741::GetAdsFileLayout( bool all, const LocString& model ) const
 {
     (void) model;

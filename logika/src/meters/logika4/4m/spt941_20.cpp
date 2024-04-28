@@ -110,7 +110,7 @@ Spt941_20::Spt941_20(
 
 bool Spt941_20::IdentMatch( ByteType id0, ByteType id1, ByteType version ) const
 {
-    return Logika4M::IdentMatch( id0, id1, version ) && version >= 0x80;
+    return Logika4M::IdentMatch( id0, id1, version ) && static_cast< uint8_t >( version ) >= 0x80;
 } // IdentMatch
 
 

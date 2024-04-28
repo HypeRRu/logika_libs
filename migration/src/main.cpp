@@ -33,7 +33,6 @@ int main( int argc, char** argv )
     constexpr char m4_archive_fields_path[] = "M4ArchiveFields";
     constexpr char m4_archives_path[] = "M4Archives";
     constexpr char m4_tags_path[] = "M4Tags";
-    constexpr char tag_kinds_path[] = "TagKinds";
     constexpr char vars_path[] = "Vars";
     constexpr char x6_archive_fields_path[] = "X6ArchiveFields";
     constexpr char x6_archives_path[] = "X6Archives";

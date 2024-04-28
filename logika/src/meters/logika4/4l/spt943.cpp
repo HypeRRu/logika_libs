@@ -103,7 +103,7 @@ Spt943::Spt943(
 
 bool Spt943::IdentMatch( ByteType id0, ByteType id1, ByteType version ) const
 {
-    return Logika4L::IdentMatch( id0, id1, version ) && version < 0x0A;
+    return Logika4L::IdentMatch( id0, id1, version ) && static_cast< uint8_t >( version ) < 0x0A;
 } // IdentMatch
 
 

@@ -102,8 +102,9 @@ LocString Logika4::GetDisplayFormat( std::shared_ptr< TagDef > def ) const
         case StdVar::T:
         case StdVar::ti:
             return LOCALIZED( "0.00" );
+        default:
+            return LOCALIZED( "" );
     }
-    return LOCALIZED( "" );
 } // GetDisplayFormat
 
 
@@ -148,11 +149,9 @@ bool Logika4::GetNtFromTag( const LocString& value, ByteType& out ) const
 
 bool Logika4::IdentMatch( ByteType id0, ByteType id1, ByteType version ) const
 {
+    (void) version;
+
     uint16_t deviceId = static_cast< uint16_t >( ( static_cast< uint16_t >( id0 ) << 8 ) | id1 );
-    LOG_WRITE( LOG_DEBUG, LOCALIZED( "Checking Logika4 ident: " ) <<
-        std::hex << deviceId << LOCALIZED( " (device) vs " ) <<
-        std::hex << ident_ << LOCALIZED( " (") <<
-        GetCaption() << LOCALIZED(")" ) );
     return deviceId == ident_;
 } // IdentMatch
 

@@ -168,15 +168,9 @@ std::vector< float > Spt941::ExpandHourRecord( const ByteVector& hourRec )
 std::unordered_map< LocString, LocString > Spt941::BuildEuDict(
     const std::vector< std::shared_ptr< DataTag > >& euTags ) const
 {
-    /// @bug throw not implemented
+    (void) euTags;
     return {};
 } // BuildEuDict
-
-
-LocString Spt941::GetModelFromImage( const ByteVector& flashImage ) const
-{
-    return LOCALIZED( "" );
-} // GetModelFromImage
 
 
 std::vector< Logika4L::AdsFlashRun > Spt941::GetAdsFileLayout( bool all, const LocString& model ) const

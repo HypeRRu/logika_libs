@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.14)
 
 project(logika LANGUAGES CXX)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g3")
 
 # suppress MSVC warnings
 if(MSVC)

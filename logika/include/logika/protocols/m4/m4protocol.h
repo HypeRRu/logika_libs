@@ -106,7 +106,7 @@ public:
     static const ByteVector WAKEUP_SEQUENCE;        ///< Последовательность байтов для "пробуждения" прибора
     static const TimeType WAKE_SESSION_DELAY;       ///< Задержка (мс) между серией FF и запросом сеанса (нужна только для АДС99 в режиме TCP сервер)
     static const uint32_t MAX_PAGE_BLOCK;           ///< Максимальный размер блока страниц для чтения
-    static const uint32_t CHANNEL_NBASE;            ///< Количество каналов
+    static const int32_t CHANNEL_NBASE;             ///< Количество каналов
 
 public:
     /// @brief Конструктор шины M4

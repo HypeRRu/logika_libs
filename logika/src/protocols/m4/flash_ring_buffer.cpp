@@ -430,8 +430,8 @@ void FlashRingBuffer::ManageOutdatedElements( bool useIndexCache,
     }
     TimeType currentDeviceTime = mtrInstance->GetCurrentDeviceTime();
     struct tm devTs = GetTimeStruct( currentDeviceTime );
-    bool atGuardInterval = ( devTs.tm_min == 59 && devTs.tm_sec > 60 - gT )
-        || ( devTs.tm_min == 0 && devTs.tm_sec < gT );
+    bool atGuardInterval = ( devTs.tm_min == 59 && static_cast< TimeType >( devTs.tm_sec ) > 60 - gT )
+        || ( devTs.tm_min == 0 && static_cast< TimeType >( devTs.tm_sec ) < gT );
     if ( useIndexCache && prevIdx_ != -1 && prevIdxTimestamp_ != 0 )
     {
         struct tm prevTs = GetTimeStruct( prevIdxTimestamp_ );

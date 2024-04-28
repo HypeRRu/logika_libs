@@ -50,9 +50,6 @@ public:
     static int32_t GetMappedDbParamOrdinal( const LocString& paramName, uint8_t sp );
 
 public:
-    /// @copydoc Logika4L::GetModelFromImage()
-    virtual LocString GetModelFromImage( const ByteVector& flashImage ) const override;
-
     /// @copydoc Logika4L::GetAdsFileLayout()
     virtual std::vector< Logika4L::AdsFlashRun > GetAdsFileLayout( bool all, const LocString& model ) const override;
 

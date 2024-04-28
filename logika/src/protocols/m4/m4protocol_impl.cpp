@@ -109,7 +109,7 @@ const ByteVector M4Protocol::WAKEUP_SEQUENCE        = ByteVector( 16, static_cas
 const TimeType M4Protocol::WAKE_SESSION_DELAY       = 100;
 uint32_t M4Protocol::packetId_                      = 0;
 const uint32_t M4Protocol::MAX_PAGE_BLOCK           = 8;
-const uint32_t M4Protocol::CHANNEL_NBASE            = 100000;
+const int32_t M4Protocol::CHANNEL_NBASE             = 100000;
 
 
 M4Protocol::BusActiveState::BusActiveState( std::shared_ptr< meters::Logika4 > mtr,
@@ -166,6 +166,8 @@ void M4Protocol::ResetBusActiveState()
 std::shared_ptr< meters::Meter > M4Protocol::GetMeterType( const ByteType* srcNt,
     const ByteType* dstNt, LocString& extraData )
 {
+    (void) srcNt;
+
     Packet handshakePacket = DoHandshake( dstNt, 0, false );
     if ( handshakePacket.data.size() == 3 )
     {
@@ -399,7 +401,6 @@ std::vector< std::shared_ptr< ArchiveRecord > > M4Protocol::ParseArchivePacket4M
     if ( meters::TagId4M::ByteArray == firstTag.first )
     {
         LOG_WRITE_MSG( LOG_DEBUG, LOCALIZED( "Compressed data" ) );
-        MeterAddressType tailLength = packet.data.size() - readLen;
         ByteVector buffer{};
         if ( firstTag.second )
         {
@@ -795,6 +796,8 @@ Packet M4Protocol::DoLegacyRequest( const ByteType* nt, Opcode::Type requestOpco
 Packet M4Protocol::DoM4Request( const ByteType* nt, Opcode::Type requestOpcode, const ByteVector& data,
     const ByteType* packetId, RecvFlags::Type flags )
 {
+    (void) packetId;
+
     ByteType identifier;
     if ( nt )
     {
@@ -833,6 +836,8 @@ Packet M4Protocol::DoHandshake( const ByteType* nt, ByteType channel, bool slowW
 bool M4Protocol::SetBusSpeed( std::shared_ptr< meters::Logika4 > meter, const ByteType* nt,
     connections::BaudRate::Type baudRate, MeterChannel::Type tv )
 {
+    (void) meter;
+
     static const std::array< connections::BaudRate::Type, 7 > m4BaudRates{
           connections::BaudRate::Rate2400, connections::BaudRate::Rate4800
         , connections::BaudRate::Rate9600, connections::BaudRate::Rate19200
@@ -935,7 +940,7 @@ Rc::Type M4Protocol::WriteParameterL4( std::shared_ptr< meters::Logika4L > meter
         const auto tags = tagsVault->All();
         const auto tagDefIter = std::find_if( tags.cbegin(), tags.cend(), [ paramNum ](
             const std::shared_ptr< meters::DataTagDef >& tag ) {
-            return tag && tag->GetOrdinal() == paramNum;
+            return tag && tag->GetOrdinal() == static_cast< int32_t >( paramNum );
         } );
         if ( tags.cend() == tagDefIter )
         {

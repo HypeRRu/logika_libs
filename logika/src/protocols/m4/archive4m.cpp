@@ -36,7 +36,7 @@ ByteVector FastLzImpl::Decompress( const ByteVector& input, uint32_t offset, uin
 
     do
     {
-        uint32_t ref = op;
+        int32_t ref = op;
         uint32_t len = control >> 5;
         uint32_t ofs = ( control & 31 ) << 8;
 
@@ -50,7 +50,7 @@ ByteVector FastLzImpl::Decompress( const ByteVector& input, uint32_t offset, uin
             }
             ref -= input.at( ip++ );
             if ( op + len + 3 > opLimit
-                || ref - 1 < 0 )
+                || ref < 1 )
             {
                 return ByteVector{};
             }
@@ -63,7 +63,7 @@ ByteVector FastLzImpl::Decompress( const ByteVector& input, uint32_t offset, uin
                 loop = false;
             }
 
-            if ( ref == op )
+            if ( static_cast< uint32_t >( ref ) == op )
             {
                 /// optimize copy for a run
                 ByteType b = out[ ref - 1 ];

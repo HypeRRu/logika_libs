@@ -95,12 +95,15 @@ void Logika4L::Init( const storage::StorageKeeper& sKeeper )
 
 LocString Logika4L::GetModelFromImage( const ByteVector& flashImage ) const
 {
+    (void) flashImage;
     return LOCALIZED( "" );
 } // GetModelFromImage
 
 
 std::vector< Logika4L::AdsFlashRun > Logika4L::GetAdsFileLayout( bool all, const LocString& model ) const
 {
+    (void) all;
+    (void) model;
     return {};
 } // GetAdsFileLayout
 
@@ -553,7 +556,7 @@ LocString Logika4L::GetIzmRecordValue( const ByteVector& buffer, MeterAddressTyp
     {
         throw std::out_of_range{ "Data out of range" };
     }
-
+    oper = false;
     return Trim( LcdCharsToString( buffer, offset + 8, SizeOfType( BinaryType4L::IzmRecord ) - 8 ) );
 } // GetIzmRecordValue
 
