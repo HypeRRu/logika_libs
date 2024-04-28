@@ -7,7 +7,6 @@ var classlogika_1_1protocols_1_1M4_1_1M4Protocol =
     [ "DoHandshake", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a13e626133daa4525e4e2144c32f87c51", null ],
     [ "DoLegacyRequest", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a82ee9b0a8dfd6574f531adc51890ada7", null ],
     [ "DoM4Request", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a88ce4a93c3212b102a5db6bfc8e837a6", null ],
-    [ "GetCurrentBaudRate", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#af50f61f02e0b0619507d39b8130d23ed", null ],
     [ "GetDeviceClock", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a37bf5d7c55a33e4a3e89814564a35145", null ],
     [ "GetMeterInstance", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#aaadd8a5927b99dcbbdbb60e77db6daf6", null ],
     [ "GetMeterType", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a110da30c7edb20f1fa3154966f26827a", null ],
@@ -21,7 +20,6 @@ var classlogika_1_1protocols_1_1M4_1_1M4Protocol =
     [ "SendAttention", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#afad95025b61dea08d8ddfb0a5dc69438", null ],
     [ "SendExtendedPacket", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a7e92009339deecdaae7f7a5d9b0012f0", null ],
     [ "SendLegacyPacket", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#af6d239866270785e6e64f5e0c474d8c8", null ],
-    [ "SerialSpeedFallback", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#ab71738e8b840135b7f5edc7505d427c5", null ],
     [ "SetBusSpeed", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a927658b46fbff950c3c0ef30379feece", null ],
     [ "UpdateTags", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a0e85cc86d290b42c45401f66340b94d7", null ],
     [ "UpdateTagsImpl", "d2/d4d/classlogika_1_1protocols_1_1M4_1_1M4Protocol.html#a1d5e64fa0c4205db74442a38cba3fe77", null ]

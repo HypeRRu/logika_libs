@@ -1,24 +1,25 @@
 <map id="logika/include/logika/connections/serial/serial_port_connection.h" name="logika/include/logika/connections/serial/serial_port_connection.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,171,61"/>
-<area shape="rect" id="Node000002" href="$d1/d90/connections_2defs_8h.html" title=" " alt="" coords="13,375,142,416"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,62,69,109,64,179,65,248,75,359,70,360,59,248,59,178,64,109,76,61"/>
-<area shape="rect" id="Node000003" href="$d0/d60/serial__connection_8h.html" title=" " alt="" coords="78,109,250,150"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="112,60,141,95,137,99,108,63"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="142,152,122,173,105,199,91,240,82,283,78,360,73,359,77,283,85,239,100,196,118,170,138,148"/>
-<area shape="rect" id="Node000004" href="$d4/d67/connection_8h.html" title=" " alt="" coords="115,198,245,238"/>
-<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="170,150,176,182,171,183,165,151"/>
-<area shape="rect" id="Node000010" href="$d9/d7d/connections_2serial_2types_8h.html" title=" " alt="" coords="269,198,398,238"/>
-<area shape="poly" id="edge12_Node000003_Node000010" title=" " alt="" coords="204,148,283,188,280,193,201,153"/>
-<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="171,240,99,363,94,360,166,237"/>
-<area shape="rect" id="Node000005" href="$d8/de5/iconnection_8h.html" title=" " alt="" coords="166,286,295,327"/>
-<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="194,237,214,271,209,274,189,240"/>
-<area shape="rect" id="Node000008" href="$d2/d20/connections_2rc_8h.html" title=" " alt="" coords="403,294,557,320"/>
-<area shape="poly" id="edge10_Node000004_Node000008" title=" " alt="" coords="246,235,424,287,423,292,244,241"/>
-<area shape="poly" id="edge7_Node000005_Node000002" title=" " alt="" coords="197,330,126,370,124,365,195,325"/>
-<area shape="rect" id="Node000006" href="$d3/d5a/connections_2types_8h.html" title=" " alt="" coords="166,375,295,416"/>
-<area shape="poly" id="edge8_Node000005_Node000006" title=" " alt="" coords="233,328,233,359,228,359,228,328"/>
-<area shape="rect" id="Node000007" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="319,383,473,408"/>
-<area shape="poly" id="edge9_Node000005_Node000007" title=" " alt="" coords="269,325,361,373,358,377,267,330"/>
-<area shape="rect" id="Node000009" href="$d0/d6b/common_2rc_8h.html" title=" " alt="" coords="497,383,631,408"/>
-<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="494,318,544,369,540,373,490,322"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="63,5,229,61"/>
+<area shape="rect" id="Node000002" href="$d2/db9/connections_2serial_2defs_8h.html" title=" " alt="" coords="5,198,135,238"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,62,86,184,81,182,132,60"/>
+<area shape="rect" id="Node000003" href="$d0/d60/serial__connection_8h.html" title=" " alt="" coords="130,109,301,150"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="168,60,194,95,190,98,164,63"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="184,152,117,192,114,187,181,148"/>
+<area shape="rect" id="Node000004" href="$d4/d67/connection_8h.html" title=" " alt="" coords="159,198,288,238"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="220,150,223,182,217,182,214,150"/>
+<area shape="rect" id="Node000011" href="$d9/d7d/connections_2serial_2types_8h.html" title=" " alt="" coords="312,198,441,238"/>
+<area shape="poly" id="edge12_Node000003_Node000011" title=" " alt="" coords="253,148,328,188,326,192,251,153"/>
+<area shape="rect" id="Node000005" href="$d1/d90/connections_2defs_8h.html" title=" " alt="" coords="5,375,135,416"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="200,241,148,288,117,326,92,363,87,360,113,323,144,285,196,237"/>
+<area shape="rect" id="Node000006" href="$d8/de5/iconnection_8h.html" title=" " alt="" coords="159,286,288,327"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="226,239,226,271,221,271,221,239"/>
+<area shape="rect" id="Node000009" href="$d2/d20/connections_2rc_8h.html" title=" " alt="" coords="396,294,550,320"/>
+<area shape="poly" id="edge10_Node000004_Node000009" title=" " alt="" coords="281,236,424,286,422,291,279,241"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="190,330,119,370,116,365,187,325"/>
+<area shape="rect" id="Node000007" href="$d3/d5a/connections_2types_8h.html" title=" " alt="" coords="159,375,288,416"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="226,328,226,359,221,359,221,328"/>
+<area shape="rect" id="Node000008" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="312,383,466,408"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="262,325,353,373,351,377,260,330"/>
+<area shape="rect" id="Node000010" href="$d0/d6b/common_2rc_8h.html" title=" " alt="" coords="490,383,624,408"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="486,318,536,369,533,373,482,322"/>
 </map>
