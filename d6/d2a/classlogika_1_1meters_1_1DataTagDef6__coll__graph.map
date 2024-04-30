@@ -1,18 +1,18 @@
 <map id="logika::meters::DataTagDef6" name="logika::meters::DataTagDef6">
-<area shape="rect" id="Node000001" title="Тэг с данными Logika6." alt="" coords="225,1937,437,2155"/>
-<area shape="rect" id="Node000002" href="$da/dcc/classlogika_1_1meters_1_1DataTagDef.html" title="Описание тэга с данными" alt="" coords="94,1395,334,1887"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="292,1901,302,1936,297,1938,287,1902"/>
-<area shape="rect" id="Node000003" href="$d5/dfb/classlogika_1_1meters_1_1TagDef.html" title="Базовое описание тэга" alt="" coords="121,1039,326,1332"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="223,1347,222,1395,216,1395,217,1347"/>
-<area shape="rect" id="Node000004" href="$da/dc9/classlogika_1_1meters_1_1ItemDefBase.html" title="Базовый элемент" alt="" coords="112,492,356,990"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="230,1004,230,1039,224,1039,225,1004"/>
-<area shape="rect" id="Node000005" href="$d3/dce/structlogika_1_1meters_1_1ChannelDef.html" title="Структура описание канала" alt="" coords="119,169,336,429"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="232,429,233,475,227,475,227,429"/>
-<area shape="rect" id="Node000006" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="5,5,175,120"/>
-<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="85,135,79,213,77,298,77,1187,79,1239,87,1292,112,1395,107,1396,82,1293,74,1240,71,1187,71,298,74,213,80,135"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="132,131,154,168,150,171,128,134"/>
-<area shape="rect" id="Node000007" href="$dd/d10/classlogika_1_1SharedConstructible.html" title=" " alt="" coords="359,1569,544,1713"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="428,1729,366,1938,361,1936,423,1727"/>
-<area shape="rect" id="Node000008" href="$dd/d10/classlogika_1_1SharedConstructible.html" title="Конструируемый в shared_ptr тип" alt="" coords="359,1114,544,1258"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="454,1272,454,1570,449,1570,449,1272"/>
+<area shape="rect" id="Node000001" title="Тэг с данными Logika6." alt="" coords="303,1435,773,1581"/>
+<area shape="rect" id="Node000002" href="$da/dcc/classlogika_1_1meters_1_1DataTagDef.html" title="Описание тэга с данными" alt="" coords="91,1041,547,1386"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="459,1396,487,1434,483,1437,454,1400"/>
+<area shape="rect" id="Node000003" href="$d5/dfb/classlogika_1_1meters_1_1TagDef.html" title="Базовое описание тэга" alt="" coords="143,772,546,978"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="339,993,335,1041,330,1041,333,992"/>
+<area shape="rect" id="Node000004" href="$da/dc9/classlogika_1_1meters_1_1ItemDefBase.html" title="Базовый элемент" alt="" coords="142,403,558,723"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="350,738,349,773,344,772,344,738"/>
+<area shape="rect" id="Node000005" href="$d3/dce/structlogika_1_1meters_1_1ChannelDef.html" title="Структура описание канала" alt="" coords="159,140,506,340"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="341,339,343,386,338,386,335,340"/>
+<area shape="rect" id="Node000006" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="5,5,236,91"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="116,106,110,169,107,239,107,876,111,919,123,961,140,1001,162,1040,157,1042,135,1004,118,963,106,920,102,876,102,239,105,169,111,105"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="180,98,224,138,221,142,176,102"/>
+<area shape="rect" id="Node000007" href="$dd/d10/classlogika_1_1SharedConstructible.html" title=" " alt="" coords="571,1171,947,1256"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="721,1270,594,1437,590,1434,717,1266"/>
+<area shape="rect" id="Node000008" href="$dd/d10/classlogika_1_1SharedConstructible.html" title="Конструируемый в shared_ptr тип" alt="" coords="595,832,923,918"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="762,933,762,1171,757,1171,757,933"/>
 </map>

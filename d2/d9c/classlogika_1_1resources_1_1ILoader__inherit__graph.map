@@ -1,5 +1,5 @@
 <map id="logika::resources::ILoader&lt; ResourceType, type &gt;" name="logika::resources::ILoader&lt; ResourceType, type &gt;">
-<area shape="rect" id="Node000001" title="Интерфейс загрузчика ресурсов" alt="" coords="15,5,170,180"/>
-<area shape="rect" id="Node000002" href="$d0/d9e/classlogika_1_1resources_1_1Loader.html" title="Загрузчик ресурсов" alt="" coords="5,228,180,337"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,195,95,229,90,229,90,195"/>
+<area shape="rect" id="Node000001" title="Интерфейс загрузчика ресурсов" alt="" coords="51,5,391,105"/>
+<area shape="rect" id="Node000002" href="$d0/d9e/classlogika_1_1resources_1_1Loader.html" title="Загрузчик ресурсов" alt="" coords="5,153,436,219"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,120,223,154,218,154,218,120"/>
 </map>

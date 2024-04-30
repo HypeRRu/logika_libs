@@ -1,7 +1,7 @@
 <map id="logika::meters::TagDef4Settings" name="logika::meters::TagDef4Settings">
-<area shape="rect" id="Node000001" title="Параметры для создания тэга Logika4." alt="" coords="5,447,201,512"/>
-<area shape="rect" id="Node000002" href="$d1/dd1/structlogika_1_1meters_1_1DataTagDefSettings.html" title="Параметры для создания тэга с данными" alt="" coords="19,239,187,399"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,414,106,447,101,447,101,414"/>
-<area shape="rect" id="Node000003" href="$d0/de8/structlogika_1_1meters_1_1TagDefSettings.html" title="Параметры для создания базового тэга" alt="" coords="9,5,198,191"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="106,206,106,239,101,239,101,206"/>
+<area shape="rect" id="Node000001" title="Параметры для создания тэга Logika4." alt="" coords="15,432,211,497"/>
+<area shape="rect" id="Node000002" href="$d1/dd1/structlogika_1_1meters_1_1DataTagDefSettings.html" title="Параметры для создания тэга с данными" alt="" coords="5,239,221,384"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,399,116,432,111,432,111,399"/>
+<area shape="rect" id="Node000003" href="$d0/de8/structlogika_1_1meters_1_1TagDefSettings.html" title="Параметры для создания базового тэга" alt="" coords="19,5,208,191"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="116,206,116,239,111,239,111,206"/>
 </map>

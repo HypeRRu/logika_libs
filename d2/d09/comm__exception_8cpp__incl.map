@@ -1,7 +1,7 @@
 <map id="logika/src/protocols/comm_exception.cpp" name="logika/src/protocols/comm_exception.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="9,5,156,46"/>
-<area shape="rect" id="Node000002" href="$da/d3b/comm__exception_8h.html" title=" " alt="" coords="6,94,159,135"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,47,85,78,80,78,80,47"/>
-<area shape="rect" id="Node000003" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="5,183,160,208"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="85,135,85,167,80,167,80,135"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,266,31"/>
+<area shape="rect" id="Node000002" href="$da/d3b/comm__exception_8h.html" title=" " alt="" coords="23,79,248,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,31,138,63,133,63,133,31"/>
+<area shape="rect" id="Node000003" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="58,153,213,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="138,105,138,137,133,137,133,105"/>
 </map>

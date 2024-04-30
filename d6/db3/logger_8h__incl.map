@@ -1,9 +1,9 @@
 <map id="logika/include/logika/log/logger.h" name="logika/include/logika/log/logger.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="172,5,310,46"/>
-<area shape="rect" id="Node000002" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="5,94,160,120"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,49,121,89,119,84,200,44"/>
-<area shape="rect" id="Node000003" href="$d6/d8e/log_2defs_8h.html" title=" " alt="" coords="184,94,299,120"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="244,46,244,78,239,78,239,46"/>
-<area shape="rect" id="Node000004" href="$dd/dd4/log_2types_8h.html" title=" " alt="" coords="323,94,445,120"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="278,44,350,84,347,88,276,49"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="137,5,345,31"/>
+<area shape="rect" id="Node000002" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="5,79,160,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,34,124,75,122,70,213,29"/>
+<area shape="rect" id="Node000003" href="$d6/d8e/log_2defs_8h.html" title=" " alt="" coords="184,79,299,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="244,31,244,63,239,63,239,31"/>
+<area shape="rect" id="Node000004" href="$dd/dd4/log_2types_8h.html" title=" " alt="" coords="323,79,445,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="267,29,347,69,345,74,264,34"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="logika::protocols::M4::FlashArray" name="logika::protocols::M4::FlashArray">
-<area shape="rect" id="Node000001" title="Массив flash." alt="" coords="40,5,276,903"/>
-<area shape="rect" id="Node000002" href="$d8/d6e/classlogika_1_1protocols_1_1M4_1_1FlashRingBuffer.html" title="Кольцевой буфер flash." alt="" coords="5,951,311,1519"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,917,161,951,155,951,155,917"/>
+<area shape="rect" id="Node000001" title="Массив flash." alt="" coords="57,5,480,549"/>
+<area shape="rect" id="Node000002" href="$d8/d6e/classlogika_1_1protocols_1_1M4_1_1FlashRingBuffer.html" title="Кольцевой буфер flash." alt="" coords="5,597,532,912"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="271,565,271,598,266,598,266,565"/>
 </map>

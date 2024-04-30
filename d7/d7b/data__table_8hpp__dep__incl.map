@@ -1,16 +1,16 @@
 <map id="logika/include/logika/meters/data_table.hpp" name="logika/include/logika/meters/data_table.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="170,5,323,46"/>
-<area shape="rect" id="Node000002" href="$d7/d6f/interval__archive_8h.html" title=" " alt="" coords="162,94,332,135"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="249,62,249,94,244,94,244,62"/>
-<area shape="rect" id="Node000003" href="$d4/d0b/logika_2src_2main_8cpp.html" title=" " alt="" coords="5,190,139,216"/>
-<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="202,57,151,96,109,147,81,191,76,188,105,144,147,92,198,52"/>
-<area shape="rect" id="Node000007" href="$d9/dcf/data__table_8cpp.html" title=" " alt="" coords="356,94,506,135"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="303,50,390,91,388,96,301,55"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="195,144,98,192,95,187,193,139"/>
-<area shape="rect" id="Node000004" href="$d1/dd2/interval__archive_8cpp.html" title=" " alt="" coords="163,183,330,223"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="249,150,249,182,244,182,244,150"/>
-<area shape="rect" id="Node000005" href="$d6/d61/m4protocol__api_8cpp.html" title=" " alt="" coords="355,183,514,223"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="304,139,393,180,391,185,302,144"/>
-<area shape="rect" id="Node000006" href="$d4/d25/protocol_8cpp.html" title=" " alt="" coords="538,183,673,223"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="344,136,527,180,538,183,537,188,526,185,343,141"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="148,5,418,31"/>
+<area shape="rect" id="Node000002" href="$d7/d6f/interval__archive_8h.html" title=" " alt="" coords="139,79,426,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="285,46,285,79,280,79,280,46"/>
+<area shape="rect" id="Node000003" href="$d4/d0b/logika_2src_2main_8cpp.html" title=" " alt="" coords="5,153,139,178"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="213,38,169,56,128,81,111,98,97,118,79,154,74,151,93,115,107,95,125,77,167,51,211,34"/>
+<area shape="rect" id="Node000007" href="$d9/dcf/data__table_8cpp.html" title=" " alt="" coords="450,79,659,105"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="344,33,509,76,508,81,343,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="233,113,109,155,107,150,232,108"/>
+<area shape="rect" id="Node000004" href="$d1/dd2/interval__archive_8cpp.html" title=" " alt="" coords="163,153,403,178"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="285,120,285,152,280,152,280,120"/>
+<area shape="rect" id="Node000005" href="$d6/d61/m4protocol__api_8cpp.html" title=" " alt="" coords="427,153,699,178"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="345,106,516,149,514,155,344,111"/>
+<area shape="rect" id="Node000006" href="$d4/d25/protocol_8cpp.html" title=" " alt="" coords="723,153,931,178"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="391,105,734,149,733,155,390,110"/>
 </map>

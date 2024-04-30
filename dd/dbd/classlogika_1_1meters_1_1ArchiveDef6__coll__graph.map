@@ -1,12 +1,12 @@
 <map id="logika::meters::ArchiveDef6" name="logika::meters::ArchiveDef6">
-<area shape="rect" id="Node000001" title="Описание архива Logika6." alt="" coords="19,1336,227,1466"/>
-<area shape="rect" id="Node000002" href="$d5/d76/classlogika_1_1meters_1_1ArchiveDef.html" title="Базовое описание архива" alt="" coords="5,1039,240,1287"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,1302,125,1337,120,1337,120,1302"/>
-<area shape="rect" id="Node000003" href="$da/dc9/classlogika_1_1meters_1_1ItemDefBase.html" title="Базовый элемент" alt="" coords="113,492,357,990"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="167,1005,158,1040,153,1038,162,1003"/>
-<area shape="rect" id="Node000004" href="$d3/dce/structlogika_1_1meters_1_1ChannelDef.html" title="Структура описание канала" alt="" coords="119,169,337,429"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="233,429,233,475,228,475,227,429"/>
-<area shape="rect" id="Node000005" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="6,5,175,120"/>
-<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="91,135,87,501,91,744,103,989,107,1039,102,1039,97,990,85,744,82,501,86,135"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="133,131,155,168,150,171,129,134"/>
+<area shape="rect" id="Node000001" title="Описание архива Logika6." alt="" coords="5,967,465,1052"/>
+<area shape="rect" id="Node000002" href="$d5/d76/classlogika_1_1meters_1_1ArchiveDef.html" title="Базовое описание архива" alt="" coords="12,772,459,918"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,933,238,967,233,967,233,933"/>
+<area shape="rect" id="Node000003" href="$da/dc9/classlogika_1_1meters_1_1ItemDefBase.html" title="Базовый элемент" alt="" coords="203,403,619,723"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="306,737,282,774,278,771,301,734"/>
+<area shape="rect" id="Node000004" href="$d3/dce/structlogika_1_1meters_1_1ChannelDef.html" title="Структура описание канала" alt="" coords="221,140,567,340"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="402,339,404,386,399,386,397,340"/>
+<area shape="rect" id="Node000005" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="67,5,297,91"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="179,106,171,219,167,373,173,547,181,636,194,722,208,772,202,773,189,724,176,637,167,548,162,373,166,219,174,105"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="241,98,285,138,282,142,237,102"/>
 </map>

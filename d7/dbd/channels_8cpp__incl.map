@@ -1,7 +1,7 @@
 <map id="migration/src/converters/channels.cpp" name="migration/src/converters/channels.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="98,5,259,46"/>
-<area shape="rect" id="Node000002" href="$d7/d83/channels_8h.html" title=" " alt="" coords="5,94,154,120"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,48,108,86,105,82,152,44"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="177,94,377,120"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="204,44,251,82,248,86,201,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="58,5,299,31"/>
+<area shape="rect" id="Node000002" href="$d7/d83/channels_8h.html" title=" " alt="" coords="5,79,154,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,34,110,72,107,68,160,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="177,79,377,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="196,29,250,68,247,72,193,34"/>
 </map>

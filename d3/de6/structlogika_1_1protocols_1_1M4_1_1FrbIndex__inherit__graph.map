@@ -1,5 +1,5 @@
 <map id="logika::protocols::M4::FrbIndex" name="logika::protocols::M4::FrbIndex">
-<area shape="rect" id="Node000001" title="Индекс элемента Flash Ring Buffer." alt="" coords="5,168,175,416"/>
-<area shape="rect" id="Node000002" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="5,5,175,120"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,135,93,168,87,168,87,135"/>
+<area shape="rect" id="Node000001" title="Индекс элемента Flash Ring Buffer." alt="" coords="5,139,433,284"/>
+<area shape="rect" id="Node000002" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="104,5,335,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,106,222,139,217,139,217,106"/>
 </map>

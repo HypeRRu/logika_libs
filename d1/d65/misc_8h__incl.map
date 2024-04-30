@@ -1,7 +1,7 @@
 <map id="logika/include/logika/common/misc.h" name="logika/include/logika/common/misc.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="98,5,237,46"/>
-<area shape="rect" id="Node000002" href="$dd/da1/common_2defs_8h.html" title=" " alt="" coords="5,94,154,120"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,48,106,85,103,81,144,44"/>
-<area shape="rect" id="Node000003" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="178,94,333,120"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="191,44,232,81,229,85,187,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="50,5,285,31"/>
+<area shape="rect" id="Node000002" href="$dd/da1/common_2defs_8h.html" title=" " alt="" coords="5,79,154,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,34,108,71,104,67,151,29"/>
+<area shape="rect" id="Node000003" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="178,79,333,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,29,231,67,227,71,181,34"/>
 </map>

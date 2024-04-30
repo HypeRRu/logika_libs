@@ -1,5 +1,5 @@
 <map id="logika::protocols::ECommException" name="logika::protocols::ECommException">
-<area shape="rect" id="Node000001" title="Класс ошибки обмена" alt="" coords="5,119,259,461"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="75,5,189,71"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,85,135,119,129,119,129,85"/>
+<area shape="rect" id="Node000001" title="Класс ошибки обмена" alt="" coords="5,119,500,299"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="196,5,309,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="255,86,255,119,250,119,250,86"/>
 </map>

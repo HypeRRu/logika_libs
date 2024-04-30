@@ -1,22 +1,22 @@
 <map id="logika/src/connections/network/net_connection.cpp" name="logika/src/connections/network/net_connection.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="52,5,240,46"/>
-<area shape="rect" id="Node000002" href="$d6/d43/net__connection_8h.html" title=" " alt="" coords="59,94,233,135"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,47,149,78,143,78,143,47"/>
-<area shape="rect" id="Node000003" href="$d4/d42/connections_2network_2defs_8h.html" title=" " alt="" coords="5,183,135,223"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="131,137,99,173,95,169,127,133"/>
-<area shape="rect" id="Node000004" href="$d4/d67/connection_8h.html" title=" " alt="" coords="159,183,288,223"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="166,133,198,169,194,173,162,137"/>
-<area shape="rect" id="Node000005" href="$d1/d90/connections_2defs_8h.html" title=" " alt="" coords="5,360,135,401"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="200,226,148,273,117,311,92,348,87,345,113,308,144,270,196,222"/>
-<area shape="rect" id="Node000006" href="$d8/de5/iconnection_8h.html" title=" " alt="" coords="159,271,288,312"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="226,224,226,256,221,256,221,224"/>
-<area shape="rect" id="Node000009" href="$d2/d20/connections_2rc_8h.html" title=" " alt="" coords="396,279,550,305"/>
-<area shape="poly" id="edge9_Node000004_Node000009" title=" " alt="" coords="281,221,424,271,422,276,279,226"/>
-<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="190,315,119,355,116,350,187,310"/>
-<area shape="rect" id="Node000007" href="$d3/d5a/connections_2types_8h.html" title=" " alt="" coords="159,360,288,401"/>
-<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="226,313,226,344,221,344,221,313"/>
-<area shape="rect" id="Node000008" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="312,368,466,393"/>
-<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="262,310,353,358,351,362,260,315"/>
-<area shape="rect" id="Node000010" href="$d0/d6b/common_2rc_8h.html" title=" " alt="" coords="490,368,624,393"/>
-<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="486,303,536,354,533,358,482,307"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="73,5,391,31"/>
+<area shape="rect" id="Node000002" href="$d6/d43/net__connection_8h.html" title=" " alt="" coords="91,79,373,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,31,235,63,229,63,229,31"/>
+<area shape="rect" id="Node000003" href="$d4/d42/connections_2network_2defs_8h.html" title=" " alt="" coords="5,153,224,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="213,107,149,147,146,142,211,103"/>
+<area shape="rect" id="Node000004" href="$d4/d67/connection_8h.html" title=" " alt="" coords="247,153,454,178"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="253,103,319,142,316,147,251,107"/>
+<area shape="rect" id="Node000005" href="$d1/d90/connections_2defs_8h.html" title=" " alt="" coords="70,300,239,326"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="321,181,278,201,235,228,201,259,174,290,170,286,198,255,232,224,276,197,318,177"/>
+<area shape="rect" id="Node000006" href="$d8/de5/iconnection_8h.html" title=" " alt="" coords="246,226,455,252"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="353,179,353,211,348,211,348,179"/>
+<area shape="rect" id="Node000009" href="$d2/d20/connections_2rc_8h.html" title=" " alt="" coords="553,226,708,252"/>
+<area shape="poly" id="edge9_Node000004_Node000009" title=" " alt="" coords="399,176,569,219,568,225,397,181"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="318,255,203,297,201,292,316,250"/>
+<area shape="rect" id="Node000007" href="$d3/d5a/connections_2types_8h.html" title=" " alt="" coords="263,300,438,326"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="353,252,353,284,348,284,348,252"/>
+<area shape="rect" id="Node000008" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="461,300,616,326"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="383,250,493,291,491,296,381,255"/>
+<area shape="rect" id="Node000010" href="$d0/d6b/common_2rc_8h.html" title=" " alt="" coords="639,300,774,326"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="645,251,685,287,681,291,642,254"/>
 </map>

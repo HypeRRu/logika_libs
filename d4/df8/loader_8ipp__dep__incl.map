@@ -1,5 +1,5 @@
 <map id="resources/include/logika/resources/loader.ipp" name="resources/include/logika/resources/loader.ipp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,167,46"/>
-<area shape="rect" id="Node000002" href="$d2/d8f/loader_8hpp.html" title=" " alt="" coords="5,94,167,135"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,62,89,94,83,94,83,62"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="7,5,289,31"/>
+<area shape="rect" id="Node000002" href="$d2/d8f/loader_8hpp.html" title=" " alt="" coords="5,79,291,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,46,151,79,145,79,145,46"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="logika::protocols::M4::FlashArchive4" name="logika::protocols::M4::FlashArchive4">
-<area shape="rect" id="Node000001" title="Класс флэш архива Logika4L." alt="" coords="121,5,425,656"/>
-<area shape="rect" id="Node000002" href="$df/db8/classlogika_1_1protocols_1_1M4_1_1AsyncFlashArchive4.html" title="Асинхронный архив Logika4L." alt="" coords="5,767,265,985"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,671,165,768,160,767,184,670"/>
-<area shape="rect" id="Node000003" href="$d7/dd9/classlogika_1_1protocols_1_1M4_1_1SyncFlashArchive4.html" title="Синхронный (интервальный) архив Logika4L." alt="" coords="290,704,530,1048"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="361,670,370,704,364,705,356,671"/>
+<area shape="rect" id="Node000001" title="Класс флэш архива Logika4L." alt="" coords="249,5,672,345"/>
+<area shape="rect" id="Node000002" href="$df/db8/classlogika_1_1protocols_1_1M4_1_1AsyncFlashArchive4.html" title="Асинхронный архив Logika4L." alt="" coords="5,440,449,571"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="334,359,275,442,271,438,330,356"/>
+<area shape="rect" id="Node000003" href="$d7/dd9/classlogika_1_1protocols_1_1M4_1_1SyncFlashArchive4.html" title="Синхронный (интервальный) архив Logika4L." alt="" coords="473,393,917,617"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="592,356,618,392,614,395,588,359"/>
 </map>

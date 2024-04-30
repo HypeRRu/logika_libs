@@ -1,5 +1,5 @@
 <map id="logika::connections::Connection" name="logika::connections::Connection">
-<area shape="rect" id="Node000001" title="Базовый класс для работы с соединением" alt="" coords="5,797,207,2163"/>
-<area shape="rect" id="Node000002" href="$df/ddb/classlogika_1_1connections_1_1IConnection.html" title="Интерфейс класса для работы с соединением" alt="" coords="5,5,207,749"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,764,109,797,103,797,103,764"/>
+<area shape="rect" id="Node000001" title="Базовый класс для работы с соединением" alt="" coords="5,503,405,1321"/>
+<area shape="rect" id="Node000002" href="$df/ddb/classlogika_1_1connections_1_1IConnection.html" title="Интерфейс класса для работы с соединением" alt="" coords="22,5,389,455"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,469,208,503,203,503,203,469"/>
 </map>

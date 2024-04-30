@@ -1,5 +1,5 @@
 <map id="logika::storage::Storage&lt; IdType, StoredType &gt;" name="logika::storage::Storage&lt; IdType, StoredType &gt;">
-<area shape="rect" id="Node000001" title="Хранилище ресурса (типизированное)" alt="" coords="5,133,193,373"/>
-<area shape="rect" id="Node000002" href="$d2/d94/classlogika_1_1storage_1_1IStorage.html" title="Интерфейс хранилища ресурса" alt="" coords="24,5,175,85"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,100,102,133,97,133,97,100"/>
+<area shape="rect" id="Node000001" title="Хранилище ресурса (типизированное)" alt="" coords="5,119,348,253"/>
+<area shape="rect" id="Node000002" href="$d2/d94/classlogika_1_1storage_1_1IStorage.html" title="Интерфейс хранилища ресурса" alt="" coords="91,5,263,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,86,179,119,174,119,174,86"/>
 </map>

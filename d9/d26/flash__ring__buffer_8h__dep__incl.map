@@ -1,11 +1,11 @@
 <map id="logika/include/logika/protocols/m4/flash_ring_buffer.h" name="logika/include/logika/protocols/m4/flash_ring_buffer.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="119,5,278,61"/>
-<area shape="rect" id="Node000002" href="$dd/d19/flash__archive4l_8h.html" title=" " alt="" coords="99,109,299,150"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,77,201,109,196,109,196,77"/>
-<area shape="rect" id="Node000003" href="$de/d72/flash__archive4l_8cpp.html" title=" " alt="" coords="5,198,163,238"/>
-<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="126,72,105,89,89,110,81,132,78,155,82,197,77,198,73,155,76,131,84,108,101,85,122,68"/>
-<area shape="rect" id="Node000004" href="$d1/de8/flash__ring__buffer_8cpp.html" title=" " alt="" coords="231,198,396,238"/>
-<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="275,68,296,85,313,108,321,131,324,155,321,198,315,197,319,155,316,132,308,110,292,89,272,72"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="162,161,112,199,108,195,159,157"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="238,157,289,195,286,199,235,161"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="127,5,453,31"/>
+<area shape="rect" id="Node000002" href="$dd/d19/flash__archive4l_8h.html" title=" " alt="" coords="131,79,449,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="293,46,293,79,287,79,287,46"/>
+<area shape="rect" id="Node000003" href="$de/d72/flash__archive4l_8cpp.html" title=" " alt="" coords="5,153,276,178"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="179,39,147,56,121,80,115,98,118,117,134,151,129,153,113,118,110,97,117,78,144,51,177,34"/>
+<area shape="rect" id="Node000004" href="$d1/de8/flash__ring__buffer_8cpp.html" title=" " alt="" coords="323,153,601,178"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="401,34,435,51,463,77,471,96,473,117,468,153,463,152,468,117,466,98,458,81,432,55,399,39"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="252,114,167,154,165,150,250,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="334,108,434,150,431,155,332,113"/>
 </map>

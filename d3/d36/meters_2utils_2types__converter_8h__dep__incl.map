@@ -1,15 +1,15 @@
 <map id="logika/include/logika/meters/utils/types_converter.h" name="logika/include/logika/meters/utils/types_converter.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="465,5,664,46"/>
-<area shape="rect" id="Node000002" href="$de/d4e/logika4l_8cpp.html" title=" " alt="" coords="5,94,172,135"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="450,49,185,97,173,99,172,94,184,91,449,44"/>
-<area shape="rect" id="Node000003" href="$d8/d1a/logika4m_8cpp.html" title=" " alt="" coords="196,94,362,135"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="486,54,345,96,343,91,484,48"/>
-<area shape="rect" id="Node000004" href="$da/df6/logika4_8cpp.html" title=" " alt="" coords="387,94,553,135"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="534,59,493,96,489,92,530,55"/>
-<area shape="rect" id="Node000005" href="$d4/d5d/tag__def4_8cpp.html" title=" " alt="" coords="577,94,744,135"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="599,55,641,92,637,96,596,59"/>
-<area shape="rect" id="Node000006" href="$d1/d96/tag__def_8cpp.html" title=" " alt="" coords="768,94,911,135"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="643,49,778,91,776,96,641,54"/>
-<area shape="rect" id="Node000007" href="$d0/dff/meters_2utils_2types__converter_8cpp.html" title=" " alt="" coords="935,94,1085,135"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="680,45,924,91,935,94,934,99,923,97,679,50"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="665,5,982,31"/>
+<area shape="rect" id="Node000002" href="$de/d4e/logika4l_8cpp.html" title=" " alt="" coords="5,79,258,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="690,36,250,81,249,76,689,31"/>
+<area shape="rect" id="Node000003" href="$d8/d1a/logika4m_8cpp.html" title=" " alt="" coords="281,79,550,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="739,37,486,81,485,76,738,32"/>
+<area shape="rect" id="Node000004" href="$da/df6/logika4_8cpp.html" title=" " alt="" coords="574,79,809,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="789,41,715,81,713,76,787,36"/>
+<area shape="rect" id="Node000005" href="$d4/d5d/tag__def4_8cpp.html" title=" " alt="" coords="833,79,1078,105"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="860,36,934,76,932,81,858,41"/>
+<area shape="rect" id="Node000006" href="$d1/d96/tag__def_8cpp.html" title=" " alt="" coords="1102,79,1294,105"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="903,32,1135,76,1134,81,902,37"/>
+<area shape="rect" id="Node000007" href="$d0/dff/meters_2utils_2types__converter_8cpp.html" title=" " alt="" coords="1318,79,1588,105"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="947,31,1346,76,1345,81,946,36"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="logika/include/logika/protocols/m4/tag_write_data.h" name="logika/include/logika/protocols/m4/tag_write_data.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="90,5,248,61"/>
-<area shape="rect" id="Node000002" href="$d7/d37/protocols_2defs_8h.html" title=" " alt="" coords="5,109,157,135"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,63,106,100,102,96,140,59"/>
-<area shape="rect" id="Node000003" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="181,109,336,135"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="199,59,237,96,233,100,195,63"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="11,5,327,31"/>
+<area shape="rect" id="Node000002" href="$d7/d37/protocols_2defs_8h.html" title=" " alt="" coords="5,79,157,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,34,109,71,106,67,152,29"/>
+<area shape="rect" id="Node000003" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="181,79,336,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,29,233,67,230,71,182,34"/>
 </map>

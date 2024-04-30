@@ -1,12 +1,12 @@
 <map id="logika::meters::DataTag" name="logika::meters::DataTag">
-<area shape="rect" id="Node000001" title="Тэг с данными" alt="" coords="12,1192,209,1838"/>
-<area shape="rect" id="Node000002" href="$d1/d29/classlogika_1_1meters_1_1Tag.html" title="Тэг" alt="" coords="5,676,216,1143"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,1158,113,1193,108,1193,108,1158"/>
-<area shape="rect" id="Node000003" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="21,5,190,120"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="108,134,112,676,107,676,103,135"/>
-<area shape="rect" id="Node000005" href="$d3/dce/structlogika_1_1meters_1_1ChannelDef.html" title="Структура описание канала" alt="" coords="127,169,345,429"/>
-<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="146,131,167,168,162,171,141,134"/>
-<area shape="rect" id="Node000004" href="$dd/def/structlogika_1_1meters_1_1Channel.html" title="Структура канала" alt="" coords="137,479,313,613"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="207,614,192,661,187,659,202,612"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="232,444,231,479,226,479,227,444"/>
+<area shape="rect" id="Node000001" title="Тэг с данными" alt="" coords="5,912,393,1338"/>
+<area shape="rect" id="Node000002" href="$d1/d29/classlogika_1_1meters_1_1Tag.html" title="Тэг" alt="" coords="32,558,367,863"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,878,202,912,197,912,197,878"/>
+<area shape="rect" id="Node000003" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="79,5,309,91"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="197,106,201,558,195,558,192,106"/>
+<area shape="rect" id="Node000005" href="$d3/dce/structlogika_1_1meters_1_1ChannelDef.html" title="Структура описание канала" alt="" coords="215,140,562,340"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="249,99,289,138,286,142,245,103"/>
+<area shape="rect" id="Node000004" href="$dd/def/structlogika_1_1meters_1_1Channel.html" title="Структура канала" alt="" coords="218,389,546,495"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="349,496,315,545,311,542,345,493"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="388,355,386,390,381,390,382,355"/>
 </map>

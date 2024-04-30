@@ -1,9 +1,9 @@
 <map id="logika/src/meters/logika4/4m/ads_tag_block.cpp" name="logika/src/meters/logika4/4m/ads_tag_block.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="81,5,247,46"/>
-<area shape="rect" id="Node000002" href="$d0/df2/ads__tag__block_8h.html" title=" " alt="" coords="92,94,236,135"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,47,167,78,162,78,162,47"/>
-<area shape="rect" id="Node000003" href="$d8/d23/meters_2logika4_24m_2defs_8h.html" title=" " alt="" coords="5,183,150,223"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="146,137,110,174,106,170,143,133"/>
-<area shape="rect" id="Node000004" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="174,190,328,216"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="186,133,230,178,227,181,182,137"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="59,5,360,31"/>
+<area shape="rect" id="Node000002" href="$d0/df2/ads__tag__block_8h.html" title=" " alt="" coords="77,79,342,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,31,212,63,207,63,207,31"/>
+<area shape="rect" id="Node000003" href="$d8/d23/meters_2logika4_24m_2defs_8h.html" title=" " alt="" coords="5,153,211,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="194,107,139,145,136,141,191,103"/>
+<area shape="rect" id="Node000004" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="235,153,389,178"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="228,103,284,141,281,146,225,107"/>
 </map>

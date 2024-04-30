@@ -1,11 +1,11 @@
 <map id="logika::meters::ArchiveDefSettings" name="logika::meters::ArchiveDefSettings">
-<area shape="rect" id="Node000001" title="Параметры для создания базового описания архива" alt="" coords="337,5,501,200"/>
-<area shape="rect" id="Node000002" href="$d3/db0/structlogika_1_1meters_1_1ArchiveDef4LSettings.html" title="Параметры для создания описания архива Logika4L." alt="" coords="5,248,213,483"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="326,172,227,250,215,261,211,257,224,246,323,168"/>
-<area shape="rect" id="Node000003" href="$d7/df8/structlogika_1_1meters_1_1ArchiveDef4MSettings.html" title="Параметры для создания описания архива Logika4M." alt="" coords="238,325,407,405"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="381,215,339,327,334,325,376,213"/>
-<area shape="rect" id="Node000004" href="$df/dd7/structlogika_1_1meters_1_1ArchiveDef6Settings.html" title="Параметры для создания описания архива Logika6." alt="" coords="431,325,601,405"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="462,213,504,325,499,327,457,215"/>
-<area shape="rect" id="Node000005" href="$d7/d3d/structlogika_1_1meters_1_1MultipartArchiveDef6Settings.html" title="Параметры для создания описания многочастного архива Logika6." alt="" coords="625,318,775,413"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="514,163,566,202,615,246,646,281,672,316,668,320,642,284,611,250,563,206,511,167"/>
+<area shape="rect" id="Node000001" title="Параметры для создания базового описания архива" alt="" coords="365,5,623,171"/>
+<area shape="rect" id="Node000002" href="$d3/db0/structlogika_1_1meters_1_1ArchiveDef4LSettings.html" title="Параметры для создания описания архива Logika4L." alt="" coords="5,219,231,424"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="353,159,245,221,232,229,229,225,242,216,350,154"/>
+<area shape="rect" id="Node000003" href="$d7/df8/structlogika_1_1meters_1_1ArchiveDef4MSettings.html" title="Параметры для создания описания архива Logika4M." alt="" coords="255,289,485,354"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="446,185,389,290,384,288,441,183"/>
+<area shape="rect" id="Node000004" href="$df/dd7/structlogika_1_1meters_1_1ArchiveDef6Settings.html" title="Параметры для создания описания архива Logika6." alt="" coords="509,289,727,354"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="547,183,604,288,599,290,542,185"/>
+<area shape="rect" id="Node000005" href="$d7/d3d/structlogika_1_1meters_1_1MultipartArchiveDef6Settings.html" title="Параметры для создания описания многочастного архива Logika6." alt="" coords="751,289,1019,354"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="638,158,741,216,844,287,841,291,738,221,635,163"/>
 </map>

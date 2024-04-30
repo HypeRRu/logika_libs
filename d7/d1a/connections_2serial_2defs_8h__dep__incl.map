@@ -1,16 +1,16 @@
 <map id="logika/include/logika/connections/serial/defs.h" name="logika/include/logika/connections/serial/defs.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="315,5,484,46"/>
-<area shape="rect" id="Node000002" href="$d0/d60/serial__connection_8h.html" title=" " alt="" coords="377,94,542,150"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="422,58,444,92,440,95,418,61"/>
-<area shape="rect" id="Node000003" href="$d6/df1/serial__port__connection_8h.html" title=" " alt="" coords="257,198,422,253"/>
-<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="382,60,367,95,353,149,345,198,340,197,348,148,362,93,378,58"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="417,162,373,199,370,195,414,158"/>
-<area shape="rect" id="Node000007" href="$d7/d5a/serial__connection_8cpp.html" title=" " alt="" coords="447,205,632,246"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="492,160,526,203,522,207,488,164"/>
-<area shape="rect" id="Node000004" href="$d0/db2/serial__port__connection_8cpp.html" title=" " alt="" coords="5,309,220,350"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="266,263,158,311,155,306,263,258"/>
-<area shape="rect" id="Node000005" href="$df/d90/serial__port__connection__linux_8cpp.html" title=" " alt="" coords="244,301,434,357"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="342,269,342,301,337,301,337,269"/>
-<area shape="rect" id="Node000006" href="$db/dfe/serial__port__connection__windows_8cpp.html" title=" " alt="" coords="459,301,649,357"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="412,258,497,298,495,303,409,263"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="529,5,815,31"/>
+<area shape="rect" id="Node000002" href="$d0/d60/serial__connection_8h.html" title=" " alt="" coords="600,79,963,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="705,37,764,76,761,81,702,42"/>
+<area shape="rect" id="Node000003" href="$d6/df1/serial__port__connection_8h.html" title=" " alt="" coords="367,153,759,178"/>
+<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="636,41,611,59,590,81,580,99,573,118,567,153,561,152,568,117,575,96,586,77,608,55,632,37"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="731,112,601,155,599,150,729,107"/>
+<area shape="rect" id="Node000007" href="$d7/d5a/serial__connection_8cpp.html" title=" " alt="" coords="783,153,1098,178"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="823,109,914,150,912,154,821,114"/>
+<area shape="rect" id="Node000004" href="$d0/db2/serial__port__connection_8cpp.html" title=" " alt="" coords="5,226,350,252"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="483,184,244,228,243,223,482,179"/>
+<area shape="rect" id="Node000005" href="$df/d90/serial__port__connection__linux_8cpp.html" title=" " alt="" coords="374,226,752,252"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="566,194,566,226,560,226,560,194"/>
+<area shape="rect" id="Node000006" href="$db/dfe/serial__port__connection__windows_8cpp.html" title=" " alt="" coords="775,226,1177,252"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="649,179,906,223,905,228,648,184"/>
 </map>

@@ -1,9 +1,9 @@
 <map id="logika/include/logika/connections/serial/serial_port_connection.h" name="logika/include/logika/connections/serial/serial_port_connection.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="257,5,422,61"/>
-<area shape="rect" id="Node000002" href="$d0/db2/serial__port__connection_8cpp.html" title=" " alt="" coords="5,117,220,157"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="266,70,158,118,155,113,263,65"/>
-<area shape="rect" id="Node000003" href="$df/d90/serial__port__connection__linux_8cpp.html" title=" " alt="" coords="244,109,434,165"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="342,77,342,108,337,108,337,77"/>
-<area shape="rect" id="Node000004" href="$db/dfe/serial__port__connection__windows_8cpp.html" title=" " alt="" coords="459,109,649,165"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="412,66,497,106,495,111,409,70"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="367,5,759,31"/>
+<area shape="rect" id="Node000002" href="$d0/db2/serial__port__connection_8cpp.html" title=" " alt="" coords="5,79,350,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="483,37,244,81,243,76,482,32"/>
+<area shape="rect" id="Node000003" href="$df/d90/serial__port__connection__linux_8cpp.html" title=" " alt="" coords="374,79,752,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="566,46,566,79,560,79,560,46"/>
+<area shape="rect" id="Node000004" href="$db/dfe/serial__port__connection__windows_8cpp.html" title=" " alt="" coords="775,79,1177,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="649,32,906,76,905,81,648,37"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="logika::meters::IMeter" name="logika::meters::IMeter">
-<area shape="rect" id="Node000001" title="Интерфейс прибора" alt="" coords="5,168,245,1359"/>
-<area shape="rect" id="Node000002" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="41,5,210,120"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,135,128,168,123,168,123,135"/>
+<area shape="rect" id="Node000001" title="Интерфейс прибора" alt="" coords="5,139,467,776"/>
+<area shape="rect" id="Node000002" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="121,5,351,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="239,106,239,139,233,139,233,106"/>
 </map>

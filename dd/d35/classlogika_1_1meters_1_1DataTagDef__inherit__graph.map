@@ -1,17 +1,17 @@
 <map id="logika::meters::DataTagDef" name="logika::meters::DataTagDef">
-<area shape="rect" id="Node000001" title="Описание тэга с данными" alt="" coords="113,912,353,1404"/>
-<area shape="rect" id="Node000005" href="$d1/dcb/classlogika_1_1meters_1_1DataTagDef6.html" title="Тэг с данными Logika6." alt="" coords="12,1452,224,1671"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="161,1419,151,1453,146,1451,156,1418"/>
-<area shape="rect" id="Node000006" href="$d8/d42/classlogika_1_1meters_1_1TagDef4.html" title="Базовый тэг Logika4." alt="" coords="249,1479,449,1643"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="310,1418,328,1479,323,1480,305,1419"/>
-<area shape="rect" id="Node000002" href="$d5/dfb/classlogika_1_1meters_1_1TagDef.html" title="Базовое описание тэга" alt="" coords="25,571,230,864"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,878,176,912,171,913,163,879"/>
-<area shape="rect" id="Node000003" href="$da/dc9/classlogika_1_1meters_1_1ItemDefBase.html" title="Базовый элемент" alt="" coords="5,5,249,523"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="130,537,130,571,125,571,125,537"/>
-<area shape="rect" id="Node000004" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="255,660,424,775"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="325,790,295,913,290,911,320,789"/>
-<area shape="rect" id="Node000007" href="$db/d67/classlogika_1_1meters_1_1TagDef4L.html" title="Тэг с данными Logika4L." alt="" coords="115,1719,340,2151"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="320,1658,300,1720,295,1718,315,1657"/>
-<area shape="rect" id="Node000008" href="$dc/dc3/classlogika_1_1meters_1_1TagDef4M.html" title="Тэг с данными Logika4M." alt="" coords="365,1887,575,1982"/>
-<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="382,1657,458,1887,452,1888,377,1658"/>
+<area shape="rect" id="Node000001" title="Описание тэга с данными" alt="" coords="246,647,702,992"/>
+<area shape="rect" id="Node000005" href="$d1/dcb/classlogika_1_1meters_1_1DataTagDef6.html" title="Тэг с данными Logika6." alt="" coords="5,1040,476,1185"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="329,1005,300,1042,296,1039,325,1002"/>
+<area shape="rect" id="Node000006" href="$d8/d42/classlogika_1_1meters_1_1TagDef4.html" title="Базовый тэг Logika4." alt="" coords="501,1060,917,1165"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="624,1002,670,1059,665,1062,619,1005"/>
+<area shape="rect" id="Node000002" href="$d5/dfb/classlogika_1_1meters_1_1TagDef.html" title="Базовое описание тэга" alt="" coords="102,393,505,599"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="367,610,385,646,381,648,362,613"/>
+<area shape="rect" id="Node000003" href="$da/dc9/classlogika_1_1meters_1_1ItemDefBase.html" title="Базовый элемент" alt="" coords="95,5,511,345"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="306,360,306,393,301,393,301,360"/>
+<area shape="rect" id="Node000004" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="529,453,760,539"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="618,553,567,648,563,646,613,551"/>
+<area shape="rect" id="Node000007" href="$db/d67/classlogika_1_1meters_1_1TagDef4L.html" title="Тэг с данными Logika4L." alt="" coords="263,1233,695,1519"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="656,1178,606,1235,602,1232,652,1174"/>
+<area shape="rect" id="Node000008" href="$dc/dc3/classlogika_1_1meters_1_1TagDef4M.html" title="Тэг с данными Logika4M." alt="" coords="720,1343,1159,1409"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="765,1174,914,1342,910,1345,761,1178"/>
 </map>

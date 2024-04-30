@@ -1,9 +1,9 @@
 <map id="logika::connections::SerialConnection" name="logika::connections::SerialConnection">
-<area shape="rect" id="Node000001" title="Базовый класс для работы с соединением по последовательному порту" alt="" coords="17,2211,213,2657"/>
-<area shape="rect" id="Node000004" href="$de/d68/classlogika_1_1connections_1_1SerialPortConnection.html" title="Класс для работы с соединением COM&#45;порту" alt="" coords="5,2705,225,3189"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="118,2672,118,2705,113,2705,113,2672"/>
-<area shape="rect" id="Node000002" href="$db/da7/classlogika_1_1connections_1_1Connection.html" title="Базовый класс для работы с соединением" alt="" coords="15,797,216,2163"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,2178,118,2211,113,2211,113,2178"/>
-<area shape="rect" id="Node000003" href="$df/ddb/classlogika_1_1connections_1_1IConnection.html" title="Интерфейс класса для работы с соединением" alt="" coords="15,5,216,749"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="118,764,118,797,113,797,113,764"/>
+<area shape="rect" id="Node000001" title="Базовый класс для работы с соединением по последовательному порту" alt="" coords="17,1369,461,1655"/>
+<area shape="rect" id="Node000004" href="$de/d68/classlogika_1_1connections_1_1SerialPortConnection.html" title="Класс для работы с соединением COM&#45;порту" alt="" coords="5,1703,473,2007"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="242,1670,242,1703,237,1703,237,1670"/>
+<area shape="rect" id="Node000002" href="$db/da7/classlogika_1_1connections_1_1Connection.html" title="Базовый класс для работы с соединением" alt="" coords="39,503,439,1321"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,1336,242,1369,237,1369,237,1336"/>
+<area shape="rect" id="Node000003" href="$df/ddb/classlogika_1_1connections_1_1IConnection.html" title="Интерфейс класса для работы с соединением" alt="" coords="56,5,423,455"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="242,469,242,503,237,503,237,469"/>
 </map>

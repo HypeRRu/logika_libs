@@ -1,17 +1,17 @@
 <map id="logika/include/logika/meters/utils/types_converter.h" name="logika/include/logika/meters/utils/types_converter.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="94,5,293,46"/>
-<area shape="rect" id="Node000002" href="$d2/d4b/meters_2defs_8h.html" title=" " alt="" coords="5,175,144,201"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,48,94,164,90,161,176,45"/>
-<area shape="rect" id="Node000003" href="$dc/d3d/meters_2types_8h.html" title=" " alt="" coords="208,94,352,120"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="216,44,257,81,253,85,213,48"/>
-<area shape="poly" id="edge7_Node000003_Node000002" title=" " alt="" coords="249,123,121,172,119,167,247,118"/>
-<area shape="rect" id="Node000004" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="169,256,324,282"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="257,122,230,142,209,169,205,188,208,207,228,243,223,245,203,209,200,187,204,167,227,138,254,118"/>
-<area shape="rect" id="Node000005" href="$da/d08/iserializable_8h.html" title=" " alt="" coords="218,175,408,201"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="287,119,305,160,300,162,282,121"/>
-<area shape="rect" id="Node000006" href="$de/d23/shared__constructible_8hpp.html" title=" " alt="" coords="433,168,585,208"/>
-<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="316,118,439,160,437,165,314,123"/>
-<area shape="rect" id="Node000007" href="$dd/da1/common_2defs_8h.html" title=" " alt="" coords="610,175,758,201"/>
-<area shape="poly" id="edge8_Node000003_Node000007" title=" " alt="" coords="348,118,598,165,615,169,614,174,597,170,347,123"/>
-<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="305,203,268,246,264,243,301,200"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="35,5,351,31"/>
+<area shape="rect" id="Node000002" href="$d2/d4b/meters_2defs_8h.html" title=" " alt="" coords="5,153,144,178"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,33,96,142,92,139,181,30"/>
+<area shape="rect" id="Node000003" href="$dc/d3d/meters_2types_8h.html" title=" " alt="" coords="208,79,352,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="210,29,255,67,252,71,206,34"/>
+<area shape="poly" id="edge7_Node000003_Node000002" title=" " alt="" coords="246,108,125,150,123,145,244,103"/>
+<area shape="rect" id="Node000004" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="169,226,324,252"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="257,107,230,127,209,154,206,169,209,184,226,213,221,216,204,186,200,169,204,152,227,123,254,103"/>
+<area shape="rect" id="Node000005" href="$da/d08/iserializable_8h.html" title=" " alt="" coords="218,153,408,178"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="288,104,303,137,299,140,283,106"/>
+<area shape="rect" id="Node000006" href="$de/d23/shared__constructible_8hpp.html" title=" " alt="" coords="433,153,690,178"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="328,103,499,146,498,151,327,108"/>
+<area shape="rect" id="Node000007" href="$dd/da1/common_2defs_8h.html" title=" " alt="" coords="714,153,862,178"/>
+<area shape="poly" id="edge8_Node000003_Node000007" title=" " alt="" coords="353,101,699,149,698,154,352,106"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="304,180,270,217,266,213,300,177"/>
 </map>

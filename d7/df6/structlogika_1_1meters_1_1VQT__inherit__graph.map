@@ -1,5 +1,5 @@
 <map id="logika::meters::VQT" name="logika::meters::VQT">
-<area shape="rect" id="Node000001" title="Тип, состояший из метрики, ее значения и метки времени" alt="" coords="5,168,175,372"/>
-<area shape="rect" id="Node000002" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="5,5,175,120"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,135,93,168,87,168,87,135"/>
+<area shape="rect" id="Node000001" title="Тип, состояший из метрики, ее значения и метки времени" alt="" coords="5,139,369,284"/>
+<area shape="rect" id="Node000002" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="72,5,303,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,106,190,139,185,139,185,106"/>
 </map>

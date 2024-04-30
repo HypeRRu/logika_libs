@@ -1,13 +1,13 @@
 <map id="logika/include/logika/common/any.hpp" name="logika/include/logika/common/any.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="125,5,263,46"/>
-<area shape="rect" id="Node000002" href="$dd/da1/common_2defs_8h.html" title=" " alt="" coords="5,241,154,267"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,49,130,69,107,95,93,128,84,163,81,226,75,226,79,163,88,126,103,93,126,65,154,44"/>
-<area shape="rect" id="Node000003" href="$de/d59/any_8ipp.html" title=" " alt="" coords="118,94,271,120"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,46,188,78,183,78,184,46"/>
-<area shape="poly" id="edge3_Node000003_Node000001" title=" " alt="" coords="198,93,200,62,206,62,204,94"/>
-<area shape="rect" id="Node000004" href="$d4/d08/misc_8h.html" title=" " alt="" coords="119,168,270,193"/>
-<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="197,120,197,152,192,152,192,120"/>
-<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="176,196,113,235,111,230,173,192"/>
-<area shape="rect" id="Node000005" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="178,241,333,267"/>
-<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="206,192,237,228,233,231,202,195"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="74,5,314,31"/>
+<area shape="rect" id="Node000002" href="$dd/da1/common_2defs_8h.html" title=" " alt="" coords="5,226,154,252"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,34,134,53,107,81,92,113,84,148,80,211,75,211,78,147,87,111,103,77,131,49,163,29"/>
+<area shape="rect" id="Node000003" href="$de/d59/any_8ipp.html" title=" " alt="" coords="118,79,271,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="190,31,188,64,183,63,185,31"/>
+<area shape="poly" id="edge3_Node000003_Node000001" title=" " alt="" coords="198,78,200,46,206,46,204,79"/>
+<area shape="rect" id="Node000004" href="$d4/d08/misc_8h.html" title=" " alt="" coords="119,153,270,178"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="197,105,197,137,192,137,192,105"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="176,181,113,220,111,215,173,177"/>
+<area shape="rect" id="Node000005" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="178,226,333,252"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="206,177,237,213,233,216,202,180"/>
 </map>

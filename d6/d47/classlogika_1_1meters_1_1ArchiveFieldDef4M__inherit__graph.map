@@ -1,17 +1,17 @@
 <map id="logika::meters::ArchiveFieldDef4M" name="logika::meters::ArchiveFieldDef4M">
-<area shape="rect" id="Node000001" title="Описание поля архива Logika4M." alt="" coords="229,1555,449,1715"/>
-<area shape="rect" id="Node000002" href="$db/d33/classlogika_1_1meters_1_1ArchiveFieldDef4.html" title="Описание поля архива Logika4." alt="" coords="134,1242,331,1506"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="295,1518,309,1554,304,1556,290,1520"/>
-<area shape="rect" id="Node000003" href="$df/df9/classlogika_1_1meters_1_1ArchiveFieldDef.html" title="Описание поля архива" alt="" coords="137,915,328,1179"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="235,1194,235,1242,230,1242,230,1194"/>
-<area shape="rect" id="Node000004" href="$d5/dfb/classlogika_1_1meters_1_1TagDef.html" title="Базовое описание тэга" alt="" coords="25,572,230,865"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="182,879,193,914,188,916,176,880"/>
-<area shape="rect" id="Node000005" href="$da/dc9/classlogika_1_1meters_1_1ItemDefBase.html" title="Базовый элемент" alt="" coords="5,5,249,523"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="130,538,130,573,125,573,125,538"/>
-<area shape="rect" id="Node000006" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="255,661,424,776"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="319,791,278,916,273,914,314,790"/>
-<area shape="rect" id="Node000007" href="$dd/d10/classlogika_1_1SharedConstructible.html" title=" " alt="" coords="356,1302,541,1446"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="416,1460,375,1556,370,1554,411,1458"/>
-<area shape="rect" id="Node000008" href="$dd/d10/classlogika_1_1SharedConstructible.html" title="Конструируемый в shared_ptr тип" alt="" coords="356,975,541,1119"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="451,1134,451,1302,446,1302,446,1134"/>
+<area shape="rect" id="Node000001" title="Описание поля архива Logika4M." alt="" coords="357,1052,896,1138"/>
+<area shape="rect" id="Node000002" href="$db/d33/classlogika_1_1meters_1_1ArchiveFieldDef4.html" title="Описание поля архива Logika4." alt="" coords="126,858,642,1003"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="505,1009,566,1050,563,1055,502,1014"/>
+<area shape="rect" id="Node000003" href="$df/df9/classlogika_1_1meters_1_1ArchiveFieldDef.html" title="Описание поля архива" alt="" coords="133,649,635,795"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="387,809,387,858,381,858,381,809"/>
+<area shape="rect" id="Node000004" href="$d5/dfb/classlogika_1_1meters_1_1TagDef.html" title="Базовое описание тэга" alt="" coords="12,395,415,600"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="303,610,331,648,327,651,298,614"/>
+<area shape="rect" id="Node000005" href="$da/dc9/classlogika_1_1meters_1_1ItemDefBase.html" title="Базовый элемент" alt="" coords="5,5,421,345"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="216,360,216,395,211,395,211,360"/>
+<area shape="rect" id="Node000006" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="439,455,670,540"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="516,554,441,651,437,648,512,550"/>
+<area shape="rect" id="Node000007" href="$dd/d10/classlogika_1_1SharedConstructible.html" title=" " alt="" coords="666,888,1075,973"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="798,983,690,1055,687,1050,795,979"/>
+<area shape="rect" id="Node000008" href="$dd/d10/classlogika_1_1SharedConstructible.html" title="Конструируемый в shared_ptr тип" alt="" coords="707,679,1035,765"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="873,780,873,888,868,888,868,780"/>
 </map>

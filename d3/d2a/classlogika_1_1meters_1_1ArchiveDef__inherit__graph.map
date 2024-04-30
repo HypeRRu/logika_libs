@@ -1,15 +1,15 @@
 <map id="logika::meters::ArchiveDef" name="logika::meters::ArchiveDef">
-<area shape="rect" id="Node000001" title="Базовое описание архива" alt="" coords="356,571,591,819"/>
-<area shape="rect" id="Node000004" href="$d5/dce/classlogika_1_1meters_1_1ArchiveDef4L.html" title="Описание архива Logika4L." alt="" coords="5,867,221,1393"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="345,772,287,816,235,868,223,884,219,881,231,865,284,812,342,768"/>
-<area shape="rect" id="Node000005" href="$d2/d2d/classlogika_1_1meters_1_1ArchiveDef4M.html" title="Описание архива Logika4M." alt="" coords="245,1083,464,1177"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="438,834,370,1084,365,1082,433,832"/>
-<area shape="rect" id="Node000006" href="$da/df4/classlogika_1_1meters_1_1ArchiveDef6.html" title="Описание архива Logika6." alt="" coords="488,1065,696,1195"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="513,832,577,1065,572,1066,508,833"/>
-<area shape="rect" id="Node000007" href="$d4/d62/classlogika_1_1meters_1_1MultipartArchiveDef6.html" title="Описание многочастного архива Logika6." alt="" coords="721,1018,951,1242"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="605,771,660,815,710,865,737,901,761,939,799,1017,794,1020,756,942,732,904,706,868,657,819,602,775"/>
-<area shape="rect" id="Node000002" href="$da/dc9/classlogika_1_1meters_1_1ItemDefBase.html" title="Базовый элемент" alt="" coords="237,5,481,523"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="434,536,443,570,438,572,429,538"/>
-<area shape="rect" id="Node000003" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="505,207,674,321"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="573,337,509,571,504,570,568,335"/>
+<area shape="rect" id="Node000001" title="Базовое описание архива" alt="" coords="772,393,1219,539"/>
+<area shape="rect" id="Node000004" href="$d5/dce/classlogika_1_1meters_1_1ArchiveDef4L.html" title="Описание архива Logika4L." alt="" coords="5,587,481,952"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="759,507,625,541,559,563,495,589,482,595,480,590,493,584,557,558,624,535,757,501"/>
+<area shape="rect" id="Node000005" href="$d2/d2d/classlogika_1_1meters_1_1ArchiveDef4M.html" title="Описание архива Logika4M." alt="" coords="506,737,989,802"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="929,552,775,739,771,735,925,549"/>
+<area shape="rect" id="Node000006" href="$da/df4/classlogika_1_1meters_1_1ArchiveDef6.html" title="Описание архива Logika6." alt="" coords="1013,727,1473,812"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1066,549,1211,725,1207,729,1062,552"/>
+<area shape="rect" id="Node000007" href="$d4/d62/classlogika_1_1meters_1_1MultipartArchiveDef6.html" title="Описание многочастного архива Logika6." alt="" coords="1497,709,1824,829"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1234,495,1298,510,1363,530,1427,554,1487,584,1526,611,1562,643,1621,708,1617,711,1559,646,1523,615,1485,589,1425,559,1362,535,1297,515,1233,500"/>
+<area shape="rect" id="Node000002" href="$da/dc9/classlogika_1_1meters_1_1ItemDefBase.html" title="Базовый элемент" alt="" coords="614,5,1030,345"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="933,357,955,392,950,395,929,359"/>
+<area shape="rect" id="Node000003" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="1055,133,1285,218"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1139,232,1041,395,1036,392,1135,230"/>
 </map>

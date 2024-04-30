@@ -1,20 +1,20 @@
 <map id="resources/include/logika/resources/loader.hpp" name="resources/include/logika/resources/loader.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="180,5,341,46"/>
-<area shape="rect" id="Node000002" href="$d1/d95/loader_8ipp.html" title=" " alt="" coords="173,94,348,120"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="263,46,263,78,258,78,258,46"/>
-<area shape="rect" id="Node000003" href="$d8/db0/defines_8h.html" title=" " alt="" coords="112,168,243,193"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="248,122,205,159,201,155,245,118"/>
-<area shape="rect" id="Node000008" href="$d4/d08/misc_8h.html" title=" " alt="" coords="267,168,419,193"/>
-<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="276,118,319,155,316,159,273,122"/>
-<area shape="rect" id="Node000004" href="$d1/d8c/logger_8h.html" title=" " alt="" coords="115,241,240,267"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="180,194,180,226,175,226,175,194"/>
-<area shape="rect" id="Node000005" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="346,315,500,341"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="220,265,367,308,366,313,219,270"/>
-<area shape="rect" id="Node000006" href="$d6/d8e/log_2defs_8h.html" title=" " alt="" coords="5,315,121,341"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="160,270,97,309,94,304,157,265"/>
-<area shape="rect" id="Node000007" href="$dd/dd4/log_2types_8h.html" title=" " alt="" coords="145,315,266,341"/>
-<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="185,266,198,299,193,301,180,268"/>
-<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="373,192,403,211,417,224,428,240,435,271,433,300,428,300,430,271,423,242,413,228,400,215,370,196"/>
-<area shape="rect" id="Node000009" href="$dd/da1/common_2defs_8h.html" title=" " alt="" coords="265,241,413,267"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="345,194,343,226,338,226,340,193"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="118,5,403,31"/>
+<area shape="rect" id="Node000002" href="$d1/d95/loader_8ipp.html" title=" " alt="" coords="173,79,348,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="263,31,263,63,258,63,258,31"/>
+<area shape="rect" id="Node000003" href="$d8/db0/defines_8h.html" title=" " alt="" coords="112,153,243,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="248,107,205,144,201,140,245,103"/>
+<area shape="rect" id="Node000008" href="$d4/d08/misc_8h.html" title=" " alt="" coords="267,153,419,178"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="276,103,319,140,316,144,273,107"/>
+<area shape="rect" id="Node000004" href="$d1/d8c/logger_8h.html" title=" " alt="" coords="115,226,240,252"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="180,179,180,211,175,211,175,179"/>
+<area shape="rect" id="Node000005" href="$d5/d7b/common_2types_8h.html" title=" " alt="" coords="346,300,500,326"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="220,250,367,293,366,298,219,255"/>
+<area shape="rect" id="Node000006" href="$d6/d8e/log_2defs_8h.html" title=" " alt="" coords="5,300,121,326"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="160,255,97,294,94,289,157,250"/>
+<area shape="rect" id="Node000007" href="$dd/dd4/log_2types_8h.html" title=" " alt="" coords="145,300,266,326"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="185,251,198,284,193,286,180,253"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="373,177,403,196,417,209,428,225,435,256,433,285,428,285,430,256,423,227,413,213,400,200,370,181"/>
+<area shape="rect" id="Node000009" href="$dd/da1/common_2defs_8h.html" title=" " alt="" coords="265,226,413,252"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="345,179,343,211,338,211,340,178"/>
 </map>

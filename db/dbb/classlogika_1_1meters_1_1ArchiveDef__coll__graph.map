@@ -1,10 +1,10 @@
 <map id="logika::meters::ArchiveDef" name="logika::meters::ArchiveDef">
-<area shape="rect" id="Node000001" title="Базовое описание архива" alt="" coords="5,1039,240,1287"/>
-<area shape="rect" id="Node000002" href="$da/dc9/classlogika_1_1meters_1_1ItemDefBase.html" title="Базовый элемент" alt="" coords="113,492,357,990"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,1005,158,1040,153,1038,162,1003"/>
-<area shape="rect" id="Node000003" href="$d3/dce/structlogika_1_1meters_1_1ChannelDef.html" title="Структура описание канала" alt="" coords="119,169,337,429"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="233,429,233,475,228,475,227,429"/>
-<area shape="rect" id="Node000004" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="6,5,175,120"/>
-<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="91,135,87,501,91,744,103,989,107,1039,102,1039,97,990,85,744,82,501,86,135"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="133,131,155,168,150,171,129,134"/>
+<area shape="rect" id="Node000001" title="Базовое описание архива" alt="" coords="5,772,452,918"/>
+<area shape="rect" id="Node000002" href="$da/dc9/classlogika_1_1meters_1_1ItemDefBase.html" title="Базовый элемент" alt="" coords="197,403,613,723"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="299,737,276,774,271,771,295,734"/>
+<area shape="rect" id="Node000003" href="$d3/dce/structlogika_1_1meters_1_1ChannelDef.html" title="Структура описание канала" alt="" coords="214,140,561,340"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="395,339,398,386,393,386,390,340"/>
+<area shape="rect" id="Node000004" href="$dd/dbc/classlogika_1_1ISerializable.html" title="Интерфейс сериализуемого типа" alt="" coords="60,5,291,91"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="172,106,165,219,161,373,166,547,174,636,187,722,201,772,196,773,182,724,169,637,161,548,155,373,159,219,167,105"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="234,98,279,138,275,142,231,102"/>
 </map>

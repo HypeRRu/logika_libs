@@ -1,11 +1,11 @@
 <map id="migration/src/converters/m4_tags.cpp" name="migration/src/converters/m4_tags.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="159,5,321,46"/>
-<area shape="rect" id="Node000002" href="$d9/db7/m4__tags_8h.html" title=" " alt="" coords="5,102,152,127"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,49,116,96,113,92,202,44"/>
-<area shape="rect" id="Node000003" href="$dc/dd0/enums__string__to__pb_8h.html" title=" " alt="" coords="176,94,304,135"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="243,47,243,78,237,78,237,47"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="328,94,466,135"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="277,44,350,84,347,89,274,49"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="147,183,333,208"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="243,135,243,167,237,167,237,135"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="144,5,384,31"/>
+<area shape="rect" id="Node000002" href="$d9/db7/m4__tags_8h.html" title=" " alt="" coords="5,79,152,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,34,125,75,123,71,231,29"/>
+<area shape="rect" id="Node000003" href="$dc/dd0/enums__string__to__pb_8h.html" title=" " alt="" coords="176,79,352,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="267,31,267,63,261,63,261,31"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="376,79,573,105"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="300,29,425,71,423,76,299,34"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="171,153,357,178"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="267,105,267,137,261,137,261,105"/>
 </map>

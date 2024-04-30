@@ -1,11 +1,11 @@
 <map id="migration/src/converters/devices.cpp" name="migration/src/converters/devices.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="154,5,315,46"/>
-<area shape="rect" id="Node000002" href="$d7/dde/devices_8h.html" title=" " alt="" coords="5,102,147,127"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,49,113,96,110,91,197,44"/>
-<area shape="rect" id="Node000003" href="$dc/dd0/enums__string__to__pb_8h.html" title=" " alt="" coords="171,94,298,135"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,47,237,78,232,78,232,47"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="323,102,515,127"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="278,44,380,92,378,97,275,49"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="142,183,328,208"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="237,135,237,167,232,167,232,135"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="142,5,376,31"/>
+<area shape="rect" id="Node000002" href="$d7/dde/devices_8h.html" title=" " alt="" coords="5,79,147,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,34,122,75,120,71,227,29"/>
+<area shape="rect" id="Node000003" href="$dc/dd0/enums__string__to__pb_8h.html" title=" " alt="" coords="171,79,347,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="261,31,261,63,256,63,256,31"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="371,79,563,105"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="295,29,418,71,416,76,293,34"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="166,153,352,178"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="261,105,261,137,256,137,256,105"/>
 </map>
