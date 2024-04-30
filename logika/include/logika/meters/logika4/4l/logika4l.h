@@ -39,7 +39,7 @@ public:
     virtual void Init( const storage::StorageKeeper& sKeeper ) override;
 
 public:
-    static constexpr MeterAddressType FLASH_PAGE_SIZE   = 0x40;     ///< Размер страницы флэщ памяти
+    static constexpr MeterAddressType FLASH_PAGE_SIZE   = 0x40;     ///< Размер страницы флэш памяти
     static constexpr MeterAddressType PARAMS_FLASH_ADDR = 0x0200;   ///< Адрес параметров во флэш памяти
 
 public:

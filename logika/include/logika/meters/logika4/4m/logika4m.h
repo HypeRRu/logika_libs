@@ -44,11 +44,11 @@ using Type = uint8_t;
 enum : Type
 {
     Empty       = 0x05, ///< Пустое значение
-    Float       = 0x43, ///< Значение с плавающей точкой
+    Float       = 0x43, ///< Значение с плавающей точкой (Little Endian)
     I32LE       = 0x41, ///< Значение 32 битного целого числа (Little Endian)
     ByteArray   = 0x04, ///< Массив байтов
     Ia5String   = 0x16, ///< Строка в кодировке ASCII
-    Total       = 0x44, ///< Сумма INT32 и FLOAT чисел
+    Total       = 0x44, ///< Сумма (результат DOUBLE) INT32 и FLOAT чисел (Little Endian)
     Oper        = 0x45, ///< Флаг оперативности тэга
     Ack         = 0x46, ///< ACK
     Time        = 0x47, ///< Время (4 байта: с / 256 - с - мин - час)
@@ -244,8 +244,6 @@ protected:
     bool supportArchivePartitions_; ///< Наличие поддержки "разделов", возникающих при пуске прибора
 
 }; // class Logika4M
-
-/// @todo AdsTagBlock
 
 } // namespace meters
 
