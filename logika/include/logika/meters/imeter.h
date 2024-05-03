@@ -139,7 +139,7 @@ public:
     virtual std::unordered_map<
         ImportantTag,
         std::vector< std::shared_ptr< DataTag > >
-    >GetWellKnownTags() const = 0;
+    > GetWellKnownTags() const = 0;
 
 }; // class Meter
 

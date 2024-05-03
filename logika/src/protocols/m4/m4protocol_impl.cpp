@@ -613,8 +613,11 @@ Packet M4Protocol::RecvPacket( const ByteType* expectedNt, Opcode::Type* expecte
                 }
                 packet.id           = buffer.at( 3 );
                 packet.attributes   = buffer.at( 4 );
+                uint8_t payloadL    = buffer.at( 5 );
+                uint8_t payloadH    = buffer.at( 6 );
                 /// payload = opcode + data
-                payloadLen          = buffer.at( 5 ) + ( buffer.at( 6 ) << 8 ) - 1;
+                payloadLen          = static_cast< uint32_t >( payloadL )
+                                    + ( static_cast< uint32_t >( payloadH ) << 8 ) - 1;
                 packet.funcOpcode   = static_cast< Opcode::Type >( buffer.at( 7 ) );
                 if ( expectedOpcode && packet.funcOpcode != *expectedOpcode
                     && static_cast< Opcode::Type >( packet.funcOpcode ) != Opcode::Error )
@@ -644,8 +647,8 @@ Packet M4Protocol::RecvPacket( const ByteType* expectedNt, Opcode::Type* expecte
                 {
                     payloadLen = expectedDataLength;
                 }
-                LOG_WRITE( LOG_DEBUG, LOCALIZED( "Payload length: " ) << payloadLen );
             }
+            LOG_WRITE( LOG_DEBUG, LOCALIZED( "Payload length: " ) << payloadLen );
             /// data + CSUM + frame end
             readed = connection_->Read( packet.data, 0, payloadLen );
             if ( readed < payloadLen )
