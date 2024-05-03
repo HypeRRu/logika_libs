@@ -152,6 +152,13 @@ bool Logika4::IdentMatch( ByteType id0, ByteType id1, ByteType version ) const
     (void) version;
 
     uint16_t deviceId = static_cast< uint16_t >( ( static_cast< uint16_t >( id0 ) << 8 ) | id1 );
+
+    LOG_WRITE( LOG_DEBUG, "IdentMatch:" <<
+        LOCALIZED( " " ) << std::hex << deviceId << LOCALIZED( "(" ) <<
+        LOCALIZED( " " ) << std::hex << static_cast< uint8_t >( id0 ) <<
+        LOCALIZED( " " ) << std::hex << static_cast< uint8_t >( id1 ) <<
+        LOCALIZED( " " ) << std::hex << static_cast< uint8_t >( version ) <<
+        LOCALIZED( ") and " ) << ident_ );
     return deviceId == ident_;
 } // IdentMatch
 
@@ -226,10 +233,16 @@ std::shared_ptr< Meter > Logika4::DetermineMeter(
         return nullptr;
     }
     const auto meterKeys = meterStorage->GetKeys();
+    LOG_WRITE( LOG_DEBUG, LOCALIZED( "Meter storage keys count: " ) << meterKeys.size() );
     for ( const LocString& key: meterKeys )
     {
         std::shared_ptr< Meter > meter;
         meterStorage->GetItem( key, meter );
+        if ( meter )
+        {
+            LOG_WRITE( LOG_DEBUG, LOCALIZED( "Check meter " ) << meter->GetCaption()
+                << LOCALIZED( "; ident: " ) << std::hex << meter->GetIdent() );
+        }
         if ( meter && meter->IdentMatch( id0, id1, version ) )
         {
             return meter;

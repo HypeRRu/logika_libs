@@ -295,26 +295,6 @@ int main()
                 LOG_WRITE( LOG_ERROR, LOCALIZED( "Exception: " ) << logika::ToLocString( e.what() ) );
             }
         }
-#if defined( LOGIKA_USE_METERS4L )
-        if ( detectedMeter )
-        {
-            try
-            {
-                std::shared_ptr< logika::meters::Logika4L > dm4l
-                    = std::dynamic_pointer_cast< logika::meters::Logika4L >( detectedMeter );
-                if ( dm4l )
-                {
-                    LOG_WRITE_MSG( LOG_INFO, LOCALIZED( "Detected meter is Logika4L" ) );
-                    LOG_WRITE( LOG_INFO, LOCALIZED( "Write Logika4L parameter 0 RC: " )
-                        << bus4->WriteParameterL4( dm4l, nullptr, 0, 0, LOCALIZED( "Test value" ), false ) );
-                }
-            }
-            catch( const std::exception& e )
-            {
-                LOG_WRITE( LOG_ERROR, LOCALIZED( "Exception: " ) << logika::ToLocString( e.what() ) );
-            }
-        }
-#endif // defined( LOGIKA_USE_METERS4L )
         // if ( detectedMeter )
         // {
         //     try
@@ -347,124 +327,124 @@ int main()
         //     }
         // }
 
-        // if ( detectedMeter )
-        // {
-        //     try
-        //     {
-        //         LOG_WRITE( LOG_DEBUG, LOCALIZED( "Try read Logika4M tags" ) );
-        //         std::shared_ptr< logika::meters::Logika4M > dm4m
-        //             = std::dynamic_pointer_cast< logika::meters::Logika4M >( detectedMeter );
-        //         if ( dm4m )
-        //         {
-        //             const auto& tdfs = dm4m->GetTagsVault()->All();
-        //             LOG_WRITE( LOG_DEBUG, LOCALIZED( "Reading Logika4M tags" ) );
-        //             std::vector< int32_t > chans{};
-        //             std::vector< int32_t > ords{};
-        //             std::vector< bool > ops{};
-        //             int i = 0;
-        //             for ( auto tdf: tdfs )
-        //             {
-        //                 /// @todo Fix CRC for big response
-        //                 if ( i++ < 30 )
-        //                 {
-        //                     continue;
-        //                 }
-        //                 chans.push_back( tdf->GetChannelDef().start );
-        //                 ords.push_back( tdf->GetOrdinal() );
-        //                 ops.push_back( false );
-        //                 // LOG_WRITE( LOG_DEBUG, L"chn start:" << tdf->GetChannelDef().start << L" ord: " << tdf->GetOrdinal() );
-        //             }
+        if ( detectedMeter )
+        {
+            try
+            {
+                LOG_WRITE( LOG_DEBUG, LOCALIZED( "Try read Logika4M tags" ) );
+                std::shared_ptr< logika::meters::Logika4M > dm4m
+                    = std::dynamic_pointer_cast< logika::meters::Logika4M >( detectedMeter );
+                if ( dm4m )
+                {
+                    const auto& tdfs = dm4m->GetTagsVault()->All();
+                    LOG_WRITE( LOG_DEBUG, LOCALIZED( "Reading Logika4M tags" ) );
+                    std::vector< int32_t > chans{};
+                    std::vector< int32_t > ords{};
+                    std::vector< bool > ops{};
+                    int i = 0;
+                    for ( auto tdf: tdfs )
+                    {
+                        // /// @todo Fix CRC for big response
+                        // if ( i++ < 30 )
+                        // {
+                        //     continue;
+                        // }
+                        chans.push_back( tdf->GetChannelDef().start );
+                        ords.push_back( tdf->GetOrdinal() );
+                        ops.push_back( false );
+                        // LOG_WRITE( LOG_DEBUG, L"chn start:" << tdf->GetChannelDef().start << L" ord: " << tdf->GetOrdinal() );
+                    }
 
-        //             auto tags = bus4->ReadTags4M( dm4m, nullptr, chans, ords, ops );
-        //             LOG_WRITE( LOG_DEBUG, LOCALIZED( "Read Logika4M tags ended. Read " ) << tags.size() << LOCALIZED( " tags" ) );
-        //             for ( int i = 0; i < tags.size(); ++i )
-        //             {
-        //                 LOG_WRITE( LOG_DEBUG, LOCALIZED( "" ) );
-        //                 LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag name: " ) << tdfs[ i + 30 ]->GetName() );
-        //                 LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag channel: " ) << tdfs[ i + 30 ]->GetChannelDef().prefix
-        //                     << LOCALIZED( " " ) << tdfs[ i ]->GetChannelDef().start );
-        //                 LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag ordinal: " ) << static_cast< uint32_t >( tdfs[ i ]->GetOrdinal() ) );
-        //                 const auto& tag = tags[ i ];
-        //                 LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag type: " ) << std::hex << tag.first );
-        //                 if ( tag.first == 0x16 )
-        //                 {
-        //                     logika::LocString val{};
-        //                     tag.second->TryCast< logika::LocString >( val );
-        //                     LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag value: " ) << val );
-        //                 }
-        //                 else if ( tag.first == 0x43 )
-        //                 {
-        //                     float val{};
-        //                     tag.second->TryCast< float >( val );
-        //                     LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag value: " ) << val );
-        //                 }
-        //                 else if ( tag.first == 0x44 )
-        //                 {
-        //                     double val{};
-        //                     tag.second->TryCast< double >( val );
-        //                     LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag value: " ) << val );
-        //                 }
-        //                 else if ( tag.first == 0x41 )
-        //                 {
-        //                     uint32_t val{};
-        //                     tag.second->TryCast< uint32_t >( val );
-        //                     LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag value: " ) << val );
-        //                 }
-        //                 else if ( tag.first == 0x05 )
-        //                 {
-        //                     LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag value: [empty]" ) );
-        //                 }
-        //                 else if ( tag.first == 0x41 )
-        //                 {
-        //                     uint32_t val{};
-        //                     tag.second->TryCast< uint32_t >( val );
-        //                     LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag value: " ) << val );
-        //                 }
-        //                 else if ( tag.first == 0x47 || tag.first == 0x48 )
-        //                 {
-        //                     logika::LocString val{};
-        //                     tag.second->TryCast< logika::LocString >( val );
-        //                     LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag value: " ) << val );
-        //                 }
-        //                 else if ( tag.first == 0x49 )
-        //                 {
-        //                     logika::TimeType val{};
-        //                     tag.second->TryCast< logika::TimeType >( val );
-        //                     LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag value: timestamp " ) << val );
-        //                 }
-        //                 else if ( tag.first == 0x04 )
-        //                 {
-        //                     logika::ByteVector val{};
-        //                     tag.second->TryCast< logika::ByteVector >( val );
-        //                     logika::LocString valStr = LOCALIZED( "{ " );
-        //                     for ( logika::ByteType v: val )
-        //                     {
-        //                         valStr += logika::ToLocString( std::to_string( static_cast< uint32_t >( v ) & 0xFF ) ) + LOCALIZED( " " );
-        //                     }
-        //                     valStr += LOCALIZED( "}" );
-        //                     LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag value: " ) << valStr );
-        //                 }
-        //                 else if ( tag.first == 0x4B )
-        //                 {
-        //                     std::vector< size_t > val{};
-        //                     tag.second->TryCast< std::vector< size_t > >( val );
-        //                     logika::LocString valStr = LOCALIZED( "{ " );
-        //                     for ( size_t v: val )
-        //                     {
-        //                         valStr += logika::ToLocString( std::to_string( static_cast< uint32_t >( v ) & 0xFF ) ) + LOCALIZED( " " );
-        //                     }
-        //                     valStr += LOCALIZED( "}" );
-        //                     LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag value: " ) << valStr );
-        //                 }
-        //                 LOG_WRITE( LOG_DEBUG, LOCALIZED( "" ) );
-        //             }
-        //         }
-        //     }
-        //     catch ( const std::exception& e )
-        //     {
-        //         LOG_WRITE( LOG_ERROR, LOCALIZED( "Exception: " ) << logika::ToLocString( e.what() ) );
-        //     }
-        // }
+                    auto tags = bus4->ReadTags4M( dm4m, nullptr, chans, ords, ops );
+                    LOG_WRITE( LOG_DEBUG, LOCALIZED( "Read Logika4M tags ended. Read " ) << tags.size() << LOCALIZED( " tags" ) );
+                    for ( int i = 0; i < tags.size(); ++i )
+                    {
+                        LOG_WRITE( LOG_DEBUG, LOCALIZED( "" ) );
+                        LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag name: " ) << tdfs[ i ]->GetName() );
+                        LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag channel: " ) << tdfs[ i ]->GetChannelDef().prefix
+                            << LOCALIZED( " " ) << tdfs[ i ]->GetChannelDef().start );
+                        LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag ordinal: " ) << static_cast< uint32_t >( tdfs[ i ]->GetOrdinal() ) );
+                        const auto& tag = tags[ i ];
+                        LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag type: " ) << std::hex << tag.first );
+                        if ( tag.first == 0x16 )
+                        {
+                            logika::LocString val{};
+                            tag.second->TryCast< logika::LocString >( val );
+                            LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag value: " ) << val );
+                        }
+                        else if ( tag.first == 0x43 )
+                        {
+                            float val{};
+                            tag.second->TryCast< float >( val );
+                            LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag value: " ) << val );
+                        }
+                        else if ( tag.first == 0x44 )
+                        {
+                            double val{};
+                            tag.second->TryCast< double >( val );
+                            LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag value: " ) << val );
+                        }
+                        else if ( tag.first == 0x41 )
+                        {
+                            uint32_t val{};
+                            tag.second->TryCast< uint32_t >( val );
+                            LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag value: " ) << val );
+                        }
+                        else if ( tag.first == 0x05 )
+                        {
+                            LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag value: [empty]" ) );
+                        }
+                        else if ( tag.first == 0x41 )
+                        {
+                            uint32_t val{};
+                            tag.second->TryCast< uint32_t >( val );
+                            LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag value: " ) << val );
+                        }
+                        else if ( tag.first == 0x47 || tag.first == 0x48 )
+                        {
+                            logika::LocString val{};
+                            tag.second->TryCast< logika::LocString >( val );
+                            LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag value: " ) << val );
+                        }
+                        else if ( tag.first == 0x49 )
+                        {
+                            logika::TimeType val{};
+                            tag.second->TryCast< logika::TimeType >( val );
+                            LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag value: timestamp " ) << val );
+                        }
+                        else if ( tag.first == 0x04 )
+                        {
+                            logika::ByteVector val{};
+                            tag.second->TryCast< logika::ByteVector >( val );
+                            logika::LocString valStr = LOCALIZED( "{ " );
+                            for ( logika::ByteType v: val )
+                            {
+                                valStr += logika::ToLocString( std::to_string( static_cast< uint32_t >( v ) & 0xFF ) ) + LOCALIZED( " " );
+                            }
+                            valStr += LOCALIZED( "}" );
+                            LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag value: " ) << valStr );
+                        }
+                        else if ( tag.first == 0x4B )
+                        {
+                            std::vector< size_t > val{};
+                            tag.second->TryCast< std::vector< size_t > >( val );
+                            logika::LocString valStr = LOCALIZED( "{ " );
+                            for ( size_t v: val )
+                            {
+                                valStr += logika::ToLocString( std::to_string( static_cast< uint32_t >( v ) & 0xFF ) ) + LOCALIZED( " " );
+                            }
+                            valStr += LOCALIZED( "}" );
+                            LOG_WRITE( LOG_DEBUG, LOCALIZED( "Tag value: " ) << valStr );
+                        }
+                        LOG_WRITE( LOG_DEBUG, LOCALIZED( "" ) );
+                    }
+                }
+            }
+            catch ( const std::exception& e )
+            {
+                LOG_WRITE( LOG_ERROR, LOCALIZED( "Exception: " ) << logika::ToLocString( e.what() ) );
+            }
+        }
 
 #if defined( LOGIKA_USE_METERS4M )
         if ( detectedMeter )
@@ -703,7 +683,7 @@ void LoadResources( const std::string& pathTo, logika::storage::StorageKeeper& s
         }
     }
 
-#if defined( LOGIKA_USE_LOGIKA4L )
+#if defined( LOGIKA_USE_METERS4L )
     sKeeper.CreateStorage< logika::LocString, logika::meters::TagDef4L >();
     auto l4tStorage = sKeeper.GetStorage< logika::LocString, logika::meters::TagDef4L >();
     {
@@ -844,9 +824,9 @@ void LoadResources( const std::string& pathTo, logika::storage::StorageKeeper& s
             LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to load L4ArchiveFields" ) );
         }
     }
-#endif // defined( LOGIKA_USE_LOGIKA4L )
+#endif // defined( LOGIKA_USE_METERS4L )
 
-#if defined( LOGIKA_USE_LOGIKA4M )
+#if defined( LOGIKA_USE_METERS4M )
     sKeeper.CreateStorage< logika::LocString, logika::meters::TagDef4M >();
     auto m4tStorage = sKeeper.GetStorage< logika::LocString, logika::meters::TagDef4M >();
     {
@@ -987,7 +967,7 @@ void LoadResources( const std::string& pathTo, logika::storage::StorageKeeper& s
             LOG_WRITE( LOG_ERROR, LOCALIZED( "Unable to load M4ArchiveFields" ) );
         }
     }
-#endif // defined( LOGIKA_USE_LOGIKA4M )
+#endif // defined( LOGIKA_USE_METERS4M )
 } // LoadResources
 #else // !defined( LOGIKA_USE_PROTOCOL_M4 )
 void LoadResources( const std::string& pathTo, logika::storage::StorageKeeper& sKeeper, bool silent )
@@ -997,15 +977,15 @@ void LoadResources( const std::string& pathTo, logika::storage::StorageKeeper& s
     sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveType >();
     sKeeper.CreateStorage< logika::LocString, logika::meters::Meter >();
     sKeeper.CreateStorage< logika::LocString, logika::meters::ChannelDef >();
-#if defined( LOGIKA_USE_LOGIKA4L )
+#if defined( LOGIKA_USE_METERS4L )
     sKeeper.CreateStorage< logika::LocString, logika::meters::TagDef4L >();
     sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveDef4L >();
     sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveFieldDef4L >();
-#endif // defined( LOGIKA_USE_LOGIKA4L )
-#if defined( LOGIKA_USE_LOGIKA4M )
+#endif // defined( LOGIKA_USE_METERS4L )
+#if defined( LOGIKA_USE_METERS4M )
     sKeeper.CreateStorage< logika::LocString, logika::meters::TagDef4M >();
     sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveDef4M >();
     sKeeper.CreateStorage< logika::LocString, logika::meters::ArchiveFieldDef4M >();
-#endif // defined( LOGIKA_USE_LOGIKA4M )
+#endif // defined( LOGIKA_USE_METERS4M )
 }
 #endif // defined( LOGIKA_USE_PROTOCOL_M4 )

@@ -106,7 +106,7 @@ void Logger::Write( LogLevel::Type level, const LocString& message, const std::s
     {
         msgToWrite << ToLocString( funcName ) << LOCALIZED( " | " );
     }
-    msgToWrite << message << '\n';
+    msgToWrite << message << std::endl;
     
     std::unique_lock< std::mutex > lockGuard{ mtx_ };
     if ( level == LogLevel::LogDisable || level > maxLevel_ )

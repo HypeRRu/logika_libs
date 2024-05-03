@@ -293,13 +293,18 @@ std::shared_ptr< meters::Meter > Protocol::DetectM4( std::shared_ptr< M4::M4Prot
     }
     std::shared_ptr< meters::Meter > meter = meters::Logika4::DetermineMeter(
         reply.data[ 0 ], reply.data[ 1 ], reply.data[ 2 ], meterStorage );
+    LOG_WRITE( LOG_DEBUG, LOCALIZED( "Meter ident: " )
+        << LOCALIZED( " " ) << std::hex << static_cast< uint8_t >( reply.data[ 0 ] )
+        << LOCALIZED( " " ) << std::hex << static_cast< uint8_t >( reply.data[ 1 ] )
+        << LOCALIZED( " " ) << std::hex << static_cast< uint8_t >( reply.data[ 2 ] )
+    );
     if ( !meter )
     {
         LOG_WRITE_MSG( LOG_WARNING, LOCALIZED( "Can't determine meter" ) );
         return nullptr;
     }
 
-#if defined( LOGIKA_USE_LOGIKA4L )
+#if defined( LOGIKA_USE_METERS4L )
     std::shared_ptr< meters::Meter > spt942 = nullptr;
     meterStorage->GetItem( LOCALIZED( "SPT942" ), spt942 );
 
@@ -318,7 +323,7 @@ std::shared_ptr< meters::Meter > Protocol::DetectM4( std::shared_ptr< M4::M4Prot
             model = LocString( static_cast< LocChar >( modelBytes.at( 0 ) ), 1 );
         }
     }
-#endif // defined( LOGIKA_USE_LOGIKA4L )
+#endif // defined( LOGIKA_USE_METERS4L )
     
     return meter;
 } // DetectM4
