@@ -121,7 +121,7 @@ var searchData=
   ['string_118',['String',['../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefa27118326006d3829667a400ad23d5d98',1,'logika::meters']]],
   ['stringarray_119',['StringArray',['../dc/df7/namespacelogika_1_1meters.html#a3c9c221a1135a439bbbaf4a504c70fefa8647c824cc337c0245db15728e32ec3d',1,'logika::meters']]],
   ['structure_120',['Structure',['../dc/df7/namespacelogika_1_1meters.html#aaeeb25dcf213c977c1ce8aec2758e8b8adc4c71563b9bc39a65be853457e6b7b6',1,'logika::meters']]],
-  ['success_121',['Success',['../d6/d61/namespacelogika_1_1Rc.html#afa2afc7dc6f2db0b311515486bfc91b0a2a87fb2343f3198b7162dedeaab9e6de',1,'logika::Rc::Success'],['../df/dea/namespacelogika_1_1connections_1_1Rc.html#ad077f3dcd802ffc6a350f1a97877a4c6a381c107c6c3cdacaea519961908995b1',1,'logika::connections::Rc::Success'],['../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#ae7d7b0f88e6cebaaac662958573da295acc82662b25c40706246e99d166e97a5a',1,'logika::protocols::Rc::Success']]],
+  ['success_121',['Success',['../d6/d61/namespacelogika_1_1Rc.html#afa2afc7dc6f2db0b311515486bfc91b0a2a87fb2343f3198b7162dedeaab9e6de',1,'logika::Rc::Success'],['../df/dea/namespacelogika_1_1connections_1_1Rc.html#ad077f3dcd802ffc6a350f1a97877a4c6a381c107c6c3cdacaea519961908995b1',1,'logika::connections::Rc::Success'],['../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#ac0dde2ec9a9d81175056c5a597893ed3acc82662b25c40706246e99d166e97a5a',1,'logika::protocols::Rc::Success']]],
   ['supportarchivepartitions_5f_122',['supportArchivePartitions_',['../dd/d0e/classlogika_1_1meters_1_1Logika4M.html#a704f1c5e1ecc87f8ab7d9b0c5b0fef30',1,'logika::meters::Logika4M']]],
   ['supportbaudratechange_5f_123',['supportBaudRateChange_',['../d6/df4/classlogika_1_1meters_1_1Logika4.html#a109fcc7109e02367206699881f50f355',1,'logika::meters::Logika4']]],
   ['supportedbyprolog4_5f_124',['supportedByProlog4_',['../d3/d77/classlogika_1_1meters_1_1Meter.html#aef0b3f5ed2d8dd01179b5416e736aa57',1,'logika::meters::Meter']]],
@@ -130,6 +130,6 @@ var searchData=
   ['syncflasharchive4_127',['SyncFlashArchive4',['../d7/dd9/classlogika_1_1protocols_1_1M4_1_1SyncFlashArchive4.html',1,'logika::protocols::M4::SyncFlashArchive4'],['../d7/dd9/classlogika_1_1protocols_1_1M4_1_1SyncFlashArchive4.html#a19af87482b467f3c56e41528b1df91d4',1,'logika::protocols::M4::SyncFlashArchive4::SyncFlashArchive4()']]],
   ['syncheadertodatetime_128',['SyncHeaderToDateTime',['../d7/d1b/classlogika_1_1meters_1_1Logika4L.html#a203528579161e7baff48a4f2a3813d2c',1,'logika::meters::Logika4L']]],
   ['synchronous_129',['Synchronous',['../dc/df7/namespacelogika_1_1meters.html#a5dc3ac0486d84a28a12cec0c0be9bd85a2fe4167817733fec8e6ba1afddf78f1b',1,'logika::meters']]],
-  ['sys_130',['Sys',['../d2/d11/namespacelogika_1_1protocols_1_1M4_1_1MeterChannel.html#a3797b7a0fa3da2ff6eba13d3cec1f4e7af0665370fa92251d13d8dda8dafba2ef',1,'logika::protocols::M4::MeterChannel']]],
+  ['sys_130',['Sys',['../d2/d11/namespacelogika_1_1protocols_1_1M4_1_1MeterChannel.html#ad068f25de7863f43113a17689c2a8a93af0665370fa92251d13d8dda8dafba2ef',1,'logika::protocols::M4::MeterChannel']]],
   ['systemerror_131',['SystemError',['../da/d59/namespacelogika_1_1protocols.html#aa64881855fc9daae34694be31193b840ab932b91f686c2aa588adfd9a407155ca',1,'logika::protocols']]]
 ];

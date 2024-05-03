@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['fail_0',['Fail',['../d6/d61/namespacelogika_1_1Rc.html#afa2afc7dc6f2db0b311515486bfc91b0a7323bb5fd823c80d2e94c943887f68a3',1,'logika::Rc::Fail'],['../df/dea/namespacelogika_1_1connections_1_1Rc.html#ad077f3dcd802ffc6a350f1a97877a4c6a3b3dfab0242b9221d22fab6e87c7a881',1,'logika::connections::Rc::Fail'],['../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#ae7d7b0f88e6cebaaac662958573da295a228761971d6869dbdba3e59112c3e21b',1,'logika::protocols::Rc::Fail']]],
+  ['fail_0',['Fail',['../d6/d61/namespacelogika_1_1Rc.html#afa2afc7dc6f2db0b311515486bfc91b0a7323bb5fd823c80d2e94c943887f68a3',1,'logika::Rc::Fail'],['../df/dea/namespacelogika_1_1connections_1_1Rc.html#ad077f3dcd802ffc6a350f1a97877a4c6a3b3dfab0242b9221d22fab6e87c7a881',1,'logika::connections::Rc::Fail'],['../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#ac0dde2ec9a9d81175056c5a597893ed3a228761971d6869dbdba3e59112c3e21b',1,'logika::protocols::Rc::Fail']]],
   ['farchive_1',['fArchive',['../d3/d00/structlogika_1_1protocols_1_1M4_1_1TvReadState4L.html#a903386adf82caf4c64b42b712cf3d7b4',1,'logika::protocols::M4::TvReadState4L']]],
   ['fastlzimpl_2',['FastLzImpl',['../df/d57/classlogika_1_1protocols_1_1FastLzImpl.html',1,'logika::protocols']]],
   ['fieldcount_3',['FieldCount',['../d3/dca/classlogika_1_1meters_1_1DataTable.html#a138166b78f3991fdb81470cac1e68715',1,'logika::meters::DataTable']]],
