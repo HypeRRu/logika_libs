@@ -14,7 +14,7 @@ var searchData=
   ['reset_11',['Reset',['../da/d59/namespacelogika_1_1protocols.html#ac2249da78a8c87c4f76b71a244cc30bca526d688f37a86d3c3f27d0c5016eb71d',1,'logika::protocols']]],
   ['rhour_12',['RHour',['../dc/df7/namespacelogika_1_1meters.html#a199715557a67e6906bb2ee196129357daa7924d0a8c0bb5e5cfa106d3afa7a936',1,'logika::meters']]],
   ['rsbus_13',['RSBus',['../dc/df7/namespacelogika_1_1meters.html#aaba4278b447ba2e737ab5f95a0c14bbaaec0c8973d082934817c932a12035081d',1,'logika::meters']]],
-  ['rx_14',['Rx',['../d0/d3a/namespacelogika_1_1connections_1_1PurgeFlags.html#a296eb468d7877959170924ec598cd1aea46ac5284d2fd771eb4835ec2a88b0721',1,'logika::connections::PurgeFlags']]],
+  ['rx_14',['Rx',['../d0/d3a/namespacelogika_1_1connections_1_1PurgeFlags.html#a19987ee5393cb2b31fe4ef6b997482b5a46ac5284d2fd771eb4835ec2a88b0721',1,'logika::connections::PurgeFlags']]],
   ['rxcrcerror_15',['RxCrcError',['../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#ae7d7b0f88e6cebaaac662958573da295a995fb56dec3bc0d03bd23e93189120f4',1,'logika::protocols::Rc']]],
   ['rxgeneralerror_16',['RxGeneralError',['../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#ae7d7b0f88e6cebaaac662958573da295a90ee0fedd42e5c674b1ac926b408dacf',1,'logika::protocols::Rc']]],
   ['rxlatepacketerror_17',['RxLatePacketError',['../d0/d25/namespacelogika_1_1protocols_1_1Rc.html#ae7d7b0f88e6cebaaac662958573da295afc530a55244a1ea2b28fa36a3e5e1b73',1,'logika::protocols::Rc']]],
