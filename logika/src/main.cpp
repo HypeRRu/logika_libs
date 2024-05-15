@@ -55,6 +55,7 @@
 
 /// @cond
 #include <iostream>
+#include <locale>
 
 #if defined( _WIN32 ) || defined( _WIN64 )
 #include <windows.h>
@@ -65,6 +66,7 @@ void LoadResources( const std::string& pathTo, logika::storage::StorageKeeper& s
 
 int main()
 {
+    std::locale::global(std::locale("ru_RU.UTF-8"));
 #if defined( LOGIKA_USE_LOGGER )
     logika::log::Logger& logger = logika::log::Logger::Instance();
     logger.SetLogType( logika::log::LogType::LogConsole );
@@ -145,7 +147,12 @@ int main()
 
 #if 1
     logika::storage::StorageKeeper sKeeper = logika::storage::StorageKeeper::Instance();
+#if defined( __linux__ ) || defined( __APPLE__ )
     LoadResources( "/home/hyper/bin_data/", sKeeper, false );
+#endif
+#if defined( _WIN32 ) || defined( _WIN64 )
+    LoadResources( "E:\\projects\\res_bin", sKeeper, false );
+#endif
     auto atStorage = sKeeper.GetStorage< logika::LocString, logika::meters::ArchiveType >();
     auto mStorage = sKeeper.GetStorage< logika::LocString, logika::meters::Meter >();
 

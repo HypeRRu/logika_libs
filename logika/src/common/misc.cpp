@@ -113,9 +113,13 @@ LocString GetTimeString( TimeType timestamp )
 {
     uint16_t millis = 0;
     struct tm timeStruct = GetTimeStruct( timestamp, &millis );
-    constexpr size_t bufSize = sizeof( "dd.mm.yyyy HH:MM:SS.000 TMZ" );
+    constexpr size_t bufSize = sizeof( "dd.mm.yyyy HH:MM:SS.000" );
 
-    LocString ft = GetFormatTime( timeStruct, "%d.%m.%Y %H:%M:%S.000 %Z", bufSize );
+    LocString ft = GetFormatTime( timeStruct, "%d.%m.%Y %H:%M:%S.000", bufSize );
+    if ( ft.size() != bufSize )
+    {
+        return ft;
+    }
     /// Добавление милисекунд
     ft[ 20 ] = static_cast< LocChar >( ( ( millis % 1000 ) / 100 ) + LOCALIZED( '0' ) );
     ft[ 21 ] = static_cast< LocChar >( ( ( millis % 100 ) / 10 ) + LOCALIZED( '0' ) );

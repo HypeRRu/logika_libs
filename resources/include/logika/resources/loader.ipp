@@ -6,6 +6,7 @@
 
 /// @cond
 #include <fstream>
+#include <iostream>
 /// @endcond
 
 namespace logika
@@ -17,7 +18,7 @@ namespace resources
 template < typename Resource >
 std::shared_ptr< Resource > Loader< Resource >::Load( const std::string& path )
 {
-    std::ifstream stream{ path };
+    std::ifstream stream{ path, std::ios::in | std::ios::binary };
     if ( !stream.is_open() )
     {
         LOG_WRITE( LOG_ERROR, L"Unable to open file '" << ToLocString( path ) << L"'" );

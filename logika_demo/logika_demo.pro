@@ -31,7 +31,9 @@ DEFINES += "LOGIKA_USE_METERS4L="
 DEFINES += "LOGIKA_USE_METERS4M="
 DEFINES += "LOGIKA_USE_PROTOCOL_M4="
 DEFINES += "LOGIKA_USE_RESOURCE_CONVERTERS="
-DEFINES += "LOGIKA_RESOURCES_EXPORT="
+
+win32:DEFINES += "LOGIKA_RESOURCES_EXPORT=__declspec(dllimport)"
+else:DEFINES += "LOGIKA_RESOURCES_EXPORT="
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -52,8 +54,34 @@ unix:!macx: LIBS += -L$$PWD/../logika_build/lib/ \
     -llogika_resources \
     -llogika_resource_converters
 
-unix:!macx: LIBS += -L/usr/local/lib/ -lprotobuf
+unix:!macx: LIBS += -lprotobuf
 
-INCLUDEPATH += $$PWD/../logika_build/include
-INCLUDEPATH += /usr/local/include
-DEPENDPATH += $$PWD/../logika_build/include
+win32:INCLUDEPATH += E:/projects/logika_build/include
+win32:DEPENDPATH += E:/projects/logika_build/include
+
+win32:INCLUDEPATH += E:\projects\protobuf\out\install\x64-Debug\include
+win32:DEPENDPATH += E:\projects\protobuf\out\install\x64-Debug\include
+
+win32: LIBS += -L$$PWD/../../logika_build/bin/ \
+-llogika_common \
+-llogika_connections_common \
+-llogika_connections_network \
+-llogika_connections_serial \
+-llogika_meters_common \
+-llogika_meters4 \
+-llogika_meters4l \
+-llogika_meters4m \
+-llogika_protocols \
+-llogika_logger \
+-llogika_resources \
+-llogika_resource_converters \
+-lws2_32
+
+unix:INCLUDEPATH += $$PWD/../../logika_build/include
+unix:DEPENDPATH += $$PWD/../../logika_build/include
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../protobuf/out/install/x64-Debug/lib/ -llibprotobuf
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../protobuf/out/install/x64-Debug/lib/ -llibprotobufd
+
+win32:INCLUDEPATH += $$PWD/../../protobuf/out/install/x64-Debug/include
+win32:DEPENDPATH += $$PWD/../../protobuf/out/install/x64-Debug/include

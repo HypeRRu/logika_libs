@@ -41,7 +41,6 @@ void LogikaBackend::InitLogger()
     logika::log::Logger& logger = logika::log::Logger::Instance();
     logger.SetLogType( logika::log::LogType::LogConsole | logika::log::LogType::LogFile );
     logger.SetLogLevel( logika::log::LogLevel::LogAll );
-    logger.SetLogFile( "/home/hyper/log.txt", true );
 } // InitLogger
 
 

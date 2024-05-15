@@ -1,4 +1,5 @@
 #include <iostream>
+#include <clocale>
 
 #include "converters/archive_types.h"
 #include "converters/buses.h"
@@ -19,8 +20,13 @@
 #include "converters/x6_tags.h"
 #include "converters/x6_tag_types.h"
 
+#include <logika/resources/archive_types.pb.h>
+
 int main( int argc, char** argv )
 {
+    std::setlocale(LC_ALL, "ru_RU.UTF-8");
+    GOOGLE_PROTOBUF_VERIFY_VERSION;
+
     constexpr char archive_types_path[] = "ArchiveTypes";
     constexpr char buses_path[] = "Buses";
     constexpr char channels_path[] = "Channels";

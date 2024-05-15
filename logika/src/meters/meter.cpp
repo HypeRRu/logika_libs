@@ -8,6 +8,7 @@
 #include <logika/meters/archive_field_def.h>
 #include <logika/meters/data_tag.h>
 #include <logika/meters/channel.h>
+#include <logika/log/defines.h>
 
 /// @cond
 #include <cwctype>
@@ -261,6 +262,7 @@ std::vector< std::shared_ptr< DataTag > > Meter::LookupCommonTags( const std::ve
         std::shared_ptr< DataTagDef > def = tagsVault_ ? tagsVault_->Find( chType, tagName ) : nullptr;
         if ( !def )
         {
+            LOG_WRITE( LOG_ERROR, LOCALIZED( "Common tag " ) << chType << LOCALIZED( "." ) << tagName << LOCALIZED( " not found" ) );
             throw std::runtime_error{ "Common tag not found" };
         }
         tags.emplace_back(

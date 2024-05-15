@@ -8,6 +8,8 @@ if(MSVC)
 	add_definitions("/wd4251")
 	add_definitions("/wd4275")
 	add_definitions("/wd4996")
+
+	add_compile_options("/utf-8")
 endif()
 
 option(BUILD_RESOURCES 		"Build resources library" ON)
